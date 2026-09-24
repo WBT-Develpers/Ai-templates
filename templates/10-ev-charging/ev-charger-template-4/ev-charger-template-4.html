@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EV Charging: Home &amp; Commercial EV Charger Installation</title>
+<meta name="description" content="OZEV approved, NICEIC registered EV charger installation for homes and businesses across the West Midlands. Fixed prices, directly employed engineers, certified on the day.">
+
+<!-- Motion gate. Every animated rule below is behind `.anim` on <html>, and
+     only this line adds it - so with JS off the class never lands, and with
+     prefers-reduced-motion set it is deliberately withheld. Either way nothing
+     is hidden by an entrance that will never play. -->
+<script>
+  try{
+    if(!window.matchMedia||!matchMedia("(prefers-reduced-motion: reduce)").matches){
+      document.documentElement.className+=" anim";
+    }
+  }catch(e){}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   EV CHARGING — EV charging template
+   Photography: set --img on any .im element
+   <div class="im t-drive" style="--img:url('images/hero-ev-charging.jpg')"></div>
+   ============================================================ */
+:root{
+  --sky:#D6EBF3;
+  --sky-2:#E6F3F8;
+  --teal:#17A3B4;
+  --teal-d:#128E9D;
+  --teal-l:#3FBDCB;
+  --dark:#404040;
+  --dark-2:#333333;
+  --ink:#151515;
+  --muted:#5E6A6E;
+  --white:#FFFFFF;
+  --line:#C6DFE8;
+  --f:'Poppins',-apple-system,'Segoe UI',Arial,sans-serif;
+  --wrap:1440px;
+  --pad:clamp(18px,4vw,56px);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--sky);color:var(--ink);font-family:var(--f);font-weight:400;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+h1,h2,h3,h4{margin:0;font-weight:700;line-height:1.1;letter-spacing:-.02em}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:var(--pad)}
+.icon{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.im{background-image:var(--img,none),linear-gradient(150deg,var(--t1,#c9d8de),var(--t2,#7f8f96));background-size:cover;background-position:center;background-repeat:no-repeat}
+.t-drive{--t1:#bcd3dd;--t2:#5d757f}
+.t-brick{--t1:#c99a76;--t2:#7a4f34}
+.t-house{--t1:#dfe4e6;--t2:#98a3a8}
+.t-green{--t1:#9fb883;--t2:#4d6237}
+.t-dark{--t1:#4c5559;--t2:#1d2225}
+.t-wall{--t1:#eceae5;--t2:#bab5ad}
+
+/* ---------- nav ---------- */
+.nav{background:var(--sky);position:sticky;top:0;z-index:60}
+.nav-in{display:flex;align-items:center;gap:26px;height:78px}
+.brand{font-weight:700;font-size:31px;letter-spacing:-.02em;white-space:nowrap}
+.brand span{color:var(--teal);font-weight:500;letter-spacing:.02em}
+.nav-links{display:flex;gap:26px;margin-inline:auto;font-size:16px;font-weight:500}
+.nav-links a{padding:4px 0;color:#2A3B41;transition:.2s}
+.nav-links a:hover{color:var(--teal)}
+.nav-links a.on{color:var(--teal);border-bottom:2px solid var(--teal)}
+.tel{display:flex;align-items:center;gap:9px;font-weight:600;font-size:18px;white-space:nowrap}
+.tel svg{width:18px;height:18px;stroke:var(--ink);fill:none;stroke-width:1.7}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 26px;border:2px solid transparent;border-radius:5px;font-size:16px;font-weight:600;cursor:pointer;transition:.22s}
+.btn svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8}
+.btn-teal{background:var(--teal);color:#fff}
+.btn-teal:hover{background:var(--teal-d)}
+.btn-white{background:#fff;color:var(--teal);border-color:#fff}
+.btn-white:hover{background:#F0FAFB}
+.btn-outline{background:#fff;border-color:var(--teal);color:var(--teal)}
+.btn-outline:hover{background:#EAF7F9}
+.burger{display:none;background:none;border:1px solid #9FC3D0;border-radius:5px;padding:8px 10px;cursor:pointer}
+.burger span{display:block;width:18px;height:2px;background:#2A3B41;margin:3.5px 0;border-radius:2px}
+
+/* ---------- hero ---------- */
+.hero{background:var(--sky);overflow:hidden}
+.hero-in{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px);align-items:center;padding-block:clamp(28px,3vw,44px) 0}
+.pill{display:inline-flex;align-items:center;gap:9px;background:#fff;border-radius:999px;padding:11px 22px;font-size:15px;font-weight:500;margin-bottom:26px}
+.pill svg{width:15px;height:15px;stroke:var(--teal);fill:none;stroke-width:2.6}
+.hero h1{font-size:clamp(42px,5.6vw,74px);line-height:1.06}
+.hero h1 span{color:var(--teal)}
+.hero p.sub{margin-top:22px;font-size:clamp(16px,1.25vw,18px);color:#3D4C51;max-width:440px;line-height:1.6}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px;padding-bottom:clamp(24px,3vw,40px)}
+.hero-img{min-height:clamp(300px,32vw,455px);border-top-left-radius:clamp(60px,9vw,150px);margin-right:calc(var(--pad) * -1)}
+/* the hero artwork is a clip now. It keeps .im so the aspect ratio, the corner
+   radius and the gradient fallback all still apply; overflow clips the video to
+   that big top-left curve. */
+.hero-vid{position:relative;overflow:hidden}
+.hero-vid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+
+/* ---------- accreditations ---------- */
+.accs{background:var(--dark)}
+.accs-in{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-block:26px}
+.logo{color:#fff;display:flex;align-items:center;gap:8px;line-height:1.1;opacity:.92;text-align:center;flex-direction:column}
+.logo b{font-weight:700;letter-spacing:.01em}
+.logo small{font-size:13px;letter-spacing:.04em;font-weight:400;opacity:.85}
+.l-ozev b{font-size:25px;letter-spacing:.02em}
+.l-niceic{flex-direction:row}
+.l-niceic .bars{display:flex;gap:2px}
+.l-niceic .bars i{width:4px;height:18px;background:#fff;display:block}
+.l-niceic b{font-size:20px;letter-spacing:-.04em}
+.l-tm{flex-direction:row}
+.l-tm .mark{width:30px;height:20px;background:#fff;clip-path:polygon(0 30%,55% 0,100% 22%,100% 70%,45% 100%,0 78%)}
+.l-tm b{font-size:20px}
+.l-ct b{font-size:22px;letter-spacing:-.02em}
+.l-wh b{font-size:22px}
+.l-zap{flex-direction:row;font-weight:700;font-size:20px;letter-spacing:.08em}
+.l-zap .bolt{width:16px;height:20px;background:#fff;clip-path:polygon(60% 0,0 58%,40% 58%,32% 100%,100% 40%,55% 40%)}
+
+/* ---------- sections ---------- */
+.sec{padding-block:clamp(38px,4.4vw,60px)}
+.split{display:grid;grid-template-columns:290px 1fr;gap:clamp(24px,4vw,60px);align-items:start}
+.h2{font-size:clamp(26px,2.7vw,36px);line-height:1.14}
+.rule{width:52px;height:3px;background:var(--teal);margin-block:18px}
+.lede{font-size:16px;color:var(--muted);line-height:1.6;max-width:240px}
+
+/* process */
+.process{position:relative;padding-top:8px}
+.wave{position:absolute;left:0;right:0;top:6px;height:80px;width:100%;overflow:visible}
+.wave path{fill:none;stroke:var(--teal);stroke-width:2.6;stroke-linecap:round}
+.psteps{display:grid;grid-template-columns:repeat(3,1fr);position:relative;z-index:2}
+.pstep{text-align:center;padding-inline:10px}
+.pdisc{width:74px;height:74px;border-radius:50%;background:#fff;border:2.5px solid var(--teal);display:grid;place-items:center;margin:0 auto}
+.pdisc .icon{width:32px;height:32px;color:var(--teal)}
+.pno{display:block;margin-top:18px;font-size:24px;font-weight:600;color:var(--teal)}
+.pstep h3{font-size:23px;margin:4px 0 10px}
+.pstep p{font-size:15px;color:#41535A;line-height:1.55;max-width:250px;margin-inline:auto}
+
+/* teal band */
+.band{background:var(--teal);color:#fff}
+.band-in{display:grid;grid-template-columns:280px 1fr;gap:clamp(20px,3vw,44px);align-items:center;padding-block:clamp(28px,3.2vw,42px)}
+.band h2{font-size:clamp(25px,2.5vw,34px)}
+.band .rule{background:#fff}
+.places{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.place{background:#E4F4F7;color:var(--ink);border-radius:5px;padding:20px 16px;transition:.22s}
+.place:hover{background:#fff;transform:translateY(-3px)}
+.place .top{display:flex;align-items:center;gap:11px;margin-bottom:9px}
+.place .icon{width:29px;height:29px;color:#20343A;flex:none}
+.place b{font-size:17px;font-weight:600;line-height:1.2}
+.place p{font-size:14px;color:#4C5C61;line-height:1.5}
+
+/* product */
+.product{display:grid;grid-template-columns:170px 460px 1fr;background:#fff}
+.product .shot{min-height:250px}
+.product .panel{padding:clamp(24px,3vw,40px);display:grid;grid-template-columns:1fr auto;gap:clamp(18px,2.4vw,34px);align-items:center}
+.product h2{font-size:clamp(24px,2.5vw,34px);font-weight:600;line-height:1.24}
+.checks{margin-top:20px;display:grid;gap:11px}
+.checks li{display:flex;align-items:center;gap:12px;font-size:16px}
+.checks svg{width:20px;height:20px;stroke:var(--teal);fill:none;stroke-width:1.8;flex:none}
+
+/* reasons */
+.reasons{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(10px,1.4vw,20px)}
+.reason{display:flex;align-items:center;gap:12px}
+.rcirc{width:52px;height:52px;border-radius:50%;background:var(--teal);display:grid;place-items:center;flex:none}
+.rcirc .icon{width:26px;height:26px;color:#fff;stroke-width:1.5}
+.reason span{font-size:15px;font-weight:500;line-height:1.35}
+
+/* stats */
+.stats{background:var(--dark)}
+.stats-in{display:grid;grid-template-columns:repeat(4,1fr);padding-block:32px}
+.stat{display:flex;align-items:center;justify-content:center;gap:18px;border-right:1px solid rgba(255,255,255,.24)}
+.stat:last-child{border-right:0}
+.stat .icon{width:42px;height:42px;color:#fff;stroke-width:1.3;flex:none}
+.stat b{display:block;font-size:clamp(26px,2.8vw,36px);color:var(--teal-l);line-height:1}
+.stat span{font-size:14px;color:#DCDCDC}
+
+/* installs */
+.white{background:#fff}
+.gal{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(8px,1vw,14px)}
+.gal .im{aspect-ratio:1/.78;border-radius:3px}
+.morelink{display:flex;justify-content:flex-end;margin-top:16px}
+.morelink a{display:inline-flex;align-items:center;gap:9px;color:var(--teal);font-weight:500;font-size:16px}
+
+/* testimonials */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr) 300px;gap:clamp(10px,1.4vw,20px);align-items:stretch}
+.quote{background:#fff;border-radius:4px;padding:22px}
+.stars{color:var(--teal);letter-spacing:2px;font-size:17px;margin-bottom:12px}
+.quote p{font-size:15px;line-height:1.6;color:#2C393D}
+.quote cite{display:block;font-style:normal;font-weight:600;font-size:14px;margin-top:14px}
+.feature{background:var(--teal);color:#fff;border-radius:4px;padding:26px 24px;display:flex;flex-direction:column;justify-content:center}
+.feature .qm{font-size:44px;line-height:.7;margin-bottom:14px}
+.feature p{font-size:19px;font-weight:500;line-height:1.35}
+.feature cite{display:block;font-style:normal;margin-top:14px;font-size:16px}
+.feature .stars{color:#fff;margin:12px 0 0}
+
+/* zero */
+.zero{background:var(--teal);color:#fff}
+.zero-in{display:grid;grid-template-columns:1fr 300px;gap:clamp(20px,3vw,40px);align-items:center;padding-block:30px}
+.zero-left{display:flex;gap:22px;align-items:center}
+.zero-left .icon{width:56px;height:56px;flex:none;stroke-width:1.3}
+.zero h2{font-size:clamp(23px,2.4vw,32px)}
+.zero p{font-size:15px;margin-top:8px;color:#E1F6F8;line-height:1.55}
+
+/* faq + postcode */
+.close{display:grid;grid-template-columns:150px 1fr 1fr;gap:clamp(20px,3vw,48px);align-items:start}
+.faq details{border-bottom:1px solid #B9D8E2}
+.faq details:first-child{border-top:1px solid #B9D8E2}
+.faq summary{list-style:none;cursor:pointer;padding:14px 4px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";width:9px;height:9px;border-right:2px solid #4E717E;border-bottom:2px solid #4E717E;transform:rotate(45deg);flex:none;transition:transform .25s;margin-top:-4px}
+.faq details[open] summary::after{transform:rotate(-135deg);margin-top:3px}
+.faq .ans{padding:0 4px 16px;font-size:15px;color:var(--muted);line-height:1.66}
+.check h2{font-size:clamp(22px,2.2vw,29px)}
+.check p{font-size:15px;color:var(--muted);margin-top:12px;max-width:290px;line-height:1.6}
+.pcbox{position:relative;margin-bottom:10px}
+.pcbox input{width:100%;border:1px solid var(--line);background:#fff;border-radius:4px;padding:15px 44px 15px 16px;font-size:15px}
+.pcbox svg{position:absolute;right:15px;top:50%;translate:0 -50%;width:19px;height:19px;stroke:var(--teal);fill:none;stroke-width:1.6}
+.callus{font-size:15px;margin-top:14px}
+.callus a{color:var(--teal);font-weight:600;font-size:18px}
+
+/* footer */
+.foot{background:var(--dark-2);color:#CFCFCF}
+.foot-in{display:grid;grid-template-columns:1.15fr 1.6fr 1.1fr;gap:clamp(20px,3vw,40px);align-items:center;padding-block:clamp(26px,3vw,40px)}
+.foot .brand{color:#fff;font-size:24px}
+.foot .legal{font-size:13px;line-height:1.7;margin-top:14px;color:#A9A9A9}
+.foot-logos{display:flex;flex-wrap:wrap;gap:18px 26px;align-items:center;justify-content:center}
+.foot-fin{font-size:13px;line-height:1.7;color:#A9A9A9}
+
+@media(max-width:1330px){
+  .nav-links{display:none}.burger{display:block;margin-left:auto}
+  .hero-in{grid-template-columns:1fr}
+  .hero-img{margin-right:0;border-top-left-radius:60px}
+  .split,.close{grid-template-columns:1fr}
+  .lede{max-width:none}
+  .places{grid-template-columns:repeat(3,1fr)}
+  .band-in{grid-template-columns:1fr}
+  .product{grid-template-columns:1fr 1fr}
+  .product .shot:first-child{display:none}
+  .reasons{grid-template-columns:repeat(3,1fr)}
+  .gal{grid-template-columns:repeat(3,1fr)}
+  .tgrid{grid-template-columns:repeat(2,1fr)}
+  .stats-in{grid-template-columns:repeat(2,1fr);gap:22px 0}
+  .stat:nth-child(2){border-right:0}
+  .foot-in{grid-template-columns:1fr}
+}
+@media(max-width:820px){
+  .psteps{grid-template-columns:1fr;gap:28px}
+  .wave{display:none}
+  .product{grid-template-columns:1fr}
+  .product .panel{grid-template-columns:1fr}
+  .zero-in{grid-template-columns:1fr}
+  .tgrid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .places,.reasons,.gal{grid-template-columns:repeat(2,1fr)}
+  .accs-in{justify-content:center;gap:22px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ── aircon7 band anatomy ── */
+.sechd{max-width:66ch;margin:0 auto clamp(28px,3.4vw,48px);text-align:center}
+.sechd .lab{display:block;font-size:13px;letter-spacing:.15em;text-transform:uppercase;
+  font-weight:800;color:#0F5C58;margin-bottom:12px}
+.sechd h2{font-size:clamp(27px,3vw,42px);line-height:1.14;font-weight:800;color:var(--ink)}
+.sechd p{font-size:17px;color:var(--muted);line-height:1.62;margin-top:13px}
+/* supplied artwork on white chips - never inverted */
+.accs-in{display:grid!important;grid-template-columns:repeat(8,minmax(0,1fr));
+  gap:clamp(8px,1vw,14px);align-items:center}
+.lgchip{background:#fff;border-radius:4px;height:clamp(52px,5.4vw,68px);
+  display:grid;place-items:center;padding:8px 10px;border:1px solid rgba(0,0,0,.08)}
+/* a definite height, or a viewBox-only SVG (checkatrade) resolves to 0x0 here */
+.lgchip img{max-width:100%;width:auto;height:clamp(20px,2.2vw,30px);object-fit:contain}
+@media(max-width:900px){.accs-in{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:600px){.accs-in{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* hero proof figures */
+.hero-proof{display:flex;flex-wrap:wrap;align-items:flex-start;gap:clamp(16px,2.1vw,32px);
+  max-width:600px;margin-top:clamp(22px,2.6vw,34px);padding-top:clamp(20px,2.4vw,30px);
+  border-top:1px solid rgba(128,128,128,.3)}
+.hero-proof .pf b{display:block;font-size:clamp(23px,2.5vw,33px);font-weight:800;line-height:1}
+.hero-proof .pf span{display:block;font-size:14px;opacity:.82;margin-top:5px;max-width:18ch}
+/* footer operations row */
+.foot-rule{border-top:1px solid rgba(255,255,255,.16);margin-block:clamp(22px,2.6vw,34px)}
+.foot-ops{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2.2vw,32px)}
+.foot-ops h4{font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+  color:#fff;opacity:.75;margin:0 0 13px;font-weight:800}
+.foot-ops p{font-size:14px;line-height:1.75;color:rgba(255,255,255,.82)}
+.foot-ops b{color:#fff}
+@media(max-width:900px){.foot-ops{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}}
+@media(max-width:600px){.foot-ops{grid-template-columns:minmax(0,1fr)}}
+/* reviews as a looping scroll track */
+.rev__row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;
+  gap:clamp(12px,1.8vw,24px);align-items:center;margin-top:20px}
+#revtrack{display:flex!important;gap:clamp(12px,1.6vw,20px);overflow-x:auto;
+  scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;
+  -ms-overflow-style:none;padding-bottom:2px}
+#revtrack::-webkit-scrollbar{display:none}
+@media(prefers-reduced-motion:reduce){#revtrack{scroll-behavior:auto}}
+#revtrack .quote{flex:0 0 calc((100% - 2 * clamp(12px,1.6vw,20px)) / 3);scroll-snap-align:start}
+/* The three quote cards became a scrolling carousel, but .tgrid was left as
+   the original "repeat(3,1fr) 300px" grid, so .rev__row was crammed into one
+   1fr column - about 270px - and every card collapsed to a sliver. The row
+   spans the three card columns instead; the feature card keeps the 300px one. */
+.tgrid>.rev__row{grid-column:1/4;min-width:0}
+@media(max-width:1330px){.tgrid>.rev__row{grid-column:1/-1}}
+@media(max-width:900px){#revtrack .quote{flex-basis:calc((100% - clamp(12px,1.6vw,20px)) / 2)}
+  .rev__row{grid-template-columns:minmax(0,1fr)} .rev__row .rnav{display:none}}
+@media(max-width:600px){#revtrack .quote{flex-basis:100%}}
+.rnav{width:42px;height:42px;border-radius:50%;border:0;background:var(--ink);color:#fff;
+  display:grid;place-items:center;cursor:pointer;flex:0 0 42px}
+.rnav svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2.2}
+
+/* questions in one column, held to a readable measure */
+.close{grid-template-columns:minmax(0,1fr)!important}
+.close details,.close .faq{max-width:860px;margin-inline:auto;width:100%}
+
+/* brand colours stay as fills; only the ink on them changes */
+.btn-teal{color:#04262B}
+.nav-links a.on,.nav a.on,.accent,.hero h1 span,h1 span,h2 span{color:#0E6B77}
+
+/* teal on the pale band was 2.46:1 */
+.pno,.accs .pno,span.pno{color:#0B5C66}
+.sec span[style*="17A3B4"],.teal-text{color:#0E6B77}
+
+/* white on the teal band was 3.03:1; dark ink on the same teal is 5.2:1 */
+.feature,.feature p,.feature cite,.band p,.band cite{color:#04262B!important}
+.band .qm,.feature .qm{color:#04262B!important;opacity:.5}
+.accs .logo b,.accs .logo small{color:#0B5C66!important}
+
+/* the brand lockup's second word was 2.46:1 on the pale band */
+.brand span,.logo span,.wordmark span{color:#0B5C66}
+
+/* teal as button text on white was 3.03:1 */
+.btn-line,.btn-ghost,.btn-outline,a.btn:not(.btn-teal){color:#0B5C66;border-color:#0B5C66}
+
+/* every remaining teal-as-text case on the pale band */
+.accs a,.accs-in a,a[href^="tel:"],.nav-tel,.nav-tel a{color:#0B5C66}
+.teal,.t-teal{color:#0B5C66}
+
+/* the brand appears in the dark nav and again on the pale strip */
+.brand span{color:#0B5C66}
+.accs .brand span,.strip .brand span,footer .brand span{color:#0B5C66}
+
+/* the footer sits on the pale band, not a dark one */
+footer .brand span,.foot .brand span{color:#0B5C66!important}
+
+/* two lockups on opposite grounds: <a class="brand"> sits on the dark nav,
+   <span class="brand"> on the pale footer band */
+a.brand span{color:#5FE0EF!important}
+span.brand span{color:#0B5C66!important}
+
+header.nav a.brand span{color:#0B5C66!important}
+footer span.brand span,.foot span.brand span{color:#5FE0EF!important}
+.foot-logos .logo b,.foot-logos .logo small,.foot-logos .logo span{color:#DCEEF2!important}
+
+/* ══ CHARGERS + GRANTS ══════════════════════════════════════════════════════
+   Carried over from the niche base (ev1.html) and written against tokens each
+   template already defines. These five do NOT share one accent name - ev2 uses
+   --teal, ev3 --red, ev4/ev5 --green, ev6 --lime - and only ev4/ev5/ev6 define
+   --paper. A var() fallback chain covers all five with one rule rather than
+   five per-file colour blocks. */
+#chargers .kt-head,#grants .kt-head{max-width:66ch;margin:0 0 clamp(20px,2.6vw,36px)}
+.kt-lab{font-size:14px;letter-spacing:.18em;text-transform:uppercase;margin:0 0 10px;
+  color:var(--teal,var(--red,var(--green,var(--lime,var(--ink)))))}
+.kt-lede{font-size:19px;line-height:1.6;color:var(--muted);margin:14px 0 0}
+
+.ktgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.8vw,26px)}
+.ktcard{background:var(--paper,var(--white,#fff));border:1px solid var(--line);
+  border-radius:var(--r,6px);overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.ktim{aspect-ratio:4/3;overflow:hidden;background:var(--line)}
+.ktim img{width:100%;height:100%;object-fit:cover;display:block}
+.ktbody{padding:clamp(13px,1.5vw,18px);display:flex;flex-direction:column;flex:1;min-width:0}
+.kttop{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;
+  margin-bottom:4px}
+.kttop h3{font-size:clamp(19px,1.5vw,22px);line-height:1.22;margin:0;color:var(--ink);
+  min-width:0;overflow-wrap:break-word}
+.kttag{flex:0 0 auto;font-size:13px;letter-spacing:.04em;padding:3px 8px;border-radius:99px;
+  border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.ktmake{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  margin:0 0 12px}
+.ktspec{display:flex;gap:clamp(14px,2vw,26px);padding-bottom:12px;margin-bottom:12px;
+  border-bottom:1px solid var(--line)}
+.ktspec b{display:block;font-size:clamp(20px,1.7vw,23px);line-height:1.15;color:var(--ink)}
+.ktspec span{font-size:14px;color:var(--muted)}
+.ktlist{list-style:none;margin:0 0 auto;padding:0;display:grid;gap:7px}
+.ktlist li{font-size:16px;line-height:1.5;color:var(--muted);padding-left:15px;
+  position:relative;overflow-wrap:break-word}
+.ktlist li::before{content:"";position:absolute;left:0;top:.5em;width:6px;height:6px;
+  border-radius:50%;opacity:.7;
+  background:var(--teal,var(--red,var(--green,var(--lime,var(--ink)))))}
+
+.grgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,1.8vw,24px)}
+.grcard{background:var(--paper,var(--white,#fff));border:1px solid var(--line);
+  border-radius:var(--r,6px);padding:clamp(15px,1.8vw,22px);min-width:0}
+.grfig{display:block;font-size:clamp(30px,3.056vw,44px);line-height:1.05;color:var(--ink)}
+.grk{font-size:16px;font-weight:700;color:var(--ink);margin:8px 0 8px}
+.grp{font-size:18px;line-height:1.55;color:var(--muted);margin:0}
+.grnote{margin-top:clamp(16px,2.2vw,30px);padding:clamp(16px,2vw,26px);
+  border:1px solid var(--line);border-radius:var(--r,6px);
+  background:var(--paper,var(--white,#fff))}
+.grnote h3{font-size:clamp(20px,1.7vw,23px);line-height:1.25;margin:0 0 10px;color:var(--ink)}
+.grnote p{font-size:18px;line-height:1.6;color:var(--muted);margin:0 0 10px}
+.grnote p:last-child{margin-bottom:0}
+.grnote b{color:var(--ink)}
+@media(max-width:1100px){.ktgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.ktgrid,.grgrid{grid-template-columns:minmax(0,1fr)}}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   PROPORTION AND TYPE + SCROLL MOTION — _RULES/02-PROPORTION-AND-TYPE.md
+   Sizes and motion only. Palette, cards and ornament untouched. Placed last so
+   it beats the grouped duplicates earlier in this sheet (F30). Selectors read
+   off the rendered DOM, not the stylesheet (F29).
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.sec,.proc,.solwrap,.dark,.whyband,.zero,.steps{padding-block:clamp(32px,4.3vw,68px)}
+.trust,.accs{padding-block:clamp(12px,1.6vw,24px)}
+.stats{padding-block:clamp(20px,2.6vw,42px)}
+
+/* ── display ── */
+.hero h1{font-size:clamp(36px,4.722vw,68px);line-height:1.08}
+.h2,.sechd h2,section h2{font-size:clamp(29px,3.333vw,48px);line-height:1.17}
+.stat b,.grfig{font-size:clamp(30px,3.056vw,44px)}
+
+/* ── titles ── */
+.pstep h3,.jstep h3,.tstep h3,.step h3,.sol b,.reason b,.proj b,
+.kttop h3,.grnote h3,details summary,#faqs summary,.faqcol summary{
+  font-size:20px;line-height:1.3}
+
+/* ── body copy ── */
+.hero p.sub{font-size:20px;line-height:1.6}
+.sechd p,.kt-lede,p.lede{font-size:19px;line-height:1.6}
+.pstep p,.jstep p,.tstep p,.step p,.sol p,.reason p,.quote p,.ans,
+.grp,.grnote p,.foot p{font-size:18px;line-height:1.6}
+
+/* ── supporting text ── */
+.proj small,.proj b,.quote cite,.stat span,.ktlist li,.ktspec span,
+.grk,.accred,.foot a,.lgchip{font-size:16px}
+.ktmake,.kt-lab,.lab,.eyebrow,.foot h4{font-size:14px;letter-spacing:.16em}
+.kttag,.foot small{font-size:13px}
+
+/* ── controls ── */
+.nav-links,.topnav a{font-size:17px}
+.btn,.nav-tel{font-size:17px}
+
+/* ── motion ── */
+html{scroll-behavior:smooth}
+section[id]{scroll-margin-top:clamp(60px,6vw,88px)}
+.anim [data-rv]{opacity:0;
+  transition:opacity .72s cubic-bezier(.22,.61,.36,1) var(--rvd,0ms),
+             transform .72s cubic-bezier(.22,.61,.36,1) var(--rvd,0ms),
+             filter .72s ease var(--rvd,0ms),
+             clip-path .82s cubic-bezier(.65,0,.35,1) var(--rvd,0ms)}
+.anim [data-rv].is-in{opacity:1;transform:none;filter:none}
+.anim [data-rv="up"]{transform:translate3d(0,24px,0)}
+.anim [data-rv="rise"]{transform:translate3d(0,30px,0) scale(.972)}
+.anim [data-rv="zoom"]{transform:scale(.94)}
+.anim [data-rv="blur"]{filter:blur(10px);transform:translate3d(0,14px,0)}
+.anim [data-rv="tilt"]{transform:perspective(900px) rotateX(7deg) translate3d(0,22px,0);
+  transform-origin:50% 100%}
+.anim [data-rv="pop"]{transform:scale(.82);
+  transition-timing-function:cubic-bezier(.34,1.56,.64,1)}
+.anim [data-rv="wipe-up"]{clip-path:inset(105% 0 0 0);transform:translate3d(0,12px,0)}
+.anim [data-rv="wipe-left"]{clip-path:inset(0 100% 0 0)}
+.anim [data-rv="wipe-up"].is-in,.anim [data-rv="wipe-left"].is-in{clip-path:inset(0)}
+@keyframes evUp{from{opacity:0;transform:translate3d(0,26px,0)}to{opacity:1;transform:none}}
+@keyframes evFade{from{opacity:0}to{opacity:1}}
+.anim .hero-copy>*{opacity:0;animation:evUp .8s cubic-bezier(.22,.61,.36,1) both}
+.anim .hero-copy>:nth-child(1){animation-delay:.10s}
+.anim .hero-copy>:nth-child(2){animation-delay:.20s}
+.anim .hero-copy>:nth-child(3){animation-delay:.30s}
+.anim .hero-copy>:nth-child(4){animation-delay:.40s}
+.anim .hero-copy>:nth-child(5){animation-delay:.50s}
+/* hero artwork fades where it sits and is never moved */
+.anim .hero .im,.anim .hero-shot{animation:evFade 1.1s ease .25s both}
+.anim .nav-in>*{opacity:0;animation:evFade .55s ease both}
+.ktcard,.grcard,.sol,.reason,.proj,.quote{
+  transition:transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s ease}
+.ktcard:hover,.grcard:hover,.sol:hover{transform:translateY(-5px)}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+.btn .icon,.link .icon{transition:transform .3s cubic-bezier(.22,.61,.36,1)}
+.btn:hover .icon,.link:hover .icon{transform:translateX(5px)}
+summary::after{transition:transform .3s cubic-bezier(.22,.61,.36,1)}
+.cnt{font-variant-numeric:tabular-nums}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .ktcard:hover,.grcard:hover,.sol:hover,.btn:hover,.btn:active,
+  .btn:hover .icon,.link:hover .icon{transform:none}
+}
+
+/* ── corrections ──────────────────────────────────────────────────────────
+   Specificity: several of these templates size headings and FAQ questions with
+   a class+type selector (`.sechd h2` 0-1-1, `.faq summary` 0-1-1), which beats
+   the bare `section h2` / `details summary` (0-0-2) in the block above no
+   matter how much later it sits. Matched at the same weight here. */
+.sechd h2,.mapbox h2,.projrow h2,.trow h2,.zero h2,.solwrap h2,.dark h2,
+.sec h2,.proc h2,.whyband h2{font-size:clamp(29px,3.333vw,48px);line-height:1.17}
+.faq summary,.faqs summary,#faqs summary,.faqcol summary,details summary{
+  font-size:20px;line-height:1.3}
+
+/* bands whose own class was not in the list above and rendered with no
+   vertical padding at all */
+#places,#product,#compat,#start,#quote,.reviews,.guarantee,#faqs,.faq{
+  padding-block:clamp(32px,4.3vw,68px)}
+
+/* the review citation sits in a narrow card column; 15px ran it past the box */
+.quote cite,.quote cite *{font-size:15px;line-height:1.45;overflow-wrap:break-word}
+.stars{font-size:14px;letter-spacing:.06em}
+
+/* the nav row is tight at 16.5px on the template with the most links */
+@media(max-width:1400px){.nav-links,.nav-links a{font-size:16px}}
+
+/* The reviews heading sits in a narrow rail beside the carousel - 200-230px on
+   these two - where "customers" alone will not fit at the shared 48px. Sized to
+   its own column, still well up from where it started. The rule that raised it
+   uses `.trow h2` / `.sec h2` (0-1-1), so this must match that weight. */
+.trow h2,.rev__row h2,.revrail h2,.reviews h2,.sec .rev__row h2{
+  font-size:clamp(20px,2.1vw,30px);line-height:1.2;overflow-wrap:break-word}
+
+/* .stars is a 30px box holding five glyphs - pre-existing, and the smaller
+   glyph below narrows the spill rather than widening a box the design fixes */
+.stars{font-size:13px;letter-spacing:0;white-space:nowrap}
+</style>
+<style>
+/* ------------------------------------------------------------------
+   Adjustments made when the base data went in. The blocks below were
+   built for one-line captions; the base copy is full sentences.
+   ------------------------------------------------------------------ */
+
+/* PROCESS: four steps now, each with a paragraph */
+.psteps{grid-template-columns:repeat(4,1fr)!important;align-items:start!important;gap:clamp(14px,2vw,26px)!important}
+.pstep p{font-size:14px;line-height:1.62}
+@media(max-width:900px){.psteps{grid-template-columns:1fr 1fr!important}}
+@media(max-width:560px){.psteps{grid-template-columns:1fr!important}}
+
+/* SERVICES: captions became descriptions, so the tiles need height */
+.place{align-items:flex-start!important}
+.place p{font-size:14px;line-height:1.6;margin-top:8px}
+.place .top{align-items:flex-start}
+
+/* REASONS: were a single label, now a heading and a paragraph */
+.reason{align-items:flex-start!important}
+.reason .rcirc{flex:0 0 auto;margin-top:2px}
+.reason b{display:block;font-size:16px;font-weight:600;color:var(--ink);margin-bottom:4px}
+.reason small{display:block;font-size:14px;line-height:1.6;color:var(--muted)}
+@media(min-width:900px){.reasons{grid-template-columns:1fr 1fr!important;gap:18px 30px!important}}
+
+/* WORK: the gallery now carries the four real installs with captions */
+.gal{grid-template-columns:repeat(4,1fr)!important;gap:16px!important}
+.galc{margin:0}
+.galc .im{aspect-ratio:4/3;border-radius:8px}
+.galc figcaption{padding-top:11px}
+.gtag{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+ color:var(--teal-d);background:var(--sky);border-radius:99px;padding:3px 10px;margin-bottom:7px}
+.galc b{display:block;font-size:16px;font-weight:600;color:var(--ink);letter-spacing:-.01em}
+.galc small{display:block;font-size:13px;line-height:1.55;color:var(--muted);margin-top:4px}
+@media(max-width:1000px){.gal{grid-template-columns:1fr 1fr!important}}
+@media(max-width:560px){.gal{grid-template-columns:1fr!important}}
+
+/* TEAM, built from this template's own card language */
+.tmgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tmc{background:var(--white);border:1px solid var(--line);border-radius:12px;overflow:hidden;
+ transition:transform .4s cubic-bezier(.2,1,.28,1),box-shadow .4s}
+.tmc:hover{transform:translateY(-5px);box-shadow:0 22px 42px -30px rgba(21,21,21,.35)}
+.tmc .im{aspect-ratio:4/3;background-size:cover;background-position:center;background-image:var(--img)}
+.tmb{padding:18px 20px 20px}
+.tmc b{display:block;font-size:18px;font-weight:600;color:var(--ink);letter-spacing:-.02em}
+.tmr{display:block;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+ color:var(--teal-d);margin:4px 0 9px}
+.tmc p{font-size:14px;line-height:1.62;color:var(--muted);margin-bottom:11px}
+.tmchips{display:flex;gap:6px;flex-wrap:wrap}
+.tmchips span{font-size:13px;border:1px solid var(--line);border-radius:99px;padding:3px 10px;color:var(--muted)}
+@media(max-width:900px){.tmgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:580px){.tmgrid{grid-template-columns:1fr}}
+</style>
+<style>
+/* ==================================================================
+   Layout corrections. Every grid below was sized for the short
+   placeholder captions; the base copy is full sentences, so the
+   proportions needed resetting. Colours and components unchanged.
+   ================================================================== */
+
+/* 1 — SERVICES BAND: heading took a 280px column and the six tiles
+   were squeezed into the rest at repeat(6,1fr), giving 90px columns. */
+.band-in{grid-template-columns:1fr!important;gap:clamp(20px,2.4vw,30px)!important;
+ align-items:start!important;padding-block:clamp(38px,4.2vw,58px)!important}
+.band-in>div:first-child{max-width:none}
+.band-in h2{max-width:22ch}
+.places{grid-template-columns:repeat(3,1fr)!important;gap:16px!important}
+.place{display:flex;flex-direction:column;height:100%;padding:22px 20px!important;border-radius:8px!important}
+.place .top{align-items:center!important;gap:12px;margin-bottom:11px!important}
+.place .top b{font-size:17px;line-height:1.28}
+.place .top .icon{flex:0 0 auto}
+.place p{font-size:15px;line-height:1.62;margin:0}
+@media(max-width:1000px){.places{grid-template-columns:1fr 1fr!important}}
+@media(max-width:620px){.places{grid-template-columns:1fr!important}}
+
+/* 2 — PRODUCT: 170px accent strip + 460px photo + panel left the copy
+   adrift and pushed the button to the far right of a very wide column. */
+.product{grid-template-columns:1fr 1fr!important;align-items:stretch!important}
+.product .shot:first-of-type{display:none}
+.product .shot{min-height:clamp(300px,32vw,460px)}
+.panel{display:flex!important;flex-direction:column;justify-content:center;align-items:flex-start;
+ gap:22px;padding:clamp(30px,3.4vw,56px)!important}
+.panel h2{font-size:clamp(24px,2.6vw,34px);line-height:1.16;letter-spacing:-.02em}
+.panel .checks{margin:0}
+.panel .checks li{font-size:16px;line-height:1.5;padding-block:5px}
+.panel .btn{align-self:flex-start;white-space:nowrap}
+@media(max-width:860px){.product{grid-template-columns:1fr!important}
+ .product .shot{min-height:240px}}
+
+/* 3 — REVIEWS: cards sat at their natural height, so the row was ragged.
+   Stretch them and push the attribution to a common baseline.         */
+.rev__row{align-items:stretch!important}
+#revtrack{align-items:stretch!important}
+.quote{display:flex;flex-direction:column;padding:24px!important;border-radius:8px!important}
+.quote p{flex:1;margin:0}
+.quote cite{margin-top:16px!important;padding-top:14px;border-top:1px solid #DCEAF0;line-height:1.4}
+.feature{border-radius:8px!important;justify-content:flex-start!important;padding:28px 26px!important}
+.feature p{font-size:18px;line-height:1.42}
+.tgrid{align-items:stretch!important}
+
+/* 4 — GUARANTEE BAND: 32px heading in a 1fr column wrapped mid-sentence
+   and left the right half empty, with the icon floating beside it.     */
+.zero-in{grid-template-columns:1fr auto!important;gap:clamp(24px,3vw,44px)!important;
+ align-items:center!important;padding-block:clamp(28px,3vw,42px)!important}
+.zero-left{align-items:flex-start!important;gap:18px!important}
+.zero-left .icon{width:44px!important;height:44px!important;margin-top:3px}
+.zero h2{font-size:clamp(22px,2.1vw,28px)!important;line-height:1.2;max-width:24ch}
+.zero p{font-size:15px;max-width:64ch}
+.zero-in .btn{width:auto!important;white-space:nowrap;padding:14px 28px!important}
+@media(max-width:820px){.zero-in{grid-template-columns:1fr!important}
+ .zero-in .btn{width:100%!important}}
+
+/* 5 + 6 — FAQ / POSTCODE: the 150px + 1fr + 1fr split pushed the FAQ
+   into a centred 860px box inside its column, so it started low and
+   off to one side, and the postcode column was left narrow.          */
+.close{grid-template-columns:1.15fr .85fr!important;gap:clamp(26px,3vw,54px)!important;
+ align-items:start!important}
+.close>div:first-child{grid-column:1/-1}
+.close>div:first-child .rule{margin-block:14px 0}
+.faq{max-width:none!important;margin-inline:0!important;padding-block:0!important;width:auto!important}
+.faq summary{font-size:16px;padding:15px 4px}
+.check{background:#fff;border-radius:10px;padding:clamp(24px,2.6vw,34px);position:sticky;top:22px}
+.check h2{font-size:clamp(22px,2.2vw,28px);line-height:1.18;letter-spacing:-.02em;margin-bottom:10px}
+.check>p{font-size:15px;line-height:1.62;max-width:none!important}
+.check .pcbox{margin-bottom:10px}
+.callus{margin-top:14px;font-size:15px}
+@media(max-width:960px){.close{grid-template-columns:1fr!important}
+ .check{position:static}}
+</style>
+<style>
+/* --- service cards now carry an image --- */
+.place{padding:0!important;overflow:hidden}
+.pim{aspect-ratio:16/9;width:100%;background-size:cover;background-position:center;background-image:var(--img)}
+.place .top{margin:18px 20px 9px!important}
+.place p{margin:0 20px 20px!important}
+.place:hover .pim{transform:none}
+
+/* --- product: two buttons, sitting to the right of the panel --- */
+.pbtns{display:flex;gap:10px;flex-wrap:wrap;align-self:flex-end;justify-content:flex-end}
+.panel{align-items:stretch!important;text-align:left}
+.panel>div{align-self:flex-end;max-width:52ch}
+@media(max-width:560px){.pbtns{align-self:stretch;justify-content:flex-start}
+ .pbtns .btn{flex:1 1 auto;justify-content:center}}
+
+/* --- guarantee: copy and button left, image right --- */
+.zero-in{grid-template-columns:1.15fr .85fr!important;align-items:center!important;
+ gap:clamp(26px,3.4vw,56px)!important;padding-block:clamp(30px,3.4vw,48px)!important}
+.zero-left{align-items:flex-start!important;gap:18px!important}
+.zero-copy{display:flex;flex-direction:column;align-items:flex-start}
+.zero-btn{margin-top:20px;width:auto!important;white-space:nowrap;padding:14px 28px!important}
+.zero-img{border-radius:10px;aspect-ratio:16/10;background-size:cover;background-position:center;
+ background-image:var(--img);box-shadow:0 20px 44px -26px rgba(0,0,0,.45)}
+@media(max-width:860px){.zero-in{grid-template-columns:1fr!important}
+ .zero-img{aspect-ratio:16/9}}
+</style>
+<style>
+/* buttons share the copy's left edge instead of sitting under its centre */
+.panel>div,.pbtns{align-self:flex-end!important;width:100%;max-width:52ch}
+.pbtns{justify-content:flex-start!important;margin-top:4px}
+@media(max-width:560px){.panel>div,.pbtns{max-width:none}}
+
+/* guarantee: image fills the right half of the band, edge to edge */
+.zero{position:relative;overflow:hidden}
+.zero-in{grid-template-columns:1fr!important;padding-right:clamp(0px,46%,760px)!important}
+.zero-img{position:absolute!important;top:0;right:0;bottom:0;width:46%;
+ aspect-ratio:auto!important;border-radius:0!important;box-shadow:none!important;
+ background-image:var(--img,none),linear-gradient(150deg,var(--t1,#c9d8de),var(--t2,#7f8f96))!important;
+ background-size:cover;background-position:center}
+@media(max-width:900px){
+ .zero-in{padding-right:0!important}
+ .zero-img{position:static!important;width:100%;height:clamp(200px,40vw,280px);margin-top:26px}}
+</style>
+<style>
+/* the base template closes these sections with the same two actions */
+.sec-cta{padding-top:clamp(20px,2.4vw,30px)}
+.sec-cta-in{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--pad);display:flex;gap:11px;flex-wrap:wrap}
+.sec-cta-in .btn{white-space:nowrap}
+@media(max-width:520px){.sec-cta-in{flex-direction:column;align-items:stretch}
+ .sec-cta-in .btn{justify-content:center}}
+</style>
+<style>
+
+.hero-rate{display:flex;align-items:center;gap:10px;margin-top:22px;padding-top:18px;
+ border-top:1px solid var(--line);flex-wrap:wrap}
+.hero-rate .hrs{letter-spacing:2px;font-size:16px}
+.hero-rate b{font-size:20px;font-weight:700;line-height:1}
+.hero-rate span:last-child{font-size:14px;opacity:.8}
+
+.hero-rate{border-top-color:var(--line)}
+.hero-rate .hrs{color:var(--teal-d)}
+.hero-rate b{color:var(--ink)}
+/* services band sits on teal, so the primary needs a light fill to read */
+.band .sec-cta-in .btn-teal{background:#fff;color:var(--teal-d);border-color:#fff}
+.band .sec-cta-in .btn-teal:hover{background:var(--sky-2)}
+.band .sec-cta-in .btn-outline{background:transparent;border-color:#fff;color:#fff}
+.band .sec-cta-in .btn-outline:hover{background:rgba(255,255,255,.18);border-color:#fff;color:#fff}
+.band .sec-cta{padding-bottom:clamp(24px,3vw,38px)}
+/* faq pair rides under the postcode card and reveals with it */
+.faq-cta{padding-top:16px}
+.faq-cta .sec-cta-in{max-width:none;padding-inline:0}
+
+/* ═══ hero image: bleed to the right edge and down to the hero floor ═══
+   Appended last so it beats the earlier .hero-img rule and its breakpoint. */
+
+/* The old -56px only cancelled .wrap's own padding. .wrap is also capped at
+   --wrap and centred, so on a wide screen there is another (100vw - 1440)/2
+   of gutter to clear - 225px at 1889px wide. max() keeps it at 0 below 1440. */
+.hero-img{margin-right:calc(-1 * (var(--pad) + max(0px,(100vw - var(--wrap)) / 2)))}
+
+/* the grid stays centred for the copy; only the image stretches, so it fills
+   the row down to the hero's bottom edge instead of floating in the middle */
+.hero-img{align-self:stretch}
+
+@media(max-width:1330px){
+  /* single column here - bleed right only, keeping the left inset */
+  .hero-img{align-self:auto;margin-right:calc(var(--pad) * -1)}
+}
+/* ═══ hero refinements ═══ appended last so it beats the earlier blocks ═══ */
+
+/* give the copy a little more room so "Charge at home from" holds one line
+   instead of orphaning "from" onto its own */
+.hero-in{grid-template-columns:1.07fr .93fr}
+.hero h1{font-size:clamp(34px,4.35vw,62px);line-height:1.07}
+.hero p.sub{max-width:46ch}
+
+/* .hero-proof was styled in this file but never used - wire it to the brand */
+.hero-proof{margin-top:clamp(26px,3vw,38px);padding-top:clamp(20px,2.4vw,28px);
+  border-top:1px solid var(--line);gap:clamp(18px,2.6vw,40px)}
+.hero-proof .pf b{font-family:var(--f);font-weight:700;letter-spacing:-.02em;
+  font-size:clamp(22px,2.1vw,30px);color:var(--teal-d)}
+.hero-proof .pf span{color:var(--muted);opacity:1;font-size:13px;line-height:1.45}
+
+/* the rating now rides the bottom-left corner of the image, which gives the
+   split some depth and clears the stranded hairline row under the copy */
+.hero-img{position:relative}
+.hero-rate{position:absolute;z-index:3;left:clamp(-40px,-2.2vw,-22px);
+  bottom:clamp(20px,2.8vw,40px);margin:0;padding:11px 20px;
+  background:var(--white);border:0;border-top:0;border-radius:999px;
+  box-shadow:0 20px 44px -20px rgba(21,21,21,.42);
+  display:inline-flex;align-items:center;gap:9px;white-space:nowrap}
+.hero-rate .hrs{color:var(--teal-d)}
+.hero-rate b{color:var(--ink);font-size:20px}
+.hero-rate span:last-child{font-size:14px;color:var(--muted);opacity:1}
+
+/* breathing room under the proof row. It goes on the copy column, not the grid,
+   so the image keeps stretching to the hero floor. */
+.hero-in > div:first-child{padding-bottom:clamp(26px,3.2vw,50px)}
+.hero-rate{bottom:clamp(26px,3.4vw,52px)}
+
+@media(max-width:1330px){
+  .hero-in{grid-template-columns:1fr}
+  .hero-in > div:first-child{padding-bottom:clamp(20px,4vw,32px)}
+  /* stacked: keep the card on the image but tuck it inside the corner */
+  .hero-rate{left:16px;bottom:16px}
+}
+@media(max-width:520px){
+  .hero-rate{padding:9px 15px;gap:7px}
+  .hero-rate span:last-child{display:none}
+}
+/* ═══════════ HERO REDESIGN ═══════════
+   Full width rounded media band with the copy riding on it as a white card.
+   Appended last so it supersedes every earlier hero block in this file. */
+.hero{background:var(--sky);overflow:hidden;padding-block:clamp(26px,3.2vw,52px) clamp(30px,3.6vw,58px)}
+
+.hero-stage{position:relative}
+
+.hero-media{position:relative;overflow:hidden;
+  height:clamp(420px,42vw,580px);
+  border-radius:clamp(26px,2.8vw,44px)}
+/* the connector is centre-left in frame and the card covers that side, so bias
+   the crop right to keep the subject in the clear part of the band */
+.hero-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;
+  object-position:72% 50%}
+/* a soft wash on the left so the card's edge never fights a busy frame */
+.hero-media::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(90deg,rgba(21,21,21,.30),rgba(21,21,21,.06) 46%,transparent 66%)}
+
+.hero-card{position:absolute;z-index:2;left:clamp(18px,2.4vw,42px);
+  top:50%;transform:translateY(-50%);
+  width:min(560px,50%);
+  background:var(--white);border-radius:clamp(20px,2.2vw,34px);
+  padding:clamp(24px,2.5vw,40px);
+  box-shadow:0 32px 70px -34px rgba(16,40,48,.55)}
+
+.hero-card .pill{margin-bottom:18px}
+.hero-card h1{font-size:clamp(27px,2.5vw,40px);line-height:1.1;margin:0}
+.hero-card h1 span{color:var(--teal)}
+.hero-card p.sub{margin:16px 0 0;font-size:clamp(15px,1.02vw,17px);line-height:1.62;
+  color:#3D4C51;max-width:44ch}
+.hero-card .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px;padding-bottom:0}
+.hero-card .hero-rate{display:flex;align-items:center;gap:9px;flex-wrap:wrap;
+  position:static;margin:20px 0 0;padding:16px 0 0;border-top:1px solid var(--line);
+  background:none;box-shadow:none;border-radius:0}
+.hero-card .hero-rate .hrs{color:var(--teal-d);letter-spacing:2px;font-size:16px}
+.hero-card .hero-rate b{color:var(--ink);font-size:20px;font-weight:700}
+.hero-card .hero-rate span:last-child{font-size:14px;color:var(--muted)}
+
+/* proof strip sits on the sky beneath the band */
+.hero-proof{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,2vw,32px);
+  max-width:none;margin-top:clamp(22px,2.6vw,36px);padding-top:0;border-top:0}
+.hero-proof .pf b{display:block;font-family:var(--f);font-weight:700;letter-spacing:-.02em;
+  font-size:clamp(20px,1.8vw,27px);line-height:1;color:var(--teal-d)}
+.hero-proof .pf span{display:block;margin-top:6px;max-width:22ch;
+  font-size:13px;line-height:1.45;color:var(--muted);opacity:1}
+
+@media(max-width:980px){
+  .hero-media{height:clamp(300px,52vw,420px)}
+  .hero-card{position:static;transform:none;width:auto;margin:-46px 10px 0;
+    box-shadow:0 24px 54px -28px rgba(16,40,48,.5)}
+  .hero-media::after{background:linear-gradient(180deg,transparent 50%,rgba(21,21,21,.18))}
+  .hero-proof{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:26px}
+}
+@media(max-width:520px){
+  .hero-card{margin:-34px 0 0;padding:22px 20px}
+  .hero-proof{gap:16px}
+}
+/* the footer's last child had a bottom margin that escaped the footer (margin collapsing)
+   and showed as a strip of body background below it */
+.foot .foot-rule:last-child{margin-bottom:0}
+
+/* nav standardised to 8 items - keep each label on one line */
+@media(min-width:1000px){nav.nav-links>a{white-space:nowrap}nav.nav-links{flex-shrink:0}}
+
+/* nav bar: full width so the phone and CTA fit on one line without cramping */
+@media(min-width:1081px){header .wrap{max-width:none;padding-inline:24px;gap:16px}header .nav-links{gap:20px}header .wrap a,header .wrap button,header .wrap span,header .wrap b{white-space:nowrap}header .wrap > *{flex-shrink:0}}
+</style>
+</head>
+<body>
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol>
+  <symbol id="i-battery" viewBox="0 0 24 24"><rect x="2.5" y="7.5" width="15" height="9" rx="2.2"/><path d="M20.5 10.5v3"/><path d="M6 10.8v2.4M9.5 10.8v2.4M13 10.8v2.4"/></symbol>  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11l8-6 8 6"/><path d="M6 10.5V20h12v-9.5"/><path d="M10 20v-5h4v5"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M15 3a5 5 0 0 0-4.4 7.4L4 17l3 3 6.6-6.6A5 5 0 1 0 15 3z"/></symbol>
+  <symbol id="i-headset" viewBox="0 0 24 24"><path d="M5 13v-1a7 7 0 0 1 14 0v1"/><rect x="3" y="13" width="4" height="6" rx="1.4"/><rect x="17" y="13" width="4" height="6" rx="1.4"/><path d="M19 19v1a2 2 0 0 1-2 2h-3"/></symbol>
+  <symbol id="i-office" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></symbol>
+  <symbol id="i-van" viewBox="0 0 24 24"><path d="M2 16V7h11v9"/><path d="M13 10h4l4 4v2h-8z"/><circle cx="7" cy="18" r="1.9"/><circle cx="17" cy="18" r="1.9"/></symbol>
+  <symbol id="i-apart" viewBox="0 0 24 24"><rect x="3" y="6" width="8" height="15"/><rect x="13" y="3" width="8" height="18"/><path d="M6 10h2M6 14h2M16 7h2M16 11h2M16 15h2"/></symbol>
+  <symbol id="i-hosp" viewBox="0 0 24 24"><path d="M4 17h16"/><path d="M5 14a7 7 0 0 1 14 0z"/><path d="M12 6.5V5"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+  <symbol id="i-installer" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5 21a7 7 0 0 1 14 0"/><path d="M8.4 5.6h7.2"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8.2-8 9.2-4.5-1-8-4.2-8-9.2V6z"/><path d="M9 12l2.2 2.2L15.5 10"/></symbol>
+  <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 3v5M15 3v5"/><path d="M6 8h12v3a6 6 0 0 1-12 0z"/><path d="M12 17v4"/></symbol>
+  <symbol id="i-advice" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5 21a7 7 0 0 1 14 0"/><path d="M17 4.5l2 1.5-2 1.5"/></symbol>
+  <symbol id="i-people" viewBox="0 0 24 24"><circle cx="8" cy="9" r="2.8"/><circle cx="16" cy="9" r="2.8"/><path d="M2.5 19a5.5 5.5 0 0 1 11 0"/><path d="M12.5 19a5.5 5.5 0 0 1 9 0"/></symbol>
+  <symbol id="i-price" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5 21a7 7 0 0 1 14 0"/><path d="M12 13.5v3"/></symbol>
+  <symbol id="i-charger" viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="2"/><rect x="9" y="6.5" width="6" height="5" rx="1"/><circle cx="12" cy="16" r="1.6"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.5l2.7 5.6 6 .8-4.4 4.2 1.1 6L12 17.3 6.6 20.1l1.1-6L3.3 9.9l6-.8z"/></symbol>
+  <symbol id="i-smile" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0"/><path d="M9 9.5h.01M15 9.5h.01"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10.5 8.5l6 3.5-6 3.5z"/></symbol>
+  <symbol id="i-arr" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a15 15 0 0 1-15-15z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.4 12.3l2.6 2.6 4.8-5"/></symbol>
+</svg>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">EV <span>Charging</span></a>
+    <nav class="nav-links">
+      <a href="#process">Our Process</a><a href="#why">Why Choose Us?</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#faq">Guides</a><a href="#">Careers</a><a href="#">Area</a><a href="#contact">Contact</a></nav>
+    <a class="tel" href="tel:01632960300"><svg viewBox="0 0 24 24"><use href="#i-phone"/></svg>01632 960 300</a>
+    <a class="btn btn-teal" href="#faq">Get a quote</a>
+    <button class="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap">
+
+    <div class="hero-stage">
+      <!-- the clip is decorative; the copy card carries the meaning -->
+      <div class="hero-media im t-drive" aria-hidden="true">
+        <video autoplay muted loop playsinline preload="auto" tabindex="-1">
+          <source src="Compressed%20Videos/output%20(10).mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="hero-card">
+        <span class="pill"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg> OZEV APPROVED &bull; NICEIC REGISTERED</span>
+        <h1>Charge at home from<br><span>7p a mile.</span></h1>
+        <p class="sub">Ohme, Zappi, Hypervolt and Easee smart chargers on a fixed price, fitted by our own directly employed engineers, usually within 10 days of your survey.</p>
+        <div class="hero-cta">
+          <a class="btn btn-teal" href="#product">Get A Fixed Price</a>
+          <a class="btn btn-outline" href="#chargers">Compare Chargers <svg><use href="#i-play"/></svg></a>
+        </div>
+        <div class="hero-rate"><span class="hrs">&#9733;&#9733;&#9733;&#9733;&#9733;</span><b>5.0</b><span>average on Google</span></div>
+      </div>
+    </div>
+
+    <div class="hero-proof">
+      <div class="pf"><b>10 days</b><span>Survey to install</span></div>
+      <div class="pf"><b>4 to 6 hrs</b><span>On site for a standard fit</span></div>
+      <div class="pf"><b>5 yr</b><span>Workmanship guarantee</span></div>
+      <div class="pf"><b>Fixed</b><span>Price agreed before we start</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ ACCREDITATIONS ============ -->
+<section class="accs">
+  <div class="wrap accs-in">
+    <span class="lgchip"><img src="logos/niceic.png" alt="NICEIC Approved Contractor" loading="lazy"></span>
+    <span class="lgchip"><img src="logos/trustmark.webp" alt="TrustMark, Government Endorsed Quality" loading="lazy"></span>
+    <span class="lgchip"><img src="logos/which.jpg" alt="Which? Trusted Traders" loading="lazy"></span>
+    <span class="lgchip"><img src="logos/checkatrade-logo.svg" alt="Checkatrade" loading="lazy"></span>
+    <span class="lgchip"><img src="logos/napit.webp" alt="NAPIT registered" loading="lazy"></span>
+    <span class="lgchip"><img src="logos/ozev.webp" alt="OZEV approved installer" loading="lazy"></span>
+    <span class="lgchip"><img src="logos/myenergi.png" alt="myenergi zappi approved installer" loading="lazy"></span>
+    <span class="lgchip"><img src="logos/hypervolt.png" alt="Hypervolt approved installer" loading="lazy"></span>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="sec" id="process">
+  <div class="wrap split">
+    <div>
+      <h2 class="h2">Four steps,<br>about ten days.</h2>
+      <div class="rule"></div>
+      <p class="lede">Directly employed engineers, a fixed price agreed before anyone visits, and every install notified to your network operator and certified on the day.</p>
+    </div>
+    <div class="process">
+      <svg class="wave" viewBox="0 0 1000 80" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 44C90 44 120 8 210 8s130 62 240 62 130-62 240-62 120 36 210 36"/>
+        <path d="M960 26l30 18-30 18" stroke-linejoin="round"/>
+      </svg>
+      <div class="psteps">
+        <div class="pstep">
+          <span class="pdisc"><svg class="icon"><use href="#i-price"/></svg></span>
+          <span class="pno">01</span>
+          <h3>Fixed price online</h3>
+          <p>Answer a few questions about your car, your parking and your consumer unit and we will put a fixed price in writing. It takes about a minute and costs nothing.</p>
+        </div>
+        <div class="pstep">
+          <span class="pdisc"><svg class="icon"><use href="#i-home"/></svg></span>
+          <span class="pno">02</span>
+          <h3>Free survey</h3>
+          <p>We check your supply capacity, earthing arrangement and cable route, either on site or by video call, and confirm the price before you commit to a date.</p>
+        </div>
+        <div class="pstep">
+          <span class="pdisc"><svg class="icon"><use href="#i-wrench"/></svg></span>
+          <span class="pno">03</span>
+          <h3>Installation day</h3>
+          <p>Four to six hours on average. We protect the route, run the cable neatly, fit the unit and test the whole circuit before energising it.</p>
+        </div>
+        <div class="pstep">
+          <span class="pdisc"><svg class="icon"><use href="#i-headset"/></svg></span>
+          <span class="pno">04</span>
+          <h3>Certified and handed over</h3>
+          <p>We commission the charger, set up the app and your tariff schedule, notify your network operator and email the certificate the same day.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHARGING FOR EVERY PLACE ============ -->
+<section class="band" id="services">
+  <div class="wrap band-in">
+    <div>
+      <h2>Everything from one driveway <br>to a whole car park.</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="places">
+      <a class="place" href="#chargers">
+        <div class="pim im t-house" style="--img:url('images/svc-home.jpg')"></div>
+        <span class="top"><svg class="icon"><use href="#i-home"/></svg><b>Home EV charger installation</b></span>
+        <p>A 7kW smart charger fitted to your driveway or garage, tested, certified and registered with your DNO. Most installs are done in four to six hours by the same engineers who surveyed the job.</p>
+      </a>
+      <a class="place" href="#chargers">
+        <div class="pim im t-city" style="--img:url('images/svc-commercial.jpg')"></div>
+        <span class="top"><svg class="icon"><use href="#i-office"/></svg><b>Workplace and commercial charging</b></span>
+        <p>Single bays through to multi socket arrays for offices, retail parks, hotels and fleet depots, with load management so you do not need a costly supply upgrade. Workplace Charging Scheme paperwork handled for you.</p>
+      </a>
+      <a class="place" href="#chargers">
+        <div class="pim im t-house" style="--img:url('images/svc-solar.jpg')"></div>
+        <span class="top"><svg class="icon"><use href="#i-sun"/></svg><b>Solar matched charging</b></span>
+        <p>Pair a Zappi or Hypervolt with solar PV so the car charges on surplus generation rather than grid import. Eco modes throttle the charge to whatever your panels are actually exporting.</p>
+      </a>
+      <a class="place" href="#chargers">
+        <div class="pim im t-wall" style="--img:url('images/svc-battery.jpg')"></div>
+        <span class="top"><svg class="icon"><use href="#i-battery"/></svg><b>Battery storage</b></span>
+        <p>Store daytime solar or cheap overnight units in a home battery and pull from it when you plug in. We fit GivEnergy, Fox ESS and Sunsynk alongside the charger on one certificate.</p>
+      </a>
+      <a class="place" href="#chargers">
+        <div class="pim im t-brick" style="--img:url('images/svc-repairs.jpg')"></div>
+        <span class="top"><svg class="icon"><use href="#i-wrench"/></svg><b>Charger upgrades and repairs</b></span>
+        <p>Older or failed units swapped for current smart models, plus fault finding on chargers we did not fit. Untethered to tethered conversions and cable upgrades handled too.</p>
+      </a>
+      <a class="place" href="#chargers">
+        <div class="pim im t-city" style="--img:url('images/svc-flats.jpg')"></div>
+        <span class="top"><svg class="icon"><use href="#i-apart"/></svg><b>On street parking and flats</b></span>
+        <p>No driveway? We fit cross pavement cable gullies and communal chargers for flats and rental blocks, and we will tell you honestly which grant you qualify for before you commit.</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="sec-cta"><div class="sec-cta-in"><a class="btn btn-teal" href="#contact">Get A Free Quote</a><a class="btn btn-outline" href="tel:01632960300">Speak To Our Experts</a></div></div>
+</section>
+<!-- ══ CHARGERS ══  the named-kit grid from the niche base (ev1.html),
+     rebuilt against this template's own tokens. -->
+<section class="sec" id="chargers">
+  <div class="wrap">
+    <div class="kt-head">
+      <p class="kt-lab">Chargers we fit</p>
+      <h2 class="h2">Choose the charger that suits you</h2>
+      <p class="kt-lede">We are approved installers for every brand below and we do not earn more by steering you to one of them. All are 7.4kW smart chargers, which is the most a standard single phase home supply will deliver.</p>
+    </div>
+    <div class="ktgrid">
+      <article class="ktcard">
+        <div class="ktim"><img src="images/chg-ohme.webp" alt="An Ohme charge point mounted on a house wall" loading="lazy" decoding="async"></div>
+        <div class="ktbody">
+          <div class="kttop"><h3>Ohme ePod</h3><span class="kttag">Untethered</span></div>
+          <p class="ktmake">Ohme</p>
+          <div class="ktspec"><div><b>7.4kW</b><span>Max output</span></div><div><b>5 yr</b><span>Warranty</span></div></div>
+          <ul class="ktlist">
+            <li>Talks directly to Intelligent Octopus Go and other smart tariffs</li>
+            <li>One of the smallest units on the market at 17cm across</li>
+            <li>Charge scheduling and cost tracking in the Ohme app</li>
+          </ul>
+        </div>
+      </article>
+      <article class="ktcard">
+        <div class="ktim"><img src="images/chg-zappi.webp" alt="A home EV charge point installed beside a modern driveway" loading="lazy" decoding="async"></div>
+        <div class="ktbody">
+          <div class="kttop"><h3>Zappi v2.1</h3><span class="kttag">Tethered or socket</span></div>
+          <p class="ktmake">myenergi</p>
+          <div class="ktspec"><div><b>7.4kW</b><span>Max output</span></div><div><b>3 yr</b><span>Warranty</span></div></div>
+          <ul class="ktlist">
+            <li>Eco+ mode charges only on surplus solar rather than grid import</li>
+            <li>Built in load balancing so the main fuse is never overloaded</li>
+            <li>Works standalone if you have no solar yet, ready for when you do</li>
+          </ul>
+        </div>
+      </article>
+      <article class="ktcard">
+        <div class="ktim"><img src="images/chg-hypervolt.webp" alt="A wall mounted home charger with an electric car on the drive" loading="lazy" decoding="async"></div>
+        <div class="ktbody">
+          <div class="kttop"><h3>Hypervolt Home 3 Pro</h3><span class="kttag">Tethered</span></div>
+          <p class="ktmake">Hypervolt</p>
+          <div class="ktspec"><div><b>7.4kW</b><span>Max output</span></div><div><b>3 yr</b><span>Warranty</span></div></div>
+          <ul class="ktlist">
+            <li>Solar matching plus adjustable LED lighting on the fascia</li>
+            <li>Built in CT clamp for dynamic load management</li>
+            <li>Fully app controlled with per session cost reporting</li>
+          </ul>
+        </div>
+      </article>
+      <article class="ktcard">
+        <div class="ktim"><img src="images/chg-easee.webp" alt="A close view of a smart charge point display and connector" loading="lazy" decoding="async"></div>
+        <div class="ktbody">
+          <div class="kttop"><h3>Easee One</h3><span class="kttag">Untethered</span></div>
+          <p class="ktmake">Easee</p>
+          <div class="ktspec"><div><b>7.4kW</b><span>Max output</span></div><div><b>3 yr</b><span>Warranty</span></div></div>
+          <ul class="ktlist">
+            <li>Compact enough for tight porches and narrow side passages</li>
+            <li>Dynamic load balancing across up to three phases</li>
+            <li>Equalises current across multiple chargers on one supply</li>
+          </ul>
+        </div>
+      </article>
+      <article class="ktcard">
+        <div class="ktim"><img src="images/chg-wallbox.webp" alt="A Wallbox home charge point" loading="lazy" decoding="async"></div>
+        <div class="ktbody">
+          <div class="kttop"><h3>Wallbox Pulsar Plus</h3><span class="kttag">Tethered</span></div>
+          <p class="ktmake">Wallbox</p>
+          <div class="ktspec"><div><b>7.4kW</b><span>Max output</span></div><div><b>3 yr</b><span>Warranty</span></div></div>
+          <ul class="ktlist">
+            <li>Among the smallest tethered units available</li>
+            <li>Power sharing when more than one car charges at a property</li>
+            <li>Bluetooth and wifi control through the myWallbox app</li>
+          </ul>
+        </div>
+      </article>
+      <article class="ktcard">
+        <div class="ktim"><img src="images/chg-tesla.webp" alt="An electric car plugged in and charging at a domestic charge point" loading="lazy" decoding="async"></div>
+        <div class="ktbody">
+          <div class="kttop"><h3>Tesla Wall Connector</h3><span class="kttag">Tethered</span></div>
+          <p class="ktmake">Tesla</p>
+          <div class="ktspec"><div><b>7.4kW</b><span>Max output</span></div><div><b>4 yr</b><span>Warranty</span></div></div>
+          <ul class="ktlist">
+            <li>Charges any make of EV, not only Tesla vehicles</li>
+            <li>8 metre cable, longer than most units supply as standard</li>
+            <li>Power sharing across up to six connectors on one supply</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="sec-cta"><div class="sec-cta-in"><a class="btn btn-teal" href="#contact">Get A Free Quote</a><a class="btn btn-outline" href="tel:01632960300">Speak To Our Experts</a></div></div>
+</section>
+
+<!-- ══ GRANTS AND COSTS ══  carried over from the niche base (ev1.html). -->
+<section class="sec" id="grants">
+  <div class="wrap">
+    <div class="kt-head">
+      <p class="kt-lab">Grants and costs</p>
+      <h2 class="h2">What it costs, and what help is available</h2>
+      <p class="kt-lede">Grant rules change often and plenty of installers are vague about them. Here is the straight version, including the part most sites leave out.</p>
+    </div>
+    <div class="grgrid">
+      <div class="grcard"><b class="grfig">&pound;350</b><p class="grk">Flats and rented homes</p><p class="grp">The EV chargepoint grant covers up to 75% of the cost, capped at &pound;350, if you own a flat or live in rented accommodation and have off street parking.</p></div>
+      <div class="grcard"><b class="grfig">&pound;350</b><p class="grk">On street parking</p><p class="grp">A separate chargepoint grant for homeowners with no driveway, used alongside a cross pavement cable channel so you can charge from your own supply.</p></div>
+      <div class="grcard"><b class="grfig">&pound;350</b><p class="grk">Per workplace socket</p><p class="grp">The Workplace Charging Scheme pays &pound;350 per socket, up to 40 sockets across all your sites, for businesses, charities and public authorities.</p></div>
+      <div class="grcard"><b class="grfig">20%</b><p class="grk">VAT on home installs</p><p class="grp">Worth knowing: EV chargers do not qualify for the zero rate that applies to solar and heat pumps, so domestic installs carry standard rate VAT.</p></div>
+    </div>
+    <div class="grnote">
+      <h3>If you own a house with a driveway, there is no grant, and that is fine</h3>
+      <p>The Electric Vehicle Homecharge Scheme closed to owner occupiers with off street parking in March 2022. Anyone still implying otherwise is either out of date or hoping you will not check. What has replaced it is targeted at flats, renters and homes without a driveway.</p>
+      <p>A standard 7.4kW smart charger supplied and installed typically lands between <b>&pound;800 and &pound;1,200</b>. Long cable runs, a consumer unit upgrade, groundworks or a cross pavement channel add to that, which is exactly why we survey before quoting rather than after.</p>
+    </div>
+  </div>
+
+  <div class="sec-cta"><div class="sec-cta-in"><a class="btn btn-teal" href="#contact">Get A Free Quote</a><a class="btn btn-outline" href="tel:01632960300">Speak To Our Experts</a></div></div>
+</section>
+
+<!-- ============ FEATURED PRODUCT ============ -->
+<section class="product" id="product">
+  <div class="shot im t-green" style="--img:url('images/cta-bg.jpg')"></div>
+  <div class="shot im t-wall" style="--img:url('images/chg-ohme.webp')"></div>
+  <div class="panel">
+    <div>
+      <h2>Ohme ePod<br>+ Intelligent Octopus Go</h2>
+      <ul class="checks">
+        <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg>Talks directly to Intelligent Octopus Go and other smart tariffs</li>
+        <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg>One of the smallest units on the market at 17cm across</li>
+        <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg>Charge scheduling and cost tracking in the Ohme app</li>
+        <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg>5 year manufacturer warranty</li>
+      </ul>
+    </div>
+    <div class="pbtns">
+      <a class="btn btn-teal" href="#contact">Price this charger</a>
+      <a class="btn btn-outline" href="#chargers">Compare Chargers</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6 REASONS ============ -->
+<section class="sec" id="why">
+  <div class="wrap split">
+    <div>
+      <h2 class="h2">Our own engineers,<br>and a price that will not change.</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="reasons">
+      <div class="reason"><span class="rcirc"><svg class="icon"><use href="#i-people"/></svg></span><span><b>Employed, not subcontracted</b><small>Our engineers are on our own payroll. That is what lets us guarantee the standard of the install rather than hoping a third party turns up.</small></span></div>
+      <div class="reason"><span class="rcirc"><svg class="icon"><use href="#i-price"/></svg></span><span><b>Fixed price promise</b><small>The figure we quote is the figure you pay. Cable runs, fixings and certification are in the price, not added on the day.</small></span></div>
+      <div class="reason"><span class="rcirc"><svg class="icon"><use href="#i-installer"/></svg></span><span><b>Free survey first</b><small>We check your supply, earthing arrangement and cable route before quoting, so nothing unexpected surfaces once the van is on the drive.</small></span></div>
+      <div class="reason"><span class="rcirc"><svg class="icon"><use href="#i-advice"/></svg></span><span><b>No hard sell</b><small>We are approved for every brand we fit and earn the same on each, so the recommendation is based on your car and your parking, not our margin.</small></span></div>
+      <div class="reason"><span class="rcirc"><svg class="icon"><use href="#i-sun"/></svg></span><span><b>Solar and battery ready</b><small>If you have panels now, or might later, we specify a charger that can divert surplus generation instead of pulling from the grid.</small></span></div>
+      <div class="reason"><span class="rcirc"><svg class="icon"><use href="#i-shield"/></svg></span><span><b>Paperwork handled</b><small>DNO notification, Building Regulations Part P and your installation certificate are all filed by us and emailed the same day.</small></span></div>
+    </div>
+  </div>
+
+  <div class="sec-cta"><div class="sec-cta-in"><a class="btn btn-teal" href="#contact">Get A Free Quote</a><a class="btn btn-outline" href="tel:01632960300">Speak To Our Experts</a></div></div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats">
+  <div class="wrap stats-in">
+    <div class="stat"><svg class="icon"><use href="#i-charger"/></svg><span><b>10</b><span>days typical lead time</span></span></div>
+    <div class="stat"><svg class="icon"><use href="#i-star"/></svg><span><b>4 to 6</b><span>hours on site</span></span></div>
+    <div class="stat"><svg class="icon"><use href="#i-shield"/></svg><span><b>5 yr</b><span>workmanship guarantee</span></span></div>
+    <div class="stat"><svg class="icon"><use href="#i-smile"/></svg><span><b>5.0&#9733;</b><span>average google rating</span></span></div>
+  </div>
+</section>
+
+<!-- ============ RECENT INSTALLATIONS ============ -->
+<section class="sec white" id="work">
+  <div class="wrap">
+    <h2 class="h2" style="font-size:clamp(22px,2.1vw,27px)">Recent installs across the region.</h2>
+    <div class="rule"></div>
+    <div class="gal">
+      <figure class="galc"><div class="im t-house" style="--img:url('images/pf-home-charger.jpg')"></div><figcaption><span class="gtag">Residential</span><b>Ohme ePod, Halesowen</b><small>7.4kW untethered unit, garage feed run in trunking, commissioned on Intelligent Octopus Go</small></figcaption></figure>
+      <figure class="galc"><div class="im t-brick" style="--img:url('images/pf-car-park.jpg')"></div><figcaption><span class="gtag">Commercial</span><b>Retail Car Park, Wolverhampton</b><small>Six sockets with load management, funded in part through the Workplace Charging Scheme</small></figcaption></figure>
+      <figure class="galc"><div class="im t-house" style="--img:url('images/pf-solar.jpg')"></div><figcaption><span class="gtag">Solar Integrated</span><b>Zappi &amp; Solar, Dudley</b><small>Eco+ mode charging on surplus PV only, paired with a GivEnergy battery on one certificate</small></figcaption></figure>
+      <figure class="galc"><div class="im t-brick" style="--img:url('images/pf-street.jpg')"></div><figcaption><span class="gtag">No Driveway</span><b>Cross Pavement Gully, Stourbridge</b><small>Terraced street with no off road parking, channel let into the footway so the cable sits flush</small></figcaption></figure>
+    </div>
+    <div class="morelink"><a href="#">Get A Free Quote <svg style="width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8"><use href="#i-arr"/></svg></a></div>
+  </div>
+
+  <div class="sec-cta"><div class="sec-cta-in"><a class="btn btn-teal" href="#contact">Get A Free Quote</a><a class="btn btn-outline" href="tel:01632960300">Speak To Our Experts</a></div></div>
+</section>
+
+
+<!-- ============ TEAM (added: in the base template, absent here) ============ -->
+<section class="sec white" id="team">
+  <div class="wrap">
+    <h2 class="h2" style="font-size:clamp(22px,2.1vw,27px)">The people who actually turn up</h2>
+    <div class="rule"></div>
+    <p class="lede" style="max-width:64ch;margin-bottom:26px">Every engineer on this page is on our payroll, NICEIC registered and trained directly by the charger manufacturers we install.</p>
+    <div class="tmgrid">
+      <article class="tmc"><div class="im t-person" style="--img:url('images/team-lead.jpg')"></div><div class="tmb"><b>Dan Whitehouse</b><span class="tmr">Founder &amp; Lead Engineer</span><p>Started the company after fitting his own charger and finding the process needlessly opaque. NICEIC registered and still on the tools most weeks.</p><div class="tmchips"><span>NICEIC</span><span>OZEV Approved</span></div></div></article>
+      <article class="tmc"><div class="im t-person" style="--img:url('images/team-installs.jpg')"></div><div class="tmb"><b>Priya Shah</b><span class="tmr">Installations Manager</span><p>Runs the survey and scheduling side, so the date you are given is the date the van arrives. Handles every DNO notification personally.</p><div class="tmchips"><span>Surveys</span><span>Network operator paperwork</span></div></div></article>
+      <article class="tmc"><div class="im t-person" style="--img:url('images/team-solar.jpg')"></div><div class="tmb"><b>Marc Ellison</b><span class="tmr">Solar &amp; Battery Integration</span><p>Specialises in tying chargers into existing PV and storage so the car draws from surplus generation rather than the grid.</p><div class="tmchips"><span>Solar panels</span><span>Battery storage</span></div></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section id="reviews" class="sec">
+  <div class="wrap">
+    <h2 class="h2" style="font-size:clamp(22px,2.1vw,27px)">What our customers say.</h2>
+    <div class="rule"></div>
+    <div class="tgrid">
+      <div class="rev__row">
+        <button class="rnav" data-rev="prev" aria-label="Previous review"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+        <div id="revtrack">
+        <div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Great service, fitted an electric car charging point at my house. Gave me a competitive price I was happy with, and it came with the certification too.&rdquo;</p><cite>James Bird &middot; Home charger &middot; 7.4kW untethered</cite></div>
+        <div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Excellent company that installed my Hypervolt 3. Very professional and tidy, and they updated me every step of the way.&rdquo;</p><cite>Richard G. &middot; Hypervolt Home 3 Pro</cite></div>
+        <div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;From start to finish everything was made clear and simple, no hassle at all. I wanted to change my choice of charger which was not a problem and the quote was swiftly altered.&rdquo;</p><cite>Sara Jones &middot; Charger change mid quote</cite></div>
+        <div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Excellent service from start to finish. Great communication from the office through to the clean, quick install by the team on the day.&rdquo;</p><cite>Phil Jones &middot; Home charger &middot; garage feed</cite></div>
+        <div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Fantastic work on what was quite a complicated and long job, involving lifting a public footpath and laying the cable under a gabion wall.&rdquo;</p><cite>Victoria &middot; Cross pavement install</cite></div>
+        <div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Quoted promptly and completed within a week with no fuss. Would recommend them for any electrical or EV work.&rdquo;</p><cite>Andrew Lindop &middot; Zappi &middot; solar matched</cite></div>
+        </div>
+        <button class="rnav" data-rev="next" aria-label="Next review"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>
+      <div class="feature">
+        <span class="qm">“</span>
+        <p>Great service, fitted an electric car charging point at my house. Gave me a competitive price I was happy with, and it came with the certification too.”</p>
+        <cite>James Bird</cite>
+        <div class="stars">★★★★★</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ZERO RISK ============ -->
+<section class="zero" id="guarantee">
+  <div class="wrap zero-in">
+    <div class="zero-left">
+      <svg class="icon"><use href="#i-shield"/></svg>
+      <div class="zero-copy">
+        <h2>Fixed price promise. Certified on the day.</h2>
+        <p>Manufacturer warranty of three to five years on the unit, plus our own five year workmanship guarantee.<br>DNO notification, Part P and your certificate are filed by us and emailed the same day.</p>
+        <a class="btn btn-white zero-btn" href="tel:01632960300">Speak To Our Experts</a>
+      </div>
+    </div>
+    <div class="zero-img im t-house" style="--img:url('images/pf-home-charger.jpg')"></div>
+  </div>
+</section>
+
+<!-- ============ FAQ + POSTCODE ============ -->
+<section class="sec" id="faq">
+  <div class="wrap close" id="contact">
+    <div>
+      <h2 class="h2" style="font-size:clamp(22px,2vw,26px)">FAQs.</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="faq">
+      <details open><summary>How long does an EV charger installation take?</summary><div class="ans">A standard installation takes four to six hours. More complex jobs, such as a long cable run, a consumer unit upgrade or a cross pavement channel, take longer and we will tell you the expected duration before the day rather than on it.</div></details>
+        <details><summary>Should I choose a tethered or untethered charger?</summary><div class="ans">Tethered units have the cable permanently attached, so you plug straight in without fetching anything from the boot. They cost a little more and the cable needs hooking up when not in use. Untethered units are a socket you plug your own cable into, which looks cleaner on the wall and lets you swap cables if you change car.</div></details>
+        <details><summary>What is the difference between AC and DC charging?</summary><div class="ans">AC chargers are what you fit at home and at workplaces, where a car is parked for hours at a time. DC chargers convert the supply before it reaches the car, which allows far higher outputs, but they are much more expensive to buy, install and run. That is why you see DC units at motorway services and almost never on a driveway.</div></details>
+        <details><summary>Are there any government grants for a home charger?</summary><div class="ans">Only in specific cases. The &pound;350 EV chargepoint grant applies if you own a flat, live in rented accommodation, or have no off street parking. If you own a house with a driveway, the scheme that used to cover you closed in March 2022. Businesses can still claim &pound;350 per socket under the Workplace Charging Scheme.</div></details>
+        <details><summary>Can I have a charger if I have no driveway?</summary><div class="ans">Often yes. We fit cross pavement cable gullies, a channel let into the footway so the cable sits flush and nobody trips over it. These need your local authority's permission, which we will help you apply for, and they qualify for the on street chargepoint grant.</div></details>
+        <details><summary>Can the charger work with my solar panels?</summary><div class="ans">Yes, if you choose a unit built for it. A Zappi in Eco+ mode will only draw the surplus your panels are exporting, so the car charges on generation rather than import. Hypervolt offers similar solar matching. If you do not have panels yet, we will still fit a charger that can do it later.</div></details>
+        <details><summary>Do you notify my electricity network operator?</summary><div class="ans">Always, and it is included. Every charger must be notified to the DNO, and anything above 7.4kW needs their approval before installation rather than after. We handle the paperwork and keep a copy on file for you.</div></details>
+        <details><summary>How quickly will my car actually charge?</summary><div class="ans">A 7.4kW charger adds roughly 25 to 30 miles of range per hour, so most cars go from nearly empty to full overnight. That is around three times faster than a three pin plug, which is not designed for sustained charging and should not be used as a permanent solution.</div></details>
+        <details><summary>Will I need my consumer unit upgraded?</summary><div class="ans">Sometimes. The charger needs its own protected circuit, and if your board has no spare capacity or lacks the right protective device we will either add a small secondary unit or upgrade the existing one. We establish this at the survey so it is priced in, never sprung on you mid install.</div></details>
+        <details><summary>What warranty and guarantee do I get?</summary><div class="ans">The manufacturer warranty on the unit itself, which is three years on most models and up to five on others, plus our own five year workmanship guarantee covering the installation. Both are confirmed in writing when we hand over.</div></details>
+        <details><summary>Do you offer finance?</summary><div class="ans">Yes, through Phoenix Finance, typically at 10.9% APR over three to ten years with the full cost breakdown given upfront. Finance is subject to status and credit checks; we act as an introducer and do not give financial advice.</div></details>
+        <details><summary>What areas do you cover?</summary><div class="ans">We cover the West Midlands and the surrounding counties, including Wolverhampton, Dudley, Stourbridge, Halesowen and Bridgnorth. If you are just outside, call anyway and we will tell you honestly whether we can reach you.</div></details>
+    </div>
+    <div class="check">
+      <h2>Get a fixed price in about a minute.</h2>
+      <p style="margin-bottom:18px">Tell us your car, your parking and your postcode and we will put a price in writing, no visit needed to get the number, and no obligation once you have it.</p>
+      <form onsubmit="event.preventDefault();this.reset();alert('Thanks, checking options for your area.')">
+        <div class="pcbox">
+          <input type="text" placeholder="Enter your full postcode" required>
+          <svg viewBox="0 0 24 24"><use href="#i-pin"/></svg>
+        </div>
+        <button class="btn btn-teal" type="submit" style="width:100%">Get My Price</button>
+      </form>
+      <div class="sec-cta faq-cta"><div class="sec-cta-in"><a class="btn btn-teal" href="#contact">Get A Free Quote</a><a class="btn btn-outline" href="tel:01632960300">Speak To Our Experts</a></div></div>
+            <p class="callus">Or call us on <a href="tel:01632960300">01632 960 300</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>
+      <span class="brand">EV <span>Charging</span></span>
+      <p class="legal">EV Charging Ltd is an Introducer Appointed Representative of a regulated credit broker. The credit broker is not a lender (FRN 111111).<br>Finance is available subject to status. The rate offered is always provisional and will depend upon your personal circumstances, the loan amount and the term.</p>
+    </div>
+    <div class="foot-logos">
+      <div class="logo l-ozev"><b style="font-size:20px">OZEV</b><small>Approved Installer</small></div>
+      <div class="logo l-niceic"><span class="bars"><i></i><i></i></span><span><b style="font-size:18px">NICEIC</b><small style="display:block">Approved Contractor</small></span></div>
+      <div class="logo l-tm"><span class="mark"></span><span><b style="font-size:17px">TRUSTMARK</b><small style="display:block">Government Endorsed Quality</small></span></div>
+      <div class="logo l-wh"><b style="font-size:19px">Which?</b><small>Trusted trader</small></div>
+      <div class="logo l-zap" style="font-size:18px"><span>ZAP</span><span class="bolt"></span><span>MAP</span></div>
+    </div>
+    <p class="foot-fin">EV Charging Ltd is an Introducer Appointed Representative of a regulated credit broker. The credit broker is not a lender (FRN 111111). Finance is available subject to status. The rate offered is always provisional and will depend upon your personal circumstances, the loan amount and the term.</p>
+  </div>
+  <div class="wrap">
+    <div class="foot-rule"></div>
+    <div class="foot-ops">
+      <div><h4>Opening hours</h4>
+        <p>Monday to Friday&nbsp; 08:00 to 18:00<br>Saturday&nbsp; 08:00 to 14:00<br>
+          Sunday&nbsp; closed<br><b>Site survey</b> booked within 5 working days.</p></div>
+      <div><h4>Office</h4>
+        <p>EV Charging Ltd<br>Unit H, Wellington Industrial Estate<br>Bilston, WV14 9EE</p></div>
+      <div><h4>Contact</h4>
+        <p><b>01632 960 300</b><br>Survey bookings and general enquiries.<br>
+          The engineer who surveys your property is the one who fits the charger.</p></div>
+      <div><h4>Accreditations</h4>
+        <p>OZEV Approved Installer &middot; NICEIC Approved Contractor &middot; TrustMark Registered &middot; Which? Trusted Trader &middot; myenergi, Hypervolt and Ohme approved installer.</p></div>
+    </div>
+    <div class="foot-rule"></div>
+  </div>
+</footer>
+
+<script>
+  document.querySelector('.burger').addEventListener('click',function(){
+    var n=document.querySelector('.nav-links');
+    var open=n.style.display==='flex';
+    n.style.cssText=open?'':'display:flex;flex-direction:column;position:absolute;top:78px;left:0;right:0;background:#D6EBF3;padding:18px 24px;gap:12px;box-shadow:0 12px 24px rgba(0,0,0,.08)';
+  });
+</script>
+
+<script>
+/* Reviews carousel: arrows move the track one card and it advances on its own,
+   wrapping to the start. Behaviour is left to CSS so the stylesheet honours
+   prefers-reduced-motion. */
+(function(){
+  var track=document.getElementById("revtrack"); if(!track) return;
+  var prev=document.querySelector('[data-rev="prev"]');
+  var next=document.querySelector('[data-rev="next"]');
+  var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function step(){var c=track.querySelector(".quote"); if(!c) return track.clientWidth;
+    var g=parseFloat(getComputedStyle(track).columnGap||getComputedStyle(track).gap)||0;
+    return c.getBoundingClientRect().width+g;}
+  function atEnd(){return track.scrollLeft+track.clientWidth>=track.scrollWidth-4;}
+  function go(dir){
+    if(dir>0&&atEnd()){track.scrollTo({left:0});return;}
+    if(dir<0&&track.scrollLeft<=4){track.scrollTo({left:track.scrollWidth});return;}
+    track.scrollBy({left:dir*step()});}
+  if(prev) prev.addEventListener("click",function(){go(-1);hold();});
+  if(next) next.addEventListener("click",function(){go(1);hold();});
+  var timer=null,paused=false;
+  function start(){if(!reduce&&!timer) timer=setInterval(function(){if(!paused) go(1);},4500);}
+  function stop(){if(timer){clearInterval(timer);timer=null;}}
+  function hold(){stop();start();}
+  track.addEventListener("mouseenter",function(){paused=true;});
+  track.addEventListener("mouseleave",function(){paused=false;});
+  track.addEventListener("focusin",function(){paused=true;});
+  track.addEventListener("focusout",function(){paused=false;});
+  document.addEventListener("visibilitychange",function(){document.hidden?stop():start();});
+  start();
+})();
+</script>
+<script>
+/* Scroll motion — signature: RISE.  _RULES/02-PROPORTION-AND-TYPE.md §7 */
+(function(){
+  var root=document.documentElement;
+  if(!root.classList.contains("anim")) return;
+  function raf(fn){ return window.requestAnimationFrame
+    ? window.requestAnimationFrame(fn) : setTimeout(fn,16); }
+  function now(){ return (window.performance&&performance.now)?performance.now():Date.now(); }
+
+  var SETS=[
+    ["wipe-up",   "h2,.h2"],
+    ["rise",      ".ktcard,.grcard,.sol,.reason"],
+    ["pop",       ".stat b,.grfig"],
+    ["up",        ".pstep,.quote,details,.proj,.grnote"]  ];
+  SETS.forEach(function(s){
+    var els; try{ els=document.querySelectorAll(s[1]); }catch(e){ return; }
+    [].forEach.call(els,function(el){
+      if(el.hasAttribute("data-rv")) return;
+      if(el.closest(".hero")) return;
+      el.setAttribute("data-rv",s[0]);
+    });
+  });
+
+  var rv=[].slice.call(document.querySelectorAll("[data-rv]"));
+  rv.forEach(function(el){
+    var sibs=[].filter.call(el.parentNode.children,function(c){
+      return c.nodeType===1 && c.hasAttribute("data-rv"); });
+    var i=sibs.indexOf(el);
+    if(i>0) el.style.setProperty("--rvd",Math.min(i*70,420)+"ms");
+  });
+
+  var io=null, pending=rv.slice();
+  function show(el){ el.classList.add("is-in"); if(io) io.unobserve(el); }
+
+  /* independent of the observer: delivery can be starved and a scrollbar drag
+     outruns it. Nothing may strand at opacity 0 with content in it. */
+  function sweep(){
+    if(!pending.length) return;
+    var vh=window.innerHeight||root.clientHeight;
+    pending=pending.filter(function(el){
+      if(el.getBoundingClientRect().top < vh*0.92){ show(el); return false; }
+      return true;
+    });
+  }
+
+  if("IntersectionObserver" in window){
+    io=new IntersectionObserver(function(en){
+      en.forEach(function(e){
+        if(!e.isIntersecting) return;
+        show(e.target);
+        var i=pending.indexOf(e.target); if(i>-1) pending.splice(i,1);
+      });
+    },{rootMargin:"0px 0px -8% 0px",threshold:.08});
+    rv.forEach(function(el){ io.observe(el); });
+  }else{
+    rv.forEach(show); pending=[];
+  }
+
+  function count(el){
+    if(el.getAttribute("data-counted")) return;
+    el.setAttribute("data-counted","1");
+    var raw=el.textContent; el.setAttribute("data-raw",raw);
+    var m=raw.match(/\d[\d,]*(\.\d+)?/); if(!m) return;
+    var txt=m[0], target=parseFloat(txt.replace(/,/g,"")); if(!isFinite(target)) return;
+    var grouped=txt.indexOf(",")>-1, dec=(txt.split(".")[1]||"").length,
+        head=raw.slice(0,m.index), tail=raw.slice(m.index+txt.length),
+        t0=now(), dur=1100;
+    el.classList.add("cnt");
+    (function frame(){
+      var p=Math.min((now()-t0)/dur,1), v=target*(1-Math.pow(1-p,3)), s=v.toFixed(dec);
+      if(grouped) s=Number(s).toLocaleString("en-GB",
+        {minimumFractionDigits:dec,maximumFractionDigits:dec});
+      el.textContent=head+s+tail;
+      if(p<1) raf(frame); else el.textContent=raw;
+    })();
+    setTimeout(function(){ el.textContent=raw; },dur+1400);
+  }
+  var counters=[].slice.call(document.querySelectorAll(".stat b,.hero-proof .pf b"));
+  function sweepCounters(){
+    if(!counters.length) return;
+    var vh=window.innerHeight||root.clientHeight;
+    counters=counters.filter(function(el){
+      if(el.getBoundingClientRect().top >= vh*0.9) return true;
+      setTimeout(count.bind(null,el), el.closest(".hero")?700:0);
+      return false;
+    });
+  }
+
+  var queued=false, last=0;
+  function onScroll(){
+    /* not behind the rAF latch: one dropped frame callback would leave it
+       closed and disable the fallback it exists to provide */
+    var t=now();
+    if((pending.length||counters.length) && t-last>90){ last=t; sweep(); sweepCounters(); }
+    if(queued) return; queued=true;
+    raf(function(){ queued=false; });
+  }
+  window.addEventListener("scroll",onScroll,{passive:true});
+  window.addEventListener("resize",onScroll,{passive:true});
+  window.addEventListener("load",function(){ sweep(); sweepCounters(); onScroll(); });
+  sweep(); sweepCounters(); onScroll();
+})();
+</script>
+<script>/* CSS kills animation for reduced motion but cannot stop video playback,
+   and the still it replaced never moved. Pause it and let a frame stand in. */
+(function(){var v=document.querySelector(".hero-vid video");
+ if(v&&matchMedia("(prefers-reduced-motion: reduce)").matches){v.removeAttribute("autoplay");v.pause();}})();</script>
+</body>
+</html>
