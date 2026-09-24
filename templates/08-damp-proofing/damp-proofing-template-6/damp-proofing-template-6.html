@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Damp Proofing: Damp Control, Waterproofing &amp; Timber Preservation</title>
+<meta name="description" content="Damp control, structural waterproofing and timber preservation across Hertfordshire, Bedfordshire, Essex and London. PCA accredited, company-backed guarantee.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pg:#F4F1F4;--pg2:#E9E4EA;--card:#FFFFFF;
+  --plm:#341E36;--plm2:#241426;--plm3:#432846;
+  --ink:#241826;--mut:#544A57;--dim:#5D525F;
+  --vio:#7B2D7F;--vio-l:#DFA7E2;
+  --ln:#DAD2DC;--lnd:rgba(244,241,244,.17);--onm:rgba(244,241,244,.8);
+  --sans:"Instrument Sans",Arial,sans-serif;--mono:"Space Mono",monospace;
+  --max:1300px;--ea:cubic-bezier(.2,1,.26,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+body{font-family:var(--sans);background:var(--pg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{font:inherit}
+:focus-visible{outline:2px solid var(--vio);outline-offset:3px}
+h1,h2,h3{font-weight:600;letter-spacing:-.03em;line-height:1.08}
+h1 em,h2 em{font-style:normal;color:var(--vio)}
+.dk h2 em{color:var(--vio-l)}
+p{color:var(--mut)}
+.w{max-width:var(--max);margin:0 auto;padding:0 26px}
+.dk{background:var(--plm);color:var(--pg)}
+.dk h2,.dk h3{color:var(--pg)}.dk p{color:var(--onm)}
+.b2{background:var(--pg2)}
+section{padding:86px 0;position:relative}
+.fld{font-family:var(--mono);font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:var(--dim);display:block;margin-bottom:7px}
+.dk .fld{color:var(--vio-l)}
+.lab{font-family:var(--mono);font-size:14px;letter-spacing:.15em;text-transform:uppercase;color:var(--vio);display:block;margin-bottom:15px}
+.dk .lab{color:var(--vio-l)}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 25px;font-family:var(--mono);font-size:16px;font-weight:700;border:1px solid transparent;cursor:pointer;transition:.3s var(--ea)}
+.btn:hover{transform:translateY(-2px)}
+.bv{background:var(--vio);color:#fff}.bv:hover{background:#5F2262}
+.bp{background:var(--plm);color:var(--pg)}.bp:hover{background:var(--plm2)}
+.bo{border-color:var(--ink);color:var(--ink);background:transparent}.bo:hover{background:var(--card)}
+.bvl{background:var(--vio-l);color:var(--plm2)}.bvl:hover{background:#EBC0EE}
+.bol{border-color:var(--lnd);color:var(--pg)}.bol:hover{background:rgba(255,255,255,.09)}
+.pr{display:flex;gap:9px;flex-wrap:wrap}
+.rv{opacity:0;transform:translateY(20px);transition:opacity .82s var(--ea),transform .82s var(--ea)}
+.rv.in{opacity:1;transform:none}
+.sg .it{opacity:0;transform:translateY(13px);transition:opacity .72s var(--ea),transform .72s var(--ea)}
+.sg.in .it{opacity:1;transform:none}
+.sg.in .it:nth-child(1){transition-delay:.02s}.sg.in .it:nth-child(2){transition-delay:.05s}.sg.in .it:nth-child(3){transition-delay:.08s}.sg.in .it:nth-child(4){transition-delay:.11s}.sg.in .it:nth-child(5){transition-delay:.14s}.sg.in .it:nth-child(6){transition-delay:.17s}.sg.in .it:nth-child(7){transition-delay:.2s}.sg.in .it:nth-child(8){transition-delay:.23s}
+
+header{position:sticky;top:0;z-index:90;background:var(--pg);border-bottom:1px solid var(--ink)}
+.nv{max-width:var(--max);margin:0 auto;padding:11px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.lg{font-family:var(--mono);font-size:18px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.ref{font-family:var(--mono);font-size:14px;color:var(--dim);letter-spacing:.08em}
+.nl{display:flex;gap:0}
+.nl a{font-family:var(--mono);font-size:15px;color:var(--mut);padding:7px 11px;letter-spacing:.03em;transition:.22s;border-left:1px solid var(--ln)}
+.nl a:first-child{border-left:none}
+.nl a:hover{color:var(--vio)}
+.nr{display:flex;align-items:center;gap:10px}
+.tg{display:none;width:35px;height:35px;border:1px solid var(--ink);background:none;position:relative;cursor:pointer}
+.tg s,.tg::before,.tg::after{content:"";position:absolute;left:9px;right:9px;height:1.4px;background:var(--ink)}
+.tg::before{top:12.5px}.tg s{top:17px}.tg::after{top:21.5px}
+.dw{display:none}
+@media(max-width:1160px){.nl,.ref{display:none}.tg{display:block}
+.dw{display:block;max-height:0;overflow:hidden;background:var(--card);border-bottom:1px solid var(--ink);transition:max-height .42s var(--ea)}
+header.op .dw{max-height:520px}.dw a{display:block;padding:12px 26px;font-family:var(--mono);font-size:16px;border-bottom:1px solid var(--ln)}}
+
+/* HERO: report cover card */
+.hero{padding:52px 0 70px}
+.cov{border:1px solid var(--ink);background:var(--card)}
+.covh{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:12px 26px;border-bottom:1px solid var(--ink);font-family:var(--mono);font-size:14px;letter-spacing:.13em;text-transform:uppercase;color:var(--dim)}
+.covb{padding:clamp(30px,4.4vw,58px) 26px}
+.hero h1{font-size:clamp(34px,5.2vw,72px);max-width:16ch;margin-bottom:26px}
+.hrow{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ln)}
+.hrow div{padding:20px 24px;border-left:1px solid var(--ln)}
+.hrow div:first-child{border-left:none}
+.hrow p{font-size:18px;line-height:1.68}
+@media(max-width:820px){.hrow{grid-template-columns:1fr}.hrow div{border-left:none;border-top:1px solid var(--ln)}.hrow div:first-child{border-top:none}}
+.covf{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:18px 26px;border-top:1px solid var(--ink);background:var(--pg2)}
+.covf .pts{display:flex;gap:18px;flex-wrap:wrap;font-family:var(--mono);font-size:15px;color:var(--mut)}
+.covf .pts span::before{content:"✓ ";color:var(--vio)}
+
+/* stamp row */
+.stmp{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--ink);border-top:none;background:var(--card)}
+.stmp div{padding:22px 22px;border-left:1px solid var(--ln)}
+.stmp div:first-child{border-left:none}
+.stmp b{display:block;font-family:var(--mono);font-size:clamp(22px,2.8vw,32px);color:var(--vio);line-height:1}
+.stmp span{font-family:var(--mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-top:7px;display:block;line-height:1.5}
+@media(max-width:820px){.stmp{grid-template-columns:1fr 1fr}.stmp div:nth-child(odd){border-left:none}.stmp div:nth-child(n+3){border-top:1px solid var(--ln)}}
+
+.acl{font-family:var(--mono);font-size:15px;letter-spacing:.05em;color:var(--mut);display:flex;flex-wrap:wrap;gap:6px 16px}
+.acl b{color:var(--ink)}
+
+/* SERVICES: schedule of works */
+.sch{border:1px solid var(--ink);background:var(--card)}
+.schh{display:grid;grid-template-columns:64px 1.05fr 2fr 92px;gap:18px;padding:10px 20px;border-bottom:1px solid var(--ink);font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+.band{padding:9px 20px;background:var(--plm);color:var(--pg);font-family:var(--mono);font-size:14px;letter-spacing:.15em;text-transform:uppercase}
+.srw{display:grid;grid-template-columns:64px 1.05fr 2fr 92px;gap:18px;align-items:center;padding:14px 20px;border-bottom:1px solid var(--ln);transition:.24s var(--ea)}
+.srw:last-child{border-bottom:none}
+.srw:hover{background:var(--pg)}
+/* hovering a row lifts a preview of that specialism. It is anchored to the
+   right of the scope column and floats above the table, so it never shifts
+   the rows; pointer-events:none keeps the Enquire link clickable underneath.
+   visibility is transitioned alongside opacity so it cannot be tabbed or
+   hit-tested while faded out. */
+.sch{position:relative}
+.srw{position:relative}
+.srw:hover{z-index:5}
+.spv{position:absolute;right:104px;top:50%;z-index:6;pointer-events:none;
+  width:196px;aspect-ratio:16/11;overflow:hidden;background:var(--card);
+  border:1px solid var(--ink);box-shadow:0 20px 44px -16px rgba(0,0,0,.5);
+  opacity:0;visibility:hidden;transform:translateY(-50%) scale(.94);
+  transition:opacity .2s var(--ea),transform .26s var(--ea),visibility .2s}
+.srw:hover .spv{opacity:1;visibility:visible;transform:translateY(-50%) scale(1)}
+.spv img{width:100%;height:100%;object-fit:cover;display:block}
+/* stacked, there is no hover and no room beside the copy */
+@media(max-width:900px){.spv{display:none}}
+@media(prefers-reduced-motion:reduce){.spv{transition:opacity .2s linear,visibility .2s}
+  .srw:hover .spv{transform:translateY(-50%)}}
+.srw .n{font-family:var(--mono);font-size:15px;color:var(--vio)}
+.srw h4{font-size:19px;font-weight:600;letter-spacing:-.015em}
+.srw p{font-size:17px;line-height:1.6}
+.srw .go{font-family:var(--mono);font-size:14px;color:var(--vio);text-align:right;white-space:nowrap}
+@media(max-width:900px){.schh{display:none}.srw{grid-template-columns:52px 1fr;gap:4px 14px}.srw p{grid-column:2}.srw .go{grid-column:2;text-align:left}}
+
+/* PROCESS: stamped boxes */
+.stg{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.stb{border:1px dashed var(--lnd);padding:26px 22px;position:relative}
+.stb .no{font-family:var(--mono);font-size:13px;letter-spacing:.14em;color:var(--vio-l);display:block;margin-bottom:14px}
+.stb h3{font-size:22px;margin-bottom:9px}
+.stb p{font-size:17px;line-height:1.72}
+.stb .tick{position:absolute;top:20px;right:20px;width:22px;height:22px;border:1px solid var(--lnd);display:grid;place-items:center;color:var(--vio-l);font-size:14px}
+@media(max-width:900px){.stg{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.stg{grid-template-columns:1fr}}
+
+/* PRODUCTS: specification sheet, 2 col */
+.spec{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--ink);background:var(--card)}
+.spc{padding:24px 22px;border-left:1px solid var(--ln);border-top:1px solid var(--ln)}
+/* product packshots sit on white and are contained, not cropped - these are
+   labelled tubs, so cover would slice the branding off */
+.spc{overflow:hidden}
+.pimg{margin:-24px -22px 18px;height:168px;background:#fff;overflow:hidden}
+.pimg img{width:100%;height:100%;object-fit:contain;padding:14px;display:block}
+.spc:nth-child(-n+2){border-top:none}.spc:nth-child(odd){border-left:none}
+.spc .n{font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--vio);display:block;margin-bottom:10px}
+.spc h4{font-size:20px;font-weight:600;letter-spacing:-.02em;margin-bottom:7px}
+.spc p{font-size:17px;line-height:1.7}
+@media(max-width:760px){.spec{grid-template-columns:1fr}.spc{border-left:none}.spc:nth-child(2){border-top:1px solid var(--ln)}}
+
+/* WHY: findings list with hanging refs */
+.fnd{border-top:1px solid var(--ln)}
+.fni{display:grid;grid-template-columns:96px 1fr;gap:24px;padding:20px 0;border-bottom:1px solid var(--ln)}
+.fni .r{font-family:var(--mono);font-size:14px;letter-spacing:.1em;color:var(--vio);padding-top:5px}
+.fni h4{font-size:20px;font-weight:600;letter-spacing:-.02em;margin-bottom:7px}
+.fni p{font-size:17px;line-height:1.74;max-width:70ch}
+@media(max-width:640px){.fni{grid-template-columns:1fr;gap:6px}}
+
+/* WORK: plate grid with numbered captions */
+.pl{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.plt{border:1px solid var(--ln);background:var(--card);padding:10px}
+.plt .im{aspect-ratio:4/3;overflow:hidden}
+.plt img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ea)}
+.plt:hover img{transform:scale(1.04)}
+.plt .cap{display:flex;gap:12px;padding-top:11px}
+.plt .cap .no{font-family:var(--mono);font-size:14px;color:var(--vio);flex:0 0 auto;padding-top:2px}
+.plt .cap b{display:block;font-size:18px;font-weight:600;letter-spacing:-.02em}
+.plt .cap span{font-size:16px;color:var(--dim)}
+@media(max-width:860px){.pl{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.pl{grid-template-columns:1fr}}
+
+/* REVIEWS: verified entries with ref numbers */
+.ent{border:1px solid var(--lnd)}
+.eni{display:grid;grid-template-columns:126px 1fr 180px;gap:22px;align-items:start;padding:18px 22px;border-bottom:1px solid var(--lnd)}
+.eni:last-child{border-bottom:none}
+.eni .r{font-family:var(--mono);font-size:14px;color:var(--vio-l);letter-spacing:.06em;padding-top:3px}
+.eni p{font-size:18px;line-height:1.72;color:var(--pg)}
+.eni .m{text-align:right}
+.eni .st{color:var(--vio-l);letter-spacing:2px;font-size:15px;display:block;margin-bottom:5px}
+.eni b{font-size:17px;display:block;color:var(--pg)}
+.eni span{font-family:var(--mono);font-size:14px;color:var(--onm)}
+@media(max-width:860px){.eni{grid-template-columns:1fr;gap:9px}.eni .m{text-align:left}}
+
+/* GUARANTEE: certificate block */
+.cert{border:2px solid var(--vio);background:var(--card);padding:clamp(30px,4.2vw,56px);display:grid;grid-template-columns:auto 1fr;gap:44px;align-items:center;position:relative}
+.cert::before{content:"CERTIFICATE";position:absolute;top:12px;right:18px;font-family:var(--mono);font-size:13px;letter-spacing:.24em;color:var(--vio)}
+.cn2{text-align:center;border:1px solid var(--ln);padding:26px 30px}
+.cn2 .n{font-family:var(--mono);font-size:clamp(56px,8vw,104px);color:var(--vio);line-height:.9}
+.cn2 .l{font-family:var(--mono);font-size:13px;letter-spacing:.2em;color:var(--dim);margin-top:10px}
+.gl{display:grid;gap:7px;margin-top:20px}
+.gl span{font-family:var(--mono);font-size:15px;color:var(--ink);border-bottom:1px dashed var(--ln);padding-bottom:7px}
+@media(max-width:820px){.cert{grid-template-columns:1fr;gap:26px}}
+
+/* FAQ: two-column open notes */
+.fq{columns:2 400px;column-gap:46px}
+.fi{break-inside:avoid;padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid var(--ln)}
+.fi h4{font-size:19px;font-weight:600;letter-spacing:-.02em;margin-bottom:7px;display:flex;gap:11px}
+.fi h4 s{font-family:var(--mono);font-size:14px;color:var(--vio);text-decoration:none;flex:0 0 auto;padding-top:3px;font-weight:400}
+.fi p{font-size:17px;line-height:1.76;padding-left:30px}
+@media(max-width:520px){.fi p{padding-left:0}}
+
+/* QUOTE */
+.qz h2{font-size:clamp(29px,4.4vw,56px);max-width:15ch}
+.qz p{margin-top:18px;max-width:58ch;font-size:19px;line-height:1.84}
+.qtel{font-family:var(--mono);font-size:27px;color:var(--vio-l);display:block;margin-top:18px}
+.qpt{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.qpt span{font-family:var(--mono);font-size:15px;border:1px solid var(--lnd);padding:8px 15px;color:var(--pg)}
+
+footer{background:var(--plm2);color:var(--pg);padding:64px 0 26px}
+.fgr{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px;padding-bottom:28px;border-bottom:1px solid var(--lnd)}
+.fgr p{font-size:17px;line-height:1.85;color:var(--onm);max-width:38ch}
+.fgr h4{font-family:var(--mono);font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:var(--vio-l);margin-bottom:12px;font-weight:400}
+.fgr a,.fgr span{display:block;font-size:17px;color:var(--onm);padding:4px 0}
+.fgr a:hover{color:var(--pg)}
+.f2{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;padding:24px 0;border-bottom:1px solid var(--lnd)}
+.f2 h4{font-family:var(--mono);font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:var(--vio-l);margin-bottom:10px;font-weight:400}
+.f2 p{font-size:16px;color:var(--onm);line-height:1.9}
+.oh{display:flex;justify-content:space-between;max-width:250px;gap:14px}
+.fin{font-size:15px;color:rgba(244,241,244,.5);line-height:1.85;padding:18px 0}
+.fbt{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding-top:16px;border-top:1px solid var(--lnd);font-family:var(--mono);font-size:14px;color:var(--onm)}
+@media(max-width:940px){.fgr,.f2{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.fgr,.f2{grid-template-columns:1fr}}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:82;display:none;background:var(--vio);color:#fff;text-align:center;padding:13px;font-family:var(--mono);font-weight:700;font-size:16px}
+@media(max-width:700px){.sticky{display:block}body{padding-bottom:50px}}
+
+/* SPECIFICATION grid on a dark section.
+   .dk handles the ground, headings and body copy, but the grid paints three
+   things of its own that do not survive the switch: a white card, a near-black
+   frame that disappears into plum, and Spec 0N labels in the dark violet,
+   which drops to about 1.3:1 on this ground. Each is restated here.
+   .dk .spec is (0,2,0) and .dk .spc .n is (0,3,0), so both outrank the
+   originals at (0,1,0) and (0,2,0). */
+.dk .spec{background:transparent;border-color:var(--lnd)}
+.dk .spc{border-left-color:var(--lnd);border-top-color:var(--lnd)}
+.dk .spc .n{color:var(--vio-l)}
+
+/* ═══ accreditation logos ═══
+   The set is mixed: PCA and Constructionline ship on an opaque white ground,
+   the other four are dark artwork on transparency. A white tile behind every
+   mark makes them read as one row and keeps the dark ones legible. */
+.acclogo{display:inline-flex;align-items:center;justify-content:center;
+  background:#fff;border:1px solid var(--ln);border-radius:2px;
+  padding:9px 15px;height:46px;flex:0 0 auto}
+.acclogo img{height:22px;width:auto;max-width:112px;object-fit:contain;display:block}
+.acl{display:block}
+.accrow{display:flex;flex-wrap:wrap;align-items:center;gap:9px}
+.accnote{margin:12px 0 0;font-family:var(--mono);font-size:15px;letter-spacing:.05em;color:var(--mut)}
+
+/* navbar: keep every label on one line and stop the bar squeezing itself */
+@media(min-width:1000px){nav.nl>a,div.nr a,div.nr button,a.lg{white-space:nowrap}nav.nl,div.nr{flex-shrink:0}nav.nl>a{padding-left:6px;padding-right:6px}nav.nl{gap:0}}
+
+/* nav bar: full width so the phone and CTA fit on one line without cramping */
+@media(min-width:1081px){header .nv{max-width:none}header .nv a,header .nv button,header .nv span,header .nv b{white-space:nowrap}header .nv > *{flex-shrink:0}}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <div class="nv">
+    <a href="#top" class="lg">Damp Proofing</a>
+    <span class="ref">Ref. DP/2026 · Hertfordshire</span>
+    <nav class="nl"><a href="#process">Our Process</a><a href="#why">Why Choose Us?</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#faq">Guides</a><a href="#">Careers</a><a href="#areas">Area</a><a href="#quote">Contact</a></nav>
+    <div class="nr"><a href="#quote" class="btn bv" style="padding:9px 16px;font-size:15px">Protect my home</a>
+    <button class="tg" id="tg" type="button" aria-label="Menu" aria-expanded="false"><s></s></button></div>
+  </div>
+  <div class="dw" id="dw"><a href="#process">Our Process</a><a href="#why">Why Choose Us?</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#faq">Guides</a><a href="#">Careers</a><a href="#areas">Area</a><a href="#quote">Contact</a><a href="tel:01632960300">01632 960 300</a></div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="w">
+    <div class="cov rv">
+      <div class="covh"><span>Damp control · Structural waterproofing · Timber preservation</span><span>PCA accredited · company-backed guarantee</span></div>
+      <div class="covb">
+        <span class="lab">Survey report</span>
+        <h1>Protection that starts <em>beneath the surface.</em></h1>
+        <div class="pr"><a href="#quote" class="btn bv">Book a damp survey</a><a href="#services" class="btn bo">View our services</a></div>
+      </div>
+      <div class="hrow">
+        <div><span class="fld">Scope</span><p>Damp control, structural waterproofing and timber preservation across Hertfordshire, Bedfordshire, Essex and London.</p></div>
+        <div><span class="fld">Method</span><p>Moisture readings taken at several heights, photographed, with the external ground level checked before anything is named.</p></div>
+        <div><span class="fld">Issued</span><p>Findings in writing before any work is agreed. Guarantee paperwork lodged on completion.</p></div>
+      </div>
+      <div class="covf">
+        <div class="pts"><span>Free, no-obligation survey</span><span>Findings in writing</span><span>Guarantee lodged for you</span></div>
+        <a href="tel:01632960300" class="ref" style="color:var(--vio)">01632 960 300</a>
+      </div>
+    </div>
+    <div class="stmp rv cnt">
+      <div><b class="cn" data-to="12" data-sf="">0</b><span>Specialisms, from DPC injection to tanking</span></div>
+      <div><b>4.9/5</b><span>Average rating from verified customers</span></div>
+      <div><b>10-30</b><span>Year guarantee on workmanship and materials</span></div>
+      <div><b>20-50</b><span>Year life for a maintained damp course</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="b2" style="padding:32px 0">
+  <div class="w rv"><div class="acl"><div class="accrow"><span class="acclogo"><img src="logos/acc-pca.png" alt="PCA" loading="lazy"></span><span class="acclogo"><img src="logos/acc-trustmark.png" alt="TrustMark" loading="lazy"></span><span class="acclogo"><img src="logos/acc-constructionline.png" alt="Constructionline" loading="lazy"></span><span class="acclogo"><img src="logos/acc-acclaim.png" alt="Acclaim" loading="lazy"></span><span class="acclogo"><img src="logos/acc-cgs.png" alt="CGS" loading="lazy"></span><span class="acclogo"><img src="logos/acc-iaa.webp" alt="IAA" loading="lazy"></span></div><p class="accnote">Insurance-backed guarantee available on eligible systems</p></div></div>
+</section>
+
+<section id="process" class="dk">
+  <div class="w">
+    <div class="rv" style="max-width:660px;margin-bottom:32px">
+      <span class="lab">Method</span>
+      <h2 style="font-size:clamp(26px,3.8vw,48px);margin-bottom:13px">Measured first, <em>named second</em></h2>
+      <p style="font-size:18px">Four stages, each signed off before the next begins.</p>
+    </div>
+    <div class="stg sg rv">
+      <div class="stb it"><span class="tick">✓</span><span class="no">Stage 01</span><h3>Survey</h3><p>Thorough inspection using specialist moisture detection.</p></div>
+      <div class="stb it"><span class="tick">✓</span><span class="no">Stage 02</span><h3>Diagnose</h3><p>Identify the source and provide clear, honest findings.</p></div>
+      <div class="stb it"><span class="tick">✓</span><span class="no">Stage 03</span><h3>Treat</h3><p>Expert treatment using proven, lasting solutions.</p></div>
+      <div class="stb it"><span class="tick">✓</span><span class="no">Stage 04</span><h3>Aftercare</h3><p>Ongoing support to keep your home protected.</p></div>
+    </div>
+    <div class="pr rv" style="margin-top:32px"><a href="#quote" class="btn bvl">Get A Free Quote</a><a href="tel:01632960300" class="btn bol">Speak To Our Experts</a></div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="w">
+    <div class="rv" style="max-width:740px;margin-bottom:30px">
+      <span class="lab">Schedule of works</span>
+      <h2 style="font-size:clamp(26px,3.6vw,46px);margin-bottom:12px">Damp control, waterproofing and <em>timber preservation</em></h2>
+      <p style="font-size:18px">Twelve specialisms under one roof, so the survey is never steered toward the one treatment we happen to sell.</p>
+    </div>
+    <div class="sch rv">
+      <div class="schh"><span>Item</span><span>Specialism</span><span>Scope of work</span><span style="text-align:right">Action</span></div>
+      <div class="band">Section A: Damp diagnosis</div>
+      <div class="srw"><span class="n">A.01</span><span class="spv"><img src="images/cs-survey.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"></span><h4>Damp surveys</h4><p>Moisture readings, photographs and a written order of work.</p><span class="go">Enquire →</span></div>
+      <div class="srw"><span class="n">A.02</span><span class="spv"><img src="images/cs-rising-damp.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async"></span><h4>Rising damp</h4><p>Groundwater drawn up through masonry, stopped at the source.</p><span class="go">Enquire →</span></div>
+      <div class="srw"><span class="n">A.03</span><span class="spv"><img src="images/cs-injection.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async"></span><h4>DPC injection</h4><p>A new damp-proof course injected into the mortar bed.</p><span class="go">Enquire →</span></div>
+      <div class="srw"><span class="n">A.04</span><span class="spv"><img src="images/cs-penetrating-damp.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async"></span><h4>Penetrating damp</h4><p>Water tracking in through failed pointing, render or gutters.</p><span class="go">Enquire →</span></div>
+      <div class="band">Section B: Structural waterproofing</div>
+      <div class="srw"><span class="n">B.01</span><span class="spv"><img src="images/cs-basement.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async"></span><h4>Basement waterproofing</h4><p>Cavity drainage systems that turn a cellar into a usable room.</p><span class="go">Enquire →</span></div>
+      <div class="srw"><span class="n">B.02</span><span class="spv"><img src="images/cs-tanking.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async"></span><h4>Waterproof tanking</h4><p>Walls and floors sealed against water below ground level.</p><span class="go">Enquire →</span></div>
+      <div class="srw"><span class="n">B.03</span><span class="spv"><img src="images/cs-slurry.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async"></span><h4>Slurry coats</h4><p>Cementitious coatings for below-ground and retaining walls.</p><span class="go">Enquire →</span></div>
+      <div class="srw"><span class="n">B.04</span><span class="spv"><img src="images/cs-cavity-wall.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"></span><h4>Cavity wall insulation</h4><p>Cut heat loss and the cold surfaces condensation forms on.</p><span class="go">Enquire →</span></div>
+      <div class="band">Section C: Timber &amp; air</div>
+      <div class="srw"><span class="n">C.01</span><span class="spv"><img src="images/cs-woodworm.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async"></span><h4>Woodworm &amp; timber</h4><p>Treat active infestation and protect the timber left behind.</p><span class="go">Enquire →</span></div>
+      <div class="srw"><span class="n">C.02</span><span class="spv"><img src="images/cs-wet-rot.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async"></span><h4>Wet &amp; dry rot</h4><p>Trace the moisture, cut out decay, treat what surrounds it.</p><span class="go">Enquire →</span></div>
+      <div class="srw"><span class="n">C.03</span><span class="spv"><img src="images/cs-air-brick.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async"></span><h4>Air bricks &amp; subfloor</h4><p>Restore underfloor airflow where vents are blocked or buried.</p><span class="go">Enquire →</span></div>
+      <div class="srw"><span class="n">C.04</span><span class="spv"><img src="images/cs-mould.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async"></span><h4>Condensation &amp; mould</h4><p>Ventilation and coatings for moisture the household makes.</p><span class="go">Enquire →</span></div>
+    </div>
+    <div class="pr rv" style="margin-top:28px"><a href="#quote" class="btn bp">Get A Free Quote</a><a href="tel:01632960300" class="btn bo">Speak To Our Experts</a></div>
+  </div>
+</section>
+
+<section id="products" class="dk">
+  <div class="w">
+    <div class="rv" style="max-width:740px;margin-bottom:28px">
+      <span class="lab">Specification</span>
+      <h2 style="font-size:clamp(26px,3.6vw,46px);margin-bottom:12px">Proven systems. <em>Premium protection.</em></h2>
+      <p style="font-size:18px">Specified from the survey, not from a van stock list. Six of the systems we fit most often.</p>
+    </div>
+    <div class="spec sg rv">
+      <div class="spc it"><div class="pimg"><img src="images/prod-technoseal.jpg" alt="Technoseal surface damp-proof membrane" loading="lazy" decoding="async"></div><span class="n">Spec 01</span><h4>Technoseal DPM</h4><p>Surface damp-proof membrane for walls and floors.</p></div>
+      <div class="spc it"><div class="pimg"><img src="images/prod-ep40.jpg" alt="EP40 epoxy floor coating" loading="lazy" decoding="async"></div><span class="n">Spec 02</span><h4>EP40 floor coating</h4><p>Water-based epoxy for damp or green screeds.</p></div>
+      <div class="spc it"><div class="pimg"><img src="images/prod-enviroseal.jpg" alt="Enviroseal breathable water repellent" loading="lazy" decoding="async"></div><span class="n">Spec 03</span><h4>Enviroseal</h4><p>Breathable water repellent for exposed elevations.</p></div>
+      <div class="spc it"><div class="pimg"><img src="images/prod-cream.jpg" alt="Masonry protection cream" loading="lazy" decoding="async"></div><span class="n">Spec 04</span><h4>Masonry protection cream</h4><p>Repels driving rain without sealing the wall.</p></div>
+      <div class="spc it"><div class="pimg"><img src="images/prod-thermal.jpg" alt="Thermal anti-condensation coating" loading="lazy" decoding="async"></div><span class="n">Spec 05</span><h4>Anti-condensation coating</h4><p>Warms the wall surface so moisture stops settling.</p></div>
+      <div class="spc it"><div class="pimg"><img src="images/prod-mould-kit.png" alt="Mould eradication kit" loading="lazy" decoding="async"></div><span class="n">Spec 06</span><h4>Mould eradication kit</h4><p>Kills the growth and treats the surface behind it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="b2">
+  <div class="w">
+    <div class="rv" style="margin-bottom:28px">
+      <span class="lab">Findings</span>
+      <h2 style="font-size:clamp(26px,3.6vw,46px)">Why homeowners <em>choose us.</em></h2>
+    </div>
+    <div class="fnd rv">
+      <div class="fni"><span class="r">Finding 01</span><div><h4>Salaried surveyors</h4><p>Our surveyors are paid a salary, not commission, so there is nothing to gain by writing up work you do not need.</p></div></div>
+      <div class="fni"><span class="r">Finding 02</span><div><h4>Diagnosis before quote</h4><p>Rising damp, penetrating damp and condensation look alike. We measure first and tell you which one you actually have.</p></div></div>
+      <div class="fni"><span class="r">Finding 03</span><div><h4>Company-backed guarantee</h4><p>Ten to thirty years depending on the system, covering both workmanship and materials.</p></div></div>
+      <div class="fni"><span class="r">Finding 04</span><div><h4>Accredited specialists</h4><p>PCA and TrustMark registered, with Constructionline and SafeContractor accreditation for commercial work.</p></div></div>
+      <div class="fni"><span class="r">Finding 05</span><div><h4>One trade, start to finish</h4><p>Survey, treatment, rendering and plastering handled by our own teams rather than subcontracted out.</p></div></div>
+      <div class="fni"><span class="r">Finding 06</span><div><h4>Ongoing aftercare</h4><p>Guarantee paperwork lodged for you, and the surveyor who specified the work stays your point of contact.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="w">
+    <div class="rv" style="display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:28px">
+      <div><span class="lab">Plates</span><h2 style="font-size:clamp(26px,3.6vw,46px)">Recent work. <em>Real results.</em></h2></div>
+      <a href="#quote" class="btn bo">View more projects</a>
+    </div>
+    <div class="pl rv">
+      <div class="plt"><div class="im"><img src="images/cs-damp-proofing.jpg" alt="Failed plaster stripped back to masonry" loading="lazy"></div><div class="cap"><span class="no">Pl.1</span><div><b>Penetrating damp</b><span>Failed plaster stripped back</span></div></div></div>
+      <div class="plt"><div class="im"><img src="images/cs-tanking.jpg" alt="Membrane dressed to a corner" loading="lazy"></div><div class="cap"><span class="no">Pl.2</span><div><b>Waterproof tanking</b><span>Membrane dressed to a corner</span></div></div></div>
+      <div class="plt"><div class="im"><img src="images/cs-woodworm.jpg" alt="Infested structural timber" loading="lazy"></div><div class="cap"><span class="no">Pl.3</span><div><b>Woodworm treatment</b><span>Infested structural timber</span></div></div></div>
+      <div class="plt"><div class="im"><img src="images/cs-slurry.jpg" alt="Below-ground masonry coated" loading="lazy"></div><div class="cap"><span class="no">Pl.4</span><div><b>Slurry coating</b><span>Below-ground masonry</span></div></div></div>
+      <div class="plt"><div class="im"><img src="images/cs-boarding.jpg" alt="Internal wall boarding installed" loading="lazy"></div><div class="cap"><span class="no">Pl.5</span><div><b>Insulated lining</b><span>Internal wall boarding</span></div></div></div>
+      <div class="plt"><div class="im"><img src="images/cs-mould.jpg" alt="North-facing room corner treated" loading="lazy"></div><div class="cap"><span class="no">Pl.6</span><div><b>Condensation &amp; mould</b><span>North-facing room corner</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="dk">
+  <div class="w">
+    <div class="rv" style="max-width:740px;margin-bottom:28px">
+      <span class="lab">Verified entries</span>
+      <h2 style="font-size:clamp(26px,3.6vw,46px);margin-bottom:12px">Rated 4.9 out of 5 by <em>the homes we dried out</em></h2>
+      <p style="font-size:18px">Independently verified reviews from homeowners across Hertfordshire, Bedfordshire, Essex and Greater London.</p>
+    </div>
+    <div class="ent rv">
+      <div class="eni"><span class="r">Entry 001 · V</span><p>“They tanked the cellar so we could finally put the laundry down there. Bone dry through the whole of the winter.”</p><div class="m"><span class="st">★★★★★</span><b>Sarah &amp; James</b><span>St Albans</span></div></div>
+      <div class="eni"><span class="r">Entry 002 · V</span><p>“The survey report was thorough and readable. Photographs, moisture readings and a clear order of work.”</p><div class="m"><span class="st">★★★★★</span><b>Michael T.</b><span>Watford</span></div></div>
+      <div class="eni"><span class="r">Entry 003 · V</span><p>“Injected the course, rendered and replastered, and left the house spotless. Two winters on and the wall is still dry.”</p><div class="m"><span class="st">★★★★★</span><b>Angela P.</b><span>Hertford</span></div></div>
+      <div class="eni"><span class="r">Entry 004 · V</span><p>“Three companies quoted. They were the only ones who took moisture readings rather than just looking at the stain.”</p><div class="m"><span class="st">★★★★★</span><b>Dan and Hayley R.</b><span>Enfield</span></div></div>
+      <div class="eni"><span class="r">Entry 005 · V</span><p>“Told us honestly that our problem was condensation, not rising damp, and fitted ventilation instead of selling us a damp course.”</p><div class="m"><span class="st">★★★★★</span><b>Priya S.</b><span>Hitchin</span></div></div>
+      <div class="eni"><span class="r">Entry 006 · V</span><p>“The chimney breast had stained through twice before. They traced it to the flashing and treated the wall properly.”</p><div class="m"><span class="st">★★★★★</span><b>Gordon M.</b><span>Barnet</span></div></div>
+      <div class="eni"><span class="r">Entry 007 · V</span><p>“Timber treatment done room by room so we could stay in the house throughout. Very considerate team.”</p><div class="m"><span class="st">★★★★★</span><b>Elaine W.</b><span>Stevenage</span></div></div>
+      <div class="eni"><span class="r">Entry 008 · V</span><p>“Guarantee paperwork arrived within the week, properly lodged. No chasing required.”</p><div class="m"><span class="st">★★★★★</span><b>Tom H.</b><span>Chelmsford</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="w">
+    <div class="cert rv">
+      <div class="cn2"><div class="n">20</div><div class="l">YEAR GUARANTEE</div></div>
+      <div>
+        <span class="lab">Our guarantee</span>
+        <h2 style="font-size:clamp(25px,3.4vw,42px);margin-bottom:13px">Zero risk. <em>Total peace of mind.</em></h2>
+        <p style="font-size:18px;line-height:1.86">Every treatment carries a company-backed guarantee: twenty years as standard, and up to thirty depending on the system specified.</p>
+        <div class="gl"><span>Ten to thirty years, by system</span><span>Covers workmanship and materials</span><span>Fully transferable to new owners</span><span>Terms &amp; conditions apply</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="b2">
+  <div class="w">
+    <div class="rv" style="margin-bottom:30px">
+      <span class="lab">Notes</span>
+      <h2 style="font-size:clamp(26px,3.6vw,46px)">Frequently asked <em>questions.</em></h2>
+    </div>
+    <div class="fq rv">
+      <div class="fi"><h4><s>N.01</s>What causes damp in my home?</h4><p>Three different things, and each needs a different fix. Rising damp draws groundwater up through the masonry where the damp-proof course has failed. Penetrating damp comes in from outside through failed pointing, a leaking gutter or a raised ground level. Condensation is moisture your household produces that cannot escape. We measure before we name it.</p></div>
+      <div class="fi"><h4><s>N.02</s>How do I know if I have rising damp?</h4><p>A tide mark about a metre up the wall with salt bloom above it is the classic sign, but it is not proof. Penetrating damp and condensation both mimic it. A survey takes readings at several heights and checks the external ground level before anything is called rising damp.</p></div>
+      <div class="fi"><h4><s>N.03</s>What does a damp survey cost?</h4><p>A survey typically runs between £200 and £600 depending on the size of the property and how much of it needs investigating. What you get for it is moisture readings, photographs, the cause identified and a written order of work, not a single-page quote.</p></div>
+      <div class="fi"><h4><s>N.04</s>What will the treatment itself cost?</h4><p>Most domestic damp-proofing falls between £1,000 and £3,000. A single wall sits at the lower end; a whole ground floor with rendering and replastering, or a basement system with drainage, sits well above it. Nobody can price it honestly before the survey.</p></div>
+      <div class="fi"><h4><s>N.05</s>How long will the work last?</h4><p>A properly installed damp-proof course that is looked after has a working life of roughly twenty to fifty years. What shortens it is the thing nobody looks at afterwards: a raised flower bed, a blocked airbrick, a gutter running down the wall.</p></div>
+      <div class="fi"><h4><s>N.06</s>What does the guarantee actually cover?</h4><p>Workmanship and materials, for between ten and thirty years depending on the system specified. It is company-backed and transfers to a new owner if you sell, which matters more than most people expect at the point of sale.</p></div>
+      <div class="fi"><h4><s>N.07</s>Is damp covered by home insurance?</h4><p>Usually not. Insurers treat damp as gradual deterioration and a maintenance matter, so it falls outside most policies. A sudden escape of water is a different question and often is covered, so it is worth checking your wording before you assume either way.</p></div>
+      <div class="fi"><h4><s>N.08</s>Can I treat damp myself?</h4><p>Injection creams are sold to the public, so physically yes. The failure is almost never the injection though. It is diagnosing the wrong problem and treating a wall that was never rising damp. DIY work also carries no guarantee, which surveyors and buyers will ask about.</p></div>
+      <div class="fi"><h4><s>N.09</s>Does it have to be done from inside?</h4><p>Not always. A damp course can be injected from either face, and the choice is usually driven by access, whether the plaster is already failing and what the wall is built from. We will tell you which side we intend to work from, and why, at survey.</p></div>
+      <div class="fi"><h4><s>N.10</s>How long does treatment take?</h4><p>A single wall is usually one to two days including replastering. A full basement system runs to a week or more depending on area and drainage. We work room by room, sheet the area and clear up daily, so most customers stay in the property throughout.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dk qz" id="quote">
+  <div class="w rv">
+    <span class="lab">Get in touch today</span>
+    <h2>Let's get your home <em>dry.</em></h2>
+    <p>Rising damp, a wet cellar, blown plaster or timber that needs treating, the first step is the same. A survey that measures what is actually happening, and findings you get in writing before anything is agreed.</p>
+    <div class="pr" style="margin-top:26px"><a href="#quote" class="btn bvl">Get A Free Quote</a><a href="tel:01632960300" class="btn bol">Speak To Our Experts</a></div>
+    <a href="tel:01632960300" class="qtel">01632 960 300</a>
+    <div class="qpt"><span>Free, no-obligation survey</span><span>Findings in writing</span><span>Guarantee lodged for you</span></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="w">
+    <div class="fgr">
+      <div><a href="#top" class="lg" style="color:var(--pg)">Damp Proofing</a><p style="margin-top:12px">Damp control, structural waterproofing and timber preservation across Hertfordshire, Bedfordshire, Essex and London.</p><p style="margin-top:8px;color:var(--vio-l)"><a href="tel:01632960300">01632 960 300</a> · <a href="mailto:info@example.co.uk">info@example.co.uk</a></p></div>
+      <div><h4>Company</h4><a href="#why">About us</a><a href="#work">Our projects</a><a href="#reviews">Reviews</a><a href="#faq">FAQs</a><a href="#quote">Contact</a></div>
+      <div><h4>Services</h4><a href="#services">Damp surveys</a><a href="#services">Rising damp</a><a href="#services">Basement waterproofing</a><a href="#services">Timber treatment</a><a href="#products">Products &amp; systems</a></div>
+      <div><h4>Legal</h4><a href="#">Privacy policy</a><a href="#">Terms &amp; conditions</a><a href="#">Complaints procedure</a><a href="#">Guarantee terms</a></div>
+    </div>
+    <div class="f2">
+      <div><h4>Opening hours</h4><p><span class="oh"><span>Monday to Friday</span><span>09:00 to 16:00</span></span><span class="oh"><span>Saturday &amp; Sunday</span><span>Closed</span></span><br>Damp surveys take around ninety minutes and include moisture readings.</p></div>
+      <div id="areas"><h4>Areas covered</h4><p>Hertfordshire · Bedfordshire · Cambridgeshire · Essex<br>North, East and West London<br>Watford · St Albans · Welwyn · Hertford</p></div>
+      <div><h4>Contact</h4><p><a href="tel:01632960300" style="color:var(--vio-l)">01632 960 300</a><br>Survey bookings and general enquiries.<br>Guarantee claims are handled by the surveyor who specified the work.</p></div>
+      <div><h4>Accreditations</h4><p>PCA · TrustMark · Constructionline · Acclaim · CGS · IAA<br>Insurance-backed guarantee available on eligible systems.</p></div>
+    </div>
+    <p class="fin"><b style="color:var(--onm)">Finance:</b> we act as an Introducer Appointed Representative of a credit broker authorised and regulated by the Financial Conduct Authority. That broker arranges finance and is not itself a lender (FRN 111111). Credit is offered subject to status. Any rate quoted before approval is provisional. The rate you are offered depends on your circumstances, the amount borrowed and the length of the term.<br><br>Photography supplied by the client. Brand and accreditation marks are the property of their respective owners and are shown for identification only. Guarantee cover varies by system and is subject to the terms issued with your written specification. Survey findings are given in writing before any work is agreed.</p>
+    <div class="fbt"><span>© 2026 We Build Trades Ltd. Demonstration template, sample content.</span><span><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Complaints</a></span></div>
+  </div>
+</footer>
+
+<a href="#quote" class="sticky">Book your free survey</a>
+
+<script>
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');if(x.target.classList.contains('cnt'))cu(x.target);io.unobserve(x.target)}})},{threshold:.05,rootMargin:"0px 0px -5% 0px"});
+document.querySelectorAll('.rv,.sg,.cnt').forEach(e=>io.observe(e));
+function cu(s){s.querySelectorAll('.cn').forEach((el,i)=>{const to=+el.dataset.to,sf=el.dataset.sf||'',d=1200,st=performance.now()+i*80;
+function t(n){if(n<st){requestAnimationFrame(t);return}const p=Math.min(1,(n-st)/d),e=1-Math.pow(1-p,3);el.textContent=Math.floor(to*e)+sf;if(p<1)requestAnimationFrame(t);else el.textContent=to+sf}requestAnimationFrame(t)})}
+(()=>{const h=document.getElementById('hd'),t=document.getElementById('tg'),d=document.getElementById('dw');
+t.addEventListener('click',()=>{const o=h.classList.toggle('op');t.setAttribute('aria-expanded',o)});
+d.addEventListener('click',e=>{if(e.target.closest('a'))h.classList.remove('op')});
+addEventListener('keydown',e=>{if(e.key==='Escape')h.classList.remove('op')})})();
+(()=>{const F='data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="%23341E36"/><stop offset="1" stop-color="%237B2D7F"/></linearGradient></defs><rect width="800" height="600" fill="url(%23g)"/></svg>');
+document.querySelectorAll('img').forEach(i=>i.addEventListener('error',function(){this.onerror=null;this.src=F},{once:true}))})();
+</script>
+</body>
+</html>
