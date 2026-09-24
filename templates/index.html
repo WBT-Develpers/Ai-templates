@@ -31,12 +31,8 @@ body.locked{overflow:hidden}
 .eyebrow{margin:0 0 10px;font-size:12px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--accent)}
 h1{margin:0 0 12px;font-size:clamp(30px,4.2vw,44px);line-height:1.1;letter-spacing:-.025em}
 .lede{margin:0;color:var(--mut);font-size:17px;line-height:1.6;max-width:62ch}
-.stats{display:flex;flex-wrap:wrap;gap:26px;margin:24px 0 0}
-.stat b{display:block;font-size:23px;font-weight:700;letter-spacing:-.02em;line-height:1.1}
-.stat span{display:block;font-size:13px;color:var(--soft);margin-top:2px}
-
 /* what a still preview cannot show */
-.note{display:flex;gap:11px;align-items:flex-start;margin:26px 0 0;padding:13px 15px;
+.note{display:flex;gap:11px;align-items:flex-start;margin:22px 0 0;padding:13px 15px;
   background:var(--accent-soft);border:1px solid #D4E3FA;border-radius:10px;
   color:#1C3665;font-size:14.5px;line-height:1.58;max-width:78ch}
 .note svg{flex:0 0 auto;width:18px;height:18px;margin-top:2px;stroke:var(--accent);fill:none;stroke-width:1.9}
@@ -136,7 +132,6 @@ footer{border-top:1px solid var(--line);margin-top:20px;padding:26px 0 56px;colo
 footer p{margin:0 0 8px}
 @media (max-width:560px){
   .grid{grid-template-columns:1fr}
-  .stats{gap:18px}
   .mbar .who span{display:none}
 }
 </style>
@@ -146,11 +141,6 @@ footer p{margin:0 0 8px}
   <p class="eyebrow">We Build Trades</p>
   <h1>Template Gallery</h1>
   <p class="lede">Scroll any preview to see the whole page, top to footer. Every template is a self-contained folder: a single HTML file plus its own images, video and logos.</p>
-  <div class="stats">
-    <div class="stat"><b>64</b><span>templates</span></div>
-    <div class="stat"><b>10</b><span>niches</span></div>
-    <div class="stat"><b>460 MB</b><span>total</span></div>
-  </div>
   <div class="note">
     <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.6v.5"/></svg>
     <p><b>Each card preview is a still image.</b> Animations, hover effects, sliders and background video do not run in it, and the page is shown exactly as it loads. To see a template working properly, use <span class="k">Full screen</span> or <span class="k">New tab</span>, which open the real thing.</p>
