@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Improvements: Loft Conversions, Bathrooms, Insulation &amp; Rendering</title>
+<meta name="description" content="Loft conversions, bathroom installations and external wall insulation. Free home or video survey, a fixed price before we start, and a ten year workmanship warranty.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --iv:#F6F2EA;--iv2:#EDE7DB;--wh:#FDFCF9;
+  --nv:#16243D;--nv2:#0D1727;
+  --ink:#182132;--mut:#4C566A;
+  --br:#7A5E1C;--br-l:#D9BB6B;
+  --ln:#DCD3C2;--lnd:rgba(246,242,234,.16);--onm:rgba(246,242,234,.78);
+  --ser:"Marcellus",Georgia,serif;--sans:"Plus Jakarta Sans",Arial,sans-serif;
+  --rail:250px;--ea:cubic-bezier(.19,1,.22,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+body{font-family:var(--sans);background:var(--iv);color:var(--ink);line-height:1.74;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{font:inherit}
+:focus-visible{outline:2px solid var(--br);outline-offset:3px}
+h1,h2,h3{font-family:var(--ser);font-weight:400;line-height:1.1;letter-spacing:-.005em}
+h1 em,h2 em,h3 em{font-style:italic;color:var(--br)}
+.dk h2 em{color:var(--br-l)}
+p{color:var(--mut)}
+
+/* ── FIXED RAIL ── */
+.rail{position:fixed;left:0;top:0;bottom:0;width:var(--rail);background:var(--nv);color:var(--iv);padding:30px 26px;display:flex;flex-direction:column;z-index:70}
+.rlg{font-family:var(--ser);font-size:24px;line-height:1.1}
+.rtag{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--br-l);margin-top:7px;line-height:1.7}
+.rnav{margin-top:42px;flex:1;display:flex;flex-direction:column;gap:1px}
+.rnav a{font-size:16px;color:var(--onm);padding:8px 0 8px 18px;position:relative;transition:.26s}
+.rnav a::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);width:7px;height:1px;background:var(--lnd);transition:.32s}
+.rnav a:hover{color:var(--iv)}
+.rnav a.on{color:var(--br-l)}
+.rnav a.on::before{background:var(--br-l);width:12px}
+.racc{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:rgba(246,242,234,.6);line-height:2.1;border-top:1px solid var(--lnd);padding-top:16px;margin-bottom:18px}
+.rcta{display:block;text-align:center;background:var(--br-l);color:var(--nv2);font-weight:700;font-size:16px;padding:13px;border-radius:3px;transition:.26s}
+.rcta:hover{background:#EBD190}
+.rtel{display:block;font-family:var(--ser);font-size:20px;margin-top:13px;text-align:center;color:var(--iv)}
+
+.mbar{display:none;position:sticky;top:0;z-index:80;background:var(--nv);color:var(--iv);padding:12px 22px;align-items:center;justify-content:space-between;gap:12px}
+.mtg{width:37px;height:37px;border:1px solid var(--lnd);background:none;position:relative;cursor:pointer;border-radius:3px}
+.mtg s,.mtg::before,.mtg::after{content:"";position:absolute;left:10px;right:10px;height:1.5px;background:var(--iv)}
+.mtg::before{top:13px}.mtg s{top:17.5px}.mtg::after{top:22px}
+.mdrw{display:none}
+@media(max-width:1060px){
+ .rail{display:none}.mbar{display:flex}
+ .mdrw{display:block;max-height:0;overflow:hidden;background:var(--nv2);color:var(--iv);transition:max-height .42s var(--ea)}
+ .mdrw.op{max-height:540px}
+ .mdrw a{display:block;padding:12px 22px;font-size:17px;border-bottom:1px solid var(--lnd)}
+ :root{--rail:0px}
+}
+.shell{margin-left:var(--rail)}
+.pad{padding:0 clamp(24px,4.4vw,64px)}
+.blk{padding:96px 0;border-bottom:1px solid var(--ln)}
+.dk{background:var(--nv);color:var(--iv)}
+.dk h2,.dk h3{color:var(--iv)}.dk p{color:var(--onm)}
+.b2{background:var(--iv2)}
+.kick{display:inline-flex;align-items:center;gap:11px;font-size:13px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--br);margin-bottom:20px}
+.kick::before{content:"";width:26px;height:1px;background:var(--br)}
+.dk .kick{color:var(--br-l)}.dk .kick::before{background:var(--br-l)}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:15px 28px;font-size:16px;font-weight:600;border:1px solid transparent;cursor:pointer;transition:.34s var(--ea)}
+.btn:hover{transform:translateY(-2px)}
+.bn{background:var(--nv);color:var(--iv)}.bn:hover{background:var(--nv2)}
+.bb{background:var(--br);color:#fff}.bb:hover{background:#5E4715}
+.bo{border-color:var(--ln);color:var(--ink);background:var(--wh)}.bo:hover{border-color:var(--nv)}
+.bol{border-color:var(--lnd);color:var(--iv)}.bol:hover{background:rgba(255,255,255,.09)}
+.pr{display:flex;gap:12px;flex-wrap:wrap}.mid{display:flex;justify-content:center}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ea),transform .9s var(--ea)}
+.rv.in{opacity:1;transform:none}
+.sg .it{opacity:0;transform:translateY(16px);transition:opacity .8s var(--ea),transform .8s var(--ea)}
+.sg.in .it{opacity:1;transform:none}
+.sg.in .it:nth-child(1){transition-delay:.04s}.sg.in .it:nth-child(2){transition-delay:.1s}.sg.in .it:nth-child(3){transition-delay:.16s}.sg.in .it:nth-child(4){transition-delay:.22s}.sg.in .it:nth-child(5){transition-delay:.28s}.sg.in .it:nth-child(6){transition-delay:.34s}.sg.in .it:nth-child(7){transition-delay:.4s}
+
+/* ── HERO: full bleed image + overlay card ── */
+.hero{position:relative;min-height:82vh;display:flex;align-items:flex-end;overflow:hidden}
+.hero__bg{position:absolute;inset:0;z-index:0}
+.hero__bg img,.hero__bg video{width:100%;height:100%;object-fit:cover;display:block}
+.hero__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(13,23,39,.93),rgba(13,23,39,.6) 55%,rgba(13,23,39,.34))}
+.hero__in{position:relative;z-index:2;width:100%;padding:120px clamp(24px,4.4vw,64px) 0}
+.hcard{background:var(--iv);max-width:660px;padding:clamp(30px,4vw,52px);margin-bottom:-1px}
+.hero h1{font-size:clamp(34px,4.4vw,60px);max-width:13ch}
+.hsub{margin:20px 0 28px;font-size:18px;line-height:1.86}
+.hpl{display:flex;flex-direction:column;gap:9px;margin-top:26px;padding-top:22px;border-top:1px solid var(--ln)}
+.hpl span{display:flex;align-items:center;gap:11px;font-size:16px;font-weight:500}
+.hpl span::before{content:"";width:15px;height:15px;flex:0 0 auto;border:1px solid var(--br);border-radius:50%;background:radial-gradient(circle,var(--br) 0 3.3px,transparent 3.4px)}
+.grev{display:inline-flex;align-items:center;gap:9px;font-size:16px;color:var(--mut);margin-top:18px}
+.grev .st{color:var(--br);letter-spacing:2px}
+
+/* stats bar */
+.stb{display:grid;grid-template-columns:repeat(4,1fr)}
+.stb div{padding:34px clamp(20px,2.4vw,30px);border-left:1px solid var(--lnd)}
+.stb div:first-child{border-left:none}
+.stb b{display:block;font-family:var(--ser);font-size:clamp(28px,3.2vw,42px);color:var(--br-l);line-height:1}
+.stb span{font-size:13px;letter-spacing:.13em;text-transform:uppercase;color:var(--onm);margin-top:9px;display:block;line-height:1.55}
+@media(max-width:860px){.stb{grid-template-columns:1fr 1fr}.stb div:nth-child(odd){border-left:none}.stb div:nth-child(n+3){border-top:1px solid var(--lnd)}}
+
+.acl{display:flex;flex-wrap:wrap;gap:7px 20px;font-size:16px;color:var(--mut)}
+.acl b{color:var(--ink);font-weight:600}
+
+/* ── SERVICES: photo band + list rows ── */
+.band{position:relative;overflow:hidden;height:clamp(230px,26vw,330px);display:flex;align-items:flex-end}
+.band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.band::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(13,23,39,.9),rgba(13,23,39,.15))}
+.band__t{position:relative;z-index:2;padding:0 clamp(24px,4vw,48px) 30px;max-width:760px}
+.band__t h3{font-size:clamp(26px,3.4vw,40px);color:var(--iv);margin-bottom:9px}
+.band__t p{font-size:17px;line-height:1.76;color:var(--onm)}
+.slist{border-bottom:1px solid var(--ln)}
+.srow{display:grid;grid-template-columns:52px 1fr 190px 106px;gap:24px;align-items:center;padding:20px 0;border-top:1px solid var(--ln);transition:.34s var(--ea)}
+.srow:hover{padding-left:12px;background:var(--wh)}
+.srow .n{font-family:var(--ser);font-size:17px;color:var(--br)}
+.srow h4{font-family:var(--ser);font-size:20px;font-weight:400;margin-bottom:5px}
+.srow p{font-size:16px;line-height:1.66;max-width:62ch}
+.srow .tg2{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--br);text-align:right}
+.srow .lk{font-size:15px;font-weight:600;color:var(--nv);text-align:right;white-space:nowrap;transition:.3s}
+.srow:hover .lk{color:var(--br)}
+/* floating image preview that follows the cursor across the service rows */
+.srow[data-img]{cursor:pointer}
+.hprev{position:fixed;left:0;top:0;width:268px;height:186px;border-radius:4px;overflow:hidden;pointer-events:none;opacity:0;transform:translate(-50%,-50%) scale(.94);transition:opacity .28s var(--ea),transform .28s var(--ea);z-index:90;box-shadow:0 26px 56px -24px rgba(13,23,39,.6);border:1px solid var(--lnd)}
+.hprev.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.hprev img{width:100%;height:100%;object-fit:cover}
+@media(max-width:1060px),(prefers-reduced-motion:reduce){.hprev{display:none}}
+@media(max-width:900px){.srow{grid-template-columns:40px 1fr;gap:14px}.srow .tg2{grid-column:2;text-align:left;margin-top:6px}.srow .lk{grid-column:2;text-align:left}}
+
+/* warranty band */
+.wb{display:grid;grid-template-columns:repeat(4,1fr)}
+.wb div{padding:30px clamp(18px,2.2vw,28px);border-left:1px solid var(--lnd);text-align:center;display:flex;flex-direction:column;justify-content:center}
+.wb div:first-child{border-left:none}
+.wb b{font-family:var(--ser);font-size:clamp(24px,2.6vw,34px);color:var(--br-l);display:block;line-height:1.12}
+/* direct child only - the counter <span class="cn"> sits inside <b> and must keep the <b> size */
+.wb div>span{font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--onm);display:block;margin-top:9px;line-height:1.5}
+@media(max-width:860px){.wb{grid-template-columns:1fr 1fr}.wb div:nth-child(odd){border-left:none}.wb div:nth-child(n+3){border-top:1px solid var(--lnd)}}
+
+/* PROCESS ledger */
+.pl{border-top:1px solid var(--ln)}
+.pit{display:grid;grid-template-columns:110px 1fr;gap:32px;padding:28px 0;border-bottom:1px solid var(--ln)}
+.pit .n{font-family:var(--ser);font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--br);padding-top:5px}
+.pit h3{font-size:23px;margin-bottom:9px}
+.pit p{font-size:17px;line-height:1.8;max-width:64ch}
+@media(max-width:700px){.pit{grid-template-columns:1fr;gap:8px}}
+
+/* WHY two-col text, no boxes */
+.wtx{columns:2 350px;column-gap:54px}
+.wit{break-inside:avoid;padding-bottom:26px;margin-bottom:26px;border-bottom:1px solid var(--ln)}
+.wit b{font-family:var(--ser);font-size:20px;display:block;margin-bottom:8px;font-weight:400}
+.wit b s{color:var(--br);text-decoration:none;font-family:var(--sans);font-size:15px;letter-spacing:.12em;margin-right:10px}
+.wit p{font-size:17px;line-height:1.78}
+
+/* REVIEWS stacked pull-quotes */
+.rq{border-top:1px solid var(--lnd)}
+.rqi{display:grid;grid-template-columns:1fr 250px;gap:40px;align-items:start;padding:34px 0;border-bottom:1px solid var(--lnd)}
+.rqi p{font-family:var(--ser);font-size:clamp(20px,2.2vw,26px);line-height:1.5;color:var(--iv)}
+.rqi .m{text-align:right}
+.rqi .st{color:var(--br-l);letter-spacing:2px;font-size:15px;display:block;margin-bottom:9px}
+.rqi b{font-size:16px;display:block;color:var(--iv)}
+.rqi span{font-size:15px;color:var(--onm)}
+@media(max-width:820px){.rqi{grid-template-columns:1fr;gap:16px}.rqi .m{text-align:left}}
+
+/* GALLERY 2col tall */
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.gc{position:relative;overflow:hidden}
+.gc img{width:100%;height:100%;object-fit:cover;transition:transform .85s var(--ea)}
+.gc:hover img{transform:scale(1.05)}
+.gc::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(13,23,39,.84),transparent 55%)}
+.gc span{position:absolute;left:22px;right:22px;bottom:18px;z-index:2;color:var(--iv);font-size:16px;line-height:1.5}
+.gc:nth-child(1){aspect-ratio:4/5}
+.gc:nth-child(2){aspect-ratio:4/5}
+.gc:nth-child(3){aspect-ratio:16/9}
+.gc:nth-child(4){aspect-ratio:16/9}
+.gc:nth-child(5){grid-column:span 2;aspect-ratio:21/8}
+@media(max-width:700px){.gal{grid-template-columns:1fr}.gc:nth-child(n){aspect-ratio:4/3;grid-column:span 1}}
+
+/* GUARANTEE */
+.gu{display:grid;grid-template-columns:1.2fr .8fr;gap:52px;align-items:center}
+.gb{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
+.gb span{font-size:14px;border:1px solid var(--br-l);color:var(--br-l);padding:9px 15px}
+.gr{text-align:center;border:1px solid var(--lnd);padding:48px 28px}
+.gr .n{font-family:var(--ser);font-size:clamp(74px,10vw,124px);color:var(--br-l);line-height:.88}
+.gr .l{font-size:14px;letter-spacing:.15em;text-transform:uppercase;color:var(--onm);margin-top:14px}
+@media(max-width:860px){.gu{grid-template-columns:1fr;gap:32px}}
+
+/* FAQ */
+.fq{border-top:1px solid var(--ln);max-width:960px}
+.fa{border-bottom:1px solid var(--ln)}
+.faq{width:100%;display:flex;align-items:center;gap:20px;background:none;border:none;text-align:left;padding:20px 2px;cursor:pointer;color:var(--ink)}
+.faq .qn{font-size:13px;color:var(--br);width:26px;flex:0 0 auto;letter-spacing:.08em}
+.faq .qt{flex:1;font-family:var(--ser);font-size:20px;line-height:1.38}
+.faq i{flex:0 0 auto;width:20px;height:20px;position:relative;font-style:normal}
+.faq i::before,.faq i::after{content:"";position:absolute;background:var(--br);transition:.36s var(--ea)}
+.faq i::before{left:0;right:0;top:9.5px;height:1px}
+.faq i::after{top:0;bottom:0;left:9.5px;width:1px}
+.fa.op .faq i::after{transform:scaleY(0)}
+.fan{max-height:0;overflow:hidden;transition:max-height .5s var(--ea)}
+.fan p{font-size:17px;line-height:1.85;padding:0 2px 22px 46px;max-width:76ch}
+@media(max-width:620px){.fan p{padding-left:2px}}
+
+/* CTA */
+.ct h2{font-size:clamp(30px,4.4vw,58px);max-width:17ch}
+.ct p{margin-top:18px;max-width:54ch;font-size:18px}
+.ctel{font-family:var(--ser);font-size:30px;color:var(--br-l);display:block;margin-top:22px}
+
+.ft{padding:52px 0 34px;background:var(--nv2);color:var(--iv)}
+.fgr{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;padding-bottom:34px;border-bottom:1px solid var(--lnd)}
+.fgr p{font-size:16px;line-height:1.85;color:var(--onm);max-width:38ch}
+.fgr h4{font-size:13px;letter-spacing:.17em;text-transform:uppercase;color:var(--br-l);margin-bottom:14px;font-weight:700}
+.fgr a,.fgr span{display:block;font-size:16px;color:var(--onm);padding:4px 0}
+.fgr a:hover{color:var(--iv)}
+.f2{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;padding:30px 0;border-bottom:1px solid var(--lnd)}
+.f2 h4{font-size:13px;letter-spacing:.17em;text-transform:uppercase;color:var(--br-l);margin-bottom:12px;font-weight:700}
+.f2 p,.f2 address{font-size:16px;color:var(--onm);font-style:normal;line-height:1.9}
+.oh{display:flex;justify-content:space-between;max-width:246px;gap:14px}
+.fin{font-size:14px;color:rgba(246,242,234,.5);line-height:1.85;padding:22px 0;max-width:950px}
+.fbt{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:20px;border-top:1px solid var(--lnd);font-size:15px;color:var(--onm)}
+@media(max-width:940px){.fgr,.f2{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.fgr,.f2{grid-template-columns:1fr}}
+
+  /* -- ACCREDITATION & BRAND LOGOS --
+     Replaces the text lists. Every tile carries its own light ground so the
+     dark marks (Baumit, Which?, TrustMark) stay legible whatever the section
+     behind them is doing. max-height is a LENGTH, not a percentage: a
+     percentage max-height resolved against an auto-sized row is a cyclic
+     dependency, which browsers drop - and tall logos then burst the tile. */
+  .lgrow { display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-start; }
+  .lgt { display:inline-flex; align-items:center; justify-content:center; flex:0 0 auto;
+    height:58px; min-width:116px; padding:10px 16px; background:#fff;
+    border:1px solid var(--ln); border-radius:8px; box-sizing:border-box; }
+  .lgt img { max-width:100%; max-height:34px; width:auto; height:auto; object-fit:contain; display:block; }
+  .lgt--text { font-size:13px; font-weight:700; line-height:1.25; letter-spacing:.05em;
+    color:#1E1E20; text-align:center; text-transform:uppercase; }
+  .lglab { display:block; font-size:13px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.12em; color:var(--mut); margin-bottom:12px; text-align:left; }
+  @media (max-width:560px) {
+    .lgt { height:50px; min-width:98px; padding:8px 12px; }
+    .lgt img { max-height:28px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hprev" id="hprev" aria-hidden="true"><img src="" alt=""></div>
+
+<nav class="rail">
+  <div><a href="#top" class="rlg">Home<br>Improvements</a><p class="rtag">Lofts · Bathrooms<br>Insulation</p></div>
+  <div class="rnav" id="rnav">
+    <a href="#process">Our Process</a><a href="#why">Why Choose Us?</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#faq">Guides</a><a href="#">Careers</a><a href="#">Area</a><a href="#contact">Contact</a></div>
+  <p class="racc">TrustMark · Which?<br>Checkatrade · FMB<br>NVQ Level 3</p>
+  <a href="#contact" class="rcta">Get A Free Quote</a>
+  <a href="tel:01632960300" class="rtel">01632 960 300</a>
+</nav>
+
+<div class="mbar">
+  <a href="#top" class="rlg" style="font-size:20px">Home Improvements</a>
+  <div style="display:flex;align-items:center;gap:10px">
+    <a href="#contact" class="rcta" style="padding:9px 14px;font-size:15px">Free Quote</a>
+    <button class="mtg" id="mtg" type="button" aria-label="Menu" aria-expanded="false"><s></s></button>
+  </div>
+</div>
+<div class="mdrw" id="mdrw"><a href="#process">Our Process</a><a href="#why">Why Choose Us?</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#faq">Guides</a><a href="#">Careers</a><a href="#">Area</a><a href="#contact">Contact</a><a href="tel:01632960300">01632 960 300</a></div>
+
+<div class="shell" id="top">
+
+<section class="hero">
+  <div class="hero__bg"><video src="videos/hero-h1-rail.mp4" poster="images/hero-home.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video></div>
+  <div class="hero__in">
+    <div class="hcard rv">
+      <span class="kick">Loft Conversions · Bathrooms · Insulation &amp; Rendering</span>
+      <h1>Three trades. One team. <em>One fixed price.</em></h1>
+      <p class="hsub">Loft conversions, bathroom installations and external wall insulation, designed, built and signed off by our own tradespeople. A free home or video survey, a fixed price before we start, and no salespeople anywhere in between.</p>
+      <div class="pr"><a href="#contact" class="btn bn">Get A Free Quote</a><a href="tel:01632960300" class="btn bo">Speak To Our Experts</a></div>
+      <div class="hpl"><span>10 Year Workmanship Warranty</span><span>Free home or video survey</span><span>Fixed Price Before We Start</span></div>
+      <span class="grev"><span class="st">★★★★★</span> <b>5.0</b> rated on Google</span>
+    </div>
+  </div>
+</section>
+
+<div class="dk"><div class="stb sg rv cnt">
+  <div class="it"><b class="cn" data-to="3" data-sf="">0</b><span>Trades under one roof</span></div>
+  <div class="it"><b class="cn" data-to="20" data-sf="%">0</b><span>Value a loft can add</span></div>
+  <div class="it"><b class="cn" data-to="40" data-sf="%">0</b><span>Less heat lost through walls</span></div>
+  <div class="it"><b>5.0</b><span>Average Google rating</span></div>
+</div></div>
+
+<div class="pad">
+
+<section class="blk">
+  <div class="rv" style="margin-bottom:22px">
+    <span class="kick">Accredited, insured and independently checked</span>
+    <h2 style="font-size:clamp(22px,2.6vw,30px)">The schemes we answer to and the brands we fit</h2>
+  </div>
+  <div class="lgw rv"><span class="lglab">Accredited &amp; registered</span><div class="lgrow"><span class="lgt"><img src="logos/trustmark.webp" alt="TrustMark registered" loading="lazy" decoding="async"></span><span class="lgt"><img src="logos/which.jpg" alt="Which? Trusted Trader" loading="lazy" decoding="async"></span><span class="lgt"><img src="logos/checkatrade-logo.svg" alt="Checkatrade verified" loading="lazy" decoding="async"></span><span class="lgt"><img src="logos/approved-code.webp" alt="Trading Standards Approved Code" loading="lazy" decoding="async"></span><span class="lgt"><img src="logos/fmb.svg" alt="Federation of Master Builders" loading="lazy" decoding="async"></span><span class="lgt"><img src="logos/ciphe-logo.svg" alt="CIPHE registered plumbing" loading="lazy" decoding="async"></span><span class="lgt lgt--text">NVQ Level&nbsp;3<br>Trained</span></div></div>
+  <div class="lgw rv" style="margin-top:20px"><span class="lglab">Systems and brands we fit</span><div class="lgrow"><span class="lgt"><img src="logos/velux.svg" alt="Velux certified installer" loading="lazy" decoding="async"></span><span class="lgt"><img src="logos/grohe.png" alt="Grohe brassware" loading="lazy" decoding="async"></span><span class="lgt"><img src="logos/bristan.png" alt="Bristan brassware" loading="lazy" decoding="async"></span><span class="lgt"><img src="logos/kb.png" alt="KB Bathroom Distribution" loading="lazy" decoding="async"></span><span class="lgt"><img src="logos/city_plumbing.png" alt="City Plumbing supplier" loading="lazy" decoding="async"></span><span class="lgt"><img src="logos/plumb_center.png" alt="Plumb Center supplier" loading="lazy" decoding="async"></span><span class="lgt"><img src="logos/ewipro.png" alt="EWI Pro render systems" loading="lazy" decoding="async"></span><span class="lgt"><img src="logos/baumit.svg" alt="Baumit render systems" loading="lazy" decoding="async"></span></div></div>
+</section>
+
+<section class="blk" id="process">
+  <div class="rv" style="margin-bottom:38px">
+    <span class="kick">How we work</span>
+    <h2 style="font-size:clamp(28px,4vw,50px);max-width:18ch">From first enquiry to <em>final sign off</em></h2>
+  </div>
+  <div class="pl sg rv">
+    <div class="pit it"><span class="n">Step 01</span><div><h3>Tell us what you want</h3><p>Call us, book online or use live chat. It takes about sixty seconds and there is no sales pitch at the end of it.</p></div></div>
+    <div class="pit it"><span class="n">Step 02</span><div><h3>Free home or video survey</h3><p>A surveyor visits, or runs the survey over a video call. You get a fixed price promise in writing, no salespeople, no hidden charges.</p></div></div>
+    <div class="pit it"><span class="n">Step 03</span><div><h3>Design, planning and permissions</h3><p>We handle structural calculations, building regulations and any planning application. Most dormer and Velux conversions fall under permitted development.</p></div></div>
+    <div class="pit it"><span class="n">Step 04</span><div><h3>Build, sign off and aftercare</h3><p>Our own tradespeople work through first fix, plumbing, plastering and finishing, then a final walkthrough and building control sign off.</p></div></div>
+  </div>
+  <div class="pr rv" style="margin-top:36px"><a href="#contact" class="btn bb">Get A Free Quote</a><a href="tel:01632960300" class="btn bo">Speak To Our Experts</a></div>
+</section>
+</div>
+
+<section id="services">
+  <div class="pad" style="padding-top:92px;padding-bottom:34px">
+    <div class="rv">
+      <span class="kick">What we do</span>
+      <h2 style="font-size:clamp(28px,4vw,50px)">Three trades, <em>one standard of work</em></h2>
+    </div>
+  </div>
+
+  <div class="band rv"><img src="images/svc/existing-plans.webp" alt="A loft conversion built to the owner's own drawings, with the new staircase in" loading="lazy">
+    <div class="band__t"><h3>Loft conversions</h3><p>Designed, built and signed off in house. You stay in the house throughout, everything goes up and down the scaffold.</p></div></div>
+  <div class="pad"><div class="slist sg rv">
+    <div class="srow it" data-img="images/svc/dormer.webp"><span class="n">01</span><div><h4>Dormer Loft Conversion</h4><p>A flat roofed box built out from the slope. The most head height for the money, and usually permitted development.</p></div><span class="tg2">6 to 8 weeks</span><span class="lk">Get a price →</span></div>
+    <div class="srow it" data-img="images/svc/hip-to-gable.webp"><span class="n">02</span><div><h4>Hip To Gable Conversion</h4><p>The sloping hip end is built up square, turning an unusable corner into full height floor.</p></div><span class="tg2">10 to 12 weeks</span><span class="lk">Get a price →</span></div>
+    <div class="srow it" data-img="images/svc/l-shaped-dormer.webp"><span class="n">03</span><div><h4>L Shaped Dormer Conversion</h4><p>Two dormers joined over a rear extension. Common on Victorian and Edwardian terraces.</p></div><span class="tg2">12 to 14 weeks</span><span class="lk">Get a price →</span></div>
+    <div class="srow it" data-img="images/svc/velux.webp"><span class="n">04</span><div><h4>Velux Roof Light Conversion</h4><p>The roof structure stays exactly as it is, which makes this the quickest and the most affordable option.</p></div><span class="tg2">5 to 8 weeks</span><span class="lk">Get a price →</span></div>
+    <div class="srow it" data-img="images/svc/existing-plans.webp"><span class="n">05</span><div><h4>Conversions From Existing Plans</h4><p>Already have drawings from an architect? We price them as they stand and build to them.</p></div><span class="tg2">Your drawings</span><span class="lk">Get a price →</span></div>
+    <div class="srow it" data-img="images/svc/planning.webp"><span class="n">06</span><div><h4>Planning Permission &amp; Building Regs</h4><p>We check what your property actually needs, submit the application, and see building control through to sign off.</p></div><span class="tg2">Applied for by us</span><span class="lk">Get a price →</span></div>
+    <div class="srow it" data-img="images/svc/carpentry.webp"><span class="n">07</span><div><h4>Loft Carpentry &amp; Joinery</h4><p>Staircases, fitted eaves storage, wardrobes and second fix, cut and hung by our own joiners.</p></div><span class="tg2">First &amp; second fix</span><span class="lk">Get a price →</span></div>
+  </div></div>
+
+  <div class="band rv"><img src="images/svc/bathroom-install.webp" alt="A completed bathroom finished in large format marble effect tiling" loading="lazy">
+    <div class="band__t"><h3>Bathrooms</h3><p>Full bathrooms, en suites and wet rooms on fixed price packages. We work seven days a week, because not everyone can take a weekday off.</p></div></div>
+  <div class="pad"><div class="slist sg rv">
+    <div class="srow it" data-img="images/svc/bathroom-design.webp"><span class="n">01</span><div><h4>Bathroom Design</h4><p>A layout drawn around your room, your budget and where the pipework can realistically go.</p></div><span class="tg2">Free</span><span class="lk">Get a price →</span></div>
+    <div class="srow it" data-img="images/svc/bathroom-survey.webp"><span class="n">02</span><div><h4>Bathroom Surveys</h4><p>At your home or over a video call, whichever suits. You end it with a fixed price promise in writing.</p></div><span class="tg2">Home or video</span><span class="lk">Get a price →</span></div>
+    <div class="srow it" data-img="images/svc/bathroom-install.webp"><span class="n">03</span><div><h4>Full Bathroom Installation</h4><p>Strip out, first fix, tiling, second fix and making good, one team, one price, one point of contact.</p></div><span class="tg2">Fixed price</span><span class="lk">Get a price →</span></div>
+    <div class="srow it" data-img="images/svc/wet-room.webp"><span class="n">04</span><div><h4>Wet Rooms</h4><p>Tanked floors and walls with the falls set properly, so the drainage still works in ten years' time.</p></div><span class="tg2">Fully tanked</span><span class="lk">Get a price →</span></div>
+    <div class="srow it" data-img="images/svc/en-suite.webp"><span class="n">05</span><div><h4>En Suites &amp; Cloakrooms</h4><p>Small rooms are the hardest to plan. We fit them into lofts, box rooms and the space under the stairs.</p></div><span class="tg2">Loft en suites</span><span class="lk">Get a price →</span></div>
+    <div class="srow it" data-img="images/svc/finance.webp"><span class="n">06</span><div><h4>Finance Options</h4><p>Spread the cost from 0% APR over 12 or 24 months, always subject to the lender's assessment.</p></div><span class="tg2">0% APR</span><span class="lk">Get a price →</span></div>
+  </div></div>
+
+  <div class="band rv"><img src="images/band-insulation.webp" alt="Insulation being fitted between the rafters of a loft" loading="lazy">
+    <div class="band__t"><h3>Insulation and rendering</h3><p>Warmer walls and a finish that lasts. Insulation work is zero rated for VAT, and we do not install under grant schemes, so there is no eligibility test and no waiting list.</p></div></div>
+  <div class="pad"><div class="slist sg rv">
+    <div class="srow it" data-img="images/svc/ewi.webp"><span class="n">01</span><div><h4>External Wall Insulation</h4><p>90mm EPS board, mesh, basecoat and a silicone topcoat. Cuts heat lost through the walls by 30 to 40%.</p></div><span class="tg2">From £122/m²</span><span class="lk">Get a price →</span></div>
+    <div class="srow it" data-img="images/svc/iwi.webp"><span class="n">02</span><div><h4>Internal Wall Insulation</h4><p>For properties where external work is not an option, a frontage worth keeping, or no room at the boundary.</p></div><span class="tg2">Where EWI cannot go</span><span class="lk">Get a price →</span></div>
+    <div class="srow it" data-img="images/svc/loft-insulation.webp"><span class="n">03</span><div><h4>Loft Insulation</h4><p>An uninsulated loft loses roughly a quarter of your heating. Topping it up is the cheapest fix in the house.</p></div><span class="tg2">Up to 25% of heat</span><span class="lk">Get a price →</span></div>
+    <div class="srow it" data-img="images/svc/loft-boarding.webp"><span class="n">04</span><div><h4>Loft Boarding</h4><p>Raised boarding above the joists, so you get the storage back without crushing the insulation flat.</p></div><span class="tg2">Storage restored</span><span class="lk">Get a price →</span></div>
+    <div class="srow it" data-img="images/svc/silicone-render.webp"><span class="n">05</span><div><h4>Silicone Rendering</h4><p>A breathable, flexible topcoat in your choice of colour. It will not need repainting, unlike sand and cement.</p></div><span class="tg2">1.5mm finish</span><span class="lk">Get a price →</span></div>
+    <div class="srow it" data-img="images/svc/plastering.webp"><span class="n">06</span><div><h4>General Plastering</h4><p>Skimming, patching, and stripping back and rebuilding bay window render that has cracked or gone hollow.</p></div><span class="tg2">Skim &amp; repair</span><span class="lk">Get a price →</span></div>
+  </div>
+  <div class="pr rv" style="margin:36px 0 92px"><a href="#contact" class="btn bn">Get A Free Quote</a><a href="tel:01632960300" class="btn bo">Speak To Our Experts</a></div>
+  </div>
+</section>
+
+<div class="dk"><div class="wb sg rv cnt">
+  <div class="it"><b><span class="cn" data-to="10" data-sf="">0</span> yr</b><span>Workmanship Warranty</span></div>
+  <div class="it"><b><span class="cn" data-to="15" data-sf="">0</span> yr</b><span>Manufacturer Warranty</span></div>
+  <div class="it"><b>0% APR</b><span>Over 12 &amp; 24 Months</span></div>
+  <div class="it"><b>0% VAT</b><span>On Insulation Work</span></div>
+</div></div>
+
+<div class="pad b2">
+<section class="blk" id="why" style="border-bottom:none">
+  <div class="rv" style="margin-bottom:38px">
+    <span class="kick">Why Homeowners Choose Us</span>
+    <h2 style="font-size:clamp(28px,4vw,50px)">Real tradespeople, <em>not salespeople</em></h2>
+  </div>
+  <div class="wtx rv">
+    <div class="wit"><b><s>01</s>Tradespeople, not salespeople</b><p>The people who quote your job are the people who build it. There is no commission paid salesperson in the middle, and no pressure to sign on the night.</p></div>
+    <div class="wit"><b><s>02</s>A fixed price, agreed before we start</b><p>Your quote is fixed in writing before a single tool comes out of the van. Scaffolding, skips, pipework adjustments and clean up are priced in, not added later.</p></div>
+    <div class="wit"><b><s>03</s>A free home or video survey</b><p>If it is easier for you, we will run the whole survey over a video call instead of visiting. Either way it is free, and there is no obligation at the end of it.</p></div>
+    <div class="wit"><b><s>04</s>You stay in your home</b><p>Loft conversions are built using access from the scaffold, so you do not need to move out. Bathroom work is sequenced so you are never left without facilities overnight.</p></div>
+    <div class="wit"><b><s>05</s>Trained, time served installers</b><p>Our insulation and rendering team is NVQ Level 3 trained and approved by the system manufacturers whose products we fit, which is what makes the 15 year material warranty possible.</p></div>
+    <div class="wit"><b><s>06</s>One team, start to finish</b><p>Structural work, first fix, plumbing, plastering, tiling and building control sign off are all handled in house. You have one number to call and one company answerable for the result.</p></div>
+  </div>
+</section>
+</div>
+
+<section class="dk" id="reviews" style="padding:92px 0">
+  <div class="pad">
+    <div class="rv" style="margin-bottom:30px">
+      <span class="kick">What Our Clients Say</span>
+      <h2 style="font-size:clamp(28px,4vw,50px)">What our <em>customers say</em></h2>
+    </div>
+    <div class="rq sg rv">
+      <div class="rqi it"><p>"Not all lofts are equal. This has been the best value and the highest quality build I have had in twenty years of owning houses, courteous, tidy, and genuinely a delight to have around the house."</p><div class="m"><span class="st">★★★★★</span><b>Verified Customer</b><span>Hip To Gable Conversion · Brighton</span></div></div>
+      <div class="rqi it"><p>"They did the whole survey over a video call because I could not get time off work. The price they gave me on that call is the price I paid. No salesman ever set foot in the house."</p><div class="m"><span class="st">★★★★★</span><b>Verified Customer</b><span>Bathroom Installation · Kirkcaldy</span></div></div>
+      <div class="rqi it"><p>"Our 1930s semi was freezing and the walls were solid brick. Since the external insulation and render went on, the back bedroom is usable in January and the gas bill has dropped noticeably."</p><div class="m"><span class="st">★★★★★</span><b>Verified Customer</b><span>External Wall Insulation · Solihull</span></div></div>
+      <div class="rqi it"><p>"Scaffold, skips, the lot, all arranged by them. I did not have to organise a single subcontractor, and the site was swept every evening before they left."</p><div class="m"><span class="st">★★★★★</span><b>Verified Customer</b><span>Silicone Rendering · Wolverhampton</span></div></div>
+      <div class="rqi it"><p>"The wet room is exactly what we asked for. The waterproofing and the fall on the floor were explained properly beforehand, which none of the other quotes bothered to do."</p><div class="m"><span class="st">★★★★★</span><b>Verified Customer</b><span>Wet Room Installation · Dunfermline</span></div></div>
+      <div class="rqi it"><p>"A Velux conversion, done in six weeks, and the loft is now the warmest room in the house. Building control sign off was handled entirely by them."</p><div class="m"><span class="st">★★★★★</span><b>Verified Customer</b><span>Velux Roof Light Conversion · Haywards Heath</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="pad">
+<section class="blk" id="work">
+  <div class="rv" style="margin-bottom:38px">
+    <span class="kick">Our Completed Projects</span>
+    <h2 style="font-size:clamp(28px,4vw,50px)">Recent work, <em>photographed on site</em></h2>
+  </div>
+  <div class="gal rv">
+    <!-- gallery images live in images/h1/ so each one can match its slot's aspect ratio:
+         1 and 2 are 4/5 portrait, 3 and 4 are 16/9, 5 spans both columns at 21/8 -->
+    <div class="gc"><img src="images/h1/g1.webp" alt="A loft en suite shower room with a wall hung vanity unit" loading="lazy"><span>Loft En Suite, Solihull</span></div>
+    <div class="gc"><img src="images/h1/g2.webp" alt="A refitted family bathroom with a bath and vanity unit" loading="lazy"><span>Family Bathroom Refit, Lancing</span></div>
+    <div class="gc"><img src="images/h1/g3.webp" alt="A finished loft room with the new staircase in" loading="lazy"><span>Loft Conversion &amp; Staircase, Kirkcaldy</span></div>
+    <div class="gc"><img src="images/h1/g4.webp" alt="Insulation being fitted between the rafters of a loft" loading="lazy"><span>Loft Insulation &amp; Roof Structure, Haywards Heath</span></div>
+    <div class="gc"><img src="images/h1/g5.webp" alt="A finished loft room lit by two roof lights" loading="lazy"><span>Full Loft Conversion, Wolverhampton</span></div>
+  </div>
+</section>
+</div>
+
+<section class="dk" style="padding:92px 0">
+  <div class="pad">
+    <div class="gu">
+      <div class="rv">
+        <span class="kick">Our Promise</span>
+        <h2 style="font-size:clamp(27px,3.6vw,46px);margin-bottom:16px">Our ten year <em>workmanship guarantee</em></h2>
+        <p style="font-size:18px;line-height:1.9">Every loft, bathroom and insulation project carries a ten year workmanship warranty, and external wall insulation adds a fifteen year manufacturer warranty on the system itself. If something is not right, we come back and put it right.</p>
+        <div class="gb"><span>10 Year Workmanship Warranty</span><span>15 Year Manufacturer Warranty</span><span>Building Control Sign Off</span><span>Fully Insured</span><span>Fixed Price, No Hidden Costs</span></div>
+      </div>
+      <div class="gr rv"><div class="n">10</div><div class="l">Year Workmanship<br>Warranty</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="pad">
+<section class="blk" id="faq" style="border-bottom:none">
+  <div class="rv" style="margin-bottom:38px">
+    <span class="kick">Got Questions?</span>
+    <h2 style="font-size:clamp(28px,4vw,50px)">Frequently asked <em>questions</em></h2>
+  </div>
+  <div class="fq rv">
+    <div class="fa op"><button class="faq" type="button"><span class="qn">01</span><span class="qt">Do I need planning permission for a loft conversion?</span><i></i></button><div class="fan"><p>In most cases, no. Dormer and Velux roof light conversions usually fall under permitted development rights. Planning permission is more likely if the property is listed, sits in a conservation area, or the dormer is large or overlooks a neighbour. We check this at the free survey and handle any application ourselves.</p></div></div>
+    <div class="fa"><button class="faq" type="button"><span class="qn">02</span><span class="qt">How long does a loft conversion take?</span><i></i></button><div class="fan"><p>It depends on the type. A Velux roof light conversion takes around 5 to 8 weeks, a dormer 6 to 8 weeks, a hip to gable 10 to 12 weeks, and an L shaped dormer 12 to 14 weeks. We give you a programme with your quote, not a vague estimate.</p></div></div>
+    <div class="fa"><button class="faq" type="button"><span class="qn">03</span><span class="qt">Do I have to move out while the work is done?</span><i></i></button><div class="fan"><p>No. Loft conversions are built using access from the scaffold, so the work stays outside your living space until the very last stage. Bathroom installations are sequenced so you are never left without facilities overnight.</p></div></div>
+    <div class="fa"><button class="faq" type="button"><span class="qn">04</span><span class="qt">Will a loft conversion add value to my home?</span><i></i></button><div class="fan"><p>A professionally built and properly signed off conversion can add up to 20% to a property's value, depending on location and layout. It is one of the few improvements that adds a genuine room rather than just a finish.</p></div></div>
+    <div class="fa"><button class="faq" type="button"><span class="qn">05</span><span class="qt">Can I add an en suite to the loft?</span><i></i></button><div class="fan"><p>Yes, and most people do. We plan the plumbing runs and the layout at design stage so the soil connection and the head height both work before anything is built.</p></div></div>
+    <div class="fa"><button class="faq" type="button"><span class="qn">06</span><span class="qt">What is the difference between external wall insulation and just rendering?</span><i></i></button><div class="fan"><p>Rendering is a finish. External wall insulation is a full system, 90mm EPS insulation board fixed to the wall, basecoat and mesh, a second basecoat, primer, then a 1.5mm silicone render topcoat, with every junction sealed. Render on its own changes how the house looks; the insulation system changes how it performs.</p></div></div>
+    <div class="fa"><button class="faq" type="button"><span class="qn">07</span><span class="qt">How much heat does external wall insulation actually save?</span><i></i></button><div class="fan"><p>It reduces heat loss through the walls by roughly 30 to 40%. On a solid brick wall the U value typically improves from around 2.0 W/m²K to 0.28 to 0.30 W/m²K, about an 85% improvement. Properties built before about 1930 usually have solid walls and benefit most.</p></div></div>
+    <div class="fa"><button class="faq" type="button"><span class="qn">08</span><span class="qt">I have heard external wall insulation can damage a house. Is that true?</span><i></i></button><div class="fan"><p>Problems come from poor installation or the wrong system for the wall, not from the principle. EPS board is breathable, and finished with silicone render it lets moisture escape while keeping heat in. Fitted correctly it reduces damp and cold spots rather than causing them.</p></div></div>
+    <div class="fa"><button class="faq" type="button"><span class="qn">09</span><span class="qt">What warranties do you provide?</span><i></i></button><div class="fan"><p>Ten years on our workmanship across all three trades, plus a fifteen year manufacturer warranty on external wall insulation systems, which is only available because our installers are approved by the system suppliers.</p></div></div>
+    <div class="fa"><button class="faq" type="button"><span class="qn">10</span><span class="qt">Do you work under ECO4 or government grant schemes?</span><i></i></button><div class="fan"><p>No. We do not install under ECO4 or government funding schemes, so there is no eligibility assessment and no waiting list. Insulation work is zero rated for VAT, which is applied to your quote automatically.</p></div></div>
+    <div class="fa"><button class="faq" type="button"><span class="qn">11</span><span class="qt">Can I spread the cost?</span><i></i></button><div class="fan"><p>Yes. Finance is available through a regulated credit broker at 0% APR over 12 or 24 months, or 12.9% APR over 36, 48, 60 or 120 months, always subject to the lender's assessment. A deposit may be payable and is agreed before you apply. The credit broker is a credit broker, not a lender.</p></div></div>
+    <div class="fa"><button class="faq" type="button"><span class="qn">12</span><span class="qt">Can you fit a wet room instead of a standard bathroom?</span><i></i></button><div class="fan"><p>Yes. We design and fit full wet rooms, including the tanking, the floor falls and the drainage. We will walk you through how the waterproofing works before you commit, because that is the part that matters most.</p></div></div>
+  </div>
+</section>
+</div>
+
+<section class="dk ct" id="contact" style="padding:92px 0">
+  <div class="pad rv">
+    <span class="kick">Get Started</span>
+    <h2>Get a fixed price before you <em>commit to anything</em></h2>
+    <p>Loft, bathroom or insulation, book a free home or video survey and we will put a fixed price in writing. No salespeople, no obligation, and no charge if you decide against it.</p>
+    <div class="pr" style="margin-top:30px"><a href="#contact" class="btn bb">Get A Free Quote</a><a href="tel:01632960300" class="btn bol">Speak To Our Experts</a></div>
+    <a href="tel:01632960300" class="ctel">01632 960 300</a>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="pad">
+    <div class="fgr">
+      <div><a href="#top" class="rlg" style="font-size:22px">Home Improvements</a><p style="margin-top:12px">Loft conversions, bathroom installations, and insulation &amp; rendering. Three trades, one team, and one company answerable for the finish.</p><p style="margin-top:9px;color:var(--br-l)">Free home or video survey · fixed price in writing · ten year workmanship warranty.</p></div>
+      <div><h4>Loft conversions</h4><a href="#services">Dormer Loft Conversion</a><a href="#services">Hip To Gable Conversion</a><a href="#services">L Shaped Dormer</a><a href="#services">Velux Roof Light Conversion</a><a href="#services">Planning Permission Advice</a></div>
+      <div><h4>Bathrooms &amp; Insulation</h4><a href="#services">Bathroom Design &amp; Survey</a><a href="#services">Full Bathroom Installation</a><a href="#services">Wet Rooms &amp; En Suites</a><a href="#services">External &amp; Internal Wall Insulation</a><a href="#services">Loft Insulation &amp; Boarding</a><a href="#services">Silicone Rendering &amp; Plastering</a></div>
+      <div><h4>Accreditations</h4><a href="#">TrustMark Registered</a><a href="#">Which? Trusted Trader</a><a href="#">Checkatrade Verified</a><a href="#">Trading Standards Approved Code</a><a href="#">Federation of Master Builders</a><a href="#">NVQ Level 3 Trained Installers</a></div>
+    </div>
+    <div class="f2">
+      <div><h4>Opening hours</h4><p><span class="oh"><span>Mon to Fri</span><span>08:00 to 17:30</span></span><span class="oh"><span>Saturday</span><span>By arrangement</span></span><span class="oh"><span>Sunday</span><span>By arrangement</span></span></p></div>
+      <div><h4>Office</h4><address>Home Improvements Ltd<br>Unit 8, Kingswood Trading Estate<br>Bristol BS15 4NU</address></div>
+      <div><h4>Contact</h4><p><a href="tel:01632960300" style="color:var(--br-l)">01632 960 300</a><br>Survey by home visit or video call</p></div>
+    </div>
+    <p class="fin"><b style="color:var(--onm)">Finance:</b> Home Improvements Ltd is an Introducer Appointed Representative of a regulated credit broker. The credit broker is not a lender (FRN 111111). Finance is available subject to status. The rate offered is always provisional and will depend upon your personal circumstances, the loan amount and the term.</p>
+    <div class="fbt"><span>© 2026 We Build Trades Ltd. Demonstration template, sample content.</span><span><a href="#">Privacy policy</a> · <a href="#">Terms and conditions</a> · <a href="#">Complaints procedure</a></span></div>
+  </div>
+</footer>
+
+</div>
+
+<script>
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');if(x.target.classList.contains('cnt'))cu(x.target);io.unobserve(x.target)}})},{threshold:.06,rootMargin:"0px 0px -5% 0px"});
+document.querySelectorAll('.rv,.sg').forEach(e=>io.observe(e));
+function cu(s){s.querySelectorAll('.cn').forEach((el,i)=>{const to=+el.dataset.to,sf=el.dataset.sf||'',d=1400,st=performance.now()+i*100;
+function t(n){if(n<st){requestAnimationFrame(t);return}const p=Math.min(1,(n-st)/d),e=1-Math.pow(1-p,3);el.textContent=Math.floor(to*e)+sf;if(p<1)requestAnimationFrame(t);else el.textContent=to+sf}requestAnimationFrame(t)})}
+(()=>{const links=[...document.querySelectorAll('#rnav a')];
+const map=links.map(a=>({a,el:document.querySelector(a.getAttribute('href'))})).filter(x=>x.el);
+const spy=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('on'));
+const m=map.find(x=>x.el===e.target);if(m)m.a.classList.add('on')}})},{rootMargin:"-45% 0px -50% 0px"});
+map.forEach(x=>spy.observe(x.el))})();
+(()=>{const t=document.getElementById('mtg'),d=document.getElementById('mdrw');
+t.addEventListener('click',()=>{const o=d.classList.toggle('op');t.setAttribute('aria-expanded',o)});
+d.addEventListener('click',e=>{if(e.target.closest('a'))d.classList.remove('op')});
+addEventListener('keydown',e=>{if(e.key==='Escape')d.classList.remove('op')})})();
+(()=>{const it=[...document.querySelectorAll('.fa')];
+function set(x,o){const a=x.querySelector('.fan');if(o){x.classList.add('op');a.style.maxHeight=a.scrollHeight+'px'}else{x.classList.remove('op');a.style.maxHeight='0px'}}
+it.forEach(x=>{if(x.classList.contains('op'))set(x,true);x.querySelector('.faq').addEventListener('click',()=>{const o=x.classList.contains('op');it.forEach(y=>set(y,false));set(x,!o)})});
+addEventListener('resize',()=>{const o=document.querySelector('.fa.op');if(o){const a=o.querySelector('.fan');a.style.maxHeight=a.scrollHeight+'px'}})})();
+(()=>{const F='data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="%2316243D"/><stop offset="1" stop-color="%237A5E1C"/></linearGradient></defs><rect width="800" height="600" fill="url(%23g)"/></svg>');
+document.querySelectorAll('img').forEach(i=>i.addEventListener('error',function(){this.onerror=null;this.src=F},{once:true}))})();
+</script>
+<script>
+/* Service row hover preview: shows the photo for each service next to the cursor. */
+(function(){
+  var p=document.getElementById('hprev');
+  if(!p||window.matchMedia('(max-width:1060px)').matches)return;
+  if(window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var im=p.querySelector('img'),rows=document.querySelectorAll('.srow[data-img]');
+  if(!rows.length)return;
+  var raf=null,cx=0,cy=0;
+  function place(){raf=null;p.style.transform='translate('+cx+'px,'+cy+'px) translate(-50%,-50%) scale('+(p.classList.contains('on')?1:.94)+')';}
+  rows.forEach(function(r){
+    r.addEventListener('mouseenter',function(){
+      var s=r.getAttribute('data-img');if(!s)return;
+      if(im.getAttribute('src')!==s){im.setAttribute('src',s);}
+      var t=r.querySelector('h4');
+      im.setAttribute('alt',t?t.textContent:'');
+      p.classList.add('on');place();
+    });
+    r.addEventListener('mouseleave',function(){p.classList.remove('on');place();});
+    r.addEventListener('mousemove',function(e){
+      var w=p.offsetWidth||268,h=p.offsetHeight||186,pad=18;
+      cx=e.clientX+w/2+28;
+      if(cx+w/2>window.innerWidth-pad){cx=e.clientX-w/2-28;}
+      cy=Math.min(Math.max(e.clientY,h/2+pad),window.innerHeight-h/2-pad);
+      if(!raf){raf=requestAnimationFrame(place);}
+    });
+  });
+  /* warm the cache once the page is idle so the first hover does not flash */
+  window.addEventListener('load',function(){
+    var q=[];rows.forEach(function(r){var s=r.getAttribute('data-img');if(s&&q.indexOf(s)<0)q.push(s);});
+    var i=0;(function next(){if(i>=q.length)return;var g=new Image();g.onload=g.onerror=next;g.src=q[i++];})();
+  });
+})();
+</script>
+</body>
+</html>

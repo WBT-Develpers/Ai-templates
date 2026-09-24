@@ -1,0 +1,1851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Improvements: Loft Conversions, Bathrooms &amp; Insulation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Source Sans 3', sans-serif; background: #f5f4f8; color: #221d2b; overflow-x: hidden; }
+
+  /* ── NAV ── */
+  nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(245,244,248,0.92); backdrop-filter:blur(16px); border-bottom:1px solid #e2dfeb; display:flex; align-items:center; justify-content:space-between; padding:0 80px; height:90px; transition:background 0.3s, box-shadow 0.3s; }
+  nav.stuck { background:rgba(245,244,248,0.98); box-shadow:0 4px 24px rgba(34,29,43,0.07); }
+  .nav-brand { display:flex; align-items:baseline; gap:8px; text-decoration:none; }
+  .nav-brand-name { font-family:'DM Serif Text',serif; font-size:22px; color:#33254C; }
+  .nav-brand-tag { font-size:14px; font-weight:700; color:#7a3d6d; text-transform:uppercase; letter-spacing:0.08em; }
+  .nav-links { display:flex; gap:24px; }
+  .nav-links a { font-size:18px; font-weight:600; color:#221d2b; text-decoration:none; transition:color 0.2s; }
+  .nav-links a:hover { color:#7a3d6d; }
+  .btn-primary { background:#7a3d6d; color:#f5f4f8; font-family:'Source Sans 3',sans-serif; font-weight:700; font-size:16px; border:none; padding:12px 24px; border-radius:12px; cursor:pointer; text-decoration:none; transition:background 0.2s; }
+  .btn-primary:hover { background:#5f2e55; }
+
+  /* ── HERO ── */
+  #hero { padding-top:90px; position:relative; min-height:100vh; display:flex; align-items:center; overflow:hidden; }
+  #hero::before { content:''; position:absolute; inset:0; background:url('images/hero-home.jpg') center 38%/cover; }
+  #hero::after { content:''; position:absolute; inset:0; background:rgba(34,29,43,0.38); }
+  .hero-inner { position:relative; z-index:1; padding:0 80px; max-width:720px; display:flex; flex-direction:column; gap:28px; }
+  .hero-eyebrow { display:flex; align-items:center; gap:10px; }
+  .hero-eyebrow-line { width:32px; height:2px; background:#7a3d6d; }
+  .hero-eyebrow span { font-size:14px; font-weight:700; color:#ead9e6; text-transform:uppercase; letter-spacing:0.1em; }
+  .hero-headline { font-family:'DM Serif Text',serif; font-size:72px; line-height:1.05; color:#f5f4f8; }
+  .hero-sub { font-size:19px; font-weight:400; line-height:1.6; color:rgba(245,244,248,0.9); }
+  .hero-actions { display:flex; gap:16px; align-items:center; padding-top:16px; }
+  .btn-primary-lg { background:#7a3d6d; color:#f5f4f8; font-family:'Source Sans 3',sans-serif; font-weight:700; font-size:17px; border:none; padding:16px 32px; border-radius:12px; cursor:pointer; text-decoration:none; transition:background 0.2s; }
+  .btn-primary-lg:hover { background:#5f2e55; }
+  .btn-secondary-lg { background:transparent; color:#f5f4f8; font-family:'Source Sans 3',sans-serif; font-weight:600; font-size:17px; border:1px solid #f5f4f8; padding:16px 32px; border-radius:12px; cursor:pointer; text-decoration:none; }
+  /* Trust pills + Google review: canonical hero elements shared across the suite.
+     Light-on-dark here: the hero sits over a darkened photograph. */
+  .hero-trust-pills { display:flex; gap:24px; flex-wrap:wrap; }
+  .trust-pill { display:flex; align-items:center; gap:6px; font-size:15px; color:rgba(245,244,248,0.82); font-weight:500; }
+  .trust-dot { width:8px; height:8px; background:#7a3d6d; border-radius:4px; flex-shrink:0; }
+  .hero-grev { display:inline-flex; align-items:center; gap:9px; width:fit-content; max-width:100%; background:rgba(245,244,248,0.10); border:1px solid rgba(245,244,248,0.24); border-radius:100px; padding:9px 16px; text-decoration:none; transition:border-color 0.2s, transform 0.2s; }
+  .hero-grev:hover { border-color:rgba(245,244,248,0.45); transform:translateY(-1px); }
+  .grev-g { width:16px; height:16px; flex-shrink:0; }
+  .grev-stars { color:#fbbc05; font-size:15px; letter-spacing:0.5px; flex-shrink:0; }
+  .grev-txt { font-size:15px; color:rgba(245,244,248,0.82); }
+  .grev-txt b { color:#f5f4f8; font-weight:700; }
+
+  /* ── STATS ── */
+  #stats { background:#ece9f2; padding:48px 80px; display:flex; justify-content:space-between; align-items:center; }
+  .stat-item { display:flex; flex-direction:column; align-items:center; gap:8px; }
+  .stat-num { font-family:'DM Serif Text',serif; font-size:44px; color:#33254C; line-height:1; }
+  .stat-label { font-size:16px; font-weight:600; color:#6b6478; text-transform:uppercase; letter-spacing:0.05em; }
+
+  /* ── TRUST MARQUEE ── */
+  #trust-marquee { background:#ffffff; padding:28px 0; border-top:1px solid #e2dfeb; border-bottom:1px solid #e2dfeb; overflow:hidden; }
+  .marquee-label { text-align:center; font-size:13px; font-weight:700; color:#6b6478; text-transform:uppercase; letter-spacing:0.12em; margin-bottom:18px; }
+  .marquee-track-wrap { overflow:hidden; }
+  .marquee-track { display:flex; gap:48px; animation:marquee-scroll 30s linear infinite; width:max-content; align-items:center; }
+  .marquee-track:hover { animation-play-state:paused; }
+  @keyframes marquee-scroll { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+  .marquee-item { display:flex; align-items:center; gap:10px; flex-shrink:0; white-space:nowrap; }
+  .marquee-badge { background:#f5f4f8; border:1px solid #e2dfeb; border-radius:8px; padding:8px 18px; font-size:15px; font-weight:600; color:#6b6478; }
+  .marquee-badge.accent { border-color:#7a3d6d; color:#7a3d6d; background:#f6effa; }
+  .marquee-stars { color:#7a3d6d; font-size:16px; letter-spacing:2px; }
+  .marquee-rating-text { font-size:15px; font-weight:500; color:#6b6478; margin-left:6px; }
+  .marquee-sep { width:1px; height:28px; background:#e2dfeb; }
+
+  /* ── SECTIONS ── */
+  .section-label { font-size:14px; font-weight:700; color:#7a3d6d; text-transform:uppercase; letter-spacing:0.1em; }
+  .section-title { font-family:'DM Serif Text',serif; font-size:48px; line-height:1.05; color:#221d2b; margin-top:16px; }
+  section { padding:120px 80px; position:relative; }
+
+  /* ── PROCESS ── */
+  #process { background:#ece9f2; }
+  .process-header { text-align:center; margin-bottom:64px; }
+  .process-header .section-title { font-size:48px; }
+  .process-cards { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+  .process-card { background:#ffffff; border:1px solid #e2dfeb; border-radius:12px; padding:28px; display:flex; flex-direction:column; gap:20px; }
+  .process-num { font-family:'DM Serif Text',serif; font-size:48px; color:#7a3d6d; opacity:0.3; line-height:1; }
+  .process-card h3 { font-family:'DM Serif Text',serif; font-size:19px; color:#221d2b; }
+  .process-card p { font-size:16px; color:#6b6478; line-height:1.5; }
+
+  /* ── PRODUCT + STATS ── */
+  /* #ece9f2 and #f5f4f8 are close enough in value that the two sections read
+     as one un-divided block without this line - same hairline tone used on
+     every other section boundary in this file (lsplit-col, footer) */
+  #product { background:#f5f4f8; padding-bottom:0; border-top:1px solid #e2dfeb; }
+  .product-header { margin-bottom:64px; }
+  .services-layout { display:flex; gap:32px; min-height:600px; }
+  .big-card { flex:1; background:#ffffff; border-radius:12px; overflow:hidden; box-shadow:0 8px 24px rgba(107,100,120,0.07); display:flex; flex-direction:column; }
+  .big-card img { height:360px; width:100%; object-fit:cover; display:block; }
+  .big-card-body { padding:32px; display:flex; flex-direction:column; gap:12px; }
+  .big-card-body h3 { font-family:'DM Serif Text',serif; font-size:28px; color:#221d2b; }
+  .big-card-body p { font-size:18px; color:#6b6478; line-height:1.5; }
+  .right-stack { flex:1; display:flex; flex-direction:column; gap:32px; }
+  .small-card { flex:1; background:#ffffff; border-radius:12px; overflow:hidden; box-shadow:0 8px 24px rgba(107,100,120,0.07); display:flex; }
+  .small-card img { width:200px; height:100%; object-fit:cover; flex-shrink:0; }
+  .small-card-body { padding:24px; display:flex; flex-direction:column; justify-content:center; gap:8px; }
+  .small-card-body h3 { font-family:'DM Serif Text',serif; font-size:22px; color:#221d2b; }
+  .small-card-body p { font-size:16px; color:#6b6478; line-height:1.5; }
+  .product-stats-bar { background:#7a3d6d; padding:48px 80px; margin:0 -80px; display:flex; justify-content:space-between; align-items:center; }
+  .stat-b { text-align:center; color:#fff; }
+  .stat-b-num { font-family:'DM Serif Text',serif; font-size:44px; line-height:1; }
+  .stat-b-label { font-size:16px; font-weight:600; color:rgba(255,255,255,0.75); margin-top:6px; text-transform:uppercase; letter-spacing:0.04em; }
+
+  /* ── WHY US ── */
+  #why-us { background:#f5f4f8; padding:120px 180px; }
+  .why-header { text-align:center; margin-bottom:64px; }
+  .why-rows { display:flex; flex-direction:column; gap:40px; }
+  .why-row { background:#ffffff; border:1px solid #e2dfeb; border-radius:12px; padding:32px; display:flex; gap:32px; align-items:flex-start; }
+  .why-icon { background:#ece9f2; width:48px; height:48px; border-radius:24px; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:22px; }
+  .why-row h3 { font-family:'DM Serif Text',serif; font-size:22px; color:#221d2b; margin-bottom:6px; }
+  .why-row p { font-size:17px; color:#6b6478; line-height:1.5; }
+
+  /* ── REVIEWS ── */
+  #reviews { background:#ffffff; }
+  .reviews-header { text-align:center; margin-bottom:64px; }
+  .big-testimonial { text-align:center; padding:0 80px; }
+  .big-quote-mark { font-family:'DM Serif Text',serif; font-size:120px; line-height:0.4; color:#7a3d6d; opacity:0.3; text-align:center; display:block; margin-bottom:32px; }
+  .big-quote { font-family:'DM Serif Text',serif; font-size:36px; line-height:1.4; color:#221d2b; max-width:1000px; margin:0 auto 32px; }
+  .big-author-name { font-size:18px; font-weight:700; color:#33254C; }
+  .big-author-loc { font-size:16px; color:#6b6478; margin-top:4px; }
+  .mini-reviews { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:64px; }
+  .mini-review { background:#f5f4f8; border:1px solid #e2dfeb; border-radius:12px; padding:28px; }
+  .mini-stars { color:#7a3d6d; font-size:15px; letter-spacing:2px; margin-bottom:12px; }
+  .mini-text { font-size:17px; color:#221d2b; line-height:1.6; margin-bottom:16px; }
+  .mini-author { font-size:15px; font-weight:700; color:#33254C; }
+  .mini-loc { font-size:14px; color:#6b6478; margin-top:2px; }
+
+  /* ── GALLERY ── */
+  #gallery { background:#f5f4f8; padding-top:0; }
+  .gallery-heading { font-family:'DM Serif Text',serif; font-size:48px; color:#221d2b; margin-top:10px; margin-bottom:48px; }
+  .gallery-grid { display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:260px 260px; gap:16px; }
+  .gallery-item { border-radius:12px; overflow:hidden; position:relative; }
+  .gallery-item img { width:100%; height:100%; object-fit:cover; transition:transform 0.5s; display:block; }
+  .gallery-item:hover img { transform:scale(1.06); }
+  .gallery-item.tall { grid-row:span 2; }
+  .gallery-overlay { position:absolute; bottom:0; left:0; right:0; padding:20px; background:linear-gradient(to top,rgba(34,29,43,0.8) 0%,transparent 100%); opacity:0; transition:opacity 0.3s; }
+  .gallery-item:hover .gallery-overlay { opacity:1; }
+  .gallery-overlay span { font-size:15px; font-weight:600; color:#fff; }
+
+  /* ── GUARANTEE ── */
+  #guarantee { background:#33254C; padding:0; }
+  .guarantee-inner { display:flex; min-height:280px; }
+  .guarantee-text { flex:1; padding:72px 80px; display:flex; flex-direction:column; justify-content:center; gap:20px; }
+  .guarantee-label-tag { font-size:14px; font-weight:700; color:#7a3d6d; text-transform:uppercase; letter-spacing:0.1em; }
+  .guarantee-title { font-family:'DM Serif Text',serif; font-size:42px; color:#f5f4f8; line-height:1.05; }
+  .guarantee-sub { font-size:18px; color:rgba(245,244,248,0.75); line-height:1.6; max-width:540px; }
+  .g-badges { display:flex; gap:12px; flex-wrap:wrap; margin-top:8px; }
+  .g-badge { background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.25); border-radius:8px; padding:10px 20px; font-size:15px; font-weight:600; color:#f5f4f8; }
+  .guarantee-right { flex:0 0 380px; background:#7a3d6d; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; }
+  .guarantee-num { font-family:'DM Serif Text',serif; font-size:80px; color:#fff; line-height:1; }
+  .guarantee-num-label { font-size:18px; font-weight:600; color:rgba(255,255,255,0.8); text-align:center; }
+
+  /* ── FAQ ── */
+  #faq { background:#f5f4f8; padding:120px 180px; }
+  .faq-header { text-align:center; margin-bottom:64px; }
+  .faq-group { display:flex; flex-direction:column; gap:16px; }
+  .faq-card { background:#ffffff; border:1px solid #e2dfeb; border-radius:12px; }
+  .faq-q-row { display:flex; align-items:center; justify-content:space-between; padding:32px; cursor:pointer; }
+  .faq-q-text { font-family:'DM Serif Text',serif; font-size:20px; color:#221d2b; flex:1; padding-right:16px; }
+  .faq-chevron { color:#7a3d6d; font-size:19px; transition:transform 0.3s; }
+  .faq-card.open .faq-chevron { transform:rotate(180deg); }
+  .faq-answer { font-size:17px; color:#6b6478; line-height:1.6; overflow:hidden; max-height:0; transition:max-height 0.4s ease, padding 0.4s; padding:0 32px; }
+  .faq-card.open .faq-answer { max-height:200px; padding:0 32px 32px; }
+
+  /* ── FINAL CTA ── */
+  #final-cta { background:#f5f4f8; padding:80px; }
+  .cta-card { background:#33254C; border-radius:12px; padding:64px; display:flex; flex-direction:column; align-items:center; gap:28px; text-align:center; }
+  .cta-heading { font-family:'DM Serif Text',serif; font-size:48px; color:#f5f4f8; line-height:1.05; max-width:900px; }
+  .cta-sub { font-size:18px; color:rgba(245,244,248,0.85); line-height:1.6; max-width:600px; }
+  .cta-actions { display:flex; gap:16px; align-items:center; }
+  .btn-cta { background:#7a3d6d; color:#f5f4f8; font-family:'Source Sans 3',sans-serif; font-weight:700; font-size:17px; border:none; padding:16px 32px; border-radius:12px; cursor:pointer; text-decoration:none; }
+  .btn-cta-outline { background:transparent; color:#f5f4f8; font-family:'Source Sans 3',sans-serif; font-weight:600; font-size:17px; border:1px solid #f5f4f8; padding:16px 32px; border-radius:12px; cursor:pointer; text-decoration:none; }
+
+  /* ── FOOTER ── */
+  #footer { background:#f5f4f8; border-top:1px solid #e2dfeb; }
+  .footer-grid { display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:48px; padding:80px 80px 40px; }
+  .footer-col-brand { flex:1; }
+  .footer-brand { font-family:'DM Serif Text',serif; font-size:22px; color:#33254C; margin-bottom:16px; }
+  .footer-brand-desc { font-size:16px; color:#6b6478; line-height:1.5; }
+  .footer-col { flex:1; }
+  .footer-col-title { font-size:14px; font-weight:700; color:#7a3d6d; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px; }
+  .footer-col a { display:block; font-size:16px; color:#221d2b; text-decoration:none; margin-bottom:12px; }
+  .footer-col a:hover { color:#7a3d6d; }
+  .footer-bottom { display:flex; justify-content:space-between; padding:24px 80px; border-top:1px solid #e2dfeb; }
+  .footer-bottom p { font-size:15px; color:#6b6478; }
+
+  /* ── REVEAL ── */
+  .reveal { opacity:0; transform:translateY(24px); transition:opacity 0.65s ease, transform 0.65s ease; }
+  .reveal.visible { opacity:1; transform:none; }
+  .reveal-delay-1 { transition-delay:0.12s; }
+  .reveal-delay-2 { transition-delay:0.24s; }
+  .reveal-delay-3 { transition-delay:0.36s; }
+
+
+  /* ══ ROOFING3 ANIMATION SYSTEM: ORGANIC / NATURE ══ */
+
+  /* Leaf-fall loading overlay */
+  #leaf-loader {
+    position: fixed; inset: 0; background: #33254C; z-index: 9999;
+    display: flex; align-items: center; justify-content: center;
+    animation: leaf-loader-out 0.7s ease-in 1.0s forwards;
+  }
+  @keyframes leaf-loader-out {
+    to { opacity: 0; pointer-events: none; }
+  }
+  .loader-logo {
+    font-family: 'DM Serif Text', serif;
+    font-size: 36px; color: #f5f4f8;
+    opacity: 0; animation: logo-emerge 0.8s ease-out 0.1s forwards;
+  }
+  .loader-accent { color: #7a3d6d; }
+  @keyframes logo-emerge {
+    from { opacity: 0; transform: scale(0.85) translateY(20px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  /* Scroll reveal: organic bloom (scale + fade) */
+  .reveal {
+    opacity: 0;
+    transform: scale(0.93) translateY(24px);
+    transition: opacity 0.55s cubic-bezier(0.16,1,0.3,1),
+                transform 0.55s cubic-bezier(0.16,1,0.3,1);
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+  .reveal-delay-1 { transition-delay: 0.07s; }
+  .reveal-delay-2 { transition-delay: 0.14s; }
+  .reveal-delay-3 { transition-delay: 0.21s; }
+
+  /* Hero text: chars shimmer in */
+  /* Each character is its own inline-block, so without a word wrapper the line
+     could break between ANY two characters -- the headline rendered as
+     "Roofing that outli / ves the century". Grouping the chars into a
+     nowrap word keeps the per-character shimmer and the word intact. */
+  .hero-word { display: inline-block; white-space: nowrap; }
+  .hero-char {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px) rotate(3deg);
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1);
+  }
+  .hero-char.char-in { opacity: 1; transform: none; }
+
+  /* Hero background: slow ken burns */
+  #hero::before {
+    animation: ken-burns 18s ease-in-out infinite alternate;
+  }
+  @keyframes ken-burns {
+    from { transform: scale(1.0) translate(0,0); }
+    to   { transform: scale(1.08) translate(-1%,-1%); }
+  }
+
+  /* Stats bar: slide up from below */
+  #stats .stat-item {
+    opacity: 0; transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.34,1.3,0.64,1);
+  }
+  #stats .stat-item.stat-in { opacity: 1; transform: none; }
+
+  /* Service cards: organic bloom with shadow */
+  .big-card, .small-card {
+    opacity: 0; transform: translateY(32px) scale(0.97);
+    transition: opacity 0.75s ease, transform 0.75s cubic-bezier(0.16,1,0.3,1);
+  }
+  .big-card.card-in, .small-card.card-in { opacity: 1; transform: none; }
+  .big-card:hover { transform: translateY(-8px) scale(1.01); box-shadow: 0 24px 56px rgba(43,37,64,0.18); }
+  .small-card { transition: opacity 0.75s ease, transform 0.75s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s ease; }
+  .small-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(43,37,64,0.15); }
+
+  /* Why rows: gentle accordion-style reveal */
+  .why-row {
+    opacity: 0; transform: translateX(-36px);
+    transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.16,1,0.3,1);
+  }
+  .why-row.row-in { opacity: 1; transform: none; }
+
+  /* Process cards: iris wipe (clip-path circle expand) */
+  .process-card {
+    transition: clip-path 0.45s cubic-bezier(0.16,1,0.3,1),
+                transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  /* applied by script, so a card is visible if the script never runs */
+  .process-card.proc-pre { clip-path: circle(0% at 50% 50%); }
+  .process-card.proc-in { clip-path: circle(150% at 50% 50%); }
+  .process-card:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 20px 48px rgba(43,37,64,0.14); }
+
+  /* Big quote: line by line reveal */
+  .big-quote {
+    overflow: hidden;
+  }
+  .big-quote .quote-line {
+    display: block;
+    opacity: 0; transform: translateY(100%);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22,1,0.36,1);
+  }
+  .big-quote .quote-line.line-in { opacity: 1; transform: none; }
+
+  /* Gallery: natural stagger from bottom */
+  .gallery-item {
+    opacity: 0; transform: translateY(48px);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22,1,0.36,1);
+  }
+  .gallery-item.gal-in { opacity: 1; transform: none; }
+
+  /* Guarantee: earth-tone diagonal reveal */
+  #guarantee .guarantee-inner {
+    overflow: hidden; position: relative;
+  }
+  #guarantee .guarantee-text {
+    opacity: 0; transform: translateX(-40px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16,1,0.3,1);
+  }
+  #guarantee .guarantee-right {
+    opacity: 0; transform: translateX(40px);
+    transition: opacity 0.8s ease 0.15s, transform 0.8s cubic-bezier(0.16,1,0.3,1) 0.15s;
+  }
+  #guarantee .guarantee-text.guar-in, #guarantee .guarantee-right.guar-in { opacity: 1; transform: none; }
+
+  /* Guarantee number: leaf spin */
+  .guarantee-num { display: inline-block; }
+  .guarantee-num.leaf-spin { animation: leaf-rotate-in 0.8s cubic-bezier(0.34,1.56,0.64,1) both; }
+  @keyframes leaf-rotate-in {
+    from { transform: rotate(-180deg) scale(0); opacity: 0; }
+    to   { transform: none; opacity: 1; }
+  }
+
+  /* FAQ cards: gentle unfold */
+  .faq-card { transition: box-shadow 0.3s ease, border-color 0.3s ease; }
+  .faq-card:hover { box-shadow: 0 8px 24px rgba(122,61,109,0.1); border-color: rgba(122,61,109,0.3); }
+
+  /* Floating leaves in hero */
+  .leaf-particle {
+    position: absolute; pointer-events: none; z-index: 0;
+    font-size: 18px; opacity: 0;
+    animation: leaf-fall var(--dur,8s) ease-in-out var(--delay,0s) infinite;
+  }
+  @keyframes leaf-fall {
+    0%   { transform: translate(0,0) rotate(0deg); opacity: 0; }
+    10%  { opacity: 0.7; }
+    90%  { opacity: 0.4; }
+    100% { transform: translate(var(--mx,20px), 120px) rotate(var(--rot,120deg)); opacity: 0; }
+  }
+
+  /* Section label dot pulse */
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 6px; height: 6px;
+    background: #7a3d6d;
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+    animation: dot-breathe 2s ease-in-out infinite;
+  }
+  @keyframes dot-breathe {
+    0%,100% { transform: scale(1); opacity:1; }
+    50%      { transform: scale(1.6); opacity:0.6; }
+  }
+
+  /* CTA card: gentle glow pulse */
+  .cta-card {
+    animation: cta-glow 4s ease-in-out infinite;
+  }
+  @keyframes cta-glow {
+    0%,100% { box-shadow: 0 0 0 0 rgba(122,61,109,0); }
+    50%      { box-shadow: 0 0 40px 8px rgba(122,61,109,0.2); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+
+  @media (max-width:1100px) {
+    nav { padding:0 24px; height:72px; }
+    .nav-links { display:none; }
+    section, #faq, #why-us { padding:60px 24px; }
+    #hero { min-height:auto; }
+    .hero-inner { padding:80px 24px 60px; }
+    .hero-headline { font-size:48px; }
+    #stats { flex-wrap:wrap; gap:28px; padding:40px 24px; }
+    .process-cards { grid-template-columns:1fr 1fr; }
+    .services-layout { flex-direction:column; height:auto; }
+    .big-card img { height:240px; }
+    .small-card { flex-direction:column; }
+    .small-card img { width:100%; height:180px; }
+    .product-stats-bar { margin:0 -24px; padding:40px 24px; flex-wrap:wrap; gap:24px; }
+    #why-us { padding:60px 24px; }
+    .mini-reviews { grid-template-columns:1fr; }
+    .gallery-grid { grid-template-columns:1fr 1fr; }
+    .gallery-item.tall { grid-row:span 1; }
+    .guarantee-inner { flex-direction:column; }
+    .guarantee-right { flex:none; width:100%; padding:48px; }
+    #final-cta { padding:40px 24px; }
+    .cta-card { padding:40px 24px; }
+    .cta-heading { font-size:36px; }
+    .footer-grid { grid-template-columns:1fr; gap:32px; padding:40px 24px; }
+    .footer-bottom { padding:20px 24px; flex-direction:column; gap:8px; }
+    .big-quote { font-size:24px; }
+  }
+
+  /* ══ NICHE BUILD: ADDITIONS ══ */
+
+  /* ── LOGO STRIP ──
+     Replaces the text-badge marquee. The old #trust-marquee ID rule is still in
+     the sheet above and outranks a bare class, so the box rules are written
+     against #trust-marquee.lstrip to win on specificity rather than order. */
+  #trust-marquee.lstrip { background:#ffffff; padding:38px 0 42px; overflow:hidden; }
+  .lstrip-head { text-align:center; margin-bottom:30px; padding:0 24px; }
+  .lstrip-head h3 { font-family:'DM Serif Text',serif; font-size:26px; color:#221d2b; margin-top:10px; }
+  .lsplit { display:grid; grid-template-columns:1fr 1fr; column-gap:clamp(36px,5vw,88px); padding:0 clamp(20px,2.4vw,44px); }
+  /* the track is width:max-content and a 1fr column takes its automatic minimum
+     from min-content, so without this the track blows the column off-screen */
+  .lsplit-col { min-width:0; }
+  .lsplit-col + .lsplit-col { border-left:1px solid #e2dfeb; padding-left:clamp(24px,3vw,48px); }
+  .lstrip-label { font-size:13px; font-weight:700; color:#6b6478; text-transform:uppercase;
+    letter-spacing:0.12em; margin-bottom:16px; text-align:center; }
+  /* logos scroll continuously, so without a fade each one appears/disappears
+     abruptly at the container edge instead of gliding into view */
+  .lstrip-mask { overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);
+    mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent); }
+  /* animation-duration is set from JS at a fixed px/sec so both columns travel
+     at the same speed whatever they hold. A CSS animation with no duration
+     resolves to 0s, which is why the original marquee never moved. */
+  .lstrip-track { display:flex; width:max-content; animation:lmarq linear infinite; animation-duration:30s; }
+  .lstrip-grp { display:flex; }
+  /* translateX(-50%) lands on a seam only with exactly TWO identical groups */
+  @keyframes lmarq { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+  .ltile { width:134px; height:64px; background:#f5f4f8; border:1px solid #e2dfeb; border-radius:10px;
+    display:flex; align-items:center; justify-content:center; padding:10px 14px; flex:0 0 auto; margin-right:14px; }
+  .ltile img { max-width:100%; max-height:100%; object-fit:contain; display:block; }
+
+  /* ── CTA PAIR ──
+     Closes each content section. Alignment follows the section's heading. */
+  .ctapair { display:flex; flex-wrap:wrap; gap:16px; margin-top:56px; }
+  .ctapair--center { justify-content:center; }
+  .ctapair--right  { justify-content:flex-end; }
+  .btn-line { background:transparent; color:#221d2b; font-family:'Source Sans 3',sans-serif;
+    font-weight:600; font-size:17px; border:1px solid #221d2b; padding:16px 32px; border-radius:12px;
+    cursor:pointer; text-decoration:none; transition:background 0.2s, color 0.2s; }
+  .btn-line:hover { background:#221d2b; color:#f5f4f8; }
+  /* the product pair sits above a full-bleed orange band, so it needs the gap */
+  #product .ctapair { margin-bottom:88px; }
+
+  /* ── SERVICE SUB-LISTS ── what each of the three trades actually covers */
+  .svc-list { display:flex; flex-wrap:wrap; gap:8px; margin-top:6px; }
+  .svc-list span { font-size:14px; font-weight:600; color:#6b6478; background:#ede9f3;
+    border:1px solid #e2dfeb; border-radius:100px; padding:5px 13px; }
+
+  /* ── WHY ROWS ── emoji replaced with drawn marks */
+  .why-icon svg { width:23px; height:23px; fill:none; stroke:#33254C; stroke-width:1.7;
+    stroke-linecap:round; stroke-linejoin:round; }
+  .why-rows { gap:20px; }
+
+  /* ── GALLERY ──
+     The captions carry the location and the type of job, so they are part of
+     the content, not a hover flourish. They stay on. */
+  .gallery-overlay { opacity:1 !important; padding:22px 20px 18px;
+    background:linear-gradient(to top,rgba(34,29,43,0.88) 0%,rgba(34,29,43,0.38) 58%,transparent 100%); }
+  .gallery-overlay span { font-size:15px; line-height:1.4; display:block; text-shadow:0 1px 3px rgba(0,0,0,0.4); }
+
+  /* ── GUARANTEE ── drawn shield in place of the trophy emoji */
+  .g-mark { width:62px; height:62px; fill:none; stroke:#fff; stroke-width:2.1;
+    stroke-linecap:round; stroke-linejoin:round; opacity:0.95; }
+  .guarantee-num-label { line-height:1.45; }
+
+  /* ── FAQ ──
+     200px clipped the longer answers once they wrapped on a narrow viewport. */
+  .faq-card.open .faq-answer { max-height:520px; }
+
+  /* the always-on wrap-to-two-columns rule this used to be was never
+     actually inside a media query - it overrode the real desktop grid at
+     every width. The base .footer-grid rule and the real
+     @media(max-width:1100px) stack already cover desktop and mobile. */
+  .footer-col span { display:block; font-size:16px; color:#6b6478; margin-bottom:12px; line-height:1.45; }
+  /* the block still sits at the right end of the row, but the lines read
+     left to right with a ragged right edge rather than being right-set */
+  .footer-bottom p:last-child { max-width:52ch; text-align:left; }
+
+  @media (max-width:900px) {
+    .lsplit { grid-template-columns:1fr; row-gap:28px; }
+    .lsplit-col + .lsplit-col { border-left:0; padding-left:0; border-top:1px solid #e2dfeb; padding-top:24px; }
+  }
+  @media (max-width:1100px) {
+    .ctapair { margin-top:36px; }
+    #product .ctapair { margin-bottom:56px; }
+    .lstrip-head h3 { font-size:22px; }
+  }
+
+  /* ── hero scrim ──
+     The headline falls on dark roof and sky, but the lede and the trust pills
+     fall on the pale rendered wall. A flat 38% tint measured too light there,
+     so the scrim is weighted towards the text column instead of raised
+     everywhere, which would have flattened the photograph. */
+  #hero::after { background:linear-gradient(100deg,
+    rgba(22,18,28,0.88) 0%, rgba(22,18,28,0.78) 34%,
+    rgba(22,18,28,0.46) 62%, rgba(22,18,28,0.24) 100%); }
+
+  /* ── gallery captions ──
+     Two of the five tiles are pale (marble bathroom, light render), so the
+     scrim is darkened and held higher up the tile rather than relying on a
+     text-shadow to carry the contrast on its own. */
+  .gallery-overlay { background:linear-gradient(to top,
+    rgba(22,18,28,0.94) 0%, rgba(22,18,28,0.80) 32%,
+    rgba(22,18,28,0.34) 70%, transparent 100%); }
+
+  /* ══ ROUND 2 ══ */
+
+  /* ── NAV ── eight links, a number and the quote button all have to fit on
+     one row, so the link gap tightens and the brand strapline drops away
+     before the links would start colliding. */
+  .nav-tel { font-size:16px; font-weight:700; color:#221d2b; text-decoration:none;
+    white-space:nowrap; transition:color 0.2s; }
+  .nav-tel:hover { color:#7a3d6d; }
+  /* nav is justify-content:space-between over four children, so the number was
+     given an equal share of the free space and floated mid-row. Auto margins
+     either side of the link row absorb that space instead, which centres the
+     links and packs the number against the button. Auto margins are resolved
+     before justify-content, so they win without touching the nav rule. */
+  .nav-links { margin-left:auto; margin-right:auto; }
+  .nav-tel { margin-right:18px; }
+  /* below this width the eight links, the number and the quote button no
+     longer all fit on one row at full size - this pair was previously sitting
+     OUTSIDE any media query and applying unconditionally at every width,
+     including a full desktop window, which is why the nav read as
+     permanently undersized regardless of screen size. */
+  @media (max-width:1600px) {
+    nav { padding:0 40px; }
+    .nav-brand-tag { display:none; }
+    .nav-links { gap:19px; }
+    .nav-links a { font-size:16px; white-space:nowrap; }
+  }
+
+  /* ── HERO STATS ──
+     Previously a full-width band under the hero. As a panel it uses the empty
+     right-hand side of the photograph and gives the page back that vertical
+     space. Glass over the scrim rather than a solid card, so the house behind
+     it still reads. */
+  #hero { justify-content:space-between; gap:48px; }
+  .hero-inner { flex:0 1 720px; }
+  .hero-stats { position:relative; z-index:1; margin-right:80px; flex:0 0 auto;
+    width:min(380px,32vw); display:grid; grid-template-columns:1fr 1fr; gap:1px;
+    background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.24);
+    border-radius:18px; overflow:hidden; backdrop-filter:blur(10px); }
+  /* the panel sits over the lighter right-hand side of the photograph, so the
+     tile fill carries the contrast rather than the page scrim */
+  .hero-stats .stat-item { background:rgba(22,18,28,0.62); padding:28px 18px; gap:7px; }
+  .hero-stats .stat-num { color:#ffffff; font-size:40px; }
+  .hero-stats .stat-label { color:rgba(255,255,255,0.78); font-size:13px; text-align:center;
+    line-height:1.35; letter-spacing:0.06em; }
+  @media (max-width:1100px) {
+    #hero { flex-direction:column; align-items:stretch; gap:0; }
+    .hero-inner { flex:none; }
+    .hero-stats { margin:0 24px 56px; width:auto; }
+    .hero-stats .stat-item { padding:22px 14px; }
+    .hero-stats .stat-num { font-size:32px; }
+  }
+
+  /* ── EVERY SERVICE, COMBINED ──
+     The three feature cards are the headline; homeowners searching for
+     "loft boarding" or "internal wall insulation" need to see the actual
+     name on the page. Grouped by trade so the list stays scannable. */
+  .svc-all { margin-top:64px; background:#ffffff; border:1px solid #e2dfeb;
+    border-radius:16px; padding:clamp(30px,3vw,48px); }
+  .svc-all__head { margin-bottom:36px; }
+  .svc-all__head h3 { font-family:'DM Serif Text',serif; font-size:30px; color:#221d2b;
+    margin-top:12px; }
+  .svc-all__grid { display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(24px,2.6vw,44px); }
+  .svc-all__col h4 { font-size:14px; font-weight:700; color:#7a3d6d; text-transform:uppercase;
+    letter-spacing:0.1em; padding-bottom:14px; border-bottom:1px solid #e2dfeb; margin-bottom:6px; }
+  .svc-all__col ul { list-style:none; }
+  .svc-all__col li { display:flex; flex-direction:column; gap:2px; padding:13px 0 13px 22px;
+    border-bottom:1px solid #eeecf4; position:relative; }
+  .svc-all__col li:last-child { border-bottom:0; }
+  /* a drawn tick rather than a bullet glyph, so it matches the why-us marks */
+  .svc-all__col li::before { content:''; position:absolute; left:0; top:19px; width:11px; height:6px;
+    border-left:2px solid #7a3d6d; border-bottom:2px solid #7a3d6d; transform:rotate(-45deg); }
+  .svc-all__name { font-size:17px; font-weight:600; color:#221d2b; line-height:1.35; }
+  .svc-all__note { font-size:14px; color:#6b6478; line-height:1.4; }
+  @media (max-width:900px) { .svc-all__grid { grid-template-columns:1fr; gap:30px; } }
+
+  /* ── plum on the dark grounds ──
+     #7a3d6d is the accent on the light page, but against the #33254C bands it
+     falls to roughly 1.9:1. These two rules lift it to a light tint for the
+     label and a brighter fill for the button, and nothing else moves. */
+  .guarantee-label-tag { color:#cfa3c4; }
+  .btn-cta { background:#94497f; }
+  .btn-cta:hover { background:#a8558f; }
+
+  /* ── SERVICE CARDS ──
+     One card per service so nothing is buried in a list, and one shared
+     16:10 image box so no card letterboxes against its neighbours. The card
+     is a flex column with the body flexed and the link pushed to the bottom,
+     which is what keeps the footers on a row aligned when the descriptions
+     run to different lengths. */
+  .product-header + .svc-group { margin-top:0; }
+  .svc-group { margin-top:60px; }
+  .svc-group__head { display:flex; align-items:baseline; gap:24px; flex-wrap:wrap;
+    padding-bottom:16px; border-bottom:1px solid #e2dfeb; margin-bottom:28px; }
+  .svc-group__head h3 { font-family:'DM Serif Text',serif; font-size:28px; color:#221d2b; }
+  .svc-group__head p { font-size:16px; color:#6b6478; line-height:1.55; flex:1 1 420px; }
+  .svc-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
+  .svccard { background:#ffffff; border:1px solid #e2dfeb; border-radius:14px; overflow:hidden;
+    display:flex; flex-direction:column;
+    transition:transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s ease, border-color 0.35s ease; }
+  .svccard:hover { transform:translateY(-6px); border-color:#cbc0da;
+    box-shadow:0 18px 40px rgba(43,37,64,0.14); }
+  .svccard__img { position:relative; aspect-ratio:16/10; overflow:hidden; background:#ece9f2; }
+  .svccard__img img { width:100%; height:100%; object-fit:cover; display:block;
+    transition:transform 0.6s cubic-bezier(0.16,1,0.3,1); }
+  .svccard:hover .svccard__img img { transform:scale(1.06); }
+  .svccard__tag { position:absolute; left:12px; bottom:12px; font-size:13px; font-weight:700;
+    letter-spacing:0.03em; color:#ffffff; background:rgba(22,18,28,0.74); backdrop-filter:blur(4px);
+    border-radius:100px; padding:6px 13px; }
+  .svccard__body { padding:20px 20px 22px; display:flex; flex-direction:column; flex:1; gap:9px; }
+  .svccard__body h4 { font-family:'DM Serif Text',serif; font-size:20px; color:#221d2b; line-height:1.25; }
+  .svccard__body p { font-size:16px; color:#6b6478; line-height:1.5; flex:1; }
+  .svccard__more { margin-top:auto; display:inline-flex; align-items:center; gap:7px;
+    font-size:15px; font-weight:700; color:#7a3d6d; padding-top:6px; }
+  .svccard__more svg { width:14px; height:14px; fill:none; stroke:currentColor; stroke-width:2;
+    stroke-linecap:round; stroke-linejoin:round; transition:transform 0.3s ease; }
+  .svccard:hover .svccard__more svg { transform:translateX(4px); }
+  @media (max-width:1400px) { .svc-grid { grid-template-columns:repeat(3,1fr); } }
+  @media (max-width:1000px) { .svc-grid { grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:640px)  { .svc-grid { grid-template-columns:1fr; }
+    .svc-group__head h3 { font-size:23px; } }
+
+  /* ── SERVICE CAROUSEL ──
+     Three cards visible, the rest reached by the arrows or by the auto-
+     advance. .svc-belt clips; .svc-track is the thing that moves. The cards
+     keep flex-shrink:0 so they overflow the track rather than squashing, which
+     is what makes translateX the only thing that has to be calculated. */
+  .svc-belt { overflow:hidden; }
+  .svc-track { display:flex; gap:22px; will-change:transform; }
+  .svccard { flex:0 0 calc((100% - 44px) / 3); }
+  .svc-group__head { align-items:center; }
+  .svc-group__head p { flex:1 1 340px; }
+  .svc-nav { display:flex; gap:10px; margin-left:auto; flex:0 0 auto; }
+  .svc-nav button { width:44px; height:44px; border-radius:50%; border:1px solid #cbc0da;
+    background:#ffffff; color:#221d2b; cursor:pointer; display:grid; place-items:center; padding:0;
+    transition:background 0.3s, color 0.3s, border-color 0.3s, transform 0.3s; }
+  .svc-nav button:hover { background:#7a3d6d; border-color:#7a3d6d; color:#ffffff; transform:scale(1.07); }
+  .svc-nav button:focus-visible { outline:2px solid #7a3d6d; outline-offset:3px; }
+  .svc-nav svg { width:17px; height:17px; fill:none; stroke:currentColor; stroke-width:2.1;
+    stroke-linecap:round; stroke-linejoin:round; }
+  @media (max-width:1000px) { .svccard { flex:0 0 calc((100% - 22px) / 2); } }
+  @media (max-width:640px)  { .svccard { flex:0 0 100%; } }
+
+  /* ── centred sections ──
+     Process, why-us and reviews were centred while Our Core Services and the
+     gallery were not, so the page kept switching axis as you scrolled. Both
+     headers now centre, and their CTA pairs follow the heading as the rest of
+     the suite does. */
+  .product-header { text-align:center; }
+  .product-header .section-title { max-width:22ch; margin-left:auto; margin-right:auto; }
+  .gallery-header { text-align:center; }
+  .gallery-header .gallery-heading { margin-left:auto; margin-right:auto; }
+
+  /* The FAQ header was already centred but the cards filled the whole section,
+     which put the answers on a ~150-character line. Constraining the column
+     centres the block and brings the measure back to something readable. */
+  .faq-group { max-width:980px; margin-left:auto; margin-right:auto; }
+
+  /* the pull-quote above the review cards is gone, so they no longer need to
+     clear it */
+  .mini-reviews { margin-top:0; }
+
+  /* ── service group headers centred ──
+     The row was heading-left / blurb-middle / arrows-right, which fought the
+     centred section header above it. Stacking the head as a centred column
+     puts the title, the blurb and the carousel controls on one axis. */
+  .svc-group__head { flex-direction:column; align-items:center; text-align:center;
+    gap:12px; padding-bottom:22px; }
+  .svc-group__head p { flex:0 1 auto; max-width:68ch; }
+  .svc-nav { margin-left:0; margin-top:8px; }
+
+  /* ── hero stats: right-hand stack ──
+     Layout only, to match the reference hero: the 2x2 glass card becomes one
+     stat per row, hairline-ruled, left-aligned inside a column that sits close
+     to the right edge. No change to the type or the palette: the numbers and
+     captions keep the sizes, weights and colours they already had, and the
+     rules reuse the same white the card border used. */
+  .hero-stats { display:flex; flex-direction:column; gap:0;
+    width:min(330px,29vw); margin-right:clamp(28px,3.2vw,52px);
+    background:none; border:0; border-radius:0; overflow:visible; backdrop-filter:none; }
+  /* the number sets line-height:1, so the caption needs its own breathing
+     room or the two read as one block */
+  .hero-stats .stat-item { background:none; align-items:flex-start; gap:7px;
+    padding:24px 0; border-top:1px solid rgba(255,255,255,0.22); }
+  .hero-stats .stat-item:first-child { border-top:0; padding-top:0; }
+  .hero-stats .stat-label { text-align:left; }
+  @media (max-width:1100px) {
+    .hero-stats { margin:0 24px 56px; width:auto; }
+    .hero-stats .stat-item { padding:15px 0; }
+  }
+
+  /* ── carousel: emphasised centre card, flanking arrows ──
+     Layout width is identical for every card; the size difference is a
+     transform. A real width difference would make each step a different
+     distance and break the loop. Side cards scale DOWN from 1 rather than the
+     centre scaling up, because .svc-belt clips and a card scaled past 1 would
+     be cropped top and bottom. */
+  .svc-rail { position:relative; }
+  .svc-belt { padding:6px 0; }
+  .svccard { transform:scale(0.9);
+    transition:transform 0.5s cubic-bezier(0.16,1,0.3,1),
+      box-shadow 0.35s ease, border-color 0.35s ease; }
+  .svccard--focus { transform:scale(1);
+    box-shadow:0 22px 48px rgba(43,37,64,0.16); }
+  /* hover no longer lifts with translateY: it would fight the focus scale */
+  .svccard:hover { transform:scale(0.92); border-color:#cbc0da; }
+  .svccard--focus:hover { transform:scale(1.008); border-color:#cbc0da;
+    box-shadow:0 26px 56px rgba(43,37,64,0.2); }
+
+  .svc-prev, .svc-next { position:absolute; top:50%; z-index:3;
+    width:46px; height:46px; border-radius:50%; border:1px solid #cbc0da;
+    background:#ffffff; color:#221d2b; cursor:pointer; padding:0;
+    display:grid; place-items:center; transform:translateY(-50%);
+    box-shadow:0 6px 18px rgba(43,37,64,0.12);
+    transition:background 0.3s, color 0.3s, border-color 0.3s, transform 0.3s; }
+  .svc-prev { left:-23px; } .svc-next { right:-23px; }
+  /* keep the centring translate in the hover state or the button jumps */
+  .svc-prev:hover, .svc-next:hover { background:#7a3d6d; border-color:#7a3d6d;
+    color:#ffffff; transform:translateY(-50%) scale(1.07); }
+  .svc-prev:focus-visible, .svc-next:focus-visible { outline:2px solid #7a3d6d; outline-offset:3px; }
+  .svc-prev svg, .svc-next svg { width:18px; height:18px; fill:none; stroke:currentColor;
+    stroke-width:2.1; stroke-linecap:round; stroke-linejoin:round; }
+
+  /* below three-up there is no meaningful centre, so everything sits at full
+     size and the arrows tuck inside the rail rather than outside it */
+  @media (max-width:1000px) {
+    .svccard, .svccard--focus, .svccard:hover, .svccard--focus:hover { transform:none; opacity:1; }
+    .svc-prev { left:-6px; } .svc-next { right:-6px; }
+  }
+
+/* ══ SCROLL ANIMATION LAYER ══
+   Variants sit alongside the existing .reveal so nothing already working is
+   disturbed. The stagger is a custom property the script stamps per element,
+   which keeps the delay out of the markup. */
+.reveal { transition-delay: var(--rv-d, 0ms); }
+
+/* directional entries: the base .reveal keeps its own translate, these
+   override it so a row of cards does not all slide the same way as the
+   section heading above it */
+.reveal.rv-left  { transform: translateX(-26px); }
+.reveal.rv-right { transform: translateX(26px); }
+.reveal.rv-zoom  { transform: scale(0.94); }
+.reveal.rv-up    { transform: translateY(26px); }
+.reveal.rv-left.visible, .reveal.rv-right.visible,
+.reveal.rv-zoom.visible, .reveal.rv-up.visible { transform: none; }
+
+/* a reveal that is mid-flight should not be able to widen the page */
+.reveal.rv-left, .reveal.rv-right { will-change: transform, opacity; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal.rv-left, .reveal.rv-right, .reveal.rv-zoom, .reveal.rv-up {
+    transition: none !important; transition-delay: 0ms !important;
+    opacity: 1 !important; transform: none !important; }
+}
+
+  /* full-width credit disclaimer, matching the accreditation line in the other templates */
+  .footer-finance{max-width:1240px;margin:0 auto;padding:18px 40px 34px;
+    font-size:0.875rem;line-height:1.65;color:var(--muted,#6b6478);opacity:.92;}
+  .footer-finance b{font-weight:700;}
+</style>
+<style>
+/* --- contrast: loader wordmark on the deepened plum band --- */
+.loader-accent{color:#C9A3C0;}
+</style>
+<style>
+/* --- contrast pass 2 --- */
+.grev__stars,.grev-stars{color:#A87A04;}
+</style>
+<style>
+/* --- contrast pass 3 --- */
+.hero .grev-stars,.hero .grev__stars,#hero .grev-stars{color:#A87A04;}
+</style>
+<style>
+/* the nav call glyph was too small to read as an icon */
+.nav-callic{font-size:1.45em;line-height:1;vertical-align:-.10em;margin-right:2px;display:inline-block;}
+</style>
+<style>
+/* --- footer ops row, in this template's own naming - title matches
+   .footer-col-title's plum accent so it reads as the same family --- */
+.footer-ops{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;padding:0 80px 28px;border-top:1px solid #e2dfeb;padding-top:28px;}
+.footer-ops-title{font-size:14px;font-weight:700;color:#7a3d6d;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;}
+.footer-ops p,.footer-ops address{margin:0;font-size:16px;line-height:1.7;color:#221d2b;font-style:normal;}
+.footer-ops .fo-row{display:flex;justify-content:space-between;gap:16px;max-width:250px;}
+.footer-ops .fo-row span:last-child{color:#6b6478;}
+.footer-ops a{color:#221d2b;}
+.footer-ops a:hover{color:#7a3d6d;}
+@media(max-width:900px){.footer-ops{grid-template-columns:1fr 1fr;padding-left:24px;padding-right:24px;}}
+@media(max-width:1100px){.footer-ops{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.footer-ops{grid-template-columns:1fr;}}
+.footer-legal{display:flex;gap:20px;}
+.footer-legal a{font-size:15px;color:#6b6478;text-decoration:none;}
+.footer-legal a:hover{color:#7a3d6d;}
+</style>
+<style>
+.footer-finance{border-top:1px solid #e2dfeb;margin-top:28px;padding-top:22px;font-size:15px;line-height:1.75;color:#6b6478;}
+.footer-finance b{color:#221d2b;}
+</style>
+</head>
+<body>
+<div id="leaf-loader"><div class="loader-logo">Home<span class="loader-accent"> Improvements</span></div></div>
+
+<!-- ① NAV -->
+<nav id="main-nav">
+  <a href="#" class="nav-brand">
+    <span class="nav-brand-name">Home Improvements</span>
+    <span class="nav-brand-tag">Lofts &middot; Bathrooms &middot; Insulation</span>
+  </a>
+  <div class="nav-links">
+    <a href="#process">Our Process</a>
+    <a href="#why-us">Why Choose Us?</a>
+    <a href="#product">Services</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#faq">Guides</a>
+    <a href="#footer">Careers</a>
+    <a href="#footer">Area</a>
+    <a href="#final-cta">Contact</a>
+  </div>
+  <a href="tel:01632960300" class="nav-tel"><span class="nav-callic" aria-hidden="true">&#9990;</span> 01632 960 300</a>
+  <a href="#final-cta" class="btn-primary">Get A Free Quote</a>
+</nav>
+
+<!-- ② HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow reveal">
+      <div class="hero-eyebrow-line"></div>
+      <span>Loft Conversions &middot; Bathrooms &middot; Insulation &amp; Rendering</span>
+    </div>
+    <h1 class="hero-headline reveal reveal-delay-1">Three trades. One team. One fixed price.</h1>
+    <p class="hero-sub reveal reveal-delay-2">Loft conversions, bathroom installations and external wall insulation, designed, built and signed off by our own tradespeople. A free home or video survey, a fixed price before we start, and no salespeople anywhere in between.</p>
+    <div class="hero-actions reveal reveal-delay-3">
+      <a href="#final-cta" class="btn-primary-lg">Get A Free Quote</a>
+      <a href="tel:01632960300" class="btn-secondary-lg">Speak To Our Experts</a>
+    </div>
+    <div class="hero-trust-pills reveal reveal-delay-3">
+      <div class="trust-pill"><div class="trust-dot"></div>10 Year Workmanship Warranty</div>
+      <div class="trust-pill"><div class="trust-dot"></div>Free home or video survey</div>
+      <div class="trust-pill"><div class="trust-dot"></div>Fixed Price Before We Start</div>
+    </div>
+    <a class="hero-grev reveal reveal-delay-3" href="#reviews" aria-label="Rated 5.0 out of 5 from Google reviews">
+      <svg class="grev-g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+      <span class="grev-stars" aria-hidden="true">★★★★★</span>
+      <span class="grev-txt"><b>5.0</b> rated on <b>Google</b></span>
+    </a>
+  </div>
+  <div class="hero-stats reveal reveal-delay-3">
+    <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Trades under one roof</div></div>
+    <div class="stat-item"><div class="stat-num">20%</div><div class="stat-label">Value a loft can add</div></div>
+    <div class="stat-item"><div class="stat-num">40%</div><div class="stat-label">Less heat lost through walls</div></div>
+    <div class="stat-item"><div class="stat-num">5.0</div><div class="stat-label">Average Google rating</div></div>
+  </div>
+</section>
+
+<!-- ③ ACCREDITATION &amp; BRAND STRIP -->
+<div id="trust-marquee" class="lstrip">
+  <div class="lstrip-head">
+    <p class="section-label">Accredited, insured and independently checked</p>
+    <h3>The schemes we answer to and the brands we fit</h3>
+  </div>
+  <div class="lsplit">
+    <div class="lsplit-col">
+      <div class="lstrip-label">Accredited &amp; registered</div>
+      <div class="lstrip-mask"><div class="lstrip-track"><div class="lstrip-grp"><div class="ltile"><img src="logos/trustmark.webp" alt="TrustMark registered" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/which.jpg" alt="Which? Trusted Trader" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/checkatrade-logo.svg" alt="Checkatrade verified" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/approved-code.webp" alt="Trading Standards Approved Code" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/fmb.svg" alt="Federation of Master Builders" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/ciphe-logo.svg" alt="CIPHE registered plumbing" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/trustmark.webp" alt="TrustMark registered" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/which.jpg" alt="Which? Trusted Trader" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/checkatrade-logo.svg" alt="Checkatrade verified" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/approved-code.webp" alt="Trading Standards Approved Code" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/fmb.svg" alt="Federation of Master Builders" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/ciphe-logo.svg" alt="CIPHE registered plumbing" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/trustmark.webp" alt="TrustMark registered" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/which.jpg" alt="Which? Trusted Trader" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/checkatrade-logo.svg" alt="Checkatrade verified" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/approved-code.webp" alt="Trading Standards Approved Code" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/fmb.svg" alt="Federation of Master Builders" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/ciphe-logo.svg" alt="CIPHE registered plumbing" loading="lazy" decoding="async"></div></div><div class="lstrip-grp"><div class="ltile"><img src="logos/trustmark.webp" alt="TrustMark registered" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/which.jpg" alt="Which? Trusted Trader" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/checkatrade-logo.svg" alt="Checkatrade verified" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/approved-code.webp" alt="Trading Standards Approved Code" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/fmb.svg" alt="Federation of Master Builders" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/ciphe-logo.svg" alt="CIPHE registered plumbing" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/trustmark.webp" alt="TrustMark registered" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/which.jpg" alt="Which? Trusted Trader" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/checkatrade-logo.svg" alt="Checkatrade verified" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/approved-code.webp" alt="Trading Standards Approved Code" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/fmb.svg" alt="Federation of Master Builders" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/ciphe-logo.svg" alt="CIPHE registered plumbing" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/trustmark.webp" alt="TrustMark registered" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/which.jpg" alt="Which? Trusted Trader" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/checkatrade-logo.svg" alt="Checkatrade verified" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/approved-code.webp" alt="Trading Standards Approved Code" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/fmb.svg" alt="Federation of Master Builders" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/ciphe-logo.svg" alt="CIPHE registered plumbing" loading="lazy" decoding="async"></div></div></div></div>
+    </div>
+    <div class="lsplit-col">
+      <div class="lstrip-label">Systems and brands we fit</div>
+      <div class="lstrip-mask"><div class="lstrip-track"><div class="lstrip-grp"><div class="ltile"><img src="logos/velux.svg" alt="Velux certified installer" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/grohe.png" alt="Grohe brassware" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/bristan.png" alt="Bristan brassware" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/kb.png" alt="KB Bathroom Distribution" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/city_plumbing.png" alt="City Plumbing supplier" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/plumb_center.png" alt="Plumb Center supplier" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/ewipro.png" alt="EWI Pro render systems" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/baumit.svg" alt="Baumit render systems" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/velux.svg" alt="Velux certified installer" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/grohe.png" alt="Grohe brassware" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/bristan.png" alt="Bristan brassware" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/kb.png" alt="KB Bathroom Distribution" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/city_plumbing.png" alt="City Plumbing supplier" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/plumb_center.png" alt="Plumb Center supplier" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/ewipro.png" alt="EWI Pro render systems" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/baumit.svg" alt="Baumit render systems" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/velux.svg" alt="Velux certified installer" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/grohe.png" alt="Grohe brassware" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/bristan.png" alt="Bristan brassware" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/kb.png" alt="KB Bathroom Distribution" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/city_plumbing.png" alt="City Plumbing supplier" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/plumb_center.png" alt="Plumb Center supplier" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/ewipro.png" alt="EWI Pro render systems" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/baumit.svg" alt="Baumit render systems" loading="lazy" decoding="async"></div></div><div class="lstrip-grp"><div class="ltile"><img src="logos/velux.svg" alt="Velux certified installer" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/grohe.png" alt="Grohe brassware" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/bristan.png" alt="Bristan brassware" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/kb.png" alt="KB Bathroom Distribution" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/city_plumbing.png" alt="City Plumbing supplier" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/plumb_center.png" alt="Plumb Center supplier" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/ewipro.png" alt="EWI Pro render systems" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/baumit.svg" alt="Baumit render systems" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/velux.svg" alt="Velux certified installer" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/grohe.png" alt="Grohe brassware" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/bristan.png" alt="Bristan brassware" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/kb.png" alt="KB Bathroom Distribution" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/city_plumbing.png" alt="City Plumbing supplier" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/plumb_center.png" alt="Plumb Center supplier" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/ewipro.png" alt="EWI Pro render systems" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/baumit.svg" alt="Baumit render systems" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/velux.svg" alt="Velux certified installer" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/grohe.png" alt="Grohe brassware" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/bristan.png" alt="Bristan brassware" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/kb.png" alt="KB Bathroom Distribution" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/city_plumbing.png" alt="City Plumbing supplier" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/plumb_center.png" alt="Plumb Center supplier" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/ewipro.png" alt="EWI Pro render systems" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/baumit.svg" alt="Baumit render systems" loading="lazy" decoding="async"></div></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ④ PROCESS -->
+<section id="process">
+  <div class="process-header reveal">
+    <p class="section-label">How we work</p>
+    <h2 class="section-title">From first enquiry to final sign off</h2>
+  </div>
+  <div class="process-cards">
+    <div class="process-card">
+      <div class="process-num">01</div>
+      <div><h3>Tell us what you want</h3><p>Call us, book online or use live chat. It takes about sixty seconds and there is no sales pitch at the end of it.</p></div>
+    </div>
+    <div class="process-card">
+      <div class="process-num">02</div>
+      <div><h3>Free home or video survey</h3><p>A surveyor visits, or runs the survey over a video call. You get a fixed price promise in writing, no salespeople, no hidden charges.</p></div>
+    </div>
+    <div class="process-card">
+      <div class="process-num">03</div>
+      <div><h3>Design, planning and permissions</h3><p>We handle structural calculations, building regulations and any planning application. Most dormer and Velux conversions fall under permitted development.</p></div>
+    </div>
+    <div class="process-card">
+      <div class="process-num">04</div>
+      <div><h3>Build, sign off and aftercare</h3><p>Our own tradespeople work through first fix, plumbing, plastering and finishing, then a final walkthrough and building control sign off.</p></div>
+    </div>
+  </div>
+  <div class="ctapair ctapair--center reveal">
+    <a href="#final-cta" class="btn-primary-lg">Get A Free Quote</a>
+    <a href="tel:01632960300" class="btn-line">Speak To Our Experts</a>
+  </div>
+</section>
+
+<!-- ⑤ PRODUCT + STATS -->
+<section id="product">
+  <div class="product-header reveal">
+    <p class="section-label">What we do</p>
+    <h2 class="section-title" style="font-size:48px;">Three trades, one standard of work</h2>
+  </div>
+  <div class="svc-group reveal">
+    <div class="svc-group__head">
+      <h3>Loft conversions</h3>
+      <p>Designed, built and signed off in house. You stay in the house throughout, everything goes up and down the scaffold.</p>
+    </div>
+    <div class="svc-rail">
+      <button type="button" class="svc-prev" aria-label="Previous services"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <div class="svc-belt">
+      <div class="svc-track">
+      <div class="svccard">
+        <div class="svccard__img">
+          <img src="images/svc/dormer.webp" alt="A tiled dormer built out from the roof slope" width="680" height="425" loading="lazy" decoding="async">
+          <span class="svccard__tag">6 to 8 weeks</span>
+        </div>
+        <div class="svccard__body">
+          <h4>Dormer Loft Conversion</h4>
+          <p>A flat roofed box built out from the slope. The most head height for the money, and usually permitted development.</p>
+          <span class="svccard__more">Get a price <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </div>
+      <div class="svccard">
+        <div class="svccard__img">
+          <img src="images/svc/hip-to-gable.webp" alt="A finished hip to gable loft room" width="680" height="425" loading="lazy" decoding="async">
+          <span class="svccard__tag">10 to 12 weeks</span>
+        </div>
+        <div class="svccard__body">
+          <h4>Hip To Gable Conversion</h4>
+          <p>The sloping hip end is built up square, turning an unusable corner into full height floor.</p>
+          <span class="svccard__more">Get a price <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </div>
+      <div class="svccard">
+        <div class="svccard__img">
+          <img src="images/svc/l-shaped-dormer.webp" alt="A tiled dormer with leaded windows on a rear roof" width="680" height="425" loading="lazy" decoding="async">
+          <span class="svccard__tag">12 to 14 weeks</span>
+        </div>
+        <div class="svccard__body">
+          <h4>L Shaped Dormer Conversion</h4>
+          <p>Two dormers joined over a rear extension. Common on Victorian and Edwardian terraces.</p>
+          <span class="svccard__more">Get a price <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </div>
+      <div class="svccard">
+        <div class="svccard__img">
+          <img src="images/svc/velux.webp" alt="Roof lights fitted into the existing roof slope" width="680" height="425" loading="lazy" decoding="async">
+          <span class="svccard__tag">5 to 8 weeks</span>
+        </div>
+        <div class="svccard__body">
+          <h4>Velux Roof Light Conversion</h4>
+          <p>The roof structure stays exactly as it is, which makes this the quickest and the most affordable option.</p>
+          <span class="svccard__more">Get a price <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </div>
+      <div class="svccard">
+        <div class="svccard__img">
+          <img src="images/svc/existing-plans.webp" alt="A loft conversion built to the owner's own drawings, with the new staircase in" width="680" height="425" loading="lazy" decoding="async">
+          <span class="svccard__tag">Your drawings</span>
+        </div>
+        <div class="svccard__body">
+          <h4>Conversions From Existing Plans</h4>
+          <p>Already have drawings from an architect? We price them as they stand and build to them.</p>
+          <span class="svccard__more">Get a price <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </div>
+      <div class="svccard">
+        <div class="svccard__img">
+          <img src="images/svc/planning.webp" alt="A property assessed for planning before a rear dormer" width="680" height="425" loading="lazy" decoding="async">
+          <span class="svccard__tag">Applied for by us</span>
+        </div>
+        <div class="svccard__body">
+          <h4>Planning Permission &amp; Building Regs</h4>
+          <p>We check what your property actually needs, submit the application, and see building control through to sign off.</p>
+          <span class="svccard__more">Get a price <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </div>
+      <div class="svccard">
+        <div class="svccard__img">
+          <img src="images/svc/carpentry.webp" alt="Fitted eaves shelving and joinery in a finished loft" width="680" height="425" loading="lazy" decoding="async">
+          <span class="svccard__tag">First &amp; second fix</span>
+        </div>
+        <div class="svccard__body">
+          <h4>Loft Carpentry &amp; Joinery</h4>
+          <p>Staircases, fitted eaves storage, wardrobes and second fix, cut and hung by our own joiners.</p>
+          <span class="svccard__more">Get a price <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </div>
+      </div>
+      </div>
+      <button type="button" class="svc-next" aria-label="Next services"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+
+  <div class="svc-group reveal reveal-delay-1">
+    <div class="svc-group__head">
+      <h3>Bathrooms</h3>
+      <p>Full bathrooms, en suites and wet rooms on fixed price packages. We work seven days a week, because not everyone can take a weekday off.</p>
+    </div>
+    <div class="svc-rail">
+      <button type="button" class="svc-prev" aria-label="Previous services"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <div class="svc-belt">
+      <div class="svc-track">
+      <div class="svccard">
+        <div class="svccard__img">
+          <img src="images/svc/bathroom-design.webp" alt="A bathroom laid out around the room, with a vanity unit and walk in shower" width="680" height="425" loading="lazy" decoding="async">
+          <span class="svccard__tag">Free</span>
+        </div>
+        <div class="svccard__body">
+          <h4>Bathroom Design</h4>
+          <p>A layout drawn around your room, your budget and where the pipework can realistically go.</p>
+          <span class="svccard__more">Get a price <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </div>
+      <div class="svccard">
+        <div class="svccard__img">
+          <img src="images/svc/bathroom-survey.webp" alt="Two fitters measuring up before work starts" width="680" height="425" loading="lazy" decoding="async">
+          <span class="svccard__tag">Home or video</span>
+        </div>
+        <div class="svccard__body">
+          <h4>Bathroom Surveys</h4>
+          <p>At your home or over a video call, whichever suits. You end it with a fixed price promise in writing.</p>
+          <span class="svccard__more">Get a price <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </div>
+      <div class="svccard">
+        <div class="svccard__img">
+          <img src="images/svc/bathroom-install.webp" alt="A completed bathroom finished in large format marble effect tiling" width="680" height="425" loading="lazy" decoding="async">
+          <span class="svccard__tag">Fixed price</span>
+        </div>
+        <div class="svccard__body">
+          <h4>Full Bathroom Installation</h4>
+          <p>Strip out, first fix, tiling, second fix and making good, one team, one price, one point of contact.</p>
+          <span class="svccard__more">Get a price <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </div>
+      <div class="svccard">
+        <div class="svccard__img">
+          <img src="images/svc/wet-room.webp" alt="A wet room with a walk in shower and a level tray" width="680" height="425" loading="lazy" decoding="async">
+          <span class="svccard__tag">Fully tanked</span>
+        </div>
+        <div class="svccard__body">
+          <h4>Wet Rooms</h4>
+          <p>Tanked floors and walls with the falls set properly, so the drainage still works in ten years' time.</p>
+          <span class="svccard__more">Get a price <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </div>
+      <div class="svccard">
+        <div class="svccard__img">
+          <img src="images/svc/en-suite.webp" alt="A compact en suite with a walk in shower under the slope" width="680" height="425" loading="lazy" decoding="async">
+          <span class="svccard__tag">Loft en suites</span>
+        </div>
+        <div class="svccard__body">
+          <h4>En Suites &amp; Cloakrooms</h4>
+          <p>Small rooms are the hardest to plan. We fit them into lofts, box rooms and the space under the stairs.</p>
+          <span class="svccard__more">Get a price <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </div>
+      <div class="svccard">
+        <div class="svccard__img">
+          <img src="images/svc/finance.webp" alt="A freestanding bath beneath plantation shutters in a finished bathroom" width="680" height="425" loading="lazy" decoding="async">
+          <span class="svccard__tag">0% APR</span>
+        </div>
+        <div class="svccard__body">
+          <h4>Finance Options</h4>
+          <p>Spread the cost from 0% APR over 12 or 24 months, always subject to the lender's assessment.</p>
+          <span class="svccard__more">Get a price <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </div>
+      </div>
+      </div>
+      <button type="button" class="svc-next" aria-label="Next services"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+
+  <div class="svc-group reveal reveal-delay-1">
+    <div class="svc-group__head">
+      <h3>Insulation and rendering</h3>
+      <p>Warmer walls and a finish that lasts. Insulation work is zero rated for VAT, and we do not install under grant schemes, so there is no eligibility test and no waiting list.</p>
+    </div>
+    <div class="svc-rail">
+      <button type="button" class="svc-prev" aria-label="Previous services"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <div class="svc-belt">
+      <div class="svc-track">
+      <div class="svccard">
+        <div class="svccard__img">
+          <img src="images/svc/ewi.webp" alt="A house with its external walls insulated and rendered" width="680" height="425" loading="lazy" decoding="async">
+          <span class="svccard__tag">From &pound;122/m&sup2;</span>
+        </div>
+        <div class="svccard__body">
+          <h4>External Wall Insulation</h4>
+          <p>90mm EPS board, mesh, basecoat and a silicone topcoat. Cuts heat lost through the walls by 30 to 40%.</p>
+          <span class="svccard__more">Get a price <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </div>
+      <div class="svccard">
+        <div class="svccard__img">
+          <img src="images/svc/iwi.webp" alt="Internal wall insulation on a new stud frame" width="680" height="425" loading="lazy" decoding="async">
+          <span class="svccard__tag">Where EWI cannot go</span>
+        </div>
+        <div class="svccard__body">
+          <h4>Internal Wall Insulation</h4>
+          <p>For properties where external work is not an option, a frontage worth keeping, or no room at the boundary.</p>
+          <span class="svccard__more">Get a price <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </div>
+      <div class="svccard">
+        <div class="svccard__img">
+          <img src="images/svc/loft-insulation.webp" alt="Insulation being fitted between the rafters" width="680" height="425" loading="lazy" decoding="async">
+          <span class="svccard__tag">Up to 25% of heat</span>
+        </div>
+        <div class="svccard__body">
+          <h4>Loft Insulation</h4>
+          <p>An uninsulated loft loses roughly a quarter of your heating. Topping it up is the cheapest fix in the house.</p>
+          <span class="svccard__more">Get a price <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </div>
+      <div class="svccard">
+        <div class="svccard__img">
+          <img src="images/svc/loft-boarding.webp" alt="New joists laid ready for raised loft boarding" width="680" height="425" loading="lazy" decoding="async">
+          <span class="svccard__tag">Storage restored</span>
+        </div>
+        <div class="svccard__body">
+          <h4>Loft Boarding</h4>
+          <p>Raised boarding above the joists, so you get the storage back without crushing the insulation flat.</p>
+          <span class="svccard__more">Get a price <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </div>
+      <div class="svccard">
+        <div class="svccard__img">
+          <img src="images/svc/silicone-render.webp" alt="A house being rendered, the scaffold still up" width="680" height="425" loading="lazy" decoding="async">
+          <span class="svccard__tag">1.5mm finish</span>
+        </div>
+        <div class="svccard__body">
+          <h4>Silicone Rendering</h4>
+          <p>A breathable, flexible topcoat in your choice of colour. It will not need repainting, unlike sand and cement.</p>
+          <span class="svccard__more">Get a price <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </div>
+      <div class="svccard">
+        <div class="svccard__img">
+          <img src="images/svc/plastering.webp" alt="A freshly skimmed loft room before decorating" width="680" height="425" loading="lazy" decoding="async">
+          <span class="svccard__tag">Skim &amp; repair</span>
+        </div>
+        <div class="svccard__body">
+          <h4>General Plastering</h4>
+          <p>Skimming, patching, and stripping back and rebuilding bay window render that has cracked or gone hollow.</p>
+          <span class="svccard__more">Get a price <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </div>
+      </div>
+      </div>
+      <button type="button" class="svc-next" aria-label="Next services"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+
+  <div class="ctapair ctapair--center reveal">
+    <a href="#final-cta" class="btn-primary-lg">Get A Free Quote</a>
+    <a href="tel:01632960300" class="btn-line">Speak To Our Experts</a>
+  </div>
+  <div class="product-stats-bar reveal">
+    <div class="stat-b"><div class="stat-b-num">10 yr</div><div class="stat-b-label">Workmanship Warranty</div></div>
+    <div class="stat-b"><div class="stat-b-num">15 yr</div><div class="stat-b-label">Manufacturer Warranty</div></div>
+    <div class="stat-b"><div class="stat-b-num">0%</div><div class="stat-b-label">APR Over 12 &amp; 24 Months</div></div>
+    <div class="stat-b"><div class="stat-b-num">0%</div><div class="stat-b-label">VAT On Insulation Work</div></div>
+  </div>
+</section>
+
+<!-- ⑥ WHY CHOOSE US -->
+<section id="why-us">
+  <div class="why-header reveal">
+    <p class="section-label">Why Homeowners Choose Us</p>
+    <h2 class="section-title">Real tradespeople, not salespeople</h2>
+  </div>
+  <div class="why-rows">
+    <div class="why-row reveal">
+      <div class="why-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 6 9.5 10.5"/><path d="m3 21 6.5-6.5"/><path d="M12.5 4.5 16 1l7 7-3.5 3.5z"/><path d="m7 12 5 5-2.5 2.5a2.1 2.1 0 0 1-3 0l-2-2a2.1 2.1 0 0 1 0-3z"/></svg></div>
+      <div>
+        <h3>Tradespeople, not salespeople</h3>
+        <p>The people who quote your job are the people who build it. There is no commission paid salesperson in the middle, and no pressure to sign on the night.</p>
+      </div>
+    </div>
+    <div class="why-row reveal reveal-delay-1">
+      <div class="why-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M14.5 7.8a3 3 0 0 0-5 2.2v3.4c0 1.2-.6 2.2-1.6 2.6h7.7"/><path d="M8.4 12.2h4.4"/></svg></div>
+      <div>
+        <h3>A fixed price, agreed before we start</h3>
+        <p>Your quote is fixed in writing before a single tool comes out of the van. Scaffolding, skips, pipework adjustments and clean up are priced in, not added later.</p>
+      </div>
+    </div>
+    <div class="why-row reveal reveal-delay-2">
+      <div class="why-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="12.5" rx="2"/><path d="M8.5 20.5h7"/><path d="M12 17.5v3"/><path d="m9.5 8.8 3 2.4 3-2.4"/></svg></div>
+      <div>
+        <h3>A free home or video survey</h3>
+        <p>If it is easier for you, we will run the whole survey over a video call instead of visiting. Either way it is free, and there is no obligation at the end of it.</p>
+      </div>
+    </div>
+    <div class="why-row reveal">
+      <div class="why-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.6 12 3.6l8.5 7"/><path d="M5.5 12.4v7.9h13v-7.9"/><path d="M10 20.3v-5h4v5"/></svg></div>
+      <div>
+        <h3>You stay in your home</h3>
+        <p>Loft conversions are built using access from the scaffold, so you do not need to move out. Bathroom work is sequenced so you are never left without facilities overnight.</p>
+      </div>
+    </div>
+    <div class="why-row reveal reveal-delay-1">
+      <div class="why-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9.2" r="5.6"/><path d="m8.4 13.8-1.3 6.6 4.9-2.5 4.9 2.5-1.3-6.6"/></svg></div>
+      <div>
+        <h3>Trained, time served installers</h3>
+        <p>Our insulation and rendering team is NVQ Level 3 trained and approved by the system manufacturers whose products we fit, which is what makes the 15 year material warranty possible.</p>
+      </div>
+    </div>
+    <div class="why-row reveal reveal-delay-2">
+      <div class="why-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7.5" cy="14.5" r="4"/><path d="m10.4 11.6 8.6-8.6"/><path d="m16.4 5.6 2.4 2.4"/><path d="m13.9 8.1 2.4 2.4"/></svg></div>
+      <div>
+        <h3>One team, start to finish</h3>
+        <p>Structural work, first fix, plumbing, plastering, tiling and building control sign off are all handled in house. You have one number to call and one company answerable for the result.</p>
+      </div>
+    </div>
+  </div>
+  <div class="ctapair ctapair--center reveal">
+    <a href="#final-cta" class="btn-primary-lg">Get A Free Quote</a>
+    <a href="tel:01632960300" class="btn-line">Speak To Our Experts</a>
+  </div>
+</section>
+
+<!-- ⑦ REVIEWS -->
+<section id="reviews">
+  <div class="reviews-header reveal">
+    <p class="section-label">What Our Clients Say</p>
+    <h2 class="section-title">What our customers say</h2>
+  </div>
+  <div class="mini-reviews">
+    <div class="mini-review reveal">
+      <div class="mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="mini-text">"Not all lofts are equal. This has been the best value and the highest quality build I have had in twenty years of owning houses, courteous, tidy, and genuinely a delight to have around the house."</p>
+      <div class="mini-author">Verified Customer</div>
+      <div class="mini-loc">Hip To Gable Conversion &middot; Brighton</div>
+    </div>
+    <div class="mini-review reveal reveal-delay-1">
+      <div class="mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="mini-text">"They did the whole survey over a video call because I could not get time off work. The price they gave me on that call is the price I paid. No salesman ever set foot in the house."</p>
+      <div class="mini-author">Verified Customer</div>
+      <div class="mini-loc">Bathroom Installation &middot; Kirkcaldy</div>
+    </div>
+    <div class="mini-review reveal reveal-delay-2">
+      <div class="mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="mini-text">"Our 1930s semi was freezing and the walls were solid brick. Since the external insulation and render went on, the back bedroom is usable in January and the gas bill has dropped noticeably."</p>
+      <div class="mini-author">Verified Customer</div>
+      <div class="mini-loc">External Wall Insulation &middot; Solihull</div>
+    </div>
+    <div class="mini-review reveal">
+      <div class="mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="mini-text">"Scaffold, skips, the lot, all arranged by them. I did not have to organise a single subcontractor, and the site was swept every evening before they left."</p>
+      <div class="mini-author">Verified Customer</div>
+      <div class="mini-loc">Silicone Rendering &middot; Wolverhampton</div>
+    </div>
+    <div class="mini-review reveal reveal-delay-1">
+      <div class="mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="mini-text">"The wet room is exactly what we asked for. The waterproofing and the fall on the floor were explained properly beforehand, which none of the other quotes bothered to do."</p>
+      <div class="mini-author">Verified Customer</div>
+      <div class="mini-loc">Wet Room Installation &middot; Dunfermline</div>
+    </div>
+    <div class="mini-review reveal reveal-delay-2">
+      <div class="mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="mini-text">"A Velux conversion, done in six weeks, and the loft is now the warmest room in the house. Building control sign off was handled entirely by them."</p>
+      <div class="mini-author">Verified Customer</div>
+      <div class="mini-loc">Velux Roof Light Conversion &middot; Haywards Heath</div>
+    </div>
+  </div>
+  <div class="ctapair ctapair--center reveal">
+    <a href="#final-cta" class="btn-primary-lg">Get A Free Quote</a>
+    <a href="tel:01632960300" class="btn-line">Speak To Our Experts</a>
+  </div>
+</section>
+
+<!-- ⑧ GALLERY -->
+<section id="gallery">
+  <div class="gallery-header reveal">
+    <p class="section-label">Our Completed Projects</p>
+    <h2 class="gallery-heading">Recent work, photographed on site</h2>
+  </div>
+  <div class="gallery-grid reveal reveal-delay-1">
+    <div class="gallery-item tall">
+      <img src="images/gal-ewi-progress.webp" alt="A new timber frame going up on a loft conversion" width="800" height="1070" loading="lazy" decoding="async">
+      <div class="gallery-overlay"><span>New Timber Frame, Solihull</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/gal-loft-ensuite.webp" alt="An en suite shower room with a wall hung vanity unit" width="600" height="400" loading="lazy" decoding="async">
+      <div class="gallery-overlay"><span>En Suite Shower Room, Lancing</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/gal-bathroom.webp" alt="A refitted family bathroom with a bath and vanity unit" width="1000" height="583" loading="lazy" decoding="async">
+      <div class="gallery-overlay"><span>Family Bathroom Refit, Kirkcaldy</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/gal-loft-room.webp" alt="A finished loft room lit by a roof light" width="1000" height="667" loading="lazy" decoding="async">
+      <div class="gallery-overlay"><span>Velux Roof Light Conversion, Haywards Heath</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/gal-render-finish.webp" alt="A house finished in silicone render" width="900" height="900" loading="lazy" decoding="async">
+      <div class="gallery-overlay"><span>Silicone Render Finish, Wolverhampton</span></div>
+    </div>
+  </div>
+  <div class="ctapair ctapair--center reveal">
+    <a href="#final-cta" class="btn-primary-lg">Get A Free Quote</a>
+    <a href="tel:01632960300" class="btn-line">Speak To Our Experts</a>
+  </div>
+</section>
+
+<!-- ⑨ GUARANTEE -->
+<div id="guarantee">
+  <div class="guarantee-inner">
+    <div class="guarantee-text reveal">
+      <p class="guarantee-label-tag">Our Promise</p>
+      <h2 class="guarantee-title">Our ten year workmanship guarantee</h2>
+      <p class="guarantee-sub">Every loft, bathroom and insulation project carries a ten year workmanship warranty, and external wall insulation adds a fifteen year manufacturer warranty on the system itself. If something is not right, we come back and put it right.</p>
+      <div class="g-badges">
+        <div class="g-badge">10 Year Workmanship Warranty</div>
+        <div class="g-badge">15 Year Manufacturer Warranty</div>
+        <div class="g-badge">Building Control Sign Off</div>
+        <div class="g-badge">Fully Insured</div>
+        <div class="g-badge">Fixed Price, No Hidden Costs</div>
+      </div>
+    </div>
+    <div class="guarantee-right">
+      <svg class="g-mark" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4 6 11v13c0 10.5 7.6 18.4 18 21 10.4-2.6 18-10.5 18-21V11z"/><path d="m16 24 6 6 11-12"/></svg>
+      <div class="guarantee-num">10</div>
+      <div class="guarantee-num-label">Year Workmanship<br>Warranty</div>
+    </div>
+  </div>
+</div>
+
+<!-- ⑩ FAQ -->
+<section id="faq">
+  <div class="faq-header reveal">
+    <p class="section-label">Got Questions?</p>
+    <h2 class="section-title">Frequently asked questions</h2>
+  </div>
+  <div class="faq-group">
+    <div class="faq-card open reveal">
+      <div class="faq-q-row" onclick="toggleFaq(this)">
+        <span class="faq-q-text">Do I need planning permission for a loft conversion?</span>
+        <span class="faq-chevron">&#9662;</span>
+      </div>
+      <p class="faq-answer">In most cases, no. Dormer and Velux roof light conversions usually fall under permitted development rights. Planning permission is more likely if the property is listed, sits in a conservation area, or the dormer is large or overlooks a neighbour. We check this at the free survey and handle any application ourselves.</p>
+    </div>
+    <div class="faq-card reveal reveal-delay-1">
+      <div class="faq-q-row" onclick="toggleFaq(this)">
+        <span class="faq-q-text">How long does a loft conversion take?</span>
+        <span class="faq-chevron">&#9662;</span>
+      </div>
+      <p class="faq-answer">It depends on the type. A Velux roof light conversion takes around 5 to 8 weeks, a dormer 6 to 8 weeks, a hip to gable 10 to 12 weeks, and an L shaped dormer 12 to 14 weeks. We give you a programme with your quote, not a vague estimate.</p>
+    </div>
+    <div class="faq-card reveal reveal-delay-2">
+      <div class="faq-q-row" onclick="toggleFaq(this)">
+        <span class="faq-q-text">Do I have to move out while the work is done?</span>
+        <span class="faq-chevron">&#9662;</span>
+      </div>
+      <p class="faq-answer">No. Loft conversions are built using access from the scaffold, so the work stays outside your living space until the very last stage. Bathroom installations are sequenced so you are never left without facilities overnight.</p>
+    </div>
+    <div class="faq-card reveal reveal-delay-3">
+      <div class="faq-q-row" onclick="toggleFaq(this)">
+        <span class="faq-q-text">Will a loft conversion add value to my home?</span>
+        <span class="faq-chevron">&#9662;</span>
+      </div>
+      <p class="faq-answer">A professionally built and properly signed off conversion can add up to 20% to a property's value, depending on location and layout. It is one of the few improvements that adds a genuine room rather than just a finish.</p>
+    </div>
+    <div class="faq-card reveal">
+      <div class="faq-q-row" onclick="toggleFaq(this)">
+        <span class="faq-q-text">Can I add an en suite to the loft?</span>
+        <span class="faq-chevron">&#9662;</span>
+      </div>
+      <p class="faq-answer">Yes, and most people do. We plan the plumbing runs and the layout at design stage so the soil connection and the head height both work before anything is built.</p>
+    </div>
+    <div class="faq-card reveal reveal-delay-1">
+      <div class="faq-q-row" onclick="toggleFaq(this)">
+        <span class="faq-q-text">What is the difference between external wall insulation and just rendering?</span>
+        <span class="faq-chevron">&#9662;</span>
+      </div>
+      <p class="faq-answer">Rendering is a finish. External wall insulation is a full system, 90mm EPS insulation board fixed to the wall, basecoat and mesh, a second basecoat, primer, then a 1.5mm silicone render topcoat, with every junction sealed. Render on its own changes how the house looks; the insulation system changes how it performs.</p>
+    </div>
+    <div class="faq-card reveal reveal-delay-2">
+      <div class="faq-q-row" onclick="toggleFaq(this)">
+        <span class="faq-q-text">How much heat does external wall insulation actually save?</span>
+        <span class="faq-chevron">&#9662;</span>
+      </div>
+      <p class="faq-answer">It reduces heat loss through the walls by roughly 30 to 40%. On a solid brick wall the U value typically improves from around 2.0 W/m&sup2;K to 0.28 to 0.30 W/m&sup2;K, about an 85% improvement. Properties built before about 1930 usually have solid walls and benefit most.</p>
+    </div>
+    <div class="faq-card reveal reveal-delay-3">
+      <div class="faq-q-row" onclick="toggleFaq(this)">
+        <span class="faq-q-text">I have heard external wall insulation can damage a house. Is that true?</span>
+        <span class="faq-chevron">&#9662;</span>
+      </div>
+      <p class="faq-answer">Problems come from poor installation or the wrong system for the wall, not from the principle. EPS board is breathable, and finished with silicone render it lets moisture escape while keeping heat in. Fitted correctly it reduces damp and cold spots rather than causing them.</p>
+    </div>
+    <div class="faq-card reveal">
+      <div class="faq-q-row" onclick="toggleFaq(this)">
+        <span class="faq-q-text">What warranties do you provide?</span>
+        <span class="faq-chevron">&#9662;</span>
+      </div>
+      <p class="faq-answer">Ten years on our workmanship across all three trades, plus a fifteen year manufacturer warranty on external wall insulation systems, which is only available because our installers are approved by the system suppliers.</p>
+    </div>
+    <div class="faq-card reveal reveal-delay-1">
+      <div class="faq-q-row" onclick="toggleFaq(this)">
+        <span class="faq-q-text">Do you work under ECO4 or government grant schemes?</span>
+        <span class="faq-chevron">&#9662;</span>
+      </div>
+      <p class="faq-answer">No. We do not install under ECO4 or government funding schemes, so there is no eligibility assessment and no waiting list. Insulation work is zero rated for VAT, which is applied to your quote automatically.</p>
+    </div>
+    <div class="faq-card reveal reveal-delay-2">
+      <div class="faq-q-row" onclick="toggleFaq(this)">
+        <span class="faq-q-text">Can I spread the cost?</span>
+        <span class="faq-chevron">&#9662;</span>
+      </div>
+      <p class="faq-answer">Yes. Finance is available through a regulated credit broker at 0% APR over 12 or 24 months, or 12.9% APR over 36, 48, 60 or 120 months, always subject to the lender's assessment. A deposit may be payable and is agreed before you apply. the credit broker is a credit broker, not a lender.</p>
+    </div>
+    <div class="faq-card reveal reveal-delay-3">
+      <div class="faq-q-row" onclick="toggleFaq(this)">
+        <span class="faq-q-text">Can you fit a wet room instead of a standard bathroom?</span>
+        <span class="faq-chevron">&#9662;</span>
+      </div>
+      <p class="faq-answer">Yes. We design and fit full wet rooms, including the tanking, the floor falls and the drainage. We will walk you through how the waterproofing works before you commit, because that is the part that matters most.</p>
+    </div>
+  </div>
+  <div class="ctapair ctapair--center reveal">
+    <a href="#final-cta" class="btn-primary-lg">Get A Free Quote</a>
+    <a href="tel:01632960300" class="btn-line">Speak To Our Experts</a>
+  </div>
+</section>
+
+<!-- ⑪ FINAL CTA -->
+<section id="final-cta">
+  <div class="cta-card reveal">
+    <h2 class="cta-heading">Get a fixed price before you commit to anything</h2>
+    <p class="cta-sub">Loft, bathroom or insulation, book a free home or video survey and we will put a fixed price in writing. No salespeople, no obligation, and no charge if you decide against it.</p>
+    <div class="cta-actions">
+      <a href="#final-cta" class="btn-cta">Get A Free Quote</a>
+      <a href="tel:01632960300" class="btn-cta-outline">Speak To Our Experts</a>
+    </div>
+  </div>
+</section>
+
+<!-- ⑫ FOOTER -->
+<footer id="footer">
+  <div class="footer-grid">
+    <div class="footer-col-brand">
+      <div class="footer-brand">Home Improvements</div>
+      <p class="footer-brand-desc">Loft conversions, bathroom installations, and insulation &amp; rendering. Three trades, one team, and one company answerable for the finish.</p>
+      <p class="footer-brand-desc" style="margin-top:14px;">Free home or video survey &middot; fixed price in writing &middot; ten year workmanship warranty.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Loft conversions</div>
+      <a href="#product">Dormer Loft Conversion</a>
+      <a href="#product">Hip To Gable Conversion</a>
+      <a href="#product">L Shaped Dormer</a>
+      <a href="#product">Velux Roof Light Conversion</a>
+      <a href="#faq">Planning Permission Advice</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Bathrooms &amp; Insulation</div>
+      <a href="#product">Bathroom Design &amp; Survey</a>
+      <a href="#product">Full Bathroom Installation</a>
+      <a href="#product">Wet Rooms &amp; En Suites</a>
+      <a href="#product">External &amp; Internal Wall Insulation</a>
+      <a href="#product">Loft Insulation &amp; Boarding</a>
+      <a href="#product">Silicone Rendering &amp; Plastering</a>
+    </div>
+
+    <div class="footer-col">
+      <div class="footer-col-title">Accreditations</div>
+      <span>TrustMark Registered</span>
+      <span>Which? Trusted Trader</span>
+      <span>Checkatrade Verified</span>
+      <span>Trading Standards Approved Code</span>
+      <span>Federation of Master Builders</span>
+      <span>NVQ Level 3 Trained Installers</span>
+    </div>
+  </div>
+  <!-- --- footer ops row: hours / office / contact --- -->
+  <div class="footer-ops">
+    <div>
+      <div class="footer-ops-title">Opening hours</div>
+      <p><span class="fo-row"><span>Mon to Fri</span><span>08:00 to 17:30</span></span>
+      <span class="fo-row"><span>Saturday</span><span>By arrangement</span></span>
+      <span class="fo-row"><span>Sunday</span><span>By arrangement</span></span></p>
+    </div>
+    <div>
+      <div class="footer-ops-title">Office</div>
+      <address>Home Improvements Ltd<br>Unit 8, Kingswood Trading Estate<br>Bristol BS15 4NU</address>
+    </div>
+    <div>
+      <div class="footer-ops-title">Contact</div>
+      <p><a href="tel:01632960300">01632 960 300</a><br>Survey by home visit or video call</p>
+    </div>
+  </div>
+  <div class="footer-finance"><b>Finance:</b> Home Improvements Ltd is an Introducer Appointed Representative of a regulated credit broker. The credit broker is not a lender (FRN 111111). Finance is available subject to status. The rate offered is always provisional and will depend upon your personal circumstances, the loan amount and the term.</div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 We Build Trades Ltd. Demonstration template, sample content.</p>
+    <div class="footer-legal"><a href="#">Privacy policy</a> &nbsp;&middot;&nbsp; <a href="#">Terms and conditions</a> &nbsp;&middot;&nbsp; <a href="#">Complaints procedure</a></div>
+  </div>
+</footer>
+
+
+<script>
+  /* ── ROOFING3: ORGANIC NATURE ANIMATION ENGINE ── */
+
+  // 1. Leaf loader
+  const loader = document.getElementById('leaf-loader');
+  if (loader) {
+    loader.addEventListener('animationend', () => loader.remove());
+  }
+
+  // 2. Sticky nav
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('stuck', window.scrollY > 20), { passive: true });
+
+  // 3. Hero headline: char-by-char shimmer
+  (function() {
+    const el = document.querySelector('.hero-headline');
+    if (!el) return;
+    const text = el.textContent;
+    // Split into words first, then characters inside each word, so a word can
+    // never be broken across lines. querySelectorAll('.hero-char') below still
+    // walks every char in order, so the stagger is unchanged.
+    el.innerHTML = text.split(' ').map(word =>
+      `<span class="hero-word">` +
+      word.split('').map(c => `<span class="hero-char">${c}</span>`).join('') +
+      `</span>`
+    ).join(' ');
+    setTimeout(() => {
+      el.querySelectorAll('.hero-char').forEach((c, i) => {
+        setTimeout(() => c.classList.add('char-in'), i * 22);
+      });
+    }, 1100);
+  })();
+
+  // 4. Stats bar stagger on scroll
+  const statsObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.stat-item').forEach((s, i) => {
+          setTimeout(() => s.classList.add('stat-in'), i * 80);
+        });
+        statsObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px 120px 0px' });
+  const statsBar = document.getElementById('stats');
+  if (statsBar) statsObs.observe(statsBar);
+
+  // 5. Service cards organic bloom
+  const cardObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.big-card, .small-card').forEach((c, i) => {
+          setTimeout(() => c.classList.add('card-in'), i * 90);
+        });
+        cardObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px 120px 0px' });
+  const servLayout = document.querySelector('.services-layout');
+  if (servLayout) cardObs.observe(servLayout);
+
+  // 6. Process cards iris wipe
+  const procObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.process-card').forEach((c, i) => {
+          setTimeout(() => { c.classList.remove('proc-pre'); c.classList.add('proc-in'); }, i * 70);
+        });
+        procObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px 140px 0px' });
+  const procRow = document.querySelector('.process-cards');
+  if (procRow) {
+    procRow.querySelectorAll('.process-card').forEach(c => c.classList.add('proc-pre'));
+    procObs.observe(procRow);
+  }
+
+  // 7. Why rows stagger
+  const whyObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.why-row').forEach((r, i) => {
+          setTimeout(() => r.classList.add('row-in'), i * 80);
+        });
+        whyObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px 120px 0px' });
+  const whySection = document.getElementById('why-us');
+  if (whySection) whyObs.observe(whySection);
+
+  // 8. Big quote line-by-line reveal
+  (function() {
+    const q = document.querySelector('.big-quote');
+    if (!q) return;
+    const text = q.textContent;
+    const words = text.split(' ');
+    const chunkSize = 8;
+    let chunks = [];
+    for (let i = 0; i < words.length; i += chunkSize) {
+      chunks.push(words.slice(i, i + chunkSize).join(' '));
+    }
+    q.innerHTML = chunks.map(c => `<span class="quote-line">${c}</span>`).join(' ');
+    const qObs = new IntersectionObserver(en => {
+      en.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('.quote-line').forEach((l, i) => {
+            setTimeout(() => l.classList.add('line-in'), i * 120);
+          });
+          qObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0, rootMargin: '0px 0px 120px 0px' });
+    qObs.observe(q.closest('section') || q);
+  })();
+
+  // 9. Gallery stagger
+  const galObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.gallery-item').forEach((g, i) => {
+          setTimeout(() => g.classList.add('gal-in'), i * 70);
+        });
+        galObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px 120px 0px' });
+  const galGrid = document.querySelector('.gallery-grid');
+  if (galGrid) galObs.observe(galGrid);
+
+  // 10. Guarantee reveal
+  const guarObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelector('.guarantee-text')?.classList.add('guar-in');
+        e.target.querySelector('.guarantee-right')?.classList.add('guar-in');
+        setTimeout(() => document.querySelector('.guarantee-num')?.classList.add('leaf-spin'), 500);
+        guarObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px 120px 0px' });
+  const guarEl = document.getElementById('guarantee');
+  if (guarEl) guarObs.observe(guarEl);
+
+
+/* ══ SCROLL ANIMATION LAYER ══
+   Runs before the existing observer picks elements up, so anything this adds
+   a .reveal to is animated too. */
+(function(){
+  var ON = 'visible';
+  var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // 1. give the sections that had no reveal at all one
+  [".lstrip-head",".lstrip-label",".footer-col-brand",".footer-col"].forEach(function(sel){
+    document.querySelectorAll(sel).forEach(function(el){ el.classList.add('reveal'); });
+  });
+
+  // 2. direction per component, so entries are not all identical
+  [".why-row|rv-left",".mini-review|rv-up",".faq-card|rv-up",".svc-group__head > *|rv-up",".svc-group|rv-zoom",".g-badge|rv-up",".lstrip-label|rv-zoom",".footer-col|rv-up"].forEach(function(pair){
+    var bits = pair.split('|');
+    document.querySelectorAll(bits[0]).forEach(function(el){
+      if(el.classList.contains('reveal')) el.classList.add(bits[1]);
+    });
+  });
+
+  // 3. stagger siblings. The delay is stamped as a custom property rather
+  //    than an inline transition-delay so the reduced-motion rule can still
+  //    override it.
+  var SKIP = [".process-card",".gallery-item",".stat-item",".svccard"];
+  var groups = new Set();
+  document.querySelectorAll('.reveal').forEach(function(el){
+    if(el.parentElement) groups.add(el.parentElement);
+  });
+  groups.forEach(function(parent){
+    var kids = [].slice.call(parent.children).filter(function(c){
+      return c.classList.contains('reveal');
+    });
+    if(kids.length < 2) return;
+    kids.forEach(function(el, i){
+      var bespoke = SKIP.some(function(s){ return el.matches(s); });
+      // cap the cascade: past ~8 items the last one arrives too late to feel
+      // connected to the first
+      el.style.setProperty('--rv-d', (bespoke || calm ? 0 : Math.min(i, 5) * 55) + 'ms');
+    });
+  });
+})();
+
+  // 11. General scroll reveal
+  const revObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); revObs.unobserve(e.target); }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px 120px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+
+  // 12. Floating leaf particles
+  (function() {
+    const hero = document.getElementById('hero');
+    if (!hero) return;
+    const leaves = ['🍃','🌿','🍂'];
+    for (let i = 0; i < 10; i++) {
+      const l = document.createElement('div');
+      l.className = 'leaf-particle';
+      l.textContent = leaves[Math.floor(Math.random() * leaves.length)];
+      l.style.cssText = `
+        left:${Math.random()*100}%; top:${Math.random()*60}%;
+        --dur:${Math.random()*6+7}s; --delay:${Math.random()*8}s;
+        --mx:${(Math.random()-0.5)*80}px; --rot:${Math.random()*360}deg;
+      `;
+      hero.appendChild(l);
+    }
+  })();
+
+  // 13. Parallax on hero bg
+  window.addEventListener('scroll', () => {
+    const hero = document.getElementById('hero');
+    if (hero) hero.style.backgroundPositionY = `calc(50% + ${window.scrollY * 0.25}px)`;
+  }, { passive: true });
+
+  // 14. FAQ toggle
+  function toggleFaq(btn) {
+    const card = btn.closest('.faq-card');
+    const isOpen = card.classList.contains('open');
+    document.querySelectorAll('.faq-card.open').forEach(c => c.classList.remove('open'));
+    if (!isOpen) card.classList.add('open');
+  }
+
+  // 15. Logo strip: one speed in px/sec across both columns.
+  //     The two columns hold different numbers of tiles, so a single shared
+  //     duration would visibly desync them; and with no duration at all the
+  //     animation resolves to 0s and the strip sits still.
+  (function() {
+    const PX_PER_SEC = 42;
+    function sync() {
+      document.querySelectorAll('.lstrip-track').forEach(track => {
+        const grp = track.querySelector('.lstrip-grp');
+        if (!grp) return;
+        const w = grp.getBoundingClientRect().width;
+        if (!w) return;
+        track.style.animationDuration = (w / PX_PER_SEC).toFixed(2) + 's';
+      });
+    }
+    sync();
+    window.addEventListener('load', sync);
+    window.addEventListener('resize', sync);
+  })();
+
+  // 16. Service carousels: three cards at a time, looping.
+  (function() {
+    const STEP_MS = 4200;
+    const SLIDE_MS = 600;
+    const calm = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    document.querySelectorAll('.svc-group').forEach(group => {
+      const track = group.querySelector('.svc-track');
+      const belt  = group.querySelector('.svc-belt');
+      if (!track || !belt) return;
+      const originals = [].slice.call(track.children);
+      const count = originals.length;
+      if (!count) return;
+      // one clone of the whole set, so the wrap lands on identical content and
+      // the silent reposition has nothing to give away. Two clones would put
+      // the seam mid-set and the jump would show.
+      originals.forEach(card => track.appendChild(card.cloneNode(true)));
+
+      let i = 0;
+      let animating = false;
+
+      // offsetWidth, not getBoundingClientRect: the group sits inside a
+      // .reveal that is scaled before it comes into view, and the rect would
+      // report the scaled width.
+      const stride = () => {
+        const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+        return track.children[0].offsetWidth + gap;
+      };
+      const visible = () => Math.max(1, Math.round(belt.offsetWidth / stride()));
+      // with three up the centre is i+1; with one up it is i itself
+      const mark = () => {
+        const c = i + Math.floor(visible() / 2);
+        [].slice.call(track.children).forEach((card, n) =>
+          card.classList.toggle('svccard--focus', n === c));
+      };
+      const place = animate => {
+        track.style.transition = animate ? 'transform ' + SLIDE_MS + 'ms cubic-bezier(0.16,1,0.3,1)' : 'none';
+        track.style.transform = 'translateX(' + (-i * stride()) + 'px)';
+        mark();
+      };
+      // jump without animating, and force the jump to be committed before the
+      // slide that follows it is set up
+      const snap = to => { i = to; place(false); void track.offsetWidth; };
+
+      const go = dir => {
+        if (animating) return;
+        animating = true;
+        // normalise at the start of the move rather than at the end of the
+        // last one: no event to wait for, so nothing to miss
+        if (i >= count) snap(i - count);
+        if (dir < 0 && i === 0) snap(count);
+        i += dir;
+        place(true);
+        setTimeout(() => { animating = false; }, SLIDE_MS + 20);
+      };
+
+      place(false);   // sets the initial centre flag; must follow the declarations above
+
+      group.querySelector('.svc-prev').addEventListener('click', () => { go(-1); hold(); });
+      group.querySelector('.svc-next').addEventListener('click', () => { go(1);  hold(); });
+
+      let timer = null;
+      const start = () => {
+        if (timer || calm.matches) return;
+        timer = setInterval(() => go(1), STEP_MS);
+      };
+      const stop = () => { clearInterval(timer); timer = null; };
+      // a click should not be immediately overtaken by the timer
+      const hold = () => { stop(); setTimeout(start, STEP_MS); };
+
+      group.addEventListener('mouseenter', stop);
+      group.addEventListener('mouseleave', start);
+      group.addEventListener('focusin', stop);
+      group.addEventListener('focusout', start);
+      window.addEventListener('resize', () => place(false));
+      calm.addEventListener('change', ev => ev.matches ? stop() : start());
+
+      // only run while the carousel is actually on screen
+      new IntersectionObserver(entries => {
+        entries.forEach(en => en.isIntersecting ? start() : stop());
+      }, { threshold: 0.15 }).observe(group);
+    });
+  })();
+</script>
+
+</body>
+</html>
