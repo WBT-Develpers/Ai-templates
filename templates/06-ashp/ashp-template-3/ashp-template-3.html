@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASHP: Air Source Heat Pump Installation &amp; Repair</title>
+<meta name="description" content="MCS certified air source heat pump installation, repair and maintenance. Claim up to £7,500 with the Boiler Upgrade Scheme.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#0A1512;--ink2:#050B09;--ink3:#122019;--ink4:#1B2C24;
+  --pap:#F4F2EA;--pap2:#E8E5D9;--white:#FFFFFF;
+  --tx:#131A16;--mut:#5A6560;
+  --mint:#7FE7B0;--cop:#E8834A;--cop-d:#8C4118;
+  --ln:#DAD6C7;--lnd:rgba(244,242,234,.16);
+  --onm:rgba(244,242,234,.82);--odm:rgba(244,242,234,.60);
+  --f:"Instrument Sans",Arial,sans-serif;--mono:"Geist Mono",ui-monospace,monospace;
+  --max:1320px;--ea:cubic-bezier(.22,1,.28,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--f);background:var(--pap);color:var(--tx);line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{font:inherit}
+:focus-visible{outline:2px solid var(--cop-d);outline-offset:3px}
+h1,h2,h3{font-weight:600;letter-spacing:-.042em;line-height:1.02;color:var(--tx)}
+.dk h1,.dk h2,.dk h3,.dk h4{color:var(--pap)}
+p{color:var(--mut)}
+.dk p{color:var(--onm)}
+.w{max-width:var(--max);margin:0 auto;padding:0 28px}
+.dk{background:var(--ink);color:var(--pap)}
+.p2{background:var(--pap2)}
+section{padding:clamp(72px,9vw,132px) 0;position:relative}
+.lb{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--cop-d);margin-bottom:20px}
+.lb::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cop)}
+.dk .lb{color:var(--mint)}.dk .lb::before{background:var(--mint)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 30px;border-radius:100px;font-size:17px;font-weight:600;border:1.5px solid transparent;cursor:pointer;transition:.4s var(--ea);position:relative;overflow:hidden}
+.btn span{position:relative;z-index:2}
+.btn::after{content:"";position:absolute;inset:0;background:currentColor;opacity:0;transition:opacity .4s}
+.btn:hover{transform:translateY(-3px)}
+.bm{background:var(--mint);color:var(--ink2)}.bm:hover{background:#9BEEC2}
+.bc{background:var(--cop-d);color:#fff}.bc:hover{background:#70330F}
+.bk{background:var(--ink);color:var(--pap)}.bk:hover{background:var(--ink2)}
+.bo{border-color:var(--ln);color:var(--tx);background:transparent}.bo:hover{background:var(--white);border-color:var(--tx)}
+.bol{border-color:var(--lnd);color:var(--pap)}
+/* .bol is a light outline on a light label - it only works on .dk grounds.
+   Sections on paper need the same button drawn the other way round. */
+.bod{border-color:rgba(19,26,22,.34);color:var(--tx)}
+.bod:hover{border-color:var(--tx);background:rgba(19,26,22,.05)}
+/* the shared CTA row that closes a section, per the base template */
+.sec-cta{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;
+  margin-top:clamp(30px,3.4vw,46px)}.bol:hover{background:rgba(255,255,255,.08)}
+.pr{display:flex;gap:12px;flex-wrap:wrap}.mid{display:flex;justify-content:center}
+
+/* ── scroll reveal ──
+   This was a clip-path wipe, .rv starting at inset(0 0 100% 0). That deadlocks
+   the IntersectionObserver that is supposed to undo it: Chrome factors an
+   element's own clip-path into the rect it tests, so a target clipped to zero
+   height never reports isIntersecting, never receives .in, and so never
+   un-clips. Every .rv below the fold stayed invisible for good. opacity and
+   transform hide it just as well, cost no repaint, and leave the intersection
+   rect alone. */
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .5s var(--ea),transform .6s var(--ea)}
+.js .rv.in{opacity:1;transform:none}
+.js .st{opacity:0;transform:translateY(18px);transition:opacity .8s var(--ea),transform .8s var(--ea)}
+.js .sg.in .st{opacity:1;transform:none}
+.js .sg.in .st:nth-child(1){transition-delay:.04s}.js .sg.in .st:nth-child(2){transition-delay:.1s}.js .sg.in .st:nth-child(3){transition-delay:.16s}
+.js .sg.in .st:nth-child(4){transition-delay:.22s}.js .sg.in .st:nth-child(5){transition-delay:.28s}.js .sg.in .st:nth-child(6){transition-delay:.34s}
+/* the calculator is an interactive panel - it should settle sooner than the
+   editorial blocks, and you should be able to reach the sliders quickly */
+.js .calc.rv{transition:opacity .34s linear,transform .42s var(--ea)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition-duration:.01ms!important}
+.js .rv{opacity:1;transform:none}.js .st{opacity:1;transform:none}.hero-media,.hero-type{transform:none!important}}
+
+/* ── HEADER ── */
+header{position:fixed;top:0;left:0;right:0;z-index:95;transition:.5s var(--ea)}
+header .bar{max-width:var(--max);margin:0 auto;padding:20px 28px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+header.stuck{background:rgba(10,21,18,.82);backdrop-filter:blur(20px) saturate(140%)}
+header.stuck .bar{padding:12px 28px}
+.lg{display:flex;align-items:center;gap:12px;color:var(--pap)}
+.lgm{width:11px;height:30px;border-radius:99px;background:linear-gradient(180deg,var(--mint),var(--cop));flex:0 0 auto}
+.lg b{display:block;font-size:19px;font-weight:600;letter-spacing:-.02em;line-height:1.1}
+.lg s{display:block;text-decoration:none;font-family:var(--mono);font-size:13px;letter-spacing:.13em;text-transform:uppercase;color:var(--odm)}
+.nl{display:flex;gap:2px;margin:0 auto}
+.nl a{font-size:16px;font-weight:500;color:var(--onm);padding:9px 14px;border-radius:99px;transition:.3s}
+.nl a:hover{background:rgba(244,242,234,.1);color:var(--pap)}
+.nr{display:flex;align-items:center;gap:14px}
+.ntl{color:var(--pap);font-size:17px;font-weight:600;letter-spacing:-.01em}
+.tg{display:none;width:42px;height:42px;border:1px solid var(--lnd);border-radius:99px;background:rgba(244,242,234,.06);position:relative;cursor:pointer}
+.tg s,.tg::before,.tg::after{content:"";position:absolute;left:12px;right:12px;height:1.6px;background:var(--pap);border-radius:2px}
+.tg::before{top:15px}.tg s{top:20px}.tg::after{top:25px}
+.dw{display:none}
+@media(max-width:1180px){.nl,.ntl{display:none}.tg{display:block}
+.dw{display:block;max-height:0;overflow:hidden;background:var(--ink2);transition:max-height .5s var(--ea)}
+header.op{background:var(--ink2)}
+.dw a{display:block;padding:14px 28px;font-size:17px;color:var(--pap);border-bottom:1px solid rgba(244,242,234,.08)}}
+
+/* ── HERO: scroll-linked ── */
+.hero{position:relative;height:100vh;min-height:660px;overflow:hidden;background:var(--ink2)}
+.hero-media{position:absolute;inset:0;z-index:0;will-change:transform}
+/* the video sizes exactly as the still did - the 110% height is the headroom
+   the parallax travels into, so it has to stay */
+.hero-media img,.hero-media video{width:100%;height:110%;object-fit:cover;opacity:.62;display:block}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+ background:radial-gradient(ellipse 80% 60% at 50% 105%,rgba(232,131,74,.22),transparent 60%),
+            linear-gradient(180deg,rgba(5,11,9,.86) 0%,rgba(5,11,9,.42) 38%,rgba(5,11,9,.94) 100%)}
+.hero-in{position:relative;z-index:3;height:100%;max-width:var(--max);margin:0 auto;padding:0 28px;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:clamp(38px,7vh,74px)}
+.hero-type{will-change:transform,opacity}
+.hero h1{font-size:clamp(44px,8.4vw,124px);color:var(--pap);letter-spacing:-.05em;line-height:.94;max-width:13ch}
+.hero h1 .l2{display:block;color:var(--mint)}
+.hero-row{display:grid;grid-template-columns:1fr auto;gap:38px;align-items:end;margin-top:clamp(24px,4vh,46px);padding-top:26px;border-top:1px solid var(--lnd)}
+.hero-row p{font-size:18px;line-height:1.72;color:var(--onm);max-width:46ch}
+.hero-tags{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
+.hero-tags span{font-family:var(--mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--pap);border:1px solid var(--lnd);border-radius:99px;padding:7px 14px}
+.scroll-cue{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);z-index:4;display:flex;flex-direction:column;align-items:center;gap:8px;font-family:var(--mono);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--odm)}
+.scroll-cue i{display:block;width:1px;height:34px;background:linear-gradient(180deg,var(--mint),transparent);animation:cue 2.2s ease-in-out infinite}
+@keyframes cue{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+@media(max-width:900px){.hero-row{grid-template-columns:1fr;align-items:start}.hero{height:auto;min-height:0;padding:130px 0 54px}}
+
+/* ── CALCULATOR ── */
+.calc-wrap{background:var(--ink);color:var(--pap);padding:clamp(60px,7vw,96px) 0}
+.calc{display:grid;grid-template-columns:1.05fr .95fr;gap:0;border-radius:26px;overflow:hidden;background:var(--ink3);border:1px solid var(--lnd)}
+.calc-l{padding:clamp(30px,3.6vw,52px)}
+.calc-l h2{font-size:clamp(26px,3.1vw,40px);margin-bottom:12px}
+.calc-l>p{font-size:17px;line-height:1.7;margin-bottom:30px;max-width:44ch}
+.fld{margin-bottom:26px}
+.fld .top{display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin-bottom:12px}
+.fld label{font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--odm)}
+.fld .val{font-size:19px;font-weight:600;color:var(--mint)}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:99px;background:rgba(244,242,234,.18);outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:var(--mint);border:4px solid var(--ink3);cursor:grab;box-shadow:0 0 0 1px rgba(127,231,176,.5)}
+input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--mint);border:4px solid var(--ink3);cursor:grab}
+.seg{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.seg button{padding:11px 6px;border-radius:99px;border:1px solid var(--lnd);background:transparent;color:var(--onm);font-size:15px;font-weight:500;cursor:pointer;transition:.3s var(--ea)}
+.seg button.on{background:var(--mint);border-color:var(--mint);color:var(--ink2);font-weight:600}
+.calc-r{padding:clamp(30px,3.6vw,52px);background:var(--ink4);display:flex;flex-direction:column;justify-content:center}
+.res-lb{font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--odm);margin-bottom:10px}
+.res-big{font-size:clamp(42px,6vw,74px);font-weight:600;letter-spacing:-.05em;line-height:1;color:var(--pap)}
+.res-sub{font-size:16px;color:var(--onm);margin-top:10px}
+.res-rows{margin:28px 0;border-top:1px solid var(--lnd)}
+.res-rows .r{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--lnd);font-size:17px;color:var(--onm)}
+.res-rows .r b{color:var(--pap);font-weight:600}
+.res-rows .r.hi b{color:var(--mint)}
+.res-note{font-size:14px;color:var(--odm);line-height:1.6;margin-top:16px}
+@media(max-width:900px){.calc{grid-template-columns:1fr}}
+@media(max-width:460px){.seg{grid-template-columns:1fr 1fr}}
+
+/* ── MARQUEE strip ── */
+.mq{overflow:hidden;padding:22px 0;border-top:1px solid var(--ln);border-bottom:1px solid var(--ln)}
+.mq .t{display:flex;width:max-content;animation:mv 34s linear infinite}
+.mq:hover .t{animation-play-state:paused}
+@keyframes mv{to{transform:translateX(-50%)}}
+.mq .g{display:flex;align-items:center}
+.mq .g span{font-size:19px;font-weight:500;letter-spacing:-.02em;color:var(--mut);padding:0 26px;white-space:nowrap}
+.mq .g i{width:5px;height:5px;border-radius:50%;background:var(--cop);flex:0 0 auto}
+
+/* ── PROCESS: pinned horizontal ── */
+.pin{height:260vh;position:relative}
+.pin-stick{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.pin-head{max-width:var(--max);margin:0 auto;padding:0 28px;width:100%;margin-bottom:34px}
+.track{display:flex;gap:22px;padding:0 28px;will-change:transform}
+/* split in half: picture on the top, copy on the bottom. The card's own
+   padding moves to the copy half so the picture can run full bleed - the
+   card clips it to the 22px radius. */
+.pstep{flex:0 0 min(420px,78vw);background:var(--ink3);border:1px solid var(--lnd);border-radius:22px;padding:0;overflow:hidden;min-height:380px;display:flex;flex-direction:column}
+.pstep__ph{position:relative;flex:0 0 50%;min-height:0;overflow:hidden;
+  background:var(--ink4)}
+.pstep__ph img{position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;display:block}
+/* the number rides on the picture now; the pill keeps it legible whatever
+   the photograph is doing underneath */
+.pstep .n{position:absolute;left:18px;top:16px;z-index:2;margin:0;
+  font-family:var(--mono);font-size:14px;letter-spacing:.16em;color:var(--mint);
+  padding:5px 11px;border-radius:999px;background:rgba(5,11,9,.62);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.pstep__b{flex:1 1 50%;min-height:0;padding:24px 30px 28px;
+  display:flex;flex-direction:column;justify-content:center}
+.pstep .lb2{font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--odm);margin-bottom:9px}
+.pstep h3{font-size:26px;margin-bottom:11px;color:var(--pap)}
+.pstep p{font-size:17px;line-height:1.7}
+.pbar{max-width:var(--max);margin:34px auto 0;padding:0 28px;width:100%}
+.pbar .tr{height:2px;background:var(--lnd);position:relative}
+.pbar .fl{position:absolute;left:0;top:0;bottom:0;background:var(--mint);width:0}
+@media(max-width:900px){.pin{height:auto}.pin-stick{position:static;height:auto;padding:0}
+.track{flex-direction:column;transform:none!important}.pstep{flex:1 1 auto;min-height:0}.pbar{display:none}
+/* stacked, the card has no height to halve, so the picture takes a definite
+   one and the copy sizes to its own content */
+.pstep__ph{flex:0 0 200px}.pstep__b{flex:1 1 auto;padding:22px 26px 26px}}
+
+/* ── SERVICES: expanding rows ── */
+.srv{border-top:1px solid var(--ln)}
+.sv{border-bottom:1px solid var(--ln)}
+.sv-h{width:100%;display:grid;grid-template-columns:64px 1fr auto;gap:24px;align-items:center;background:none;border:none;text-align:left;padding:30px 4px;cursor:pointer;color:var(--tx);transition:.4s var(--ea)}
+.sv-h:hover{padding-left:16px}
+.sv-h .n{font-family:var(--mono);font-size:14px;color:var(--cop-d)}
+.sv-h .t{font-size:clamp(22px,2.9vw,36px);font-weight:600;letter-spacing:-.04em}
+.sv-h .pl{width:34px;height:34px;border-radius:50%;border:1px solid var(--ln);position:relative;flex:0 0 auto;transition:.4s var(--ea)}
+.sv-h .pl::before,.sv-h .pl::after{content:"";position:absolute;background:var(--tx);transition:.4s var(--ea)}
+.sv-h .pl::before{left:10px;right:10px;top:16px;height:1.5px}
+.sv-h .pl::after{top:10px;bottom:10px;left:16px;width:1.5px}
+.sv.on .sv-h .pl{background:var(--cop-d);border-color:var(--cop-d);transform:rotate(135deg)}
+.sv.on .sv-h .pl::before,.sv.on .sv-h .pl::after{background:#fff}
+.sv-b{max-height:0;overflow:hidden;transition:max-height .6s var(--ea)}
+.sv-in{display:grid;grid-template-columns:64px 1.1fr .9fr;gap:24px;padding:0 4px 34px}
+.sv-in .cp{grid-column:2}
+.sv-in p{font-size:18px;line-height:1.74;margin-bottom:18px;max-width:52ch}
+.sv-in ul{list-style:none;display:grid;gap:10px}
+.sv-in li{display:flex;gap:11px;font-size:16px;font-weight:500;color:var(--tx)}
+.sv-in li::before{content:"";width:16px;height:16px;border-radius:50%;border:1.5px solid var(--cop);flex:0 0 auto;margin-top:3px}
+.sv-in .im{border-radius:16px;overflow:hidden;aspect-ratio:4/3;background:var(--pap2)}
+.sv-in .im img{width:100%;height:100%;object-fit:cover}
+@media(max-width:860px){.sv-in{grid-template-columns:1fr;gap:18px}.sv-in .cp{grid-column:1}.sv-h{grid-template-columns:44px 1fr auto;gap:14px}}
+
+/* ── EQUIPMENT ── */
+.eq{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.ec{border-radius:22px;overflow:hidden;background:var(--white);border:1px solid var(--ln);display:flex;flex-direction:column;transition:.5s var(--ea)}
+.ec:hover{transform:translateY(-8px);box-shadow:0 34px 60px -40px rgba(10,21,18,.5)}
+.ec .im{aspect-ratio:16/11;overflow:hidden;background:var(--pap2)}
+.ec img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ea)}
+.ec:hover img{transform:scale(1.06)}
+.ec .bd{padding:28px 26px 30px}
+.ec h3{font-size:22px;margin-bottom:11px}
+.ec p{font-size:16px;line-height:1.7}
+@media(max-width:900px){.eq{grid-template-columns:1fr}}
+
+/* ── COUNTERS ── */
+.ct{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.ct>div{padding-top:20px;border-top:1px solid var(--lnd)}
+.ct>div>b{display:block;font-size:clamp(40px,5.4vw,68px);font-weight:600;letter-spacing:-.055em;color:var(--pap);line-height:1;font-variant-numeric:tabular-nums}
+.ct>div>b .cn{font:inherit;letter-spacing:inherit;color:inherit;display:inline}
+.ct>div>span{font-size:16px;color:var(--onm);margin-top:12px;display:block;line-height:1.5;max-width:22ch}
+@media(max-width:900px){.ct{grid-template-columns:1fr 1fr;gap:22px}}
+
+/* ── WHY ── */
+.wg{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--ln);border:1px solid var(--ln);border-radius:22px;overflow:hidden}
+.wc{background:var(--pap);padding:34px 30px;transition:.45s var(--ea)}
+.wc:hover{background:var(--white)}
+.wc .n{font-family:var(--mono);font-size:13px;letter-spacing:.16em;color:var(--cop-d);display:block;margin-bottom:16px}
+.wc h4{font-size:20px;font-weight:600;letter-spacing:-.03em;margin-bottom:10px}
+.wc p{font-size:16px;line-height:1.7}
+@media(max-width:940px){.wg{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.wg{grid-template-columns:1fr}}
+
+/* ── REVIEWS ── */
+.rv-g{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.rc{background:var(--white);border:1px solid var(--ln);border-radius:22px;padding:30px 28px;display:flex;flex-direction:column}
+.rc .s{color:var(--cop-d);letter-spacing:3px;font-size:15px;margin-bottom:16px}
+.rc p{font-size:17px;line-height:1.7;color:var(--tx);flex:1}
+.rc .w2{margin-top:22px;padding-top:16px;border-top:1px solid var(--ln);font-size:16px;font-weight:600}
+@media(max-width:940px){.rv-g{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.rv-g{grid-template-columns:1fr}}
+
+/* ── WORK ── */
+.wk{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.wkc{border-radius:22px;overflow:hidden;position:relative;aspect-ratio:3/4}
+.wkc img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ea)}
+.wkc:hover img{transform:scale(1.07)}
+.wkc::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,11,9,.94),transparent 56%)}
+.wkc .cp{position:absolute;left:24px;right:24px;bottom:22px;z-index:2}
+.wkc .cp b{display:block;font-size:19px;font-weight:600;color:var(--pap);letter-spacing:-.02em}
+.wkc .cp span{font-size:16px;color:var(--odm);display:block;margin-top:5px}
+@media(max-width:900px){.wk{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.wk{grid-template-columns:1fr}}
+
+/* ── GUARANTEE ── */
+.gz{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.gc{border:1px solid var(--lnd);border-radius:22px;padding:32px 28px}
+.gc .ic{width:46px;height:46px;border-radius:50%;background:var(--mint);color:var(--ink2);display:grid;place-items:center;font-size:20px;font-weight:600;margin-bottom:20px}
+.gc h4{font-size:20px;font-weight:600;letter-spacing:-.03em;margin-bottom:10px}
+.gc p{font-size:16px;line-height:1.7}
+@media(max-width:900px){.gz{grid-template-columns:1fr}}
+
+/* ── FAQ ── */
+.fq{max-width:980px;margin:0 auto;border-top:1px solid var(--ln)}
+.fa{border-bottom:1px solid var(--ln)}
+.faq{width:100%;display:grid;grid-template-columns:54px 1fr 30px;gap:18px;align-items:center;background:none;border:none;text-align:left;padding:26px 4px;cursor:pointer;color:var(--tx);transition:.4s var(--ea)}
+.faq:hover{padding-left:14px}
+.faq .qn{font-family:var(--mono);font-size:14px;color:var(--cop-d)}
+.faq .qt{font-size:clamp(19px,2vw,22px);font-weight:600;letter-spacing:-.03em;line-height:1.34}
+.faq i{position:relative;width:26px;height:26px;font-style:normal;justify-self:end}
+.faq i::before,.faq i::after{content:"";position:absolute;background:var(--tx);transition:.45s var(--ea)}
+.faq i::before{left:0;right:0;top:12.5px;height:1.6px}
+.faq i::after{top:0;bottom:0;left:12.5px;width:1.6px}
+.fa.op .faq i::after{transform:scaleY(0)}
+.fa.op .faq i::before{background:var(--cop-d)}
+.fan{max-height:0;overflow:hidden;transition:max-height .6s var(--ea)}
+.fan p{font-size:17px;line-height:1.82;padding:0 60px 28px 72px;max-width:88ch}
+@media(max-width:640px){.faq{grid-template-columns:38px 1fr 26px;gap:12px}.fan p{padding:0 0 24px 50px}}
+
+/* ── FINAL CTA ── */
+.fin-cta{position:relative;overflow:hidden;background:var(--ink2);color:var(--pap);text-align:center}
+.fin-cta::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(1100px,120%);aspect-ratio:1;border-radius:50%;
+ background:radial-gradient(circle,rgba(127,231,176,.16),transparent 62%);pointer-events:none}
+.fin-cta .w{position:relative;z-index:2}
+.fin-cta h2{font-size:clamp(32px,5.6vw,82px);color:var(--pap);max-width:16ch;margin:0 auto;letter-spacing:-.05em}
+.fin-cta p{font-size:19px;line-height:1.72;margin:22px auto 0;max-width:56ch}
+
+/* ── FOOTER ── */
+footer{background:var(--ink2);color:var(--pap);padding:80px 0 28px;border-top:1px solid var(--lnd)}
+.fgr{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:32px;padding-bottom:32px;border-bottom:1px solid var(--lnd)}
+.fbrand .lg b{color:var(--pap)}.fbrand .lg s{color:var(--odm)}
+.fgr p{font-size:16px;line-height:1.85;color:var(--onm);max-width:38ch;margin-top:16px}
+.fph a,.fph{color:var(--mint);font-weight:600}
+.fgr h4{font-family:var(--mono);font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:var(--mint);margin-bottom:15px;font-weight:400}
+.fgr a{display:block;font-size:16px;color:var(--onm);padding:5px 0;transition:.3s}
+.fgr a:hover{color:var(--pap);padding-left:5px}
+.f2{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;padding:26px 0;border-bottom:1px solid var(--lnd)}
+.f2 h4{font-family:var(--mono);font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:var(--mint);margin-bottom:12px;font-weight:400}
+.f2 p{font-size:16px;color:var(--onm);line-height:1.9}
+.oh{display:flex;justify-content:space-between;max-width:280px;gap:14px}
+.fin{font-size:14px;color:var(--odm);line-height:1.85;padding:20px 0}
+.fin b{color:var(--onm)}
+.fbt{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding-top:18px;border-top:1px solid var(--lnd);font-size:15px;color:var(--onm)}
+@media(max-width:940px){.fgr,.f2{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.fgr,.f2{grid-template-columns:1fr}}
+.sticky{position:fixed;left:14px;right:14px;bottom:14px;z-index:88;display:none;grid-template-columns:1fr 1fr;gap:8px}
+.sticky a{padding:15px;text-align:center;font-weight:600;font-size:16px;border-radius:100px}
+.sticky .c{background:var(--pap);color:var(--ink)}
+.sticky .q{background:var(--mint);color:var(--ink2)}
+@media(max-width:700px){.sticky{display:grid}body{padding-bottom:72px}}
+
+
+/* Marquee logos.
+   Height is set on the image, never max-height alone: two files here carry a
+   viewBox and no intrinsic size and would resolve to 0x0 otherwise.
+   multiply knocks the white boxes out of the four raster marks. It is safe on
+   this near-white strip - multiplying against cream shifts a colour by a few
+   percent - which would NOT be true on a saturated ground, where it would
+   drag every brand colour toward the background. */
+.mq .g span.lgo{display:inline-flex;align-items:center;padding:0 26px}
+.mq .g span.lgo img{height:24px;width:auto;max-width:132px;object-fit:contain;
+  display:block;mix-blend-mode:multiply}
+/* One height does not suit both shapes. The wordmarks are long and low - Toshiba
+   is 800x122 - so 24px of height gives them 132px of width. The accreditation
+   badges are nearly square (Gas Safe is 223x247), so the same 24px left them
+   about 22px wide and unreadable. Badges get their own height so every mark
+   carries roughly the same visual weight. */
+.mq .g span.lgo img[src$="daikin.svg"],
+.mq .g span.lgo img[src$="gas-safe.webp"]{height:38px}
+.mq .g span.lgo img[src$="mcs.webp"],
+.mq .g span.lgo img[src$="napit.webp"],
+.mq .g span.lgo img[src$="recc.webp"],
+.mq .g span.lgo img[src$="fujitsu.svg"],
+.mq .g span.lgo img[src$="lg.svg"]{height:32px}
+@media(max-width:700px){.mq .g span.lgo{padding:0 18px}.mq .g span.lgo img{height:20px;max-width:108px}}
+/* â”€â”€ trust panel â”€â”€
+   Replaces the single text marquee. Card on the cream band, centred head, then
+   two labelled rails that loop. Each rail carries its group twice and travels
+   -50%, so the wrap lands exactly on the repeat; the second rail runs in
+   reverse so the pair does not read as one sliding block.
+   The rails are the only moving parts, and they stop for reduced motion. */
+.tpanel-wrap{background:var(--ink);padding:clamp(30px,4vw,56px) 0}
+/* no border: a light hairline did a job against the cream band, but against
+   the dark one the card's own edge is the contrast */
+.tpanel{background:var(--white);border-radius:24px;
+  padding:clamp(24px,3vw,38px) clamp(18px,2.4vw,34px)}
+.tpanel__head{text-align:center;max-width:56ch;margin:0 auto clamp(20px,2.6vw,32px)}
+.tpanel__head h3{color:var(--tx);font-size:clamp(19px,1.9vw,22px);font-weight:700;letter-spacing:-.02em}
+.tpanel__head p{color:var(--mut);font-size:16px;margin-top:8px;line-height:1.6}
+.tset{display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);
+  align-items:center;gap:clamp(14px,2vw,28px)}
+.tset + .tset{margin-top:clamp(16px,2vw,24px);padding-top:clamp(16px,2vw,24px);
+  border-top:1px solid var(--ln)}
+.tset__label{font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--mut);white-space:nowrap}
+/* the rail clips; the fades stop a mark being sliced in half at either edge */
+.trail{position:relative;overflow:hidden;min-width:0}
+.trail::before,.trail::after{content:"";position:absolute;top:0;bottom:0;width:42px;z-index:2;pointer-events:none}
+.trail::before{left:0;background:linear-gradient(90deg,var(--white),rgba(255,255,255,0))}
+.trail::after{right:0;background:linear-gradient(270deg,var(--white),rgba(255,255,255,0))}
+.ttrack{display:flex;width:max-content;animation:mv 40s linear infinite;
+  mix-blend-mode:multiply}
+.ttrack--rev{animation-direction:reverse;animation-duration:48s}
+.trail:hover .ttrack{animation-play-state:paused}
+.tgrp{display:flex;align-items:center;flex:0 0 auto}
+/* padding, not just width: the widest wordmarks (Panasonic, Toshiba) filled
+   their cell edge to edge and touched the mark beside them, so the gutter has
+   to live inside the cell where the image cannot spill into it */
+.tgrp>span{flex:0 0 auto;width:clamp(122px,9.6vw,164px);height:52px;padding:0 13px;
+  display:flex;align-items:center;justify-content:center}
+/* one height cannot serve a 800x122 wordmark and a 223x247 badge: sized by shape */
+.tgrp img{height:30px;width:auto;max-width:100%;object-fit:contain;display:block}
+.tgrp img.wide{height:22px}
+.tgrp img.sq{height:42px}
+@media(max-width:760px){
+  /* NOT justify-items:start - that sizes the rail to its content, which is the
+     whole max-content track, and pushed 1227px of sideways scroll onto the
+     page. The rail must fill the column and clip inside it. */
+  .tset{grid-template-columns:minmax(0,1fr);gap:12px}
+  .tset__label{justify-self:start}
+  .trail{width:100%}
+  .tgrp>span{width:clamp(88px,26vw,120px);height:44px}
+  .tgrp img{height:24px}.tgrp img.wide{height:18px}.tgrp img.sq{height:34px}
+}
+@media(prefers-reduced-motion:reduce){.ttrack{animation:none}}
+/* navbar: keep every label on one line and stop the bar squeezing itself */
+@media(min-width:1000px){nav.nl>a,div.nr a,div.nr button{white-space:nowrap}nav.nl,div.nr{flex-shrink:0}}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <div class="bar">
+    <a href="#top" class="lg"><span class="lgm"></span><span><b>ASHP</b><s>Renewable heating</s></span></a>
+    <nav class="nl"><a href="#process">Our Process</a><a href="#why">Why Choose Us?</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#work">Guides</a><a href="#careers">Careers</a><a href="#area">Area</a><a href="#contact">Contact</a></nav>
+    <div class="nr">
+      <a class="ntl" href="tel:01632960300">01632 960 300</a>
+      <a href="#quote" class="btn bm" style="padding:11px 22px;font-size:16px"><span>Free Quote</span></a>
+      <button class="tg" id="tg" type="button" aria-label="Menu" aria-expanded="false"><s></s></button>
+    </div>
+  </div>
+  <div class="dw" id="dw"><a href="#process">Our Process</a><a href="#why">Why Choose Us?</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#work">Guides</a><a href="#careers">Careers</a><a href="#area">Area</a><a href="#contact">Contact</a><a href="tel:01632960300">01632 960 300</a></div>
+</header>
+
+<script>document.documentElement.className+=' js';</script>
+<main id="top">
+
+<section class="hero">
+  <div class="hero-media" id="hmedia">
+    <!-- poster is a frame from the clip itself, so there is no flash of empty
+         hero before the first frame decodes, and so anyone on reduced motion
+         still gets the image once the script pauses playback -->
+    <video id="hvid" poster="images/hero-ashp-poster.jpg"
+           autoplay muted loop playsinline preload="metadata"
+           aria-label="An air source heat pump outdoor unit installed beside a house">
+      <source src="video/hero-ashp.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-in">
+    <div class="hero-type" id="htype">
+      <h1>Air source heat pumps,<span class="l2">installed properly.</span></h1>
+      <div class="hero-row">
+        <div>
+          <p>MCS certified Air Source Heat Pump installation, repair and maintenance. Claim up to £7,500 with the Boiler Upgrade Scheme. Same day service, guaranteed results.</p>
+          <div class="hero-tags"><span>MCS Certified</span><span>Boiler Upgrade Scheme approved</span><span>&#9733; 4.9 / 1,270 reviews</span></div>
+        </div>
+        <div class="pr"><a href="#calc" class="btn bm"><span>Check Your £7,500 Grant</span></a><a href="#quote" class="btn bol"><span>Get a Free Quote</span></a></div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue"><i></i>Scroll</div>
+</section>
+
+<!-- dk: this block paints itself dark (background:var(--ink)) but never carried
+     the class the rest of the page uses to flip type for a dark ground, so the
+     heading kept the light-theme --tx and sat at 1.05:1 on it. .dk is the
+     template's own switch: it re-colours headings, body copy and the eyebrow
+     together, rather than patching this one heading. -->
+<div class="calc-wrap dk" id="calc">
+  <div class="w">
+    <div class="calc rv">
+      <div class="calc-l">
+        <span class="lb">Grant &amp; savings estimate</span>
+        <h2>See what it costs, <br>after the grant.</h2>
+        <p>Move the sliders for an indicative figure in seconds. The precise number comes from a full heat loss survey, free and with no obligation.</p>
+
+        <div class="fld">
+          <div class="top"><label for="beds">Property size</label><span class="val" id="bedsv">3 bedrooms</span></div>
+          <input type="range" id="beds" min="1" max="6" step="1" value="3" aria-label="Number of bedrooms">
+        </div>
+
+        <div class="fld">
+          <div class="top"><label>Heating you have now</label><span class="val" id="fuelv">Gas boiler</span></div>
+          <div class="seg" id="fuel">
+            <button type="button" data-f="gas" class="on">Gas</button>
+            <button type="button" data-f="oil">Oil</button>
+            <button type="button" data-f="lpg">LPG</button>
+            <button type="button" data-f="elec">Electric</button>
+          </div>
+        </div>
+
+        <div class="fld" style="margin-bottom:0">
+          <div class="top"><label for="emit">Radiators need upgrading?</label><span class="val" id="emitv">Some</span></div>
+          <input type="range" id="emit" min="0" max="2" step="1" value="1" aria-label="Extent of radiator upgrades">
+        </div>
+      </div>
+
+      <div class="calc-r">
+        <div class="res-lb">Indicative price after grant</div>
+        <div class="res-big" id="net">&pound;0</div>
+        <div class="res-sub" id="netsub">Based on a 3 bedroom home replacing a gas boiler.</div>
+        <div class="res-rows">
+          <div class="r"><span>Typical installed cost</span><b id="gross">&pound;0</b></div>
+          <div class="r hi"><span>Boiler Upgrade Scheme grant</span><b id="grant">&minus;&pound;7,500</b></div>
+          <div class="r"><span>Estimated annual saving</span><b id="save">&pound;0</b></div>
+          <div class="r"><span>VAT on domestic install</span><b>Zero rated</b></div>
+        </div>
+        <a href="#quote" class="btn bm" style="width:100%"><span>Get a Free Quote</span></a>
+        <p class="res-note">Indicative only. Installed cost typically falls between &pound;5,000 and &pound;15,000 depending on property size, emitter upgrades and whether a new cylinder is needed. We apply the &pound;7,500 grant to your quotation, so you never pay it out and claim it back.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="tpanel-wrap"><div class="w"><div class="tpanel"><div class="tpanel__head"><h3>Trusted by leading UK companies &amp; accreditations</h3><p>Approved installer for the manufacturers we fit, and audited by the bodies that regulate the work.</p></div><div class="tset"><span class="tset__label">Brands we work with</span><div class="trail"><div class="ttrack"><div class="tgrp"><span><img class="sq" src="logos/daikin.svg" alt="Daikin" loading="lazy" decoding="async"></span><span><img class="wide" src="logos/mitsubishi.svg" alt="Mitsubishi Electric" loading="lazy" decoding="async"></span><span><img class="wide" src="logos/panasonic.svg" alt="Panasonic" loading="lazy" decoding="async"></span><span><img class="wide" src="logos/toshiba.svg" alt="Toshiba" loading="lazy" decoding="async"></span><span><img src="logos/fujitsu.svg" alt="Fujitsu" loading="lazy" decoding="async"></span><span><img src="logos/lg.svg" alt="LG" loading="lazy" decoding="async"></span><span><img class="wide" src="logos/samsung.png" alt="Samsung" loading="lazy" decoding="async"></span></div><div class="tgrp" aria-hidden="true"><span><img class="sq" src="logos/daikin.svg" alt="" loading="lazy" decoding="async"></span><span><img class="wide" src="logos/mitsubishi.svg" alt="" loading="lazy" decoding="async"></span><span><img class="wide" src="logos/panasonic.svg" alt="" loading="lazy" decoding="async"></span><span><img class="wide" src="logos/toshiba.svg" alt="" loading="lazy" decoding="async"></span><span><img src="logos/fujitsu.svg" alt="" loading="lazy" decoding="async"></span><span><img src="logos/lg.svg" alt="" loading="lazy" decoding="async"></span><span><img class="wide" src="logos/samsung.png" alt="" loading="lazy" decoding="async"></span></div></div></div></div><div class="tset"><span class="tset__label">Accreditations</span><div class="trail"><div class="ttrack ttrack--rev"><div class="tgrp"><span><img class="sq" src="logos/mcs.webp" alt="MCS Certified" loading="lazy" decoding="async"></span><span><img class="sq" src="logos/napit.webp" alt="NAPIT Registered" loading="lazy" decoding="async"></span><span><img class="sq" src="logos/gas-safe.webp" alt="Gas Safe Registered" loading="lazy" decoding="async"></span><span><img class="sq" src="logos/recc.webp" alt="RECC Member" loading="lazy" decoding="async"></span><span><img class="sq" src="logos/trustmark.webp" alt="TrustMark Registered Business" loading="lazy" decoding="async"></span><span><img class="sq" src="logos/heatgeek.png" alt="Heat Geek Certified" loading="lazy" decoding="async"></span><span><img src="logos/which.jpg" alt="Which? Trusted Trader" loading="lazy" decoding="async"></span></div><div class="tgrp" aria-hidden="true"><span><img class="sq" src="logos/mcs.webp" alt="" loading="lazy" decoding="async"></span><span><img class="sq" src="logos/napit.webp" alt="" loading="lazy" decoding="async"></span><span><img class="sq" src="logos/gas-safe.webp" alt="" loading="lazy" decoding="async"></span><span><img class="sq" src="logos/recc.webp" alt="" loading="lazy" decoding="async"></span><span><img class="sq" src="logos/trustmark.webp" alt="" loading="lazy" decoding="async"></span><span><img class="sq" src="logos/heatgeek.png" alt="" loading="lazy" decoding="async"></span><span><img src="logos/which.jpg" alt="" loading="lazy" decoding="async"></span></div></div></div></div></div></div></section>
+
+<section class="dk pin" id="process">
+  <div class="pin-stick">
+    <div class="pin-head">
+      <span class="lb">How it works</span>
+      <h2 style="font-size:clamp(28px,4.4vw,56px);max-width:20ch">From enquiry to switch on in five steps</h2>
+    </div>
+    <div class="track" id="track"><article class="pstep"><span class="pstep__ph"><img src="images/live/step-enquiry.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="n">01</span></span><div class="pstep__b"><span class="lb2">Online Enquiry</span><h3>Tell us about your home</h3><p>A short form, then a call about your property and current heating.</p></div></article><article class="pstep"><span class="pstep__ph"><img src="images/ashp-24.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="n">02</span></span><div class="pstep__b"><span class="lb2">Initial Estimate</span><h3>Get an indicative price</h3><p>A ballpark figure early, before anyone visits your home.</p></div></article><article class="pstep"><span class="pstep__ph"><img src="images/ashp-05.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="n">03</span></span><div class="pstep__b"><span class="lb2">Heat Loss Survey</span><h3>We survey and design</h3><p>A room by room heat loss survey, sized to real numbers.</p></div></article><article class="pstep"><span class="pstep__ph"><img src="images/live/step-quote.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="n">04</span></span><div class="pstep__b"><span class="lb2">Fixed Quote</span><h3>A fully itemised price</h3><p>A fixed quotation, no hidden costs, with your grant confirmed.</p></div></article><article class="pstep"><span class="pstep__ph"><img src="images/ashp-20.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="n">05</span></span><div class="pstep__b"><span class="lb2">Install &amp; Aftercare</span><h3>Installed and commissioned</h3><p>We install, commission and register your grant and warranty.</p></div></article></div>
+    <div class="pbar"><div class="tr"><div class="fl" id="pfl"></div></div></div>
+    <div class="sec-cta"><a href="#quote" class="btn bm"><span>Get A Free Quote</span></a><a href="tel:01632960300" class="btn bol"><span>Speak To Our Experts</span></a></div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="w">
+    <div class="rv" style="max-width:780px;margin-bottom:44px">
+      <span class="lb">What we do</span>
+      <h2 style="font-size:clamp(30px,4.6vw,60px);margin-bottom:16px">Renewable heating, designed around your home</h2>
+      <p style="font-size:18px;line-height:1.72">No two properties are the same. We survey first, then recommend the system that suits your building, not the one that suits our stock.</p>
+    </div>
+    <div class="srv rv"><div class="sv on">
+      <button class="sv-h" type="button"><span class="n">01</span><span class="t">Air source heat pumps</span><span class="pl"></span></button>
+      <div class="sv-b"><div class="sv-in"><div class="cp"><p>Our core work, correctly sized, low flow temperature systems designed around a full heat loss survey rather than a rule of thumb.</p><ul><li>Retrofit and new build</li><li>Emitter and cylinder sizing included</li><li>MCS certified for grant eligibility</li></ul></div><div class="im"><img src="images/live/svc-ashp.webp" alt="Air source heat pumps" loading="lazy"></div></div></div></div><div class="sv">
+      <button class="sv-h" type="button"><span class="n">02</span><span class="t">Ground source heat pumps</span><span class="pl"></span></button>
+      <div class="sv-b"><div class="sv-in"><div class="cp"><p>Where you have the land, a ground array delivers higher year round efficiency than air source and runs almost silently.</p><ul><li>Horizontal loops and boreholes</li><li>Higher SCOP than air source</li><li>Design and groundworks managed</li></ul></div><div class="im"><img src="images/live/sol-gshp.jpg" alt="A Kensa ground source heat pump unit" loading="lazy"></div></div></div></div><div class="sv">
+      <button class="sv-h" type="button"><span class="n">03</span><span class="t">Cylinders &amp; underfloor heating</span><span class="pl"></span></button>
+      <div class="sv-b"><div class="sv-in"><div class="cp"><p>A heat pump is only as good as what it feeds. We size unvented cylinders and underfloor circuits to run at low temperatures.</p><ul><li>Unvented hot water cylinders</li><li>Underfloor heating design and install</li><li>Larger emitters where needed</li></ul></div><div class="im"><img src="images/live/sol-underfloor.jpg" alt="Underfloor heating pipes laid out across a floor before screeding" loading="lazy"></div></div></div></div><div class="sv">
+      <button class="sv-h" type="button"><span class="n">04</span><span class="t">Boilers &amp; central heating</span><span class="pl"></span></button>
+      <div class="sv-b"><div class="sv-in"><div class="cp"><p>Not every home is ready for a heat pump yet. Where a boiler is the right answer we will tell you so, and fit it properly.</p><ul><li>Gas, LPG and oil boilers</li><li>System upgrades and power flushing</li><li>Gas Safe registered engineers</li></ul></div><div class="im"><img src="images/live/svc-boiler.webp" alt="Boilers and central heating" loading="lazy"></div></div></div></div><div class="sv">
+      <button class="sv-h" type="button"><span class="n">05</span><span class="t">Solar thermal &amp; MVHR</span><span class="pl"></span></button>
+      <div class="sv-b"><div class="sv-in"><div class="cp"><p>Complementary technology that lowers the load on your heat pump, hot water from the sun, and ventilation that recovers its own heat.</p><ul><li>Solar thermal hot water</li><li>MVHR for airtight homes</li><li>New build packages</li></ul></div><div class="im"><img src="images/live/sol-solarthermal.png" alt="Flat plate solar thermal collectors mounted on a roof" loading="lazy"></div></div></div></div><div class="sv">
+      <button class="sv-h" type="button"><span class="n">06</span><span class="t">Servicing &amp; care plans</span><span class="pl"></span></button>
+      <div class="sv-b"><div class="sv-in"><div class="cp"><p>Annual servicing keeps efficiency up and manufacturer warranties valid, on our installations and on systems fitted by others.</p><ul><li>Annual heat pump servicing</li><li>Fault finding and repairs</li><li>Care plans with priority response</li></ul></div><div class="im"><img src="images/ashp-28.jpg" alt="Engineer servicing a heat pump at a bungalow" loading="lazy"></div></div></div></div></div>
+    <div class="sec-cta rv"><a href="#quote" class="btn bm"><span>Get A Free Quote</span></a><a href="tel:01632960300" class="btn bod"><span>Speak To Our Experts</span></a></div>
+  </div>
+</section>
+
+<section id="equipment" class="p2">
+  <div class="w">
+    <div class="rv" style="max-width:800px;margin-bottom:40px">
+      <span class="lb">What we fit</span>
+      <h2 style="font-size:clamp(30px,4.6vw,60px);margin-bottom:16px">The heat pump we fit, named on your quote</h2>
+      <p style="font-size:18px;line-height:1.72">We do not hide behind &ldquo;premium components&rdquo;. Every quotation names the exact unit, cylinder and controls you are getting, with the warranty attached to each.</p>
+    </div>
+    <div class="eq sg rv"><article class="ec st"><div class="im"><img src="images/live/eq-heatpump.jpg" alt="A Vaillant aroTHERM Plus air source heat pump installed at a house" loading="lazy"></div><div class="bd"><h3>Heat pump units</h3><p>Daikin Altherma, Mitsubishi Ecodan, Vaillant aroTHERM, Samsung EHS and Panasonic Aquarea, typically 5kW to 16kW, selected on your heat loss figure and the flow temperature your emitters can run at.</p></div></article><article class="ec st"><div class="im"><img src="images/live/eq-cylinder.jpg" alt="A domestic hot water cylinder installed in a utility space" loading="lazy"></div><div class="bd"><h3>Cylinders &amp; buffers</h3><p>Unvented cylinders sized to your household&rsquo;s real hot water draw, with heat pump coils rated for low temperature operation, plus volumisers or buffers only where the system genuinely needs one.</p></div></article><article class="ec st"><div class="im"><img src="images/live/eq-controls.jpg" alt="A wall mounted digital heating thermostat" loading="lazy"></div><div class="bd"><h3>Controls &amp; monitoring</h3><p>Weather compensation set up properly on the day, smart tariff integration for Octopus Cosy and similar, and remote monitoring so we can see a fault developing before you feel it.</p></div></article></div>
+  </div>
+
+  <div class="w"><div class="sec-cta rv"><a href="#quote" class="btn bm"><span>Get A Free Quote</span></a><a href="tel:01632960300" class="btn bod"><span>Speak To Our Experts</span></a></div></div>
+</section>
+
+<section class="dk">
+  <div class="w"><div class="ct sg rv cnt"><div class="st"><b><span class="cn" data-to="10" data-sf="">0</span></b><span>Years installing renewable heating systems</span></div><div class="st"><b><span class="cn" data-to="1500" data-sf="+">0</span></b><span>Heat pump and heating systems installed</span></div><div class="st"><b><span class="cn" data-to="4.9" data-sf="">0</span></b><span>Average service rating on Google and Trustpilot</span></div><div class="st"><b><span class="cn" data-to="30" data-sf="">0</span></b><span>Minute average response to a service call</span></div></div></div>
+
+  <div class="w"><div class="sec-cta rv"><a href="#quote" class="btn bm"><span>Get A Free Quote</span></a><a href="tel:01632960300" class="btn bol"><span>Speak To Our Experts</span></a></div></div>
+</section>
+
+<section id="why">
+  <div class="w">
+    <div class="rv" style="max-width:720px;margin-bottom:40px">
+      <span class="lb">Why choose us</span>
+      <h2 style="font-size:clamp(30px,4.6vw,60px)">Why homeowners choose us</h2>
+    </div>
+    <div class="wg sg rv"><div class="wc st"><span class="n">01</span><h4>MCS, Gas Safe &amp; F Gas accredited</h4><p>Every engineer is fully accredited and on our own payroll, never subcontracted. MCS certification is what makes your grant claim possible.</p></div><div class="wc st"><span class="n">02</span><h4>Heat Geek certified design</h4><p>We design to a full room by room heat loss calculation, so your system runs at low flow temperatures and actually delivers the efficiency it promises.</p></div><div class="wc st"><span class="n">03</span><h4>Transparent, fixed pricing</h4><p>A fully itemised quotation with defined inclusions. No salespeople, no commission driven upselling and no hidden extras once work begins.</p></div><div class="wc st"><span class="n">04</span><h4>Genuinely local and accountable</h4><p>We are a local team, not a franchise or a call centre operation. The person who surveys your home is the person you can ring afterwards.</p></div><div class="wc st"><span class="n">05</span><h4>Multi system expertise</h4><p>Gas, LPG, oil, air and ground source, underfloor heating, cylinders and MVHR, so we recommend what suits your home, not just what we stock.</p></div><div class="wc st"><span class="n">06</span><h4>Warranty and aftercare</h4><p>A workmanship warranty in writing on top of manufacturer cover, plus servicing plans that keep efficiency and warranty validity intact.</p></div></div>
+  </div>
+</section>
+
+<section id="reviews" class="p2">
+  <div class="w">
+    <div class="rv" style="max-width:780px;margin-bottom:40px">
+      <span class="lb">Reviews</span>
+      <h2 style="font-size:clamp(30px,4.6vw,60px);margin-bottom:16px">What our customers say</h2>
+      <p style="font-size:18px;line-height:1.72">Thorough surveys, honest pricing and aftercare that answers the phone, rated 4.9 out of 5 across more than 1,200 reviews.</p>
+    </div>
+    <div class="rv-g sg rv"><article class="rc st"><div class="s">★★★★★</div><p>&ldquo;I recently had an air source heat pump installed and I could not be happier with the whole experience. The team were on time, tidy and explained the controls properly before they left.&rdquo;</p><div class="w2">David Jones</div></article><article class="rc st"><div class="s">★★★★★</div><p>&ldquo;Always responsive, professional and efficient. Good support and aftercare, overall a great job. I would not hesitate to use them again.&rdquo;</p><div class="w2">Eldho J.</div></article><article class="rc st"><div class="s">★★★★★</div><p>&ldquo;I cannot recommend them highly enough. The team were fantastic from start to finish. Really efficient and helpful office team with excellent and timely communications.&rdquo;</p><div class="w2">Stuart Broad</div></article><article class="rc st"><div class="s">★★★★★</div><p>&ldquo;They keep you informed and the price was fair. The engineer who came out was brilliant and took the time to walk me through how to run it efficiently.&rdquo;</p><div class="w2">Iren J.</div></article><article class="rc st"><div class="s">★★★★★</div><p>&ldquo;Kept informed by email throughout, and the engineers arrived almost to the minute. The whole job was carried out very professionally.&rdquo;</p><div class="w2">Barry G.</div></article><article class="rc st"><div class="s">★★★★★</div><p>&ldquo;Simple, efficient service which gives you confidence in their knowledge and expertise. The heat loss survey was far more thorough than the other quotes we had.&rdquo;</p><div class="w2">Paul L.</div></article></div>
+  </div>
+
+  <div class="w"><div class="sec-cta rv"><a href="#quote" class="btn bm"><span>Get A Free Quote</span></a><a href="tel:01632960300" class="btn bod"><span>Speak To Our Experts</span></a></div></div>
+</section>
+
+<section id="work">
+  <div class="w">
+    <div class="rv" style="max-width:780px;margin-bottom:40px">
+      <span class="lb">Our work</span>
+      <h2 style="font-size:clamp(30px,4.6vw,60px);margin-bottom:16px">See our heat pumps in action</h2>
+      <p style="font-size:18px;line-height:1.72">Real installations across a mix of property types, the kind of homes that make up most of our work, with the design decision behind each one.</p>
+    </div>
+    <div class="wk sg rv"><figure class="wkc st"><img src="images/ashp-03.jpg" alt="Engineer commissioning twin heat pump units at golden hour" loading="lazy"><figcaption class="cp"><b>Detached home &middot; 12kW</b><span>Four bed detached, radiators upsized to run at 40&deg;C flow.</span></figcaption></figure><figure class="wkc st"><img src="images/ashp-02.jpg" alt="Four bed detached, radiators upsized to run at 40 degrees flow" loading="lazy"><figcaption class="cp"><b>Bungalow retrofit &middot; 8kW</b><span>Oil boiler removed, 250L cylinder fitted in the old airing cupboard.</span></figcaption></figure><figure class="wkc st"><img src="images/ashp-28.jpg" alt="Oil boiler removed, a 250L cylinder fitted in the old airing cupboard" loading="lazy"><figcaption class="cp"><b>New build &middot; 6kW</b><span>Underfloor heating throughout, designed alongside the MVHR.</span></figcaption></figure><figure class="wkc st"><img src="images/ashp-08.jpg" alt="Underfloor heating throughout, designed alongside the MVHR" loading="lazy"><figcaption class="cp"><b>Stone cottage &middot; 14kW</b><span>150 year old walls, targeted insulation first, then a low temperature system.</span></figcaption></figure><figure class="wkc st"><img src="images/live/svc-ashp.webp" alt="150 year old walls, targeted insulation first, then a low temperature system" loading="lazy"><figcaption class="cp"><b>Farmhouse &middot; 16kW</b><span>Ground array across the paddock for a property well off the gas grid.</span></figcaption></figure><figure class="wkc st"><img src="images/ashp-11.jpg" alt="Ground array across the paddock for a property well off the gas grid" loading="lazy"><figcaption class="cp"><b>Semi detached &middot; 9kW</b><span>Gas boiler replaced, full &pound;7,500 grant applied to the quotation.</span></figcaption></figure></div>
+    <div class="sec-cta rv"><a href="#quote" class="btn bm"><span>Get A Free Quote</span></a><a href="tel:01632960300" class="btn bod"><span>Speak To Our Experts</span></a></div>
+  </div>
+</section>
+
+<section id="guarantee" class="dk">
+  <div class="w">
+    <div class="rv" style="max-width:720px;margin-bottom:38px">
+      <span class="lb">Our Guarantee</span>
+      <h2 style="font-size:clamp(28px,4.2vw,52px)">Happy with the work, or we put it right</h2>
+    </div>
+    <div class="gz sg rv"><div class="gc st"><span class="ic">&#10003;</span><h4>No obligation quote</h4><p>A real price before any work starts. If the numbers don't work, we'll say so.</p></div><div class="gc st"><span class="ic">&#10003;</span><h4>Fixed price, no hidden fees</h4><p>Certification and commissioning are inside the quote before we begin.</p></div><div class="gc st"><span class="ic">&#10003;</span><h4>5 year warranty</h4><p>Workmanship guaranteed by us, hardware warranted by the manufacturer.</p></div></div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="w">
+    <div class="rv" style="max-width:820px;margin-bottom:40px">
+      <span class="lb">FAQ</span>
+      <h2 style="font-size:clamp(30px,4.6vw,60px);margin-bottom:16px">Frequently asked questions</h2>
+      <p style="font-size:18px;line-height:1.72">The questions our surveyors are asked most often. If yours is not here, ring us, we would rather talk it through than sell you something that will not suit your home.</p>
+    </div>
+    <div class="fq rv"><div class="fa op"><button class="faq" type="button"><span class="qn">01</span><span class="qt">Do heat pumps actually work in British winters?</span><i></i></button><div class="fan"><p>Yes. A correctly specified air source heat pump continues to operate at outdoor temperatures as low as minus 20&deg;C. What matters is the design: a system sized from a full heat loss survey and running at a low flow temperature will keep your home comfortable through a UK cold snap. A system guessed at from the boiler size will not.</p></div></div><div class="fa"><button class="faq" type="button"><span class="qn">02</span><span class="qt">Will a heat pump reduce my energy bills?</span><i></i></button><div class="fan"><p>It depends on what you are replacing and which tariff you are on. A heat pump produces roughly three to four units of heat for every unit of electricity it consumes, so against oil, LPG or direct electric the saving is usually substantial, up to around 50%. Against mains gas on a standard tariff the margin is narrower, but a heat pump specific tariff changes that considerably.</p></div></div><div class="fa"><button class="faq" type="button"><span class="qn">03</span><span class="qt">How much does an air source heat pump cost?</span><i></i></button><div class="fan"><p>Typically between &pound;5,000 and &pound;15,000 installed, depending on the size of the property, whether emitters need upgrading and whether a new cylinder is required. The &pound;7,500 Boiler Upgrade Scheme grant comes off that figure, and domestic installations are zero rated for VAT.</p></div></div><div class="fa"><button class="faq" type="button"><span class="qn">04</span><span class="qt">What is the Boiler Upgrade Scheme and do you handle it?</span><i></i></button><div class="fan"><p>It is a UK Government grant of &pound;7,500 towards an air source heat pump in England and Wales. You must use an MCS certified installer to qualify. We complete the entire application on your behalf and the grant is deducted from your quotation, so you never pay it out and claim it back.</p></div></div><div class="fa"><button class="faq" type="button"><span class="qn">05</span><span class="qt">Can a heat pump be fitted in an older home?</span><i></i></button><div class="fan"><p>Frequently, yes, we have installed successfully in properties over 150 years old. Older buildings usually need larger emitters to run at a lower flow temperature, and sometimes targeted insulation work first. The heat loss survey tells us honestly whether it will work, and we will say so if it will not.</p></div></div><div class="fa"><button class="faq" type="button"><span class="qn">06</span><span class="qt">Why does the heat loss survey matter so much?</span><i></i></button><div class="fan"><p>Because it is the difference between a heat pump that works and one that disappoints. A room by room calculation determines the unit size, the radiator sizes and the cylinder. Most heat pumps that underperform were oversized or fitted to emitters that force a high flow temperature, both are design failures, not technology failures.</p></div></div><div class="fa"><button class="faq" type="button"><span class="qn">07</span><span class="qt">How long does an installation take?</span><i></i></button><div class="fan"><p>Most domestic installations take two to four days on site depending on whether emitters and the cylinder are being changed at the same time. We agree the schedule with you in advance and commission the system before we leave.</p></div></div><div class="fa"><button class="faq" type="button"><span class="qn">08</span><span class="qt">Do heat pumps need servicing?</span><i></i></button><div class="fan"><p>Yes, annually. Servicing keeps efficiency where it should be and is usually a condition of keeping the manufacturer warranty valid. We service our own installations and systems fitted by other companies.</p></div></div><div class="fa"><button class="faq" type="button"><span class="qn">09</span><span class="qt">How noisy is an air source heat pump?</span><i></i></button><div class="fan"><p>Far quieter than most people expect, comparable to a fridge at conversation distance. Siting matters, and we will position the unit to keep sound away from bedrooms and neighbouring boundaries as part of the design.</p></div></div><div class="fa"><button class="faq" type="button"><span class="qn">10</span><span class="qt">What is the lifespan of a heat pump?</span><i></i></button><div class="fan"><p>Around 20 years for the unit with proper servicing, and longer for the cylinder and pipework. That is comparable to or better than a gas boiler, and there is no annual gas safety obligation attached to it.</p></div></div><div class="fa"><button class="faq" type="button"><span class="qn">11</span><span class="qt">Can I run a heat pump from solar panels?</span><i></i></button><div class="fan"><p>Yes, and the two pair well, particularly with a battery, which lets you store cheap or self generated electricity and run the heat pump on it. Solar will not cover a winter heating load on its own, but it materially reduces annual running cost.</p></div></div><div class="fa"><button class="faq" type="button"><span class="qn">12</span><span class="qt">Do you offer finance?</span><i></i></button><div class="fan"><p>Yes. Finance is available to spread whatever remains after the grant, and in Scotland the Home Energy Scotland package includes a &pound;7,500 interest free loan on top of the &pound;7,500 grant. We introduce customers to a regulated provider and do not give financial advice.</p></div></div></div>
+  </div>
+
+  <div class="w"><div class="sec-cta rv"><a href="#quote" class="btn bm"><span>Get A Free Quote</span></a><a href="tel:01632960300" class="btn bod"><span>Speak To Our Experts</span></a></div></div>
+</section>
+
+<section class="fin-cta" id="quote">
+  <div class="w rv">
+    <span class="lb" style="justify-content:center">Contact</span>
+    <h2>Want to know what a heat pump would cost?</h2>
+    <p>Get a free, no obligation heat loss survey and a fixed itemised quotation, with your Boiler Upgrade Scheme grant applied for you.</p>
+    <div class="pr mid" style="margin-top:30px"><a href="#quote" class="btn bm"><span>Get a Free Quote</span></a><a href="#calc" class="btn bol"><span>Check Your £7,500 Grant</span></a></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="w">
+    <div class="fgr">
+      <div class="fbrand">
+        <a href="#top" class="lg"><span class="lgm"></span><span><b>ASHP</b><s>Air source heat pump specialists</s></span></a>
+        <p>MCS certified installation, repair and maintenance across Hertfordshire and the surrounding counties.</p>
+        <p class="fph"><a href="tel:01632960300">01632 960 300</a></p>
+      </div>
+      <div><h4>Company</h4><a href="#">About us</a><a href="#">Our work</a><a href="#">Reviews</a><a href="#">FAQ</a><a href="#">Contact</a></div>
+      <div><h4>Services</h4><a href="#services">Air source heat pumps</a><a href="#services">Ground source heat pumps</a><a href="#services">Cylinders &amp; underfloor heating</a><a href="#services">Boilers &amp; central heating</a><a href="#services">Servicing &amp; care plans</a></div>
+      <div><h4>Legal</h4><a href="#">Privacy policy</a><a href="#">Terms and conditions</a><a href="#">Complaints procedure</a></div>
+    </div>
+    <div class="f2">
+      <div><h4>Opening hours</h4><p><span class="oh"><span>Mon to Fri</span><span>08:00 to 17:30</span></span><span class="oh"><span>Saturday</span><span>09:00 to 13:00</span></span><span class="oh"><span>Sunday</span><span>Closed</span></span><span class="oh"><span>Emergency callout</span><span>24/7</span></span></p></div>
+      <div><h4>Office</h4><p>ASHP Ltd<br>Unit 5, Meadow Court<br>Ware, Hertfordshire SG12 9QT</p></div>
+      <div><h4>Contact</h4><p><a href="tel:01632960300" class="fph">01632 960 300</a><br>Surveys booked within 5 working days</p></div>
+      <div><h4>Accreditations</h4><p>MCS Certified (Low Carbon Technology) &middot; NAPIT Registered &middot; Gas Safe Registered &middot; F Gas Qualified &middot; RECC Member &middot; TrustMark Registered Business &middot; Heat Geek Certified &middot; Octopus Approved Installer &middot; Which? Trusted Trader &middot; Insurance Backed Workmanship Warranty</p></div>
+    </div>
+    <p class="fin"><b>Finance:</b> ASHP Ltd is an Introducer Appointed Representative of a regulated credit broker. The credit broker is not a lender (FRN 111111). Finance is available subject to status. The rate offered is always provisional and will depend upon your personal circumstances, the loan amount and the term.<br><br>Photography: images from Wikimedia Commons. Brand and accreditation marks are the property of their respective owners and are shown for identification only.</p>
+    <div class="fbt"><span>&copy; 2026 We Build Trades Ltd. Demonstration template, sample content.</span><span><a href="#">Licensed and insured</a> &middot; <a href="#">Terms and conditions</a> &middot; <a href="#">Cookies</a></span></div>
+  </div>
+</footer>
+
+<div class="sticky"><a class="c" href="tel:01632960300">Call us</a><a class="q" href="#calc">Check my grant</a></div>
+
+<script>
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');if(x.target.classList.contains('cnt'))cu(x.target);io.unobserve(x.target)}})},{threshold:.05,rootMargin:"0px 0px -5% 0px"});
+document.querySelectorAll('.rv,.sg,.cnt').forEach(e=>io.observe(e));
+function cu(s){s.querySelectorAll('.cn').forEach((el,i)=>{
+ const raw=el.dataset.to,dec=raw.indexOf('.')>-1,to=parseFloat(raw),sf=el.dataset.sf||'',d=1400,st=performance.now()+i*90;
+ function t(n){if(n<st){requestAnimationFrame(t);return}
+  const p=Math.min(1,(n-st)/d),e=1-Math.pow(1-p,3),v=to*e;
+  el.textContent=(dec?v.toFixed(1):Math.floor(v).toLocaleString('en-GB'))+sf;
+  if(p<1)requestAnimationFrame(t);else el.textContent=(dec?to.toFixed(1):to.toLocaleString('en-GB'))+sf}
+ requestAnimationFrame(t)})}
+(()=>{const h=document.getElementById('hd'),t=document.getElementById('tg'),d=document.getElementById('dw');
+if(!t)return;
+t.addEventListener('click',()=>{const o=h.classList.toggle('op');t.setAttribute('aria-expanded',o)});
+d.addEventListener('click',e=>{if(e.target.closest('a'))h.classList.remove('op')});
+addEventListener('keydown',e=>{if(e.key==='Escape')h.classList.remove('op')})})();
+(()=>{const it=[...document.querySelectorAll('.fa')];
+function set(x,o){const a=x.querySelector('.fan');if(!a)return;if(o){x.classList.add('op');a.style.maxHeight=a.scrollHeight+'px'}else{x.classList.remove('op');a.style.maxHeight='0px'}}
+it.forEach(x=>{if(x.classList.contains('op'))set(x,true);
+const b=x.querySelector('.faq');if(b)b.addEventListener('click',()=>{const o=x.classList.contains('op');it.forEach(y=>set(y,false));set(x,!o)})});
+addEventListener('resize',()=>{const o=document.querySelector('.fa.op');if(o){const a=o.querySelector('.fan');a.style.maxHeight=a.scrollHeight+'px'}})})();
+
+/* failsafe: if anything above threw, or IntersectionObserver is unavailable,
+   reveal the page rather than leaving it blank.
+
+   This used to fire only when EVERY .rv was still hidden, which meant it
+   rescued the total failure and nothing else - one element revealing normally
+   was enough to disarm it while the other sixteen stayed blank. It now sweeps
+   per element, and keeps sweeping, so a stalled observer costs a beat rather
+   than the whole section. */
+(()=>{const SEL='.rv,.sg,.cnt';
+ function revealAll(){document.querySelectorAll(SEL).forEach(e=>e.classList.add('in'))}
+ if(!('IntersectionObserver'in window)){revealAll();return}
+ addEventListener('error',revealAll);
+ /* anything the observer has not picked up that has already reached the fold
+    is revealed on the spot. No lower bound on the rect: something scrolled
+    clean past must never be left hidden, which is what a fast flick or a
+    full-page screenshot tool would otherwise cause. */
+ function sweep(){document.querySelectorAll(SEL).forEach(e=>{
+   if(e.classList.contains('in'))return;
+   if(e.getBoundingClientRect().top<innerHeight)e.classList.add('in')})}
+ let n=0;const id=setInterval(()=>{sweep();if(++n>40)clearInterval(id)},500);
+ addEventListener('scroll',sweep,{passive:true})})();
+/* Hero video: honour reduced motion.
+   CSS cannot stop playback - the sheet's reduced-motion block kills animation
+   and transition but a <video autoplay> keeps running - so it is paused here
+   and the poster frame stands in its place. */
+(()=>{const v=document.getElementById('hvid');
+if(v&&matchMedia('(prefers-reduced-motion: reduce)').matches){
+ v.removeAttribute('autoplay');v.pause();v.currentTime=0;}})();
+/* hero parallax + type recede */
+(()=>{const m=document.getElementById('hmedia'),t=document.getElementById('htype');
+if(!m||!t||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+let tick=false;
+function f(){const y=scrollY,h=innerHeight,p=Math.min(1,y/h);
+ m.style.transform='translate3d(0,'+(y*.28)+'px,0)';
+ t.style.transform='translate3d(0,'+(y*-.06)+'px,0)';
+ t.style.opacity=String(1-p*1.15);tick=false}
+addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(f)}},{passive:true});f()})();
+
+/* pinned horizontal process */
+(()=>{const pin=document.querySelector('.pin'),tr=document.getElementById('track'),fl=document.getElementById('pfl');
+if(!pin||!tr)return;
+function f(){if(innerWidth<=900){tr.style.transform='';return}
+ const r=pin.getBoundingClientRect(),total=pin.offsetHeight-innerHeight;
+ const p=Math.min(1,Math.max(0,-r.top/total));
+ const dist=tr.scrollWidth-innerWidth+56;
+ tr.style.transform='translate3d('+(-p*Math.max(0,dist))+'px,0,0)';
+ if(fl)fl.style.width=(p*100)+'%'}
+addEventListener('scroll',f,{passive:true});addEventListener('resize',f);f()})();
+
+/* services accordion */
+(()=>{const it=[...document.querySelectorAll('.sv')];
+function set(x,o){const b=x.querySelector('.sv-b');if(o){x.classList.add('on');b.style.maxHeight=b.scrollHeight+'px'}else{x.classList.remove('on');b.style.maxHeight='0px'}}
+it.forEach(x=>{if(x.classList.contains('on'))set(x,true);
+ x.querySelector('.sv-h').addEventListener('click',()=>{const o=x.classList.contains('on');it.forEach(y=>set(y,false));set(x,!o)})});
+addEventListener('resize',()=>{const o=document.querySelector('.sv.on');if(o){const b=o.querySelector('.sv-b');b.style.maxHeight=b.scrollHeight+'px'}})})();
+
+/* header state */
+(()=>{const h=document.getElementById('hd');
+addEventListener('scroll',()=>h.classList.toggle('stuck',scrollY>40),{passive:true})})();
+
+/* GRANT + SAVINGS CALCULATOR */
+(()=>{
+ const beds=document.getElementById('beds'),emit=document.getElementById('emit'),seg=document.getElementById('fuel');
+ if(!beds)return;
+ const bedsv=document.getElementById('bedsv'),emitv=document.getElementById('emitv'),fuelv=document.getElementById('fuelv');
+ const net=document.getElementById('net'),gross=document.getElementById('gross'),save=document.getElementById('save'),netsub=document.getElementById('netsub');
+ const GRANT=7500;
+ const FUEL={gas:{n:'Gas boiler',save:[150,260,380,500,620,760]},
+             oil:{n:'Oil boiler',save:[420,700,980,1260,1540,1820]},
+             lpg:{n:'LPG boiler',save:[480,800,1120,1440,1760,2080]},
+             elec:{n:'Electric heating',save:[560,930,1300,1670,2040,2410]}};
+ const EMIT=['None needed','Some','Most'];
+ let fuel='gas';
+ const gbp=n=>'&pound;'+Math.round(n).toLocaleString('en-GB');
+ function anim(el,to,pre){const from=parseFloat(el.dataset.v||0);el.dataset.v=to;
+  const st=performance.now(),d=520;
+  function t(n){const p=Math.min(1,(n-st)/d),e=1-Math.pow(1-p,3),v=from+(to-from)*e;
+   el.innerHTML=(pre||'')+gbp(v);if(p<1)requestAnimationFrame(t)}requestAnimationFrame(t)}
+ function calc(){
+  const b=+beds.value,e=+emit.value;
+  bedsv.textContent=b+(b===1?' bedroom':' bedrooms');
+  emitv.textContent=EMIT[e];
+  fuelv.textContent=FUEL[fuel].n;
+  const g=Math.min(15000,5200+(b-1)*1700+e*1300);
+  const n=Math.max(0,g-GRANT);
+  const s=FUEL[fuel].save[b-1];
+  anim(gross,g);anim(net,n);anim(save,s);
+  netsub.innerHTML='Based on a '+b+' bedroom home replacing '+
+   (fuel==='elec'?'electric heating':'a '+FUEL[fuel].n.toLowerCase())+'.';
+ }
+ beds.addEventListener('input',calc);emit.addEventListener('input',calc);
+ seg.addEventListener('click',ev=>{const b=ev.target.closest('button');if(!b)return;
+  [...seg.querySelectorAll('button')].forEach(x=>x.classList.toggle('on',x===b));
+  fuel=b.dataset.f;calc()});
+ calc();
+})();
+
+(()=>{const F='data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="%23050B09"/><stop offset="1" stop-color="%237FE7B0"/></linearGradient></defs><rect width="800" height="600" fill="url(%23g)"/></svg>');
+function fix(i){if(i.dataset.fb)return;i.dataset.fb=1;i.src=F}
+document.querySelectorAll('img').forEach(i=>{i.addEventListener('error',function(){fix(this)});if(i.complete&&i.naturalWidth===0)fix(i)});
+addEventListener('load',()=>document.querySelectorAll('img').forEach(i=>{if(i.complete&&i.naturalWidth===0)fix(i)}))})();
+</script>
+</body>
+</html>

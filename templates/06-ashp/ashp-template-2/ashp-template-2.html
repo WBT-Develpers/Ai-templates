@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASHP: Air Source Heat Pump Installation &amp; Repair</title>
+<meta name="description" content="MCS certified Air Source Heat Pump installation, repair and maintenance. Heat loss surveyed, fixed price, fitted by our own engineers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F5F2EF;
+  --surface:#FFFFFF;
+  --line:#E5DFDA;
+  --ink:#211D1A;
+  --muted:#655F59;
+  --slate:#241F1C;
+  --slate-2:#16120F;
+  --slate-line:rgba(255,255,255,.12);
+  --slate-muted:rgba(245,242,239,.68);
+  --copper:#E8A93D;
+  --copper-deep:#8A6208;
+  --copper-soft:#FBF0DC;
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --body:"Public Sans","Helvetica Neue",Arial,sans-serif;
+  --maxw:1260px;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --r:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
+body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{font:inherit}
+:focus-visible{outline:2px solid var(--copper-deep);outline-offset:3px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+h1,h2,h3,h4{font-family:var(--display);font-weight:700;letter-spacing:-.015em;line-height:1.15;color:var(--ink)}
+p{color:var(--muted)}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:15px;color:var(--copper-deep);font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:16px}
+.kicker .dot{width:6px;height:6px;border-radius:50%;background:var(--copper-deep);flex:0 0 auto}
+
+/* ---- buttons ---- */
+.btn{display:inline-flex;align-items:center;gap:9px;padding:14px 26px;border-radius:999px;font-family:var(--display);font-size:17px;font-weight:700;cursor:pointer;border:1.5px solid transparent;transition:transform .3s var(--ease),background .3s,border-color .3s,color .3s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--copper-deep);color:#fff}
+.btn-primary:hover{background:#6B4A06}
+/* --line (#E5DFDA) is the hairline used for panel edges; as a button border on
+   paper it all but disappeared, so the secondary button read as floating text */
+.btn-outline-dark{border-color:rgba(33,29,26,.45);color:var(--ink)}
+.btn-outline-dark:hover{border-color:var(--copper-deep);color:var(--copper-deep);background:rgba(138,98,8,.06)}
+.btn-outline-light{border-color:rgba(255,255,255,.35);color:#fff}
+.btn-outline-light:hover{background:rgba(255,255,255,.12)}
+.btn-white{background:#fff;color:var(--ink)}
+.btn-white:hover{background:var(--copper-soft)}
+.cta-pair{display:flex;gap:12px;flex-wrap:wrap}
+.cta-center{display:flex;justify-content:center}
+
+/* ---- nav: dark, built from the --slate tokens the hero already uses, so the
+   bar and the section it sits on are the same material ---- */
+header{position:sticky;top:0;z-index:100}
+/* opaque, not translucent. At 86% the bright wall in the hero video showed
+   straight through the bar, so the nav looked washed out at the top of the
+   page and only settled once darker sections scrolled under it. There is no
+   scrolled state to lean on here, so the bar carries its own ground and reads
+   the same everywhere. */
+.nav{background:var(--slate);border-bottom:1px solid var(--slate-line);transition:box-shadow .3s}
+.nav__in{max-width:var(--maxw);margin:0 auto;padding:15px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:9px;font-family:var(--display);font-weight:800;font-size:20px;color:var(--paper)}
+.logo svg{width:30px;height:30px}
+.nav-links{display:flex;gap:2px;align-items:center;margin:0 auto}
+.nav-links a{color:var(--slate-muted);font-size:17px;font-weight:600;padding:9px 13px;border-radius:8px;transition:.25s}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,.09)}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-phone{display:flex;align-items:center;gap:7px;font-family:var(--display);font-weight:700;font-size:16px;color:var(--paper)}
+/* --copper-deep is a dark bronze meant for light grounds; on the bar it read
+   as a smudge, so the icon takes the bright copper */
+.nav-phone svg{width:15px;height:15px;stroke:var(--copper);fill:none;stroke-width:2}
+.nav-toggle{display:none;width:40px;height:40px;border:1px solid var(--slate-line);border-radius:8px;position:relative;cursor:pointer;background:transparent}
+.nav-toggle span,.nav-toggle::before,.nav-toggle::after{content:"";position:absolute;left:11px;right:11px;height:1.6px;background:var(--paper)}
+.nav-toggle::before{top:15px}.nav-toggle span{top:19.2px}.nav-toggle::after{top:23.4px}
+.nav-drawer{display:none}
+@media(max-width:1040px){
+  .nav-links{display:none}.nav-phone span{display:none}.nav-toggle{display:block}
+  .nav-drawer{display:block;max-height:0;overflow:hidden;background:var(--slate-2);border-bottom:1px solid var(--slate-line);transition:max-height .4s var(--ease)}
+  .nav.open .nav-drawer{max-height:420px}
+  .nav-drawer a{display:block;padding:14px 28px;font-weight:600;font-size:17px;color:var(--slate-muted);border-bottom:1px solid var(--slate-line)}
+  .nav-drawer a:hover{color:#fff}
+  .nav-drawer .cta-link{color:var(--copper)}
+}
+
+/* ---- reveal ---- */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.stagger .r-item{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.stagger.in .r-item{opacity:1;transform:none}
+.stagger.in .r-item:nth-child(1){transition-delay:.02s}.stagger.in .r-item:nth-child(2){transition-delay:.07s}.stagger.in .r-item:nth-child(3){transition-delay:.12s}.stagger.in .r-item:nth-child(4){transition-delay:.17s}.stagger.in .r-item:nth-child(5){transition-delay:.22s}.stagger.in .r-item:nth-child(6){transition-delay:.27s}
+
+section{padding:96px 0}
+.section-tight{padding:64px 0}
+.band-bg{background:var(--paper)}
+.band-surface{background:var(--surface)}
+.band-slate{background:var(--slate);color:#fff}
+.band-slate .kicker{color:var(--copper)}
+.band-slate .kicker .dot{background:var(--copper)}
+.band-slate h2,.band-slate h3,.band-slate h4{color:#fff}
+.band-slate p{color:var(--slate-muted)}
+
+.eyebrow-row{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:52px}
+.eyebrow-row.center{flex-direction:column;align-items:center;text-align:center}
+.eyebrow-row .side{max-width:340px}
+.eyebrow-row .side p{font-size:17px}
+.ic{width:48px;height:48px;border-radius:13px;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.ic svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+
+/* signature: circular copper certification badge */
+.grant-badge{position:relative;width:118px;height:118px;border-radius:50%;background:radial-gradient(circle at 32% 28%,#F5D896,var(--copper) 55%,var(--copper-deep) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 20px 44px -14px rgba(138,98,8,.5);flex:0 0 auto;text-align:center}
+.grant-badge::before{content:"";position:absolute;inset:5px;border-radius:50%;border:1.5px dashed rgba(255,255,255,.55)}
+.grant-badge b{font-family:var(--display);font-size:22px;color:#fff;font-weight:800;line-height:1}
+.grant-badge span{font-size:13px;color:rgba(255,255,255,.92);text-transform:uppercase;letter-spacing:.04em;margin-top:3px;max-width:80px;line-height:1.3}
+
+/* ============================================================
+   1. HERO — full-bleed photo + floating certification badge
+   ============================================================ */
+/* the blanket section{padding:96px 0} applied here too, banding --slate above
+   and below the stage; the hero is full bleed and wants none of it */
+.hero{position:relative;background:var(--slate);color:#fff;overflow:hidden;padding:0}
+.hero-stage{position:relative;height:78vh;min-height:540px;max-height:720px;overflow:hidden}
+.hero-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.05);animation:slowzoom 24s ease-in-out infinite alternate}
+/* the stage carries a clip now: it supplies its own motion, so no slowzoom,
+   and a ground colour so nothing flashes before the first frame paints */
+.hero-stage{background:var(--slate)}
+.hero-stage video{position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;display:block}
+@keyframes slowzoom{from{transform:scale(1.05)}to{transform:scale(1.14) translateY(-1%)}}
+.hero-stage::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(18,20,23,.93) 30%,rgba(30,33,38,.55) 62%,rgba(30,33,38,.18) 100%)}
+/* The hero copy used a viewport-relative gutter (clamp(24px,6vw,72px)) while
+   the nav and every section sit in a 1260px container with a 28px gutter. On a
+   wide screen that put the headline ~280px left of the nav logo. It is the same
+   container now, so all three share one left edge. inset:0 gives it left:0 AND
+   right:0, so with a max-width the auto margins centre it. */
+.hero-content{position:absolute;inset:0;z-index:2;display:flex;align-items:center;
+  max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.hero-content .inner{max-width:620px}
+.hero-pill{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.1);border:1px solid var(--slate-line);padding:9px 16px 9px 10px;border-radius:999px;font-size:16px;margin-bottom:22px}
+.hero-pill .tick{width:20px;height:20px;border-radius:50%;background:var(--copper);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px}
+.hero h1{font-size:clamp(32px,4.8vw,54px);color:#fff;max-width:15ch}
+.hero p.sub{margin:18px 0 30px;font-size:18px;line-height:1.7;max-width:48ch;color:var(--slate-muted)}
+.hero-facts{display:flex;flex-wrap:wrap;gap:30px;margin-top:36px;padding-top:26px;border-top:1px solid var(--slate-line)}
+.hfact b{display:block;font-family:var(--display);font-size:22px;font-weight:700;color:var(--copper)}
+.hfact span{font-size:15px;color:var(--slate-muted)}
+.grev{display:inline-flex;align-items:center;gap:9px;margin-top:26px;font-size:16px;color:var(--slate-muted)}
+.grev svg{width:20px;height:20px;flex:0 0 auto}
+.grev .stars{color:#F5A623;letter-spacing:1px}
+/* Same idea on the right: park the badge on the container's right gutter, not
+   the viewport's. Below 1260px the container is the viewport, and the max()
+   floor keeps the 28px gutter instead of letting the term go negative. */
+.hero-badge-dock{position:absolute;right:max(28px,(100% - var(--maxw))/2 + 28px);bottom:36px;z-index:3}
+@media(max-width:900px){.hero-badge-dock{display:none}.hero-content{padding-top:80px;align-items:flex-start}}
+@media(max-width:600px){.hero-stage{height:70vh;min-height:480px}}
+
+/* ============================================================
+   2. TRUST STRIP — bordered spec grid
+   ============================================================ */
+/* eight across, so each set is one row rather than two. This is a credential
+   ribbon, not a feature grid - at 4-up it stood taller than the sections
+   either side of it. */
+.spec-grid-table{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:grid;grid-template-columns:repeat(8,1fr)}
+.spec-cell{padding:12px;border-left:1px solid var(--line);border-top:1px solid var(--line);text-align:center;font-family:var(--display);font-weight:700;font-size:16px;background:var(--surface);
+  display:flex;align-items:center;justify-content:center;min-height:66px}
+/* explicit height, never max-height alone: several of the SVGs in logos/ carry
+   a viewBox with no intrinsic size and resolve to 0x0 otherwise. .wide and .sq
+   follow the sibling template - a wordmark and a badge cannot share one height
+   and still look the same weight. */
+.spec-cell img{height:25px;width:auto;max-width:100%;object-fit:contain;display:block}
+.spec-cell img.wide{height:18px}
+.spec-cell img.sq{height:36px}
+.spec-cell:nth-child(8n+1){border-left:none}
+.spec-cell:nth-child(-n+8){border-top:none}
+.spec-grid-label{font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;font-weight:700;margin-bottom:10px;text-align:center}
+/* each step resets the rule the step above set, then states its own */
+@media(max-width:1040px){.spec-grid-table{grid-template-columns:repeat(4,1fr)}
+  .spec-cell:nth-child(8n+1){border-left:1px solid var(--line)}.spec-cell:nth-child(4n+1){border-left:none}
+  .spec-cell:nth-child(-n+8){border-top:1px solid var(--line)}.spec-cell:nth-child(-n+4){border-top:none}}
+@media(max-width:560px){.spec-grid-table{grid-template-columns:repeat(2,1fr)}.spec-cell:nth-child(4n+1){border-left:1px solid var(--line)}.spec-cell:nth-child(odd){border-left:none}.spec-cell:nth-child(-n+4){border-top:1px solid var(--line)}.spec-cell:nth-child(-n+2){border-top:none}
+  .spec-cell{min-height:58px;padding:10px}
+  .spec-cell img{height:22px}.spec-cell img.wide{height:16px}.spec-cell img.sq{height:32px}}
+
+/* ============================================================
+   3. PROCESS — interactive stepper with photo preview
+   ============================================================ */
+.step-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:0}
+.step-tab{flex:1 1 150px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 16px;cursor:pointer;transition:.3s;text-align:left}
+.step-tab.active{background:var(--slate);border-color:var(--slate)}
+.step-tab .n{font-family:var(--display);font-size:14px;color:var(--copper-deep);font-weight:700}
+.step-tab.active .n{color:var(--copper)}
+.step-tab h4{font-size:17px;margin-top:6px;color:var(--ink)}
+.step-tab.active h4{color:#fff}
+.step-panel-wrap{margin-top:2px;border-radius:var(--r);overflow:hidden;background:var(--slate);display:none;grid-template-columns:1fr 1.2fr}
+.step-panel-wrap.active{display:grid}
+.step-panel-img{aspect-ratio:4/3;overflow:hidden}
+.step-panel-img img{width:100%;height:100%;object-fit:cover}
+.step-panel-body{padding:32px;color:#fff;display:flex;flex-direction:column;justify-content:center}
+.step-panel-body .n{font-family:var(--display);color:var(--copper);font-weight:700;font-size:16px;margin-bottom:10px}
+.step-panel-body h3{color:#fff;font-size:22px;margin-bottom:10px}
+.step-panel-body p{color:var(--slate-muted);font-size:17px;line-height:1.65}
+@media(max-width:760px){.step-panel-wrap.active{grid-template-columns:1fr}}
+
+/* ============================================================
+   4. SOLUTIONS
+   ============================================================ */
+.sol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.sol-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s}
+.sol-card:hover{transform:translateY(-5px);box-shadow:0 24px 50px -30px rgba(21,24,28,.25)}
+.sol-card__img{aspect-ratio:4/3;overflow:hidden}
+.sol-card__img img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.sol-card:hover .sol-card__img img{transform:scale(1.06)}
+.sol-card__b{padding:24px 22px}
+.sol-card h3{font-size:20px;margin-bottom:10px}
+.sol-card p{font-size:16px;line-height:1.6;margin-bottom:14px}
+.sol-card ul{list-style:none}
+.sol-card li{font-size:15px;color:var(--muted);padding:4px 0 4px 16px;position:relative}
+.sol-card li::before{content:"";position:absolute;left:0;top:10px;width:5px;height:5px;border-radius:50%;background:var(--copper-deep)}
+@media(max-width:900px){.sol-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.sol-grid{grid-template-columns:1fr}}
+
+/* ============================================================
+   5. PRODUCT — interactive switcher
+   ============================================================ */
+.svc-layout{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:stretch}
+.svc-imgwrap{position:relative;border-radius:var(--r);overflow:hidden}
+.svc-imgwrap .ph{position:absolute;inset:0;opacity:0;transition:opacity .5s var(--ease)}
+.svc-imgwrap .ph.active{position:relative;opacity:1}
+.svc-imgwrap .ph img{width:100%;height:100%;object-fit:cover;display:block;min-height:340px}
+.svc-list{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.svc-item{background:var(--surface);padding:22px 24px;cursor:pointer;transition:background .3s}
+.svc-item.active{background:var(--paper)}
+.svc-head{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.svc-head h3{font-size:19px}
+.svc-arrow{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex:0 0 auto;transition:.3s}
+.svc-arrow svg{width:14px;height:14px;stroke:var(--muted);fill:none;stroke-width:2;transition:.3s}
+.svc-item.active .svc-arrow{background:var(--copper-deep);border-color:var(--copper-deep)}
+.svc-item.active .svc-arrow svg{stroke:#fff;transform:rotate(90deg)}
+.svc-desc{max-height:0;overflow:hidden;transition:max-height .4s var(--ease)}
+.svc-item.active .svc-desc{max-height:200px}
+.svc-desc p{font-size:16px;line-height:1.65;padding-top:14px}
+.stats-strip{display:flex;flex-wrap:wrap;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:40px}
+.stat-block{flex:1 1 200px;padding:26px 24px;border-left:1px solid var(--line);background:var(--surface);text-align:center}
+.stat-block:first-child{border-left:none}
+.stat-block .big{font-family:var(--display);font-size:clamp(24px,2.6vw,32px);font-weight:800;color:var(--copper-deep)}
+.stat-block .sub{color:var(--muted);font-size:15px;margin-top:6px;line-height:1.5}
+@media(max-width:860px){.svc-layout{grid-template-columns:1fr}}
+@media(max-width:700px){.stat-block{border-left:none;border-top:1px solid var(--line);flex:1 1 50%}.stat-block:nth-child(-n+2){border-top:none}}
+
+/* ============================================================
+   6. WHY US
+   ============================================================ */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.why-card{background:rgba(255,255,255,.05);border:1px solid var(--slate-line);border-radius:var(--r);padding:28px 24px}
+.why-card .ic{background:rgba(255,255,255,.08);color:var(--copper)}
+.why-card h3{font-size:19px;margin-bottom:9px;color:#fff}
+.why-card p{font-size:16px;line-height:1.6}
+@media(max-width:900px){.why-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.why-grid{grid-template-columns:1fr}}
+
+/* ============================================================
+   7. REVIEWS — photo-backed filmstrip
+   ============================================================ */
+.rv-strip{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:14px;margin:0 -4px}
+.rv-strip::-webkit-scrollbar{height:6px}
+.rv-strip::-webkit-scrollbar-thumb{background:var(--line);border-radius:99px}
+.rv-card{flex:0 0 clamp(260px,30vw,340px);scroll-snap-align:start;position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:3/4}
+.rv-card img{width:100%;height:100%;object-fit:cover}
+.rv-card::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(18,20,23,.92) 0%,rgba(18,20,23,.55) 46%,transparent 72%)}
+.rv-card__body{position:absolute;left:18px;right:18px;bottom:18px;z-index:2;color:#fff}
+.rv-card .stars{color:#F5A623;letter-spacing:2px;font-size:16px;margin-bottom:10px}
+.rv-card p{font-size:16px;line-height:1.55;color:rgba(255,255,255,.94);margin-bottom:10px}
+.rv-card b{font-size:16px;color:#fff}
+
+/* ============================================================
+   8. PROJECTS
+   ============================================================ */
+.proj-feat{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:16/7;margin-bottom:20px}
+.proj-feat img{width:100%;height:100%;object-fit:cover}
+.proj-feat::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(18,20,23,.75),transparent 55%)}
+.proj-feat .cap{position:absolute;left:24px;bottom:20px;color:#fff;z-index:2;font-family:var(--display);font-weight:700;font-size:17px}
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.gtile{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4/3}
+.gtile img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.gtile:hover img{transform:scale(1.06)}
+.gtile::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(18,20,23,.78),transparent 55%)}
+.gtile__tag{position:absolute;left:16px;bottom:36px;color:var(--copper);font-family:var(--display);font-weight:700;font-size:15px;z-index:2}
+.gtile__note{position:absolute;left:16px;right:16px;bottom:12px;color:#fff;font-size:14px;z-index:2;line-height:1.4}
+@media(max-width:900px){.gal-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.gal-grid{grid-template-columns:1fr}}
+
+/* ============================================================
+   9. GUARANTEE
+   ============================================================ */
+.guar-wrap{max-width:900px;margin:0 auto;text-align:center}
+.guar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.guar-item{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:30px 24px}
+.guar-item .ic{background:var(--copper-soft);color:var(--copper-deep);margin:0 auto 16px}
+.guar-item h3{font-size:19px;margin-bottom:9px}
+.guar-item p{font-size:16px;line-height:1.6}
+@media(max-width:760px){.guar-grid{grid-template-columns:1fr}}
+
+/* ============================================================
+   10. FAQ
+   ============================================================ */
+.faq-wrap{max-width:820px;margin:0 auto}
+.faq-item{border-top:1px solid var(--slate-line)}
+.faq-item:last-child{border-bottom:1px solid var(--slate-line)}
+.faq-q{width:100%;display:flex;align-items:center;gap:18px;background:none;border:none;text-align:left;padding:22px 4px;cursor:pointer;color:#fff}
+.faq-q .n{font-family:var(--display);font-size:15px;color:var(--copper);flex:0 0 auto;width:26px}
+.faq-q .t{flex:1;font-size:18px;font-weight:700;font-family:var(--display)}
+.faq-q .sign{flex:0 0 auto;width:26px;height:26px;border-radius:50%;border:1px solid var(--slate-line);display:flex;align-items:center;justify-content:center;font-size:17px;color:var(--slate-muted);transition:.3s}
+.faq-item.open .faq-q .sign{background:var(--copper);color:#fff;border-color:var(--copper);transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .38s var(--ease)}
+.faq-a p{font-size:17px;line-height:1.72;padding:0 4px 24px 48px;max-width:66ch;color:var(--slate-muted)}
+
+/* ============================================================
+   11. FINAL CTA
+   ============================================================ */
+.fcta{background:linear-gradient(135deg,var(--copper-soft),var(--paper))}
+.fcta-inner{max-width:680px;margin:0 auto;text-align:center}
+.fcta h2{font-size:clamp(28px,3.6vw,42px)}
+.fcta p{margin-top:16px;font-size:18px}
+.fcta .cta-pair{justify-content:center;margin-top:30px}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer{background:var(--slate-2);color:#fff;padding:72px 0 32px}
+.foot-top{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-bottom:44px;border-bottom:1px solid var(--slate-line)}
+.foot-top h2{font-size:clamp(22px,2.8vw,32px);max-width:520px;color:#fff}
+.foot-main{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.3fr;gap:32px;padding:44px 0 0}
+.foot-brand .name{display:flex;align-items:center;gap:9px;font-family:var(--display);font-size:20px;font-weight:800;margin-bottom:14px}
+.foot-brand .name svg{width:28px;height:28px}
+.foot-brand p{color:var(--slate-muted);font-size:15px;line-height:1.8}
+.foot-col h4{font-size:15px;color:rgba(255,255,255,.42);margin-bottom:15px;text-transform:uppercase;letter-spacing:.04em;font-weight:700}
+.foot-col a{display:block;color:rgba(255,255,255,.8);font-size:16px;padding:5px 0;transition:color .25s}
+.foot-col a:hover{color:var(--copper)}
+.foot-infocard{background:rgba(255,255,255,.04);border:1px solid var(--slate-line);border-radius:var(--r);padding:22px}
+.foot-infocard .row{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px solid var(--slate-line);font-size:15px}
+.foot-infocard .row:last-of-type{border-bottom:none}
+.foot-infocard .row span:first-child{color:rgba(255,255,255,.48)}
+.foot-infocard .row span:last-child{color:rgba(255,255,255,.85);text-align:right}
+.foot-infocard .accred{margin-top:15px;padding-top:15px;border-top:1px solid var(--slate-line);font-size:14px;line-height:1.8;color:rgba(255,255,255,.48)}
+.foot-accredline{color:rgba(255,255,255,.4);font-size:14px;line-height:1.8;margin-top:40px;padding-top:22px;border-top:1px solid var(--slate-line);max-width:900px}
+.foot-credit{color:rgba(255,255,255,.36);font-size:14px;line-height:1.8;margin-top:16px;max-width:900px}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:22px;margin-top:22px;border-top:1px solid var(--slate-line);color:rgba(255,255,255,.42);font-size:15px;flex-wrap:wrap;gap:14px}
+@media(max-width:900px){.foot-main{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.foot-main{grid-template-columns:1fr}.foot-top{flex-direction:column;align-items:flex-start}}
+
+.scroll-prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--copper-deep),var(--copper));z-index:200;width:0%}
+
+/* nav standardised to 8 items - keep each label on one line */
+@media(min-width:1000px){div.nav-links>a{white-space:nowrap}div.nav-links{flex-shrink:0}}
+
+/* nav bar: full width so the phone and CTA fit on one line without cramping */
+@media(min-width:1081px){header .nav__in{max-width:none}header .nav__in a,header .nav__in button,header .nav__in span,header .nav__in b{white-space:nowrap}header .nav__in > *{flex-shrink:0}}
+</style>
+</head>
+<body>
+
+<div class="scroll-prog" id="scrollProg"></div>
+
+<svg style="display:none" aria-hidden="true">
+<defs>
+<symbol id="ic-mark" viewBox="0 0 32 32"><circle cx="16" cy="16" r="15" fill="#E8A93D" opacity=".16"/><circle cx="16" cy="16" r="3.4" fill="#E8A93D"/><path d="M16 6.4a9.6 9.6 0 0 1 8.3 4.8" stroke="#E8A93D" stroke-width="2.6" stroke-linecap="round" fill="none"/><path d="M24.3 20.8A9.6 9.6 0 0 1 16 25.6" stroke="#E8A93D" stroke-width="2.6" stroke-linecap="round" opacity=".72" fill="none"/><path d="M7.7 20.8A9.6 9.6 0 0 1 7.7 11.2" stroke="#E8A93D" stroke-width="2.6" stroke-linecap="round" opacity=".45" fill="none"/></symbol>
+<symbol id="ic-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.2 7.9-8 9-4.8-1.1-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></symbol>
+<symbol id="ic-design" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></symbol>
+<symbol id="ic-cash" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/></symbol>
+<symbol id="ic-pin" viewBox="0 0 24 24"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+<symbol id="ic-bolt" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 1 1-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 1 1 5.4-5.4z"/></symbol>
+<symbol id="ic-doc" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+<symbol id="ic-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></symbol>
+<symbol id="ic-quote" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/></symbol>
+<symbol id="ic-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+<symbol id="ic-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+</defs>
+</svg>
+
+<header>
+  <div class="nav" id="mainNav">
+    <div class="nav__in">
+      <a href="#top" class="logo"><svg viewBox="0 0 32 32" fill="none"><use href="#ic-mark"/></svg>ASHP</a>
+      <div class="nav-links">
+        <a href="#process">Our Process</a><a href="#why">Why Choose Us?</a><a href="#solutions">Services</a><a href="#reviews">Reviews</a><a href="#faq">Guides</a><a href="#">Careers</a><a href="#">Area</a><a href="#contact">Contact</a></div>
+      <div class="nav-right">
+        <a class="nav-phone" href="tel:01632960300"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M15.5 20.5a13.5 13.5 0 0 1-12-12 2 2 0 0 1 2-2.2h2.3a1.4 1.4 0 0 1 1.4 1.2c.1.9.35 1.75.7 2.55a1.4 1.4 0 0 1-.35 1.55l-1 1a11 11 0 0 0 4.4 4.4l1-1a1.4 1.4 0 0 1 1.55-.35c.8.35 1.65.6 2.55.7a1.4 1.4 0 0 1 1.2 1.45v2.25a2 2 0 0 1-2.2 2Z"/></svg><span>01632 960 300</span></a>
+        <a href="#contact" class="btn btn-primary" style="padding:11px 20px;font-size:16px">Free Quote</a>
+        <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navDrawer"><span></span></button>
+      </div>
+    </div>
+    <div class="nav-drawer" id="navDrawer">
+      <a href="#process">Our Process</a><a href="#why">Why Choose Us?</a><a href="#solutions">Services</a><a href="#reviews">Reviews</a><a href="#faq">Guides</a><a href="#">Careers</a><a href="#">Area</a><a href="#contact">Contact</a><a href="tel:01632960300">01632 960 300</a>
+      <a href="#contact" class="cta-link">Get a Free Quote →</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- 1. HERO -->
+<section class="hero">
+  <div class="hero-stage">
+    <!-- muted+playsinline are what make autoplay permitted at all; the clip is
+         decorative behind the copy, so it is hidden from assistive tech and
+         taken out of the tab order. -->
+    <video autoplay muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1">
+      <source src="ASHP%20Compressed%20Video/ezgif-60d28128348e6bb0%20(1).mp4" type="video/mp4">
+    </video>
+    <div class="hero-content">
+      <div class="inner">
+        <div class="hero-pill reveal"><span class="tick">✓</span> MCS Certified &middot; Air Source Heat Pump Specialists</div>
+        <h1 class="reveal">Air source heat pumps, installed properly.</h1>
+        <p class="sub reveal">MCS certified Air Source Heat Pump installation, repair and maintenance. Same day service, guaranteed results.</p>
+        <div class="cta-pair reveal">
+          <a href="#contact" class="btn btn-primary">Get a Free Quote <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#ic-arrow"/></svg></a>
+          <a href="#contact" class="btn btn-outline-light">Book a Free Survey</a>
+        </div>
+        <a href="#reviews" class="grev reveal">
+          <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          <span class="stars">★★★★★</span> <b style="color:#fff">4.9</b> from <b style="color:#fff">1,270</b> Google reviews
+        </a>
+        <div class="hero-facts reveal">
+          <div class="hfact"><b>1,500+</b><span>Installs completed</span></div>
+          <div class="hfact"><b>5 yr</b><span>Workmanship warranty</span></div>
+          <div class="hfact"><b>20 yr</b><span>Typical unit lifespan</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-badge-dock reveal">
+      <div class="grant-badge"><b>MCS</b><span>Certified heat pump installer</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. TRUST STRIP -->
+<section class="band-surface" style="padding:34px 0">
+  <div class="wrap reveal">
+    <div class="spec-grid-label">Brands we work with</div>
+    <div class="spec-grid-table">
+      <div class="spec-cell"><img class="sq" src="logos/daikin.svg" alt="Daikin" loading="lazy" decoding="async"></div><div class="spec-cell"><img class="wide" src="logos/mitsubishi.svg" alt="Mitsubishi Electric" loading="lazy" decoding="async"></div><div class="spec-cell"><img class="wide" src="logos/panasonic.svg" alt="Panasonic" loading="lazy" decoding="async"></div><div class="spec-cell"><img class="wide" src="logos/samsung.png" alt="Samsung" loading="lazy" decoding="async"></div>
+      <div class="spec-cell"><img src="logos/lg.svg" alt="LG" loading="lazy" decoding="async"></div><div class="spec-cell"><img class="wide" src="logos/toshiba.svg" alt="Toshiba" loading="lazy" decoding="async"></div><div class="spec-cell"><img src="logos/fujitsu.svg" alt="Fujitsu" loading="lazy" decoding="async"></div><div class="spec-cell"><img src="logos/vaillant.png" alt="Vaillant" loading="lazy" decoding="async"></div>
+    </div>
+    <div class="spec-grid-label" style="margin-top:20px">Accreditations</div>
+    <div class="spec-grid-table">
+      <div class="spec-cell"><img class="sq" src="logos/mcs.webp" alt="MCS Certified" loading="lazy" decoding="async"></div><div class="spec-cell"><img class="sq" src="logos/napit.webp" alt="NAPIT Registered" loading="lazy" decoding="async"></div><div class="spec-cell"><img class="sq" src="logos/recc.webp" alt="RECC Member" loading="lazy" decoding="async"></div><div class="spec-cell"><img class="sq" src="logos/trustmark.webp" alt="TrustMark Registered Business" loading="lazy" decoding="async"></div>
+      <div class="spec-cell"><img class="sq" src="logos/heatgeek.png" alt="Heat Geek Certified" loading="lazy" decoding="async"></div><div class="spec-cell"><img class="sq" src="logos/octopus.png" alt="Octopus Approved Installer" loading="lazy" decoding="async"></div><div class="spec-cell"><img src="logos/which.jpg" alt="Which? Trusted Trader" loading="lazy" decoding="async"></div><!-- no F Gas mark exists in logos/, so this one keeps the wordmark --><div class="spec-cell">F Gas</div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. PROCESS -->
+<section id="process" class="band-bg">
+  <div class="wrap">
+    <div class="eyebrow-row">
+      <div><div class="kicker reveal"><span class="dot"></span>How it works</div><h2 class="reveal" style="font-size:clamp(26px,3.4vw,40px);max-width:20ch">From enquiry to switch on in five steps</h2></div>
+      <div class="side reveal"><p>A properly designed heat pump starts with a proper heat loss survey, never a guess off the back of an envelope. Here is exactly how we get there.</p></div>
+    </div>
+    <div class="reveal">
+      <div class="step-tabs" id="stepTabs">
+        <button class="step-tab active" data-step="0" type="button"><div class="n">01</div><h4>Online Enquiry</h4></button>
+        <button class="step-tab" data-step="1" type="button"><div class="n">02</div><h4>Initial Estimate</h4></button>
+        <button class="step-tab" data-step="2" type="button"><div class="n">03</div><h4>Heat Loss Survey</h4></button>
+        <button class="step-tab" data-step="3" type="button"><div class="n">04</div><h4>Fixed Quote</h4></button>
+        <button class="step-tab" data-step="4" type="button"><div class="n">05</div><h4>Install &amp; Aftercare</h4></button>
+      </div>
+      <div class="step-panel-wrap active" data-panel="0">
+        <div class="step-panel-img"><img src="images/live/step-enquiry.jpg" alt="A homeowner sending through details of their property"></div>
+        <div class="step-panel-body"><div class="n">Step 01</div><h3>Tell us about your home</h3><p>A short form, then a call about your property and current heating.</p></div>
+      </div>
+      <div class="step-panel-wrap" data-panel="1">
+        <div class="step-panel-img"><img src="images/ashp-24.jpg" alt="An indicative price prepared from the property details"></div>
+        <div class="step-panel-body"><div class="n">Step 02</div><h3>Get an indicative price</h3><p>A ballpark figure early, before anyone visits your home.</p></div>
+      </div>
+      <div class="step-panel-wrap" data-panel="2">
+        <div class="step-panel-img"><img src="images/ashp-05.jpg" alt="A surveyor measuring up for a heat loss survey"></div>
+        <div class="step-panel-body"><div class="n">Step 03</div><h3>We survey and design</h3><p>A room by room heat loss survey, sized to real numbers.</p></div>
+      </div>
+      <div class="step-panel-wrap" data-panel="3">
+        <div class="step-panel-img"><img src="images/live/step-quote.jpg" alt="A fully itemised quotation prepared for the customer"></div>
+        <div class="step-panel-body"><div class="n">Step 04</div><h3>A fully itemised price</h3><p>A fixed quotation, no hidden costs, from survey to switch on.</p></div>
+      </div>
+      <div class="step-panel-wrap" data-panel="4">
+        <div class="step-panel-img"><img src="images/ashp-20.jpg" alt="A completed heat pump installation handed over"></div>
+        <div class="step-panel-body"><div class="n">Step 05</div><h3>Installed and commissioned</h3><p>We install, commission and register your warranty.</p></div>
+      </div>
+    </div>
+    <div class="cta-center reveal" style="margin-top:40px"><div class="cta-pair"><a href="#contact" class="btn btn-primary">Get A Free Quote</a><a href="tel:01632960300" class="btn btn-outline-dark">Speak To Our Experts</a></div></div>
+  </div>
+</section>
+
+<!-- 4. SOLUTIONS -->
+<section id="solutions" class="band-slate">
+  <div class="wrap">
+    <div class="eyebrow-row">
+      <div><div class="kicker reveal"><span class="dot"></span>What we do</div><h2 class="reveal" style="font-size:clamp(26px,3.4vw,38px);max-width:20ch">Air source heat pumps, designed around your home</h2></div>
+      <div class="side reveal"><p>Every property is different. We survey first, then design the air source system that suits your building, not the one that suits our stock.</p></div>
+    </div>
+    <div class="sol-grid stagger reveal">
+      <div class="sol-card r-item"><div class="sol-card__img"><img src="images/live/svc-ashp.webp" alt="Air source heat pumps"></div><div class="sol-card__b"><h3>Air source heat pumps</h3><p>Our core work, correctly sized, low flow temperature systems designed around a full heat loss survey rather than a rule of thumb.</p><ul><li>Retrofit and new build</li><li>Emitter and cylinder sizing included</li><li>MCS certified installation</li></ul></div></div>
+      <div class="sol-card r-item"><div class="sol-card__img"><img src="images/live/sol-underfloor.jpg" alt="Underfloor heating pipes laid out across a floor before screeding"></div><div class="sol-card__b"><h3>Cylinders &amp; underfloor heating</h3><p>A heat pump is only as good as what it feeds. We size unvented cylinders and underfloor circuits to run at low temperatures.</p><ul><li>Unvented hot water cylinders</li><li>Underfloor heating design and install</li><li>Larger emitters where needed</li></ul></div></div>
+      <div class="sol-card r-item"><div class="sol-card__img"><img src="images/ashp-28.jpg" alt="Engineer servicing a heat pump at a bungalow"></div><div class="sol-card__b"><h3>Servicing &amp; care plans</h3><p>Annual servicing keeps efficiency up and manufacturer warranties valid, on our installations and on systems fitted by others.</p><ul><li>Annual heat pump servicing</li><li>Fault finding and repairs</li><li>Care plans with priority response</li></ul></div></div>
+    </div>
+    <div class="cta-center reveal" style="margin-top:36px"><div class="cta-pair"><a href="#contact" class="btn btn-primary">Get A Free Quote</a><a href="tel:01632960300" class="btn btn-outline-light">Speak To Our Experts</a></div></div>
+  </div>
+</section>
+
+<!-- 5. PRODUCT -->
+<section id="product" class="band-bg">
+  <div class="wrap">
+    <div class="eyebrow-row">
+      <div><div class="kicker reveal"><span class="dot"></span>What we fit</div><h2 class="reveal" style="font-size:clamp(26px,3.4vw,38px);max-width:20ch">The heat pump we fit, named on your quote</h2></div>
+      <div class="side reveal"><p>We do not hide behind "premium components". Every quotation names the exact unit, cylinder and controls you are getting, with the warranty attached to each.</p></div>
+    </div>
+    <div class="svc-layout reveal">
+      <div class="svc-imgwrap" id="svcImgWrap">
+        <div class="ph active" data-img="0"><img src="images/live/eq-heatpump.jpg" alt="A Vaillant aroTHERM Plus air source heat pump installed at a house"></div>
+        <div class="ph" data-img="1"><img src="images/live/eq-cylinder.jpg" alt="A domestic hot water cylinder installed in a utility space"></div>
+        <div class="ph" data-img="2"><img src="images/live/eq-controls.jpg" alt="A wall mounted digital heating thermostat"></div>
+      </div>
+      <div class="svc-list" id="svcList">
+        <div class="svc-item active" data-svc="0">
+          <div class="svc-head"><h3>Heat pump units</h3><span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#ic-arrow"/></svg></span></div>
+          <div class="svc-desc"><p>Daikin Altherma, Mitsubishi Ecodan, Vaillant aroTHERM, Samsung EHS and Panasonic Aquarea, typically 5kW to 16kW, selected on your heat loss figure and the flow temperature your emitters can run at.</p></div>
+        </div>
+        <div class="svc-item" data-svc="1">
+          <div class="svc-head"><h3>Cylinders &amp; buffers</h3><span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#ic-arrow"/></svg></span></div>
+          <div class="svc-desc"><p>Unvented cylinders sized to your household's real hot water draw, with heat pump coils rated for low temperature operation, plus volumisers or buffers only where the system genuinely needs one.</p></div>
+        </div>
+        <div class="svc-item" data-svc="2">
+          <div class="svc-head"><h3>Controls &amp; monitoring</h3><span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#ic-arrow"/></svg></span></div>
+          <div class="svc-desc"><p>Weather compensation set up properly on the day, smart tariff integration for Octopus Cosy and similar, and remote monitoring so we can see a fault developing before you feel it.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="stats-strip stagger reveal">
+      <div class="stat-block r-item"><div class="big">10</div><div class="sub">Years installing air source heat pumps</div></div>
+      <div class="stat-block r-item"><div class="big">1,500+</div><div class="sub">Heat pump and heating systems installed</div></div>
+      <div class="stat-block r-item"><div class="big">4.9</div><div class="sub">Average service rating on Google and Trustpilot</div></div>
+      <div class="stat-block r-item"><div class="big">30 min</div><div class="sub">Average response to a service call</div></div>
+    </div>
+  </div>
+
+  <div class="wrap"><div class="cta-center reveal" style="margin-top:40px"><div class="cta-pair"><a href="#contact" class="btn btn-primary">Get A Free Quote</a><a href="tel:01632960300" class="btn btn-outline-dark">Speak To Our Experts</a></div></div></div>
+</section>
+
+<!-- 6. WHY US -->
+<section id="why" class="band-slate">
+  <div class="wrap">
+    <div class="eyebrow-row center">
+      <div class="kicker reveal"><span class="dot"></span>Why choose us</div>
+      <h2 class="reveal" style="font-size:clamp(26px,3.4vw,38px)">Why homeowners choose us</h2>
+    </div>
+    <div class="why-grid stagger reveal">
+      <div class="why-card r-item"><div class="ic"><svg><use href="#ic-shield"/></svg></div><h3>MCS, Gas Safe &amp; F Gas accredited</h3><p>Every engineer is fully accredited and on our own payroll, never subcontracted. MCS certification means your installation meets the national standard.</p></div>
+      <div class="why-card r-item"><div class="ic"><svg><use href="#ic-design"/></svg></div><h3>Heat Geek certified design</h3><p>We design to a full room by room heat loss calculation, so your system runs at low flow temperatures and actually delivers the efficiency it promises.</p></div>
+      <div class="why-card r-item"><div class="ic"><svg><use href="#ic-doc"/></svg></div><h3>Transparent, fixed pricing</h3><p>A fully itemised quotation with defined inclusions. No salespeople, no commission driven upselling and no hidden extras once work begins.</p></div>
+      <div class="why-card r-item"><div class="ic"><svg><use href="#ic-pin"/></svg></div><h3>Genuinely local and accountable</h3><p>We are a local team, not a franchise or a call centre operation. The person who surveys your home is the person you can ring afterwards.</p></div>
+      <div class="why-card r-item"><div class="ic"><svg><use href="#ic-bolt"/></svg></div><h3>Every kind of air source system</h3><p>Wall mounted, multi split, ducted and commercial air source units, so we recommend the right configuration for your home, not just what we stock.</p></div>
+      <div class="why-card r-item"><div class="ic"><svg><use href="#ic-shield"/></svg></div><h3>Warranty and aftercare</h3><p>A workmanship warranty in writing on top of manufacturer cover, plus servicing plans that keep efficiency and warranty validity intact.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. REVIEWS -->
+<section id="reviews" class="band-bg">
+  <div class="wrap">
+    <div class="eyebrow-row">
+      <div><div class="kicker reveal"><span class="dot"></span>Reviews</div><h2 class="reveal" style="font-size:clamp(26px,3.4vw,38px)">What our customers say</h2></div>
+      <div class="side reveal"><p>Thorough surveys, honest pricing and aftercare that answers the phone, rated 4.9 out of 5 across more than 1,200 reviews.</p></div>
+    </div>
+    <div class="rv-strip reveal">
+      <div class="rv-card"><img src="images/ashp-15.jpg" alt="A completed heat pump installation at a customer property"><div class="rv-card__body"><div class="stars">★★★★★</div><p>"I recently had an air source heat pump installed and I could not be happier with the whole experience. The team were on time, tidy and explained the controls properly."</p><b>David Jones</b></div></div>
+      <div class="rv-card"><img src="images/ashp-24.jpg" alt="A completed heat pump installation at a customer property"><div class="rv-card__body"><div class="stars">★★★★★</div><p>"Always responsive, professional and efficient. Good support and aftercare, overall a great job. I would not hesitate to use them again."</p><b>Eldho J.</b></div></div>
+      <div class="rv-card"><img src="images/ashp-13.jpg" alt="A completed heat pump installation at a customer property"><div class="rv-card__body"><div class="stars">★★★★★</div><p>"I cannot recommend them highly enough. The team were fantastic from start to finish, with excellent and timely communications."</p><b>Stuart Broad</b></div></div>
+      <div class="rv-card"><img src="images/ashp-20.jpg" alt="A completed heat pump installation at a customer property"><div class="rv-card__body"><div class="stars">★★★★★</div><p>"They keep you informed and the price was fair. The engineer who came out took the time to walk me through how to run it efficiently."</p><b>Iren J.</b></div></div>
+      <div class="rv-card"><img src="images/ashp-09.jpg" alt="A completed heat pump installation at a customer property"><div class="rv-card__body"><div class="stars">★★★★★</div><p>"Kept informed by email throughout, and the engineers arrived almost to the minute. The whole job was carried out very professionally."</p><b>Barry G.</b></div></div>
+      <div class="rv-card"><img src="images/ashp-06.jpg" alt="A completed heat pump installation at a customer property"><div class="rv-card__body"><div class="stars">★★★★★</div><p>"Simple, efficient service which gives you confidence in their knowledge. The heat loss survey was far more thorough than other quotes we had."</p><b>Paul L.</b></div></div>
+    </div>
+  </div>
+
+  <div class="wrap"><div class="cta-center reveal" style="margin-top:40px"><div class="cta-pair"><a href="#contact" class="btn btn-primary">Get A Free Quote</a><a href="tel:01632960300" class="btn btn-outline-dark">Speak To Our Experts</a></div></div></div>
+</section>
+
+<!-- 8. PROJECTS -->
+<section id="projects" class="band-slate">
+  <div class="wrap">
+    <div class="eyebrow-row">
+      <div><div class="kicker reveal"><span class="dot"></span>Our work</div><h2 class="reveal" style="font-size:clamp(26px,3.4vw,38px)">See our heat pumps in action</h2></div>
+      <div class="side reveal"><p>Real installations across a mix of property types, the kind of homes that make up most of our work, with the design decision behind each one.</p></div>
+    </div>
+    <div class="proj-feat reveal">
+      <img src="images/ashp-03.jpg" alt="Engineer commissioning twin heat pump units at golden hour">
+      <div class="cap">Recent commissioning, twin heat pump install</div>
+    </div>
+    <div class="gal-grid stagger reveal">
+      <div class="gtile r-item"><img src="images/ashp-02.jpg" alt="Four bed detached, radiators upsized to run at 40 degrees flow"><div class="gtile__tag">Detached home · 12kW</div><div class="gtile__note">Radiators upsized to run at 40°C flow.</div></div>
+      <div class="gtile r-item"><img src="images/ashp-28.jpg" alt="Oil boiler removed, a 250L cylinder fitted in the old airing cupboard"><div class="gtile__tag">Bungalow retrofit · 8kW</div><div class="gtile__note">Oil boiler removed, 250L cylinder fitted in the old airing cupboard.</div></div>
+      <div class="gtile r-item"><img src="images/ashp-08.jpg" alt="Underfloor heating throughout, designed alongside the MVHR"><div class="gtile__tag">New build · 6kW</div><div class="gtile__note">Underfloor heating throughout, paired with the air source system.</div></div>
+      <div class="gtile r-item"><img src="images/live/svc-ashp.webp" alt="150 year old walls, targeted insulation first, then a low temperature system"><div class="gtile__tag">Stone cottage · 14kW</div><div class="gtile__note">150 year old walls, targeted insulation first, then a low temperature system.</div></div>
+      <div class="gtile r-item"><img src="images/ashp-11.jpg" alt="Ground array across the paddock for a property well off the gas grid"><div class="gtile__tag">Farmhouse · 16kW</div><div class="gtile__note">A large air source system for a property well off the gas grid.</div></div>
+      <div class="gtile r-item"><img src="images/live/herts-2.webp" alt="Gas boiler replaced, the full grant applied to the quotation"><div class="gtile__tag">Semi detached · 9kW</div><div class="gtile__note">Gas boiler replaced with a 9kW air source heat pump.</div></div>
+    </div>
+    <div class="cta-center reveal" style="margin-top:36px"><div class="cta-pair"><a href="#contact" class="btn btn-primary">Get A Free Quote</a><a href="tel:01632960300" class="btn btn-outline-light">Speak To Our Experts</a></div></div>
+  </div>
+</section>
+
+<!-- 9. GUARANTEE -->
+<section id="guarantee" class="band-bg">
+  <div class="wrap guar-wrap">
+    <div class="kicker reveal" style="justify-content:center"><span class="dot"></span>Our Guarantee</div>
+    <h2 class="reveal" style="font-size:clamp(26px,3.4vw,38px)">Happy with the work, or we put it right</h2>
+    <div class="guar-grid stagger reveal">
+      <div class="guar-item r-item"><div class="ic"><svg><use href="#ic-shield"/></svg></div><h3>No obligation quote</h3><p>A real price before any work starts. If the numbers don't work, we'll say so.</p></div>
+      <div class="guar-item r-item"><div class="ic"><svg><use href="#ic-doc"/></svg></div><h3>Fixed price, no hidden fees</h3><p>Certification and commissioning are inside the quote before we begin.</p></div>
+      <div class="guar-item r-item"><div class="ic"><svg><use href="#ic-check"/></svg></div><h3>5 year warranty</h3><p>Workmanship guaranteed by us, hardware warranted by the manufacturer.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. FAQ -->
+<section id="faq" class="band-slate">
+  <div class="wrap">
+    <div class="eyebrow-row center">
+      <div class="kicker reveal"><span class="dot"></span>FAQ</div>
+      <h2 class="reveal" style="font-size:clamp(26px,3.4vw,38px)">Frequently asked questions</h2>
+      <p class="reveal" style="margin-top:12px;max-width:66ch">The questions our surveyors are asked most often. If yours is not here, ring us, we would rather talk it through than sell you something that will not suit your home.</p>
+    </div>
+    <div class="faq-wrap stagger reveal">
+      <div class="faq-item open r-item"><button class="faq-q" type="button"><span class="n">01</span><span class="t">Do heat pumps actually work in British winters?</span><span class="sign">+</span></button><div class="faq-a"><p>Yes. A correctly specified air source heat pump continues to operate at outdoor temperatures as low as minus 20°C. What matters is the design: a system sized from a full heat loss survey and running at a low flow temperature will keep your home comfortable through a UK cold snap. A system guessed at from the boiler size will not.</p></div></div>
+      <div class="faq-item r-item"><button class="faq-q" type="button"><span class="n">02</span><span class="t">Will a heat pump reduce my energy bills?</span><span class="sign">+</span></button><div class="faq-a"><p>It depends on what you are replacing and which tariff you are on. A heat pump produces roughly three to four units of heat for every unit of electricity it consumes, so against oil, LPG or direct electric the saving is usually substantial, up to around 50%. Against mains gas on a standard tariff the margin is narrower, but a heat pump specific tariff changes that considerably.</p></div></div>
+      <div class="faq-item r-item"><button class="faq-q" type="button"><span class="n">03</span><span class="t">How much does an air source heat pump cost?</span><span class="sign">+</span></button><div class="faq-a"><p>Typically between £5,000 and £15,000 installed, depending on the size of the property, whether emitters need upgrading and whether a new cylinder is required. Domestic installations are zero rated for VAT.</p></div></div>
+      <div class="faq-item r-item"><button class="faq-q" type="button"><span class="n">04</span><span class="t">How much space does an air source heat pump need?</span><span class="sign">+</span></button><div class="faq-a"><p>The outdoor unit needs roughly a metre of clear space on at least two sides for airflow, typically sited on an external wall bracket or a ground level pad. Most gardens, side passages and flat roofs have more than enough room, and we confirm the exact spot with you at survey stage.</p></div></div>
+      <div class="faq-item r-item"><button class="faq-q" type="button"><span class="n">05</span><span class="t">Can a heat pump be fitted in an older home?</span><span class="sign">+</span></button><div class="faq-a"><p>Frequently, yes, we have installed successfully in properties over 150 years old. Older buildings usually need larger emitters to run at a lower flow temperature, and sometimes targeted insulation work first. The heat loss survey tells us honestly whether it will work, and we will say so if it will not.</p></div></div>
+      <div class="faq-item r-item"><button class="faq-q" type="button"><span class="n">06</span><span class="t">Why does the heat loss survey matter so much?</span><span class="sign">+</span></button><div class="faq-a"><p>Because it is the difference between a heat pump that works and one that disappoints. A room by room calculation determines the unit size, the radiator sizes and the cylinder. Most heat pumps that underperform were oversized or fitted to emitters that force a high flow temperature, both are design failures, not technology failures.</p></div></div>
+      <div class="faq-item r-item"><button class="faq-q" type="button"><span class="n">07</span><span class="t">How long does an installation take?</span><span class="sign">+</span></button><div class="faq-a"><p>Most domestic installations take two to four days on site depending on whether emitters and the cylinder are being changed at the same time. We agree the schedule with you in advance and commission the system before we leave.</p></div></div>
+      <div class="faq-item r-item"><button class="faq-q" type="button"><span class="n">08</span><span class="t">Do heat pumps need servicing?</span><span class="sign">+</span></button><div class="faq-a"><p>Yes, annually. Servicing keeps efficiency where it should be and is usually a condition of keeping the manufacturer warranty valid. We service our own installations and systems fitted by other companies.</p></div></div>
+      <div class="faq-item r-item"><button class="faq-q" type="button"><span class="n">09</span><span class="t">How noisy is an air source heat pump?</span><span class="sign">+</span></button><div class="faq-a"><p>Far quieter than most people expect, comparable to a fridge at conversation distance. Siting matters, and we will position the unit to keep sound away from bedrooms and neighbouring boundaries as part of the design.</p></div></div>
+      <div class="faq-item r-item"><button class="faq-q" type="button"><span class="n">10</span><span class="t">What is the lifespan of a heat pump?</span><span class="sign">+</span></button><div class="faq-a"><p>Around 20 years for the unit with proper servicing, and longer for the cylinder and pipework. That is comparable to or better than a gas boiler, and there is no annual gas safety obligation attached to it.</p></div></div>
+      <div class="faq-item r-item"><button class="faq-q" type="button"><span class="n">11</span><span class="t">Can I run a heat pump from solar panels?</span><span class="sign">+</span></button><div class="faq-a"><p>Yes, and the two pair well, particularly with a battery, which lets you store cheap or self generated electricity and run the heat pump on it. Solar will not cover a winter heating load on its own, but it materially reduces annual running cost.</p></div></div>
+      <div class="faq-item r-item"><button class="faq-q" type="button"><span class="n">12</span><span class="t">Do you offer finance?</span><span class="sign">+</span></button><div class="faq-a"><p>Yes. Finance is available to spread the cost of your installation, with approval usually possible in minutes. We introduce customers to a regulated provider and do not give financial advice.</p></div></div>
+    </div>
+    <div class="cta-center reveal" style="margin-top:32px"><div class="cta-pair"><a href="#contact" class="btn btn-primary">Get A Free Quote</a><a href="tel:01632960300" class="btn btn-outline-light">Speak To Our Experts</a></div></div>
+  </div>
+</section>
+
+<!-- 11. FINAL CTA -->
+<section id="contact" class="fcta">
+  <div class="wrap fcta-inner reveal">
+    <h2>Want to know what a heat pump would cost?</h2>
+    <p>Get a free, no obligation heat loss survey and a fixed itemised quotation for your home.</p>
+    <div class="cta-pair">
+      <a href="tel:01632960300" class="btn btn-primary">Get a Free Quote</a>
+      <a href="#contact" class="btn btn-outline-dark">Book a Free Survey</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <h2>Ready to switch to renewable heating?</h2>
+      <a href="#contact" class="btn btn-white">Get a Free Quote</a>
+    </div>
+    <div class="foot-main">
+      <div class="foot-brand">
+        <div class="name"><svg viewBox="0 0 32 32" fill="none"><use href="#ic-mark"/></svg>ASHP</div>
+        <p>MCS certified Air Source Heat Pump installation, repair and maintenance across the UK.</p>
+      </div>
+      <div class="foot-col"><h4>Company</h4><a href="#why">About us</a><a href="#projects">Our work</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
+      <div class="foot-col"><h4>Services</h4><a href="#solutions">Air source heat pumps</a><a href="#solutions">Cylinders &amp; underfloor heating</a><a href="#solutions">Servicing &amp; care plans</a><a href="#product">Heat pump units we fit</a><a href="#why">Why choose us</a></div>
+      <div class="foot-infocard">
+        <div class="row"><span>Mon-Fri</span><span>08:00-17:30</span></div>
+        <div class="row"><span>Saturday</span><span>09:00-13:00</span></div>
+        <div class="row"><span>Sunday</span><span>Closed</span></div>
+        <div class="row"><span>Emergency</span><span>24/7 callout</span></div>
+        <div class="row"><span>Office</span><span>Unit 5, Meadow Court, Ware, Hertfordshire SG12 9QT</span></div>
+        <div class="row"><span>Phone</span><span><a href="tel:01632960300" style="color:inherit">01632 960 300</a></span></div>
+        <div class="accred">MCS Certified (Low Carbon Technology) · NAPIT Registered · Gas Safe Registered · F Gas Qualified · RECC Member · TrustMark Registered Business · Heat Geek Certified · Octopus Approved Installer · Which? Trusted Trader · Insurance Backed Workmanship Warranty</div>
+      </div>
+    </div>
+    <div class="foot-accredline"><b>Finance:</b> ASHP Ltd is an Introducer Appointed Representative of a regulated credit broker. The credit broker is not a lender (FRN 111111). Finance is available subject to status. The rate offered is always provisional and will depend upon your personal circumstances, the loan amount and the term.</div>
+    <p class="foot-credit">Photography: UK and international images from Wikimedia Commons, used under CC0 / CC BY-SA / CC BY licences via Special:FilePath, including the Mitsubishi Ecodan air source heat pump and other air source heat pump installations, plus underfloor heating pipework. Brand and accreditation marks are the property of their respective owners and are shown for identification only.</p>
+    <div class="foot-bottom">
+      <span>© 2026 We Build Trades Ltd. Demonstration template, sample content.</span>
+      <span><a href="#" style="color:rgba(255,255,255,.55)">Privacy policy</a> &middot; <a href="#" style="color:rgba(255,255,255,.55)">Terms and conditions</a> &middot; <a href="#" style="color:rgba(255,255,255,.55)">Complaints procedure</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const animSel='.reveal,.stagger';
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      if(e.target.classList.contains('countup'))runCounters(e.target);
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:.08,rootMargin:"0px 0px -6% 0px"});
+document.querySelectorAll(animSel).forEach(el=>io.observe(el));
+document.querySelectorAll('.stats-strip').forEach(el=>el.classList.add('countup'));
+
+function runCounters(scope){
+  scope.querySelectorAll('.big').forEach((el,i)=>{
+    const raw=el.textContent.trim();
+    const m=raw.match(/^([^\d]*)([\d,]+(?:\.\d+)?)(.*)$/);
+    if(!m)return;
+    const prefix=m[1],numStr=m[2],suffix=m[3];
+    const target=parseFloat(numStr.replace(/,/g,''));
+    const hasComma=numStr.includes(',');
+    const dec=(numStr.split('.')[1]||'').length;
+    const dur=1300,delay=i*90,start=performance.now()+delay;
+    function tick(now){
+      if(now<start){requestAnimationFrame(tick);return;}
+      const p=Math.min(1,(now-start)/dur);
+      const eased=1-Math.pow(1-p,3);
+      let val=target*eased;
+      let out=dec?val.toFixed(dec):Math.floor(val).toString();
+      if(hasComma)out=Math.floor(val).toLocaleString('en-GB');
+      el.textContent=prefix+out+suffix;
+      if(p<1)requestAnimationFrame(tick);else el.textContent=raw;
+    }
+    requestAnimationFrame(tick);
+  });
+}
+
+const prog=document.getElementById('scrollProg');
+function updateProg(){
+  const st=document.documentElement.scrollTop||document.body.scrollTop;
+  const sh=(document.documentElement.scrollHeight||document.body.scrollHeight)-document.documentElement.clientHeight;
+  prog.style.width=(sh>0?(st/sh)*100:0)+'%';
+}
+addEventListener('scroll',updateProg,{passive:true});updateProg();
+
+(()=>{
+  const nav=document.getElementById('mainNav'),btn=document.querySelector('.nav-toggle'),drawer=document.getElementById('navDrawer');
+  if(!nav||!btn||!drawer)return;
+  const setOpen=o=>{nav.classList.toggle('open',o);btn.setAttribute('aria-expanded',o?'true':'false');};
+  btn.addEventListener('click',()=>setOpen(!nav.classList.contains('open')));
+  drawer.addEventListener('click',e=>{if(e.target.closest('a'))setOpen(false);});
+  addEventListener('keydown',e=>{if(e.key==='Escape')setOpen(false);});
+  addEventListener('resize',()=>{if(innerWidth>1040)setOpen(false);});
+})();
+
+(function(){
+  const items=[...document.querySelectorAll('.faq-item')];
+  function setOpen(item,open){
+    const a=item.querySelector('.faq-a');
+    if(open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}
+    else{item.classList.remove('open');a.style.maxHeight='0px';}
+  }
+  items.forEach(item=>{
+    const q=item.querySelector('.faq-q');
+    if(item.classList.contains('open'))setOpen(item,true);
+    q.addEventListener('click',()=>{
+      const isOpen=item.classList.contains('open');
+      items.forEach(x=>setOpen(x,false));
+      setOpen(item,!isOpen);
+    });
+  });
+  addEventListener('resize',()=>{const o=document.querySelector('.faq-item.open');if(o){const a=o.querySelector('.faq-a');a.style.maxHeight=a.scrollHeight+'px';}});
+})();
+
+// Process step tabs: click a tab, show its panel
+(function(){
+  const tabs=[...document.querySelectorAll('.step-tab')];
+  const panels=[...document.querySelectorAll('.step-panel-wrap')];
+  tabs.forEach(tab=>{
+    tab.addEventListener('click',()=>{
+      tabs.forEach(t=>t.classList.remove('active'));
+      panels.forEach(p=>p.classList.remove('active'));
+      tab.classList.add('active');
+      document.querySelector('.step-panel-wrap[data-panel="'+tab.dataset.step+'"]').classList.add('active');
+    });
+  });
+})();
+
+// Product switcher: click an item, swap the image
+(function(){
+  const items=[...document.querySelectorAll('.svc-item')];
+  const imgs=[...document.querySelectorAll('#svcImgWrap .ph')];
+  items.forEach(item=>{
+    item.addEventListener('click',()=>{
+      items.forEach(i=>i.classList.remove('active'));
+      item.classList.add('active');
+      const idx=item.dataset.svc;
+      imgs.forEach(img=>img.classList.toggle('active',img.dataset.img===idx));
+    });
+  });
+})();
+
+(function(){
+  const FALLBACK='data:image/svg+xml;utf8,'+encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600">'+
+    '<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">'+
+    '<stop offset="0" stop-color="#241F1C"/><stop offset="1" stop-color="#E8A93D"/>'+
+    '</linearGradient></defs><rect width="800" height="600" fill="url(#g)"/></svg>'
+  );
+  document.querySelectorAll('img[src*="wikimedia.org"]').forEach(img=>{
+    img.addEventListener('error',function(){this.onerror=null;this.src=FALLBACK;this.style.animation='none';},{once:true});
+  });
+})();
+
+/* Hero clip: honour reduced motion. The still it replaced had a slowzoom that
+   the sheet's reduced-motion block switched off, but CSS cannot stop video
+   playback - a <video autoplay> keeps running - so it is paused here and the
+   frame it stops on stands in for the photograph. */
+(()=>{const v=document.querySelector('.hero-stage video');
+ if(v&&matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause()}})();
+</script>
+</body>
+</html>
