@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solar: MCS Certified Solar, Battery &amp; EV Charging Installers</title>
+<meta name="description" content="Solar is an MCS certified solar PV, battery storage and EV charging installer. Fixed price quotes, in house accredited engineers and 30 year panel warranties across the UK.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================================
+   SOLAR VARIANT 3 - "Blueprint"
+   A complete replacement stylesheet. The markup and every word of content are
+   untouched; this file alone carries the redesign.
+
+   PALETTE - Cambridge Solar (cambridge-solar.co.uk), from WEBSITE-COLOURS.md
+   Part 1. Every value below is a colour that firm actually paints on its site:
+     #1F2D48  navy        their accent      -> the dominant ground here
+     #171717  near-black  their dark band   -> deeper bands
+     #F68C24  copper      their accent 2    -> the accent
+     #0B6EB3  blue        their brand       -> secondary, links, focus
+   Checked against the other Solar variants before use: 41.4 dE from v1's
+   terracotta and 96.6 from v2's jade, both clear of the 25 floor.
+
+   Against v1 (cream ground, terracotta, 2px corners) and v2 (light jade,
+   18px corners):
+     ground    dark navy, light bands as relief   instead of light-dominant
+     type      Oswald condensed caps / Barlow     instead of Bricolage / Outfit
+     texture   blueprint grid on every dark band  new to this variant
+     corners   4px                                instead of 2px / 18px
+     rhythm    dark-dominant alternation          instead of light-dominant
+   ========================================================================= */
+
+:root{
+  /* Grounds are matched to the design reference by measurement, not by eye.
+     The first pass used Cambridge Solar's navy #1F2D48 at luminance 0.026 and a
+     warm cream #F3F1EC - beside the reference that read as a medium blue page
+     with cream relief, where the reference is near-black with cool neutral
+     relief. These sit at 0.005 / 0.009 dark and cool-neutral light. */
+  --navy:#0E141D;            /* body ground */
+  --navy-2:#111823;          /* dark bands */
+  --ink-black:#0B1017;       /* deepest bands */
+  --paper:#F1F1EF;           /* light band - cool neutral, NOT cream */
+  --paper-2:#F7F7F5;         /* lightest band */
+  --line-d:rgba(255,255,255,.11);
+  --line-l:#DEDEDA;
+
+  /* ink */
+  --ink:#131A24;             /* on light grounds - 15.46:1 on --paper */
+  --ink-mute:#5A626D;
+  --on-dark:#EDEFF2;         /* 15.47:1 on --navy-2 */
+  --on-dark-mute:rgba(237,239,242,.62);
+
+  /* accent - the reference's muted bronze, not a saturated orange */
+  --copper:#C8863C;          /* 6.30:1 on the deepest band; #10151A on it is 5.87 */
+  --copper-hi:#D8994E;       /* top of the button gradient */
+  /* As words on a light ground the bronze itself is only 2.68:1, so anything
+     set as text on light uses this instead - 5.09:1 on --paper. */
+  --copper-deep:#8F5A1E;
+  --copper-soft:#F2E4D2;     /* icon chips */
+
+  --display:"Oswald","Arial Narrow",Impact,sans-serif;
+  --body:"Barlow","Helvetica Neue",Arial,sans-serif;
+  --radius:4px;
+  --maxw:1300px;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --grid:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),
+         linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--navy);color:var(--on-dark);font-family:var(--body);
+  font-size:18px;line-height:1.62;overflow-x:hidden;font-weight:400}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+::selection{background:var(--copper);color:#12161f}
+:focus-visible{outline:2px solid var(--copper);outline-offset:3px}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,4vw,54px)}
+
+/* ---------- type ----------
+   Oswald is condensed and set in caps here, which is where this variant gets
+   its voice. Body copy stays Barlow at a normal width so the density lands on
+   the headings and not on the reading. */
+h1,h2,h3,h4,.big,.num,.pstep__n,.gnum,.eq-k{
+  font-family:var(--display);font-weight:600;letter-spacing:.005em;line-height:1.06}
+h1{font-size:clamp(2.9rem,6.4vw,5rem);text-transform:uppercase;letter-spacing:-.005em}
+h2{font-size:clamp(1.85rem,3.5vw,2.9rem);text-transform:uppercase}
+h3{font-size:1.1875rem;text-transform:uppercase;letter-spacing:.012em;font-weight:500}
+h4{font-size:1.0625rem;text-transform:uppercase;letter-spacing:.08em;font-weight:500}
+p{color:var(--on-dark-mute)}
+
+/* .uline wraps the WHOLE heading, not part of it - the name is from v1, where
+   it drew an underline. Colouring it made every h2 copper end to end. It
+   inherits the heading colour instead; the copper on a section head is carried
+   by the eyebrow rule above it. */
+.uline{color:inherit;display:inline}
+
+.eyebrow{font-family:var(--body);font-size:0.8125rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.19em;color:var(--copper);
+  margin-bottom:15px;display:flex;align-items:center;gap:11px}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--copper);flex:0 0 26px}
+
+.lede{font-size:1.125rem}
+
+/* ---------- bands ----------
+   Each band names its own ground AND its own ink. A blanket rule scoped to a
+   band also hits text inside cards sitting on it, which is how five solution
+   cards went unreadable on the last variant. */
+.band-dark{background:var(--navy-2);background-image:var(--grid);background-size:52px 52px}
+.band-umber{background:var(--ink-black);background-image:var(--grid);background-size:52px 52px}
+.band-tint{background:var(--paper);color:var(--ink)}
+.band-white{background:var(--paper-2);color:var(--ink)}
+.band-tint p,.band-white p{color:var(--ink-mute)}
+.band-tint .eyebrow,.band-white .eyebrow{color:var(--copper-deep)}
+.band-tint .eyebrow::before,.band-white .eyebrow::before{background:var(--copper-deep)}
+
+section{padding:clamp(62px,7.5vw,104px) 0}
+
+/* ---------- buttons ---------- */
+.btn,.cta-btn,.btn-cta{display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--body);font-weight:600;font-size:1rem;letter-spacing:.055em;
+  text-transform:uppercase;padding:15px 26px;border-radius:var(--radius);
+  border:1.5px solid transparent;white-space:nowrap;
+  transition:background .25s var(--ease),color .25s var(--ease),
+             border-color .25s var(--ease),transform .25s var(--ease)}
+.arw,.ar{transition:transform .25s var(--ease)}
+.btn:hover .arw,.btn-cta:hover .ar,.cta-btn:hover .arw{transform:translateX(4px)}
+
+/* The solid background-color under the gradient is deliberate. A gradient-only
+   background computes as backgroundColor:transparent, so a contrast probe walks
+   straight past it to the section behind and reports dark-on-dark - these
+   buttons read as 1.03:1 while actually being 7.37:1. Declaring the colour too
+   makes the button honestly measurable, and is a free fallback besides. */
+.btn-dark,.cta-btn,.btn-cta--primary{
+  background-color:var(--copper);
+  background-image:linear-gradient(180deg,var(--copper-hi),var(--copper));
+  color:#20160A;
+  box-shadow:0 10px 26px -14px rgba(246,140,36,.85)}
+.btn-dark:hover,.cta-btn:hover,.btn-cta--primary:hover{
+  background:var(--copper-deep);color:#fff;transform:translateY(-2px)}
+
+/* ghost buttons: on a dark ground they must be light-on-dark. Naming every
+   ghost variant explicitly - the last variant missed .btn-cta--ghost and left
+   navy on navy at 1.0:1. */
+.btn-ghost,.btn-cta--ghost{background:transparent;color:var(--on-dark);
+  border-color:rgba(255,255,255,.32)}
+.btn-ghost:hover,.btn-cta--ghost:hover{background:rgba(255,255,255,.09);
+  border-color:var(--on-dark);color:#fff}
+.band-tint .btn-ghost,.band-white .btn-ghost,
+.band-tint .btn-cta--ghost,.band-white .btn-cta--ghost{
+  color:var(--ink);border-color:rgba(26,34,51,.28)}
+.band-tint .btn-ghost:hover,.band-white .btn-ghost:hover,
+.band-tint .btn-cta--ghost:hover,.band-white .btn-cta--ghost:hover{
+  background:rgba(26,34,51,.06);border-color:var(--ink);color:var(--ink)}
+.btn-light{background:#fff;color:var(--ink)}
+.btn-light:hover{background:var(--copper);color:#20160A}
+.ctapair,.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+
+/* ---------- nav: full-bleed bar ----------
+   Edge to edge like every signed-off template in the suite. */
+header{position:fixed;top:0;left:0;right:0;z-index:100;pointer-events:none}
+.nav{pointer-events:auto;position:relative;display:flex;align-items:center;gap:20px;
+  background:rgba(20,25,34,.88);backdrop-filter:blur(16px) saturate(150%);
+  border-bottom:1px solid var(--line-d);
+  padding:13px clamp(16px,2.4vw,34px) 13px clamp(20px,4vw,54px);
+  transition:background .3s var(--ease),padding .3s var(--ease)}
+.nav.stuck{background:rgba(20,25,34,.98);padding-top:9px;padding-bottom:9px;
+  box-shadow:0 10px 30px -18px #000}
+.nav .logo{font-family:var(--display);font-weight:600;font-size:1.375rem;color:#fff;
+  text-transform:uppercase;letter-spacing:.13em;display:flex;align-items:center;gap:11px}
+.nav .logo .ic,.nav .logo svg{color:var(--copper)}
+.links{display:flex;align-items:center;gap:clamp(12px,1.8vw,26px);margin-left:auto}
+.links a{font-size:0.9375rem;font-weight:500;letter-spacing:.075em;text-transform:uppercase;
+  color:rgba(238,241,246,.78);padding:9px 1px;position:relative;transition:color .2s}
+.links a:hover{color:#fff}
+.links a::after{content:"";position:absolute;left:50%;right:50%;bottom:3px;height:1.5px;
+  background:var(--copper);transition:left .3s var(--ease),right .3s var(--ease)}
+.links a:hover::after{left:0;right:0}
+.nav-right{display:flex;align-items:center;gap:16px;margin-left:auto}
+.nav-phone{display:flex;align-items:center;font-size:1rem;font-weight:600;color:#fff;
+  white-space:nowrap;letter-spacing:.02em}
+.nav-callic{font-size:1.35em;line-height:1;vertical-align:-.10em;margin-right:6px;
+  display:inline-block;color:var(--copper)}
+.nav .cta-btn{padding:12px 21px;font-size:0.875rem}
+
+/* hamburger drawn in CSS - the button in the markup is empty */
+.nav-toggle{display:none;position:relative;width:42px;height:42px;padding:0;
+  flex:0 0 auto;border-radius:var(--radius);
+  background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.2)}
+.nav-toggle::before,.nav-toggle::after{content:"";position:absolute;left:50%;top:50%;
+  width:18px;height:2px;margin:-1px 0 0 -9px;background:#fff;
+  transition:transform .3s var(--ease),box-shadow .2s}
+.nav-toggle::before{box-shadow:0 -6px 0 #fff}
+.nav-toggle::after{transform:translateY(6px)}
+.nav.open .nav-toggle::before{box-shadow:none;transform:rotate(45deg)}
+.nav.open .nav-toggle::after{transform:rotate(-45deg)}
+.nav-drawer{display:none;position:absolute;left:0;right:0;top:100%;
+  background:rgba(20,25,34,.99);border-bottom:1px solid var(--line-d);
+  max-height:calc(100vh - 100%);overflow-y:auto}
+.nav.open .nav-drawer{display:block}
+.nav-drawer .inner{display:flex;flex-direction:column;padding:6px clamp(20px,4vw,54px) 22px}
+.nav-drawer a{font-size:1.0625rem;font-weight:500;text-transform:uppercase;letter-spacing:.06em;
+  color:rgba(238,241,246,.82);padding:14px 2px;border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-drawer a:hover{color:#fff}
+.nav-drawer a.cta-btn{justify-content:center;margin-top:18px;border-bottom:0;color:#20160A}
+.scroll-prog{position:fixed;top:0;left:0;height:2px;background:var(--copper);z-index:200;
+  transition:width .1s linear}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:clamp(620px,90vh,860px);display:flex;align-items:center;
+  padding:150px 0 70px;overflow:hidden;background:var(--ink-black)}
+.hero .bg{position:absolute;inset:0;z-index:0}
+.hero .bg video,.hero .bg img{width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(100deg,rgba(16,21,30,.95) 0%,rgba(16,21,30,.86) 34%,
+             rgba(16,21,30,.42) 62%,rgba(16,21,30,.62) 100%)}
+.hero .inner{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;width:100%;
+  padding:0 clamp(20px,4vw,54px)}
+.hero h1{color:#fff;max-width:15ch;text-shadow:0 2px 26px rgba(0,0,0,.4)}
+
+.hero>.inner>p{color:rgba(255,255,255,.86);font-size:clamp(1.125rem,1.5vw,1.1875rem);
+  max-width:46ch;margin-top:20px}
+.trust-pill{display:inline-flex;align-items:center;gap:10px;margin-bottom:26px;
+  padding:9px 18px;border-radius:999px;font-size:0.9375rem;font-weight:500;
+  color:#fff;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.2);
+  backdrop-filter:blur(8px)}
+.trust-pill .stars{color:var(--copper)}
+.trust-pill b{font-weight:600}
+.hero .actions{margin-top:34px}
+.grev{display:inline-flex;align-items:center;gap:11px;margin-top:26px;
+  padding:11px 19px;border-radius:var(--radius);
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16)}
+/* the Google mark is an inline <svg> with no intrinsic size cap - left
+   unstyled it expands to fill the row */
+.grev__g{width:20px;height:20px;flex:0 0 20px}
+.grev__stars{color:var(--copper);letter-spacing:.09em;white-space:nowrap}
+.grev__txt{font-size:0.9375rem;color:rgba(255,255,255,.86);white-space:nowrap}
+.grev__txt b{color:#fff;font-weight:600}
+.grev{flex-wrap:nowrap}
+
+/* ---------- trustbar: credentials ribbon ---------- */
+.trustbar{padding:0;background:var(--ink-black);border-bottom:1px solid var(--line-d)}
+.trustbar .row{display:flex;align-items:center;gap:clamp(20px,4vw,56px);
+  flex-wrap:wrap;justify-content:center;padding:22px 0}
+.trustbar .rating{display:flex;align-items:center;gap:13px;padding-right:clamp(18px,3vw,44px);
+  border-right:1px solid var(--line-d)}
+.trustbar .num{font-size:2rem;color:var(--copper);line-height:1}
+.trustbar .stars{color:var(--copper);font-size:1.0625rem;letter-spacing:.1em}
+.trustbar .sub{font-size:0.875rem;color:var(--on-dark-mute);text-transform:uppercase;
+  letter-spacing:.1em;margin-top:2px}
+.trustbar .creds{display:flex;align-items:center;gap:clamp(16px,3vw,40px);flex-wrap:wrap;
+  justify-content:center}
+.trustbar .creds span{font-family:var(--display);font-size:1rem;font-weight:500;
+  text-transform:uppercase;letter-spacing:.12em;color:var(--on-dark);white-space:nowrap}
+
+/* ---------- logo strip ---------- */
+.lstrip{background:var(--paper-2);padding:44px 0}
+.lsplit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,60px);
+  max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,4vw,54px)}
+/* A grid item defaults to min-width:auto, so it refuses to shrink below its
+   content - and the marquee track inside is width:max-content. That stretched
+   the column to 2007px and pushed the whole page to 3761px wide. */
+.lsplit__col{min-width:0}
+.lsplit__label{font-size:0.8125rem;font-weight:600;text-transform:uppercase;
+  letter-spacing:.19em;color:var(--copper-deep);margin-bottom:16px}
+.lsplit__view{overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.lstrip__track{display:flex;width:max-content;animation:mq 34s linear infinite}
+.lsplit__col:nth-child(2) .lstrip__track{animation-duration:41s}
+.lstrip__grp{display:flex;align-items:center;gap:clamp(26px,3.4vw,52px);
+  padding-right:clamp(26px,3.4vw,52px)}
+/* Logos in their own colours, at full opacity, with no hover change. These are
+   manufacturer and accreditation marks - greying them out misrepresents them
+   and makes the strip look broken. */
+.lstrip__grp img{height:34px;width:auto;object-fit:contain}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ---------- process: numbered, dashed connectors ---------- */
+.process-head{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,4vw,60px);
+  align-items:end;margin-bottom:56px}
+.pflow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.pstep{position:relative;padding:0 clamp(12px,1.8vw,26px);text-align:center}
+/* dashed rule between steps, never after the last */
+.pstep::after{content:"";position:absolute;top:26px;right:0;width:100%;
+  border-top:1.5px dashed rgba(26,34,51,.24);z-index:0;transform:translateX(50%)}
+.pstep:last-child::after{display:none}
+.pstep__n{position:relative;z-index:1;width:56px;height:56px;margin:0 auto 20px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.7rem;color:var(--copper-deep);
+  background:var(--paper);border:1.5px solid rgba(26,34,51,.16);border-radius:50%}
+.pstep h3{color:var(--ink);margin-bottom:9px}
+.pstep p{font-size:1rem}
+.pstep__lnk{display:inline-flex;align-items:center;gap:6px;margin-top:13px;
+  font-size:0.875rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;
+  color:var(--copper-deep);border-bottom:1px solid currentColor;padding-bottom:2px}
+
+/* ---------- solutions: cards on a dark band ----------
+   Cards carry their own light ground, so they set their own ink. */
+.sol-head{max-width:56ch;margin-bottom:52px}
+.sol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.sol-card{background:#fff;color:var(--ink);border-radius:var(--radius);overflow:hidden;
+  display:flex;flex-direction:column;
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.sol-card:hover{transform:translateY(-5px);box-shadow:0 22px 46px -20px rgba(0,0,0,.6)}
+.sol-img{aspect-ratio:16/10;overflow:hidden;position:relative}
+.sol-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.sol-card:hover .sol-img img{transform:scale(1.05)}
+.sol-body{padding:24px 24px 27px;flex:1}
+.sol-body h3{color:var(--ink);margin-bottom:9px}
+.sol-body p{color:var(--ink-mute);font-size:1.0625rem}
+.sol-body ul{margin-top:15px;display:flex;flex-direction:column;gap:8px}
+.sol-body li{font-size:0.9375rem;color:var(--ink-mute);padding-left:21px;position:relative}
+.sol-body li::before{content:"";position:absolute;left:0;top:.52em;width:9px;height:2px;
+  background:var(--copper-deep)}
+
+/* ---------- equipment: horizontal spec flow ---------- */
+.eq-head{max-width:56ch;margin-bottom:52px}
+/* One bordered panel divided by vertical rules, as the reference draws its
+   product flow - not four detached cards, which is the base template's shape. */
+.eq-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  border:1px solid rgba(200,134,60,.34);border-radius:var(--radius);
+  background:rgba(255,255,255,.022);overflow:visible}
+/* no overflow:hidden here - it clipped the » connector, which sits outside the
+   card by design. The image inside is object-fit:contain with padding, so
+   nothing needs clipping anyway. */
+.eq-card{background:transparent;border:0;border-right:1px solid var(--line-d);
+  position:relative;transition:background .3s}
+.eq-card:hover{background:rgba(255,255,255,.05)}
+.eq-card:nth-child(4n),.eq-card:last-child{border-right:0}
+/* rule between rows too, so the panel reads as a grid rather than a strip */
+.eq-card:nth-child(n+5){border-top:1px solid var(--line-d)}
+/* the >> connector between units, echoing the reference's flow diagram */
+.eq-card::after{content:"»";position:absolute;top:50%;right:-8px;transform:translateY(-50%);
+  color:var(--copper);font-size:1.125rem;z-index:2;
+  background:var(--ink-black);padding:2px 1px;line-height:1}
+.eq-card:nth-child(4n)::after,.eq-card:last-child::after{display:none}
+.eq-img{aspect-ratio:4/3;background:rgba(255,255,255,.035);display:flex;
+  align-items:center;justify-content:center;padding:16px}
+.eq-img img{width:100%;height:100%;object-fit:contain}
+.eq-body{padding:19px 20px 22px;color:var(--on-dark)}
+.eq-k{font-size:0.8125rem;text-transform:uppercase;letter-spacing:.16em;color:var(--copper);
+  margin-bottom:8px}
+.eq-body h3{color:#fff;margin-bottom:8px;font-size:1.125rem}
+.eq-body p{font-size:1rem;color:var(--on-dark-mute)}
+.eq-spec{margin-top:14px;display:flex;flex-direction:column;gap:6px;
+  border-top:1px solid var(--line-d);padding-top:13px}
+.eq-spec li{font-size:0.875rem;color:var(--on-dark-mute);display:flex;gap:8px}
+.eq-spec li::before{content:"·";color:var(--copper)}
+
+/* ---------- why ---------- */
+.why-head{max-width:56ch;margin-bottom:48px}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.why-card{background:#fff;color:var(--ink);border:1px solid var(--line-l);
+  border-radius:var(--radius);padding:28px 26px 30px;
+  transition:border-color .3s,transform .3s var(--ease)}
+.why-card:hover{border-color:var(--copper);transform:translateY(-4px)}
+.why-card .ic{width:46px;height:46px;border-radius:var(--radius);margin-bottom:18px;
+  display:flex;align-items:center;justify-content:center;font-size:1.25rem;
+  background:var(--copper-soft);color:var(--copper-deep)}
+.why-card h3{color:var(--ink);margin-bottom:10px}
+.why-card p{color:var(--ink-mute);font-size:1rem}
+
+/* ---------- stats: DARK band ----------
+   The reference puts these figures inside its dark product band, so they are
+   styled for a dark ground. Moving a section's ground means moving every text
+   rule scoped to it - that is the single most repeated bug in this project. */
+/* The photo takes the full right half, floor to ceiling. align-items:center
+   was letting it shrink to its content and float in the middle of the band. */
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,72px);
+  align-items:stretch}
+.stats-media{border-radius:var(--radius);overflow:hidden;grid-row:1/span 2;
+  grid-column:2;height:100%;min-height:clamp(360px,38vw,560px)}
+.stats-media img{width:100%;height:100%;object-fit:cover}
+.stats-head{grid-column:1;grid-row:1}
+.stats-list{grid-column:1;grid-row:2}
+.stats-list{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line-d);
+  border:1px solid var(--line-d);margin-top:34px}
+.st{background:rgba(255,255,255,.04);padding:22px 20px}
+.st .big{font-size:2.4rem;color:var(--copper);line-height:1}
+.st .sub{font-size:0.875rem;text-transform:uppercase;letter-spacing:.1em;
+  color:var(--on-dark-mute);margin-top:7px}
+
+/* ---------- projects / gallery ---------- */
+/* auto on the second column starved the heading and wrapped it to four lines */
+.gallery-head{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(24px,4vw,54px);
+  align-items:end;margin-bottom:44px}
+/* Equal cards, three across, as the reference shows them. The 4-column mosaic
+   with wide/tall spans that was here is the BASE TEMPLATE's gallery - the
+   .wide and .tall classes come from its markup and were being honoured out of
+   habit rather than chosen. They are neutralised, not removed: the classes stay
+   in the markup, they simply no longer span. */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);
+  grid-auto-rows:246px;gap:16px}
+.gitem{position:relative;overflow:hidden;border-radius:var(--radius);
+  border:1px solid var(--line-l)}
+.gitem.wide,.gitem.tall{grid-column:span 1;grid-row:span 1}
+.gitem img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.gitem:hover img{transform:scale(1.06)}
+.gitem .cap{position:absolute;left:12px;bottom:12px;z-index:2;
+  background:rgba(20,25,34,.86);backdrop-filter:blur(6px);color:#fff;
+  font-size:0.875rem;font-weight:500;letter-spacing:.04em;
+  padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.16)}
+.pjbelt{margin-top:34px}
+.pj-view,.rv-view{overflow:hidden}
+.pj-track,.rv-track{display:flex;gap:18px;transition:transform .55s var(--ease)}
+/* project cards sit on the LIGHT gallery band, per the reference */
+.pj-card{flex:0 0 calc((100% - 36px)/3);background:#fff;color:var(--ink);
+  border:1px solid var(--line-l);border-radius:var(--radius);overflow:hidden}
+.pj-img{aspect-ratio:16/10;overflow:hidden}
+.pj-img img{width:100%;height:100%;object-fit:cover}
+.pj-body{padding:19px 20px 22px;color:var(--ink)}
+.pj-k{font-size:0.8125rem;text-transform:uppercase;letter-spacing:.16em;
+  color:var(--copper-deep);margin-bottom:9px}
+.pj-body h3{color:var(--ink);font-size:1.0625rem;margin-bottom:7px}
+.pj-body p{font-size:0.9375rem;color:var(--ink-mute)}
+.pj-spec{display:flex;gap:18px;flex-wrap:wrap;margin-top:15px;padding-top:13px;
+  border-top:1px solid var(--line-l)}
+.pj-spec span{font-size:0.875rem;color:var(--ink-mute)}
+.pj-spec b{font-family:var(--display);font-weight:500;color:var(--ink);font-size:1.0625rem;
+  display:block;letter-spacing:.03em}
+.pj-nav,.rv-nav{display:flex;gap:9px;margin-top:22px}
+.pj-nav button,.rv-nav button{width:44px;height:44px;border-radius:var(--radius);
+  border:1.5px solid var(--line-d);color:var(--on-dark);
+  display:flex;align-items:center;justify-content:center;
+  transition:background .25s,border-color .25s,color .25s}
+.pj-nav button:hover,.rv-nav button:hover{background:var(--copper);border-color:var(--copper);
+  color:#20160A}
+/* carousel arrows follow whichever band they land on, both classes covered so a
+   later band swap cannot leave them invisible */
+.band-tint .rv-nav button,.band-white .rv-nav button,
+.band-tint .pj-nav button,.band-white .pj-nav button{
+  border-color:rgba(26,34,51,.2);color:var(--ink)}
+.band-tint .rv-nav button:hover,.band-white .rv-nav button:hover,
+.band-tint .pj-nav button:hover,.band-white .pj-nav button:hover{
+  background:var(--copper-deep);border-color:var(--copper-deep);color:#fff}
+
+/* ---------- reviews ---------- */
+/* ---------- reviews: DARK band ----------
+   The reference sets its testimonials on dark with copper stars. Dark cards on
+   a dark band, separated by a lighter fill and a visible border. */
+.rvbelt{margin-top:40px}
+.r-card{flex:0 0 calc((100% - 36px)/3);background:rgba(255,255,255,.05);
+  color:var(--on-dark);border:1px solid var(--line-d);
+  border-radius:var(--radius);padding:28px 26px}
+.rstars{color:var(--copper);letter-spacing:.13em;margin-bottom:15px;font-size:1.0625rem}
+.r-card p{color:var(--on-dark);font-size:1.0625rem;line-height:1.65}
+.rwho{display:flex;align-items:center;gap:13px;margin-top:22px;
+  border-top:1px solid var(--line-d);padding-top:18px}
+/* .rav holds a single initial, not a photo - it needs centring and a readable
+   pair. Copper ground with the dark button ink, which is the 7.37:1 combination
+   already used on every primary button. */
+.rav{width:44px;height:44px;border-radius:50%;overflow:hidden;flex:0 0 44px;
+  background:var(--copper);color:#20160A;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--display);font-weight:600;font-size:1.125rem;line-height:1}
+.rav img{width:100%;height:100%;object-fit:cover}
+.rnm{font-family:var(--display);font-weight:500;text-transform:uppercase;
+  letter-spacing:.06em;font-size:1rem;color:#fff}
+.rrole{font-size:0.875rem;color:var(--on-dark-mute)}
+
+/* ---------- guarantee ---------- */
+.guarantee{position:relative;background:var(--ink-black);overflow:hidden;
+  background-image:var(--grid);background-size:52px 52px}
+.guarantee .gbg{position:absolute;inset:0;z-index:0;opacity:.2}
+.guarantee .gbg img{width:100%;height:100%;object-fit:cover}
+.guarantee::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(90deg,rgba(20,25,34,.97),rgba(20,25,34,.8))}
+.guarantee .wrap{position:relative;z-index:2}
+.guarantee .inner{display:grid;grid-template-columns:.95fr 1.05fr;
+  gap:clamp(30px,5vw,70px);align-items:center}
+.guarantee h2{color:#fff}
+.guarantee .eyebrow{color:var(--copper)}
+.guarantee .eyebrow::before{background:var(--copper)}
+.guarantee p{color:var(--on-dark-mute)}
+/* Columns divided by vertical rules, as the reference sets its guarantee -
+   not a bordered 2-up grid of numbered rows, which is the base template's. */
+.gpoints{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:0;background:none}
+.gpoint{background:none;padding:6px clamp(16px,1.8vw,26px);display:block;
+  border-left:1px solid var(--line-d)}
+.gpoint:nth-child(3n+1){border-left:0;padding-left:0}
+.gpoint:nth-child(n+4){margin-top:26px;padding-top:26px;
+  border-top:1px solid var(--line-d)}
+.gnum{font-size:1.375rem;color:var(--copper);line-height:1;margin-bottom:12px;
+  display:block}
+.gpoint h4{color:#fff;margin-bottom:7px}
+.gpoint p{font-size:0.9375rem}
+
+/* ---------- faq: heading left, accordion right ----------
+   The drawing that was here is gone - it did not resemble the reference's and
+   a poor imitation is worse than none. The layout fills the width instead:
+   heading in a sticky left column, questions in a wider right column, so no
+   part of the band is left empty on a wide screen. */
+/* Every child placed explicitly. #faq .wrap has THREE children - head, the
+   accordion, and a button pair - and with only two placed the buttons
+   auto-flowed into the head's cell. Combined with a sticky head that scrolled
+   over them, the buttons and the heading printed on top of each other. */
+#faq .wrap{display:grid;grid-template-columns:.82fr 1.18fr;
+  column-gap:clamp(30px,5vw,76px);row-gap:30px;align-items:start}
+.faq-head{grid-column:1;grid-row:1;max-width:34ch;margin-bottom:0}
+/* Centred under the questions column, not under the whole band. Spanning both
+   columns pulled the pair left of the accordion it belongs to; sitting in the
+   narrow left column forced it to stack two-high. */
+#faq .ctapair{grid-column:2;grid-row:2;justify-content:center;
+  margin-top:clamp(34px,4vw,52px)}
+/* Boxed rows, one bordered card per question, as the reference draws them.
+   The hairline-divider list this replaced was the BASE TEMPLATE's treatment,
+   inherited rather than chosen. */
+.faq-wrap{grid-column:2;grid-row:1;max-width:none;border-top:0;
+  display:flex;flex-direction:column;gap:9px}
+.faq-item{background:#fff;border:1px solid var(--line-l);border-radius:var(--radius);
+  transition:border-color .25s var(--ease),box-shadow .25s var(--ease)}
+.faq-item:hover{border-color:rgba(143,90,30,.5)}
+.faq-item.open{border-color:rgba(143,90,30,.6);
+  box-shadow:0 8px 22px -16px rgba(19,26,36,.5)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;
+  padding:17px 20px;text-align:left;font-family:var(--body);font-weight:500;
+  font-size:1.0625rem;color:var(--ink);transition:color .2s}
+.faq-q:hover{color:var(--copper-deep)}
+.faq-item .sign{flex:0 0 auto;width:26px;height:26px;position:relative;
+  color:var(--copper-deep);font-size:0}
+.faq-item .sign::before,.faq-item .sign::after{content:"";position:absolute;
+  top:50%;left:50%;background:currentColor;transition:transform .3s var(--ease)}
+.faq-item .sign::before{width:14px;height:1.8px;margin:-.9px 0 0 -7px}
+.faq-item .sign::after{width:1.8px;height:14px;margin:-7px 0 0 -.9px}
+.faq-item.open .sign::after{transform:rotate(90deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s var(--ease)}
+.faq-item.open .faq-a{max-height:460px}
+.faq-a p{padding:0 20px 20px;font-size:1.0625rem;max-width:74ch;
+  border-top:1px solid var(--line-l);padding-top:16px;margin:0 20px 20px;
+  padding-left:0;padding-right:0}
+
+/* ---------- final CTA: full-width copper band ---------- */
+/* solid colour under the gradient, same reason as the buttons above */
+/* Light text on a deeper copper, as the reference sets this band. Dark ink on
+   mid-copper measured 5.42:1 - technically a pass, but over a photograph at
+   13% it read as muddy and hard to scan. White on #9C5F24 is 5.15:1 and far
+   more legible in practice. The photo is dropped to 8% for the same reason. */
+.join{position:relative;overflow:hidden;padding:0;
+  background-color:#9C5F24;
+  background-image:linear-gradient(100deg,#8F5A1E,#A9682A)}
+.join .bg{position:absolute;inset:0;z-index:0;opacity:.08}
+.join .bg img{width:100%;height:100%;object-fit:cover}
+.join .inner-wrap{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;
+  padding:clamp(48px,6vw,76px) clamp(20px,4vw,54px)}
+.join-content{display:grid;grid-template-columns:1.1fr auto;gap:clamp(26px,4vw,56px);
+  align-items:center}
+.join h2{color:#FFFFFF}
+.join p{color:#FFF3E6;margin-top:12px;max-width:52ch}
+.join .actions{margin-top:0}
+/* white by default on the copper band, inverting to near-black on hover */
+.join .btn-dark{background:#fff;color:#181008;box-shadow:none;border-color:#fff}
+.join .btn-dark:hover{background:#181008;color:#fff;border-color:#181008}
+.join .btn-light{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.join .btn-light:hover{background:#fff;color:#181008;border-color:#fff}
+.jpoints{display:flex;gap:clamp(18px,3vw,42px);flex-wrap:wrap;margin-top:26px;
+  grid-column:1/-1;border-top:1px solid rgba(255,255,255,.3);padding-top:22px}
+.jpoints>div{font-size:0.9375rem;color:#FFF3E6}
+.jpoints b{font-family:var(--display);font-weight:600;text-transform:uppercase;
+  letter-spacing:.05em;color:#FFFFFF;display:block;font-size:1.125rem}
+
+/* The scrolling "Get in touch" marquee that sat between the CTA and the footer
+   has been removed from the markup on request. Its rules are gone with it. */
+
+/* ---------- footer ---------- */
+footer{background:var(--navy-2);padding:clamp(54px,6vw,80px) 0 34px;
+  background-image:var(--grid);background-size:52px 52px}
+.foot-cta{display:flex;align-items:center;justify-content:space-between;gap:26px;
+  flex-wrap:wrap;padding-bottom:38px;margin-bottom:38px;border-bottom:1px solid var(--line-d)}
+.foot-cta h2{color:#fff;max-width:22ch}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:clamp(22px,3vw,48px)}
+.foot-col .big{font-family:var(--display);font-size:1.375rem;color:#fff;
+  text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px}
+.foot-col .addr{font-size:1rem;color:var(--on-dark-mute);line-height:1.75}
+.foot-col h4{color:var(--copper);margin-bottom:15px}
+.foot-col a{display:block;font-size:1rem;color:var(--on-dark-mute);padding:5px 0;
+  transition:color .2s,padding-left .2s}
+.foot-col a:hover{color:#fff;padding-left:5px}
+.foot-ops{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,3vw,48px);
+  margin-top:44px;padding-top:34px;border-top:1px solid var(--line-d)}
+.foot-ops h4{color:var(--copper);margin-bottom:13px}
+.foot-ops p,.foot-ops address{font-size:1rem;color:var(--on-dark-mute);font-style:normal}
+.oh{display:flex;justify-content:space-between;max-width:290px;padding:4px 0;
+  border-bottom:1px dashed rgba(255,255,255,.1)}
+.oh span:last-child{color:var(--on-dark)}
+/* the small link pill in the closing footer CTA */
+/* The pill lives inside .foot-bottom, whose `a:hover{color:copper}` rule is one
+   step more specific than a bare `.pill:hover`. On hover that painted copper
+   text on a copper fill - the button went blank. Scoped here so it wins. */
+.foot-bottom a.pill,.pill{display:inline-flex;align-items:center;padding:9px 18px;
+  border-radius:999px;font-size:0.875rem;font-weight:600;text-transform:uppercase;
+  letter-spacing:.1em;color:var(--copper);border:1px solid rgba(200,134,60,.5);
+  transition:background .25s,color .25s,border-color .25s}
+.foot-bottom a.pill:hover,.pill:hover{background:var(--copper);color:#20160A;
+  border-color:var(--copper)}
+.foot-accredline{display:flex;gap:clamp(14px,2.4vw,32px);flex-wrap:wrap;align-items:center;
+  margin-top:34px;padding-top:26px;border-top:1px solid var(--line-d);
+  font-size:0.875rem;color:var(--on-dark-mute)}
+.foot-bottom{display:flex;gap:20px;flex-wrap:wrap;justify-content:space-between;
+  align-items:center;margin-top:28px;padding-top:22px;
+  border-top:1px solid var(--line-d);font-size:0.9375rem;color:var(--on-dark-mute)}
+.foot-bottom a{color:var(--on-dark-mute)}
+.foot-bottom a:hover{color:var(--copper)}
+.foot-credit{font-size:0.875rem;color:rgba(238,241,246,.5);margin-top:16px;max-width:78ch}
+.foot-credit a{color:rgba(238,241,246,.7);text-decoration:underline}
+
+/* ---------- reveals ---------- */
+.reveal{opacity:0;transform:translateY(26px);
+  transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in,.reveal.visible{opacity:1;transform:none}
+.reveal-blur{opacity:0;filter:blur(11px);transform:scale(1.02);
+  transition:opacity .8s var(--ease),filter .8s var(--ease),transform .8s var(--ease)}
+.reveal-blur.in,.reveal-blur.visible{opacity:1;filter:none;transform:none}
+.d1{transition-delay:.09s}.d2{transition-delay:.17s}
+.d3{transition-delay:.25s}.d4{transition-delay:.33s}
+.stagger>*{opacity:0;transform:translateY(20px);
+  transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.stagger.in>*,.stagger.visible>*{opacity:1;transform:none}
+.stagger.in>*:nth-child(1){transition-delay:.04s}
+.stagger.in>*:nth-child(2){transition-delay:.10s}
+.stagger.in>*:nth-child(3){transition-delay:.16s}
+.stagger.in>*:nth-child(4){transition-delay:.22s}
+.stagger.in>*:nth-child(5){transition-delay:.28s}
+.stagger.in>*:nth-child(6){transition-delay:.34s}
+.stagger.in>*:nth-child(7){transition-delay:.40s}
+.stagger.in>*:nth-child(8){transition-delay:.46s}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal,.reveal-blur,.stagger>*{opacity:1!important;transform:none!important;filter:none!important}
+}
+
+/* ---------- responsive ---------- */
+@media(max-width:1180px){
+  .eq-grid{grid-template-columns:repeat(2,1fr)}
+  .eq-card:nth-child(4n)::after{display:block}
+  .eq-card:nth-child(2n)::after{display:none}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:1100px){
+  .pflow{grid-template-columns:repeat(2,1fr);gap:34px 0}
+  .pstep:nth-child(2n)::after{display:none}
+  .sol-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .stats,.guarantee .inner,.join-content{grid-template-columns:1fr}
+  .stats-media{grid-row:auto;order:-1}
+  .process-head,.gallery-head{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .pj-card,.r-card{flex:0 0 calc((100% - 18px)/2)}
+  .links{display:none}
+  .nav-toggle{display:block}
+  #faq .wrap{grid-template-columns:1fr}
+  .faq-head,.faq-wrap{grid-column:1;position:static}
+  .faq-head{margin-bottom:34px;max-width:56ch}
+}
+@media(max-width:900px){
+  .nav-phone{display:none}
+  .lsplit{grid-template-columns:1fr}
+}
+@media(max-width:720px){
+  .sol-grid,.eq-grid,.why-grid,.gallery-grid{grid-template-columns:1fr}
+  .eq-card::after{display:none!important}
+  .pflow{grid-template-columns:1fr}
+  .pstep::after{display:none}
+  .gitem.wide{grid-column:span 1}.gitem.tall{grid-row:span 1}
+  .stats-list,.gpoints,.foot-grid,.foot-ops{grid-template-columns:1fr}
+  .pj-card,.r-card{flex:0 0 100%}
+  .hero{min-height:auto;padding-top:130px}
+  .trustbar .rating{border-right:0;border-bottom:1px solid var(--line-d);
+    padding:0 0 16px;width:100%;justify-content:center}
+}
+</style>
+<style>
+/* --- legibility fixes, retuned for the Blueprint palette ---
+   These carried over from v1 and referenced --bg and --accent-l, which do not
+   exist in this stylesheet. An undefined custom property makes the whole
+   declaration invalid, so those colours silently fell back to inherit. Rewritten
+   against variables that exist here. */
+.foot-ops,.foot-ops p,.foot-ops address,
+.foot-accredline,.foot-credit,.foot-bottom{color:var(--on-dark-mute);}
+.foot-ops a{color:var(--copper);}
+.foot-ops h4{color:var(--copper);}
+/* review cards are DARK in this variant, so the stars take the bright copper */
+.rstars{color:var(--copper);}
+.grev__stars,.grev-stars{color:#F2C14E;}
+.hero .grev__stars,.hero .grev-stars{color:#F2C14E;}
+</style>
+<style>
+/* the nav call glyph was too small to read as an icon */
+.nav-callic{font-size:1.45em;line-height:1;vertical-align:-.10em;margin-right:2px;display:inline-block;}
+</style>
+<style>
+/* ---------- guarantee: the four promises sit on one row ----------
+   The copy block runs above them full width; four columns inside the old
+   right-hand half would leave each promise about 150px wide. */
+.guarantee .inner{display:block}
+.guarantee .inner>.reveal:first-child{max-width:70ch}
+.gpoints{grid-template-columns:repeat(4,1fr);
+  margin-top:clamp(34px,4vw,54px);padding-top:clamp(28px,3vw,40px);
+  border-top:1px solid var(--line-d)}
+.gpoint{border-left:1px solid var(--line-d);padding:0 clamp(16px,1.8vw,26px)}
+.gpoint:nth-child(3n+1){border-left:1px solid var(--line-d);
+  padding-left:clamp(16px,1.8vw,26px)}
+.gpoint:first-child{border-left:0;padding-left:0}
+.gpoint:nth-child(n+4){margin-top:0;padding-top:0;border-top:0}
+@media(max-width:980px){
+  .gpoints{grid-template-columns:repeat(2,1fr);gap:30px 0}
+  .gpoint:nth-child(2n+1){border-left:0;padding-left:0}
+}
+@media(max-width:620px){
+  .gpoints{grid-template-columns:1fr}
+  .gpoint{border-left:0;padding-left:0}
+}
+</style>
+</head>
+<body>
+<div class="scroll-prog" id="scrollProg"></div>
+
+<header>
+  <nav class="nav">
+    <a href="#" class="logo">
+      <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="7.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><line x1="16" y1="1.5" x2="16" y2="5"/><line x1="16" y1="27" x2="16" y2="30.5"/><line x1="1.5" y1="16" x2="5" y2="16"/><line x1="27" y1="16" x2="30.5" y2="16"/><line x1="5.6" y1="5.6" x2="8" y2="8"/><line x1="24" y1="24" x2="26.4" y2="26.4"/><line x1="26.4" y1="5.6" x2="24" y2="8"/><line x1="8" y1="24" x2="5.6" y2="26.4"/></g></svg>
+      Solar
+    </a>
+    <div class="links">
+      <a href="#process">Our Process</a>
+      <a href="#why">Why Choose Us?</a>
+      <a href="#solutions">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#">Guides</a>
+      <a href="#">Careers</a>
+      <a href="#">Area</a>
+      <a href="#quote">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a href="tel:01632960300" class="nav-phone"><span class="nav-callic" aria-hidden="true">&#9742;</span> 01632 960 300</a>
+      <a href="#quote" class="cta-btn">Free quote <span class="arw">→</span></a>
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navDrawer">
+        </button>
+    </div>
+    <div class="nav-drawer" id="navDrawer">
+      <div class="inner">
+        <a href="#process">Our Process</a>
+        <a href="#why">Why Choose Us?</a>
+        <a href="#solutions">Services</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#">Guides</a>
+        <a href="#">Careers</a>
+        <a href="#">Area</a>
+        <a href="#quote">Contact</a>
+        <a href="tel:01632960300">&#9742; 01632 960 300</a>
+        <a href="#quote" class="cta-btn">Free quote <span class="arw">→</span></a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- 1. HERO -->
+<section class="hero">
+  <div class="bg"><video autoplay muted loop playsinline preload="auto" aria-hidden="true" width="1764" height="1176">
+    <source src="video/hero-brightfield-v2.mp4" type="video/mp4">
+  </video></div>
+  <div class="inner">
+    <div class="trust-pill reveal"><span class="stars">&#10003;</span> <b>MCS certified</b> &middot; 30 year panel performance warranty</div>
+    <h1 class="reveal d1">Cut your energy bills<br>with British sunshine.</h1>
+    <p class="reveal d2">MCS certified solar PV, battery storage and EV charging, designed, fitted and commissioned by our own accredited engineers. Fixed price quotes, no salespeople, no hidden charges.</p>
+    <div class="actions reveal d3">
+      <a href="#quote" class="btn btn-dark">Get a free quote <span class="arw">→</span></a>
+      <a href="#process" class="btn btn-ghost">How it works <span class="arw">→</span></a>
+    </div>
+    <a class="grev reveal d4" href="#reviews" aria-label="Rated 4.9 out of 5 from 2,300+ Google reviews"><svg class="grev__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg><span class="grev__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="grev__txt"><b>4.9</b> from <b>2,300+</b> Google reviews</span></a>
+  </div>
+</section>
+
+<!-- 2. TRUST BAR -->
+<section class="trustbar band-dark">
+  <div class="wrap">
+    <div class="row reveal">
+      <div class="rating">
+        <div class="num">4.9</div>
+        <div>
+          <div class="stars">★★★★★</div>
+          <div class="sub">Rated Excellent &middot; 2,300+ reviews</div>
+        </div>
+      </div>
+      <div class="creds stagger reveal">
+        <span>MCS certified</span>
+        <span>RECC Member</span>
+        <span>NICEIC Approved</span>
+        <span>TrustMark</span>
+        <span>NAPIT Registered</span>
+        <span>HIES Insured</span>
+        <span>OZEV Approved</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. LOGO STRIP: brands / accreditations -->
+<section class="lstrip band-white" aria-label="Brands we work with and our accreditations">
+  <div class="lsplit">
+    <div class="lsplit__col">
+      <p class="lsplit__label">Brands we work with</p>
+      <div class="lsplit__view">
+        <div class="lstrip__track">
+          <div class="lstrip__grp">
+            <img src="logos/aiko.png" alt="Aiko" loading="lazy" decoding="async">
+            <img src="logos/jasolar.png" alt="JA Solar" loading="lazy" decoding="async">
+            <img src="logos/solaredge.png" alt="SolarEdge" loading="lazy" decoding="async">
+            <img src="logos/foxess.webp" alt="Fox ESS" loading="lazy" decoding="async">
+            <img src="logos/tesla.webp" alt="Tesla" loading="lazy" decoding="async">
+            <img src="logos/givenergy.webp" alt="GivEnergy" loading="lazy" decoding="async">
+            <img src="logos/enphase.webp" alt="Enphase" loading="lazy" decoding="async">
+            <img src="logos/solax.webp" alt="SolaX" loading="lazy" decoding="async">
+          </div>
+          <div class="lstrip__grp" aria-hidden="true">
+            <img src="logos/aiko.png" alt="" loading="lazy" decoding="async">
+            <img src="logos/jasolar.png" alt="" loading="lazy" decoding="async">
+            <img src="logos/solaredge.png" alt="" loading="lazy" decoding="async">
+            <img src="logos/foxess.webp" alt="" loading="lazy" decoding="async">
+            <img src="logos/tesla.webp" alt="" loading="lazy" decoding="async">
+            <img src="logos/givenergy.webp" alt="" loading="lazy" decoding="async">
+            <img src="logos/enphase.webp" alt="" loading="lazy" decoding="async">
+            <img src="logos/solax.webp" alt="" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lsplit__col">
+      <p class="lsplit__label">Accreditations</p>
+      <div class="lsplit__view">
+        <div class="lstrip__track">
+          <div class="lstrip__grp">
+            <img src="logos/mcs.webp" alt="MCS certified" loading="lazy" decoding="async">
+            <img src="logos/napit.webp" alt="NAPIT registered" loading="lazy" decoding="async">
+            <img src="logos/recc.webp" alt="RECC member" loading="lazy" decoding="async">
+            <img src="logos/trustmark.webp" alt="TrustMark registered" loading="lazy" decoding="async">
+            <img src="logos/iwa.webp" alt="Insurance backed warranty" loading="lazy" decoding="async">
+            <img src="logos/approved-code.webp" alt="Approved Code" loading="lazy" decoding="async">
+            <img src="logos/ukas.jpg" alt="UKAS accredited" loading="lazy" decoding="async">
+          </div>
+          <div class="lstrip__grp" aria-hidden="true">
+            <img src="logos/mcs.webp" alt="" loading="lazy" decoding="async">
+            <img src="logos/napit.webp" alt="" loading="lazy" decoding="async">
+            <img src="logos/recc.webp" alt="" loading="lazy" decoding="async">
+            <img src="logos/trustmark.webp" alt="" loading="lazy" decoding="async">
+            <img src="logos/iwa.webp" alt="" loading="lazy" decoding="async">
+            <img src="logos/approved-code.webp" alt="" loading="lazy" decoding="async">
+            <img src="logos/ukas.jpg" alt="" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. PROCESS -->
+<section id="process" class="band-tint">
+ <div class="wrap">
+  <div class="process-head">
+    <div>
+      <div class="eyebrow reveal">How it works</div>
+      <h2 class="reveal d1"><span class="uline">From first enquiry to switch on in four steps</span></h2>
+    </div>
+    <div>
+      <p class="reveal d1">A straightforward path to lower bills, one dedicated UK team from your first call to your first kilowatt. No salespeople, no jargon, no obligation.</p>
+      <a href="#quote" class="btn btn-dark reveal d2" style="margin-top:16px">Get started <span class="arw">→</span></a>
+    </div>
+  </div>
+  <div class="pflow stagger reveal">
+    <div class="pstep">
+      <div class="pstep__n">01</div>
+      <h3>Fill out a simple form</h3>
+      <p>A few questions about your home and your current bills, and you'll see indicative system sizes and prices online straight away.</p>
+      <a class="pstep__lnk" href="#quote">Start your quote <span aria-hidden="true">&#8594;</span></a>
+    </div>
+    <div class="pstep">
+      <div class="pstep__n">02</div>
+      <h3>Pick your system</h3>
+      <p>Choose from recommended solar and battery systems, with expected generation and annual savings shown against each one.</p>
+      <a class="pstep__lnk" href="#equipment">See what we fit <span aria-hidden="true">&#8594;</span></a>
+    </div>
+    <div class="pstep">
+      <div class="pstep__n">03</div>
+      <h3>Book a free survey</h3>
+      <p>A local surveyor checks your roof, shading and consumer unit, then emails you a full fixed price design quotation.</p>
+      <a class="pstep__lnk" href="#quote">Book a survey <span aria-hidden="true">&#8594;</span></a>
+    </div>
+    <div class="pstep">
+      <div class="pstep__n">04</div>
+      <h3>Install &amp; handover</h3>
+      <p>Most homes are fitted in a single day. We handle the DNO application, MCS certification and monitoring setup.</p>
+      <a class="pstep__lnk" href="#why">Why choose us <span aria-hidden="true">&#8594;</span></a>
+    </div>
+  </div>
+
+  <div class="ctapair reveal">
+    <a href="#quote" class="btn-cta btn-cta--primary">Get A Free Quote <span class="ar" aria-hidden="true">&#8594;</span></a>
+    <a href="tel:01632960300" class="btn-cta btn-cta--ghost">Speak To Our Experts <span class="ar" aria-hidden="true">&#8594;</span></a>
+  </div>
+ </div>
+</section>
+
+<!-- 5. OUR SOLUTIONS -->
+<section id="solutions" class="band-dark">
+ <div class="wrap">
+  <div class="sol-head">
+    <div class="eyebrow reveal">Our solutions</div>
+    <h2 class="reveal d1"><span class="uline">Renewable energy for homes, businesses and farms</span></h2>
+    <p class="reveal d1">Whether you're cutting a household bill or powering a working site, every system is sized to real usage and fitted by our own qualified electricians, never a subcontractor.</p>
+  </div>
+  <div class="sol-grid stagger reveal">
+    <div class="sol-card">
+      <div class="sol-img"><img src="images/i9-sol-residential.jpg" alt="A residential solar panel installation on a UK family home" loading="lazy" decoding="async" width="1376" height="768"></div>
+      <div class="sol-body">
+        <h3>Residential solar PV</h3>
+        <p>Roof mounted solar sized to your household's actual consumption, on tile, slate, flat or metal roofs. In roof and on roof mounting both available.</p>
+        <ul>
+          <li>Bird &amp; pest protection fitted as standard</li>
+          <li>Smart Export Guarantee registration</li>
+          <li>0% VAT on domestic installations</li>
+        </ul>
+      </div>
+    </div>
+    <div class="sol-card">
+      <div class="sol-img"><img src="images/i9-sol-commercial.jpg" alt="A commercial rooftop solar array on a business premises" loading="lazy" decoding="async" width="1376" height="768"></div>
+      <div class="sol-body">
+        <h3>Commercial &amp; agricultural</h3>
+        <p>Larger arrays for warehouses, offices, schools and farm buildings, cutting operating costs and carbon reporting figures at the same time.</p>
+        <ul>
+          <li>Roof, ground mount and solar carports</li>
+          <li>Half hourly consumption modelling</li>
+          <li>Full G99 grid application handled for you</li>
+        </ul>
+      </div>
+    </div>
+    <div class="sol-card">
+      <div class="sol-img"><img src="images/live/battery-storage.webp" alt="A home battery storage system installed in a domestic garage" loading="lazy" decoding="async" width="800" height="600"></div>
+      <div class="sol-body">
+        <h3>Battery storage</h3>
+        <p>Bank your daytime generation and run the evening on your own sunshine. Retrofit to an existing array or install alongside a new system.</p>
+        <ul>
+          <li>5.8kWh to 14.5kWh and beyond, stackable</li>
+          <li>Charge on cheap off peak tariffs overnight</li>
+          <li>Optional backup power during outages</li>
+        </ul>
+      </div>
+    </div>
+    <div class="sol-card">
+      <div class="sol-img"><img src="images/live/ev-charger.webp" alt="A home EV charge point installed on the wall of a driveway" loading="lazy" decoding="async" width="800" height="600"></div>
+      <div class="sol-body">
+        <h3>EV charging</h3>
+        <p>OZEV approved home and workplace charge points, wired to work with your solar so the car charges on surplus generation rather than grid import.</p>
+        <ul>
+          <li>Domestic and commercial charge points</li>
+          <li>Solar matched &amp; tariff aware charging</li>
+          <li>5 year workmanship guarantee</li>
+        </ul>
+      </div>
+    </div>
+    <div class="sol-card">
+      <div class="sol-img"><img src="images/live/commercial-battery.webp" alt="Electrical work being carried out on a consumer unit and inverter installation" loading="lazy" decoding="async" width="800" height="600"></div>
+      <div class="sol-body">
+        <h3>Electrical works</h3>
+        <p>Our engineers are fully qualified electricians, so anything your install needs, a consumer unit upgrade, a rewire, additional power, is handled in house.</p>
+        <ul>
+          <li>Consumer unit replacement &amp; upgrades</li>
+          <li>Additional power circuits and rewiring</li>
+          <li>EICR testing and certification</li>
+        </ul>
+      </div>
+    </div>
+    <div class="sol-card">
+      <div class="sol-img"><img src="images/live/install-5545.webp" alt="An engineer servicing a rooftop solar array" loading="lazy" decoding="async" width="800" height="600"></div>
+      <div class="sol-body">
+        <h3>Repairs, service &amp; care plans</h3>
+        <p>We repair and maintain solar panels and battery storage, including systems we didn't install, so they keep running efficiently for decades.</p>
+        <ul>
+          <li>Fault finding, inverter &amp; optimiser repairs</li>
+          <li>Panel cleaning and performance checks</li>
+          <li>Annual care plans with remote monitoring</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="ctapair reveal">
+    <a href="#quote" class="btn-cta btn-cta--primary">Get A Free Quote <span class="ar" aria-hidden="true">&#8594;</span></a>
+    <a href="tel:01632960300" class="btn-cta btn-cta--ghost">Speak To Our Experts <span class="ar" aria-hidden="true">&#8594;</span></a>
+  </div>
+ </div>
+</section>
+
+<!-- 6. EQUIPMENT WE FIT -->
+<section id="equipment" class="band-umber">
+ <div class="wrap">
+  <div class="eq-head">
+    <div class="eyebrow reveal">What we fit</div>
+    <h2 class="reveal d1"><span class="uline">The panels and batteries we fit, named on your quote</span></h2>
+    <p class="lede reveal d1">We don't hide behind "premium components". Every quote names the exact panel, inverter and battery you're getting, with the warranty that comes with it.</p>
+  </div>
+  <div class="eq-grid stagger reveal">
+    <div class="eq-card">
+      <div class="eq-img"><img src="images/cta-sunset-panels.jpg" alt="A rooftop solar panel array catching low sun at the end of the day" loading="lazy" decoding="async" width="800" height="600"></div>
+      <div class="eq-body">
+        <div class="eq-k">Solar panels</div>
+        <h3>Aiko Gen 2 460W</h3>
+        <p>All black N type ABC panels with no visible busbars, our default choice for UK roofs where output per square metre matters.</p>
+        <ul class="eq-spec">
+          <li>460W per panel, 23.2% module efficiency</li>
+          <li>Strong shade tolerance from cell level design</li>
+          <li>30 year product &amp; performance warranty</li>
+        </ul>
+      </div>
+    </div>
+    <div class="eq-card">
+      <div class="eq-img"><img src="images/gr-prod-mono-panel.jpg" alt="Monocrystalline solar panels installed across a domestic roof" loading="lazy" decoding="async" width="1376" height="768"></div>
+      <div class="eq-body">
+        <div class="eq-k">Solar panels</div>
+        <h3>JA Solar 435W</h3>
+        <p>A proven tier one mono module that pairs high output with a slim all black frame, ideal for terraces and semis with limited roof area.</p>
+        <ul class="eq-spec">
+          <li>435W per panel, n type bifacial cells</li>
+          <li>Also available: LONGi, Jinko, Trina, REC Alpha</li>
+          <li>25 year performance warranty</li>
+        </ul>
+      </div>
+    </div>
+    <div class="eq-card">
+      <div class="eq-img"><img src="images/gr-prod-inverter-enclosure.jpg" alt="A wall mounted solar inverter and isolator enclosure" loading="lazy" decoding="async" width="1376" height="768"></div>
+      <div class="eq-body">
+        <div class="eq-k">Inverters</div>
+        <h3>SolarEdge &amp; Fox ESS hybrid</h3>
+        <p>Panel level optimisation from SolarEdge where shading is a factor, or Fox ESS hybrid inverters where a battery is going in from day one.</p>
+        <ul class="eq-spec">
+          <li>3.7kW, 5kW and 6kW hybrid options</li>
+          <li>Panel level monitoring &amp; shade mitigation</li>
+          <li>Also available: Enphase micro, SolaX, Growatt</li>
+        </ul>
+      </div>
+    </div>
+    <div class="eq-card">
+      <div class="eq-img"><img src="images/live/battery-wall.webp" alt="A wall mounted home battery storage unit" loading="lazy" decoding="async" width="800" height="600"></div>
+      <div class="eq-body">
+        <div class="eq-k">Battery storage</div>
+        <h3>Fox ESS ECS 5.8 to 14.5kWh</h3>
+        <p>Stackable lithium battery towers sized to your evening load, so the electricity you generated at midday still runs the house at nine.</p>
+        <ul class="eq-spec">
+          <li>5.76kWh modules, stack to 14.5kWh+</li>
+          <li>Off peak tariff charging built in</li>
+          <li>10 year warranty as standard</li>
+        </ul>
+      </div>
+    </div>
+    <div class="eq-card">
+      <div class="eq-img"><img src="images/gr-prod-home-battery.jpg" alt="A large capacity home battery installed in a utility space" loading="lazy" decoding="async" width="1376" height="768"></div>
+      <div class="eq-body">
+        <div class="eq-k">Battery storage</div>
+        <h3>Tesla Powerwall 3</h3>
+        <p>Integrated battery and solar inverter in a single unit, with whole home backup that keeps the lights on through a grid outage.</p>
+        <ul class="eq-spec">
+          <li>13.5kWh usable, 11.5kW continuous output</li>
+          <li>Whole home backup during power cuts</li>
+          <li>Also available: GivEnergy, Sigenergy, SunSynk</li>
+        </ul>
+      </div>
+    </div>
+    <div class="eq-card">
+      <div class="eq-img"><img src="images/gr-prod-ev-charger.jpg" alt="A home EV charge point mounted beside a driveway" loading="lazy" decoding="async" width="1376" height="768"></div>
+      <div class="eq-body">
+        <div class="eq-k">EV charging</div>
+        <h3>Ohme, Zappi &amp; Hypervolt</h3>
+        <p>OZEV approved 7.4kW charge points that talk to your solar and your tariff, charging the car on surplus generation or cheap overnight units.</p>
+        <ul class="eq-spec">
+          <li>Ohme Home Pro, myenergi Zappi, Hypervolt 3 Pro</li>
+          <li>Tesla Wall Connector &amp; Easee Home also fitted</li>
+          <li>5 year workmanship guarantee</li>
+        </ul>
+      </div>
+    </div>
+    <div class="eq-card">
+      <div class="eq-img"><img src="images/live/install-5254.webp" alt="Mounting rails and roof fixings being installed ahead of the panels" loading="lazy" decoding="async" width="800" height="600"></div>
+      <div class="eq-body">
+        <div class="eq-k">Mounting &amp; protection</div>
+        <h3>Roof fixings &amp; bird protection</h3>
+        <p>The parts nobody photographs but everybody needs, corrosion resistant rails, correctly flashed penetrations and mesh to keep pigeons out.</p>
+        <ul class="eq-spec">
+          <li>On roof, in roof, flat roof &amp; ground mount</li>
+          <li>Bird &amp; pest mesh fitted as standard</li>
+          <li>Scaffolding included in every fixed price</li>
+        </ul>
+      </div>
+    </div>
+    <div class="eq-card">
+      <div class="eq-img"><img src="images/i9-app-dashboard.jpg" alt="A solar generation and battery monitoring dashboard" loading="lazy" decoding="async" width="1376" height="768"></div>
+      <div class="eq-body">
+        <div class="eq-k">Monitoring</div>
+        <h3>Online monitoring &amp; app</h3>
+        <p>Every system ships with monitoring set up and registered before we leave, so you can see generation, usage and export from your phone.</p>
+        <ul class="eq-spec">
+          <li>Live generation, storage &amp; export figures</li>
+          <li>Remote fault alerts to our service team</li>
+          <li>MCS certificate &amp; warranty registration included</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="ctapair reveal">
+    <a href="#quote" class="btn-cta btn-cta--primary">Get A Free Quote <span class="ar" aria-hidden="true">&#8594;</span></a>
+    <a href="tel:01632960300" class="btn-cta btn-cta--ghost">Speak To Our Experts <span class="ar" aria-hidden="true">&#8594;</span></a>
+  </div>
+ </div>
+</section>
+
+<!-- 7. PACKAGES / PRICING -->
+
+
+<!-- 8. WHY CHOOSE US -->
+<section id="why" class="band-tint">
+ <div class="wrap">
+  <div class="why-head">
+    <div class="eyebrow reveal">Why Solar</div>
+    <h2 class="reveal d1"><span class="uline">Why homeowners choose us</span></h2>
+    <p class="reveal d1">Every install is handled end to end by our own accredited team, no subcontractors, no salespeople, no surprises on the invoice.</p>
+  </div>
+  <div class="why-grid stagger reveal">
+    <div class="why-card">
+      <div class="ic">✓</div>
+      <h3>Quality as standard</h3>
+      <p>Every job is completed to the highest standard using tier one components we'd fit in our own homes. We never cut corners to hit a price.</p>
+    </div>
+    <div class="why-card">
+      <div class="ic">£</div>
+      <h3>Fixed price, no hidden charges</h3>
+      <p>No salespeople, no pressure and no moving numbers. The fixed price quotation you receive is what you pay, with 0% VAT and finance available.</p>
+    </div>
+    <div class="why-card">
+      <div class="ic">◉</div>
+      <h3>Friendly local team</h3>
+      <p>Local engineers who explain the system in plain English rather than jargon, and who you can actually get on the phone after the install.</p>
+    </div>
+    <div class="why-card">
+      <div class="ic">⚑</div>
+      <h3>Fully qualified &amp; certified</h3>
+      <p>Our team are fully qualified electricians working to the latest standards, and we're MCS, NAPIT, RECC and TrustMark registered.</p>
+    </div>
+    <div class="why-card">
+      <div class="ic">⚙</div>
+      <h3>Repairs &amp; maintenance</h3>
+      <p>We repair and maintain solar panels and battery storage, including systems installed by others, so they keep running efficiently for decades.</p>
+    </div>
+    <div class="why-card">
+      <div class="ic">♥</div>
+      <h3>Superior warranties</h3>
+      <p>30 year panel performance cover, 10 year battery warranties and an insurance backed workmanship guarantee that covers the whole installation.</p>
+    </div>
+  </div>
+
+  <div class="ctapair reveal">
+    <a href="#quote" class="btn-cta btn-cta--primary">Get A Free Quote <span class="ar" aria-hidden="true">&#8594;</span></a>
+    <a href="tel:01632960300" class="btn-cta btn-cta--ghost">Speak To Our Experts <span class="ar" aria-hidden="true">&#8594;</span></a>
+  </div>
+ </div>
+</section>
+
+<!-- 9. STATS -->
+<section id="stats" class="band-dark">
+ <div class="wrap">
+  <div class="stats">
+    <div class="stats-head reveal">
+      <div class="eyebrow">By the numbers</div>
+      <h2><span class="uline">Twenty years on British roofs</span></h2>
+      <p>We've been designing and fitting solar in the UK since before it was fashionable, and we still service every system we've ever installed.</p>
+      <div class="ctapair" style="margin-top:36px">
+        <a href="#projects" class="btn-cta btn-cta--primary">See Our Projects <span class="ar" aria-hidden="true">&#8594;</span></a>
+        <a href="tel:01632960300" class="btn-cta btn-cta--ghost">Speak To Our Experts <span class="ar" aria-hidden="true">&#8594;</span></a>
+      </div>
+    </div>
+    <div class="stats-media reveal-blur"><img src="images/i9-stats-terrace-street.png" alt="A street of terraced homes fitted with rooftop solar panels" loading="lazy" decoding="async" width="1535" height="1024"></div>
+    <div class="stats-list reveal d1 countup">
+      <div class="st"><div class="big">20+</div><div class="sub">Years designing and installing solar PV across the United Kingdom.</div></div>
+      <div class="st"><div class="big">1,600+</div><div class="sub">Homes and businesses now running on a Solar system.</div></div>
+      <div class="st"><div class="big">18,000+</div><div class="sub">Panels fitted, more than 6,500 kWp of generating capacity.</div></div>
+      <div class="st"><div class="big">£1,260</div><div class="sub">Average yearly bill saving once solar and battery are combined.</div></div>
+    </div>
+  </div>
+ </div>
+</section>
+
+<!-- 10. PROJECTS -->
+<section id="projects" class="band-tint">
+ <div class="wrap">
+  <div class="gallery-head">
+    <div>
+      <div class="eyebrow reveal">Our projects</div>
+      <h2 class="reveal d1"><span class="uline">Recent installations across Britain</span></h2>
+    </div>
+    <p class="reveal d1">Real Solar systems, Victorian terraces, stone cottages, working farms and new build estates, all fitted by our own accredited engineers.</p>
+  </div>
+  <div class="gallery-grid stagger reveal">
+    <div class="gitem wide tall"><img src="images/gallery-newbuild-cotswold.png" alt="A new build home with a full rooftop solar array and installer van on the drive" loading="lazy" decoding="async" width="1536" height="1024"><div class="cap">New build · Cotswolds · 6.4kWp + 14.5kWh battery</div></div>
+    <div class="gitem"><img src="images/gallery-stonehouse-glos.jpg" alt="Traditional stone cottage with roof mounted solar panels" loading="lazy" decoding="async" width="1376" height="768"><div class="cap">Stone cottage · Gloucestershire · 3.68kWp</div></div>
+    <div class="gitem"><img src="images/i9-project-farm-burntstalks.jpg" alt="A large solar array on agricultural barn roofs" loading="lazy" decoding="async" width="1376" height="768"><div class="cap">Working farm · Norfolk · 48kWp barn array</div></div>
+    <div class="gitem wide"><img src="images/gallery-newbuild-estate.png" alt="A new build housing estate at dusk with solar panels across every roof" loading="lazy" decoding="async" width="1535" height="1024"><div class="cap">New build estate · 3.8kWp per home · 42 plots</div></div>
+    <div class="gitem"><img src="images/i9-project-school-telford.jpg" alt="A school building with a large rooftop solar installation" loading="lazy" decoding="async" width="1376" height="768"><div class="cap">Primary school · Telford · 30kWp commercial</div></div>
+    <div class="gitem"><img src="images/gallery-victorian-semi.jpg" alt="Victorian semi detached house fitted with rooftop solar panels" loading="lazy" decoding="async" width="1376" height="768"><div class="cap">Victorian semi · London · 4.1kWp + 5.8kWh</div></div>
+  </div>
+
+  <div class="pjbelt reveal" style="margin-top:56px">
+    <div class="pj-view">
+      <div class="pj-track" id="pjTrack">
+        <div class="pj-card">
+          <div class="pj-img"><img src="images/i9-project-bungalow-battery.jpg" alt="A bungalow with solar panels and a garage battery installation" loading="lazy" decoding="async" width="1376" height="768"></div>
+          <div class="pj-body">
+            <div class="pj-k">Retrofit battery</div>
+            <h3>Bungalow battery retrofit</h3>
+            <p>An existing six year old array was generating well but exporting most of it. We added a hybrid inverter and battery so the evening runs on stored sunshine.</p>
+            <div class="pj-spec"><span><b>8.7kWh</b> storage</span><span><b>1 day</b> on site</span></div>
+          </div>
+        </div>
+        <div class="pj-card">
+          <div class="pj-img"><img src="images/i9-project-carport-sheringham.jpg" alt="A solar carport structure with panels forming the roof" loading="lazy" decoding="async" width="1376" height="768"></div>
+          <div class="pj-body">
+            <div class="pj-k">Solar carport</div>
+            <h3>Solar carport &amp; EV point</h3>
+            <p>No suitable roof pitch, so the array went on a purpose built carport with an OZEV charge point wired to charge the car on surplus generation.</p>
+            <div class="pj-spec"><span><b>5.5kWp</b> array</span><span><b>7.4kW</b> charger</span></div>
+          </div>
+        </div>
+        <div class="pj-card">
+          <div class="pj-img"><img src="images/i9-project-kilwinning-scotland.jpg" alt="A detached Scottish home with a rooftop solar installation" loading="lazy" decoding="async" width="1376" height="768"></div>
+          <div class="pj-body">
+            <div class="pj-k">Shaded roof</div>
+            <h3>Chimney shaded detached</h3>
+            <p>A chimney shaded two panels for most of the morning, so we specified panel level optimisers to stop one shaded module dragging down the string.</p>
+            <div class="pj-spec"><span><b>4.6kWp</b> array</span><span><b>Optimisers</b> fitted</span></div>
+          </div>
+        </div>
+        <div class="pj-card">
+          <div class="pj-img"><img src="images/i9-project-stone-detached.png" alt="A stone built detached home with panels across the rear roof" loading="lazy" decoding="async" width="1408" height="768"></div>
+          <div class="pj-body">
+            <div class="pj-k">Listed area</div>
+            <h3>Conservation area stone home</h3>
+            <p>All black frameless modules on the rear elevation only, keeping the street facing roof untouched and the planners satisfied.</p>
+            <div class="pj-spec"><span><b>5.0kWp</b> array</span><span><b>All black</b> modules</span></div>
+          </div>
+        </div>
+        <div class="pj-card">
+          <div class="pj-img"><img src="images/i9-project-newbuild-detached.png" alt="A modern detached new build home with an integrated solar array" loading="lazy" decoding="async" width="1536" height="1024"></div>
+          <div class="pj-body">
+            <div class="pj-k">Whole home backup</div>
+            <h3>New build with backup power</h3>
+            <p>A rural property with an unreliable supply. The battery was specified with whole home backup, so a grid outage no longer means a dark house.</p>
+            <div class="pj-spec"><span><b>7.4kWp</b> array</span><span><b>13.5kWh</b> backup</span></div>
+          </div>
+        </div>
+        <div class="pj-card">
+          <div class="pj-img"><img src="images/i9-project-family-home.png" alt="A family home with a completed rooftop solar and battery system" loading="lazy" decoding="async" width="1536" height="1024"></div>
+          <div class="pj-body">
+            <div class="pj-k">EV household</div>
+            <h3>Two car EV household</h3>
+            <p>Two electric cars and a heat pump meant a large array and a big battery. Charging is now matched to generation and cheap overnight units.</p>
+            <div class="pj-spec"><span><b>7.36kWp</b> array</span><span><b>14.5kWh</b> storage</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pj-nav">
+      <button id="pjPrev" type="button" aria-label="Previous projects">←</button>
+      <button id="pjNext" type="button" aria-label="Next projects">→</button>
+    </div>
+  </div>
+
+  <div class="ctapair reveal">
+    <a href="#quote" class="btn-cta btn-cta--primary">Get A Free Quote <span class="ar" aria-hidden="true">&#8594;</span></a>
+    <a href="tel:01632960300" class="btn-cta btn-cta--ghost">Speak To Our Experts <span class="ar" aria-hidden="true">&#8594;</span></a>
+  </div>
+ </div>
+</section>
+
+<!-- 11. REVIEWS -->
+<section id="reviews" class="band-dark">
+ <div class="wrap">
+  <div class="why-head">
+    <div class="eyebrow reveal">Reviews</div>
+    <h2 class="reveal d1"><span class="uline">What our customers say</span></h2>
+    <p class="reveal d1">Rated 4.9 out of 5 across 2,300+ reviews. Here's what homeowners say once the scaffolding has come down.</p>
+  </div>
+
+  <div class="rvbelt reveal">
+    <div class="rv-view">
+      <div class="rv-track" id="rvTrack">
+        <div class="r-card">
+          <div class="rstars">★★★★★</div>
+          <p>"They keep you informed, fair price. Had Karl to do the work this time, he was brilliant, even set up the water feature for me. Highly recommend."</p>
+          <div class="rwho"><div class="rav">I</div><div><div class="rnm">Iren Jepsen</div><div class="rrole">Solar &amp; battery install</div></div></div>
+        </div>
+        <div class="r-card">
+          <div class="rstars">★★★★★</div>
+          <p>"I was kept informed by email and replies were given after all the forms and images were sent. The electricians arrived almost to the minute and carried out the task very professionally."</p>
+          <div class="rwho"><div class="rav">B</div><div><div class="rnm">Barry Garment</div><div class="rrole">Solar PV installation</div></div></div>
+        </div>
+        <div class="r-card">
+          <div class="rstars">★★★★★</div>
+          <p>"The lads doing the install did a great job. They have a portal where you can see all the communication from the initial quote through to install if they're waiting on something from you."</p>
+          <div class="rwho"><div class="rav">S</div><div><div class="rnm">Stephen Lee</div><div class="rrole">Solar &amp; EV charger</div></div></div>
+        </div>
+        <div class="r-card">
+          <div class="rstars">★★★★★</div>
+          <p>"As always professional and courteous. Happy to recommend them, thanks, as always, for a five star service."</p>
+          <div class="rwho"><div class="rav">A</div><div><div class="rnm">Ame Lowe</div><div class="rrole">Repeat customer</div></div></div>
+        </div>
+        <div class="r-card">
+          <div class="rstars">★★★★★</div>
+          <p>"After encountering several other electricians promising calls back that never came, these were straightforward from the first phone call to the finished job."</p>
+          <div class="rwho"><div class="rav">J</div><div><div class="rnm">James Marshall</div><div class="rrole">EV charge point</div></div></div>
+        </div>
+        <div class="r-card">
+          <div class="rstars">★★★★★</div>
+          <p>"Booked on the website with a follow up call to check everything. Simple, efficient service that gives you confidence in their knowledge and expertise."</p>
+          <div class="rwho"><div class="rav">R</div><div><div class="rnm">Richard Moorcroft</div><div class="rrole">Solar PV installation</div></div></div>
+        </div>
+        <div class="r-card">
+          <div class="rstars">★★★★★</div>
+          <p>"Having been let down at the last hour by two other installers, I turned to this team and they had it sorted within the week. Faultless."</p>
+          <div class="rwho"><div class="rav">R</div><div><div class="rnm">Robert Tingle</div><div class="rrole">Battery retrofit</div></div></div>
+        </div>
+        <div class="r-card">
+          <div class="rstars">★★★★★</div>
+          <p>"I've used them three times in the past year and a half, solar, a consumer unit upgrade and a charger. Same standard every time."</p>
+          <div class="rwho"><div class="rav">J</div><div><div class="rnm">James McGinty</div><div class="rrole">Repeat customer</div></div></div>
+        </div>
+        <div class="r-card">
+          <div class="rstars">★★★★★</div>
+          <p>"Annual saving of £2,445 on a solar and battery system generating 11,276 kWh a year. Payback worked out at five years and nine months."</p>
+          <div class="rwho"><div class="rav">P</div><div><div class="rnm">Paul Lamb</div><div class="rrole">Solar PV &amp; battery storage</div></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="rv-nav">
+      <button id="rvPrev" type="button" aria-label="Previous reviews">←</button>
+      <button id="rvNext" type="button" aria-label="Next reviews">→</button>
+    </div>
+  </div>
+
+  <div class="ctapair reveal">
+    <a href="#quote" class="btn-cta btn-cta--primary">Get A Free Quote <span class="ar" aria-hidden="true">&#8594;</span></a>
+    <a href="tel:01632960300" class="btn-cta btn-cta--ghost">Speak To Our Experts <span class="ar" aria-hidden="true">&#8594;</span></a>
+  </div>
+ </div>
+</section>
+
+<!-- 12. GUARANTEE -->
+<section class="guarantee">
+  <div class="gbg"><img src="images/guarantee-otterbourne-aerial.jpg" alt="Aerial view of an English home with a full rooftop solar array in summer" loading="lazy" decoding="async" width="1408" height="768"></div>
+  <div class="wrap">
+    <div class="inner">
+      <div class="reveal">
+        <div class="eyebrow">Our promise</div>
+        <h2><span class="uline">Zero risk. Total peace of mind.</span></h2>
+        <p>Every Solar installation is backed by guarantees that protect your investment for decades, and by an insurance backed warranty that stands even if we don't.</p>
+        <div class="ctapair" style="margin-top:0">
+          <a href="#quote" class="btn-cta btn-cta--primary">Get A Free Quote <span class="ar" aria-hidden="true">&#8594;</span></a>
+          <a href="tel:01632960300" class="btn-cta btn-cta--ghost">Speak To Our Experts <span class="ar" aria-hidden="true">&#8594;</span></a>
+        </div>
+      </div>
+      <div class="gpoints stagger reveal">
+        <div class="gpoint"><div class="gnum">01</div><div><h4>Fixed price guarantee</h4><p>The quotation you're given is the price you pay, scaffolding, DNO application and certification included. No hidden costs, ever.</p></div></div>
+        <div class="gpoint"><div class="gnum">02</div><div><h4>30 year panel performance warranty</h4><p>Your panels are guaranteed to keep performing to specification for three decades, with a 10 year warranty on battery storage.</p></div></div>
+        <div class="gpoint"><div class="gnum">03</div><div><h4>Insurance backed workmanship</h4><p>Our workmanship guarantee is underwritten by an independent insurer, so your cover holds regardless of what happens to us.</p></div></div>
+        <div class="gpoint"><div class="gnum">04</div><div><h4>Aftercare that answers the phone</h4><p>Remote monitoring flags a fault before you notice it, and our own service team, not a call centre, puts it right.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 13. FAQ -->
+<section id="faq" class="band-white">
+ <div class="wrap">
+  <div class="faq-head">
+    <div class="eyebrow reveal">Questions</div>
+    <h2 class="reveal d1"><span class="uline">Frequently asked questions</span></h2>
+    <p class="reveal d1">The questions our surveyors get asked most often. If yours isn't here, call us, we'd rather talk it through than sell you something you don't need.</p>
+  </div>
+  <div class="faq-wrap stagger reveal">
+    <div class="faq-item open">
+      <button class="faq-q" type="button">How much does a solar panel system cost? <span class="sign">+</span></button>
+      <div class="faq-a"><p>A typical UK residential system runs from around £7,100 for a 3.68kWp array up to £9,695 for 7.36kWp, fully installed. Adding battery storage is roughly £1,200 more depending on capacity. Every Solar quote is fixed price with 0% VAT on domestic installations, and finance is available to spread the cost.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button">Are solar panels actually worth it in the UK? <span class="sign">+</span></button>
+      <div class="faq-a"><p>Yes, for most homes. A typical household saves around £1,260 a year once solar and battery are combined with the Smart Export Guarantee, which puts payback in the region of six to eight years on a system designed to last 25 to 30. Your surveyor will model your actual figures from your bills rather than a national average.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button">Do solar panels work on cloudy British days? <span class="sign">+</span></button>
+      <div class="faq-a"><p>They do. Modern panels generate from diffuse daylight, not just direct sun, so an overcast day still produces, just less than a bright one. A home battery smooths this out by storing surplus from sunnier periods for use whenever you need it, day or night.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button">How long does an installation take? <span class="sign">+</span></button>
+      <div class="faq-a"><p>Most domestic systems are fitted, commissioned and switched on within a single day. Larger arrays, battery retrofits or jobs needing a consumer unit upgrade may run to two. Scaffolding usually goes up the day before and comes down a day or two after, we agree the whole schedule with you in advance.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button">Will solar panels work during a power cut? <span class="sign">+</span></button>
+      <div class="faq-a"><p>A standard solar system shuts down in an outage for the safety of engineers working on the network. If keeping power on matters to you, we can specify a battery with whole home backup, such as the Tesla Powerwall 3, which islands your home from the grid and keeps essential circuits running.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button">Do I need planning permission? <span class="sign">+</span></button>
+      <div class="faq-a"><p>For the vast majority of UK homes, solar falls under permitted development and needs no planning application. Listed buildings and conservation areas are the exception, and we'll tell you at survey stage if yours is affected. We handle the DNO notification and MCS registration either way.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button">What maintenance do solar panels need? <span class="sign">+</span></button>
+      <div class="faq-a"><p>Very little. British rain keeps panels reasonably clean, and there are no moving parts. We recommend a performance check every few years and a clean if output drifts, and our care plans include remote monitoring that flags a fault before you'd spot it on your bill.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button">How do I know which battery size I need? <span class="sign">+</span></button>
+      <div class="faq-a"><p>It comes down to your evening consumption, not your roof. We look at your half hourly usage and size the battery to cover the load between sunset and bedtime, usually 5.8kWh for a smaller home, 8.7kWh for a family, and 14.5kWh where there's an EV or heat pump. Batteries are stackable, so you can add capacity later.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button">Can you service a system another company installed? <span class="sign">+</span></button>
+      <div class="faq-a"><p>Yes. We repair and maintain solar arrays and battery storage regardless of who fitted them, inverter faults, failed optimisers, monitoring that stopped reporting, or an installer who's since gone out of business. Call us with the make and model and we'll tell you honestly whether it's worth repairing.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button">What is the Smart Export Guarantee? <span class="sign">+</span></button>
+      <div class="faq-a"><p>It's the scheme that pays you for electricity you export back to the grid. Rates vary by supplier, so it's worth shopping around once you're generating. We register your system and provide the MCS certificate you need to claim, so you can start earning from day one.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button">Do you offer finance? <span class="sign">+</span></button>
+      <div class="faq-a"><p>Yes, payment plans are available on all our packages, typically spread over 24 months, and often the monthly repayment sits close to what you're currently paying your energy supplier. We introduce customers to a regulated credit broker and do not provide financial advice; finance is subject to status and credit checks.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button">Will panels damage or leak through my roof? <span class="sign">+</span></button>
+      <div class="faq-a"><p>Not when they're fitted properly. Every roof penetration is flashed and sealed to the same standard as a roofer would use, and we fit bird and pest mesh as standard to stop pigeons nesting underneath. Our workmanship guarantee is insurance backed, so the roof is covered as well as the kit.</p></div>
+    </div>
+  </div>
+
+  <div class="ctapair reveal">
+    <a href="#quote" class="btn-cta btn-cta--primary">Get A Free Quote <span class="ar" aria-hidden="true">&#8594;</span></a>
+    <a href="tel:01632960300" class="btn-cta btn-cta--ghost">Speak To Our Experts <span class="ar" aria-hidden="true">&#8594;</span></a>
+  </div>
+ </div>
+</section>
+
+<!-- 14. FINAL CTA (full-bleed) -->
+<section id="quote" class="join reveal">
+  <div class="bg"><img src="images/cta-sunset-panels.jpg" alt="Rooftop solar panels silhouetted against a golden British sunset" loading="lazy" decoding="async" width="1344" height="768"></div>
+  <div class="inner-wrap">
+    <div class="join-content" style="max-width:600px">
+      <h2>Get your fixed price</h2>
+      <p>Answer a few questions online to see indicative prices, then book a free, no obligation home survey. We'll confirm your savings, hand you a fixed quotation and leave you to think about it.</p>
+      <div class="actions">
+        <a href="#" class="btn btn-dark">Start your online quote <span class="arw">→</span></a>
+        <a href="tel:01632960300" class="btn btn-light">Call 01632 960 300 <span class="arw">→</span></a>
+      </div>
+      <div class="jpoints">
+        <div><b>Free</b>No obligation survey</div>
+        <div><b>Fixed</b>Price, in writing</div>
+        <div><b>0% VAT</b>On domestic installs</div>
+        <div><b>MCS</b>Certified installer</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-cta">
+      <h2>Ready to power your home with British sunshine?</h2>
+      <a href="#quote" class="btn btn-light">Get a free quote <span class="arw">→</span></a>
+    </div>
+    <div class="foot-grid">
+      <div class="foot-col">
+        <div class="big">Solar</div>
+        <div class="addr">Solar Ltd<br>Unit 12, Kelvin Court<br>Manchester, M50 3XP<br>01632 960 300</div>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="#why">About us</a><a href="#projects">Our projects</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a><a href="#quote">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4>Services</h4>
+        <a href="#solutions">Solar panels</a><a href="#solutions">Battery storage</a><a href="#solutions">EV charging</a><a href="#solutions">Electrical works</a><a href="#solutions">Repairs &amp; care plans</a>
+      </div>
+      <div class="foot-col">
+        <h4>Legal</h4>
+        <a href="#">Privacy policy</a><a href="#">Terms &amp; conditions</a><a href="#">Complaints procedure</a><a href="#">Accreditations</a>
+      </div>
+    </div>
+
+    <div class="foot-ops">
+      <div>
+        <h4>Opening hours</h4>
+        <p>
+          <span class="oh"><span>Mon to Fri</span><span>07:00 to 19:00</span></span>
+          <span class="oh"><span>Saturday</span><span>08:30 to 16:30</span></span>
+          <span class="oh"><span>Sunday</span><span>Closed</span></span>
+          <span class="oh"><span>Emergency callout</span><span>24/7</span></span>
+        </p>
+      </div>
+      <div>
+        <h4>Office</h4>
+        <address>
+          Solar Ltd<br>
+          Unit 12, Kelvin Court<br>
+          Manchester M50 3XP</address>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>
+          <a href="tel:01632960300">01632 960 300</a><br>
+          Survey bookings within 5 working days
+        </p>
+      </div>
+      <div>
+        <h4>Accreditations</h4>
+        <p>
+          MCS Certified (Low Carbon Technology) &middot; NAPIT Registered &middot; NICEIC Approved Contractor &middot; RECC Member &middot; TrustMark Registered Business &middot; HIES Insured &middot; OZEV Approved Installer &middot; Insurance Backed Workmanship Warranty &middot; Approved Code &middot; UKAS Accredited Certification
+        </p>
+      </div>
+    </div>
+
+    <div class="foot-accredline">
+      <b>Finance:</b> Solar Ltd is an Introducer Appointed Representative of a regulated credit broker. The credit broker is not a lender (FRN 111111). Finance is available subject to status. The rate offered is always provisional and will depend upon your personal circumstances, the loan amount and the term.
+    </div>
+
+    <p class="foot-credit">
+      Photography: UK images from Wikimedia Commons and Geograph Britain &amp; Ireland, used under CC BY / CC BY-SA
+      and CC0 licences, see <a href="images/CREDITS.md">images/CREDITS.md</a> for per image attribution.
+      Brand and accreditation marks are the property of their respective owners and are shown for identification only.
+    </p>
+
+    <div class="foot-bottom">
+      <span>&copy; 2026 We Build Trades Ltd. Demonstration template, sample content.</span>
+      <a href="#quote" class="pill">Book your free survey</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Reveal + stagger + underline observer
+  const animSel = '.reveal,.reveal-l,.reveal-r,.reveal-scale,.reveal-blur,.stagger,.uline';
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        // trigger count-up if this is the stats list
+        if(e.target.classList.contains('countup')) runCounters(e.target);
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:.12,rootMargin:"0px 0px -8% 0px"});
+  document.querySelectorAll(animSel).forEach(el=>io.observe(el));
+
+  // Scroll progress bar
+  const prog=document.getElementById('scrollProg');
+  function updateProg(){
+    const st=document.documentElement.scrollTop||document.body.scrollTop;
+    const sh=(document.documentElement.scrollHeight||document.body.scrollHeight)-document.documentElement.clientHeight;
+    prog.style.width=(sh>0?(st/sh)*100:0)+'%';
+  }
+  addEventListener('scroll',updateProg,{passive:true}); updateProg();
+
+  // Animated number counters (parses the text, keeps prefix/suffix)
+  function runCounters(scope){
+    scope.querySelectorAll('.big').forEach(el=>{
+      const raw=el.textContent.trim();
+      const m=raw.match(/^([^\d]*)([\d,]+(?:\.\d+)?)(.*)$/);
+      if(!m)return;
+      const prefix=m[1], numStr=m[2], suffix=m[3];
+      const target=parseFloat(numStr.replace(/,/g,''));
+      const hasComma=numStr.includes(',');
+      const dur=1400, start=performance.now();
+      function tick(now){
+        const p=Math.min(1,(now-start)/dur);
+        const eased=1-Math.pow(1-p,3);
+        let val=Math.floor(target*eased);
+        let out=hasComma?val.toLocaleString('en-GB'):String(val);
+        el.textContent=prefix+out+suffix;
+        if(p<1)requestAnimationFrame(tick);
+        else el.textContent=raw;
+      }
+      requestAnimationFrame(tick);
+    });
+  }
+
+  const nav=document.querySelector('.nav');
+  addEventListener('scroll',()=>{
+    if(scrollY>40){nav.classList.add('stuck');}else{nav.classList.remove('stuck');}
+  },{passive:true});
+
+  /* Mobile drawer: toggle, close on link tap / Escape / return to desktop. */
+  (()=>{
+    const btn=document.querySelector('.nav-toggle'),drawer=document.getElementById('navDrawer');
+    if(!nav||!btn||!drawer)return;
+    const setOpen=o=>{nav.classList.toggle('open',o);btn.setAttribute('aria-expanded',o?'true':'false');};
+    btn.addEventListener('click',()=>setOpen(!nav.classList.contains('open')));
+    drawer.addEventListener('click',e=>{if(e.target.closest('a'))setOpen(false);});
+    addEventListener('keydown',e=>{if(e.key==='Escape')setOpen(false);});
+    addEventListener('resize',()=>{if(innerWidth>1080)setOpen(false);});
+  })();
+
+  const tabs=[...document.querySelectorAll('.tab')];
+  const steps=[...document.querySelectorAll('.step')];
+  tabs.forEach((t,i)=>t.addEventListener('click',()=>{tabs.forEach(x=>x.classList.remove('active'));t.classList.add('active');steps[i]?.scrollIntoView({behavior:'smooth',block:'center'});}));
+
+  // Parallax: hero + any [data-parallax]
+  const heroImg=document.querySelector('.hero .bg img');
+  const plx=[...document.querySelectorAll('[data-parallax]')];
+  addEventListener('scroll',()=>{
+    const y=scrollY;
+    if(y<900&&heroImg)heroImg.style.transform=`scale(1.1) translateY(${y*0.18}px)`;
+    plx.forEach(el=>{
+      const r=el.getBoundingClientRect();
+      const off=(r.top+r.height/2-innerHeight/2)*-0.06;
+      el.style.transform=`translateY(${off}px) scale(1.06)`;
+    });
+  },{passive:true});
+
+  /* ============================================================
+     Looping belt: reviews and projects.
+     Clones the card set once, steps one card per click, and
+     repositions silently at the wrap point so the loop is seamless.
+     ============================================================ */
+  (function(){
+    function belt(trackId, prevId, nextId){
+      const track=document.getElementById(trackId),
+            prev=document.getElementById(prevId),
+            next=document.getElementById(nextId);
+      if(!track||!prev||!next) return;
+      const originals=[...track.children];
+      const count=originals.length;
+      if(!count) return;
+      originals.forEach(function(card){
+        const clone=card.cloneNode(true);
+        clone.setAttribute('aria-hidden','true');
+        track.appendChild(clone);
+      });
+      const GAP=26;
+      let index=0, busy=false;
+      function stride(){ return originals[0].getBoundingClientRect().width + GAP; }
+      function place(animate){
+        track.style.transition = animate ? '' : 'none';
+        track.style.transform  = 'translateX(' + (-stride()*index) + 'px)';
+        if(!animate){ void track.offsetWidth; track.style.transition=''; }
+      }
+      function go(dir){
+        if(busy) return;
+        if(dir<0 && index===0){ index=count; place(false); }
+        busy=true; index+=dir; place(true);
+        setTimeout(function(){
+          if(index>=count){ index-=count; place(false); }
+          busy=false;
+        }, 640);
+      }
+      next.addEventListener('click',function(){go(1);});
+      prev.addEventListener('click',function(){go(-1);});
+      addEventListener('resize',function(){place(false);});
+    }
+    belt('rvTrack','rvPrev','rvNext');
+    belt('pjTrack','pjPrev','pjNext');
+  })();
+
+  // FAQ accordion
+  (function(){
+    const items=[...document.querySelectorAll('.faq-item')];
+    function setOpen(item,open){
+      const a=item.querySelector('.faq-a');
+      if(open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}
+      else{item.classList.remove('open');a.style.maxHeight='0px';}
+    }
+    items.forEach(item=>{
+      const q=item.querySelector('.faq-q');
+      if(item.classList.contains('open')) setOpen(item,true);
+      q.addEventListener('click',()=>{
+        const isOpen=item.classList.contains('open');
+        items.forEach(x=>setOpen(x,false));
+        setOpen(item,!isOpen);
+      });
+    });
+    addEventListener('resize',()=>{const o=document.querySelector('.faq-item.open');if(o){const a=o.querySelector('.faq-a');a.style.maxHeight=a.scrollHeight+'px';}});
+  })();
+</script>
+</body>
+</html>
