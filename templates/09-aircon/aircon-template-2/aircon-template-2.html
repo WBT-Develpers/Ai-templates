@@ -1,0 +1,1830 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aircon: Air Conditioning Designed for British Homes</title>
+<meta name="description" content="Aircon delivers expert air conditioning unit installations, heat pump systems and cool comfort solutions for homes and businesses across Britain.">
+
+<!-- Motion gate. Every animated rule in the sheet below is behind `.anim` on
+     <html>, and only this line adds it. So the page has two safe fallbacks
+     built in rather than bolted on: with JS disabled the class never lands,
+     and with prefers-reduced-motion set it is deliberately withheld - either
+     way nothing is hidden by an entrance that will never play. It runs here,
+     before the stylesheet, so there is no flash of the un-animated state. -->
+<script>
+  try{
+    if(!window.matchMedia||!matchMedia("(prefers-reduced-motion: reduce)").matches){
+      document.documentElement.className+=" anim";
+    }
+  }catch(e){}
+</script>
+
+<style>
+:root{
+  --forest:#12352A; --forest-2:#1B4636; --forest-3:#245A46;
+  --sage:#DCE6DC; --sage-2:#CEDCCE; --cream:#F4F1E8; --paper:#FFFFFF;
+  --terra:#C0562F; --terra-d:#A5461F;
+  /* the bright terracotta clears 3:1 as a fill or glyph but not 4.5:1 as small
+     text on sage or cream, so text uses the dark step */
+  --terra-t:#9E4423; --terra-l:#E09A72;
+  --ink:#1D2B24; --muted:#52625A; --dim:#A9BCAE; --line:#C7D5C7; --line-d:rgba(255,255,255,.16);
+  --display:'Playfair Display','Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --body:'Inter',-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+  --wrap:1440px; --pad:clamp(16px,3.4vw,44px);
+  --rail:clamp(30px,4vw,62px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+h1,h2,h3{margin:0;font-family:var(--display);font-weight:400;line-height:1.1}
+p{margin:0} ul{margin:0;padding:0;list-style:none}
+:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:var(--pad)}
+.sec{padding-block:clamp(16px,2.2vw,32px)}
+.im{background-image:var(--img,none),linear-gradient(150deg,#9fb3a4,#245A46);
+  background-size:cover;background-position:center;background-repeat:no-repeat}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:12px 24px;border:1px solid transparent;border-radius:3px;
+  font-size:13.2px;font-weight:600;cursor:pointer;transition:.2s}
+.btn-t{background:var(--terra);color:#fff}
+.btn-t:hover{background:var(--terra-d)}
+.btn-ghost{border-color:rgba(255,255,255,.7);color:#fff;background:transparent}
+.btn-ghost:hover{background:rgba(255,255,255,.14)}
+.icon{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.15;
+  stroke-linecap:round;stroke-linejoin:round}
+.h2{font-size:clamp(19px,2vw,29px);line-height:1.14}
+.eyebrow{font-family:var(--body);font-size:13px;letter-spacing:.16em;
+  text-transform:uppercase;font-weight:700;color:var(--terra-t)}
+/* the numbered rail that runs down the left edge, one marker per band */
+/* the left rail existed only to hold the numbered .mk marks, which have been
+   removed, so .banded no longer insets its content */
+.banded{position:relative}
+
+/* ── 01 nav ── */
+.nav{background:var(--forest);color:#EFEDE3;position:sticky;top:0;z-index:70}
+/* the BAR stays full bleed (.nav carries the background); its CONTENTS sit on
+   the page container, so the logo lines up with the copy below it. It used to
+   be pushed right by --rail instead, which vanished with the numbered marks. */
+.nav-in{display:flex;align-items:center;gap:clamp(10px,1.5vw,24px);height:60px;
+  max-width:var(--wrap);padding-inline:var(--pad)}
+.brand{display:flex;align-items:center;gap:10px;white-space:nowrap}
+.brand .mkl{width:28px;height:28px;flex:0 0 28px;color:var(--terra-l)}
+.brand b{font-family:var(--display);font-size:19px;letter-spacing:.1em;font-weight:400}
+.nav-links{display:flex;gap:clamp(9px,1.2vw,20px);margin-left:auto;font-size:13px}
+.nav-links a{padding:5px 0;border-bottom:2px solid transparent;opacity:.9}
+.nav-links a:hover,.nav-links a.on{opacity:1;color:#fff;border-bottom-color:var(--terra-l)}
+.nav-tel{display:inline-flex;align-items:center;gap:8px;font-size:13.4px;font-weight:600;white-space:nowrap}
+.nav-tel .icon{width:16px;height:16px;stroke-width:1.8;color:var(--terra-l)}
+.burger{display:none;background:none;border:0;padding:8px;cursor:pointer;color:inherit}
+.burger span{display:block;width:22px;height:2px;background:currentColor;margin:5px 0}
+
+/* ── 02 hero ── */
+.hero{background:var(--forest);color:#EFEDE3;position:relative;
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.28fr);align-items:center}
+.hero-copy{padding:clamp(22px,3.2vw,48px) clamp(16px,2vw,34px) clamp(22px,3.2vw,48px)
+  max(calc(var(--pad) + var(--rail)),calc(100% - (var(--wrap)/2) + var(--pad) + var(--rail)))}
+.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.4);
+  border-radius:999px;padding:6px 15px;font-size:13px;margin-bottom:16px}
+.pill .icon{width:13px;height:13px;stroke:var(--terra-l);stroke-width:2.8}
+.hero h1{font-size:clamp(29px,3.9vw,53px);line-height:1.07}
+.hero h1 em{font-style:normal;color:var(--terra-l);display:block}
+.hero p.sub{margin-top:14px;font-size:14px;max-width:38ch;line-height:1.62;color:#C6D2C6}
+.hero-cta{display:flex;flex-wrap:wrap;gap:11px;margin-top:22px}
+.hero-shot{position:relative;align-self:stretch;min-height:clamp(250px,30vw,400px);
+  overflow:hidden;background:var(--forest-2)}
+/* the hero is a video now, not a .im background layer. object-fit:cover makes
+   the 16:9 source fill a panel that is not 16:9, and the explicit height is
+   what stops a 1920x1080 element dictating the row height. */
+.hero-shot .hero-vid{position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center;display:block}
+/* ── 03 strip ── */
+.strip{background:var(--cream);padding-block:clamp(12px,1.6vw,22px)}
+.strip-in{display:grid;grid-template-columns:auto minmax(0,3.4fr);
+  gap:clamp(12px,2vw,34px);align-items:center}
+.strip h2{font-family:var(--display);font-size:clamp(14px,1.5vw,21px);line-height:1.2}
+/* Logo marquee. Two rails, both travelling left, at different speeds so the
+   rows do not read as one solid block sliding past.
+
+   The track holds five copies of the group and moves -20% (exactly one group
+   width), so the frame it ends on is identical to the one it started on and
+   the loop is invisible. Five copies is sized for a 3840px rail: the group is
+   ~1050px there against a ~3385px rail, and the track must exceed rail + group
+   or a gap opens at the tail of every cycle. */
+.lgmq{display:grid;gap:clamp(8px,1vw,16px);min-width:0}
+.lgmq__row{position:relative;overflow:hidden}
+.lgmq__track{display:flex;width:max-content;mix-blend-mode:multiply;
+  animation:lgmqRun 44s linear infinite;will-change:transform}
+.lgmq__row:nth-child(2) .lgmq__track{animation-duration:56s}
+@keyframes lgmqRun{
+  from{transform:translate3d(0,0,0)}
+  to  {transform:translate3d(-20%,0,0)}
+}
+.lgmq__grp{display:flex;align-items:center;flex:0 0 auto}
+.lgmq__grp>span{flex:0 0 auto;width:clamp(110px,9vw,150px);height:46px;
+  display:grid;place-items:center;padding-inline:clamp(4px,.7vw,12px)}
+/* a definite height on every mark - a viewBox-only SVG resolves to 0x0 in a
+   shrink-to-fit tile otherwise */
+.lgmq img{height:24px;width:auto;max-width:100%;object-fit:contain;display:block}
+.lgmq img.sq{height:38px}
+.lgmq img.wide{height:19px}
+/* soft ends so marks do not shear off at the rail edge. Explicit rgba rather
+   than `transparent`, which interpolates through grey and greys the fade. */
+.lgmq__row::before,.lgmq__row::after{content:"";position:absolute;top:0;bottom:0;
+  width:clamp(20px,3.4vw,58px);z-index:2;pointer-events:none}
+.lgmq__row::before{left:0;background:linear-gradient(90deg,var(--cream),rgba(244,241,232,0))}
+.lgmq__row::after{right:0;background:linear-gradient(270deg,var(--cream),rgba(244,241,232,0))}
+/* No hover behaviour on this section by request - the rails keep running
+   whatever the pointer is doing. (The focus-within pause that sat here went
+   with it; nothing inside the rails is focusable, so it never fired anyway.) */
+@media(prefers-reduced-motion:reduce){
+  .lgmq__track{animation:none}
+}
+
+/* ── 04 process ── */
+.proc{background:var(--paper)}
+.psteps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:clamp(10px,1.5vw,24px);align-items:center}
+/* was `auto 1fr auto auto` - the third track held a decorative illustration
+   per step that has been removed, leaving number, copy and the linking arrow */
+.pstep{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:11px;align-items:center}
+.pno{width:30px;height:30px;border-radius:50%;background:var(--terra);color:#fff;
+  display:grid;place-items:center;font-size:13px;font-weight:700;flex:0 0 30px}
+.pstep h3{font-family:var(--body);font-size:13px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--terra-t);margin-bottom:5px}
+.pstep p{font-size:13px;color:var(--muted);line-height:1.5}
+.pstep .to{width:20px;height:20px;color:var(--line);stroke-width:1.6}
+
+/* ── 05 services ── */
+.svc{background:var(--sage)}
+.svcrow{display:grid;grid-template-columns:repeat(6,minmax(0,1fr))}
+.svcitem{text-align:center;padding:clamp(8px,1.1vw,16px) clamp(6px,.9vw,13px);
+  border-left:1px solid var(--line)}
+.svcitem:first-child{border-left:0}
+.svcitem .icon{width:30px;height:30px;color:var(--forest);margin:0 auto 9px}
+.svcitem b{display:block;font-family:var(--display);font-size:15px;
+  font-weight:400;line-height:1.2;margin-bottom:6px}
+.svcitem p{font-size:13px;color:var(--muted);line-height:1.5}
+
+/* ── 06 kit ── */
+.kit{background:var(--forest);color:#EFEDE3}
+.kit-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);
+  gap:clamp(14px,2.2vw,36px);align-items:center}
+.kit .eyebrow{color:var(--terra-l)}
+.kit h2{font-size:clamp(19px,2.2vw,31px);margin:8px 0 12px;line-height:1.16}
+.kit p{font-size:13px;color:#C6D2C6}
+.kitart svg{width:100%;height:auto;display:block}
+
+/* ── 07 why ── */
+.why-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,3.4fr);
+  gap:clamp(14px,2vw,32px);align-items:center}
+.whyrow{display:grid;grid-template-columns:repeat(6,minmax(0,1fr))}
+.whyitem{text-align:center;padding:clamp(8px,1.1vw,16px) clamp(6px,.9vw,13px);
+  border-left:1px solid var(--line)}
+.whyitem:first-child{border-left:0}
+.whyitem .icon{width:28px;height:28px;color:var(--forest);margin:0 auto 9px}
+.whyitem b{display:block;font-family:var(--display);font-size:14.4px;
+  font-weight:400;line-height:1.2;margin-bottom:6px}
+.whyitem p{font-size:13px;color:var(--muted);line-height:1.5}
+
+/* ── 08 stats ── */
+.stats{background:var(--forest);color:#EFEDE3;padding-block:clamp(16px,2vw,30px)}
+.stats-in{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));text-align:center}
+.stat{padding-inline:clamp(10px,1.6vw,26px);border-left:1px solid rgba(255,255,255,.2)}
+.stat:first-child{border-left:0}
+.stat b{display:block;font-family:var(--display);font-size:clamp(22px,2.5vw,35px);line-height:1}
+.stat span{display:block;font-size:13px;color:var(--dim);margin-top:4px}
+.stat .st{color:var(--terra-l);letter-spacing:.12em;font-size:13px;margin-top:2px}
+
+/* ── 09 work ── */
+.work{background:var(--sage)}
+.work-in{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,3.6fr);
+  gap:clamp(14px,2vw,30px);align-items:center}
+.work-in .link{margin-top:10px}
+.wgrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(7px,1vw,13px)}
+.wcard{position:relative;border-radius:3px;overflow:hidden}
+.wcard .im{height:clamp(92px,9.6vw,140px)}
+.wcard .cap{position:absolute;left:0;right:0;bottom:0;padding:16px 10px 8px;color:#fff;
+  background:linear-gradient(180deg,rgba(10,26,20,0),rgba(10,26,20,.86))}
+.wcard b{display:block;font-size:13px;font-weight:700;line-height:1.2}
+.wcard small{display:block;font-size:13px;color:#D6E2D6}
+.link{display:inline-flex;align-items:center;gap:7px;color:var(--terra-t);
+  font-weight:600;font-size:13px;border-bottom:1px solid currentColor;padding-bottom:2px}
+.link .icon{width:14px;height:14px;stroke-width:2}
+
+/* ── 10 reviews ── */
+.revs{background:var(--sage)}
+.rev-in{display:grid;grid-template-columns:minmax(0,.9fr) auto repeat(3,minmax(0,1fr)) auto;
+  gap:clamp(10px,1.5vw,22px);align-items:center}
+.rev-in>div:first-child .st{color:#8F5A00;font-size:15px;letter-spacing:.12em;display:block;margin-top:8px}
+.rev-in>div:first-child .rate{font-size:13px;color:var(--muted);margin-top:6px}
+.rev-in>div:first-child .rate b{color:var(--terra-t);font-weight:700}
+.rcard{background:var(--cream);border-radius:3px;padding:clamp(11px,1.4vw,18px);
+  align-self:stretch;display:flex;flex-direction:column}
+.rcard .q{font-family:var(--display);font-size:24px;color:var(--terra);line-height:.7}
+.rcard p{font-size:13px;line-height:1.55;margin:7px 0 11px}
+.rcard cite{font-style:normal;font-size:13px;font-weight:700;margin-top:auto}
+.rcard .st{display:block;color:#8F5A00;font-size:13px;letter-spacing:.08em;margin-top:5px}
+.arrow{width:32px;height:32px;border-radius:50%;border:1px solid var(--line);
+  background:var(--cream);color:var(--ink);display:grid;place-items:center;cursor:pointer}
+.arrow:hover{border-color:var(--terra);color:var(--terra-t)}
+.arrow .icon{width:15px;height:15px;stroke-width:1.8}
+
+/* ── 11 guarantee ── */
+.guar{background:var(--terra);color:#fff;padding-block:clamp(16px,2vw,30px)}
+.guar-in{display:grid;grid-template-columns:auto minmax(0,1fr) auto;
+  gap:clamp(14px,2.2vw,36px);align-items:center}
+.shield{width:clamp(48px,4.8vw,68px);height:auto;color:#fff}
+.guar h2{font-size:clamp(19px,2.2vw,31px);margin-bottom:6px}
+.guar p{font-size:13px;line-height:1.6;max-width:56ch}
+.gbadge{display:flex;align-items:center;gap:13px}
+.gring{width:clamp(52px,5.2vw,72px);height:clamp(52px,5.2vw,72px);border-radius:50%;
+  border:1.6px solid #fff;display:grid;place-items:center;text-align:center;
+  font-family:var(--display);font-size:clamp(17px,1.8vw,24px);line-height:1}
+.gring span{display:block;font-family:var(--body);font-size:13px;letter-spacing:.16em;margin-top:2px}
+.gbadge b{font-family:var(--display);font-size:clamp(15px,1.6vw,22px);
+  font-weight:400;line-height:1.15;letter-spacing:.02em}
+
+/* ── 12 faq ── */
+.faq{background:var(--sage)}
+.faq-in{display:grid;grid-template-columns:minmax(0,.9fr) repeat(2,minmax(0,1.6fr));
+  gap:clamp(10px,1.5vw,24px);align-items:start}
+.faq h2{font-size:clamp(18px,1.9vw,27px)}
+.faq .note{font-size:13px;color:var(--muted);margin-top:7px}
+.faqcol{display:grid;gap:8px}
+.faqcol details{background:var(--cream);border-radius:3px}
+.faqcol summary{list-style:none;cursor:pointer;display:flex;align-items:center;
+  justify-content:space-between;gap:10px;padding:11px 14px;font-size:13px}
+.faqcol summary::-webkit-details-marker{display:none}
+.faqcol summary::after{content:"";width:8px;height:8px;flex:0 0 8px;
+  border-right:1.7px solid var(--muted);border-bottom:1.7px solid var(--muted);
+  transform:rotate(45deg);margin-bottom:3px}
+.faqcol details[open] summary::after{transform:rotate(-135deg);margin-bottom:0}
+.faqcol .ans{font-size:13px;color:var(--muted);line-height:1.65;padding:0 14px 12px}
+
+/* ── 13 cta ── */
+.cta{background:var(--forest);color:#EFEDE3}
+/* was 3 columns (shot / copy / form). The form is gone, so a 3-column track
+   would leave a dead third column - the grid is collapsed to its two
+   remaining children rather than left with a hole. */
+.cta-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);
+  gap:clamp(16px,2.6vw,44px);align-items:center}
+.ctashot{border-radius:3px;overflow:hidden}
+.ctashot .im{height:clamp(96px,10vw,142px)}
+.cta h2{font-size:clamp(18px,1.9vw,27px);line-height:1.16}
+.cta p.note{font-size:13px;color:#C6D2C6;margin-top:7px}
+/* the quote form and its tick row were removed; .ctacall survives as the
+   band's call to action and is no longer a grid child, so it drops the
+   grid-column span it carried inside the form */
+.ctacall{font-size:13px;font-weight:600;margin-top:clamp(12px,1.6vw,18px)}
+.ctacall b{color:var(--terra-l)}
+.ctacall a{display:inline-flex;align-items:center;gap:8px}
+.ctacall a:hover{text-decoration:underline}
+
+/* ── 14 footer ── */
+footer{background:var(--forest);color:var(--dim);padding-block:clamp(18px,2.3vw,32px) 0}
+.foot-in{display:grid;
+  grid-template-columns:minmax(0,1.1fr) repeat(3,minmax(0,.72fr)) minmax(0,1fr) minmax(0,1.05fr);
+  gap:clamp(12px,1.8vw,26px)}
+.foot-in>*{min-width:0}
+.foot-brand .brand b{color:#EFEDE3}
+.foot-brand p{font-size:13px;line-height:1.7;margin-top:10px}
+.socials{display:flex;gap:8px;margin-top:11px}
+.socials a{width:26px;height:26px;border-radius:50%;border:1px solid var(--line-d);
+  display:grid;place-items:center}
+.socials .icon{width:13px;height:13px;stroke-width:1.6}
+.foot h4{font-family:var(--body);font-size:13px;font-weight:700;color:#EFEDE3;margin:0 0 10px}
+.foot-col a{display:block;font-size:13px;padding:3px 0}
+.foot-col a:hover{color:#EFEDE3}
+.contactrow{display:grid;gap:7px;font-size:13px}
+.contactrow span{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px;align-items:start}
+.contactrow .icon{width:14px;height:14px;color:var(--terra-l);margin-top:2px}
+/* supplied artwork is dark-on-white, so on the forest it sits on a white chip -
+   never inverted, which would turn an opaque mark into a white rectangle */
+.foot-lgs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+.foot-lgs span{background:#fff;border-radius:3px;height:34px;display:grid;
+  place-items:center;padding:5px}
+.foot-lgs img{height:17px;width:auto;max-width:100%;object-fit:contain}
+.foot-lgs img.sq{height:25px}
+.foot-lgs+p{font-size:13px;line-height:1.6;margin-top:10px}
+.fcabar{background:var(--terra);color:#fff;padding-block:11px;margin-top:clamp(14px,1.8vw,26px)}
+.fcabar .wrap{display:flex;gap:16px;flex-wrap:wrap;align-items:center;
+  justify-content:space-between;font-size:13px;line-height:1.55}
+
+@media(max-width:1240px){
+  .nav-links{display:none} .burger{display:block;margin-left:auto}
+  .svcrow,.whyrow{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .svcitem:nth-child(3n+1),.whyitem:nth-child(3n+1){border-left:0}
+  .wgrid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .psteps{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+  .pstep .to{display:none}
+  .kit-in,.why-in,.work-in,.strip-in,.faq-in,.guar-in{grid-template-columns:minmax(0,1fr);gap:20px}
+  .rev-in{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+  .rev-in .arrow{display:none}
+  .cta-in{grid-template-columns:minmax(0,1fr);gap:18px}
+  .foot-in{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .stats-in{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 0}
+  .stat:nth-child(odd){border-left:0}
+}
+@media(max-width:900px){
+  :root{--rail:clamp(24px,5vw,38px)}
+  .hero{grid-template-columns:minmax(0,1fr)}
+  .hero-shot{min-height:0;height:46vw;order:-1}
+  .hero-copy{padding-inline:calc(var(--pad) + var(--rail)) var(--pad)}
+  .svcrow,.whyrow,.wgrid{grid-template-columns:minmax(0,1fr) 1fr}
+  .svcitem:nth-child(odd),.whyitem:nth-child(odd){border-left:0}
+  .rev-in{grid-template-columns:minmax(0,1fr)}
+  .faq-in{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:600px){
+  .svcrow,.whyrow,.wgrid,.psteps{grid-template-columns:minmax(0,1fr)}
+  .foot-in{grid-template-columns:minmax(0,1fr) 1fr} .nav-tel span{display:none}
+  /* no room for the CTA beside the burger on a phone; the number stays */
+  .nav .btn{display:none}
+
+  .stats-in{grid-template-columns:minmax(0,1fr)} .stat{border-left:0}
+}
+
+/* ── aircon7 band anatomy. Every reviews band here was measured as LIGHT
+   before writing this, so the header ink is dark by decision. ── */
+.sechd{max-width:66ch;margin:0 auto clamp(28px,3.4vw,48px);text-align:center}
+.sechd .lab{display:block;font-size:13px;letter-spacing:.15em;text-transform:uppercase;
+  font-weight:700;color:#A5461F;margin-bottom:12px}
+.sechd h2{font-size:clamp(27px,3vw,42px);line-height:1.14;color:#1D2B24}
+.sechd p{font-size:16.5px;color:var(--muted,#5B6472);line-height:1.62;margin-top:13px}
+/* hero proof figures */
+.hero-proof{display:flex;flex-wrap:wrap;align-items:flex-start;gap:clamp(16px,2.1vw,32px);
+  max-width:600px;margin-top:clamp(22px,2.6vw,34px);padding-top:clamp(20px,2.4vw,30px);
+  border-top:1px solid rgba(128,128,128,.3)}
+.hero-proof .pf b{display:block;font-size:clamp(23px,2.5vw,33px);font-weight:800;line-height:1}
+.hero-proof .pf span{display:block;font-size:13px;opacity:.82;margin-top:5px;max-width:18ch}
+/* reviews as a looping scroll track */
+.rev__row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;
+  gap:clamp(12px,1.8vw,26px);align-items:center}
+.rtrack{display:flex;gap:clamp(12px,1.6vw,22px);overflow-x:auto;scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:2px}
+.rtrack::-webkit-scrollbar{display:none}
+@media(prefers-reduced-motion:reduce){.rtrack{scroll-behavior:auto}}
+.rtrack .rcard{flex:0 0 calc((100% - 2 * clamp(12px,1.6vw,22px)) / 3);scroll-snap-align:start;
+  background:#fff;border:1px solid var(--line,rgba(0,0,0,.12));border-radius:6px;
+  padding:clamp(16px,2vw,26px);text-align:left;display:flex;flex-direction:column}
+.rtrack .st{color:#9A6206;font-size:14px;letter-spacing:.09em}
+.rtrack .rcard p{font-size:15px;line-height:1.6;margin:10px 0 14px;color:#1D2B24}
+.rtrack .rcard cite{font-style:normal;font-size:14px;font-weight:700;margin-top:auto;color:#1D2B24}
+.rtrack .rcard cite small{display:block;font-size:13px;color:var(--muted,#5B6472);
+  font-weight:400;margin-top:3px}
+@media(max-width:900px){.rtrack .rcard{flex-basis:calc((100% - clamp(12px,1.6vw,22px)) / 2)}
+  .rev__row{grid-template-columns:minmax(0,1fr)} .rev__row .rnav{display:none}}
+@media(max-width:600px){.rtrack .rcard{flex-basis:100%}}
+.rnav{width:44px;height:44px;border-radius:50%;border:0;background:#1D2B24;color:#fff;
+  display:grid;place-items:center;cursor:pointer;flex:0 0 44px}
+.rnav svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2}
+/* FAQ in one column */
+.faqcols,.faqrow,.faq__grid{grid-template-columns:minmax(0,1fr)!important;
+  max-width:860px;margin-inline:auto}
+
+/* footer accreditations are names, not logos - the artwork lives in the top
+   strip only */
+footer .foot-lgs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px}
+footer .foot-lgs span.acc{background:none;border:0;height:auto;padding:0;display:block;text-align:left}
+footer .acc b{display:block;font-size:13.2px;font-weight:800;letter-spacing:.01em}
+footer .acc span{display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+  opacity:.72;margin-top:3px}
+@media(max-width:600px){footer .foot-lgs{grid-template-columns:minmax(0,1fr)}}
+
+/* opacity .72 measured 2:1 on this footer; an explicit ink clears 4.5:1 */
+footer .acc span{opacity:1;color:#BCC9BC}
+
+/* .foot-lgs spans used to be white logo chips; the name lockups must not
+   inherit that background or its fixed height */
+footer .foot-lgs span,footer .foot-lgs span.acc{background:none!important;
+  border:0!important;height:auto!important;padding:0!important;display:block;
+  place-items:initial;text-align:left}
+footer .foot-lgs .acc b{color:#EFEDE3!important}
+footer .foot-lgs .acc span{color:#BCC9BC!important;opacity:1!important}
+
+/* ══════ aircon7 payload ══════
+   Grounds, written down before any colour below, because .eyebrow (#9E4423)
+   and .sechd (.lab #A5461F, h2 #1D2B24) are both hard-coded dark and are now
+   used on dark bands too:
+     CREAM  #F4F1E8 - body, .strip, #why, .faq
+     PAPER  #FFFFFF - .proc, .feats
+     SAGE   #DCE6DC - .svc, .work, .revs
+     FOREST #12352A - .hero, .kit, .stats, .cta, footer   <- dark
+     TERRA  #C0562F - .guar                                <- dark            */
+
+/* --- band colour trap fixes, one per dark band that now carries a head --- */
+.kit .eyebrow{color:var(--terra-l)}          /* #9E4423 measures 2.11:1 on forest */
+/* terra-t on terra is unreadable; #fff measures 4.55:1 here and is what the
+   band's own <p> already uses. A softer tint came out at 3.81:1 and failed. */
+.guar .eyebrow{color:#fff}
+.stats .sechd .lab{color:var(--terra-l)}
+.stats .sechd h2{color:#EFEDE3}
+.stats .sechd p{color:var(--dim)}
+.stats .sechd,.stats .sechd--left{margin-bottom:clamp(16px,2.2vw,26px)}
+
+/* hero: three credential facts + Google badge on the forest ground */
+.hero-proof{border-top-color:rgba(255,255,255,.24);max-width:660px}
+.hero-proof .pf b{font-family:var(--display);font-weight:400;color:var(--terra-l)}
+.hero-proof .pf span{color:#CBD8CC;opacity:1}
+.grev{display:inline-flex;align-items:center;gap:10px;margin-top:clamp(16px,2vw,24px);
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.26);
+  border-radius:999px;padding:8px 16px;color:#EFEDE3;font-size:13px}
+.grev:hover{background:rgba(255,255,255,.18)}
+.grev__g{width:17px;height:17px;flex:0 0 17px}
+.grev__stars{color:var(--terra-l);letter-spacing:.06em;font-size:13px}
+.grev__txt b{font-weight:700;color:#fff}
+
+/* left-aligned head variant */
+.sechd--left{max-width:none;margin-inline:0;text-align:left;
+  margin-bottom:clamp(18px,2.4vw,30px)}
+.sechd--left p{max-width:64ch}
+.sechd--left .btn{margin-top:14px}
+
+/* process: three steps rather than four */
+.psteps{grid-template-columns:repeat(3,minmax(0,1fr))}
+.pstep p{font-size:13px;line-height:1.55}
+.plink{display:inline-flex;align-items:center;gap:6px;margin-top:9px;
+  color:var(--terra-t);font-weight:700;font-size:13px}
+.plink .icon{width:13px;height:13px;stroke-width:2.4}
+.plink:hover{text-decoration:underline}
+
+/* services: three solutions, each with a photograph and a description */
+.svcrow{grid-template-columns:repeat(3,minmax(0,1fr))}
+.svcitem{text-align:left;display:flex;flex-direction:column}
+.svcitem .im{height:clamp(126px,12.5vw,172px);border-radius:4px;margin-bottom:11px}
+.svcitem .icon{margin:0 0 8px}
+.svcitem b{font-size:16px;line-height:1.25}
+.svcitem p{font-size:13px;color:var(--muted);line-height:1.58;margin-top:8px}
+.svcitem .plink{margin-top:auto;padding-top:10px}
+
+/* the four ranges, inside the forest kit band: the cards carry their own light
+   ground, so they reset their own ink rather than inheriting #EFEDE3 */
+.prodgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:clamp(10px,1.4vw,18px);margin-top:clamp(18px,2.4vw,32px)}
+.prodgrid>*{min-width:0}
+.prodcard{background:var(--paper);color:var(--ink);border-radius:5px;
+  overflow:hidden;display:flex;flex-direction:column}
+.prodcard .im{height:clamp(126px,12.5vw,168px)}
+.prodcard__b{padding:clamp(11px,1.4vw,17px);display:flex;flex-direction:column;flex:1}
+.prodcard__k{font-size:13px;letter-spacing:.15em;text-transform:uppercase;
+  font-weight:700;color:var(--terra-t)}
+.prodcard h3{font-family:var(--display);font-size:clamp(17px,1.7vw,21px);
+  margin:5px 0 0;color:var(--ink)}
+.prodcard p{font-size:13px;color:var(--muted);line-height:1.55;margin-top:8px}
+.prodspec{list-style:none;margin:auto 0 0;padding:11px 0 0;display:grid;gap:6px}
+.prodspec li{font-size:13px;color:var(--ink);padding-top:6px;
+  border-top:1px solid var(--line);line-height:1.45}
+@media(max-width:1100px){.prodgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.prodgrid{grid-template-columns:minmax(0,1fr)}}
+
+/* features band */
+.feats{background:var(--paper)}
+.feat-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:clamp(18px,3vw,52px);align-items:center}
+.feat-row>*{min-width:0}
+.feat-row+.feat-row{margin-top:clamp(26px,3.6vw,56px)}
+.feat-row--rev .feat-copy{order:2}
+.feat-copy .eyebrow{display:block;margin-bottom:9px}
+.ftick{list-style:none;margin:clamp(14px,1.8vw,22px) 0 0;padding:0;display:grid;gap:13px}
+.ftick li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;
+  align-items:start;font-size:13.4px;line-height:1.55}
+.ftick .icon{width:18px;height:18px;color:var(--terra);stroke-width:2.4;margin-top:2px}
+.feat-shot{height:clamp(220px,26vw,360px);border-radius:5px}
+.barviz{background:var(--sage);border-radius:5px;padding:clamp(16px,2.2vw,30px)}
+.bar-row+.bar-row{margin-top:clamp(14px,1.8vw,22px)}
+.bl{display:flex;justify-content:space-between;gap:12px;font-size:13px;
+  font-weight:700;margin-bottom:8px}
+.bar{height:14px;border-radius:999px;background:rgba(29,43,36,.14);overflow:hidden}
+.bar span{display:block;height:100%;border-radius:999px}
+.bar.after span{background:var(--forest-3)}
+.bar.before span{background:var(--terra)}
+.barnote{font-size:13px;color:var(--muted);line-height:1.55;margin-top:clamp(12px,1.6vw,18px)}
+@media(max-width:900px){
+  .feat-row{grid-template-columns:minmax(0,1fr)}
+  .feat-row--rev .feat-copy{order:0}
+}
+
+/* why / work: six items each with real copy, so three across not six or five */
+.whyrow{grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(8px,1.1vw,16px) 0}
+.whyitem{text-align:left}
+.whyitem:nth-child(3n+1){border-left:0}
+.whyitem b{display:block;font-size:14px;line-height:1.28;margin-bottom:6px}
+.whyitem p{font-size:13px;color:var(--muted);line-height:1.5}
+.why-head .eyebrow,.work-head .eyebrow{display:block;margin-bottom:9px}
+.why-head{margin-bottom:clamp(14px,2vw,24px)}
+.wgrid{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+/* stats: four figures, no rating stat, so no star run */
+.stats-in .stat:first-child{border-left:0;padding-left:0}
+
+/* guarantee: three numbered promises under the badge row, on the terracotta */
+.gpromise{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(12px,1.8vw,26px);margin-top:clamp(16px,2.2vw,28px);
+  padding-top:clamp(14px,2vw,22px);border-top:1px solid rgba(255,255,255,.28)}
+.gpromise>*{min-width:0}
+.gp{display:grid;grid-template-columns:auto minmax(0,1fr);gap:11px;align-items:start}
+/* the numeral keeps a tint (3.47:1) for hierarchy, which is only allowed while
+   it counts as LARGE text - so the clamp floor is 24px, not 22px. At 22px the
+   4.5:1 bar applies instead and it failed at 1100 and 700 but not at 1500. */
+.gp .gn{font-family:var(--display);font-size:clamp(24px,2.1vw,26px);font-weight:400;
+  color:#FFD9C6;line-height:1.1}
+.gp span{display:block;font-size:13px;color:#fff;line-height:1.55}
+.gp span b{display:block;color:#fff;font-size:13.4px;font-weight:700;margin-bottom:3px}
+.guar .btn-ghost{margin-top:clamp(12px,1.7vw,18px)}
+
+/* logo strip: 14 marks, seven brands then seven accreditations - the rows are
+   now marquee rails, so they no longer need a column count per breakpoint */
+
+@media(max-width:1240px){
+  .svcrow,.whyrow,.wgrid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:820px){
+  .svcrow,.whyrow,.wgrid,.psteps,.gpromise{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .whyitem:nth-child(odd){border-left:0}
+  .svcitem{border-left:0}
+}
+@media(max-width:560px){
+  .svcrow,.whyrow,.wgrid,.psteps,.gpromise,.stats-in{grid-template-columns:minmax(0,1fr)}
+  .whyitem,.stat{border-left:0;padding-left:0}
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   MEASUREMENTS FROM THE HEATPROS V4 FIGMA (file m6j8Y28TyZhcj7XwtKJWWy)
+   Sizes and container width only. Colours, fonts and layout are aircon10's
+   own and are deliberately NOT touched.
+
+   Container, read off the artboard:
+     artboard 1440  ·  side gutter 140  ·  content measure 1160
+   Reproduced here as --wrap 1248 with 44px inline padding:
+     1248 - (2 x 44) = 1160 content, and at a 1440 viewport
+     (1440 - 1248) / 2 = 96, + 44 padding = 140 gutter. Both numbers exact.
+
+   Every size below is expressed as a clamp whose MAXIMUM is the Figma value
+   and whose vw coefficient reaches that value at exactly 1440px, so desktop
+   matches the design and narrow screens still scale. The artboard is 1440
+   only - it specifies nothing below that, so the minimums are this template's
+   own judgement, not the design's.
+   ══════════════════════════════════════════════════════════════════════════ */
+:root{
+  --wrap:1248px;
+  --measure:1160px;          /* the content width itself, for anything that
+                                needs to align to the container from outside it */
+  /* the rail is retained at 0 so the .hero-copy expression below keeps its
+     shape; the numbered marks it reserved space for have been removed */
+  --rail:0px;
+}
+
+/* .hero-copy is NOT inside .wrap - it is a grid column in a full-bleed hero,
+   and it derived its left inset from var(--wrap)/2. That was tuned for the old
+   1440 token, so retuning --wrap silently moved the hero copy to 52px while
+   every other section sat at 140px. Expressed directly against the measure it
+   now tracks the container at any width.
+   (100vw includes the scrollbar, which here only insets a few px more - it is
+   padding, not width, so it cannot produce the overflow 100vw usually buys.) */
+/* Derived from the SAME geometry .wrap uses, rather than from the measure:
+     .wrap sits inside .banded (already inset by --rail), is capped at --wrap,
+     centres in whatever remains, then pads by --pad.
+   Reproducing only the final measure got 1440 right but drifted 12px at ~1324,
+   where .wrap starts centring inside the banded box. .hero-copy is itself
+   inside .banded, so --rail is subtracted from the space, not added again. */
+.hero-copy{padding-left:calc(
+  max(0px, (100vw - var(--rail) - var(--wrap)) / 2) + var(--pad))}
+
+/* --- display ------------------------------------------------------------ */
+/* H1  56 / 62 / -1.5px  ->  -0.027em so the tracking scales with the size */
+.hero h1{font-size:clamp(33px,4.236vw,61px);line-height:1.1;letter-spacing:-.027em}
+/* H2  38 / 46 / -0.8 to -1px */
+.h2,.sechd h2,.kit h2,.guar h2,.faq h2,.cta h2{
+  font-size:clamp(26px,2.917vw,42px);line-height:1.19;letter-spacing:-.023em}
+/* Stat figure 34 / -1px, with a 12px caption. NOT 48 - that is the design's
+   price-card figure, which this template has no equivalent of. Mapping the
+   stats onto 48 made the three hero facts wrap onto two lines in a 508px
+   column; at the design's real 34 they sit on one row as intended. */
+.stat b,.hero-proof .pf b{font-size:clamp(27px,2.639vw,38px);letter-spacing:-.029em;line-height:1}
+.stat span,.hero-proof .pf span{font-size:13.5px}
+
+/* --- titles: the design has TWO tiers, not one -------------------------- */
+/* 20px  card title (brand/service cards), tracking -0.5px */
+.prodcard h3,.svcitem b,.gbadge b{font-size:clamp(18px,1.528vw,22px);letter-spacing:-.025em;line-height:1.2}
+/* 15px  compact list-item title (the 6-point grid) */
+.whyitem b,.pstep h3,.wcard b,.gp span b{font-size:17px;line-height:1.3}
+
+/* --- body ---------------------------------------------------------------- */
+.hero p.sub{font-size:17.5px;line-height:1.62}            /* hero lede 16/26 */
+.sechd p,.kit p,.guar p,.faq .note,.cta p.note,
+.sechd--left p{font-size:16px;line-height:1.6}          /* section intro 14/22 */
+.svcitem p,.whyitem p,.prodcard p,.pstep p,.faqcol .ans,
+.ftick li,.barnote,.gp span{font-size:15px;line-height:1.6}  /* card body 13/20 */
+
+/* --- labels -------------------------------------------------------------- */
+/* eyebrow 11px, 2.5px tracking, uppercase -> 0.227em */
+.eyebrow,.sechd .lab{font-size:13px;letter-spacing:.2em;text-transform:uppercase}
+/* micro number 10px, 2px tracking -> 0.2em */
+.prodcard__k{font-size:13px;letter-spacing:.18em}
+/* pill / tag / meta 12px */
+.pill,.wcard small,.prodspec li,.foot-col a,.contactrow,.faqcol summary{font-size:13.5px}
+
+/* ══ owner review, 2026-09-02 ══════════════════════════════════════════════
+   Sections asked to run full bleed rather than sit on the 1160 measure. They
+   keep a small gutter so nothing touches the viewport edge. */
+/* 6 - the guarantee band goes back on the page measure; the rest stay full bleed */
+.nav-in,
+.strip .wrap,
+.stats .wrap{max-width:none;padding-inline:clamp(16px,2.6vw,40px)}
+
+/* projects and reviews were reading as one band and using very little of it:
+   more room across, and enough vertical air that the two read as separate */
+.work,.revs{padding-block:clamp(38px,5.2vw,80px)}
+.work .wrap,.revs .wrap{max-width:none;padding-inline:clamp(16px,2.6vw,40px)}
+
+/* FAQ: one column of questions beside the heading, not two */
+.faq-in{grid-template-columns:minmax(0,.9fr) minmax(0,2.3fr)}
+
+/* 1 - CORRECTED: the ask was vertical space between the two lines of the strip
+   heading, not between the logo rows. The heading carries the leading. */
+.strip h2{line-height:1.55}
+
+/* 2 - the stats head is centred rather than ranged left */
+.stats .sechd--left{text-align:center;margin-inline:auto;max-width:66ch}
+.stats .sechd--left p{margin-inline:auto}
+
+/* 3 - projects: the head moves out of the left column to sit centred above
+   the grid, so the grid gets the full band width */
+.work-in{grid-template-columns:minmax(0,1fr);align-items:start}
+.work-head{text-align:center;margin:0 auto clamp(20px,2.8vw,38px);max-width:66ch}
+.work-head .link{margin-top:12px}
+
+/* 4/5 - square, but the bands run full bleed so 3-across made them 446px and
+   394px, which read as forced. The BANDS stay full width; the grids inside are
+   capped and centred so the squares land nearer 320px. */
+.wcard .im{height:auto;aspect-ratio:1}
+/* width:100% is load-bearing: margin-inline:auto cancels a grid item's stretch,
+   and .wcard has no intrinsic width (background image + absolute caption), so
+   the 1fr tracks resolved to 0px and the whole grid collapsed to 26px. */
+.wgrid{width:100%;max-width:1000px;margin-inline:auto}
+.rtrack .rcard{aspect-ratio:1}
+/* .rev__row IS the .wrap, so it loses to .revs .wrap{max-width:none} above on
+   specificity (2 classes vs 1). Scoped to match. */
+.revs .rev__row{max-width:1090px;margin-inline:auto}
+
+/* 7 - nav links centred on the BAR, not merely balanced in the leftover flex
+   space: the right group (phone + button) is wider than the brand, so
+   margin-inline:auto left them 62px off centre. Taking them out of the flow
+   centres them on the viewport; .nav-tel then carries the auto margin that
+   the links used to provide, so the right group still sits right.
+   Scoped to the widths where the links actually show: below 1240 they are
+   display:none and the burger already owns the auto margin, so applying
+   margin-left:auto to .nav-tel there left the phone floating mid-bar. */
+@media(min-width:1241px){
+  .nav-in{position:relative}
+  .nav-links{position:absolute;left:50%;transform:translateX(-50%);margin:0}
+  .nav-tel{margin-left:auto}
+}
+
+/* footer: the duplicate Contact / Office / Accreditations block is gone, so
+   the opening hours now live under Contact in the main row */
+.foot-hours{font-size:13px;line-height:1.72;margin:14px 0 0;color:var(--dim)}
+.foot-hours b{color:#EFEDE3;font-weight:600}
+.contactrow a{color:inherit}
+.contactrow a:hover{text-decoration:underline}
+
+/* --- interactive --------------------------------------------------------- */
+/* buttons 12 / 26 in the design (hero pair and nav); the one 14px button is
+   the in-card CTA, so that keeps its own step */
+.btn{font-size:14px;line-height:26px}
+.nav-links{font-size:15px}
+
+/* ══ TYPE SCALE, RAISED AGAIN ══════════════════════════════════════════════
+   The previous pass only moved the roles that were mapped from the reference.
+   Around thirty of this template's own sizes were never in that mapping and
+   stayed at their original 10-13px, which is why it still read small. This
+   block is last in the sheet and sets the whole scale in one place.
+   ══════════════════════════════════════════════════════════════════════════ */
+/* display */
+.hero h1{font-size:clamp(36px,4.722vw,68px);line-height:1.08}
+.h2,.sechd h2,.kit h2,.guar h2,.faq h2,.cta h2{font-size:clamp(29px,3.333vw,48px);line-height:1.17}
+.stat b,.hero-proof .pf b{font-size:clamp(30px,3.056vw,44px)}
+.strip h2{font-size:clamp(18px,2vw,28px)}
+.brand b{font-size:21px}
+.gbadge b{font-size:clamp(17px,1.8vw,24px)}
+
+/* titles */
+.prodcard h3,.svcitem b{font-size:clamp(20px,1.736vw,25px)}
+.whyitem b,.pstep h3,.wcard b,.gp span b,.faqcol summary{font-size:19px;line-height:1.3}
+
+/* body copy */
+.hero p.sub{font-size:19.5px;line-height:1.6}
+.sechd p,.kit p,.guar p,.faq .note,.cta p.note,.sechd--left p{font-size:18px;line-height:1.6}
+.svcitem p,.whyitem p,.prodcard p,.pstep p,.faqcol .ans,
+.ftick li,.barnote,.gp span,.foot-brand p,.foot-hours,
+.rtrack .rcard p{font-size:17px;line-height:1.6}
+
+/* supporting text that the earlier pass never reached */
+.stat span,.hero-proof .pf span,.rtrack .rcard cite,.ctacall,
+.link,.plink,.grev,.bl,.foot-col a,.contactrow,.prodspec li,
+.pill,.wcard small,footer .acc b{font-size:15px}
+.rtrack .rcard cite{font-size:15.5px}
+.rtrack .rcard cite small,.grev__stars,.foot-lgs+p,
+.fcabar .wrap,.stat .st,.rtrack .st{font-size:14px}
+.eyebrow,.sechd .lab,.foot h4{font-size:13.5px;letter-spacing:.18em}
+.prodcard__k{font-size:13px;letter-spacing:.16em}
+footer .acc span{font-size:13px}
+.gring span{font-size:13px}
+.pno{font-size:16px}
+.nav-tel{font-size:16px}
+.nav-links{font-size:16.5px}
+.btn{font-size:16px;line-height:26px}
+
+/* the review cards are square, so the larger body copy needs more room in them
+   than the 277px they were sitting at */
+.revs .rev__row{max-width:1250px}
+
+/* the hero copy column was 463px, which the three credential facts no longer
+   fit on one row at 44px figures. Widening the column rather than shrinking
+   the figures back - the video panel gives up the difference. */
+.hero{grid-template-columns:minmax(0,1fr) minmax(0,1.02fr)}
+.hero-proof{gap:clamp(14px,1.8vw,28px)}
+
+/* Two boxes are too narrow to carry the raised type, and both must stay the
+   size they are - widening either one steals width from a row of items that
+   is already tight.
+
+   .why-head is a 257px column beside six why-items. At the shared .h2 size
+   (48px) the word "homeowners" alone measures 261px and spills out of it.
+   Sized to its own column instead - still well up from the 29px it was. */
+.why-head .h2{font-size:clamp(21px,2.36vw,34px)}
+/* ...but .why-in stacks to one column at 1240, and a full-width heading has no
+   reason to stay held down - hand it back the shared size there. */
+@media(max-width:1240px){
+  .why-head .h2{font-size:clamp(29px,3.333vw,48px)}
+}
+
+/* The four footer accreditations sat two-up in a ~204px column, so each
+   lockup got 94px and "SafeContractor" needs 113px at the raised 15px.
+   One per row - the column is wide enough for the longest name with room
+   to spare, and it reads as a list rather than a cramped grid. */
+footer .foot-lgs{grid-template-columns:minmax(0,1fr);gap:11px}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   MOTION
+   Read the gate in the head first. Anything that hides an element to reveal
+   it later is written as `.anim [x]` so that the un-animated document is the
+   default and the animation is the enhancement - never the other way round.
+   Hover states are not gated: they are already opt-in by definition, and the
+   reduced-motion block at the foot of this section flattens them anyway.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html{scroll-behavior:smooth}
+/* the nav is sticky at top:0, so an anchor jump would otherwise park the
+   target's first line underneath it */
+section[id],footer[id]{scroll-margin-top:clamp(72px,7vw,98px)}
+
+/* ── page-load curtain ───────────────────────────────────────────────────
+   Fades itself out on a CSS timer, so a JS error, a stalled asset or a
+   never-firing load event can never leave a visitor staring at a cover. The
+   script also removes it, but the page does not depend on that happening. */
+.pre{position:fixed;inset:0;z-index:9999;display:none;place-items:center;
+  background:var(--forest)}
+.anim .pre{display:grid;animation:preOut .55s ease .95s forwards}
+.pre__mk{width:46px;height:46px;color:var(--terra-l);
+  animation:preBeat 1.4s ease-in-out infinite}
+.pre__bar{position:absolute;left:50%;bottom:34%;transform:translateX(-50%);
+  width:min(190px,42vw);height:2px;border-radius:2px;overflow:hidden;
+  background:rgba(244,241,232,.2)}
+.pre__bar i{position:absolute;inset:0;display:block;background:var(--terra-l);
+  transform-origin:left;animation:preFill 1.15s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes preOut{to{opacity:0;visibility:hidden}}
+@keyframes preBeat{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(.84);opacity:.65}}
+@keyframes preFill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+/* ── scroll progress ── */
+.sprog{position:fixed;left:0;top:0;height:3px;width:100%;z-index:80;display:none;
+  background:var(--terra-l);transform:scaleX(0);transform-origin:0 50%;
+  pointer-events:none}
+.anim .sprog{display:block}
+
+/* ── hero entrance ───────────────────────────────────────────────────────
+   Staggered so the eye lands on the pill, then the headline, then the proof,
+   rather than the whole column arriving as one slab. Starts under the
+   curtain's fade so the two read as one movement. */
+@keyframes heroUp{from{opacity:0;transform:translate3d(0,28px,0)}to{opacity:1;transform:none}}
+@keyframes heroWipe{from{clip-path:inset(0 0 0 100%)}to{clip-path:inset(0 0 0 0)}}
+.anim .hero-copy>*{opacity:0;animation:heroUp .8s cubic-bezier(.22,.61,.36,1) both}
+.anim .hero-copy>:nth-child(1){animation-delay:.80s}
+.anim .hero-copy>:nth-child(2){animation-delay:.89s}
+.anim .hero-copy>:nth-child(3){animation-delay:.98s}
+.anim .hero-copy>:nth-child(4){animation-delay:1.07s}
+.anim .hero-copy>:nth-child(5){animation-delay:1.16s}
+.anim .hero-copy>:nth-child(6){animation-delay:1.25s}
+.anim .hero-shot{animation:heroWipe 1.05s cubic-bezier(.65,0,.35,1) .72s both}
+/* opacity only, no transform: .nav-links is centred with
+   `position:absolute; transform:translateX(-50%)` above 1240px, and an
+   animation ending in `transform:none` would win over that and shunt the
+   links half a viewport to the right for the life of the page. */
+@keyframes navIn{from{opacity:0}to{opacity:1}}
+.anim .nav-in>*{opacity:0;animation:navIn .55s ease both}
+.anim .nav-in>:nth-child(1){animation-delay:.62s}
+.anim .nav-in>:nth-child(2){animation-delay:.68s}
+.anim .nav-in>:nth-child(3){animation-delay:.74s}
+.anim .nav-in>:nth-child(4){animation-delay:.80s}
+.anim .nav-in>:nth-child(5){animation-delay:.86s}
+
+/* ── scroll reveal ───────────────────────────────────────────────────────
+   data-rv is applied by script, not written into the markup, so the HTML
+   stays clean and the reveal set can be tuned in one list. --rvd carries the
+   per-item stagger the observer works out from each element's position. */
+.anim [data-rv]{opacity:0;
+  transition:opacity .72s cubic-bezier(.22,.61,.36,1) var(--rvd,0ms),
+             transform .72s cubic-bezier(.22,.61,.36,1) var(--rvd,0ms)}
+.anim [data-rv="up"]{transform:translate3d(0,26px,0)}
+/* Horizontal travel is capped at 24px on purpose. These land on grid columns
+   whose outer edge IS the wrap's content edge, so the offset has to sit inside
+   the gutter or the un-revealed state widens the document: at 34px against the
+   27px gutter at 820 it pushed the page 7px sideways. The gutter is
+   clamp(16px,2.6vw,40px), which is >=32px everywhere this variant applies. */
+.anim [data-rv="left"]{transform:translate3d(-24px,0,0)}
+.anim [data-rv="right"]{transform:translate3d(24px,0,0)}
+/* ...and below 1240 those two-column sections stack, so a sideways slide has
+   nothing to slide across and the gutter is at its narrowest. Go vertical. */
+@media(max-width:1240px){
+  .anim [data-rv="left"],.anim [data-rv="right"]{transform:translate3d(0,26px,0)}
+}
+.anim [data-rv="zoom"]{transform:scale(.945)}
+.anim [data-rv].is-in{opacity:1;transform:none}
+
+/* ── sticky nav shadow, once the page has moved ── */
+.nav{transition:box-shadow .32s ease}
+.nav.is-stuck{box-shadow:0 8px 28px rgba(11,32,25,.28)}
+
+/* ── micro-interaction ───────────────────────────────────────────────────
+   .btn already carries `transition:.2s` on all properties, so the lift below
+   inherits its easing rather than declaring a second, conflicting one. */
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+.wcard,.prodcard,.rtrack .rcard,.svcitem,.whyitem{
+  transition:transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s ease}
+.wcard:hover,.prodcard:hover{transform:translateY(-6px);
+  box-shadow:0 20px 42px rgba(18,53,42,.16)}
+.rtrack .rcard:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(18,53,42,.12)}
+.whyitem:hover,.svcitem:hover{transform:translateY(-3px)}
+/* .wcard is overflow:hidden, so the image can push past its own box safely */
+.wcard .im img{transition:transform .85s cubic-bezier(.22,.61,.36,1)}
+.wcard:hover .im img{transform:scale(1.07)}
+.plink .icon,.link .icon,.btn .icon{transition:transform .3s cubic-bezier(.22,.61,.36,1)}
+.plink:hover .icon,.link:hover .icon,.btn:hover .icon{transform:translateX(5px)}
+/* the nav underline is a border-bottom-color swap - give it a ramp rather
+   than adding a second rule that would draw two lines under the active link */
+.nav-links a{transition:opacity .25s ease,color .25s ease,border-bottom-color .25s ease}
+.pno{transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+.pstep:hover .pno{transform:scale(1.12)}
+.foot-col a,.contactrow a{transition:color .22s ease,opacity .22s ease}
+
+/* ── FAQ ─────────────────────────────────────────────────────────────────
+   <details> gives no height to animate against, so the answer fades and
+   settles instead of sliding - which also avoids a reflow judder on open. */
+.faqcol summary::after{transition:transform .3s cubic-bezier(.22,.61,.36,1)}
+.faqcol details{transition:background-color .25s ease}
+.faqcol details[open]{background:var(--paper)}
+.faqcol details[open] .ans{animation:faqIn .34s cubic-bezier(.22,.61,.36,1) both}
+@keyframes faqIn{from{opacity:0;transform:translate3d(0,-8px,0)}to{opacity:1;transform:none}}
+
+/* ── stat counters ── */
+.cnt{font-variant-numeric:tabular-nums}
+
+/* ── the whole section, switched off ─────────────────────────────────────
+   .anim is already withheld under reduce, so this only has to catch the
+   ungated hover work and the marquee. */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn:hover,.wcard:hover,.prodcard:hover,.rtrack .rcard:hover,
+  .whyitem:hover,.svcitem:hover,.pstep:hover .pno{transform:none}
+  .wcard:hover .im img{transform:none}
+  .plink:hover .icon,.link:hover .icon,.btn:hover .icon{transform:none}
+  .faqcol details[open] .ans{animation:none}
+  .sprog,.pre{display:none!important}
+}
+
+/* Section CTA pair, matching the base template aircon7. Sits as a sibling
+   container at the end of a section so it picks up the same max-width and
+   padding as that section's content, however deeply that content nests. */
+.ctapair{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;
+  margin-top:clamp(30px,4vw,48px)}
+@media(max-width:520px){.ctapair .btn{flex:1 1 100%}}
+/* aircon10 had no ink-on-transparent button: .btn-ghost is white, for the dark
+   hero. Seven of the eight CTA sections are pale, so they need one. Text uses
+   --terra-t, the dark step the palette comment reserves for exactly this - the
+   bright terracotta does not clear 4.5:1 as small text on sage or cream. */
+.btn-out{border-color:var(--terra);color:var(--terra-t);background:transparent}
+.btn-out:hover{background:var(--terra);color:#fff}
+/* These two sections are left-aligned throughout - eyebrow, heading, lede and
+   cards all start at the content edge - so a centred button row floated away
+   from everything above it. #why keeps no pair at all. */
+#process .ctapair,#services .ctapair,#cta .ctapair{justify-content:flex-start}</style>
+</head>
+<body>
+
+<!-- Load curtain and scroll progress. Both are display:none by default and
+     only shown under .anim, so they do not exist for a visitor with JS off or
+     reduced motion on. The curtain clears itself on a CSS timer as well as in
+     script - see the MOTION block. -->
+<div class="pre" id="pre" aria-hidden="true">
+  <svg class="pre__mk" viewBox="0 0 28 28">
+    <path d="M14 3 25 24H3z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+    <path d="M14 11 19.5 21h-11z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+  </svg>
+  <span class="pre__bar"><i></i></span>
+</div>
+<div class="sprog" id="sprog" aria-hidden="true"></div>
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+  <symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4" width="17" height="16" rx="1.6"/><path d="M3.5 9h17M8.5 9v11"/><path d="M12 13h5M12 16h3"/></symbol>
+  <symbol id="i-split" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="7" rx="2.4"/><path d="M6 16.5c1.6-2 3.2-2 4.8 0M13.2 16.5c1.6-2 3.2-2 4.8 0"/></symbol>
+  <symbol id="i-multi" viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="9" height="5" rx="1.6"/><rect x="12.5" y="4.5" width="9" height="5" rx="1.6"/><rect x="7.5" y="14.5" width="9" height="5" rx="1.6"/><path d="M7 9.5v3h10v-3"/><path d="M12 12.5v2"/></symbol>
+  <symbol id="i-duct" viewBox="0 0 24 24"><path d="M3 5h18v5H3z"/><path d="M7 10v4h10v-4"/><path d="M5 18h5M14 18h5"/><path d="M7.5 14v4M16.5 14v4"/></symbol>
+  <symbol id="i-service" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></symbol>
+  <symbol id="i-ctrl" viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.4"/><circle cx="12" cy="11" r="3.4"/><path d="M12 8.6V11l1.7 1"/></symbol>
+  <symbol id="i-hat" viewBox="0 0 24 24"><path d="M3.5 17.5h17"/><path d="M6 17.5V13a6 6 0 0 1 12 0v4.5"/><path d="M10 7.4V5.5h4v1.9"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10.5V20h13v-9.5"/><path d="M10 20v-5h4v5"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20 4c0 9-5.5 14-12 14a6 6 0 0 1 0-12c4 0 6-2 12-2z"/><path d="M12 18c0-5 2-8 6-10"/></symbol>
+  <symbol id="i-quiet" viewBox="0 0 24 24"><path d="M11 5 6.5 9H3v6h3.5L11 19z"/><path d="m16 9.5 4 5M20 9.5l-4 5"/></symbol>
+  <symbol id="i-rosette" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.6 7 22l5-2.5L17 22l-1.5-8.4"/><path d="m9.8 9 1.6 1.6 3-3"/></symbol>
+  <symbol id="i-headset" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="2.5" y="13.5" width="4" height="6" rx="1.6"/><rect x="17.5" y="13.5" width="4" height="6" rx="1.6"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4.5 6v6c0 4.4 3.1 8.3 7.5 9.3 4.4-1 7.5-4.9 7.5-9.3V6z"/><path d="M9 12.2l2.1 2.1L15.4 10"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.7 5.9 6.3.7-4.7 4.3 1.3 6.1L12 17l-5.6 3 1.3-6.1L3 9.6l6.3-.7z"/></symbol>
+  <symbol id="i-arr-r" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-arr-l" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.6"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path d="M14 8h2V5h-2a3.5 3.5 0 0 0-3.5 3.5V11H9v3h1.5v6h3v-6H16l.5-3h-3V8.8c0-.5.3-.8.8-.8z"/></symbol>
+  <symbol id="i-li" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2.4"/><path d="M8 10.5V17M8 7.6v.1M12 17v-3.6a2.1 2.1 0 0 1 4.2 0V17"/></symbol>
+</svg>
+
+<!-- ══ 01 NAV ══ -->
+<header class="nav banded">
+  <div class="wrap nav-in">
+    <a class="brand" href="#">
+      <svg class="mkl" viewBox="0 0 28 28" aria-hidden="true">
+        <path d="M14 3 25 24H3z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+        <path d="M14 11 19.5 21h-11z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+      </svg>
+      <b>AIRCON</b>
+    </a>
+    <nav class="nav-links">
+      <a class="on" href="#process">Our Process</a><a href="#why">Why Choose Us?</a>
+      <a href="#services">Services</a><a href="#reviews">Reviews</a>
+      <a href="#faq">Guides</a><a href="#">Careers</a>
+      <a href="#">Area</a><a href="#cta">Contact</a>
+    </nav>
+    <a class="nav-tel" href="tel:01632960300"><svg class="icon"><use href="#i-phone"/></svg><span>01632 960 300</span></a>
+    <a class="btn btn-t" href="#cta">Get a quote</a>
+    <button class="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ══ 02 HERO ══ -->
+<section class="hero banded">
+  <div class="hero-copy">
+    <span class="pill"><svg class="icon"><use href="#i-check"/></svg> F Gas Certified &middot; REFCOM member since 2012</span>
+    <h1>Air conditioning &amp; heat pumps<em>done properly.</em></h1>
+    <p class="sub">Expert air conditioning and heat pump installations for homes and businesses right across Britain, surveyed, fitted and monitored by our own engineers.</p>
+    <div class="hero-cta">
+      <a class="btn btn-t" href="#cta">Get A Free Quote <svg class="icon"><use href="#i-arr-r"/></svg></a>
+      <a class="btn btn-ghost" href="#services">Speak To Our Experts</a>
+    </div>
+    <div class="hero-proof">
+      <div class="pf"><b>4,200+</b><span>Installs since 2012</span></div>
+      <div class="pf"><b>25 yr</b><span>Manufacturer warranty</span></div>
+      <div class="pf"><b>&pound;1,240</b><span>Average yearly saving</span></div>
+    </div>
+    <a class="grev" href="#reviews" aria-label="Rated 4.9 out of 5 from 1,900+ Google reviews">
+      <svg class="grev__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+      <span class="grev__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <span class="grev__txt"><b>4.9</b> from <b>1,900+</b> Google reviews</span>
+    </a>
+  </div>
+  <div class="hero-shot">
+    <!-- poster is the video's own first frame, not a different room: without one
+         the hero shows flat colour until the file lands and the first frame
+         then pops in. Decorative, so it is hidden from assistive tech - the h1
+         beside it already carries the message. -->
+    <video class="hero-vid" autoplay muted loop playsinline preload="auto"
+           aria-hidden="true" width="1920" height="1080"
+           poster="images/hero-aircon10-poster.jpg">
+      <source src="video/hero-aircon10.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
+
+<!-- ══ 03 STRIP ══ -->
+<section class="strip banded">
+  <div class="wrap strip-in">
+    <h2>Trusted by leading UK<br>companies &amp; accreditations</h2>
+    <!-- Two marquee rails, both running the same way. Each rail holds five
+         copies of its seven-mark group and travels exactly one group width
+         (-20% of a five-copy track), so the loop is seamless. Only the first
+         copy is exposed to assistive tech; the rest are decorative repeats. -->
+    <div class="lgmq">
+      <div class="lgmq__row">
+        <div class="lgmq__track">
+          <div class="lgmq__grp">
+            <span><img src="logos/daikin.svg" class="sq" alt="Daikin" loading="lazy"></span>
+            <span><img src="logos/mitsubishi.svg" class="wide" alt="Mitsubishi Electric" loading="lazy"></span>
+            <span><img src="logos/panasonic.svg" class="wide" alt="Panasonic" loading="lazy"></span>
+            <span><img src="logos/toshiba.svg" class="wide" alt="Toshiba" loading="lazy"></span>
+            <span><img src="logos/fujitsu.svg" class="wide" alt="Fujitsu" loading="lazy"></span>
+            <span><img src="logos/lg.svg" alt="LG" loading="lazy"></span>
+            <span><img src="logos/samsung.png" class="wide" alt="Samsung" loading="lazy"></span>
+          </div>
+          <div class="lgmq__grp" aria-hidden="true">
+            <span><img src="logos/daikin.svg" class="sq" alt="" loading="lazy"></span>
+            <span><img src="logos/mitsubishi.svg" class="wide" alt="" loading="lazy"></span>
+            <span><img src="logos/panasonic.svg" class="wide" alt="" loading="lazy"></span>
+            <span><img src="logos/toshiba.svg" class="wide" alt="" loading="lazy"></span>
+            <span><img src="logos/fujitsu.svg" class="wide" alt="" loading="lazy"></span>
+            <span><img src="logos/lg.svg" alt="" loading="lazy"></span>
+            <span><img src="logos/samsung.png" class="wide" alt="" loading="lazy"></span>
+          </div>
+          <div class="lgmq__grp" aria-hidden="true">
+            <span><img src="logos/daikin.svg" class="sq" alt="" loading="lazy"></span>
+            <span><img src="logos/mitsubishi.svg" class="wide" alt="" loading="lazy"></span>
+            <span><img src="logos/panasonic.svg" class="wide" alt="" loading="lazy"></span>
+            <span><img src="logos/toshiba.svg" class="wide" alt="" loading="lazy"></span>
+            <span><img src="logos/fujitsu.svg" class="wide" alt="" loading="lazy"></span>
+            <span><img src="logos/lg.svg" alt="" loading="lazy"></span>
+            <span><img src="logos/samsung.png" class="wide" alt="" loading="lazy"></span>
+          </div>
+          <div class="lgmq__grp" aria-hidden="true">
+            <span><img src="logos/daikin.svg" class="sq" alt="" loading="lazy"></span>
+            <span><img src="logos/mitsubishi.svg" class="wide" alt="" loading="lazy"></span>
+            <span><img src="logos/panasonic.svg" class="wide" alt="" loading="lazy"></span>
+            <span><img src="logos/toshiba.svg" class="wide" alt="" loading="lazy"></span>
+            <span><img src="logos/fujitsu.svg" class="wide" alt="" loading="lazy"></span>
+            <span><img src="logos/lg.svg" alt="" loading="lazy"></span>
+            <span><img src="logos/samsung.png" class="wide" alt="" loading="lazy"></span>
+          </div>
+          <div class="lgmq__grp" aria-hidden="true">
+            <span><img src="logos/daikin.svg" class="sq" alt="" loading="lazy"></span>
+            <span><img src="logos/mitsubishi.svg" class="wide" alt="" loading="lazy"></span>
+            <span><img src="logos/panasonic.svg" class="wide" alt="" loading="lazy"></span>
+            <span><img src="logos/toshiba.svg" class="wide" alt="" loading="lazy"></span>
+            <span><img src="logos/fujitsu.svg" class="wide" alt="" loading="lazy"></span>
+            <span><img src="logos/lg.svg" alt="" loading="lazy"></span>
+            <span><img src="logos/samsung.png" class="wide" alt="" loading="lazy"></span>
+          </div>
+        </div>
+      </div>
+      <div class="lgmq__row">
+        <div class="lgmq__track">
+          <div class="lgmq__grp">
+            <span><img src="logos/refcom.png" alt="REFCOM Registered" loading="lazy"></span>
+            <span><img src="images/live/accred-safecontractor.png" class="sq" alt="SafeContractor Approved" loading="lazy"></span>
+            <span><img src="logos/which.jpg" alt="Which? Trusted Trader" loading="lazy"></span>
+            <span><img src="logos/trustmark.svg" alt="TrustMark Approved" loading="lazy"></span>
+            <span><img src="images/live/accred-recc.png" alt="RECC Member" loading="lazy"></span>
+            <span><img src="images/live/accred-trustatrader.png" class="sq" alt="TrustATrader Member" loading="lazy"></span>
+            <span><img src="images/live/accred-heatgeek.png" alt="Heat Geek Certified" loading="lazy"></span>
+          </div>
+          <div class="lgmq__grp" aria-hidden="true">
+            <span><img src="logos/refcom.png" alt="" loading="lazy"></span>
+            <span><img src="images/live/accred-safecontractor.png" class="sq" alt="" loading="lazy"></span>
+            <span><img src="logos/which.jpg" alt="" loading="lazy"></span>
+            <span><img src="logos/trustmark.svg" alt="" loading="lazy"></span>
+            <span><img src="images/live/accred-recc.png" alt="" loading="lazy"></span>
+            <span><img src="images/live/accred-trustatrader.png" class="sq" alt="" loading="lazy"></span>
+            <span><img src="images/live/accred-heatgeek.png" alt="" loading="lazy"></span>
+          </div>
+          <div class="lgmq__grp" aria-hidden="true">
+            <span><img src="logos/refcom.png" alt="" loading="lazy"></span>
+            <span><img src="images/live/accred-safecontractor.png" class="sq" alt="" loading="lazy"></span>
+            <span><img src="logos/which.jpg" alt="" loading="lazy"></span>
+            <span><img src="logos/trustmark.svg" alt="" loading="lazy"></span>
+            <span><img src="images/live/accred-recc.png" alt="" loading="lazy"></span>
+            <span><img src="images/live/accred-trustatrader.png" class="sq" alt="" loading="lazy"></span>
+            <span><img src="images/live/accred-heatgeek.png" alt="" loading="lazy"></span>
+          </div>
+          <div class="lgmq__grp" aria-hidden="true">
+            <span><img src="logos/refcom.png" alt="" loading="lazy"></span>
+            <span><img src="images/live/accred-safecontractor.png" class="sq" alt="" loading="lazy"></span>
+            <span><img src="logos/which.jpg" alt="" loading="lazy"></span>
+            <span><img src="logos/trustmark.svg" alt="" loading="lazy"></span>
+            <span><img src="images/live/accred-recc.png" alt="" loading="lazy"></span>
+            <span><img src="images/live/accred-trustatrader.png" class="sq" alt="" loading="lazy"></span>
+            <span><img src="images/live/accred-heatgeek.png" alt="" loading="lazy"></span>
+          </div>
+          <div class="lgmq__grp" aria-hidden="true">
+            <span><img src="logos/refcom.png" alt="" loading="lazy"></span>
+            <span><img src="images/live/accred-safecontractor.png" class="sq" alt="" loading="lazy"></span>
+            <span><img src="logos/which.jpg" alt="" loading="lazy"></span>
+            <span><img src="logos/trustmark.svg" alt="" loading="lazy"></span>
+            <span><img src="images/live/accred-recc.png" alt="" loading="lazy"></span>
+            <span><img src="images/live/accred-trustatrader.png" class="sq" alt="" loading="lazy"></span>
+            <span><img src="images/live/accred-heatgeek.png" alt="" loading="lazy"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 04 PROCESS ══ -->
+<section class="sec proc banded" id="process">
+  <div class="wrap">
+    <div class="sechd sechd--left">
+      <span class="lab">How it works</span>
+      <h2>From survey to switch on in three steps</h2>
+      <p>A straightforward path to lower bills, handled end to end by our own accredited UK team, from your first call to switch on.</p>
+    </div>
+  </div>
+  <div class="wrap psteps">
+    <div class="pstep"><span class="pno">1</span>
+      <div><h3>Free home survey</h3><p>A local surveyor assesses your rooms, layout and energy use, then talks through your savings, no obligation, no jargon.</p>
+      <a class="plink" href="#cta">Book a survey <svg class="icon"><use href="#i-arr-r"/></svg></a></div>
+      <svg class="icon to"><use href="#i-arr-r"/></svg></div>
+    <div class="pstep"><span class="pno">2</span>
+      <div><h3>Tailored design &amp; quote</h3><p>We size the indoor and outdoor units to your rooms, recommend the right range for the space and send one itemised fixed price covering the units, installation and commissioning.</p>
+      <a class="plink" href="#kit">See the kit <svg class="icon"><use href="#i-arr-r"/></svg></a></div>
+      <svg class="icon to"><use href="#i-arr-r"/></svg></div>
+    <div class="pstep"><span class="pno">3</span>
+      <div><h3>F Gas certified install</h3><p>Our accredited engineers fit and commission your system, usually in a day. We register the manufacturer warranty, set up the app and book your first annual service before we leave.</p>
+      <a class="plink" href="#cta">Talk to us <svg class="icon"><use href="#i-arr-r"/></svg></a></div>
+      <span></span></div>
+  </div>
+
+  <div class="wrap ctapair">
+    <a class="btn btn-t" href="#cta">Get A Free Quote</a>
+    <a class="btn btn-out" href="#cta">Speak To Our Experts</a>
+  </div>
+</section>
+
+<!-- ══ 05 SERVICES ══ -->
+<section class="sec svc banded" id="services">
+  <div class="wrap">
+    <div class="sechd sechd--left">
+      <span class="lab">Our solutions</span>
+      <h2>What we install</h2>
+      <a class="btn btn-t" href="#cta">View all solutions <svg class="icon"><use href="#i-arr-r"/></svg></a>
+    </div>
+  </div>
+  <div class="wrap svcrow">
+    <div class="svcitem">
+      <div class="im" style="--img:url('images/live/sol-res.webp')" role="img" aria-label="Bedroom with a slim wall mounted indoor unit above the bed"></div>
+      <svg class="icon"><use href="#i-split"/></svg>
+      <b>Residential air conditioning</b><p>Wall mounted, multi split and concealed ducted systems for homes. Sized room by room from a heat load survey rather than sold off a shelf.</p>
+      <a class="plink" href="#cta">Learn more <svg class="icon"><use href="#i-arr-r"/></svg></a></div>
+    <div class="svcitem">
+      <div class="im" style="--img:url('images/live/sol-com.jpg')" role="img" aria-label="Ventilation and air conditioning ductwork across a commercial ceiling"></div>
+      <svg class="icon"><use href="#i-duct"/></svg>
+      <b>Commercial air conditioning</b><p>Offices, shops, restaurants, salons, warehouses and workshops. Ceiling cassettes, floor standing units and VRF for multi zone premises, with priority response on contract.</p>
+      <a class="plink" href="#cta">Learn more <svg class="icon"><use href="#i-arr-r"/></svg></a></div>
+    <div class="svcitem">
+      <div class="im" style="--img:url('images/live/ac-service-1-crop.webp')" role="img" aria-label="Engineer servicing an outdoor air conditioning condenser"></div>
+      <svg class="icon"><use href="#i-service"/></svg>
+      <b>Servicing, repairs &amp; care plans</b><p>Any make, whoever fitted it. Annual servicing that keeps your warranty valid, same day breakdown cover, and a care plan from &pound;9 a month.</p>
+      <a class="plink" href="#cta">Learn more <svg class="icon"><use href="#i-arr-r"/></svg></a></div>
+  </div>
+
+  <div class="wrap ctapair">
+    <a class="btn btn-t" href="#cta">Get A Free Quote</a>
+    <a class="btn btn-out" href="#cta">Speak To Our Experts</a>
+  </div>
+</section>
+
+<!-- ══ 06 KIT ══ -->
+<section class="sec kit banded" id="kit">
+  <div class="wrap kit-in">
+    <div>
+      <span class="eyebrow">What we fit</span>
+      <h2>The units we fit</h2>
+      <p>We are approved installers for Daikin and Mitsubishi Electric and accredited by Panasonic. These are the ranges we fit most often, which one suits you depends on the room, not on what happens to be in the van.</p>
+    </div>
+    <div class="kitart">
+      <!-- drawn rather than photographed: a generic lockup avoids putting one
+           manufacturer's product art behind copy that does not name it -->
+      <svg viewBox="0 0 520 190" role="img" aria-label="An outdoor condenser, an indoor wall unit and a smart controller, linked by the refrigerant path">
+        <rect x="24" y="34" width="140" height="124" rx="8" fill="#1B4636" stroke="#3A6B56" stroke-width="1.6"/>
+        <rect x="24" y="34" width="140" height="17" rx="8" fill="#245A46"/>
+        <circle cx="82" cy="106" r="38" fill="#12352A" stroke="#E09A72" stroke-width="2"/>
+        <circle cx="82" cy="106" r="27" fill="none" stroke="#3A6B56" stroke-width="1.3"/>
+        <g fill="#E09A72" opacity=".92">
+          <path d="M82 106c0-13 5-22 11-25 3 9 1 19-11 25z"/>
+          <path d="M82 106c11 7 15 16 13 22-8 2-17-6-13-22z"/>
+          <path d="M82 106c-11 7-21 6-24 0 6-7 16-8 24 0z"/>
+        </g>
+        <circle cx="82" cy="106" r="5" fill="#E09A72"/>
+        <g stroke="#3A6B56" stroke-width="2.4" stroke-linecap="round">
+          <path d="M132 82h22M132 96h22M132 110h22M132 124h22"/>
+        </g>
+        <path d="M40 158v10M148 158v10" stroke="#3A6B56" stroke-width="3" stroke-linecap="round"/>
+        <rect x="252" y="52" width="150" height="36" rx="11" fill="#EFEDE3"/>
+        <path d="M258 79h138" stroke="#C7D5C7" stroke-width="1.5"/>
+        <rect x="264" y="81" width="126" height="6" rx="3" fill="#D6DED2"/>
+        <circle cx="386" cy="63" r="3" fill="#C0562F"/>
+        <g stroke="#E09A72" stroke-width="2.2" fill="none" stroke-linecap="round" opacity=".8">
+          <path d="M276 102c8 9 17 9 25 0"/><path d="M302 114c8 9 17 9 25 0"/>
+          <path d="M276 126c8 9 17 9 25 0"/><path d="M330 102c8 9 17 9 25 0"/>
+        </g>
+        <rect x="434" y="74" width="58" height="58" rx="12" fill="#0D291F" stroke="#3A6B56" stroke-width="1.5"/>
+        <circle cx="463" cy="103" r="19" fill="none" stroke="#E09A72" stroke-width="1.8"/>
+        <text x="463" y="109" text-anchor="middle" font-family="Inter,Segoe UI,sans-serif"
+              font-size="14" font-weight="700" fill="#EFEDE3">21&#176;</text>
+        <path d="M164 96h88M402 84h32" stroke="#E09A72" stroke-width="2.6" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="prodgrid">
+      <div class="prodcard">
+        <div class="im" style="--img:url('images/live/product-sensira-2.webp')" role="img" aria-label="Daikin Sensira wall mounted indoor unit"></div>
+        <div class="prodcard__b">
+          <span class="prodcard__k">Daikin</span>
+          <h3>Sensira FTXF</h3>
+          <p>The value benchmark, and the unit we fit most in bedrooms and home offices. Quiet, efficient and simple to live with.</p>
+          <ul class="prodspec"><li>2.0 to 5.0kW, A+++ cooling</li><li>19 dB minimum sound level</li><li>Optional Wi Fi controller</li></ul>
+        </div>
+      </div>
+      <div class="prodcard">
+        <div class="im" style="--img:url('images/live/product-stylish-1.webp')" role="img" aria-label="Daikin Stylish slim line indoor unit"></div>
+        <div class="prodcard__b">
+          <span class="prodcard__k">Daikin</span>
+          <h3>Stylish FTXA</h3>
+          <p>Flat fronted and only 189mm deep, for rooms where a standard unit would dominate the wall. Silver, white or matt black.</p>
+          <ul class="prodspec"><li>2.0 to 3.5kW, A+++ both modes</li><li>Built in Wi Fi and presence sensor</li><li>Flash Streamer air purification</li></ul>
+        </div>
+      </div>
+      <div class="prodcard">
+        <div class="im" style="--img:url('images/live/product-premium-2.webp')" role="img" aria-label="Mitsubishi Electric outdoor condenser unit"></div>
+        <div class="prodcard__b">
+          <span class="prodcard__k">Mitsubishi Electric</span>
+          <h3>MSZ AP Series</h3>
+          <p>Where reliability matters most. Dual barrier coating keeps the internals clean, which is what keeps efficiency where it started.</p>
+          <ul class="prodspec"><li>2.5 to 7.1kW single split</li><li>Works down to minus 15&deg;C in heating</li><li>MELCloud app control</li></ul>
+        </div>
+      </div>
+      <div class="prodcard">
+        <div class="im" style="--img:url('images/live/product-single-2.webp')" role="img" aria-label="Multi split outdoor condenser serving several indoor units"></div>
+        <div class="prodcard__b">
+          <span class="prodcard__k">Multi room</span>
+          <h3>Multi Split &amp; Ducted</h3>
+          <p>One outdoor condenser running up to five indoor units, each room on its own temperature. Where you would rather see nothing at all, we fit concealed ducted or ceiling cassettes.</p>
+          <ul class="prodspec"><li>Up to 5 indoor units per condenser</li><li>Wall, floor, cassette or ducted</li><li>Zoned scheduling per room</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap ctapair">
+    <a class="btn btn-t" href="#cta">Get A Free Quote</a>
+    <a class="btn btn-ghost" href="#cta">Speak To Our Experts</a>
+  </div>
+</section>
+
+<!-- ══ 07 FEATURES ══ -->
+<section class="sec feats banded" id="features">
+  <div class="wrap feat-row">
+    <div class="feat-copy">
+      <span class="eyebrow">Survey &amp; design</span>
+      <h2 class="h2">A system designed around your rooms</h2>
+      <ul class="ftick">
+        <li><svg class="icon"><use href="#i-check"/></svg>We calculate the cooling load room by room, so units are sized to the space rather than guessed.</li>
+        <li><svg class="icon"><use href="#i-check"/></svg>Pipe routes and indoor unit positions are agreed with you before any work starts.</li>
+        <li><svg class="icon"><use href="#i-check"/></svg>Every install is commissioned and F Gas certified, with the paperwork handled for you.</li>
+      </ul>
+    </div>
+    <div class="im feat-shot" style="--img:url('images/cw-hero.jpg')" role="img" aria-label="A air conditioning energy dashboard on screen showing daily production and home consumption charts"></div>
+  </div>
+
+  <div class="wrap feat-row feat-row--rev">
+    <div class="feat-copy">
+      <span class="eyebrow">The numbers</span>
+      <h2 class="h2">Lower running costs, year after year</h2>
+      <ul class="ftick">
+        <li><svg class="icon"><use href="#i-check"/></svg>Inverter systems draw only the power the room actually needs, cutting monthly running costs.</li>
+        <li><svg class="icon"><use href="#i-check"/></svg>Zoned controls mean you only cool the rooms in use, rather than the whole house.</li>
+        <li><svg class="icon"><use href="#i-check"/></svg>Shield yourself from rising energy prices with A+++ rated units and a serviced system.</li>
+      </ul>
+    </div>
+    <div class="barviz">
+      <div class="bar-row">
+        <div class="bl"><span>After installation</span><span>&pound;520/yr</span></div>
+        <div class="bar after"><span style="width:34%"></span></div>
+      </div>
+      <div class="bar-row">
+        <div class="bl"><span>Before installation</span><span>&pound;1,850/yr</span></div>
+        <div class="bar before"><span style="width:92%"></span></div>
+      </div>
+      <p class="barnote">Typical running cost for cooling and heating a three bedroom home, before and after a properly sized inverter system.</p>
+    </div>
+  </div>
+
+  <div class="wrap ctapair">
+    <a class="btn btn-t" href="#cta">Get A Free Quote</a>
+    <a class="btn btn-out" href="#cta">Speak To Our Experts</a>
+  </div>
+</section>
+
+<!-- ══ 08 WHY ══ -->
+<section class="sec banded" id="why">
+  <div class="wrap why-in">
+    <div class="why-head">
+      <span class="eyebrow">Why us</span>
+      <h2 class="h2">Why British homeowners<br>choose Aircon</h2>
+    </div>
+    <div class="whyrow">
+      <div class="whyitem"><svg class="icon"><use href="#i-hat"/></svg>
+        <b>Our own engineers, never subcontracted</b><p>Every system is surveyed, fitted and commissioned by engineers we employ. The person who quotes your job is the one accountable for it.</p></div>
+      <div class="whyitem"><svg class="icon"><use href="#i-plan"/></svg>
+        <b>Fixed, itemised pricing</b><p>No hidden fees and no day of install surprises. Each quote breaks out units, materials and labour so you can see exactly what you are paying for.</p></div>
+      <div class="whyitem"><svg class="icon"><use href="#i-headset"/></svg>
+        <b>Same day and next day repairs</b><p>Quick response keeps downtime short. Same day and next day appointments for breakdowns, plus a 24/7 out of hours line through the summer.</p></div>
+      <div class="whyitem"><svg class="icon"><use href="#i-shield"/></svg>
+        <b>Up to 12 year warranty</b><p>Manufacturer warranty registered by us on the day of commissioning, backed by five years of workmanship cover on our own installation.</p></div>
+      <div class="whyitem"><svg class="icon"><use href="#i-rosette"/></svg>
+        <b>Manufacturer approved</b><p>Approved installer for Daikin and Mitsubishi Electric, accredited by Panasonic, REFCOM Elite registered and F Gas certified.</p></div>
+      <div class="whyitem"><svg class="icon"><use href="#i-home"/></svg>
+        <b>We leave it as we found it</b><p>Dust sheets down, cores drilled cleanly and a full clean down before we go. Care on the install is what stops the callbacks later.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 09 STATS ══ -->
+<section class="stats banded">
+  <div class="wrap">
+    <div class="sechd sechd--left">
+      <span class="lab">Our numbers</span>
+      <h2>The difference it makes</h2>
+      <p>Revealing the numbers behind our achievements.</p>
+    </div>
+  </div>
+  <div class="wrap stats-in">
+    <div class="stat"><b>100K</b><span>Indoor units installed and commissioned</span></div>
+    <div class="stat"><b>98%</b><span>Customer satisfaction rate</span></div>
+    <div class="stat"><b>&pound;10.5M</b><span>Electricity costs saved</span></div>
+    <div class="stat"><b>200K</b><span>Tonnes of carbon footprint reduced</span></div>
+  </div>
+</section>
+
+<!-- ══ 10 WORK ══ -->
+<section class="sec work banded" id="work">
+  <div class="wrap work-in">
+    <div class="work-head">
+      <span class="eyebrow">Our projects</span>
+      <h2 class="h2">Recent installations</h2>
+      <a class="link" href="#cta">Get A Free Quote <svg class="icon"><use href="#i-arr-r"/></svg></a>
+    </div>
+    <div class="wgrid">
+      <div class="wcard"><div class="im" style="--img:url('images/live/ac-install-1-crop.webp')" role="img" aria-label="Outdoor condenser mounted on the brick wall of a Victorian terrace"></div>
+        <span class="cap"><b>Victorian terrace multi split</b><small>Bristol &middot; 2024</small></span></div>
+      <div class="wcard"><div class="im" style="--img:url('images/live/sol-res.webp')" role="img" aria-label="Bedroom with a slim wall mounted indoor unit"></div>
+        <span class="cap"><b>Master bedroom retrofit</b><small>Cheshire &middot; 2024</small></span></div>
+      <div class="wcard"><div class="im" style="--img:url('images/live/ac-home-1-crop.webp')" role="img" aria-label="Living room served by a wall mounted air conditioning unit"></div>
+        <span class="cap"><b>Open plan lounge and kitchen</b><small>Norfolk &middot; 2023</small></span></div>
+      <div class="wcard"><div class="im" style="--img:url('images/live/ventilation-2.jpg')" role="img" aria-label="Exposed ventilation ductwork across a commercial ceiling"></div>
+        <span class="cap"><b>Restaurant kitchen extract</b><small>Oxford &middot; 2024</small></span></div>
+      <div class="wcard"><div class="im" style="--img:url('images/live/refrigeration-3.jpg')" role="img" aria-label="Refrigerated display cabinets in a convenience store"></div>
+        <span class="cap"><b>Convenience store cold room</b><small>Kent &middot; 2025</small></span></div>
+      <div class="wcard"><div class="im" style="--img:url('images/live/heatpump-2-crop.png')" role="img" aria-label="Air source heat pump installed beside a house"></div>
+        <span class="cap"><b>Air source heat pump swap</b><small>Surrey &middot; 2024</small></span></div>
+    </div>
+  </div>
+
+  <div class="wrap ctapair">
+    <a class="btn btn-t" href="#cta">Get A Free Quote</a>
+    <a class="btn btn-out" href="#cta">Speak To Our Experts</a>
+  </div>
+</section>
+
+<!-- ══ 11 REVIEWS ══ -->
+<section class="sec revs banded" id="reviews">
+  <div class="wrap">
+    <div class="sechd">
+      <span class="lab">Reviews</span>
+      <h2>What our customers say</h2>
+    </div>
+  </div>
+  <div class="wrap rev__row">
+    <button class="rnav" data-rev="prev" aria-label="Previous review"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+    <div class="rtrack" id="revtrack">
+      <div class="rcard"><span class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <p>Aircon's maintenance has been prompt and reliable, keeping my system running at its best all year.</p><cite>Hannah Mitchell<small>Homeowner, Bristol</small></cite></div>
+      <div class="rcard"><span class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <p>Their units have transformed my home's efficiency and significantly reduced my running costs.</p><cite>Jacob Cruz<small>Homeowner, Leeds</small></cite></div>
+      <div class="rcard"><span class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <p>Choosing Aircon was the best decision for our business, their commercial system cut our energy costs.</p><cite>Aidan Byrd<small>Director, Manchester</small></cite></div>
+      <div class="rcard"><span class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <p>Our unit packed up in the middle of the heatwave and they had an engineer with us within hours. Fixed on the first visit.</p><cite>Marcus Reynolds<small>Homeowner, Wolverhampton</small></cite></div>
+      <div class="rcard"><span class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <p>We had three quotes and theirs was the only one that measured every room instead of guessing. Fitted in a day, spotless finish.</p><cite>Priya Shah<small>Homeowner, Reading</small></cite></div>
+      <div class="rcard"><span class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <p>They look after the units in both our shops and the cold room. One contractor for the lot, on a proper maintenance schedule.</p><cite>Tom Baird<small>Retail Manager, Oxford</small></cite></div>
+    </div>
+    <button class="rnav" data-rev="next" aria-label="Next review"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+  </div>
+
+  <div class="wrap ctapair">
+    <a class="btn btn-t" href="#cta">Get A Free Quote</a>
+    <a class="btn btn-out" href="#cta">Speak To Our Experts</a>
+  </div>
+</section>
+
+<!-- ══ 12 GUARANTEE ══ -->
+<section class="guar banded">
+  <div class="wrap guar-in">
+    <svg class="shield" viewBox="0 0 100 120" role="img" aria-label="7 year system warranty">
+      <path d="M50 5 92 18v48c0 27-18 43-42 51C26 109 8 93 8 66V18z" fill="none" stroke="currentColor" stroke-width="3.4"/>
+    </svg>
+    <div>
+      <span class="eyebrow">Our promise</span>
+      <h2>Zero risk. Total peace of mind.</h2>
+      <p>Every Aircon installation is backed by guarantees that protect your investment for decades.</p>
+      <a class="btn btn-ghost" href="#cta">Request a quote</a>
+    </div>
+    <span class="gbadge">
+      <span class="gring">7<span>YEAR</span></span>
+      <b>SYSTEM<br>WARRANTY</b>
+    </span>
+  </div>
+  <div class="wrap gpromise">
+    <div class="gp"><b class="gn">01</b><span><b>Fixed price guarantee</b>The quote you're given is the price you pay, no hidden costs, ever.</span></div>
+    <div class="gp"><b class="gn">02</b><span><b>7 year parts and labour warranty</b>Your units are guaranteed to keep performing for a next decade.</span></div>
+    <div class="gp"><b class="gn">03</b><span><b>Savings promise</b>If your system underperforms our estimate, we'll put it right at no cost.</span></div>
+  </div>
+</section>
+
+<!-- ══ 13 FAQ ══ -->
+<section class="sec faq banded" id="faq">
+  <div class="wrap faq-in">
+    <div>
+      <span class="eyebrow">Questions</span>
+      <h2 class="h2">Frequently asked questions</h2>
+    </div>
+    <div class="faqcol">
+      <details open><summary>How much does home air conditioning cost?</summary>
+        <div class="ans">A single wall mounted unit is typically &pound;1,895 to &pound;2,400 fitted. A two or three room multi split usually lands between &pound;3,000 and &pound;4,500 depending on pipe runs and access. Every quote is fixed price and itemised, and finance starts around &pound;39 a month.</div></details>
+      <details><summary>How much could I save on my running costs?</summary>
+        <div class="ans">A 2.5kW unit cooling a bedroom draws roughly 0.5kW once it reaches temperature, around 13p an hour at current rates. Used for heating a single room it is far cheaper than firing the whole central heating system, and up to 50% cheaper than plug in electric heaters.</div></details>
+      <details><summary>Do I need planning permission?</summary>
+        <div class="ans">For most English homes a single outdoor unit falls under permitted development, provided it meets the size and siting rules. Listed buildings, conservation areas and flats are the usual exceptions, and we check this at survey stage before you commit.</div></details>
+      <details><summary>How long does installation take?</summary>
+        <div class="ans">A single wall mounted unit is usually a one day job. A two or three room multi split takes two to three days depending on pipe runs, and concealed ducted work longer. We agree the schedule at survey so you know which days we need access.</div></details>
+      <details><summary>Can it heat my home in winter as well?</summary>
+        <div class="ans">Yes. Every system we fit is a reversible heat pump, so the same unit heats in winter. It delivers roughly three to four units of heat for each unit of electricity and keeps working well below freezing.</div></details>
+      <details><summary>How often does it need servicing?</summary>
+        <div class="ans">Once a year. We clean filters and coils, check refrigerant pressures and test the condensate drain. An annual service keeps the manufacturer warranty valid and stops efficiency drifting away.</div></details>
+      <details><summary>Do you repair systems you did not install?</summary>
+        <div class="ans">Yes, any make and whoever fitted it. Same day and next day appointments are available for breakdowns, and we run a 24/7 out of hours line through the summer months.</div></details>
+      <details><summary>How noisy is a modern system?</summary>
+        <div class="ans">Indoor units start around 19 dB in night mode, quieter than a whisper. The outdoor unit sits nearer 45 dB, about the same as a fridge, and we position it away from bedroom windows and boundaries.</div></details>
+      <details><summary>Which brands do you install?</summary>
+        <div class="ans">We are approved installers for Daikin and Mitsubishi Electric and accredited by Panasonic. We also fit Fujitsu, Toshiba, LG, Samsung and Mitsubishi Heavy Industries where they suit the room better.</div></details>
+      <details><summary>Do you offer a maintenance plan?</summary>
+        <div class="ans">Our care plan covers the annual service, filter and coil cleaning, refrigerant checks and priority booking, spread over a manageable monthly payment. It keeps the manufacturer warranty valid and catches faults early.</div></details>
+    </div>
+  </div>
+
+  <div class="wrap ctapair">
+    <a class="btn btn-t" href="#cta">Get A Free Quote</a>
+    <a class="btn btn-out" href="#cta">Speak To Our Experts</a>
+  </div>
+</section>
+
+<!-- ══ 14 CTA ══ -->
+<section class="sec cta banded" id="cta">
+  <div class="wrap cta-in">
+    <div class="ctashot">
+      <div class="im" style="--img:url('images/cw-01.jpg')" role="img" aria-label="An engineer talking a customer through the condenser in their garage after installation"></div>
+    </div>
+    <div>
+      <h2>Ready for air<br>conditioning?</h2>
+      <p class="note">Take the next step towards clean, affordable and sustainable energy for your UK home or business.</p>
+      <!-- the base's #cta carries a button row here; this section had only a
+           plain phone line. The number becomes the second button rather than
+           sitting above one, so it is not repeated twice over. -->
+      <div class="ctapair">
+        <a class="btn btn-t" href="#services">View solutions</a>
+        <a class="btn btn-ghost" href="tel:01632960300">Call 01632 960 300</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 14 FOOTER ══ -->
+<footer class="banded">
+  <div class="wrap foot-in">
+    <div class="foot-brand">
+      <span class="brand">
+        <svg class="mkl" viewBox="0 0 28 28" style="width:26px;height:26px;color:var(--terra-l)" aria-hidden="true">
+          <path d="M14 3 25 24H3z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+          <path d="M14 11 19.5 21h-11z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+        </svg>
+        <b style="font-family:var(--display);font-size:17px;letter-spacing:.1em">AIRCON</b>
+      </span>
+      <p>Clean, affordable air conditioning energy for homes and businesses across Britain. F Gas certified installations you can trust.</p>
+      <div class="socials">
+        <a href="#" aria-label="Instagram"><svg class="icon"><use href="#i-ig"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg class="icon"><use href="#i-fb"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg class="icon"><use href="#i-li"/></svg></a>
+      </div>
+    </div>
+    <div class="foot-col"><h4>Company</h4>
+      <a href="#">Home</a><a href="#">About us</a>
+      <a href="#work">Projects</a><a href="#cta">Contact</a></div>
+    <div class="foot-col"><h4>Solutions</h4>
+      <a href="#services">Residential</a><a href="#services">Commercial</a>
+      <a href="#services">Industrial</a><a href="#why">Heat pump systems</a></div>
+    <div class="foot-col"><h4>Legal</h4>
+      <a href="#">Privacy policy</a><a href="#">Terms</a>
+      <a href="#">Complaints</a><a href="#faq">FAQ</a></div>
+    <div class="foot-col">
+      <h4>Contact</h4>
+      <div class="contactrow">
+        <span><svg class="icon"><use href="#i-phone"/></svg><a href="tel:01632960300">01632 960 300</a></span>
+        <span><svg class="icon"><use href="#i-pin"/></svg>Unit 4, Cooper Works<br>12 Cooper Row<br>London EC1A 1BB</span>
+      </div>
+      <p class="foot-hours"><b>Monday to Friday</b> 08:00 to 18:00<br>
+        <b>Saturday</b> 08:00 to 13:00<br>
+        <b>Sunday</b> closed<br>
+        <b>24/7 emergency line</b> for breakdowns</p>
+    </div>
+    <div class="foot-col">
+      <h4>Accreditations</h4>
+      <div class="foot-lgs">
+        <span class="acc"><b>REFCOM Elite</b><span>F Gas registered</span></span>
+        <span class="acc"><b>MCS</b><span>Certified installer</span></span>
+        <span class="acc"><b>SafeContractor</b><span>Approved</span></span>
+        <span class="acc"><b>CHAS</b><span>Accredited contractor</span></span>
+      </div>
+      <p><b>Accredited since 2015.</b> REFCOM Elite &middot; F Gas &middot; MCS &middot; SafeContractor &middot; CHAS &middot; Daikin &amp; Mitsubishi Electric approved installer.</p>
+    </div>
+  </div>
+  <div class="fcabar banded">
+    <div class="wrap">
+      <span>Aircon Ltd is an Introducer Appointed Representative of a regulated credit broker. The credit broker is not a lender (FRN 111111). Finance is available subject to status. The rate offered is always provisional and will depend upon your personal circumstances, the loan amount and the term.</span>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+/* The hero video autoplays and loops. CSS cannot pause a video, so the one
+   thing the stylesheet cannot honour on its own is prefers-reduced-motion -
+   for those users it holds on the poster frame instead of looping. */
+(function(){
+  var v=document.querySelector(".hero-vid"); if(!v) return;
+  var mq=window.matchMedia("(prefers-reduced-motion: reduce)");
+  function apply(){ if(mq.matches){ v.pause(); v.removeAttribute("autoplay"); }
+                    else { var p=v.play(); if(p&&p.catch) p.catch(function(){}); } }
+  apply();
+  if(mq.addEventListener) mq.addEventListener("change",apply);
+})();
+</script>
+
+<script>
+/* Reviews carousel: arrows move the track one card and it advances on its own,
+   wrapping to the start. Behaviour is left to CSS so the stylesheet honours
+   prefers-reduced-motion. */
+(function(){
+  var track=document.getElementById("revtrack"); if(!track) return;
+  var prev=document.querySelector('[data-rev="prev"]');
+  var next=document.querySelector('[data-rev="next"]');
+  var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function step(){var c=track.querySelector(".rcard"); if(!c) return track.clientWidth;
+    var g=parseFloat(getComputedStyle(track).columnGap||getComputedStyle(track).gap)||0;
+    return c.getBoundingClientRect().width+g;}
+  function atEnd(){return track.scrollLeft+track.clientWidth>=track.scrollWidth-4;}
+  function go(dir){
+    if(dir>0&&atEnd()){track.scrollTo({left:0});return;}
+    if(dir<0&&track.scrollLeft<=4){track.scrollTo({left:track.scrollWidth});return;}
+    track.scrollBy({left:dir*step()});}
+  if(prev) prev.addEventListener("click",function(){go(-1);hold();});
+  if(next) next.addEventListener("click",function(){go(1);hold();});
+  var timer=null,paused=false;
+  function start(){if(!reduce&&!timer) timer=setInterval(function(){if(!paused) go(1);},4500);}
+  function stop(){if(timer){clearInterval(timer);timer=null;}}
+  function hold(){stop();start();}
+  track.addEventListener("mouseenter",function(){paused=true;});
+  track.addEventListener("mouseleave",function(){paused=false;});
+  track.addEventListener("focusin",function(){paused=true;});
+  track.addEventListener("focusout",function(){paused=false;});
+  document.addEventListener("visibilitychange",function(){document.hidden?stop():start();});
+  start();
+})();
+</script>
+
+<script>
+/* FAQ: one answer open at a time. Opening any question closes whichever was
+   open, so clicking through the list never leaves a stack of them expanded.
+
+   Deliberately NOT behind the motion gate - this is behaviour, not decoration,
+   and a visitor on reduced motion should get the same accordion as everyone
+   else. Setting .open fires `toggle` again on the element being closed, but
+   that pass returns immediately because !o.open, so there is no loop. */
+(function(){
+  var items=[].slice.call(document.querySelectorAll(".faqcol details"));
+  if(items.length<2) return;
+  items.forEach(function(d){
+    d.addEventListener("toggle",function(){
+      if(!d.open) return;
+      items.forEach(function(o){ if(o!==d && o.open) o.open=false; });
+    });
+  });
+})();
+</script>
+
+<script>
+/* Motion. Runs only if the head gate added .anim - see the note there. */
+(function(){
+  var root=document.documentElement;
+  if(!root.classList.contains("anim")) return;
+  /* called as a method of window, never as a detached reference */
+  function raf(fn){
+    return window.requestAnimationFrame ? window.requestAnimationFrame(fn) : setTimeout(fn,16);
+  }
+
+  /* ── curtain ──────────────────────────────────────────────────────────
+     The CSS has already faded it out by ~1.5s from parse. This only takes
+     it out of the DOM afterwards; the timer is absolute rather than hung
+     off `load` so a slow asset cannot delay the removal past the fade. */
+  var pre=document.getElementById("pre");
+  if(pre) setTimeout(function(){ if(pre.parentNode) pre.parentNode.removeChild(pre); },1700);
+
+  /* ── scroll reveal ────────────────────────────────────────────────────
+     data-rv is assigned here rather than written into the markup, so the
+     reveal set lives in one list and the HTML stays readable.
+
+     The reviews carousel is deliberately excluded: its cards are clipped by
+     a horizontal scroller, so an observer against the viewport would hold
+     the off-screen ones at opacity 0 until someone scrolled the rail. */
+  var SETS=[
+    ["up",    ".sechd, .why-head, .work-head, .strip-in>h2, .faq-in>div>.h2"],
+    ["up",    ".svcitem, .whyitem, .prodcard, .pstep, .wcard, .stat, .gp, .faqcol details, .foot-col"],
+    ["left",  ".feat-copy, .kit-in>*:first-child, .guar-in>*:first-child, .cta-in>*:first-child"],
+    ["right", ".feat-art, .kit-in>*:last-child, .guar-in>*:last-child, .cta-in>*:last-child"]
+  ];
+  SETS.forEach(function(s){
+    var els;
+    try{ els=document.querySelectorAll(s[1]); }catch(e){ return; }
+    [].forEach.call(els,function(el){
+      /* first list to claim an element wins, so a .sechd never also picks up
+         the generic card treatment below it */
+      if(!el.hasAttribute("data-rv") && !el.closest(".hero") && !el.closest(".rtrack")){
+        el.setAttribute("data-rv",s[0]);
+      }
+    });
+  });
+
+  /* stagger siblings so a row of cards arrives as a sweep, not a block */
+  var rv=[].slice.call(document.querySelectorAll("[data-rv]"));
+  rv.forEach(function(el){
+    var sibs=[].filter.call(el.parentNode.children,function(c){
+      return c.nodeType===1 && c.hasAttribute("data-rv");
+    });
+    var i=sibs.indexOf(el);
+    if(i>0) el.style.setProperty("--rvd",Math.min(i*70,420)+"ms");
+  });
+
+  var io=null, pending=rv.slice();
+
+  function show(el){
+    el.classList.add("is-in");
+    if(io) io.unobserve(el);
+  }
+
+  /* Second, independent trigger. The observer is the nice one - it fires at a
+     precise threshold - but it is not a guarantee: delivery is asynchronous
+     and can be starved, and a visitor who drags the scrollbar or hits End can
+     outrun it. Anything that reaches the fold is revealed here regardless, so
+     no element can end up stranded at opacity 0 with content in it. Cheap to
+     run: the list only ever shrinks. */
+  function sweep(){
+    if(!pending.length) return;
+    var vh=window.innerHeight||document.documentElement.clientHeight;
+    pending=pending.filter(function(el){
+      if(el.getBoundingClientRect().top < vh*0.92){ show(el); return false; }
+      return true;
+    });
+  }
+
+  if("IntersectionObserver" in window){
+    io=new IntersectionObserver(function(en){
+      en.forEach(function(e){
+        if(e.isIntersecting){
+          show(e.target);
+          var i=pending.indexOf(e.target); if(i>-1) pending.splice(i,1);
+        }
+      });
+    },{rootMargin:"0px 0px -8% 0px",threshold:.08});
+    rv.forEach(function(el){ io.observe(el); });
+  }else{
+    /* no observer: show everything rather than hide it */
+    rv.forEach(show); pending=[];
+  }
+
+  /* ── nav shadow + scroll progress ── */
+  var nav=document.querySelector(".nav"),
+      sprog=document.getElementById("sprog"),
+      queued=false, lastSweep=0;
+  function now(){ return (window.performance&&performance.now)?performance.now():Date.now(); }
+
+  function onScroll(){
+    /* The reveal sweep is deliberately NOT batched behind the rAF latch below.
+       That latch is set before the frame callback runs and cleared inside it,
+       so a single dropped or deferred callback - a background tab, a starved
+       frame - leaves it stuck closed and every later scroll returns early.
+       A fallback that can be disabled by the thing it is guarding against is
+       no fallback, so this is time-throttled instead and cannot latch. */
+    var t=now();
+    if((pending.length||counters.length) && t-lastSweep>90){
+      lastSweep=t; sweep(); sweepCounters();
+    }
+    if(queued) return; queued=true;
+    raf(function(){
+      var y=window.pageYOffset||document.documentElement.scrollTop||0;
+      if(nav) nav.classList[y>8?"add":"remove"]("is-stuck");
+      if(sprog){
+        var h=document.documentElement.scrollHeight-window.innerHeight;
+        sprog.style.transform="scaleX("+(h>0?Math.min(y/h,1):0)+")";
+      }
+      queued=false;
+    });
+  }
+
+  /* ── counting figures ─────────────────────────────────────────────────
+     Counts only the numeric run inside the label and puts the original text
+     back on the final frame, so "£1,240", "4,200+" and "25 yr" keep their
+     symbol, suffix and thousands separator exactly as authored. Anything
+     without a number in it is left alone. */
+  function count(el){
+    /* a second start would reset a running count to zero and, if it landed
+       late, leave the figure reading "0" - so one run per element, ever */
+    if(el.getAttribute("data-counted")) return;
+    el.setAttribute("data-counted","1");
+    var raw=el.textContent;
+    el.setAttribute("data-raw",raw);
+    var m=raw.match(/\d[\d,]*(\.\d+)?/);
+    if(!m) return;
+    var txt=m[0], target=parseFloat(txt.replace(/,/g,""));
+    if(!isFinite(target)) return;
+    var grouped=txt.indexOf(",")>-1,
+        dec=(txt.split(".")[1]||"").length,
+        head=raw.slice(0,m.index),
+        tail=raw.slice(m.index+txt.length),
+        /* timed off performance.now() rather than the frame timestamp: the
+           two use different origins, and mixing them made the first frame
+           compute a bogus elapsed time */
+        t0=(window.performance&&performance.now)?performance.now():Date.now(),
+        dur=1150;
+    el.classList.add("cnt");
+    function now(){ return (window.performance&&performance.now)?performance.now():Date.now(); }
+    function frame(){
+      var p=Math.min((now()-t0)/dur,1),
+          v=target*(1-Math.pow(1-p,3)),
+          s=v.toFixed(dec);
+      if(grouped) s=Number(s).toLocaleString("en-GB",
+        {minimumFractionDigits:dec,maximumFractionDigits:dec});
+      el.textContent=head+s+tail;
+      if(p<1) raf(frame);
+      else el.textContent=raw;   /* land on the authored string exactly */
+    }
+    raf(frame);
+    /* Backstop. rAF stops in a background tab, so a count that begins just as
+       someone switches away would sit on a part-way number - or on "0" - for
+       as long as they are gone. This lands the authored string regardless;
+       if the loop already finished it just writes the same text again. */
+    setTimeout(function(){ el.textContent=raw; },dur+1400);
+  }
+
+  /* Figures start counting on the same sweep as the reveals rather than on a
+     second observer of their own. One trigger, one set of failure modes - and
+     a figure that never counts is a figure stuck reading "0", which is worse
+     than one that simply appears at its final value. */
+  var counters=[].slice.call(document.querySelectorAll(".stat b, .hero-proof .pf b"));
+  function sweepCounters(){
+    if(!counters.length) return;
+    var vh=window.innerHeight||document.documentElement.clientHeight;
+    counters=counters.filter(function(el){
+      if(el.getBoundingClientRect().top >= vh*0.9) return true;
+      /* the hero figures are already on screen at load - let the entrance
+         land before the numbers start moving behind it */
+      setTimeout(count.bind(null,el), el.closest(".hero") ? 1250 : 0);
+      return false;
+    });
+  }
+
+  window.addEventListener("scroll",onScroll,{passive:true});
+  window.addEventListener("resize",onScroll,{passive:true});
+  /* images and fonts landing after first paint move everything down, so the
+     fold ends up somewhere other than where it was a moment ago */
+  window.addEventListener("load",function(){ sweep(); sweepCounters(); onScroll(); });
+  sweep(); sweepCounters(); onScroll();
+})();
+</script>
+</body>
+</html>

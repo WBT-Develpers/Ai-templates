@@ -1,0 +1,2073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aircon: Air Conditioning Designed for British Homes</title>
+<meta name="description" content="Aircon delivers expert air conditioning unit installations, heat pump systems and cool comfort solutions for homes and businesses across Britain.">
+<!-- Bricolage Grotesque + Figtree — both SIL Open Font License 1.1, free for commercial use -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Graphite · ice · glacier — cool, technical, engineered */
+  --white:#fff; --bg:#F7F9FA; --bg-2:#EFF3F5; --bg-3:#E2E9ED;
+  --navy:#22262B; --navy-2:#2B3037; --navy-3:#363D45;
+  --ink:#1A1D21; --muted:#5A646D; --muted-2:#8A949C;
+  --line:#E1E6E9; --line-2:#CDD6DB; --line-dk:rgba(255,255,255,.14);
+  --acc:#3E8FB0; --acc-2:#2F7392; --acc-lite:#8CC4DB; --acc-tint:#E8F1F5;
+  --gold:#C89B4A;
+  --shell:1220px; --pad-x:40px; --nav-h:76px; --r:18px; --r-sm:12px;
+  --head:'Bricolage Grotesque',system-ui,sans-serif;
+  --body:'Figtree',system-ui,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1); --ease-soft:cubic-bezier(.4,0,.2,1);
+  --sh:0 18px 40px -28px rgba(15,27,46,.45);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 18px);}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  /* clip, never hidden — hidden makes <body> a scroll container and freezes
+     every animation-timeline:view() on the page */
+  overflow-x:clip;}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+h1,h2,h3,h4{margin:0;font-family:var(--head);font-weight:600;letter-spacing:-.025em;line-height:1.18;color:var(--ink);}
+p{margin:0;}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:6px;}
+.skip{position:absolute;left:-9999px;top:8px;z-index:300;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;font-size:1rem;}
+.skip:focus{left:16px;}
+
+.shell{max-width:var(--shell);margin:0 auto;padding:0 var(--pad-x);}
+.section{padding:104px 0;}
+.tint{background:var(--bg-2);}
+.dark{background:var(--navy);color:#C7D3DE;}
+.dark h2,.dark h3,.dark h4{color:#fff;}
+.pill{display:inline-flex;align-items:center;gap:9px;background:var(--acc-tint);color:var(--acc);
+  font-family:var(--head);font-weight:600;font-size:0.8125rem;letter-spacing:.12em;text-transform:uppercase;
+  padding:8px 16px;border-radius:6px;}
+.dark .pill{background:rgba(79,184,201,.14);color:var(--acc-lite);}
+.h1{font-size:clamp(2.3rem,4.6vw,3.5rem);line-height:1.1;}
+.h2{font-size:clamp(1.75rem,3.2vw,2.5rem);}
+.lede{color:var(--muted);font-size:1.0625rem;line-height:1.85;}
+.dark .lede{color:#9FB0C0;}
+.center{text-align:center;}
+.sec-head{max-width:640px;margin-bottom:52px;}
+.sec-head .h2{margin-top:16px;}
+.sec-head .lede{margin-top:14px;}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 26px;border-radius:8px;
+  font-family:var(--head);font-weight:600;font-size:1rem;border:1px solid transparent;cursor:pointer;
+  transition:background .3s var(--ease-soft),color .3s var(--ease-soft),border-color .3s var(--ease-soft),
+  transform .35s var(--ease),box-shadow .35s var(--ease);}
+.btn svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .35s var(--ease);}
+.btn:hover svg{transform:translateX(3px);}
+.btn-acc{background:var(--acc);color:#fff;box-shadow:0 12px 26px -16px rgba(19,127,145,.9);}
+.btn-acc:hover{background:var(--acc-2);transform:translateY(-2px);}
+.btn-line{background:#fff;color:var(--ink);border-color:var(--line-2);}
+.btn-line:hover{border-color:var(--acc);color:var(--acc);transform:translateY(-2px);}
+.btn-white{background:#fff;color:var(--ink);}
+.btn-white:hover{transform:translateY(-2px);box-shadow:var(--sh);}
+.btn-sm{padding:11px 20px;font-size:0.9375rem;}
+.lnk{display:inline-flex;align-items:center;gap:8px;font-family:var(--head);font-weight:600;font-size:1rem;color:var(--acc);}
+.lnk svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;transition:transform .35s var(--ease);}
+.lnk:hover svg{transform:translateX(4px);}
+
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease);}
+.reveal.in{opacity:1;transform:none;}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  .reveal{transition:none;opacity:1;transform:none;}
+  .btn:hover,.card:hover,.gtile:hover img,.svc:hover{transform:none;}
+  .mq__track,.ticker__track{animation:none;}
+}
+
+/* ---------- 1 · NAV ---------- */
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.9);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  border-bottom:1px solid transparent;transition:border-color .3s var(--ease-soft),box-shadow .3s var(--ease-soft),background .3s var(--ease-soft);}
+.nav.stuck{border-bottom-color:var(--line);box-shadow:0 6px 24px -18px rgba(15,27,46,.6);background:rgba(255,255,255,.97);}
+@supports not ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){.nav.stuck{background:#fff;}}
+.nav__in{max-width:var(--shell);margin:0 auto;padding:0 var(--pad-x);height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:24px;}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--head);font-weight:700;font-size:1.25rem;letter-spacing:-.03em;}
+.brand__mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(140deg,var(--acc-lite),var(--acc));
+  display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.brand__mark svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;}
+.nav__links{display:flex;gap:30px;}
+.nav__links a{font-size:1.0625rem;color:var(--muted);transition:color .25s var(--ease-soft);}
+.nav__links a:hover,.nav__links a.active{color:var(--acc);}
+.nav__right{display:flex;align-items:center;gap:18px;}
+.nav-tel{display:flex;align-items:center;gap:8px;font-family:var(--head);font-weight:600;font-size:1rem;}
+.nav-tel svg{width:15px;height:15px;fill:none;stroke:var(--acc);stroke-width:2;flex:0 0 auto;}
+.burger{display:none;width:40px;height:40px;border:1px solid var(--line-2);border-radius:9px;background:#fff;cursor:pointer;
+  flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:0;}
+.burger span{display:block;width:15px;height:1.6px;background:var(--ink);border-radius:2px;transition:transform .3s var(--ease-soft),opacity .2s;}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(5.6px) rotate(45deg);}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0;}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-5.6px) rotate(-45deg);}
+.nav__mob{display:none;max-height:0;overflow:hidden;background:#fff;border-top:1px solid var(--line);transition:max-height .4s var(--ease-soft);}
+.nav__mob a{display:block;padding:14px var(--pad-x);font-size:1.0625rem;border-bottom:1px solid var(--line);}
+@media(max-width:1040px){.nav__links{display:none;}.nav-tel span{display:none;}.burger{display:flex;}.nav__mob{display:block;}}
+
+/* ---------- 2 · HERO ---------- */
+.hero{background:var(--bg-2);padding:72px 0 84px;}
+.hero__in{display:grid;grid-template-columns:1.02fr 1fr;gap:56px;align-items:center;}
+.hero h1{margin:20px 0 0;max-width:14ch;}
+.hero__sub{margin-top:20px;max-width:44ch;color:var(--muted);font-size:1.0625rem;}
+.hero__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px;}
+.hero__trust{display:flex;align-items:center;gap:20px;margin-top:44px;padding-top:28px;border-top:1px solid var(--line-2);}
+.avs{display:flex;}
+.avs span{width:40px;height:40px;border-radius:50%;border:2px solid var(--bg-2);margin-left:-12px;
+  display:flex;align-items:center;justify-content:center;font-family:var(--head);font-weight:600;font-size:0.875rem;
+  background:var(--acc-tint);color:var(--acc);}
+.avs span:first-child{margin-left:0;}
+.avs .more{background:var(--acc);color:#fff;}
+.hero__trust b{display:block;font-family:var(--head);font-size:1.5rem;line-height:1;}
+.hero__trust small{display:block;font-size:0.875rem;color:var(--muted-2);text-transform:uppercase;letter-spacing:.1em;margin-top:5px;}
+/* collage */
+.collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:16px;}
+.collage figure{margin:0;border-radius:var(--r);overflow:hidden;position:relative;background:var(--bg-3);}
+.collage img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease);}
+.collage figure:hover img{transform:scale(1.04);}
+.col-main{grid-column:1 / -1;aspect-ratio:16/9;}
+.col-side{aspect-ratio:4/3;position:relative;}
+.col-side figcaption{position:absolute;left:12px;right:12px;bottom:12px;z-index:2;background:rgba(255,255,255,.94);
+  border-radius:10px;padding:10px 12px;font-family:var(--head);font-weight:600;font-size:0.8125rem;line-height:1.4;}
+.col-side figcaption i{display:block;font-style:normal;font-size:0.8125rem;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin-bottom:3px;}
+.help{background:linear-gradient(140deg,var(--acc),var(--navy-3));border-radius:var(--r);padding:22px 20px;color:#fff;
+  display:flex;flex-direction:column;justify-content:center;}
+.help b{font-family:var(--head);font-size:1.1875rem;display:block;}
+.help p{font-size:0.9375rem;color:rgba(255,255,255,.82);margin-top:6px;}
+.help a{display:inline-flex;align-items:center;gap:8px;margin-top:14px;background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.24);border-radius:8px;padding:9px 14px;font-family:var(--head);font-weight:600;font-size:0.9375rem;
+  transition:background .3s var(--ease-soft);}
+.help a:hover{background:rgba(255,255,255,.24);}
+.help svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;}
+@media(max-width:980px){.hero{padding:48px 0 64px;}.hero__in{grid-template-columns:1fr;gap:40px;}.hero h1{max-width:16ch;}}
+
+/* ---------- 3 · TRUST MARQUEE ---------- */
+.mqband{background:var(--white);border-bottom:1px solid var(--line);padding:20px 0;overflow:hidden;}
+.mq{display:flex;overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);}
+.mq__track{display:flex;width:max-content;animation:mq 38s linear infinite;}
+.mq:hover .mq__track{animation-play-state:paused;}
+.mq__grp{display:flex;align-items:center;gap:44px;padding-right:44px;flex:0 0 auto;}
+.mq__logo{font-family:var(--head);font-weight:600;font-size:1.125rem;color:var(--muted-2);white-space:nowrap;transition:color .3s var(--ease-soft);}
+.mq__logo:hover{color:var(--ink);}
+.mq__badge{display:inline-flex;align-items:center;gap:7px;background:var(--acc-tint);color:var(--acc);border-radius:999px;
+  padding:6px 14px;font-family:var(--head);font-weight:600;font-size:0.8125rem;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;}
+.mq__badge svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2;}
+.mq__star{color:var(--gold);letter-spacing:1px;}
+@keyframes mq{to{transform:translateX(-50%);}}
+
+/* ---------- 4 · PROCESS ---------- */
+.svcgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+.svc{background:var(--navy-2);border:1px solid var(--line-dk);border-radius:var(--r);padding:26px 24px;
+  transition:background .4s var(--ease-soft),transform .45s var(--ease);}
+.svc:hover,.svc.is-on{background:#fff;transform:translateY(-6px);}
+.svc__top{display:flex;justify-content:space-between;align-items:center;font-family:var(--head);font-size:0.8125rem;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2);}
+.svc.is-on .svc__top,.svc:hover .svc__top{color:var(--muted);}
+.svc__rule{height:1px;background:var(--line-dk);margin:18px 0 24px;}
+.svc:hover .svc__rule,.svc.is-on .svc__rule{background:var(--line);}
+.svc__ic{width:46px;height:46px;display:flex;align-items:center;justify-content:center;margin-bottom:22px;}
+.svc__ic svg{width:38px;height:38px;fill:none;stroke:var(--acc-lite);stroke-width:1.4;}
+.svc:hover .svc__ic svg,.svc.is-on .svc__ic svg{stroke:var(--acc);}
+.svc h3{font-size:1.0625rem;letter-spacing:.04em;text-transform:uppercase;color:#fff;}
+.svc:hover h3,.svc.is-on h3{color:var(--ink);}
+.svc p{font-size:0.9375rem;color:#9FB0C0;margin-top:10px;}
+.svc:hover p,.svc.is-on p{color:var(--muted);}
+.sec-bar{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:44px;}
+.arrows{display:flex;gap:10px;}
+.arrows button{width:40px;height:40px;border-radius:9px;border:1px solid var(--line-dk);background:transparent;color:#fff;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .3s var(--ease-soft),border-color .3s;}
+.arrows button:hover{background:var(--acc);border-color:var(--acc);}
+.arrows svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;}
+@media(max-width:1000px){.svcgrid{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.svcgrid{grid-template-columns:1fr;}.sec-bar{flex-direction:column;align-items:flex-start;}}
+
+/* ---------- 5 · SYSTEMS + STATS ---------- */
+.sysgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;
+  transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .3s var(--ease-soft);}
+.card:hover{transform:translateY(-7px);box-shadow:0 26px 48px -30px rgba(15,27,46,.4);border-color:var(--line-2);}
+.card__img{aspect-ratio:16/10;overflow:hidden;background:var(--bg-3);}
+.card__img img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease);}
+.card:hover .card__img img{transform:scale(1.05);}
+.card__body{padding:26px;display:flex;flex-direction:column;flex:1;}
+.card h3{font-size:1.25rem;margin:14px 0 10px;}
+.card p{color:var(--muted);font-size:1rem;flex:1;margin-bottom:20px;}
+.card__price{font-family:var(--head);font-weight:600;color:var(--acc);font-size:1rem;}
+.statband{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:76px;padding-top:44px;border-top:1px solid var(--line);}
+.stat{display:flex;gap:16px;align-items:flex-start;}
+.stat__ic{width:44px;height:44px;border-radius:12px;background:var(--acc-tint);display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.stat__ic svg{width:20px;height:20px;fill:none;stroke:var(--acc);stroke-width:1.8;}
+.stat b{display:block;font-family:var(--head);font-size:clamp(1.6rem,3vw,2.1rem);line-height:1;}
+.stat span{display:block;font-size:0.875rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-2);margin-top:7px;}
+@media(max-width:960px){.sysgrid{grid-template-columns:1fr;max-width:440px;margin:0 auto;}.statband{grid-template-columns:1fr;gap:22px;}}
+
+/* ---------- 6 · WHY US ---------- */
+.why{display:grid;grid-template-columns:1fr 1.05fr;gap:64px;align-items:center;}
+.why__fig{border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;background:var(--bg-3);}
+.why__fig img{width:100%;height:100%;object-fit:cover;}
+.why h2{margin:16px 0 14px;}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:30px 0;}
+.feat div{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r-sm);padding:18px;display:flex;gap:12px;align-items:flex-start;}
+.feat i{width:34px;height:34px;border-radius:9px;background:#fff;border:1px solid var(--line);flex:0 0 auto;
+  display:flex;align-items:center;justify-content:center;}
+.feat svg{width:16px;height:16px;fill:none;stroke:var(--acc);stroke-width:1.8;}
+.feat b{display:block;font-family:var(--head);font-size:0.9375rem;line-height:1.4;}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;margin-bottom:32px;}
+.checks span{display:flex;gap:10px;align-items:center;font-size:1rem;color:var(--muted);}
+.checks svg{width:15px;height:15px;fill:none;stroke:var(--acc);stroke-width:2.6;flex:0 0 auto;}
+@media(max-width:900px){.why{grid-template-columns:1fr;gap:40px;}.why__fig{aspect-ratio:4/3;}}
+@media(max-width:560px){.feat,.checks{grid-template-columns:1fr;}}
+
+/* ---------- 7 · REVIEWS ---------- */
+.rev{display:grid;grid-template-columns:.85fr 1.15fr;gap:0;align-items:stretch;background:#fff;
+  border:1px solid var(--line);border-radius:var(--r);overflow:hidden;}
+.rev__figs{position:relative;background:var(--bg-3);min-height:460px;overflow:hidden;}
+.rev__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;
+  transform:scale(1.06);transition:opacity .9s var(--ease-soft),transform 1.6s var(--ease);}
+.rev__img.is-on{opacity:1;transform:scale(1);}
+.rev__body{padding:52px 48px;position:relative;display:flex;flex-direction:column;}
+/* slides are stacked; the tallest one sets the height so nothing jumps on rotate */
+.rev__slides{display:grid;flex:1;}
+.rev__slide{grid-area:1 / 1;opacity:0;visibility:hidden;transform:translateY(14px);
+  transition:opacity .55s var(--ease-soft),transform .7s var(--ease),visibility .55s;}
+.rev__slide.is-on{opacity:1;visibility:visible;transform:none;}
+.rev__foot{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:30px;padding-top:22px;border-top:1px solid var(--line);}
+.dots{display:flex;gap:8px;}
+.dots button{width:9px;height:9px;border-radius:50%;border:0;padding:0;cursor:pointer;background:var(--line-2);
+  transition:background .3s var(--ease-soft),width .4s var(--ease);}
+.dots button[aria-selected="true"]{background:var(--acc);width:26px;border-radius:999px;}
+.rev__mark{position:absolute;right:40px;top:34px;font-family:var(--head);font-weight:700;font-size:6rem;line-height:1;
+  color:var(--acc-tint);user-select:none;}
+.stars{display:flex;gap:4px;margin:20px 0 16px;}
+.stars svg{width:16px;height:16px;fill:var(--gold);stroke:var(--gold);}
+.rev__body h3{font-size:1.25rem;}
+.rev__body p{color:var(--muted);font-size:1.0625rem;margin-top:14px;max-width:52ch;}
+.rev__who{display:flex;align-items:center;gap:12px;margin-top:28px;}
+.rev__av{width:42px;height:42px;border-radius:50%;background:var(--acc-tint);color:var(--acc);flex:0 0 auto;
+  display:flex;align-items:center;justify-content:center;font-family:var(--head);font-weight:600;}
+.rev__who b{display:block;font-family:var(--head);font-size:1.0625rem;}
+.rev__who small{color:var(--muted-2);font-size:0.9375rem;}
+.arrows--light button{border-color:var(--line-2);color:var(--ink);}
+.arrows--light button:hover{background:var(--acc);border-color:var(--acc);color:#fff;}
+@media(max-width:900px){.rev{grid-template-columns:1fr;}.rev__figs{min-height:280px;}.rev__body{padding:36px 28px;}}
+
+/* ---------- 8 · GALLERY ---------- */
+.gtile{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:3/4;background:var(--navy-2);}
+.gtile img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease);}
+.gtile:hover img{transform:scale(1.06);}
+.gtile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 48%,rgba(9,17,29,.88));}
+.gtile figcaption{position:absolute;z-index:2;left:20px;right:20px;bottom:18px;color:#fff;}
+.gtile span{display:inline-block;background:var(--acc);border-radius:6px;padding:4px 10px;font-family:var(--head);
+  font-weight:600;font-size:0.8125rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:9px;}
+.gtile b{display:block;font-family:var(--head);font-size:1.0625rem;}
+
+/* ---------- 9 · GUARANTEE ---------- */
+.guar{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px;}
+.gcell{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:32px 28px;
+  transition:transform .45s var(--ease),box-shadow .45s var(--ease);}
+.gcell:hover{transform:translateY(-6px);box-shadow:0 24px 44px -32px rgba(15,27,46,.4);}
+.gcell__ic{width:48px;height:48px;border-radius:13px;background:var(--acc-tint);display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+.gcell__ic svg{width:21px;height:21px;fill:none;stroke:var(--acc);stroke-width:1.8;}
+.gcell h3{font-size:1.1875rem;margin-bottom:10px;}
+.gcell p{color:var(--muted);font-size:1rem;}
+.guar__note{margin-top:30px;text-align:center;font-size:1rem;color:var(--muted);}
+.guar__note b{color:var(--acc);}
+@media(max-width:900px){.guar{grid-template-columns:1fr;}}
+
+/* ---------- 10 · FAQ ---------- */
+.faqwrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:start;}
+.faq{display:flex;flex-direction:column;gap:14px;}
+.fq{background:#fff;border:1px solid var(--line);border-radius:var(--r-sm);overflow:hidden;transition:border-color .3s var(--ease-soft),box-shadow .3s var(--ease);}
+.fq.open{border-color:var(--acc);box-shadow:0 18px 32px -28px rgba(19,127,145,.8);}
+.fq__q{width:100%;background:none;border:0;cursor:pointer;text-align:left;display:flex;align-items:center;justify-content:space-between;gap:18px;
+  padding:20px 22px;font-family:var(--head);font-weight:600;font-size:1.0625rem;color:var(--ink);}
+.fq__ic{width:16px;height:16px;position:relative;flex:0 0 auto;}
+.fq__ic::before,.fq__ic::after{content:"";position:absolute;background:var(--acc);transition:transform .3s var(--ease-soft),opacity .3s;}
+.fq__ic::before{top:50%;left:0;right:0;height:2px;transform:translateY(-50%);}
+.fq__ic::after{left:50%;top:0;bottom:0;width:2px;transform:translateX(-50%);}
+.fq.open .fq__ic::after{opacity:0;}
+.fq__a{max-height:0;overflow:hidden;transition:max-height .4s var(--ease-soft);}
+.fq__a p{padding:0 22px 22px;color:var(--muted);font-size:1rem;}
+.faq__fig{border-radius:var(--r);overflow:hidden;aspect-ratio:4/3;background:var(--bg-3);margin-top:28px;}
+.faq__fig img{width:100%;height:100%;object-fit:cover;}
+@media(max-width:900px){.faqwrap{grid-template-columns:1fr;gap:36px;}}
+
+/* ---------- 11 · FINAL CTA ---------- */
+.fcta{background:linear-gradient(125deg,var(--acc) 0%,var(--navy-3) 58%,var(--navy) 100%);color:#fff;}
+.fcta__in{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center;}
+.fcta h2{color:#fff;font-size:clamp(1.8rem,3.4vw,2.6rem);margin-top:16px;}
+/* .lede defaults to --muted (#5A646D), a mid grey meant for the light bands.
+   This section is dark but is not .dark, so it never picked up that override
+   and the paragraph all but vanished into the gradient. */
+.fcta .lede{color:rgba(255,255,255,.86);}
+.fcta__list{margin-top:34px;display:flex;flex-direction:column;gap:20px;}
+/* Direct children only. Unscoped, this also matched the inner div that pairs
+   each label with its value, turning that stack into a flex ROW - so the
+   value sat beside its label and every row started at a different x because
+   the labels are different widths. */
+.fcta__list > div{display:flex;gap:14px;align-items:flex-start;}
+.fcta__list i{width:42px;height:42px;border-radius:11px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);
+  display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.fcta__list svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:1.9;}
+.fcta__list label{display:block;font-size:0.875rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.68);}
+.fcta__list b{font-family:var(--head);font-size:1.0625rem;}
+/* call panel — replaces the booking form */
+.callbox{background:rgba(15,10,30,.4);border:1px solid rgba(255,255,255,.17);border-radius:var(--r);padding:40px 38px;}
+.callbox__label{display:block;font-family:var(--head);font-size:0.875rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:rgba(255,255,255,.66);}
+.callbox__num{display:block;margin:14px 0 16px;font-family:var(--head);font-weight:700;letter-spacing:-.03em;
+  font-size:clamp(2rem,3.6vw,2.9rem);color:#fff;line-height:1;transition:color .3s var(--ease-soft);}
+.callbox__num:hover{color:var(--acc-lite);}
+.callbox p{color:rgba(255,255,255,.74);font-size:1rem;max-width:38ch;}
+.callbox__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;}
+.btn-ghost-light{background:transparent;color:#fff;border-color:rgba(255,255,255,.34);}
+.btn-ghost-light:hover{background:rgba(255,255,255,.12);transform:translateY(-2px);}
+.callbox__foot{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:30px;padding-top:22px;border-top:1px solid rgba(255,255,255,.16);}
+.callbox__foot span{font-size:0.9375rem;color:rgba(255,255,255,.7);}
+.callbox__foot b{color:#fff;font-weight:600;}
+@media(max-width:900px){.fcta__in{grid-template-columns:1fr;gap:40px;}.callbox{padding:32px 26px;}}
+
+/* ---------- 12 · FOOTER ---------- */
+.footer{background:var(--navy);color:#9FB0C0;padding:80px 0 0;position:relative;overflow:clip;}
+/* all four columns share one top line — the brand column's heading no longer
+   pushes it out of alignment with the link columns */
+.footer__top{display:grid;grid-template-columns:1.5fr .8fr .8fr .9fr;gap:44px;position:relative;z-index:2;align-items:start;}
+.footer__top > *{padding-top:0;}
+.footer h2{font-size:1.375rem;max-width:18ch;line-height:1.3;margin-bottom:0;color:#fff;}
+.footer__about{margin:16px 0 22px;font-size:1rem;max-width:34ch;}
+.fcol h4{font-family:var(--head);font-size:0.875rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#fff;
+  margin:0 0 18px;line-height:1.3;
+  /* match the optical top of the brand heading so every column starts level */
+  padding-top:6px;}
+.fcol a{display:block;font-size:1rem;padding:6px 0;transition:color .25s var(--ease-soft),transform .3s var(--ease);}
+.fcol a:hover{color:var(--acc-lite);transform:translateX(3px);}
+.fsoc{display:flex;gap:10px;}
+.fsoc a{width:38px;height:38px;border-radius:9px;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;
+  transition:background .3s var(--ease-soft),transform .3s var(--ease);}
+.fsoc a:hover{background:var(--acc);transform:translateY(-2px);}
+.fsoc svg{width:16px;height:16px;fill:none;stroke:#C7D3DE;stroke-width:1.8;}
+.fsoc a:hover svg{stroke:#fff;}
+.watermark{position:relative;z-index:1;margin-top:56px;font-family:var(--head);font-weight:700;letter-spacing:-.04em;
+  font-size:clamp(4rem,17vw,15rem);line-height:.78;color:rgba(255,255,255,.045);text-align:center;user-select:none;pointer-events:none;}
+.footer__bot{position:relative;z-index:2;margin-top:-8px;padding:22px 0 30px;border-top:1px solid var(--line-dk);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:0.9375rem;color:#7D8FA0;}
+.footer__bot a:hover{color:#fff;}
+@media(max-width:1000px){.footer__top{grid-template-columns:1fr 1fr;gap:34px;}}
+@media(max-width:600px){.footer__top{grid-template-columns:1fr;gap:28px;}}
+
+/* ---------- 8 · HORIZONTAL SCROLL GALLERY ---------- */
+.hscroll{position:relative;height:340vh;background:var(--navy);}
+.hscroll__sticky{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;
+  gap:38px;overflow:hidden;}
+.hscroll__head{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;width:100%;}
+.hscroll__meta{display:flex;flex-direction:column;align-items:flex-end;gap:12px;flex:0 0 auto;}
+.mono-note{font-family:var(--head);font-size:0.8125rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2);}
+.hbar{width:180px;height:2px;background:var(--line-dk);border-radius:2px;overflow:hidden;}
+.hbar i{display:block;height:100%;width:0%;background:var(--acc-lite);border-radius:2px;}
+.hscroll__viewport{overflow:hidden;width:100%;}
+/* the panel is a fixed 100vh with overflow:hidden, so this row has to earn its
+   space rather than add to it: it cancels .ctapair's own top margin and leans
+   on the panel's 38px gap instead */
+.hscroll__cta{margin-top:0;}
+.hscroll__track{display:flex;gap:22px;padding:0 var(--pad-x);width:max-content;will-change:transform;}
+.hscroll .gtile{flex:0 0 clamp(260px,26vw,360px);aspect-ratio:3/4;}
+.gtile--cta{flex:0 0 clamp(240px,22vw,300px);aspect-ratio:3/4;background:var(--navy-2);border:1px solid var(--line-dk);
+  border-radius:var(--r);display:flex;flex-direction:column;justify-content:center;gap:12px;padding:32px;}
+.gtile--cta b{font-family:var(--head);font-weight:600;font-size:1.25rem;color:#fff;}
+.gtile--cta p{font-size:1rem;color:var(--muted-2);}
+.gtile--cta .btn{align-self:flex-start;margin-top:8px;}
+@media(max-width:760px){
+  .hscroll__head{flex-direction:column;align-items:flex-start;gap:18px;}
+  .hscroll__meta{align-items:flex-start;}
+}
+
+/* ---------- responsive ---------- */
+@media(max-width:1240px){:root{--pad-x:32px;}}
+
+@media(max-width:1040px){
+  .rev__body{padding:40px 34px;}
+  .callbox{padding:34px 30px;}
+}
+
+@media(max-width:760px){
+  :root{--pad-x:20px;}
+  .section{padding:72px 0;}
+  .sec-head{margin-bottom:38px;}
+  .statband{margin-top:52px;}
+  .hero{padding:40px 0 56px;}
+  .collage{gap:12px;}
+  .svcgrid,.guar,.sysgrid{gap:14px;}
+  .rev__foot{flex-direction:column;align-items:flex-start;gap:16px;}
+}
+
+@media(max-width:560px){
+  .section{padding:56px 0;}
+  .h1{font-size:clamp(1.9rem,8.4vw,2.4rem);}
+  .h2{font-size:clamp(1.5rem,6.4vw,1.95rem);}
+  .lede{font-size:1rem;}
+  .btn{padding:12px 18px;font-size:0.9375rem;}
+  .hero__cta{width:100%;}
+  .hero__cta .btn{flex:1 1 100%;}
+  .hero__trust{flex-wrap:wrap;gap:14px;}
+  .col-main{aspect-ratio:4/3;}
+  .card__body,.gcell,.callbox,.svc{padding:22px;}
+  .rev__body{padding:28px 22px;}
+  .rev__mark{font-size:3.5rem;right:18px;top:18px;}
+  .rev__figs{min-height:220px;}
+  .callbox__num{font-size:1.9rem;}
+  .callbox__foot{flex-direction:column;gap:8px;}
+  .fq__q{padding:17px 18px;font-size:1rem;}
+  .fq__a p{padding:0 18px 18px;}
+  .watermark{font-size:22vw;}
+  .footer__bot{flex-direction:column;align-items:flex-start;gap:8px;}
+}
+
+@media(max-width:400px){
+  .nav__in{gap:10px;}
+  .brand{font-size:1.125rem;}
+  .nav .btn{padding:10px 13px;font-size:0.875rem;}
+  .avs span{width:34px;height:34px;font-size:0.8125rem;}
+}
+
+@media(hover:none){
+  .card:hover,.gcell:hover,.svc:hover{transform:none;}
+  .gtile:hover img,.card:hover .card__img img,.collage figure:hover img{transform:none;}
+  .fcol a,.nav__mob a{padding-top:9px;padding-bottom:9px;}
+}
+
+/* ==========================================================================
+   MOTION — scroll-scrubbed and pointer-driven. Nothing "appears on scroll":
+   every effect is tied continuously to scroll position or the cursor, so the
+   page has no hidden state and content is legible with JS or CSS support off.
+   ========================================================================== */
+.nav__prog{position:absolute;left:0;right:0;bottom:-1px;height:2px;
+  background:linear-gradient(90deg,var(--acc),var(--acc-lite));transform:scaleX(0);transform-origin:0 50%;z-index:2;}
+
+/* elements that trail the scroll with spring lag — JS writes --lag */
+.lag{transform:translate3d(0,var(--lag,0px),0);will-change:transform;}
+
+/* magnetic buttons — JS writes --mx/--my on pointer proximity */
+.magnetic{transform:translate3d(var(--mx,0px),var(--my,0px),0);transition:transform .45s var(--ease);}
+.magnetic.is-pulling{transition:transform .12s linear;}
+
+/* the process rail draws itself as the section is scrubbed through */
+.railwrap{position:relative;margin:0 0 40px;height:2px;background:var(--line-dk);overflow:hidden;}
+.railwrap i{position:absolute;inset:0;width:0%;background:linear-gradient(90deg,var(--acc),var(--acc-lite));}
+
+@media(prefers-reduced-motion:no-preference){
+  @supports (animation-timeline: view()){
+    .nav__prog{animation:progBar linear both;animation-timeline:scroll(root block);}
+    @keyframes progBar{to{transform:scaleX(1);}}
+
+    /* horizontal travel, scrubbed by the pinned section's own progress.
+       `contain` spans exactly the window in which the sticky child is pinned. */
+    .hscroll{view-timeline-name:--hs;}
+    .hscroll__track{animation:hmove linear both;animation-timeline:--hs;animation-range:contain 0% contain 100%;}
+    @keyframes hmove{from{transform:translate3d(0,0,0);}to{transform:translate3d(calc(-100% + 100vw),0,0);}}
+    .hbar i{animation:hfill linear both;animation-timeline:--hs;animation-range:contain 0% contain 100%;}
+    @keyframes hfill{from{width:0%;}to{width:100%;}}
+
+    /* photographs are scrubbed, not revealed — they drift the whole time
+       they are on screen rather than animating once and stopping */
+    .hscroll .gtile{view-timeline-name:--frame;}
+    .hscroll .gtile img{height:112%;
+      animation:scrub linear both;animation-timeline:--frame;animation-range:cover 0% cover 100%;}
+    @keyframes scrub{from{transform:translate3d(0,-5.5%,0);}to{transform:translate3d(0,0,0);}}
+
+    /* ======================================================================
+       IMAGES — colour resolve. Photographs arrive desaturated and cool, then
+       grade up to full colour as they scrub. No masks, no stripes, no
+       geometry and no movement — just the image settling into itself.
+       Pure CSS, no DOM changes, safe to port into WordPress.
+       ====================================================================== */
+    /* Applied to the FRAME, not the <img>: an image inside an overflow:hidden
+       frame gets a degenerate view() timeline — permanently "in view" of its
+       own frame — so it would resolve as finished and never play. */
+    .collage figure,.card__img,.why__fig,.faq__fig,.rev__figs{
+      animation:resolve linear both;animation-timeline:view();animation-range:cover 2% cover 54%;}
+    /* .card and .rev are themselves overflow:hidden, so a frame inside them
+       measures view() against the card — permanently in view, progress stuck
+       at 1. Publish a timeline from the outer element, which does have a real
+       one, and let the inner frame read that instead. */
+    .sysgrid .card{view-timeline-name:--cardframe;}
+    .rev{view-timeline-name:--revframe;}
+    .card__img{animation-timeline:--cardframe;}
+    .rev__figs{animation-timeline:--revframe;}
+    @keyframes resolve{
+      from{filter:saturate(.1) brightness(.84) contrast(1.1);}
+      to{filter:saturate(1) brightness(1) contrast(1);}
+    }
+    /* the horizontal gallery keeps its parallax instead — it is the one
+       section already built around travel */
+    .hscroll .gtile{view-timeline-name:--frame;}
+
+    /* ======================================================================
+       PER-SECTION SCROLL EFFECTS — one distinct idea each, all scrubbed.
+       ====================================================================== */
+
+    /* 2 · HERO — hands off rather than sliding away: the block softens as it
+       leaves, so the marquee below takes focus. Opacity and scale only. */
+    .hero__in{animation:heroHandoff linear both;animation-timeline:view();animation-range:exit 5% exit 95%;}
+    @keyframes heroHandoff{from{opacity:1;transform:scale(1);}to{opacity:.32;transform:scale(.988);}}
+
+    /* 3 · TRUST MARQUEE — the belt is dragged by scroll velocity. `translate`
+       is a separate property from `transform`, so it composes with the loop
+       animation instead of fighting it. JS writes --drag. */
+    .mq__track{translate:var(--drag,0px) 0;}
+
+    /* 6 · WHY — the checklist ticks through in sequence as you scroll, each
+       item warming from grey to accent. Nothing moves. */
+    .checks span{animation:tickText linear both;animation-timeline:view();animation-range:cover 8% cover 40%;}
+    .checks span svg{animation:tickMark linear both;animation-timeline:view();animation-range:cover 8% cover 40%;}
+    @keyframes tickText{from{color:var(--muted-2);}to{color:var(--muted);}}
+    @keyframes tickMark{from{stroke:var(--line-2);opacity:.4;}to{stroke:var(--acc);opacity:1;}}
+    .checks span:nth-child(2),.checks span:nth-child(2) svg{animation-range:cover 12% cover 46%;}
+    .checks span:nth-child(3),.checks span:nth-child(3) svg{animation-range:cover 16% cover 52%;}
+    .checks span:nth-child(4),.checks span:nth-child(4) svg{animation-range:cover 20% cover 58%;}
+
+    /* 7 · REVIEWS — the panel forms itself: square and flat at the edge of
+       the viewport, rounded and lifted by the time it is centred. */
+    .rev{animation:formCard linear both;animation-timeline:view();animation-range:cover 6% cover 48%;}
+    @keyframes formCard{
+      from{border-radius:0;box-shadow:0 0 0 0 rgba(26,29,33,0);}
+      to{border-radius:var(--r);box-shadow:0 34px 60px -42px rgba(26,29,33,.55);}
+    }
+
+    /* 9 · GUARANTEE — the three icon tiles fill with accent in sequence, like
+       a checklist being signed off. */
+    .gcell__ic{animation:tileFill linear both;animation-timeline:view();animation-range:cover 8% cover 42%;}
+    .gcell__ic svg{animation:tileStroke linear both;animation-timeline:view();animation-range:cover 8% cover 42%;}
+    @keyframes tileFill{from{background:var(--acc-tint);}to{background:var(--acc);}}
+    @keyframes tileStroke{from{stroke:var(--acc);}to{stroke:#fff;}}
+    .gcell:nth-child(2) .gcell__ic,.gcell:nth-child(2) .gcell__ic svg{animation-range:cover 13% cover 50%;}
+    .gcell:nth-child(3) .gcell__ic,.gcell:nth-child(3) .gcell__ic svg{animation-range:cover 18% cover 58%;}
+
+    /* 11 · FINAL CTA — the gradient itself travels across the band as you
+       scroll through it. The content never moves. */
+    .fcta{background-size:200% 200%;
+      animation:gradTravel linear both;animation-timeline:view();animation-range:cover 0% cover 100%;}
+    @keyframes gradTravel{from{background-position:0% 50%;}to{background-position:100% 50%;}}
+
+    /* 12 · FOOTER — the watermark draws its tracking in. Entry-based: the
+       footer can never exit the viewport, so a cover range would never end. */
+    .watermark{animation:markTighten linear both;animation-timeline:view();animation-range:entry 12% entry 96%;}
+    @keyframes markTighten{from{opacity:0;letter-spacing:.1em;}to{opacity:1;letter-spacing:-.04em;}}
+
+    /* ======================================================================
+       TEXT — two CSS-only effects, no word or character splitting.
+       1. Headings scrub from light+wide to bold+tight on the variable axis.
+       2. Body copy rises out of a block mask.
+       ====================================================================== */
+    .h1,.h2,.card h3,.gcell h3,.svc h3,.rev__body h3,.footer h2,.hscroll__head .h2{
+      animation:weightScrub linear both;animation-timeline:view();animation-range:cover 2% cover 52%;}
+    @keyframes weightScrub{
+      from{font-variation-settings:'wght' 250;letter-spacing:.09em;opacity:.28;transform:translate3d(0,12px,0);}
+      to{font-variation-settings:'wght' 700;letter-spacing:-.025em;opacity:1;transform:none;}
+    }
+    .lede,.hero__sub,.card p,.gcell p,.svc p,.rev__slide p,.footer__about,.callbox p,.fq__a p{
+      animation:blockRise linear both;animation-timeline:view();animation-range:cover 3% cover 46%;}
+    @keyframes blockRise{
+      from{clip-path:inset(0 0 62% 0);opacity:.18;transform:translate3d(0,14px,0);}
+      to{clip-path:inset(0 0 -12% 0);opacity:1;transform:none;}
+    }
+
+    /* Text inside an overflow:hidden card measures view() against that card —
+       permanently in view, so it never animates. Same trap as the images.
+       These read a timeline published from an ancestor that has a real one.
+       Must come AFTER the rules above: the `animation` shorthand resets
+       animation-timeline, so the override has to win on order. */
+    .fq{view-timeline-name:--fqframe;}
+    .card h3,.card p{animation-timeline:--cardframe;}
+    .rev__body h3,.rev__slide p{animation-timeline:--revframe;}
+    .fq__a p{animation-timeline:--fqframe;}
+
+    /* --- 7 · PROCESS — louvre blades. The four cards pitch on their X axis
+       continuously as the section passes, like vent blades turning open. --- */
+    .svcgrid{perspective:1500px;perspective-origin:50% 40%;}
+    .svc{animation:blade linear both;animation-timeline:view();animation-range:cover 0% cover 100%;
+      transform-origin:50% 50%;will-change:transform;}
+    @keyframes blade{
+      from{transform:rotateX(15deg) translateY(14px);}
+      50%{transform:rotateX(0deg) translateY(0);}
+      to{transform:rotateX(-11deg) translateY(-14px);}
+    }
+    .svc:nth-child(2){animation-range:cover -4% cover 96%;}
+    .svc:nth-child(3){animation-range:cover -8% cover 92%;}
+    .svc:nth-child(4){animation-range:cover -12% cover 88%;}
+
+    /* --- 6 · SYSTEMS — differential drift. Each card travels at its own
+       rate, so the row shears apart and re-aligns as you scroll past. --- */
+    .sysgrid .card{animation:driftA linear both;animation-timeline:view();
+      animation-range:cover 0% cover 100%;will-change:transform;}
+    .sysgrid .card:nth-child(2){animation-name:driftB;}
+    .sysgrid .card:nth-child(3){animation-name:driftC;}
+    @keyframes driftA{from{transform:translate3d(0,26px,0);}to{transform:translate3d(0,-26px,0);}}
+    @keyframes driftB{from{transform:translate3d(0,62px,0);}to{transform:translate3d(0,-62px,0);}}
+    @keyframes driftC{from{transform:translate3d(0,98px,0);}to{transform:translate3d(0,-98px,0);}}
+    /* the section label tracks with them so the group reads as one system */
+    .sysgrid + .statband{animation:driftA linear both;animation-timeline:view();animation-range:cover 0% cover 100%;}
+
+    /* --- 5 · FAQ — the two columns counter-scroll against each other, and
+       each row's accent bar fills in proportion to scroll progress. --- */
+    .faqwrap .faq{animation:counterUp linear both;animation-timeline:view();animation-range:cover 0% cover 100%;}
+    .faqwrap > div:last-child{animation:counterDown linear both;animation-timeline:view();animation-range:cover 0% cover 100%;}
+    @keyframes counterUp{from{transform:translate3d(0,34px,0);}to{transform:translate3d(0,-34px,0);}}
+    @keyframes counterDown{from{transform:translate3d(0,-34px,0);}to{transform:translate3d(0,34px,0);}}
+    .fq{position:relative;}
+    .fq::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:2px;border-radius:2px;
+      background:var(--acc);transform:scaleY(0);transform-origin:50% 0;
+      animation:barFill linear both;animation-timeline:view();animation-range:cover 12% cover 62%;}
+    @keyframes barFill{to{transform:scaleY(1);}}
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .nav__prog{display:none;}
+  .lag,.magnetic{transform:none;}
+  /* no pinning: the gallery becomes an ordinary swipeable row */
+  .hscroll{height:auto;}
+  .hscroll__sticky{position:static;height:auto;padding:72px 0;}
+  .hscroll__viewport{overflow-x:auto;}
+  .hscroll__track{transform:none !important;}
+}
+
+/* ---- Google review badge (hero) ---- */
+.hero .grev{display:inline-flex;width:fit-content;max-width:100%;align-items:center;gap:9px;flex:0 0 auto;
+  margin-top:20px;padding:8px 15px;border-radius:999px;text-decoration:none;
+  background:var(--white);border:1px solid var(--line);color:var(--muted);
+  font-size:0.9375rem;line-height:1.2;white-space:nowrap;
+  transition:border-color .3s ease,transform .3s ease,background .3s ease;}
+.hero .grev:hover{border-color:var(--acc);transform:translateY(-1px);}
+.hero .grev__g{width:16px;height:16px;flex:0 0 auto;}
+.hero .grev__stars{color:#FBBC05;letter-spacing:.5px;font-size:0.9375rem;}
+.hero .grev__txt b{font-weight:700;color:var(--ink);}
+@media(max-width:560px){ .hero .grev{white-space:normal;font-size:0.875rem;} }
+
+/* ============================================================
+   HERO — full-bleed colour field with a hard-edged panel of copy
+   sitting on it, and a mono strip along the foot. Palette is
+   Aircon's own: --acc / --acc-lite / --acc-2 / --gold.
+   ============================================================ */
+/* padding-bottom reserves the absolutely-placed foot strip so the centred
+   panel can never run into it on a short viewport */
+.hero{position:relative;isolation:isolate;overflow:hidden;
+  min-height:clamp(620px,86vh,940px);display:flex;align-items:center;padding:0 0 76px;}
+
+.hero__field{position:absolute;inset:-8%;z-index:0;
+  background:
+    radial-gradient(42% 48% at 16% 24%, var(--acc-lite) 0%, rgba(140,196,219,0) 62%),
+    radial-gradient(38% 44% at 84% 14%, var(--gold) 0%, rgba(200,155,74,0) 60%),
+    radial-gradient(46% 52% at 74% 80%, var(--acc) 0%, rgba(62,143,176,0) 62%),
+    radial-gradient(40% 46% at 26% 86%, var(--acc-2) 0%, rgba(47,115,146,0) 60%),
+    radial-gradient(34% 40% at 50% 50%, #EBD9A8 0%, rgba(235,217,168,0) 58%),
+    linear-gradient(118deg, var(--acc-lite) 0%, var(--gold) 44%, var(--acc-2) 100%);
+  filter:saturate(1.7) contrast(1.08);
+  animation:fieldDrift 22s ease-in-out infinite alternate;}
+/* the dotted screen from the reference, kept faint */
+.hero__field::after{content:"";position:absolute;inset:0;
+  background-image:radial-gradient(rgba(255,255,255,.55) 1px,transparent 1px);
+  background-size:7px 7px;opacity:.26;mix-blend-mode:overlay;}
+@keyframes fieldDrift{
+  from{transform:translate3d(-1.5%,-1%,0) scale(1.02);}
+  to  {transform:translate3d(1.5%,1%,0) scale(1.06);}}
+
+.hero__panel{position:relative;z-index:2;background:var(--navy);color:#fff;
+  width:min(560px,46vw);border-radius:var(--r);
+  padding:clamp(30px,3.2vw,46px);
+  margin-left:max(var(--pad-x),calc((100vw - var(--shell)) / 2));
+  box-shadow:0 40px 90px -50px rgba(15,27,46,.75);}
+
+.hero__meta{display:flex;justify-content:space-between;gap:16px;
+  font-family:var(--head);font-size:0.8125rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:rgba(255,255,255,.5);}
+.hero__brand{font-family:var(--head);font-weight:800;color:var(--acc-lite);
+  font-size:clamp(1.7rem,2.5vw,2.3rem);line-height:1;margin:26px 0 4px;letter-spacing:-.02em;}
+.hero .h1{color:#fff;font-size:clamp(1.8rem,2.7vw,2.5rem);line-height:1.12;
+  letter-spacing:-.02em;margin:0;max-width:18ch;}
+.hero__sub{color:rgba(255,255,255,.7);font-size:1.0625rem;line-height:1.65;
+  margin:16px 0 0;max-width:46ch;}
+.hero .hero__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;}
+.hero__avail{font-family:var(--head);font-size:0.8125rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--acc-lite);margin:30px 0 14px;}
+.hero .hero__trust{display:flex;align-items:center;gap:14px;margin:0;}
+.hero .hero__trust b{color:#fff;}
+.hero .hero__trust small{color:rgba(255,255,255,.6);}
+.hero .avs span{border-color:var(--navy);}
+.hero .btn-line{color:#fff;border-color:rgba(255,255,255,.34);background:transparent;}
+.hero .btn-line:hover{background:rgba(255,255,255,.1);border-color:#fff;}
+.hero .grev{margin-top:18px;background:rgba(255,255,255,.09);
+  border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.85);}
+.hero .grev__txt b{color:#fff;}
+
+.hero__strip{position:absolute;left:0;right:0;bottom:0;z-index:2;
+  display:flex;justify-content:space-between;gap:18px;
+  padding:16px max(var(--pad-x),calc((100vw - var(--shell)) / 2));
+  font-family:var(--head);font-size:0.8125rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:rgba(26,29,33,.66);}
+
+@media(max-width:900px){
+  /* the strip goes static here, so the hero must stack -- otherwise it becomes
+     a flex sibling of the panel and squeezes it to a sliver */
+  .hero{min-height:0;padding:clamp(96px,13vh,130px) 0 64px;align-items:stretch;
+    flex-direction:column;}
+  .hero__panel{width:auto;margin:0 var(--pad-x);}
+  .hero__strip{position:static;flex-wrap:wrap;justify-content:flex-start;gap:10px 18px;
+    padding:18px var(--pad-x) 0;}
+}
+@media(max-width:560px){
+  .hero__meta{flex-direction:column;gap:4px;}
+  .hero__strip span:nth-child(4){display:none;}
+}
+@media(prefers-reduced-motion:reduce){ .hero__field{animation:none;} }
+
+/* ---- hero field: photograph, with the Aircon wash kept over it ---- */
+.hero__field{background:var(--navy);}
+.hero__field img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  object-position:62% 50%;}
+/* left-weighted navy so the panel has a ground, warming to the accent and gold
+   across the frame -- the palette from the gradient version, now as a wash */
+.hero__field::before{content:"";position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(100deg,rgba(34,38,43,.90) 0%,rgba(34,38,43,.62) 34%,
+                           rgba(34,38,43,.28) 58%,rgba(34,38,43,.42) 100%),
+    linear-gradient(160deg,rgba(62,143,176,.30) 0%,rgba(140,196,219,.10) 42%,
+                           rgba(200,155,74,.22) 100%);}
+.hero__field::after{z-index:2;opacity:.14;}
+@media(max-width:900px){
+  .hero__field::before{background:linear-gradient(180deg,rgba(34,38,43,.72) 0%,rgba(34,38,43,.55) 40%,rgba(34,38,43,.85) 100%),
+    linear-gradient(160deg,rgba(62,143,176,.26),rgba(200,155,74,.18));}
+}
+
+/* the strip was dark ink, which worked on the bright gradient but measured
+   only 2.5:1 once a photograph went behind it */
+.hero__strip{color:rgba(255,255,255,.82);text-shadow:0 1px 2px rgba(0,0,0,.35);}
+.hero__strip::before{content:"";position:absolute;left:0;right:0;bottom:0;height:170%;
+  z-index:-1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(20,24,28,0) 0%,rgba(20,24,28,.55) 70%,rgba(20,24,28,.72) 100%);}
+@media(max-width:900px){
+  .hero__strip{color:rgba(255,255,255,.8);}
+  .hero__strip::before{display:none;}
+}
+
+/* ============================================================
+   HERO v3 — copy sits directly on the photograph, bottom left;
+   a cluster of floating cards holds the proof, bottom right.
+   Replaces the dark panel layout.
+   ============================================================ */
+.hero{position:relative;isolation:isolate;overflow:hidden;display:block;
+  min-height:clamp(620px,88vh,960px);padding:0;}
+.hero__field{position:absolute;inset:0;z-index:0;background:var(--navy);animation:none;}
+.hero__field img,.hero__field video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:58% 50%;}
+/* readable ground for the copy without flattening the photo */
+.hero__field::before{content:"";position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(90deg,rgba(20,24,28,.86) 0%,rgba(20,24,28,.55) 34%,rgba(20,24,28,.10) 62%,rgba(20,24,28,0) 100%),
+    linear-gradient(0deg,rgba(20,24,28,.82) 0%,rgba(20,24,28,.18) 42%,rgba(20,24,28,.30) 100%);}
+.hero__field::after{z-index:2;opacity:.10;}
+
+.hero__copy{position:absolute;z-index:3;left:max(var(--pad-x),calc((100vw - var(--shell)) / 2));
+  bottom:clamp(56px,8vh,96px);width:min(600px,50vw);color:#fff;}
+.hero__eyebrow{display:inline-block;font-family:var(--head);font-size:0.8125rem;font-weight:600;
+  letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:18px;}
+.hero .h1{color:#fff;font-size:clamp(2.1rem,4.4vw,4rem);line-height:1.04;letter-spacing:-.03em;margin:0;}
+.hero__sub{color:rgba(255,255,255,.78);font-size:clamp(1.0625rem,1.1vw,1.1875rem);line-height:1.6;
+  margin:18px 0 0;max-width:44ch;}
+.hero .hero__cta{display:flex;align-items:center;gap:12px;margin-top:30px;}
+.btn-round{width:52px;height:52px;border-radius:50%;flex:0 0 auto;display:inline-flex;
+  align-items:center;justify-content:center;background:#fff;color:var(--ink);
+  transition:transform .3s var(--ease),background .3s;}
+.btn-round svg{width:17px;height:17px;}
+.btn-round:hover{transform:translateY(-2px) rotate(-8deg);background:var(--acc-lite);}
+
+/* card cluster */
+.hero__cards{position:absolute;z-index:3;
+  right:max(var(--pad-x),calc((100vw - var(--shell)) / 2));
+  bottom:clamp(56px,8vh,96px);
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;width:min(390px,34vw);}
+.hcard{background:#fff;border-radius:var(--r);padding:18px 20px;color:var(--ink);
+  box-shadow:0 26px 50px -26px rgba(15,27,46,.55);}
+.hcard--wide{grid-column:1 / -1;display:flex;align-items:center;gap:16px;}
+.hcard--wide b{display:block;font-family:var(--head);font-size:1.125rem;line-height:1.3;letter-spacing:-.01em;}
+.hcard--wide p{font-size:0.9375rem;color:var(--muted);line-height:1.5;margin:6px 0 12px;}
+.hcard__btn{display:inline-flex;align-items:center;background:var(--ink);color:#fff;
+  font-family:var(--head);font-size:0.875rem;font-weight:600;padding:8px 16px;border-radius:999px;
+  transition:background .3s;}
+.hcard__btn:hover{background:var(--acc-2);}
+.hcard__g{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:6px;
+  background:var(--bg-2);border-radius:var(--r-sm);padding:14px 12px;}
+.hcard__g svg{width:26px;height:26px;}
+.hcard__g i{font-style:normal;color:#FBBC05;font-size:0.8125rem;letter-spacing:.5px;}
+.hcard b.counter{display:block;font-family:var(--head);font-size:1.6rem;line-height:1;margin-top:10px;}
+.hcard small{display:block;font-size:0.875rem;color:var(--muted);margin-top:5px;line-height:1.45;}
+.hcard > b:not(.counter){display:block;font-family:var(--head);font-size:1.5rem;line-height:1;color:var(--acc-2);}
+.hero .avs span{border-color:#fff;}
+
+@media(max-width:1080px){
+  .hero{min-height:0;padding:clamp(120px,16vh,150px) 0 40px;}
+  /* relative, NOT static: z-index only applies to positioned elements, so
+     position:static silently dropped these below .hero__field (absolute,
+     z-index:0) and the photo painted over them. Relative keeps them in normal
+     flow -- which is all the stacked layout needs -- while keeping z-index:3
+     effective. */
+  /* left/right/bottom must all be neutralised: under position:relative the
+     desktop offsets would otherwise apply as relative shifts, pushing the copy
+     +32px and pulling the cards -32px flush to the viewport edge. */
+  .hero__copy,.hero__cards{position:relative;z-index:3;width:auto;
+    inset:auto;
+    margin-inline:max(var(--pad-x),calc((100vw - var(--shell)) / 2));}
+  .hero__cards{margin-top:34px;width:auto;max-width:520px;}
+  .hero .h1{font-size:clamp(2rem,6vw,2.8rem);}
+  .hero__field::before{background:linear-gradient(180deg,rgba(20,24,28,.80) 0%,rgba(20,24,28,.55) 45%,rgba(20,24,28,.88) 100%);}
+}
+@media(max-width:560px){
+  .hero__cards{grid-template-columns:1fr;}
+  .hcard--wide{flex-direction:column;align-items:flex-start;}
+}
+
+/* .hero__sub is in the blockRise group, driven by animation-timeline:view().
+   Above the fold that timeline sits part-way through its range at load, so the
+   paragraph rendered stuck at clip-path:inset(0 0 62% 0) with its last line
+   sliced off. Hero copy plays on a time-based timeline instead. */
+.hero .hero__sub{animation-timeline:auto;animation-range:normal;
+  animation-duration:.8s;animation-delay:.1s;}
+
+/* ============================================================
+   NAV — transparent over the hero photograph, solidifying on
+   scroll. Same elements, restyled for a full-bleed image hero.
+   ============================================================ */
+.nav{background:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;
+  border-bottom-color:transparent;box-shadow:none;}
+.nav .brand{color:#fff;}
+.nav .brand__mark{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);}
+.nav .brand__mark svg{stroke:#fff;fill:none;}
+.nav__links a{color:rgba(255,255,255,.82);}
+.nav__links a:hover,.nav__links a.active{color:#fff;}
+.nav .nav-tel{color:#fff;}
+.nav .nav-tel svg{stroke:#fff;}
+/* the nav CTA becomes an outlined pill, as on the reference */
+.nav__right .btn{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.42);
+  border-radius:999px;box-shadow:none;}
+.nav__right .btn:hover{background:#fff;color:var(--ink);border-color:#fff;}
+.nav .burger span,.nav .burger span::before,.nav .burger span::after{background:#fff;}
+.nav .burger{border-color:rgba(255,255,255,.34);background:rgba(255,255,255,.08);}
+
+/* on scroll it lands as the solid bar the rest of the page expects */
+.nav.stuck{background:rgba(255,255,255,.97);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  border-bottom-color:var(--line);box-shadow:0 6px 24px -18px rgba(15,27,46,.6);}
+.nav.stuck .brand{color:var(--ink);}
+.nav.stuck .brand__mark{background:var(--acc);border-color:transparent;}
+.nav.stuck .nav__links a{color:var(--muted);}
+.nav.stuck .nav__links a:hover,.nav.stuck .nav__links a.active{color:var(--acc);}
+.nav.stuck .nav-tel{color:var(--ink);}
+.nav.stuck .nav-tel svg{stroke:var(--acc);}
+.nav.stuck .nav__right .btn{background:var(--acc);color:#fff;border-color:transparent;}
+.nav.stuck .nav__right .btn:hover{background:var(--acc-2);}
+.nav.stuck .burger span,.nav.stuck .burger span::before,.nav.stuck .burger span::after{background:var(--ink);}
+.nav.stuck .burger{border-color:var(--line-2);background:transparent;}
+
+/* The bar floats over the hero, so it must not occupy layout space at all.
+   Pulling the hero up by var(--nav-h) left a 1px strip of body background
+   showing, because the nav renders 77px tall while the token says 76. Taking
+   it out of flow removes the compensation -- and the off-by-one with it. */
+.nav{position:fixed;left:0;right:0;}
+.hero{margin-top:0;}
+.hero__copy,.hero__cards{padding-top:0;}
+@media(max-width:1080px){
+  .hero{padding-top:calc(var(--nav-h) + clamp(56px,9vh,90px));}
+}
+
+/* ============================================================
+   HERO COPY — scaled to the proportions of the solar reference
+   (solar_template1_v4_2_1_5): a much larger kicker, a 78px
+   headline, a wider measure, chunkier CTAs, and a credential
+   pill parked at the top of the column so the stack spans the
+   frame instead of bunching along the bottom edge.
+   ============================================================ */
+.hero__copy{width:min(720px,52vw);}
+.hero__eyebrow{font-size:clamp(0.9375rem,1.15vw,1.25rem);letter-spacing:.22em;
+  font-weight:600;color:rgba(255,255,255,.72);margin-bottom:.75em;}
+.hero .h1{font-size:clamp(2.625rem,5.3vw,4.875rem);line-height:1;letter-spacing:-.02em;}
+.hero__sub{font-size:clamp(1.125rem,1.3vw,1.25rem);line-height:1.6;
+  max-width:50ch;margin-top:26px;color:rgba(255,255,255,.82);}
+.hero .hero__cta{gap:14px;margin-top:34px;}
+.hero .hero__cta .btn{padding:17px 32px;font-size:1.0625rem;}
+
+/* credential pill, top-left of the frame as on the reference */
+.hero__cred{position:absolute;z-index:3;
+  left:max(var(--pad-x),calc((100vw - var(--shell)) / 2));
+  top:clamp(96px,11vh,124px);
+  display:inline-flex;align-items:center;gap:9px;
+  background:rgba(62,143,176,.16);border:1px solid rgba(140,196,219,.38);
+  border-radius:999px;padding:9px 18px;
+  font-family:var(--head);font-size:0.875rem;font-weight:600;letter-spacing:.04em;
+  text-transform:uppercase;color:var(--acc-lite);}
+.hero__cred .dot{width:8px;height:8px;border-radius:50%;background:var(--acc-lite);flex:0 0 auto;}
+
+/* The rules above are unconditional, so they outrank the earlier
+   max-width:1080 block purely on source order. Restate the small-screen
+   sizes here, after them, or the hero returns to desktop scale on phones. */
+@media(max-width:1080px){
+  .hero__copy{width:auto;}
+  .hero__eyebrow{font-size:clamp(0.875rem,2.2vw,1.0625rem);letter-spacing:.16em;}
+  .hero .h1{font-size:clamp(2rem,6vw,2.9rem);}
+  .hero__sub{font-size:clamp(1.0625rem,2.4vw,1.1875rem);margin-top:20px;max-width:54ch;}
+  .hero .hero__cta{margin-top:28px;}
+  .hero .hero__cta .btn{padding:15px 26px;}
+  .hero__cred{position:relative;z-index:3;left:auto;top:auto;
+    margin-inline:max(var(--pad-x),calc((100vw - var(--shell)) / 2));
+    margin-bottom:20px;}
+}
+
+/* mq logo tiles: brand marks replace the wordmarks in the trust strip */
+.mq__logoimg{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;
+  height:52px;min-width:104px;padding:9px 16px;border-radius:10px;
+  background:rgba(255,255,255,.92);box-shadow:0 1px 2px rgba(15,27,46,.06);
+  opacity:.95;transition:opacity .3s var(--ease-soft),transform .3s var(--ease-soft);}
+.mq__logoimg:hover{opacity:1;transform:translateY(-2px);}
+.mq__logoimg img{height:26px;width:auto;max-width:106px;object-fit:contain;display:block;}
+@media(max-width:700px){.mq__logoimg{height:44px;min-width:86px;padding:7px 12px;}
+  .mq__logoimg img{height:21px;max-width:88px;}}
+/* nav-fullwidth */
+.nav__in{max-width:none;width:100%;padding-left:clamp(20px,4vw,72px);padding-right:clamp(20px,4vw,72px);}
+.nav__links{margin-inline:auto;gap:clamp(15px,1.85vw,34px);flex-wrap:nowrap;}
+.nav__links a{white-space:nowrap;}
+
+/* nav-band */
+@media (max-width:1320px){
+  .nav__in{padding-left:clamp(16px,2.2vw,30px);padding-right:clamp(16px,2.2vw,30px);}
+  .nav__links{gap:clamp(10px,1.15vw,17px);}
+  .nav__links a{font-size:1rem;}
+  .nav__tel,.nav-tel,.nav-phone{display:none;}
+}</style><style>
+/* ---- appended business-content blocks (self-contained, prefix wbt-) ---- */
+.wbt{padding:clamp(56px,7vw,92px) 0;}
+.wbt__in{width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,56px);}
+.wbt__eyebrow{font-size:0.8125rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.62;margin:0 0 12px;}
+.wbt__h{margin:0 0 12px;}
+.wbt__lede{font-size:1.125rem;line-height:1.62;opacity:.72;margin:0 0 34px;max-width:62ch;}
+.wbt-grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(252px,1fr));}
+.wbt-card{overflow:hidden;display:flex;flex-direction:column;}
+.wbt-card__img{position:static;width:100%;aspect-ratio:16/10;object-fit:cover;display:block;inset:auto;}
+.wbt-card__b{padding:17px 18px 19px;display:flex;flex-direction:column;gap:7px;flex:1;}
+.wbt-card__t{font-size:1.125rem;font-weight:700;margin:0;line-height:1.25;}
+.wbt-card__k{font-size:0.8125rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.55;margin:0;}
+.wbt-card__p{font-size:1rem;line-height:1.56;opacity:.78;margin:0;}
+.wbt-spec{margin:4px 0 0;padding:0;list-style:none;display:grid;gap:4px;}
+.wbt-spec li{font-size:0.9375rem;opacity:.72;padding-left:15px;position:relative;line-height:1.45;}
+.wbt-spec li::before{content:"";position:absolute;left:0;top:.52em;width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.5;}
+.wbt-accred{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:0 0 22px;}
+.wbt-accred img{height:52px;width:auto;max-width:150px;object-fit:contain;background:#fff;border:1px solid rgba(128,128,128,.26);border-radius:6px;padding:8px 12px;}
+/* the REFCOM/F-Gas tile is a wide composite; give it room or it reads as noise */
+.wbt-accred img[alt*="REFCOM"]{max-width:250px;height:56px;}
+.wbt-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none;}
+.wbt-chips li{font-size:0.875rem;font-weight:600;padding:6px 12px;border-radius:999px;border:1px solid rgba(128,128,128,.32);opacity:.85;}
+.wbt-ops{display:grid;gap:24px 34px;grid-template-columns:repeat(auto-fit,minmax(212px,1fr));border-top:1px solid rgba(128,128,128,.26);padding-top:30px;margin-top:34px;}
+.wbt-ops h4{font-size:0.8125rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;opacity:.55;margin:0 0 9px;}
+.wbt-ops p,.wbt-ops address{font-size:1rem;line-height:1.62;opacity:.78;margin:0;font-style:normal;}
+.wbt-ops a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.4);}
+.wbt-areas{font-size:1rem;line-height:1.7;opacity:.74;margin:14px 0 0;}
+.wbt-legal{font-size:0.875rem;line-height:1.6;opacity:.55;margin:22px 0 0;border-top:1px solid rgba(128,128,128,.2);padding-top:16px;}
+@media(max-width:640px){.wbt-accred img{height:44px;}}
+
+/* ---- blocks adopt this template's surface, border and radius ---- */
+
+.wbt-price{border:1px solid var(--line);border-radius:var(--r-sm);}
+.wbt-chips li{border:1px solid var(--line);}
+.wbt-accred img{border:1px solid var(--line);border-radius:var(--r-sm);}
+.wbt-plain{padding:clamp(56px,7vw,92px) 0;}
+.wbt-footer{margin-top:38px;padding-top:8px;}
+.wbt-footer__h{font-size:1.1875rem;font-weight:700;margin:0 0 6px;letter-spacing:-.01em;}
+.wbt-footer .wbt__in{padding-left:0;padding-right:0;max-width:none;}
+/* injected cards use this template's card component; neutralise wrapper rules
+   that assume an absolutely-positioned image */
+.wbt-card{min-height:0;padding:0;cursor:auto;}
+.wbt-card .card__img{position:relative;inset:auto;height:auto;overflow:hidden;}
+.wbt-card .wbt-card__b{padding:17px 18px 19px;}
+.wbt-card h3{margin:0;}
+/* ---- logo strip split into brands and accreditations, one marquee each ---- */
+.logo-split{-webkit-mask-image:none !important;mask-image:none !important;}
+.lsplit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2.2vw,32px);align-items:center;
+  max-width:none;margin:0;padding:0 clamp(12px,1.4vw,24px);}
+.lsplit__col{min-width:0;}
+.lsplit__col + .lsplit__col{border-left:1px solid rgba(128,128,128,.24);padding-left:clamp(18px,3vw,44px);}
+.lsplit__label{font-size:0.8125rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  opacity:.55;margin:0 0 11px;text-align:center;}
+.lsplit__view{overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent);}
+@media(max-width:820px){
+  .lsplit{grid-template-columns:1fr;gap:18px;}
+  .lsplit__col + .lsplit__col{border-left:0;border-top:1px solid rgba(128,128,128,.24);
+    padding-left:0;padding-top:16px;}
+}
+/* halved column width, so tighten the tiles to keep the belt reading as a belt */
+.lsplit .lstrip__item,.lsplit .mqlogo,.lsplit .mq__logoimg{min-width:86px;padding:8px 12px;}
+.lsplit .lstrip__grp,.lsplit .marquee__row,.lsplit .mq__grp{gap:clamp(20px,2.3vw,46px);padding-right:clamp(20px,2.3vw,46px);}
+.lsplit .lstrip__item img,.lsplit .mqlogo img,.lsplit .mq__logoimg img{height:24px;max-width:92px;}
+
+/* ══ aircon7 payload ══
+   .hero__copy is bottom-anchored over the video, so the fact rail grows the
+   block upward - the copy column is widened to keep it to two rows. */
+.hero__copy{width:min(680px,54vw);}
+.hero-proof{display:flex;flex-wrap:wrap;align-items:flex-start;gap:clamp(18px,2.2vw,34px);
+  margin-top:clamp(22px,2.6vw,32px);padding-top:clamp(18px,2.2vw,26px);
+  border-top:1px solid rgba(255,255,255,.26);}
+.hero-proof .pf b{display:block;font-family:var(--head);font-size:clamp(1.5rem,2.3vw,2rem);
+  font-weight:600;line-height:1;color:#fff;}
+.hero-proof .pf span{display:block;font-size:0.9375rem;color:rgba(255,255,255,.82);
+  margin-top:5px;max-width:18ch;line-height:1.45;}
+@media(max-width:900px){.hero__copy{width:auto}.hero-proof{gap:16px}.hero-proof .pf{flex:1 0 40%}}
+
+/* the systems cards now carry a link where the "from" price used to sit */
+.card__more{display:inline-flex;align-items:center;gap:7px;font-family:var(--head);
+  font-weight:600;color:var(--acc);font-size:1rem;margin-top:auto;padding-top:4px;}
+.card__more::after{content:"\2192";}
+.card__more:hover{text-decoration:underline;}
+
+/* features: two alternating rows, the second carrying the running-cost bars.
+   This band is .dark (--navy), so the bar track, the note and the tick glyphs
+   are all picked for a dark ground rather than left to inherit. */
+.feat-row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px);align-items:center;}
+.feat-row>*{min-width:0;}
+.feat-row+.feat-row{margin-top:clamp(40px,5vw,84px);}
+.feat-row--rev .feat-copy{order:2;}
+.ftick{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:14px;}
+.ftick li{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;
+  font-size:1.0625rem;line-height:1.6;}
+.ftick svg{width:19px;height:19px;fill:none;stroke:var(--acc);stroke-width:2.6;
+  stroke-linecap:round;stroke-linejoin:round;margin-top:3px;}
+.feat-fig{border-radius:14px;overflow:hidden;}
+.feat-fig img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover;}
+.barviz{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);
+  border-radius:14px;padding:clamp(20px,2.6vw,34px);}
+.bar-row+.bar-row{margin-top:22px;}
+.bl{display:flex;justify-content:space-between;gap:12px;font-family:var(--head);
+  font-size:1rem;font-weight:600;margin-bottom:10px;color:#fff;}
+.bar{height:14px;border-radius:100px;background:rgba(255,255,255,.1);overflow:hidden;}
+.bar span{display:block;height:100%;border-radius:100px;}
+.bar.after span{background:var(--acc);}
+.bar.before span{background:rgba(255,255,255,.36);}
+.barnote{font-size:0.9375rem;line-height:1.6;margin-top:20px;color:#C7D3DE;}
+@media(max-width:900px){
+  .feat-row{grid-template-columns:1fr;}
+  .feat-row--rev .feat-copy{order:0;}
+}
+
+/* four figures rather than three, and one of them carries a currency mark */
+.statband{grid-template-columns:repeat(4,1fr);}
+.statband .u{font-size:.7em;vertical-align:baseline;margin-right:1px;}
+@media(max-width:1000px){.statband{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.statband{grid-template-columns:1fr;}}
+
+/* ══ footer operations block ══
+   Two separate faults, both measured before writing this.
+
+   1. ALIGNMENT. .wbt-footer .wbt__in was max-width:none with zero inline
+      padding, so the block ran 0 -> 1484 while every other section on the page
+      sits inside .shell at 132 -> 1352. It now shares the page measure.
+
+   2. BAND COLOUR TRAP (section 6). This template is a LIGHT theme: --ink is
+      #1A1D21 and the global rule `h1,h2,h3,h4{color:var(--ink)}` paints every
+      heading near-black. .footer is a DARK band (--navy #22262B) and sets
+      color:#9FB0C0 for inherited text, but a colour set directly on h4 is not
+      inherited - it wins. .footer h2 was re-picked for the dark ground; h4 was
+      never done, so the OPENING HOURS / OFFICE / CONTACT / ACCREDITATIONS /
+      FINANCE labels measured 1.06:1 and were invisible. */
+.footer .wbt-footer .wbt__in{max-width:var(--shell);margin-inline:auto;
+  padding-inline:var(--pad-x);}
+.footer .wbt-ops h4,.footer .wbt-footer h4{color:#EAF0F5;opacity:.72;}
+.footer .wbt-footer__h{color:#fff;}
+.footer .wbt-ops p,.footer .wbt-ops address{color:#C3D0DB;opacity:1;max-width:none;}
+.footer .wbt-ops a{color:#EAF0F5;}
+.footer .wbt-areas{color:#B6C4D1;opacity:1;max-width:none;}
+.footer .wbt-legal{color:#93A3B2;opacity:1;max-width:none;}
+/* weighted to the copy each column holds, as in aircon1: Contact is a phone
+   number, Finance is the FCA paragraph, so equal columns left a hole */
+.footer .wbt-ops{grid-template-columns:1.25fr 1fr .68fr 1.1fr 1.5fr;
+  gap:30px 40px;align-items:start;}
+.footer .wbt-ops>*{min-width:0;}
+@media(max-width:1100px){
+  .footer .wbt-ops{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 32px;}
+}
+@media(max-width:600px){
+  .footer .wbt-ops{grid-template-columns:minmax(0,1fr);}
+}
+/* =================================================================
+   Hero fixes, 2026-09-05
+   ================================================================= */
+
+/* 1. The credential badge was position:absolute at top:clamp(96px,11vh,124px)
+   while .hero__copy is pinned to the BOTTOM. As the copy grows - headline,
+   sub, buttons, then the three proof figures - its top edge rises, and on a
+   typical desktop it reached about y=48, straight through the badge sitting
+   at y=96. They were guaranteed to collide.
+
+   The badge now sits in the copy's own flow, so the two can never overlap at
+   any viewport height. The absolute positioning and the mobile-only override
+   are both neutralised. */
+.hero__cred{
+  position:static !important;
+  left:auto !important;
+  top:auto !important;
+  margin:0 0 clamp(14px,1.8vh,20px) !important;
+  align-self:flex-start;
+  width:fit-content;
+  max-width:100%;
+}
+
+/* 2. The "lining" over the video was a dot grid: a 7px repeating radial
+   gradient on .hero__field::after, blended over the footage. It reads as
+   scanlines on a moving picture. */
+.hero__field::after{content:none !important;}
+/* The real collapse. .hero__copy and .hero__cards were both position:absolute
+   pinned to the hero's BOTTOM, so they contributed nothing to its height.
+   The hero is min-height:clamp(620px,88vh,960px); on a 705px-tall window it
+   is 620px while the copy needs about 660px, so the copy overflowed upward
+   and the eyebrow rendered at y=-47 - above the hero, colliding with the
+   badge and disappearing under the nav.
+
+   Laying the two out in a grid instead means the hero grows to fit its own
+   content. The look is unchanged - copy bottom left, cards bottom right,
+   aligned to the same shell gutter - but it can no longer overflow. */
+.hero{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:end;
+  column-gap:clamp(24px,3vw,56px);
+  padding:calc(var(--nav-h) + clamp(36px,6vh,84px))
+          max(var(--pad-x),calc((100vw - var(--shell)) / 2))
+          clamp(48px,8vh,96px);
+}
+.hero__copy,
+.hero__cards{
+  position:relative !important;
+  inset:auto !important;
+  margin-inline:0 !important;
+}
+.hero__copy{align-self:end;}
+.hero__cards{align-self:end;}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:minmax(0,1fr);}
+  .hero__cards{margin-top:clamp(24px,4vh,38px);}
+}
+/* Section CTA pair, matching the base template aircon7. Sits as a sibling
+   container at the end of a section so it picks up the same max-width and
+   padding as that section's content, however deeply that content nests. */
+.ctapair{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;
+  margin-top:clamp(30px,4vw,48px)}
+@media(max-width:520px){.ctapair .btn{flex:1 1 100%}}</style></head>
+<body>
+
+<a class="skip" href="#top">Skip to content</a>
+
+<!-- ================= 1 · STICKY NAV ================= -->
+<header class="nav" id="nav">
+  <div class="nav__in">
+    <a class="brand" href="#top">
+      <span class="brand__mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h11a3 3 0 1 0-3-3"/><path d="M3 13h14a3 3 0 1 1-3 3"/><path d="M3 18h8"/></svg></span>
+      Aircon
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#">Our Process</a>
+      <a href="#">Why Choose Us?</a>
+      <a href="#">Services</a>
+      <a href="#">Reviews</a>
+      <a href="#">Guides</a>
+      <a href="#">Careers</a>
+      <a href="#">Area</a>
+      <a href="#">Contact</a>
+    </nav>
+    <div class="nav__right">
+      <a class="nav-tel" href="tel:01632960300">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 20.5a13.5 13.5 0 0 1-12-12 2 2 0 0 1 2-2.2h2.3a1.4 1.4 0 0 1 1.4 1.2c.1.9.35 1.75.7 2.55a1.4 1.4 0 0 1-.35 1.55l-1 1a11 11 0 0 0 4.4 4.4l1-1a1.4 1.4 0 0 1 1.55-.35c.8.35 1.65.6 2.55.7a1.4 1.4 0 0 1 1.2 1.45v2.25a2 2 0 0 1-2.2 2Z"/></svg>
+        <span>01632 960 300</span>
+      </a>
+      <a class="btn btn-acc btn-sm" href="#contact">Get a quote</a>
+      <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMob"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <span class="nav__prog" id="navProg" aria-hidden="true"></span>
+  <div class="nav__mob" id="navMob">
+      <a href="#">Our Process</a>
+      <a href="#">Why Choose Us?</a>
+      <a href="#">Services</a>
+      <a href="#">Reviews</a>
+      <a href="#">Guides</a>
+      <a href="#">Careers</a>
+      <a href="#">Area</a>
+      <a href="#">Contact</a>
+
+    </div>
+</header>
+
+<main id="top">
+
+<!-- ================= 2 · HERO ================= -->
+<section class="hero" aria-labelledby="heroH1">
+  <div class="hero__field" aria-hidden="true"><video autoplay muted loop playsinline preload="auto" width="1972" height="1052" poster="images/cw-hero-ventra.jpg"><source src="aircon%20videos%20compressed/output%20(59).mp4" type="video/mp4"></video></div>
+
+  
+
+  <div class="hero__copy">
+    <a class="hero__cred" href="#why"><span class="dot" aria-hidden="true"></span>F Gas Certified &middot; REFCOM member since 2012</a>
+          <span class="hero__eyebrow">Bringing cool comfort back to you</span>
+    <h1 class="h1" id="heroH1">Air conditioning &amp; heat pumps<br>done properly.</h1>
+    <p class="hero__sub">Expert air conditioning and heat pump installations for homes and businesses right across Britain, surveyed, fitted and monitored by our own engineers.</p>
+    <div class="hero__cta">
+      <a class="btn btn-acc magnetic" href="#contact">Get A Free Quote</a>
+      <a class="btn btn-line" href="#systems">Speak To Our Experts</a>
+    </div>
+    <div class="hero-proof">
+      <div class="pf"><b>4,200+</b><span>Installs since 2012</span></div>
+      <div class="pf"><b>25 yr</b><span>Manufacturer warranty</span></div>
+      <div class="pf"><b>&pound;1,240</b><span>Average yearly saving</span></div>
+    </div>
+  </div>
+
+  <div class="hero__cards">
+    <article class="hcard hcard--wide">
+      <div>
+        <b>4.9 from 1,900+ Google reviews</b>
+        <p>Independently reviewed on Google, across every install we have completed.</p>
+        <a class="hcard__btn" href="#reviews">Read reviews</a>
+      </div>
+      <span class="hcard__g" aria-hidden="true"><svg class="grev__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg><i>&#9733;&#9733;&#9733;&#9733;&#9733;</i></span>
+    </article>
+    <article class="hcard">
+      <span class="avs" aria-hidden="true"><span>JM</span><span>SR</span><span>TW</span><span class="more">+</span></span>
+      <b>REFCOM Elite</b>
+      <small>Registered and F Gas certified</small>
+    </article>
+    <article class="hcard">
+      <b>Approved</b>
+      <small>Daikin &amp; Mitsubishi Electric installer</small>
+    </article>
+  </div>
+</section>
+
+<!-- ================= 3 · TRUST MARQUEE ================= -->
+<section class="mqband logo-split" aria-label="Brands we work with and accreditations"><div class="lsplit"><div class="lsplit__col"><p class="lsplit__label">Brands We Work With</p><div class="lsplit__view"><div class="mq__track"><div class="mq__grp"><span class="mq__logoimg"><img src="logos/daikin.svg" alt="Daikin" loading="lazy" decoding="async"></span><span class="mq__logoimg"><img src="logos/mitsubishi.svg" alt="Mitsubishi Electric" loading="lazy" decoding="async"></span><span class="mq__logoimg"><img src="logos/panasonic.svg" alt="Panasonic" loading="lazy" decoding="async"></span><span class="mq__logoimg"><img src="logos/toshiba.svg" alt="Toshiba" loading="lazy" decoding="async"></span><span class="mq__logoimg"><img src="logos/fujitsu.svg" alt="Fujitsu" loading="lazy" decoding="async"></span><span class="mq__logoimg"><img src="logos/lg.svg" alt="LG" loading="lazy" decoding="async"></span><span class="mq__logoimg"><img src="logos/samsung.png" alt="Samsung" loading="lazy" decoding="async"></span></div><div class="mq__grp" aria-hidden="true"><span class="mq__logoimg"><img src="logos/daikin.svg" alt="Daikin" loading="lazy" decoding="async"></span><span class="mq__logoimg"><img src="logos/mitsubishi.svg" alt="Mitsubishi Electric" loading="lazy" decoding="async"></span><span class="mq__logoimg"><img src="logos/panasonic.svg" alt="Panasonic" loading="lazy" decoding="async"></span><span class="mq__logoimg"><img src="logos/toshiba.svg" alt="Toshiba" loading="lazy" decoding="async"></span><span class="mq__logoimg"><img src="logos/fujitsu.svg" alt="Fujitsu" loading="lazy" decoding="async"></span><span class="mq__logoimg"><img src="logos/lg.svg" alt="LG" loading="lazy" decoding="async"></span><span class="mq__logoimg"><img src="logos/samsung.png" alt="Samsung" loading="lazy" decoding="async"></span></div></div></div></div><div class="lsplit__col"><p class="lsplit__label">Accreditations</p><div class="lsplit__view"><div class="mq__track"><div class="mq__grp"><span class="mq__logoimg"><img src="logos/refcom.png" alt="REFCOM Registered" loading="lazy" decoding="async"></span><span class="mq__logoimg"><img src="images/live/accred-safecontractor.png" alt="SafeContractor Approved" loading="lazy" decoding="async"></span><span class="mq__logoimg"><img src="logos/which.jpg" alt="Which? Trusted Trader" loading="lazy" decoding="async"></span><span class="mq__logoimg"><img src="logos/trustmark.svg" alt="TrustMark Approved" loading="lazy" decoding="async"></span><span class="mq__logoimg"><img src="images/live/accred-recc.png" alt="RECC Member" loading="lazy" decoding="async"></span><span class="mq__logoimg"><img src="images/live/accred-trustatrader.png" alt="TrustATrader Member" loading="lazy" decoding="async"></span><span class="mq__logoimg"><img src="images/live/accred-heatgeek.png" alt="Heat Geek Certified" loading="lazy" decoding="async"></span></div><div class="mq__grp" aria-hidden="true"><span class="mq__logoimg"><img src="logos/refcom.png" alt="REFCOM Registered" loading="lazy" decoding="async"></span><span class="mq__logoimg"><img src="images/live/accred-safecontractor.png" alt="SafeContractor Approved" loading="lazy" decoding="async"></span><span class="mq__logoimg"><img src="logos/which.jpg" alt="Which? Trusted Trader" loading="lazy" decoding="async"></span><span class="mq__logoimg"><img src="logos/trustmark.svg" alt="TrustMark Approved" loading="lazy" decoding="async"></span><span class="mq__logoimg"><img src="images/live/accred-recc.png" alt="RECC Member" loading="lazy" decoding="async"></span><span class="mq__logoimg"><img src="images/live/accred-trustatrader.png" alt="TrustATrader Member" loading="lazy" decoding="async"></span><span class="mq__logoimg"><img src="images/live/accred-heatgeek.png" alt="Heat Geek Certified" loading="lazy" decoding="async"></span></div></div></div></div></div></section>
+
+<!-- ================= 4 · PROCESS ================= -->
+<section class="section dark" id="process" aria-labelledby="processH2">
+  <div class="shell">
+    <div class="sec-bar">
+      <div class="sec-head" style="margin-bottom:0;">
+        <span class="pill">How it works</span>
+        <h2 class="h2" id="processH2">From survey to switch on</h2>
+        <p class="lede">A straightforward path to lower bills, handled end to end by our own accredited UK team, from your first call to switch on.</p>
+      </div>
+    </div>
+    <div class="railwrap" aria-hidden="true"><i></i></div>
+    <div class="svcgrid">
+      <article class="svc">
+        <div class="svc__top"><span>01</span><span>Survey</span></div>
+        <div class="svc__rule"></div>
+        <span class="svc__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="9" rx="2"/><path d="M6 18h2M11 18h2M16 18h2"/></svg></span>
+        <h3>Free home survey</h3>
+        <p>A local surveyor assesses your rooms, layout and energy use, then talks through your savings, no obligation, no jargon.</p>
+      </article>
+      <article class="svc is-on">
+        <div class="svc__top"><span>02</span><span>Design</span></div>
+        <div class="svc__rule"></div>
+        <span class="svc__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+        <h3>Tailored design &amp; quote</h3>
+        <p>We size the indoor and outdoor units to your rooms, recommend the right range for the space and send one itemised fixed price covering the units, installation and commissioning.</p>
+      </article>
+      <article class="svc">
+        <div class="svc__top"><span>03</span><span>Install</span></div>
+        <div class="svc__rule"></div>
+        <span class="svc__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.9 4.9l2.9 2.9M16.2 16.2l2.9 2.9M19.1 4.9l-2.9 2.9M7.8 16.2l-2.9 2.9"/></svg></span>
+        <h3>F Gas certified install</h3>
+        <p>Our accredited engineers fit and commission your system, usually in a day. We register the manufacturer warranty, set up the app and book your first annual service before we leave.</p>
+      </article>
+      <article class="svc">
+        <div class="svc__top"><span>04</span><span>Aftercare</span></div>
+        <div class="svc__rule"></div>
+        <span class="svc__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 1 1-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 1 1 5.4-5.4z"/></svg></span>
+        <h3>Servicing &amp; care plans</h3>
+        <p>Any make, whoever fitted it. Annual servicing that keeps your warranty valid, same day breakdown cover, and a care plan from &pound;9 a month.</p>
+      </article>
+    </div>
+  </div>
+
+  <div class="shell ctapair">
+    <a class="btn btn-acc" href="#contact">Get A Free Quote</a>
+    <a class="btn btn-ghost-light" href="#contact">Speak To Our Experts</a>
+  </div>
+</section>
+
+<!-- ================= 5 · SYSTEMS + STATS ================= -->
+<!-- tint: this and #wbt-products were both on the plain body band, so the two
+     ran together with no visible break. Tinting this one restores the page's
+     dark / tint / plain alternation rather than introducing a new divider. -->
+<section class="section tint" id="systems" aria-labelledby="systemsH2">
+  <div class="shell">
+    <div class="sec-head">
+      <span class="pill">Our solutions</span>
+      <h2 class="h2" id="systemsH2">What we install</h2>
+      <p class="lede">Every installation below is complete: unit, pipework, commissioning and certification included.</p>
+    </div>
+    <div class="sysgrid">
+      <article class="card">
+        <div class="card__img"><img src="images/live/sol-res.webp" alt="Bedroom with a slim wall mounted indoor unit above the bed" loading="lazy" decoding="async"></div>
+        <div class="card__body">
+          <span class="pill">Homes</span>
+          <h3>Residential air conditioning</h3>
+          <p>Wall mounted, multi split and concealed ducted systems for homes. Sized room by room from a heat load survey rather than sold off a shelf.</p>
+          <a class="card__more" href="#contact">Learn more</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__img"><img src="images/live/sol-com.jpg" alt="Ventilation and air conditioning ductwork across a commercial ceiling" loading="lazy" decoding="async"></div>
+        <div class="card__body">
+          <span class="pill">Business</span>
+          <h3>Commercial air conditioning</h3>
+          <p>Offices, shops, restaurants, salons, warehouses and workshops. Ceiling cassettes, floor standing units and VRF for multi zone premises, with priority response on contract.</p>
+          <a class="card__more" href="#contact">Learn more</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__img"><img src="images/live/ac-service-1-crop.webp" alt="Engineer servicing an outdoor air conditioning condenser" loading="lazy" decoding="async"></div>
+        <div class="card__body">
+          <span class="pill">Aftercare</span>
+          <h3>Servicing, repairs &amp; care plans</h3>
+          <p>Any make, whoever fitted it. Annual servicing that keeps your warranty valid, same day breakdown cover, and a care plan from &pound;9 a month.</p>
+          <a class="card__more" href="#contact">Learn more</a>
+        </div>
+      </article>
+    </div>
+    <div class="statband">
+      <div class="stat">
+        <span class="stat__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 1 1-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 1 1 5.4-5.4z"/></svg></span>
+        <div><b class="counter" data-count="100" data-suffix="K">0</b><span>Indoor units installed and commissioned</span></div>
+      </div>
+      <div class="stat">
+        <span class="stat__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>
+        <div><b class="counter" data-count="98" data-suffix="%">0</b><span>Customer satisfaction rate</span></div>
+      </div>
+      <div class="stat">
+        <span class="stat__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M17 5.5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+        <div><b><span class="u">&pound;</span><span class="counter" data-count="10.5" data-dec="1" data-suffix="M">0</span></b><span>Electricity costs saved</span></div>
+      </div>
+      <div class="stat">
+        <span class="stat__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></span>
+        <div><b class="counter" data-count="200" data-suffix="K">0</b><span>Tonnes of carbon footprint reduced</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="shell ctapair">
+    <a class="btn btn-acc" href="#contact">Get A Free Quote</a>
+    <a class="btn btn-line" href="#contact">Speak To Our Experts</a>
+  </div>
+</section><section class="wbt section" id="wbt-products" aria-labelledby="wbtProdH">
+ <div class="wbt__in">
+  <p class="wbt__eyebrow pill">What we fit</p>
+  <h2 class="wbt__h h2" id="wbtProdH">The units we fit</h2>
+  <p class="wbt__lede">We are approved installers for Daikin and Mitsubishi Electric and accredited by Panasonic. These are the ranges we fit most often. Which one suits you depends on the room, not on what happens to be in the van.</p>
+  <div class="wbt-grid">
+   <div class="wbt-card card">
+    <div class="card__img"><img class="wbt-card__img" src="images/live/product-sensira-2.webp" alt="Daikin Sensira wall-mounted indoor unit" loading="lazy" decoding="async"></div>
+    <div class="wbt-card__b card__body">
+     <p class="wbt-card__k">Daikin</p><h3 class="wbt-card__t">Sensira FTXF</h3>
+     <p class="wbt-card__p">The value benchmark, and the unit we fit most in bedrooms and home offices. Quiet, efficient and simple to live with.</p>
+     <ul class="wbt-spec"><li>2.0-5.0kW, A+++ cooling</li><li>19 dB minimum sound level</li><li>Optional Wi-Fi controller</li></ul>
+    </div>
+   </div>
+   <div class="wbt-card card">
+    <div class="card__img"><img class="wbt-card__img" src="images/live/product-stylish-1.webp" alt="Daikin Stylish slim-line indoor unit" loading="lazy" decoding="async"></div>
+    <div class="wbt-card__b card__body">
+     <p class="wbt-card__k">Daikin</p><h3 class="wbt-card__t">Stylish FTXA</h3>
+     <p class="wbt-card__p">Flat-fronted and only 189mm deep, for rooms where a standard unit would dominate the wall. Silver, white or matt black.</p>
+     <ul class="wbt-spec"><li>2.0-3.5kW, A+++ both modes</li><li>Built-in Wi-Fi and presence sensor</li><li>Flash Streamer air purification</li></ul>
+    </div>
+   </div>
+   <div class="wbt-card card">
+    <div class="card__img"><img class="wbt-card__img" src="images/live/product-premium-2.webp" alt="Mitsubishi Electric outdoor condenser unit" loading="lazy" decoding="async"></div>
+    <div class="wbt-card__b card__body">
+     <p class="wbt-card__k">Mitsubishi Electric</p><h3 class="wbt-card__t">MSZ-AP Series</h3>
+     <p class="wbt-card__p">Where reliability matters most. Dual barrier coating keeps the internals clean, which is what keeps efficiency where it started.</p>
+     <ul class="wbt-spec"><li>2.5-7.1kW single split</li><li>Works down to &minus;15&deg;C in heating</li><li>MELCloud app control</li></ul>
+    </div>
+   </div>
+   <div class="wbt-card card">
+    <div class="card__img"><img class="wbt-card__img" src="images/live/product-single-2.webp" alt="Multi-split outdoor condenser serving several indoor units" loading="lazy" decoding="async"></div>
+    <div class="wbt-card__b card__body">
+     <p class="wbt-card__k">Multi-room</p><h3 class="wbt-card__t">Multi-Split &amp; Ducted</h3>
+     <p class="wbt-card__p">One outdoor condenser running up to five indoor units, each room on its own temperature. Where you would rather see nothing at all, we fit concealed ducted or ceiling cassettes.</p>
+     <ul class="wbt-spec"><li>Up to 5 indoor units per condenser</li><li>Wall, floor, cassette or ducted</li><li>Zoned scheduling per room</li></ul>
+    </div>
+   </div>
+  </div>
+ </div>
+
+  <div class="shell ctapair">
+    <a class="btn btn-acc" href="#contact">Get A Free Quote</a>
+    <a class="btn btn-line" href="#contact">Speak To Our Experts</a>
+  </div>
+</section>
+
+<!-- ================= 6 · WHY US ================= -->
+<section class="section tint" id="why" aria-labelledby="whyH2">
+  <div class="shell why">
+    <figure class="why__fig" style="margin:0;">
+      <img src="images/cw-05.jpg" alt="Aircon engineer checking refrigerant pressures during commissioning" loading="lazy" decoding="async">
+    </figure>
+    <div>
+      <span class="pill">Why us</span>
+      <h2 class="h2" id="whyH2">Why British homeowners choose Aircon</h2>
+      <p class="lede">Our engineers are salaried and F-Gas registered under our own certificate, never subcontracted by the day. The person who quotes the job is accountable for it.</p>
+      <div class="feat">
+        <div>
+          <i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 1 1-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 1 1 5.4-5.4z"/></svg></i>
+          <b>Advanced tools for accuracy</b>
+        </div>
+        <div>
+          <i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg></i>
+          <b>Fast response, same-day service</b>
+        </div>
+      </div>
+      <div class="checks">
+        
+        <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>REFCOM registered, F-Gas certified</span> <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Daikin &amp; Mitsubishi approved installer</span>
+        <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Same-day and next-day repair slots</span>
+        <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Care plans from a monthly payment</span>
+      </div>
+      <a class="btn btn-acc magnetic" href="#contact">Know More <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+
+  <div class="shell ctapair">
+    <a class="btn btn-acc" href="#contact">Get A Free Quote</a>
+    <a class="btn btn-line" href="#contact">Speak To Our Experts</a>
+  </div>
+</section>
+
+<!-- ================= 6b · FEATURES ================= -->
+<section class="section dark" id="features" aria-labelledby="featH2">
+  <div class="shell">
+    <div class="feat-row">
+      <div class="feat-copy">
+        <span class="pill">Survey &amp; design</span>
+        <h2 class="h2" id="featH2" style="margin-top:16px;">A system designed around your rooms</h2>
+        <ul class="ftick">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>We calculate the cooling load room by room, so units are sized to the space rather than guessed.</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Pipe routes and indoor unit positions are agreed with you before any work starts.</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Every install is commissioned and F Gas certified, with the paperwork handled for you.</li>
+        </ul>
+      </div>
+      <figure class="feat-fig" style="margin:0;">
+        <img src="images/cw-hero.jpg" alt="A air conditioning energy dashboard on screen showing daily production and home consumption charts" loading="lazy" decoding="async">
+      </figure>
+    </div>
+
+    <div class="feat-row feat-row--rev">
+      <div class="feat-copy">
+        <span class="pill">The numbers</span>
+        <h2 class="h2" style="margin-top:16px;">Lower running costs, year after year</h2>
+        <ul class="ftick">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Inverter systems draw only the power the room actually needs, cutting monthly running costs.</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Zoned controls mean you only cool the rooms in use, rather than the whole house.</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Shield yourself from rising energy prices with A+++ rated units and a serviced system.</li>
+        </ul>
+      </div>
+      <div class="barviz">
+        <div class="bar-row">
+          <div class="bl"><span>After installation</span><span>&pound;520/yr</span></div>
+          <div class="bar after"><span style="width:34%"></span></div>
+        </div>
+        <div class="bar-row">
+          <div class="bl"><span>Before installation</span><span>&pound;1,850/yr</span></div>
+          <div class="bar before"><span style="width:92%"></span></div>
+        </div>
+        <p class="barnote">Typical running cost for cooling and heating a three bedroom home, before and after a properly sized inverter system.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="shell ctapair">
+    <a class="btn btn-acc" href="#contact">Get A Free Quote</a>
+    <a class="btn btn-ghost-light" href="#contact">Speak To Our Experts</a>
+  </div>
+</section>
+
+<!-- ================= 7 · REVIEWS ================= -->
+<section class="section" id="reviews" aria-labelledby="reviewsH2">
+  <div class="shell">
+    <div class="sec-head">
+      <span class="pill">Customer feedback</span>
+      <h2 class="h2" id="reviewsH2">What our customers say</h2>
+    </div>
+    <div class="rev" id="revCarousel" aria-roledescription="carousel" aria-label="Customer reviews">
+      <div class="rev__figs">
+        <img class="rev__img is-on" src="images/cw-hero.jpg" alt="Living room cooled by a Aircon installed system" loading="lazy" decoding="async">
+        <img class="rev__img" src="images/cw-01.jpg" alt="Kitchen and dining space with a Aircon wall unit" loading="lazy" decoding="async">
+        <img class="rev__img" src="images/cw-cta.jpg" alt="Reception room served by a concealed ducted system" loading="lazy" decoding="async">
+        <img class="rev__img" src="images/cw-04.jpg" alt="Living room with a discreet high-wall indoor unit" loading="lazy" decoding="async">
+        <img class="rev__img" src="images/cw-03.jpg" alt="Slimline wall-mounted indoor unit" loading="lazy" decoding="async">
+        <img class="rev__img" src="images/cw-02.jpg" alt="External condenser unit sited beside a rendered wall" loading="lazy" decoding="async">
+      </div>
+      <div class="rev__body">
+        <span class="rev__mark" aria-hidden="true">&rdquo;</span>
+        <div class="stars" aria-label="5 out of 5">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9L22 9.3l-5.5 4.8L18 21l-6-4-6 4 1.5-6.9L2 9.3l7.1-1.4z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9L22 9.3l-5.5 4.8L18 21l-6-4-6 4 1.5-6.9L2 9.3l7.1-1.4z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9L22 9.3l-5.5 4.8L18 21l-6-4-6 4 1.5-6.9L2 9.3l7.1-1.4z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9L22 9.3l-5.5 4.8L18 21l-6-4-6 4 1.5-6.9L2 9.3l7.1-1.4z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9L22 9.3l-5.5 4.8L18 21l-6-4-6 4 1.5-6.9L2 9.3l7.1-1.4z"/></svg>
+        </div>
+        <div class="rev__slides" aria-live="polite">
+          <article class="rev__slide is-on">
+            <p>Aircon's maintenance has been prompt and reliable, keeping my system running at its best all year.</p>
+            <div class="rev__who"><span class="rev__av" aria-hidden="true">HM</span><div><b>Hannah Mitchell</b><small>Homeowner, Bristol</small></div></div>
+          </article>
+          <article class="rev__slide">
+            <p>Their units have transformed my home's efficiency and significantly reduced my running costs.</p>
+            <div class="rev__who"><span class="rev__av" aria-hidden="true">JC</span><div><b>Jacob Cruz</b><small>Homeowner, Leeds</small></div></div>
+          </article>
+          <article class="rev__slide">
+            <p>Choosing Aircon was the best decision for our business, their commercial system cut our energy costs.</p>
+            <div class="rev__who"><span class="rev__av" aria-hidden="true">AB</span><div><b>Aidan Byrd</b><small>Director, Manchester</small></div></div>
+          </article>
+          <article class="rev__slide">
+            <p>Our unit packed up in the middle of the heatwave and they had an engineer with us within hours. Fixed on the first visit.</p>
+            <div class="rev__who"><span class="rev__av" aria-hidden="true">MR</span><div><b>Marcus Reynolds</b><small>Homeowner, Wolverhampton</small></div></div>
+          </article>
+          <article class="rev__slide">
+            <p>We had three quotes and theirs was the only one that measured every room instead of guessing. Fitted in a day, spotless finish.</p>
+            <div class="rev__who"><span class="rev__av" aria-hidden="true">PS</span><div><b>Priya Shah</b><small>Homeowner, Reading</small></div></div>
+          </article>
+          <article class="rev__slide">
+            <p>They look after the units in both our shops and the cold room. One contractor for the lot, on a proper maintenance schedule.</p>
+            <div class="rev__who"><span class="rev__av" aria-hidden="true">TB</span><div><b>Tom Baird</b><small>Retail Manager, Oxford</small></div></div>
+          </article>
+        </div>
+        <div class="rev__foot">
+          <div class="dots" id="revDots" role="tablist" aria-label="Choose a review"></div>
+          <div class="arrows arrows--light">
+            <button type="button" id="revPrev" aria-label="Previous review"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>
+            <button type="button" id="revNext" aria-label="Next review"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="shell ctapair">
+    <a class="btn btn-acc" href="#contact">Get A Free Quote</a>
+    <a class="btn btn-line" href="#contact">Speak To Our Experts</a>
+  </div>
+</section>
+
+<!-- ================= 8 · GALLERY — horizontal scroll ================= -->
+<section class="hscroll dark" id="work" aria-labelledby="workH2">
+  <div class="hscroll__sticky">
+    <div class="shell hscroll__head">
+      <div>
+        <span class="pill">Our projects</span>
+        <h2 class="h2" id="workH2">Recent installations</h2>
+      </div>
+      <div class="hscroll__meta">
+        <span class="mono-note">Scroll to travel <span aria-hidden="true">→</span></span>
+        <div class="hbar" aria-hidden="true"><i id="hbarFill"></i></div>
+      </div>
+    </div>
+    <div class="hscroll__viewport">
+      <div class="hscroll__track" id="hTrack">
+        <figure class="gtile" style="margin:0;">
+          <img src="images/live/ac-install-1-crop.webp" alt="Outdoor condenser mounted on the brick wall of a Victorian terrace" loading="lazy" decoding="async">
+          <figcaption><span>Bristol &middot; 2024</span><b>Victorian terrace multi split</b></figcaption>
+        </figure>
+        <figure class="gtile" style="margin:0;">
+          <img src="images/live/sol-res.webp" alt="Bedroom with a slim wall mounted indoor unit" loading="lazy" decoding="async">
+          <figcaption><span>Cheshire &middot; 2024</span><b>Master bedroom retrofit</b></figcaption>
+        </figure>
+        <figure class="gtile" style="margin:0;">
+          <img src="images/live/ac-home-1-crop.webp" alt="Living room served by a wall mounted air conditioning unit" loading="lazy" decoding="async">
+          <figcaption><span>Norfolk &middot; 2023</span><b>Open plan lounge and kitchen</b></figcaption>
+        </figure>
+        <figure class="gtile" style="margin:0;">
+          <img src="images/live/ventilation-2.jpg" alt="Exposed ventilation ductwork across a commercial ceiling" loading="lazy" decoding="async">
+          <figcaption><span>Oxford &middot; 2024</span><b>Restaurant kitchen extract</b></figcaption>
+        </figure>
+        <figure class="gtile" style="margin:0;">
+          <img src="images/live/refrigeration-3.jpg" alt="Refrigerated display cabinets in a convenience store" loading="lazy" decoding="async">
+          <figcaption><span>Kent &middot; 2025</span><b>Convenience store cold room</b></figcaption>
+        </figure>
+        <figure class="gtile" style="margin:0;">
+          <img src="images/live/heatpump-2-crop.png" alt="Air source heat pump installed beside a house" loading="lazy" decoding="async">
+          <figcaption><span>Surrey &middot; 2024</span><b>Air source heat pump swap</b></figcaption>
+        </figure>
+        <div class="gtile gtile--cta">
+          <b>Sixty more this year.</b>
+          <p>Every commission photographed on handover day.</p>
+          <a class="btn btn-acc btn-sm" href="#contact">View All Projects</a>
+        </div>
+      </div>
+    </div>
+    <!-- Inside the sticky panel, not after it. .hscroll is a 340vh scroll
+         runway and .hscroll__sticky is what stays pinned; a pair left in
+         normal flow at the end of the section sat at the bottom of that
+         runway and travelled up the screen while the gallery held still. -->
+    <div class="shell ctapair hscroll__cta">
+      <a class="btn btn-acc" href="#contact">Get A Free Quote</a>
+      <a class="btn btn-ghost-light" href="#contact">Speak To Our Experts</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 9 · GUARANTEE ================= -->
+<section class="section tint" id="guarantee" aria-labelledby="guarH2">
+  <div class="shell center">
+    <span class="pill">Our promise</span>
+    <h2 class="h2" id="guarH2" style="margin-top:16px;">Zero risk. Total peace of mind.</h2>
+    <p class="lede" style="margin-top:14px;">Every Aircon installation is backed by guarantees that protect your investment for decades.</p>
+    <div class="guar" style="text-align:left;">
+      <div class="gcell">
+        <span class="gcell__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+        <h3>Fixed price guarantee</h3>
+        <p>The quote you're given is the price you pay, no hidden costs, ever.</p>
+      </div>
+      <div class="gcell">
+        <span class="gcell__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 15h8"/></svg></span>
+        <h3>7 year parts and labour warranty</h3>
+        <p>Your units are guaranteed to keep performing for a next decade.</p>
+      </div>
+      <div class="gcell">
+        <span class="gcell__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg></span>
+        <h3>Savings promise</h3>
+        <p>If your system underperforms our estimate, we'll put it right at no cost.</p>
+      </div>
+    </div>
+    <p class="guar__note"><b>Acoustic promise</b>: if an indoor unit measures above its published dB rating at commissioning, we rectify or remove it at our cost.</p>
+  </div>
+</section>
+
+<!-- ================= 10 · FAQ ================= -->
+<section class="section" id="faq" aria-labelledby="faqH2">
+  <div class="shell faqwrap">
+    <div class="faq">
+      <div class="fq open">
+        <button class="fq__q" aria-expanded="true">How do I know if my AC needs repair?<span class="fq__ic" aria-hidden="true"></span></button>
+        <div class="fq__a" style="max-height:150px;"><p>Weak airflow, warm air on a cooling cycle, water pooling beneath the indoor unit or a new rattle from the condenser are the four most common signals. Any of them warrants a call before the compressor is stressed further.</p></div>
+      </div>
+      
+      
+      
+      
+    <div class="fq">
+        <button class="fq__q" aria-expanded="false">What type of AC units do you repair?<span class="fq__ic" aria-hidden="true"></span></button>
+        <div class="fq__a"><p>Every major manufacturer: Daikin, Mitsubishi Electric, Panasonic, Toshiba, Fujitsu, LG and Samsung, across wall-mounted, ducted, cassette and multi-split configurations.</p></div>
+      </div> <div class="fq">
+        <button class="fq__q" aria-expanded="false">Are your technicians licensed and insured?<span class="fq__ic" aria-hidden="true"></span></button>
+        <div class="fq__a"><p>Yes. Every engineer is F-Gas certified and REFCOM registered under our own company certificate, and carries full public liability cover for the equipment and any home modification.</p></div>
+      </div> <div class="fq">
+        <button class="fq__q" aria-expanded="false">Do you provide a warranty on repairs?<span class="fq__ic" aria-hidden="true"></span></button>
+        <div class="fq__a"><p>All repairs carry a twelve-month parts and labour guarantee. New installations carry the manufacturer warranty, registered by us, plus five years of workmanship cover.</p></div>
+      </div> <div class="fq">
+        <button class="fq__q" aria-expanded="false">Does an inverter AC save electricity?<span class="fq__ic" aria-hidden="true"></span></button>
+        <div class="fq__a"><p>Substantially. An inverter compressor modulates rather than cycling on and off, so it runs at part load almost permanently, the condition in which it is quietest and most efficient, typically 30-40% below a fixed-speed equivalent.</p></div>
+      </div> <div class="fq"> <button class="fq__q" aria-expanded="false">How much does home air conditioning cost to install?<span class="fq__ic" aria-hidden="true"></span></button> <div class="fq__a"><p>A single wall-mounted unit is typically &pound;1,895 to &pound;2,400 fitted. A two or three room multi-split usually lands between &pound;3,000 and &pound;4,500 depending on pipe runs and access. Every quote is fixed and itemised, and finance starts around &pound;39 a month.</p></div> </div> <div class="fq"> <button class="fq__q" aria-expanded="false">Can air conditioning heat my home in winter?<span class="fq__ic" aria-hidden="true"></span></button> <div class="fq__a"><p>Yes. Every system we fit is a reversible heat pump, so the same unit heats in winter, delivering roughly three to four units of heat per unit of electricity. For a single room it is far cheaper than firing the whole central heating system.</p></div> </div> <div class="fq"> <button class="fq__q" aria-expanded="false">What temperature should I set it to?<span class="fq__ic" aria-hidden="true"></span></button> <div class="fq__a"><p>Between 22 and 24&deg;C is the sweet spot. Every degree lower adds roughly 5 to 8% to the running cost, so setting it to 18&deg;C on a hot day costs far more than it gains in comfort.</p></div> </div> <div class="fq"> <button class="fq__q" aria-expanded="false">How long will the system last?<span class="fq__ic" aria-hidden="true"></span></button> <div class="fq__a"><p>Fifteen to twenty years for a system that was sized correctly and serviced annually. Skipping the service is what shortens it. Blocked filters make the compressor work harder, and the compressor is the expensive part.</p></div> </div> <div class="fq"> <button class="fq__q" aria-expanded="false">How often does it need servicing?<span class="fq__ic" aria-hidden="true"></span></button> <div class="fq__a"><p>Once a year. We clean filters and coils, check refrigerant pressures and test the condensate drain. An annual service keeps the manufacturer warranty valid and stops efficiency drifting away.</p></div> </div> <div class="fq"> <button class="fq__q" aria-expanded="false">Do you offer a maintenance plan?<span class="fq__ic" aria-hidden="true"></span></button> <div class="fq__a"><p>Our care plan covers the annual service, filter and coil cleaning, refrigerant and pressure checks and priority booking, spread over a manageable monthly payment. It keeps your warranty valid and catches small faults early.</p></div> </div> <div class="fq"> <button class="fq__q" aria-expanded="false">Do I need planning permission?<span class="fq__ic" aria-hidden="true"></span></button> <div class="fq__a"><p>For most English homes a single outdoor unit falls under permitted development, provided it meets the size and siting rules. Listed buildings, conservation areas and flats are the usual exceptions, and we check this at survey stage.</p></div> </div></div>
+    <div>
+      <span class="pill">FAQ questions</span>
+      <h2 class="h2" style="margin-top:16px;">Frequently asked questions</h2>
+      <p class="lede" style="margin-top:14px;">Everything homeowners ask before booking: pricing, certification, warranty and running costs. Anything not covered here, call the office.</p>
+      <figure class="faq__fig" style="margin:28px 0 0;">
+        <img src="images/cw-04.jpg" alt="Living room with an installed Aircon climate system" loading="lazy" decoding="async">
+      </figure>
+           </div>
+  </div>
+
+  <div class="shell ctapair">
+    <a class="btn btn-acc" href="#contact">Get A Free Quote</a>
+    <a class="btn btn-line" href="#contact">Speak To Our Experts</a>
+  </div>
+</section>
+
+<!-- ================= 11 · FINAL CTA ================= -->
+<section class="section fcta" id="contact" aria-labelledby="ctaH2">
+  <div class="shell fcta__in">
+    <div>
+      <span class="pill" style="background:rgba(255,255,255,.16);color:#fff;">Get in touch</span>
+      <h2 id="ctaH2">Ready for air conditioning?</h2>
+      <p class="lede" style="margin-top:14px;">Take the next step towards clean, affordable and sustainable energy for your UK home or business.</p>
+      <div class="fcta__list">
+        <div>
+          <i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 20.5a13.5 13.5 0 0 1-12-12 2 2 0 0 1 2-2.2h2.3a1.4 1.4 0 0 1 1.4 1.2c.1.9.35 1.75.7 2.55a1.4 1.4 0 0 1-.35 1.55l-1 1a11 11 0 0 0 4.4 4.4l1-1a1.4 1.4 0 0 1 1.55-.35c.8.35 1.65.6 2.55.7a1.4 1.4 0 0 1 1.2 1.45v2.25a2 2 0 0 1-2.2 2Z"/></svg></i>
+          <div><label>Call me</label><b>01632 960 300</b></div>
+        </div>
+        <div>
+          <i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></i>
+          <div><label>Office</label><b>Unit 4, Cooper Works, 12 Cooper Row, London EC1A 1BB</b></div>
+        </div>
+        <div>
+          <i><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></i>
+          <div><label>Opening hours</label><b>Mon to Fri 08:00 to 18:00 &middot; Sat 08:00 to 13:00</b></div>
+        </div>
+      </div>
+    </div>
+    <aside class="callbox">
+      <span class="callbox__label">Speak to an engineer</span>
+      <a class="callbox__num" href="tel:01632960300">01632 960 300</a>
+      <p>Lines open Monday to Saturday, 7am-8pm. Emergency call-outs answered seven days a week.</p>
+      <div class="callbox__cta">
+        <a class="btn btn-white magnetic" href="tel:01632960300">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 20.5a13.5 13.5 0 0 1-12-12 2 2 0 0 1 2-2.2h2.3a1.4 1.4 0 0 1 1.4 1.2c.1.9.35 1.75.7 2.55a1.4 1.4 0 0 1-.35 1.55l-1 1a11 11 0 0 0 4.4 4.4l1-1a1.4 1.4 0 0 1 1.55-.35c.8.35 1.65.6 2.55.7a1.4 1.4 0 0 1 1.2 1.45v2.25a2 2 0 0 1-2.2 2Z"/></svg>
+          Call Us Now
+        </a>
+        <a class="btn btn-ghost-light" href="#contact">Get A Free Quote</a>
+      </div>
+      <div class="callbox__foot">
+        <span><b>Average answer time</b> under 40 seconds</span>
+        <span><b>No call centre</b>, engineers answer directly</span>
+      </div>
+    </aside>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= 12 · FOOTER ================= -->
+<footer class="footer">
+  <div class="shell">
+    <div class="footer__top">
+      <div>
+        <h2>Restore cooling comfort without delay</h2>
+        <p class="footer__about">Air conditioning design, installation and aftercare across the UK, engineered so your system runs quietly and efficiently for a decade.</p>
+        <a class="btn btn-acc btn-sm" href="#contact">Book Schedule</a>
+      </div>
+      <div class="fcol">
+        <h4>Navigation</h4>
+        <a href="#top">Home</a>
+        <a href="#why">About Us</a>
+        <a href="#systems">Our Services</a>
+        <a href="#contact">Get In Touch</a>
+      </div>
+      <div class="fcol">
+        <h4>Company</h4>
+        <a href="#work">Projects</a>
+        <a href="#guarantee">Guarantee</a>
+        <a href="#faq">FAQ</a>
+        <a href="#reviews">Reviews</a>
+      </div>
+      <div class="fcol">
+        <h4>Follow Us</h4>
+        <div class="fsoc">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9h4v12h-4zM10 13a4 4 0 0 1 8 0v8h-4v-7a1 1 0 0 0-2 0v7h-4"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="watermark" aria-hidden="true">AIRCON</div>
+    <div class="footer__bot">
+      <span>&copy; 2026 We Build Trades Ltd. Demonstration template, sample content.</span>
+      <span><a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms and Conditions</a></span>
+    </div>
+  </div>
+<div class="wbt-footer" id="wbt-ops">
+ <div class="wbt__in">
+  <h2 class="wbt-footer__h" id="wbtOpsH">Find us, call us, check us</h2>
+  <div class="wbt-ops">
+   <div><h4>Opening hours</h4><p>Monday to Friday &nbsp;08:00-18:00<br>Saturday &nbsp;08:00-13:00<br>Sunday &nbsp;closed<br><strong>24/7 emergency line</strong> for breakdowns</p></div>
+   <div><h4>Office</h4><address>Unit 4, Cooper Works<br>12 Cooper Row<br>London EC1A 1BB</address></div>
+   <div><h4>Contact</h4><p><a href="tel:01632960300">01632 960 300</a></p></div>
+   <div><h4>Accreditations</h4><p><strong>Accredited since 2015.</strong> REFCOM Elite &middot; F Gas &middot; MCS &middot; SafeContractor &middot; CHAS &middot; Daikin &amp; Mitsubishi Electric approved installer.</p></div>
+   <div><h4>Finance</h4><p>Aircon Ltd is an Introducer Appointed Representative of a regulated credit broker. The credit broker is not a lender (FRN 111111). Finance is available subject to status. The rate offered is always provisional and will depend upon your personal circumstances, the loan amount and the term.</p></div></div>
+  <p class="wbt-areas"><strong>Areas we cover.</strong> Croydon, Bromley, Kingston upon Thames, Richmond, Sutton, Epsom, Orpington, Sevenoaks, Dartford, Watford, Enfield and Ilford, plus the rest of Greater London and the Home Counties. Not on the list? Call us; we travel further than it suggests.</p>
+  <p class="wbt-legal">Registered in England &amp; Wales No. 11111111 &middot; VAT No. 111 1111 11 &middot; REFCOM registration F-GAS/1111/1111 &middot; &pound;5m public liability and &pound;10m employer liability cover.</p>
+ </div>
+</div></footer>
+
+<script>
+var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* Motion self-check — open DevTools (F12) → Console. If animations look dead,
+   this says why in one line. */
+window.addEventListener('load', function(){
+  setTimeout(function(){
+    var scrollDriven = document.getAnimations().filter(function(a){
+      return a.timeline && a.timeline !== document.timeline;
+    }).length;
+    console.log('%cAircon motion check',
+      'font:700 13px system-ui;color:#3E8FB0',
+      '\n  prefers-reduced-motion : ' + (reduceMotion
+        ? 'REDUCE  →  your OS has animations switched off, so this page is deliberately static'
+        : 'no-preference  →  animations enabled') +
+      '\n  scroll-driven CSS      : ' + (CSS.supports('animation-timeline: view()')
+        ? 'supported' : 'NOT supported — this browser is too old for scroll animations') +
+      '\n  live scroll animations : ' + scrollDriven +
+      (scrollDriven === 0 ? '   ← none attached, something is wrong' : '   ← scroll to see them scrub'));
+  }, 800);
+});
+
+/* reveals — fail-safe only un-hides what is already on screen */
+var revealEls = [].slice.call(document.querySelectorAll('.reveal'));
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:.12, rootMargin:'0px 0px -60px 0px'});
+revealEls.forEach(function(el){ io.observe(el); });
+setTimeout(function(){
+  revealEls.forEach(function(el){
+    if(el.getBoundingClientRect().top < window.innerHeight * 1.05){ el.classList.add('in'); }
+  });
+}, 2200);
+window.addEventListener('beforeprint', function(){ revealEls.forEach(function(el){ el.classList.add('in'); }); });
+
+/* sticky nav + progress fallback */
+var nav = document.getElementById('nav');
+var prog = document.getElementById('navProg');
+var supportsScrollTimeline = CSS.supports('animation-timeline: scroll()');
+var ticking = false;
+function onFrame(){
+  var y = window.scrollY;
+  nav.classList.toggle('stuck', y > 8);
+  if(!supportsScrollTimeline && !reduceMotion){
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    prog.style.transform = 'scaleX(' + (max > 0 ? Math.min(y / max, 1) : 0) + ')';
+  }
+  ticking = false;
+}
+function onScroll(){ if(!ticking){ ticking = true; requestAnimationFrame(onFrame); } }
+onFrame();
+window.addEventListener('scroll', onScroll, {passive:true});
+
+/* mobile menu */
+var burger = document.getElementById('burger'), mob = document.getElementById('navMob');
+function closeMenu(){ burger.setAttribute('aria-expanded','false'); mob.style.maxHeight = null; }
+burger.addEventListener('click', function(){
+  if(burger.getAttribute('aria-expanded') === 'true'){ closeMenu(); }
+  else{ burger.setAttribute('aria-expanded','true'); mob.style.maxHeight = mob.scrollHeight + 'px'; }
+});
+mob.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+
+/* scrollspy */
+(function(){
+  var links = [].slice.call(document.querySelectorAll('.nav__links a[href^="#"]')), map = {};
+  links.forEach(function(a){ var el = document.getElementById(a.getAttribute('href').slice(1)); if(el){ map[el.id] = a; } });
+  var spy = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        links.forEach(function(a){ a.classList.remove('active'); });
+        if(map[e.target.id]){ map[e.target.id].classList.add('active'); }
+      }
+    });
+  }, {rootMargin:'-45% 0px -50% 0px', threshold:0});
+  Object.keys(map).forEach(function(id){ spy.observe(document.getElementById(id)); });
+})();
+
+/* service cards — highlight on hover/focus, one active at a time */
+(function(){
+  var cards = [].slice.call(document.querySelectorAll('.svc'));
+  cards.forEach(function(c){
+    c.addEventListener('mouseenter', function(){
+      cards.forEach(function(o){ o.classList.remove('is-on'); });
+      c.classList.add('is-on');
+    });
+  });
+})();
+
+/* reviews carousel — auto-advances, pauses on hover/focus and when off screen */
+(function(){
+  var root = document.getElementById('revCarousel');
+  if(!root) return;
+  var slides = [].slice.call(root.querySelectorAll('.rev__slide'));
+  var imgs   = [].slice.call(root.querySelectorAll('.rev__img'));
+  var dotWrap = document.getElementById('revDots');
+  var i = 0, timer = null, DELAY = 6000, paused = false, visible = true;
+
+  slides.forEach(function(_, n){
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('role','tab');
+    b.setAttribute('aria-label','Review ' + (n + 1) + ' of ' + slides.length);
+    b.setAttribute('aria-selected', n === 0 ? 'true' : 'false');
+    b.addEventListener('click', function(){ go(n); restart(); });
+    dotWrap.appendChild(b);
+  });
+  var dots = [].slice.call(dotWrap.children);
+
+  function go(n){
+    i = (n + slides.length) % slides.length;
+    slides.forEach(function(s, k){ s.classList.toggle('is-on', k === i); });
+    imgs.forEach(function(im, k){ im.classList.toggle('is-on', k === i); });
+    dots.forEach(function(d, k){ d.setAttribute('aria-selected', k === i ? 'true' : 'false'); });
+  }
+  function tick(){ if(!paused && visible){ go(i + 1); } }
+  function restart(){ clearInterval(timer); if(!reduceMotion){ timer = setInterval(tick, DELAY); } }
+
+  document.getElementById('revNext').addEventListener('click', function(){ go(i + 1); restart(); });
+  document.getElementById('revPrev').addEventListener('click', function(){ go(i - 1); restart(); });
+  root.addEventListener('mouseenter', function(){ paused = true; });
+  root.addEventListener('mouseleave', function(){ paused = false; });
+  root.addEventListener('focusin', function(){ paused = true; });
+  root.addEventListener('focusout', function(){ paused = false; });
+
+  /* don't burn cycles rotating a carousel nobody can see */
+  new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ visible = e.isIntersecting; });
+  }, {threshold:.2}).observe(root);
+
+  restart();
+})();
+
+/* FAQ */
+document.querySelectorAll('.fq__q').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var item = btn.closest('.fq'), ans = item.querySelector('.fq__a'), isOpen = item.classList.contains('open');
+    document.querySelectorAll('.fq.open').forEach(function(o){
+      if(o !== item){ o.classList.remove('open'); o.querySelector('.fq__a').style.maxHeight = null; o.querySelector('.fq__q').setAttribute('aria-expanded','false'); }
+    });
+    if(isOpen){ item.classList.remove('open'); ans.style.maxHeight = null; btn.setAttribute('aria-expanded','false'); }
+    else{ item.classList.add('open'); ans.style.maxHeight = ans.scrollHeight + 'px'; btn.setAttribute('aria-expanded','true'); }
+  });
+});
+
+/* ==========================================================================
+   SCRUBBED + PHYSICS MOTION
+   Everything below is driven continuously by scroll position or the pointer.
+   Nothing is hidden waiting to be revealed, so the page degrades to plain
+   static content if any of it fails.
+   ========================================================================== */
+function fmt(v, dec){ return v.toFixed(dec).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+function clamp01(v){ return v < 0 ? 0 : v > 1 ? 1 : v; }
+
+/* --- counters that COUNT AS YOU SCROLL rather than firing once --- */
+var counters = [].slice.call(document.querySelectorAll('.counter')).map(function(el){
+  var raw = el.getAttribute('data-count');
+  return {el:el, target:parseFloat(raw), dec:(raw.split('.')[1]||'').length, suf:el.getAttribute('data-suffix')||''};
+});
+var firstCounterPaint = true;
+function paintCounters(){
+  counters.forEach(function(c){
+    if(reduceMotion || c.done){ c.el.textContent = fmt(c.target, c.dec) + c.suf; return; }
+    var r = c.el.getBoundingClientRect();
+    /* Anything already on screen at load has nothing to scroll toward — it
+       would sit on a partial value forever. Show those complete. */
+    if(firstCounterPaint && r.top < window.innerHeight){
+      c.done = true; c.el.textContent = fmt(c.target, c.dec) + c.suf; return;
+    }
+    /* 0 when the number is one viewport below the fold, 1 by the time it is
+       ~35% up the screen — so the digits climb while you scroll toward it */
+    var p = clamp01((window.innerHeight - r.top) / (window.innerHeight * 0.65));
+    if(p >= 1){ c.done = true; }
+    c.el.textContent = fmt(c.target * p, c.dec) + c.suf;
+  });
+  firstCounterPaint = false;
+}
+
+/* --- the process rail fills with scroll progress through its section --- */
+var rail = document.querySelector('.railwrap i');
+var railSection = document.getElementById('process');
+function paintRail(){
+  if(!rail || !railSection) return;
+  var r = railSection.getBoundingClientRect();
+  var p = clamp01((window.innerHeight * 0.85 - r.top) / (r.height * 0.75));
+  rail.style.width = (p * 100).toFixed(2) + '%';
+}
+
+/* --- spring lag: elements trail the scroll and settle, rather than snapping --- */
+var lagEls = [].slice.call(document.querySelectorAll('.lag')).map(function(el){
+  return {el:el, cur:0, target:0, k:parseFloat(el.getAttribute('data-lag') || '0.06')};
+});
+var lastScroll = window.scrollY, velocity = 0;
+function measureLag(){
+  var y = window.scrollY;
+  velocity = y - lastScroll;
+  lastScroll = y;
+  lagEls.forEach(function(o){ o.target = -velocity * (o.k * 12); });
+}
+function paintLag(){
+  lagEls.forEach(function(o){
+    o.cur += (o.target - o.cur) * 0.12;          /* critically-damped-ish easing */
+    o.target *= 0.86;                             /* decay back to rest */
+    if(Math.abs(o.cur) < 0.01) o.cur = 0;
+    o.el.style.setProperty('--lag', o.cur.toFixed(2) + 'px');
+  });
+}
+
+/* --- horizontal gallery: CSS drives it where supported, JS elsewhere --- */
+var hs = document.querySelector('.hscroll');
+var hTrack = document.getElementById('hTrack');
+var hbar = document.getElementById('hbarFill');
+var cssDrivesH = CSS.supports('animation-timeline: view()');
+function paintHorizontal(){
+  if(!hs || !hTrack || cssDrivesH || reduceMotion) return;
+  var r = hs.getBoundingClientRect();
+  var travel = hTrack.scrollWidth - window.innerWidth + 40;
+  var p = clamp01(-r.top / (r.height - window.innerHeight));
+  hTrack.style.transform = 'translate3d(' + (-p * travel).toFixed(1) + 'px,0,0)';
+  if(hbar){ hbar.style.width = (p * 100).toFixed(1) + '%'; }
+}
+
+/* --- 3 · the marquee belt is dragged by scroll velocity, then eases back --- */
+var mqTrack = document.querySelectorAll('.mq__track');
+var mqDrag = 0, mqTargetDrag = 0;
+function measureMarquee(){ mqTargetDrag = Math.max(-26, Math.min(26, -velocity * 1.6)); }
+function paintMarquee(){
+  if(!mqTrack.length || reduceMotion) return;
+  mqDrag += (mqTargetDrag - mqDrag) * 0.1;
+  mqTargetDrag *= 0.9;
+  if(Math.abs(mqDrag) < 0.01) mqDrag = 0;
+  mqTrack.forEach(function(t){ t.style.setProperty('--drag', mqDrag.toFixed(2) + 'px'); });
+}
+
+/* one rAF loop for everything that paints */
+var rafPending = false;
+function onScrollFrame(){
+  measureLag();
+  measureMarquee();
+  paintCounters();
+  paintRail();
+  paintHorizontal();
+  rafPending = false;
+}
+function requestPaint(){ if(!rafPending){ rafPending = true; requestAnimationFrame(onScrollFrame); } }
+window.addEventListener('scroll', requestPaint, {passive:true});
+window.addEventListener('resize', requestPaint);
+/* springs keep easing after scrolling stops, so they need their own loop */
+if(lagEls.length || mqTrack){
+  (function loop(){ paintLag(); paintMarquee(); requestAnimationFrame(loop); })();
+}
+onScrollFrame();
+
+/* --- magnetic buttons: pull toward the cursor within range --- */
+if(!reduceMotion && window.matchMedia('(pointer:fine)').matches){
+  document.querySelectorAll('.magnetic').forEach(function(el){
+    var RANGE = 90;
+    el.addEventListener('pointermove', function(e){
+      var r = el.getBoundingClientRect();
+      var dx = e.clientX - (r.left + r.width / 2);
+      var dy = e.clientY - (r.top + r.height / 2);
+      if(Math.abs(dx) < r.width / 2 + RANGE && Math.abs(dy) < r.height / 2 + RANGE){
+        el.classList.add('is-pulling');
+        el.style.setProperty('--mx', (dx * 0.22).toFixed(1) + 'px');
+        el.style.setProperty('--my', (dy * 0.28).toFixed(1) + 'px');
+      }
+    });
+    el.addEventListener('pointerleave', function(){
+      el.classList.remove('is-pulling');
+      el.style.setProperty('--mx', '0px');
+      el.style.setProperty('--my', '0px');
+    });
+  });
+}
+
+/* keep open panels sized on resize */
+var rt;
+window.addEventListener('resize', function(){
+  clearTimeout(rt);
+  rt = setTimeout(function(){
+    document.querySelectorAll('.fq.open .fq__a').forEach(function(a){ a.style.maxHeight = a.scrollHeight + 'px'; });
+    if(burger.getAttribute('aria-expanded') === 'true'){ mob.style.maxHeight = mob.scrollHeight + 'px'; }
+  }, 150);
+});
+</script>
+
+</body>
+</html>

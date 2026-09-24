@@ -1,0 +1,1963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aircon: Air Conditioning Designed for British Homes</title>
+<meta name="description" content="Aircon delivers expert air conditioning unit installations, heat pump systems and cool comfort solutions for homes and businesses across Britain.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Playfair Display (display serif) + Outfit (geometric sans) — both SIL Open Font License, free for commercial use -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.className += ' js';</script>
+<style>
+/* ==========================================================================
+   AIRCON — aircon1
+   Dark navy shell with an amber accent, mirroring the reference design.
+   Amber earns its place here: these systems heat as well as cool, so the
+   warm accent carries the "all year round" story. A restrained cool cyan
+   (--cool) appears only where airflow / cooling is literally being drawn.
+   ========================================================================== */
+:root{
+  --ink:#080C13;
+  --navy:#0F1622;          /* page ground            */
+  --navy-2:#131C2B;        /* raised band            */
+  --navy-3:#0B111B;        /* recessed band          */
+  --card:#141D2C;
+  --card-2:#18222F;
+
+  --amber:#F5A623; --amber-2:#FFB846; --amber-deep:#D2860D;
+  --amber-tint:rgba(245,166,35,.13);
+  --cool:#5BC8E8;
+
+  --white:#F5F8FC;
+  --text:#A9B4C4;
+  --muted:#78849A;
+  --line:rgba(255,255,255,.09);
+  --line-2:rgba(255,255,255,.055);
+
+  --shell:1280px;
+  --pad-x:80px;
+  --nav-h:92px;
+  --sp:110px;              /* section rhythm         */
+  --sp-head:58px;          /* head → body rhythm     */
+  --r:6px;                 /* the design is squarish */
+  --r-lg:12px;
+
+  --ease:cubic-bezier(.16,1,.3,1);
+  --ease-soft:cubic-bezier(.4,0,.2,1);
+}
+@media(max-width:1200px){ :root{--pad-x:48px; --shell:1100px;} }
+@media(max-width:900px) { :root{--pad-x:32px; --sp:82px; --sp-head:42px; --nav-h:80px;} }
+@media(max-width:600px) { :root{--pad-x:20px; --sp:64px; --sp-head:34px; --nav-h:72px;} }
+@media(max-width:380px) { :root{--pad-x:16px;} }
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scrollbar-gutter:stable;}
+body{margin:0;background:var(--navy);color:var(--text);
+  font-family:'Outfit',system-ui,sans-serif;font-size:1.0625rem;line-height:1.7;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img,svg,video{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;}
+ul{margin:0;padding:0;list-style:none;}
+h1,h2,h3,h4{margin:0;color:var(--white);
+  font-family:'Playfair Display',Georgia,serif;font-weight:600;line-height:1.16;
+  letter-spacing:-.01em;}
+p{margin:0;}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:3px;}
+
+/* ---------- layout primitives ------------------------------------------ */
+.shell{width:100%;max-width:var(--shell);margin-inline:auto;padding-inline:var(--pad-x);}
+.section{position:relative;padding-block:var(--sp);}
+.section--tight{padding-block:calc(var(--sp) * .72);}
+.band{background:var(--navy-2);}
+.band-deep{background:var(--navy-3);}
+
+/* hairline separator between stacked sections of the same tone */
+.rule{position:relative;}
+.rule::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:min(var(--shell),calc(100% - 2 * var(--pad-x)));height:1px;
+  background:linear-gradient(90deg,transparent,var(--line) 22%,var(--line) 78%,transparent);}
+
+.eyebrow{display:block;font-size:0.8125rem;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--amber);margin-bottom:16px;}
+.h2{font-size:clamp(2rem,3.4vw,2.9rem);}
+.h3{font-size:clamp(1.25rem,1.7vw,1.45rem);}
+.lead{font-size:clamp(1.0625rem,1.15vw,1.125rem);color:var(--text);max-width:62ch;}
+.head-c{text-align:center;margin-bottom:var(--sp-head);}
+.head-c .lead{margin-inline:auto;}
+
+/* ---------- buttons ----------------------------------------------------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:15px 28px;border-radius:var(--r);font-weight:600;font-size:1rem;
+  letter-spacing:.01em;white-space:nowrap;cursor:pointer;
+  transition:transform .3s var(--ease),background .25s,border-color .25s,box-shadow .3s;}
+.btn:hover{transform:translateY(-2px);}
+.btn--amber{background:var(--amber);color:#161105;box-shadow:0 8px 26px -12px rgba(245,166,35,.85);}
+.btn--amber:hover{background:var(--amber-2);box-shadow:0 16px 34px -14px rgba(245,166,35,.95);}
+.btn--ghost{border:1px solid rgba(255,255,255,.28);color:var(--white);}
+.btn--ghost:hover{border-color:var(--white);background:rgba(255,255,255,.06);}
+.btn--sm{padding:11px 20px;font-size:0.9375rem;}
+.btn--wide{width:100%;}
+.btn__arrow{transition:transform .35s var(--ease);}
+.btn:hover .btn__arrow{transform:translateX(4px);}
+
+/* ==========================================================================
+   1 — STICKY NAV
+   ========================================================================== */
+.nav{position:sticky;top:0;z-index:80;background:rgba(11,17,27,.72);
+  border-bottom:1px solid transparent;transition:background .3s,border-color .3s,backdrop-filter .3s;}
+.nav.is-stuck{background:rgba(9,14,22,.86);backdrop-filter:blur(16px) saturate(140%);
+  -webkit-backdrop-filter:blur(16px) saturate(140%);border-bottom-color:var(--line);}
+.nav__in{max-width:var(--shell);margin-inline:auto;padding-inline:var(--pad-x);
+  height:var(--nav-h);display:flex;align-items:center;gap:28px;}
+
+.brand{display:flex;align-items:center;gap:11px;flex:0 0 auto;}
+.brand svg{width:30px;height:30px;color:var(--amber);flex:0 0 auto;}
+.brand__word{font-size:1.28rem;font-weight:600;color:var(--white);letter-spacing:-.015em;
+  white-space:nowrap;font-family:'Outfit',sans-serif;}
+.brand__word i{font-style:normal;color:var(--amber);}
+
+.nav__links{display:flex;align-items:center;gap:34px;margin-inline:auto;}
+.nav__links a{position:relative;font-size:1rem;font-weight:500;color:var(--text);
+  padding-block:8px;transition:color .25s;white-space:nowrap;}
+.nav__links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;
+  background:var(--amber);transition:width .35s var(--ease);}
+.nav__links a:hover,.nav__links a.is-active{color:var(--white);}
+.nav__links a.is-active{color:var(--amber);}
+.nav__links a:hover::after{width:100%;}
+
+.nav__act{display:flex;align-items:center;gap:18px;flex:0 0 auto;}
+.nav__tel{display:flex;align-items:center;gap:8px;font-weight:600;font-size:1rem;
+  color:var(--white);white-space:nowrap;transition:color .25s;}
+.nav__tel svg{width:16px;height:16px;color:var(--amber);}
+.nav__tel:hover{color:var(--amber);}
+.nav__burger{display:none;width:44px;height:44px;border:1px solid var(--line);
+  border-radius:var(--r);align-items:center;justify-content:center;
+  background:rgba(255,255,255,.05);flex:0 0 auto;}
+.nav__burger span{display:block;width:19px;height:2px;background:var(--white);
+  border-radius:2px;position:relative;transition:transform .3s var(--ease),background .2s;}
+.nav__burger span::before,.nav__burger span::after{content:"";position:absolute;left:0;
+  width:19px;height:2px;background:var(--white);border-radius:2px;transition:transform .3s var(--ease);}
+.nav__burger span::before{top:-6px;} .nav__burger span::after{top:6px;}
+.nav__burger.is-open span{background:transparent;}
+.nav__burger.is-open span::before{transform:translateY(6px) rotate(45deg);}
+.nav__burger.is-open span::after{transform:translateY(-6px) rotate(-45deg);}
+
+/* mobile drawer */
+.drawer{position:fixed;inset:var(--nav-h) 0 auto 0;z-index:75;background:rgba(9,14,22,.98);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);padding:22px var(--pad-x) 32px;
+  transform:translateY(-14px);opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .28s var(--ease-soft),transform .32s var(--ease),visibility .28s;}
+.drawer.is-open{opacity:1;visibility:visible;transform:none;pointer-events:auto;}
+.drawer a{display:block;padding:15px 0;font-size:1.125rem;font-weight:500;color:var(--white);
+  border-bottom:1px solid var(--line-2);}
+.drawer .btn{margin-top:22px;}
+.drawer__tel{display:flex !important;align-items:center;gap:10px;color:var(--amber) !important;
+  border-bottom:0 !important;padding-top:20px !important;}
+.drawer__tel svg{width:17px;height:17px;}
+
+@media(max-width:1080px){ .nav__links{display:none;} .nav__burger{display:flex;} .nav__in{justify-content:space-between;} }
+@media(max-width:720px) { .nav__tel span{display:none;} .nav__tel{padding:10px;border:1px solid var(--line);border-radius:var(--r);} }
+@media(max-width:520px) { .nav__act .btn--sm{display:none;} }
+@media(max-width:360px) { .brand__word{font-size:1.125rem;} }
+
+/* ==========================================================================
+   2 — HERO
+   ========================================================================== */
+.hero{position:relative;isolation:isolate;overflow:hidden;background:var(--ink);}
+.hero__bg{position:absolute;inset:0;z-index:0;overflow:hidden;
+  background:linear-gradient(165deg,#16202F 0%,#0D141F 46%,#080C13 100%);}
+/* Hero backdrop — one class for either tag, so an <img> and a <video> are
+   interchangeable here without touching the CSS. */
+.hero__photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  object-position:50% 45%;}
+/* Scrim kept to the minimum the headline needs: it fades out by two thirds
+   across, so the right side of the footage plays clean. The bottom fade only
+   exists to hand off into the benefits band. */
+.hero__scrim{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(90deg,rgba(8,12,19,.8) 0%,rgba(8,12,19,.5) 34%,rgba(8,12,19,.12) 62%,rgba(8,12,19,0) 78%),
+             linear-gradient(0deg,rgba(8,12,19,.7) 0%,rgba(8,12,19,0) 34%);}
+
+.hero__in{position:relative;z-index:2;max-width:var(--shell);margin-inline:auto;
+  padding:clamp(96px,11vw,150px) var(--pad-x) clamp(104px,12vw,158px);}
+.hero__copy{max-width:760px;}
+
+.badge{display:inline-flex;align-items:center;gap:9px;padding:8px 18px;border-radius:100px;
+  background:var(--amber-tint);border:1px solid rgba(245,166,35,.32);
+  color:var(--amber);font-size:0.875rem;font-weight:500;letter-spacing:.015em;
+  margin-bottom:26px;}
+.badge__dot{width:7px;height:7px;border-radius:50%;background:var(--amber);
+  box-shadow:0 0 0 0 rgba(245,166,35,.6);animation:pulseDot 2.6s ease-out infinite;}
+@keyframes pulseDot{0%{box-shadow:0 0 0 0 rgba(245,166,35,.55)}70%,100%{box-shadow:0 0 0 11px rgba(245,166,35,0)}}
+
+.hero h1{font-size:clamp(2.45rem,5.1vw,4.05rem);line-height:1.08;margin-bottom:24px;}
+.hero h1 em{font-style:normal;color:var(--amber);}
+.hero__lead{font-size:clamp(1.0625rem,1.28vw,1.1875rem);color:#BCC6D4;max-width:60ch;
+  margin-bottom:38px;}
+.hero__cta{display:flex;flex-wrap:wrap;gap:14px;}
+
+/* benefit strip directly under the hero — part of the hero composition */
+.bens{background:var(--navy-2);border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);}
+.bens__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;
+  padding-block:34px;}
+/* Icon stacked above the text and centred. Centring an icon+text ROW in each
+   cell puts every icon at a different offset, because the four captions are
+   different widths — this way they line up whatever the copy says. */
+.ben{display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;gap:12px;min-width:0;}
+/* Grid items stretch to the tallest cell in the row, so the content must be
+   centred on the cross axis too — otherwise one wrapping caption leaves the
+   other three sitting high with dead space beneath them. */
+.ben__ico{flex:0 0 auto;width:46px;height:46px;border-radius:var(--r);
+  background:var(--amber-tint);border:1px solid rgba(245,166,35,.22);
+  display:grid;place-items:center;color:var(--amber);
+  transition:transform .35s var(--ease),background .3s;}
+.ben:hover .ben__ico{transform:translateY(-3px);background:rgba(245,166,35,.2);}
+.ben__ico svg{width:21px;height:21px;}
+/* Scoped to the text block on purpose: a bare `.ben span` also matches
+   .ben__ico (it is a span), and at higher specificity it was overriding the
+   tile's display:grid and its amber colour. */
+.ben>div>b{display:block;color:var(--white);font-size:1.0625rem;font-weight:600;line-height:1.35;
+  min-height:1.35em;}
+.ben>div>span{display:block;font-size:0.875rem;color:var(--muted);line-height:1.45;}
+
+@media(max-width:1080px){ .bens__grid{grid-template-columns:repeat(2,1fr);gap:30px;padding-block:32px;} }
+@media(max-width:560px) { .bens__grid{grid-template-columns:repeat(2,1fr);gap:26px 18px;}
+  .hero__cta .btn{flex:1 1 220px;} }
+@media(max-width:380px) { .bens__grid{grid-template-columns:1fr;gap:22px;} }
+
+/* ==========================================================================
+   3 — TRUST MARQUEE
+   ========================================================================== */
+.marquee{overflow:hidden;background:var(--navy-3);padding-block:22px;
+  border-bottom:1px solid var(--line-2);
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);}
+.marquee__track{display:flex;width:max-content;animation:slide 38s linear infinite;}
+.marquee:hover .marquee__track{animation-play-state:paused;}
+.marquee__row{display:flex;align-items:center;gap:52px;padding-right:52px;}
+.mq{display:flex;align-items:center;gap:11px;color:#8B97A9;font-size:1rem;
+  font-weight:500;letter-spacing:.02em;white-space:nowrap;transition:color .3s;}
+.mq:hover{color:var(--white);}
+.mq svg{width:17px;height:17px;color:var(--amber);flex:0 0 auto;}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ==========================================================================
+   4 — PROCESS
+   ========================================================================== */
+.proc{display:grid;grid-template-columns:.92fr 1.28fr;gap:clamp(40px,7vw,110px);
+  align-items:start;}
+.proc__steps{display:grid;gap:38px;}
+.step{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:start;}
+.step__n{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;
+  color:var(--amber);line-height:1;min-width:52px;letter-spacing:-.02em;
+  transition:transform .4s var(--ease);}
+.step:hover .step__n{transform:translateY(-3px);}
+.step h3{font-size:1.1875rem;margin-bottom:7px;}
+.step p{font-size:1rem;color:var(--text);}
+@media(max-width:900px){ .proc{grid-template-columns:1fr;gap:44px;} .proc__steps{gap:30px;} }
+@media(max-width:480px){ .step{gap:18px;} .step__n{font-size:1.7rem;min-width:44px;} }
+
+/* ==========================================================================
+   5 — SYSTEMS (pricing) + STATS
+   ========================================================================== */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;align-items:center;}
+/* Any card can be selected — the amber border, tint and glow follow the click
+   rather than being welded to the middle card. */
+.plan{position:relative;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--r-lg);padding:34px 30px 32px;cursor:pointer;
+  transition:transform .4s var(--ease),border-color .3s,box-shadow .4s,
+             background .35s var(--ease-soft),padding .45s var(--ease);}
+.plan:hover{transform:translateY(-6px);border-color:rgba(255,255,255,.2);
+  box-shadow:0 28px 56px -34px rgba(0,0,0,.9);}
+.plan.is-sel{border-color:var(--amber);padding-block:46px 44px;
+  background:linear-gradient(180deg,rgba(245,166,35,.07),var(--card) 42%);
+  box-shadow:0 0 0 1px rgba(245,166,35,.28),0 34px 70px -40px rgba(245,166,35,.4);}
+.plan.is-sel:hover{border-color:var(--amber-2);
+  box-shadow:0 0 0 1px rgba(245,166,35,.4),0 40px 80px -40px rgba(245,166,35,.5);}
+.plan:focus-visible{outline:2px solid var(--amber);outline-offset:4px;}
+/* the CTA follows selection too, so only one solid amber button is ever shown */
+.plan__cta{border:1px solid rgba(255,255,255,.28);color:var(--white);}
+.plan__cta:hover{border-color:var(--white);background:rgba(255,255,255,.06);}
+.plan.is-sel .plan__cta{background:var(--amber);color:#161105;border-color:transparent;
+  box-shadow:0 8px 26px -12px rgba(245,166,35,.85);}
+.plan.is-sel .plan__cta:hover{background:var(--amber-2);
+  box-shadow:0 16px 34px -14px rgba(245,166,35,.95);}
+.plan__top{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;
+  margin-bottom:24px;}
+.plan h3{font-size:1.3rem;margin-bottom:5px;}
+.plan__kw{font-size:0.9375rem;font-weight:600;color:var(--amber);}
+.plan__tag{flex:0 0 auto;padding:5px 12px;border-radius:4px;background:var(--amber);
+  color:#161105;font-size:0.8125rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;}
+.plan__price{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+  padding-bottom:24px;border-bottom:1px solid var(--line);margin-bottom:24px;}
+.plan__price b{font-family:'Playfair Display',serif;font-size:2.55rem;font-weight:600;
+  color:var(--white);line-height:1;letter-spacing:-.02em;}
+.plan__price span{font-size:0.9375rem;color:var(--muted);}
+.plan.is-sel .plan__price b{font-size:2.9rem;}
+.plan ul{display:grid;gap:13px;margin-bottom:30px;}
+.plan li{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;
+  font-size:1rem;color:var(--text);}
+.tick{width:17px;height:17px;color:var(--amber);margin-top:4px;flex:0 0 auto;}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:72px;
+  padding-top:56px;border-top:1px solid var(--line);}
+.stat{text-align:center;}
+.stat b{display:block;font-family:'Playfair Display',serif;font-size:clamp(2rem,3.4vw,2.7rem);
+  font-weight:600;color:var(--amber);line-height:1;letter-spacing:-.02em;margin-bottom:9px;}
+/* direct child only: this is the caption under the figure. Unscoped it also
+   caught the spans INSIDE <b> - the third stat is the only one that wraps its
+   value that way, for the currency symbol - so that figure was being painted
+   --muted grey at .9rem instead of inheriting the amber. */
+.stat > span{font-size:0.9375rem;color:var(--muted);letter-spacing:.02em;}
+
+@media(max-width:1000px){ .plans{grid-template-columns:1fr;max-width:520px;margin-inline:auto;}
+  .plan.is-sel{padding-block:38px 36px;} .stats{grid-template-columns:repeat(2,1fr);gap:34px 26px;} }
+@media(max-width:480px) { .plan{padding:28px 22px;} .stats{margin-top:52px;padding-top:44px;} }
+
+/* ==========================================================================
+   6 — WHY CHOOSE US (split, media bleeds to the viewport edge)
+   ========================================================================== */
+.why{position:relative;display:grid;grid-template-columns:1fr 1fr;align-items:stretch;
+  background:var(--navy-3);}
+.why__copy{display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(64px,7vw,104px) clamp(32px,5vw,72px) clamp(64px,7vw,104px) 0;
+  margin-left:auto;width:100%;max-width:calc(var(--shell) / 2);
+  padding-left:var(--pad-x);}
+.why__copy .lead{margin-bottom:32px;}
+.why__list{display:grid;gap:15px;}
+.why__list li{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;
+  font-size:1.0625rem;color:var(--text);}
+.why__media{position:relative;min-height:520px;overflow:hidden;}
+.why__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  object-position:52% 26%;filter:saturate(.82) brightness(.8) contrast(1.04);}
+/* graded so the photo settles into the navy palette instead of fighting it */
+.why__media::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(90deg,rgba(11,17,27,.72),rgba(11,17,27,.12) 42%,transparent),
+             linear-gradient(0deg,rgba(11,17,27,.5),transparent 46%);}
+@media(max-width:900px){
+  .why{grid-template-columns:1fr;}
+  .why__media{order:-1;min-height:0;aspect-ratio:16/10;}
+  .why__copy{max-width:none;padding:clamp(48px,8vw,68px) var(--pad-x);margin:0;}
+}
+
+/* ==========================================================================
+   7 — REVIEWS
+   ========================================================================== */
+.reviews{display:grid;gap:22px;}
+.review{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:32px 34px;transition:transform .4s var(--ease),border-color .3s,background .3s;}
+.review:hover{transform:translateY(-4px);border-color:rgba(245,166,35,.34);background:var(--card-2);}
+.review__stars{display:flex;gap:4px;margin-bottom:16px;color:var(--amber);}
+.review__stars svg{width:16px;height:16px;}
+.review q{display:block;font-family:'Playfair Display',serif;font-style:italic;
+  font-size:clamp(1.0625rem,1.45vw,1.25rem);color:var(--white);line-height:1.55;
+  margin-bottom:18px;quotes:'"' '"';}
+.review__by{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;}
+.review__by b{font-size:1rem;font-weight:600;color:var(--white);}
+.review__by span{font-size:0.9375rem;color:var(--amber);}
+
+/* ==========================================================================
+   8 — GALLERY
+   ========================================================================== */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.gtile{position:relative;overflow:hidden;border-radius:var(--r-lg);
+  border:1px solid var(--line);aspect-ratio:4/3;isolation:isolate;
+  transition:transform .45s var(--ease),border-color .3s;}
+.gtile:hover{transform:translateY(-5px);border-color:rgba(245,166,35,.36);}
+.gtile--wide{grid-column:span 2;aspect-ratio:8/3;}
+.gtile__body{position:absolute;inset:0;z-index:1;}
+.gtile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;
+  transition:transform .7s var(--ease);}
+.gtile:hover img{transform:scale(1.05);}
+.gtile__veil{position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(0deg,rgba(8,12,19,.9) 0%,rgba(8,12,19,.25) 46%,transparent 72%);}
+.gtile__tag{position:absolute;left:20px;bottom:18px;z-index:3;}
+.gtile__tag b{display:block;font-size:1rem;font-weight:600;color:var(--white);
+  font-family:'Outfit',sans-serif;line-height:1.3;}
+.gtile__tag span{display:block;font-size:0.875rem;color:var(--amber);}
+@media(max-width:900px){ .gal{grid-template-columns:repeat(2,1fr);} .gtile--wide{grid-column:span 2;aspect-ratio:16/7;} }
+@media(max-width:560px){ .gal{grid-template-columns:1fr;} .gtile,.gtile--wide{grid-column:span 1;aspect-ratio:4/3;} }
+
+/* ==========================================================================
+   9 — GUARANTEE BAND
+   ========================================================================== */
+.promise{position:relative;overflow:hidden;
+  background:linear-gradient(120deg,#17202E 0%,#0F1724 58%,#131C2A 100%);
+  border-block:1px solid rgba(245,166,35,.28);}
+.promise::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(60% 120% at 8% 0%,rgba(245,166,35,.16),transparent 62%),
+             radial-gradient(52% 110% at 96% 100%,rgba(91,200,232,.13),transparent 62%);}
+.promise__in{position:relative;z-index:1;}
+.promise__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:var(--sp-head);}
+.pcard{background:rgba(255,255,255,.035);border:1px solid var(--line);
+  border-radius:var(--r-lg);padding:28px 24px;
+  transition:transform .4s var(--ease),background .3s,border-color .3s;}
+.pcard:hover{transform:translateY(-5px);background:rgba(255,255,255,.07);
+  border-color:rgba(245,166,35,.36);}
+.pcard__ico{width:48px;height:48px;border-radius:var(--r);display:grid;place-items:center;
+  background:var(--amber-tint);border:1px solid rgba(245,166,35,.24);color:var(--amber);
+  margin-bottom:18px;}
+.pcard__ico svg{width:23px;height:23px;}
+.pcard h3{font-size:1.125rem;margin-bottom:8px;}
+.pcard p{font-size:1rem;color:var(--text);}
+@media(max-width:980px){ .promise__grid{grid-template-columns:repeat(2,1fr);} }
+@media(max-width:520px){ .promise__grid{grid-template-columns:1fr;} }
+
+/* ==========================================================================
+   10 — FAQ
+   ========================================================================== */
+.faq{max-width:900px;margin-inline:auto;}
+.qa{border-bottom:1px solid var(--line);}
+.qa__q{width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:24px;
+  padding:26px 0 0;text-align:left;}
+.qa__q h3{font-size:clamp(1.0625rem,1.35vw,1.1875rem);transition:color .25s;}
+.qa:hover .qa__q h3{color:var(--amber);}
+.qa__chev{flex:0 0 auto;width:20px;height:20px;color:var(--amber);margin-top:3px;
+  transition:transform .4s var(--ease);}
+.qa.is-open .qa__chev{transform:rotate(180deg);}
+.qa__a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease);}
+.qa.is-open .qa__a{grid-template-rows:1fr;}
+.qa__a > div{overflow:hidden;}
+.qa__a p{padding:12px 56px 26px 0;font-size:1rem;color:var(--text);}
+.qa:not(.is-open) .qa__q{padding-bottom:26px;}
+
+/* ==========================================================================
+   11 — CONTACT + FINAL CTA
+   ========================================================================== */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,84px);align-items:center;}
+.contact .lead{margin-bottom:38px;}
+.crow{display:flex;align-items:center;gap:18px;padding-block:13px;}
+.crow__ico{flex:0 0 auto;width:48px;height:48px;border-radius:var(--r);display:grid;
+  place-items:center;background:var(--amber-tint);border:1px solid rgba(245,166,35,.22);
+  color:var(--amber);transition:transform .35s var(--ease);}
+.crow:hover .crow__ico{transform:translateY(-3px);}
+.crow__ico svg{width:20px;height:20px;}
+.crow small{display:block;font-size:0.875rem;color:var(--muted);line-height:1.4;}
+.crow b{display:block;font-family:'Playfair Display',serif;font-size:1.125rem;font-weight:600;
+  color:var(--white);letter-spacing:-.005em;}
+
+/* map card */
+/* no min-height: with aspect-ratio it would force the width back up and burst
+   the grid column between 900px and 1180px */
+.map{position:relative;width:100%;border:1px solid var(--amber);border-radius:var(--r-lg);
+  overflow:hidden;background:#0B121C;aspect-ratio:4/3;}
+.map__svg{position:absolute;inset:0;width:100%;height:100%;}
+.map__hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:56px;height:56px;border-radius:50%;background:var(--amber);display:grid;
+  place-items:center;color:#161105;z-index:3;
+  box-shadow:0 0 0 0 rgba(245,166,35,.55);animation:hubPulse 3s ease-out infinite;}
+.map__hub svg{width:24px;height:24px;}
+@keyframes hubPulse{0%{box-shadow:0 0 0 0 rgba(245,166,35,.5)}70%,100%{box-shadow:0 0 0 34px rgba(245,166,35,0)}}
+.mpin{position:absolute;z-index:3;display:flex;align-items:center;gap:5px;
+  transform:translate(-50%,-50%);white-space:nowrap;
+  font-size:0.8125rem;color:#C9D3E0;animation:mpinFloat var(--f,7s) ease-in-out var(--d,0s) infinite;}
+.mpin svg{width:12px;height:12px;color:var(--amber);flex:0 0 auto;}
+@keyframes mpinFloat{0%,100%{transform:translate(-50%,-50%)}50%{transform:translate(-50%,calc(-50% - 6px))}}
+.map__card{position:absolute;left:18px;bottom:18px;z-index:4;display:flex;align-items:center;
+  gap:12px;padding:12px 18px;border-radius:var(--r);background:rgba(245,166,35,.16);
+  border:1px solid rgba(245,166,35,.4);backdrop-filter:blur(8px);}
+.map__card svg{width:18px;height:18px;color:var(--amber);flex:0 0 auto;}
+.map__card b{display:block;font-size:1rem;font-weight:600;color:var(--white);
+  font-family:'Outfit',sans-serif;}
+.map__card span{display:block;font-size:0.8125rem;color:#C2CBD8;}
+.map__zoom{position:absolute;right:18px;bottom:18px;z-index:4;display:flex;gap:8px;}
+.map__zoom button{width:38px;height:38px;border-radius:var(--r);background:var(--amber);
+  color:#161105;display:grid;place-items:center;font-size:1.25rem;font-weight:600;
+  transition:background .25s,transform .25s;}
+.map__zoom button:hover{background:var(--amber-2);transform:translateY(-2px);}
+.map__tick{position:absolute;left:12px;top:12px;z-index:4;width:22px;height:22px;
+  border-radius:4px;background:var(--amber);display:grid;place-items:center;color:#161105;}
+.map__tick svg{width:12px;height:12px;}
+@media(max-width:900px){ .contact{grid-template-columns:1fr;} }
+@media(max-width:520px){ .map{aspect-ratio:1/1;} }
+
+/* final CTA over full-bleed media */
+.cta{position:relative;isolation:isolate;overflow:hidden;background:var(--ink);}
+.cta__bg{position:absolute;inset:0;z-index:0;overflow:hidden;}
+.cta__bg img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;}
+.cta__scrim{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(90deg,rgba(8,12,19,.96),rgba(8,12,19,.86) 60%,rgba(8,12,19,.93));}
+.cta__in{position:relative;z-index:2;display:grid;grid-template-columns:1.35fr auto;
+  gap:clamp(28px,5vw,64px);align-items:center;padding-block:clamp(72px,8vw,104px);}
+.cta h2{font-family:'Outfit',sans-serif;font-weight:700;letter-spacing:-.02em;
+  font-size:clamp(1.75rem,3.1vw,2.5rem);line-height:1.14;margin-bottom:14px;}
+.cta h2 em{font-style:normal;color:var(--amber);}
+.cta p{font-size:1.0625rem;color:#B4BECC;max-width:56ch;}
+.cta__btns{display:flex;flex-wrap:wrap;gap:14px;}
+@media(max-width:900px){ .cta__in{grid-template-columns:1fr;} }
+@media(max-width:560px){ .cta__btns .btn{flex:1 1 200px;} }
+
+/* ==========================================================================
+   12 — FOOTER
+   ========================================================================== */
+.foot{position:relative;z-index:2;border-top:1px solid var(--line);
+  background:rgba(8,12,19,.92);}
+.foot__grid{display:grid;grid-template-columns:1.65fr 1fr 1fr 1.25fr;
+  gap:clamp(32px,4.5vw,60px);padding-block:64px;}
+.foot__brand .brand{margin-bottom:20px;}
+.foot__brand p{font-size:1rem;color:var(--muted);max-width:38ch;margin-bottom:26px;}
+.social{display:flex;gap:11px;}
+.social a{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.06);
+  border:1px solid var(--line);display:grid;place-items:center;color:var(--text);
+  transition:background .28s,color .28s,transform .3s var(--ease),border-color .28s;}
+.social a:hover{background:var(--amber);color:#161105;border-color:var(--amber);transform:translateY(-3px);}
+.social svg{width:16px;height:16px;}
+.foot h4{font-size:0.8125rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--white);margin-bottom:22px;font-family:'Outfit',sans-serif;}
+.foot__links{display:grid;gap:13px;}
+.foot__links a{font-size:1rem;color:var(--muted);transition:color .25s,transform .25s var(--ease);}
+.foot__links a:hover{color:var(--amber);transform:translateX(3px);}
+.foot__c{display:grid;gap:18px;}
+.fc{display:grid;grid-template-columns:auto 1fr;gap:13px;align-items:start;
+  font-size:1rem;color:var(--text);}
+.fc svg{width:18px;height:18px;color:var(--amber);margin-top:4px;}
+.fc a:hover{color:var(--amber);}
+.foot__bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+  gap:16px;padding-block:26px;border-top:1px solid var(--line);
+  font-size:0.9375rem;color:var(--muted);}
+.foot__bar nav{display:flex;flex-wrap:wrap;gap:26px;}
+.foot__bar nav a{transition:color .25s;}
+.foot__bar nav a:hover{color:var(--amber);}
+@media(max-width:980px){ .foot__grid{grid-template-columns:1fr 1fr;gap:44px 32px;} }
+@media(max-width:560px){ .foot__grid{grid-template-columns:1fr;gap:38px;padding-block:52px;}
+  .foot__bar{flex-direction:column;align-items:flex-start;gap:14px;} }
+
+/* ==========================================================================
+   MOTION
+   ========================================================================== */
+/* --- page loader --- */
+.js body.is-loading{overflow:hidden;}
+.loader{display:none;}
+.js .loader{position:fixed;inset:0;z-index:200;display:grid;place-items:center;
+  background:var(--ink);transition:opacity .7s var(--ease-soft),visibility .7s;}
+.loader.is-done{opacity:0;visibility:hidden;}
+.loader__mark{width:58px;height:58px;color:var(--amber);animation:spin 1.7s linear infinite;}
+.loader__bar{position:absolute;left:50%;top:calc(50% + 62px);transform:translateX(-50%);
+  width:180px;height:2px;border-radius:2px;background:rgba(255,255,255,.11);overflow:hidden;}
+.loader__bar i{display:block;height:100%;width:38%;border-radius:2px;background:var(--amber);
+  animation:loadSlide 1.15s var(--ease-soft) infinite;}
+.loader__word{position:absolute;left:50%;top:calc(50% + 84px);transform:translateX(-50%);
+  font-size:0.8125rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes loadSlide{0%{transform:translateX(-115%)}100%{transform:translateX(330%)}}
+
+/* --- hero parallax --- */
+.hero__photo{will-change:transform;transform:scale(1.08);}
+.why__media img{animation:kenburns 20s ease-in-out infinite alternate;}
+@keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.085)}}
+
+/* --- headline wipe, driven by the parent's reveal ---
+   Gated on .js so that with scripting off nothing is left hidden. */
+.js .head-c h2{clip-path:inset(0 0 108% 0);transition:clip-path 1.05s var(--ease) .1s;}
+.js .head-c.is-in h2{clip-path:inset(0 0 -8% 0);}
+
+/* --- sheen sweep across buttons --- */
+.btn{position:relative;overflow:hidden;}
+.btn::after{content:"";position:absolute;top:0;left:-130%;width:55%;height:100%;
+  pointer-events:none;transform:skewX(-18deg);
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.3),transparent);
+  transition:left .75s var(--ease);}
+.btn:hover::after{left:140%;}
+
+/* --- back to top --- */
+.totop{position:fixed;right:clamp(16px,2.2vw,28px);bottom:clamp(16px,2.2vw,28px);z-index:70;
+  width:46px;height:46px;border-radius:50%;background:var(--amber);color:#161105;
+  display:grid;place-items:center;opacity:0;visibility:hidden;transform:translateY(14px);
+  box-shadow:0 10px 30px -12px rgba(245,166,35,.9);
+  transition:opacity .35s,visibility .35s,transform .35s var(--ease),background .25s;}
+.totop.is-on{opacity:1;visibility:visible;transform:none;}
+.totop:hover{background:var(--amber-2);transform:translateY(-3px);}
+.totop svg{width:19px;height:19px;}
+
+/* --- scroll reveal (also gated on .js) --- */
+.js .rv{opacity:0;transform:translateY(26px);
+  transition:opacity .8s var(--ease-soft),transform .9s var(--ease);}
+.js .rv-l{opacity:0;transform:translateX(-30px);
+  transition:opacity .8s var(--ease-soft),transform .9s var(--ease);}
+.js .rv-r{opacity:0;transform:translateX(30px);
+  transition:opacity .8s var(--ease-soft),transform .9s var(--ease);}
+.js .rv-s{opacity:0;transform:scale(.965);
+  transition:opacity .8s var(--ease-soft),transform 1s var(--ease);}
+.js .is-in{opacity:1 !important;transform:none !important;}
+/* Below tablet the sideways reveals become vertical: a 30px horizontal offset
+   on off-screen elements widens the scrollable area on small screens. */
+@media(max-width:760px){
+  .js .rv-l,.js .rv-r{transform:translateY(22px);}
+}
+
+/* reading-progress bar */
+.prog{position:fixed;left:0;top:0;height:2px;width:100%;transform-origin:0 50%;
+  transform:scaleX(0);background:linear-gradient(90deg,var(--amber),var(--amber-2));
+  z-index:100;pointer-events:none;}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0 0 0 0);white-space:nowrap;border:0;}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;}
+  .rv,.rv-l,.rv-r,.rv-s{opacity:1 !important;transform:none !important;}
+  .marquee__track,.why__media img{animation:none;}
+  .head-c h2{clip-path:none !important;}
+  .hero__photo{transform:none;}
+  .btn::after{display:none;}
+}
+
+/* ---- Google review badge (hero) ---- */
+.hero .grev{display:inline-flex;width:fit-content;max-width:100%;align-items:center;gap:9px;flex:0 0 auto;
+  margin-top:20px;padding:8px 15px;border-radius:999px;text-decoration:none;
+  background:rgba(255,255,255,.08);border:1px solid var(--line);color:var(--text);
+  font-size:0.875rem;line-height:1.2;white-space:nowrap;
+  transition:border-color .3s ease,transform .3s ease,background .3s ease;}
+.hero .grev:hover{border-color:var(--amber);transform:translateY(-1px);}
+.hero .grev__g{width:16px;height:16px;flex:0 0 auto;}
+.hero .grev__stars{color:#FBBC05;letter-spacing:.5px;font-size:0.875rem;}
+.hero .grev__txt b{font-weight:700;color:var(--white);}
+@media(max-width:560px){ .hero .grev{white-space:normal;font-size:0.8125rem;} }
+
+/* mqlogo tiles: manufacturer and accreditation marks in the trust strip.
+   White plate because the strip is dark and these are full-colour logos. */
+.mqlogo{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;
+  height:54px;min-width:110px;padding:10px 17px;border-radius:10px;background:#fff;
+  opacity:.94;transition:opacity .3s ease,transform .3s ease;}
+.mqlogo:hover{opacity:1;transform:translateY(-2px);}
+.mqlogo img{height:28px;width:auto;max-width:112px;object-fit:contain;display:block;}
+@media(max-width:700px){.mqlogo{height:46px;min-width:90px;padding:8px 13px;}
+  .mqlogo img{height:23px;max-width:92px;}}
+/* nav-fullwidth */
+.nav__in{max-width:none;width:100%;padding-left:clamp(20px,4vw,72px);padding-right:clamp(20px,4vw,72px);}
+.nav__links{margin-inline:auto;gap:clamp(15px,1.85vw,34px);flex-wrap:nowrap;}
+.nav__links a{white-space:nowrap;}
+
+/* nav-band */
+@media (max-width:1320px){
+  .nav__in{padding-left:clamp(16px,2.2vw,30px);padding-right:clamp(16px,2.2vw,30px);}
+  .nav__links{gap:clamp(10px,1.15vw,17px);}
+  .nav__links a{font-size:0.9375rem;}
+  .nav__tel,.nav-tel,.nav-phone{display:none;}
+}</style>
+<style>
+/* ---- appended business-content blocks (self-contained, prefix wbt-) ---- */
+.wbt{padding:clamp(56px,7vw,92px) 0;}
+.wbt__in{width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,56px);}
+.wbt__eyebrow{font-size:0.8125rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.62;margin:0 0 12px;}
+.wbt__h{margin:0 0 12px;}
+.wbt__lede{font-size:1.0625rem;line-height:1.62;opacity:.72;margin:0 0 34px;max-width:62ch;}
+.wbt-grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(252px,1fr));}
+.wbt-card{overflow:hidden;display:flex;flex-direction:column;}
+.wbt-card__img{position:static;width:100%;aspect-ratio:16/10;object-fit:cover;display:block;inset:auto;}
+.wbt-card__b{padding:17px 18px 19px;display:flex;flex-direction:column;gap:7px;flex:1;}
+.wbt-card__t{font-size:1.0625rem;font-weight:700;margin:0;line-height:1.25;}
+.wbt-card__k{font-size:0.8125rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.55;margin:0;}
+.wbt-card__p{font-size:0.9375rem;line-height:1.56;opacity:.78;margin:0;}
+.wbt-spec{margin:4px 0 0;padding:0;list-style:none;display:grid;gap:4px;}
+.wbt-spec li{font-size:0.875rem;opacity:.72;padding-left:15px;position:relative;line-height:1.45;}
+.wbt-spec li::before{content:"";position:absolute;left:0;top:.52em;width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.5;}
+.wbt-accred{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:0 0 22px;}
+.wbt-accred img{height:52px;width:auto;max-width:150px;object-fit:contain;background:#fff;border:1px solid rgba(128,128,128,.26);border-radius:6px;padding:8px 12px;}
+/* the REFCOM/F-Gas tile is a wide composite; give it room or it reads as noise */
+.wbt-accred img[alt*="REFCOM"]{max-width:250px;height:56px;}
+.wbt-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none;}
+.wbt-chips li{font-size:0.8125rem;font-weight:600;padding:6px 12px;border-radius:999px;border:1px solid rgba(128,128,128,.32);opacity:.85;}
+.wbt-ops{display:grid;gap:24px 34px;grid-template-columns:repeat(auto-fit,minmax(212px,1fr));border-top:1px solid rgba(128,128,128,.26);padding-top:30px;margin-top:34px;}
+.wbt-ops h4{font-size:0.8125rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;opacity:.55;margin:0 0 9px;}
+.wbt-ops p,.wbt-ops address{font-size:0.9375rem;line-height:1.62;opacity:.78;margin:0;font-style:normal;}
+.wbt-ops a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.4);}
+.wbt-areas{font-size:0.875rem;line-height:1.7;opacity:.74;margin:14px 0 0;}
+.wbt-legal{font-size:0.8125rem;line-height:1.6;opacity:.55;margin:22px 0 0;border-top:1px solid rgba(128,128,128,.2);padding-top:16px;}
+@media(max-width:640px){.wbt-accred img{height:44px;}}
+
+/* ---- blocks adopt this template's surface, border and radius ---- */
+
+.wbt-price{border:1px solid var(--line);border-radius:var(--r-lg);}
+.wbt-chips li{border:1px solid var(--line);}
+.wbt-accred img{border:1px solid var(--line);border-radius:var(--r-lg);}
+.wbt-plain{padding:clamp(56px,7vw,92px) 0;}
+.wbt-footer{margin-top:38px;padding-top:8px;}
+.wbt-footer__h{font-size:1.125rem;font-weight:700;margin:0 0 6px;letter-spacing:-.01em;}
+.wbt-footer .wbt__in{padding-left:0;padding-right:0;max-width:none;}
+/* block headers follow this template's centred section-header convention */
+.wbt .wbt__eyebrow,.wbt .wbt__h,.wbt .wbt__lede{text-align:center;}
+.wbt .wbt__lede{margin-left:auto;margin-right:auto;}
+.wbt .wbt-accred{justify-content:center;}
+.wbt .wbt-chips{justify-content:center;}
+.wbt #wbtAccH ~ .wbt-areas,.wbt .wbt-areas{text-align:center;}
+.wbt-footer .wbt-areas,.wbt-footer .wbt-legal{text-align:left;}
+/* injected cards use this template's card component; neutralise wrapper rules
+   that assume an absolutely-positioned image */
+.wbt-card{min-height:0;padding:0;cursor:auto;}
+
+.wbt-card .wbt-card__b{padding:17px 18px 19px;}
+.wbt-card h3{margin:0;}
+/* ---- logo strip split into brands and accreditations, one marquee each ---- */
+.logo-split{-webkit-mask-image:none !important;mask-image:none !important;}
+.lsplit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2.2vw,32px);align-items:center;
+  max-width:none;margin:0;padding:0 clamp(12px,1.4vw,24px);}
+.lsplit__col{min-width:0;}
+.lsplit__col + .lsplit__col{border-left:1px solid rgba(128,128,128,.24);padding-left:clamp(18px,3vw,44px);}
+.lsplit__label{font-size:0.8125rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  opacity:.55;margin:0 0 11px;text-align:center;}
+.lsplit__view{overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent);}
+@media(max-width:820px){
+  .lsplit{grid-template-columns:1fr;gap:18px;}
+  .lsplit__col + .lsplit__col{border-left:0;border-top:1px solid rgba(128,128,128,.24);
+    padding-left:0;padding-top:16px;}
+}
+/* halved column width, so tighten the tiles to keep the belt reading as a belt */
+.lsplit .lstrip__item,.lsplit .mqlogo,.lsplit .mq__logoimg{min-width:86px;padding:8px 12px;}
+.lsplit .lstrip__grp,.lsplit .marquee__row,.lsplit .mq__grp{gap:clamp(20px,2.3vw,46px);padding-right:clamp(20px,2.3vw,46px);}
+.lsplit .lstrip__item img,.lsplit .mqlogo img,.lsplit .mq__logoimg img{height:24px;max-width:92px;}
+
+/* ══ aircon7 payload ══
+   This template is DARK (body background:var(--navy)), so the hero fact rail
+   and everything added below is coloured for a dark ground, not inherited. */
+.hero-proof{display:flex;flex-wrap:wrap;align-items:flex-start;
+  gap:clamp(18px,2.4vw,38px);max-width:680px;margin-top:clamp(24px,2.8vw,36px);
+  padding-top:clamp(20px,2.4vw,30px);border-top:1px solid rgba(255,255,255,.18);}
+.hero-proof .pf b{display:block;font-family:'Playfair Display',serif;
+  font-size:clamp(1.6rem,2.5vw,2.1rem);font-weight:600;line-height:1;
+  color:var(--amber);letter-spacing:-.02em;}
+.hero-proof .pf span{display:block;font-size:0.875rem;color:rgba(255,255,255,.78);
+  margin-top:6px;max-width:18ch;line-height:1.45;}
+@media(max-width:640px){.hero-proof{gap:18px}.hero-proof .pf{flex:1 0 42%}}
+
+/* three solutions and three promises, not the four/three the tier table left */
+.promise__grid{grid-template-columns:repeat(3,1fr);}
+/* six reviews rather than three, so the stack becomes a grid */
+.reviews{grid-template-columns:repeat(3,1fr);}
+@media(max-width:1000px){.promise__grid,.reviews{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:680px){.promise__grid,.reviews{grid-template-columns:1fr;}}
+/* the stats figure now carries a currency mark on one of the four */
+.stat b .u{font-size:.72em;vertical-align:baseline;margin-right:1px;}
+
+/* features: two alternating rows, the second carrying the running-cost bars.
+   This band is --navy-2, so the bar track and the note are set for a dark
+   ground rather than inheriting anything light. */
+.feat-row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px);align-items:center;}
+.feat-row>*{min-width:0;}
+.feat-row--rev .feat-copy{order:2;}
+.ftick{list-style:none;margin:0;padding:0;display:grid;gap:14px;}
+.ftick li{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;
+  font-size:1rem;line-height:1.6;color:var(--text);}
+.ftick .tick{width:19px;height:19px;color:var(--amber);margin-top:3px;flex:0 0 19px;}
+.feat-fig{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);}
+.feat-fig img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/3;}
+.barviz{background:rgba(255,255,255,.04);border:1px solid var(--line);
+  border-radius:var(--r-lg);padding:clamp(20px,2.6vw,34px);}
+.bar-row+.bar-row{margin-top:22px;}
+.bl{display:flex;justify-content:space-between;gap:12px;font-size:0.9375rem;
+  font-weight:600;margin-bottom:10px;}
+.bar{height:14px;border-radius:100px;background:rgba(255,255,255,.09);overflow:hidden;}
+.bar span{display:block;height:100%;border-radius:100px;}
+.bar.after span{background:var(--amber);}
+.bar.before span{background:rgba(255,255,255,.34);}
+.barnote{font-size:0.875rem;line-height:1.6;margin-top:20px;color:var(--muted,rgba(255,255,255,.66));}
+@media(max-width:900px){
+  .feat-row{grid-template-columns:1fr;}
+  .feat-row--rev .feat-copy{order:0;}
+}
+
+/* ══ logo strip, rebuilt ══
+   Was: two side-by-side rails of white chips on a dark band, which hard-clipped
+   mid-logo at both edges and read as floating cards.
+   Now: one bright full-bleed ribbon carrying two stacked rails that travel in
+   OPPOSITE directions, with the marks sitting straight on the light ground.
+   The light ground is what makes the chips unnecessary - these are supplied
+   dark-on-white artwork and must never be filtered or inverted (F7 / F38a). */
+.marquee{background:var(--white);padding-block:clamp(18px,2.2vw,30px);
+  border-top:1px solid rgba(8,12,19,.10);border-bottom:1px solid rgba(8,12,19,.10);
+  overflow:hidden;-webkit-mask-image:none;mask-image:none;}
+.mqrow{display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);
+  align-items:center;gap:clamp(14px,2vw,30px);}
+.mqrow--alt{margin-top:clamp(12px,1.5vw,20px);padding-top:clamp(12px,1.5vw,20px);
+  border-top:1px solid rgba(8,12,19,.09);}
+.mqrow__label{padding-left:var(--pad-x);white-space:nowrap;
+  font-size:0.8125rem;font-weight:700;letter-spacing:.19em;text-transform:uppercase;
+  color:var(--ink);opacity:.42;}
+/* the rail runs to the right edge, so the fade is what stops a mark being
+   sliced in half at the boundary - the old build clipped hard */
+.mqrow__view{overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,#000 82%,transparent);
+          mask-image:linear-gradient(90deg,#000 82%,transparent);}
+.mqrow__track{display:flex;width:max-content;will-change:transform;}
+.mqrow__track--l{animation:mqLeft 64s linear infinite;}
+.mqrow__track--r{animation:mqRight 64s linear infinite;}
+.mqrow__grp{display:flex;align-items:center;gap:52px;padding-right:52px;
+  /* JPG marks carry their own white box; multiply drops it into the light
+     ground without recolouring the mark itself */
+  mix-blend-mode:multiply;}
+.mqlogo{background:none;border-radius:0;padding:0;height:auto;min-width:160px;
+  opacity:1;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.mqlogo:hover{transform:none;opacity:1;}
+/* definite height, never max-height only: two files in logos/ carry a viewBox
+   and no intrinsic size and resolve to 0x0 otherwise (F46) */
+.mqlogo img{height:30px;width:auto;max-width:150px;object-fit:contain;display:block;}
+@keyframes mqLeft{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+@keyframes mqRight{from{transform:translate3d(-50%,0,0)}to{transform:translate3d(0,0,0)}}
+@media(prefers-reduced-motion:reduce){
+  .mqrow__track--l,.mqrow__track--r{animation:none;transform:none;}
+  .mqrow__view{-webkit-mask-image:none;mask-image:none;overflow-x:auto;}
+}
+@media(max-width:760px){
+  .mqrow{grid-template-columns:minmax(0,1fr);gap:8px;}
+  .mqrow__label{padding-left:clamp(20px,5vw,40px);}
+  .mqlogo{min-width:128px;}
+  .mqlogo img{height:24px;max-width:118px;}
+}
+
+/* ══ reviews: static 3x2 grid -> looping carousel, 3 / 2 / 1 ══
+   TEMPLATE-RULES section 1: "looping, 3 visible / 2 / 1 responsive, with left
+   and right arrow buttons on both sides. Never a static single-row grid if
+   there are more reviews than fit on screen at once." */
+.revwrap{display:grid;grid-template-columns:auto minmax(0,1fr) auto;
+  gap:clamp(10px,1.5vw,20px);align-items:center;}
+/* F44: a grid item whose child is a track resolves its automatic minimum to
+   min-content and scrolls the whole document sideways. Zero it. */
+.revview{min-width:0;}
+.reviews{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;
+  padding:4px 2px;grid-template-columns:none;}
+.reviews::-webkit-scrollbar{display:none;}
+.reviews .review{flex:0 0 calc((100% - 44px) / 3);min-width:0;scroll-snap-align:start;
+  /* cards stretch to the tallest quote in the set, so the attribution is
+     pushed to the bottom rather than leaving a void under the short ones */
+  display:flex;flex-direction:column;}
+.reviews .review q{display:block;}
+.reviews .review__by{margin-top:auto;padding-top:18px;}
+/* .rv starts at opacity 0 and waits for the IntersectionObserver. Cards parked
+   outside the track are clipped, so the observer never fires for them and they
+   would stay invisible - the carousel opts out of the reveal entirely. */
+.reviews .review.rv{opacity:1;transform:none;}
+.revnav{width:46px;height:46px;border-radius:50%;flex:0 0 46px;cursor:pointer;
+  border:1px solid var(--line);background:var(--card);color:var(--white);
+  display:grid;place-items:center;transition:background .25s,color .25s,border-color .25s;}
+.revnav:hover{background:var(--amber);color:var(--ink);border-color:var(--amber);}
+.revnav svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;
+  stroke-linecap:round;stroke-linejoin:round;}
+@media(prefers-reduced-motion:reduce){.reviews{scroll-behavior:auto;}}
+@media(max-width:1000px){.reviews .review{flex-basis:calc((100% - 22px) / 2);}}
+@media(max-width:680px){
+  .reviews .review{flex-basis:100%;}
+  .revwrap{grid-template-columns:minmax(0,1fr);}
+  .revnav{display:none;}
+}
+
+/* ══ footer operations block: alignment ══
+   .wbt-footer .wbt__in was max-width:none with zero inline padding, so this
+   block started at x=0 while every other section starts at the .shell gutter
+   (x=95 at 1500px). That mismatch is what read as "odd". It now shares the
+   page measure. The five columns are also re-weighted: Contact carries one
+   line and Finance carries the FCA paragraph, so equal columns left a hole. */
+.wbt-footer .wbt__in{max-width:var(--shell);margin-inline:auto;
+  padding-inline:var(--pad-x);}
+/* weighted to the copy each column actually holds: Opening hours needs to fit
+   "Monday to Friday  08:00-18:00" on one line, Contact holds a phone number
+   and nothing else, Finance holds the FCA paragraph */
+.wbt-ops{grid-template-columns:1.25fr 1fr .68fr 1.1fr 1.5fr;
+  gap:30px 44px;align-items:start;}
+.wbt-ops>*{min-width:0;}
+
+/* SPECIFICITY TRAP (F38b). <footer> is nested INSIDE <section class="cta">, so
+   .cta p {font-size:1.0625rem; max-width:56ch} and .cta h2 {font-size:2.5rem}
+   were reaching every paragraph and heading in this block and beating
+   .wbt-legal / .wbt-areas / .wbt-footer__h, which are all single-class
+   selectors. Measured: the legal small print was rendering at 16.32px instead
+   of 12px, and both paragraphs were capped at 599px inside a 1280px column.
+   Two classes beats one-class-plus-one-element, so these are scoped to win. */
+.wbt-footer .wbt-footer__h{font-size:1.125rem;font-weight:700;line-height:1.3;
+  letter-spacing:-.01em;margin:0 0 6px;}
+.wbt-footer .wbt-areas{max-width:none;font-size:0.875rem;line-height:1.7;}
+.wbt-footer .wbt-legal{max-width:none;font-size:0.8125rem;line-height:1.6;}
+.wbt-footer .wbt-ops p,.wbt-footer .wbt-ops address{max-width:none;
+  font-size:0.9375rem;line-height:1.62;}
+@media(max-width:1100px){
+  .wbt-ops{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 36px;}
+}
+@media(max-width:600px){
+  .wbt-ops{grid-template-columns:minmax(0,1fr);}
+}
+/* Section CTA pair, matching the base template aircon7. Sits as a sibling
+   container at the end of a section so it picks up the same max-width and
+   padding as that section's content, however deeply that content nests. */
+.ctapair{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;
+  margin-top:clamp(30px,4vw,48px)}
+@media(max-width:520px){.ctapair .btn{flex:1 1 100%}}</style></head>
+<body class="is-loading">
+
+<div class="loader" id="loader" role="status" aria-label="Loading">
+  <svg class="loader__mark" viewBox="0 0 32 32" aria-hidden="true">
+    <circle cx="16" cy="16" r="14.4" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".35"/>
+    <g fill="currentColor">
+      <path d="M16 14.4c-1.2-3.2-.5-5.9 2.1-8 2.9 1.5 3.7 4.2 2.3 7.6-1 .7-2.6 1-4.4.4z"/>
+      <path d="M16 14.4c-1.2-3.2-.5-5.9 2.1-8 2.9 1.5 3.7 4.2 2.3 7.6-1 .7-2.6 1-4.4.4z" transform="rotate(120 16 16)"/>
+      <path d="M16 14.4c-1.2-3.2-.5-5.9 2.1-8 2.9 1.5 3.7 4.2 2.3 7.6-1 .7-2.6 1-4.4.4z" transform="rotate(240 16 16)"/>
+      <circle cx="16" cy="16" r="2.5"/>
+    </g>
+  </svg>
+  <span class="loader__bar"><i></i></span>
+  <span class="loader__word">Aircon</span>
+</div>
+
+<div class="prog" id="prog" aria-hidden="true"></div>
+
+<a class="totop" id="totop" href="#top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</a>
+
+<!-- ==========================================================================
+     1 — STICKY NAV
+     ========================================================================== -->
+<header class="nav" id="nav">
+  <div class="nav__in">
+    <a class="brand" href="#top" aria-label="Aircon home">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="14.4" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".45"/>
+        <g fill="currentColor">
+          <path d="M16 14.4c-1.2-3.2-.5-5.9 2.1-8 2.9 1.5 3.7 4.2 2.3 7.6-1 .7-2.6 1-4.4.4z"/>
+          <path d="M16 14.4c-1.2-3.2-.5-5.9 2.1-8 2.9 1.5 3.7 4.2 2.3 7.6-1 .7-2.6 1-4.4.4z" transform="rotate(120 16 16)"/>
+          <path d="M16 14.4c-1.2-3.2-.5-5.9 2.1-8 2.9 1.5 3.7 4.2 2.3 7.6-1 .7-2.6 1-4.4.4z" transform="rotate(240 16 16)"/>
+          <circle cx="16" cy="16" r="2.5"/>
+        </g>
+      </svg>
+      <span class="brand__word">Aircon</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#">Our Process</a>
+      <a href="#">Why Choose Us?</a>
+      <a href="#">Services</a>
+      <a href="#">Reviews</a>
+      <a href="#">Guides</a>
+      <a href="#">Careers</a>
+      <a href="#">Area</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <div class="nav__act">
+      <a class="nav__tel" href="tel:01632960300" aria-label="Call 01632 960 300">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        <span>01632 960 300</span>
+      </a>
+      <a class="btn btn--amber btn--sm" href="#quote">Get Free Quote</a>
+      <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer">
+      <a href="#">Our Process</a>
+      <a href="#">Why Choose Us?</a>
+      <a href="#">Services</a>
+      <a href="#">Reviews</a>
+      <a href="#">Guides</a>
+      <a href="#">Careers</a>
+      <a href="#">Area</a>
+      <a href="#">Contact</a>
+
+      <a class="btn btn--amber btn--wide" href="#quote">Get Free Quote</a>
+    </div>
+
+<!-- ==========================================================================
+     2 — HERO
+     ========================================================================== -->
+<section class="hero" id="top">
+  <div class="hero__bg" aria-hidden="true">
+    <video class="hero__photo" autoplay muted loop playsinline preload="auto" aria-hidden="true" width="1920" height="1080">
+      <source src="video/hero-climawave.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero__scrim" aria-hidden="true"></div>
+
+  <div class="hero__in">
+    <div class="hero__copy">
+      <span class="badge rv"><span class="badge__dot"></span>F Gas Certified &middot; REFCOM member since 2012</span>
+      <h1 class="rv" style="transition-delay:.08s">Air conditioning &amp; heat pumps <em>done properly.</em></h1>
+      <p class="hero__lead rv" style="transition-delay:.16s">
+        Expert air conditioning and heat pump installations for homes and businesses right
+        across Britain, surveyed, fitted and monitored by our own engineers.
+      </p>
+      <div class="hero__cta rv" style="transition-delay:.24s">
+        <a class="btn btn--amber" href="#quote">Get A Free Quote</a>
+        <a class="btn btn--ghost" href="#systems">Speak To Our Experts</a>
+      </div>
+      <div class="hero-proof rv" style="transition-delay:.28s">
+        <div class="pf"><b>4,200+</b><span>Installs since 2012</span></div>
+        <div class="pf"><b>25 yr</b><span>Manufacturer warranty</span></div>
+        <div class="pf"><b>&pound;1,240</b><span>Average yearly saving</span></div>
+      </div>
+        <a class="grev rv" style="transition-delay:.3s" href="#reviews" aria-label="Rated 4.9 out of 5 from 1,900+ Google reviews"><svg class="grev__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg><span class="grev__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="grev__txt"><b>4.9</b> from <b>1,900+</b> Google reviews</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="bens" aria-label="Why air conditioning">
+  <div class="shell">
+    <div class="bens__grid">
+      <div class="ben rv">
+        <span class="ben__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M12 6l3.5-3.5M12 6 8.5 2.5M12 18l3.5 3.5M12 18l-3.5 3.5M3.3 7l17.4 10M6.8 8.3 5.4 3.5M6.8 8.3 2 9.6m15.2 6.1 4.8-1.3m-4.8 1.3 1.4 4.8M3.3 17l17.4-10M6.8 15.7 2 14.4m4.8 1.3-1.4 4.8m11.8-12.2 1.4-4.8m-1.4 4.8L22 9.6"/></svg></span>
+        <div><b>Cools &amp; Heats</b><span>One system, all year round</span></div>
+      </div>
+      <div class="ben rv" style="transition-delay:.08s">
+        <span class="ben__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M22 9.5 16.5 15M16.5 9.5 22 15"/></svg></span>
+        <div><b>Whisper Quiet</b><span>From 19 dB in night mode</span></div>
+      </div>
+      <div class="ben rv" style="transition-delay:.16s">
+        <span class="ben__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15.5 14 8.6l-4 4L3 5.7"/><path d="M15 15.5h6v-6"/><path d="M3 20h18"/></svg></span>
+        <div><b>Lower Running Costs</b><span>Up to 400% efficient</span></div>
+      </div>
+      <div class="ben rv" style="transition-delay:.24s">
+        <span class="ben__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22c4.5-2.4 7-6 7-10.5V5.2L12 2 5 5.2v6.3C5 16 7.5 19.6 12 22z"/><path d="m9 11.7 2.2 2.2L15.3 9.8"/></svg></span>
+        <div><b>Cleaner Air</b><span>Filters dust and pollen</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     3 — TRUST MARQUEE
+     ========================================================================== -->
+<section class="marquee logo-split" aria-label="Brands we work with and accreditations">
+  <div class="mqrow">
+    <span class="mqrow__label">Brands we work with</span>
+    <div class="mqrow__view"><div class="mqrow__track mqrow__track--l"><div class="mqrow__grp"><span class="mqlogo"><img src="logos/daikin.svg" alt="Daikin" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/mitsubishi.svg" alt="Mitsubishi Electric" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/panasonic.svg" alt="Panasonic" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/toshiba.svg" alt="Toshiba" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/fujitsu.svg" alt="Fujitsu" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/lg.svg" alt="LG" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/samsung.png" alt="Samsung" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/daikin.svg" alt="Daikin" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/mitsubishi.svg" alt="Mitsubishi Electric" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/panasonic.svg" alt="Panasonic" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/toshiba.svg" alt="Toshiba" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/fujitsu.svg" alt="Fujitsu" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/lg.svg" alt="LG" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/samsung.png" alt="Samsung" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/daikin.svg" alt="Daikin" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/mitsubishi.svg" alt="Mitsubishi Electric" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/panasonic.svg" alt="Panasonic" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/toshiba.svg" alt="Toshiba" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/fujitsu.svg" alt="Fujitsu" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/lg.svg" alt="LG" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/samsung.png" alt="Samsung" loading="lazy" decoding="async"></span></div><div class="mqrow__grp" aria-hidden="true"><span class="mqlogo"><img src="logos/daikin.svg" alt="Daikin" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/mitsubishi.svg" alt="Mitsubishi Electric" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/panasonic.svg" alt="Panasonic" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/toshiba.svg" alt="Toshiba" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/fujitsu.svg" alt="Fujitsu" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/lg.svg" alt="LG" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/samsung.png" alt="Samsung" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/daikin.svg" alt="Daikin" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/mitsubishi.svg" alt="Mitsubishi Electric" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/panasonic.svg" alt="Panasonic" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/toshiba.svg" alt="Toshiba" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/fujitsu.svg" alt="Fujitsu" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/lg.svg" alt="LG" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/samsung.png" alt="Samsung" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/daikin.svg" alt="Daikin" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/mitsubishi.svg" alt="Mitsubishi Electric" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/panasonic.svg" alt="Panasonic" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/toshiba.svg" alt="Toshiba" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/fujitsu.svg" alt="Fujitsu" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/lg.svg" alt="LG" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/samsung.png" alt="Samsung" loading="lazy" decoding="async"></span></div></div></div>
+  </div>
+  <div class="mqrow mqrow--alt">
+    <span class="mqrow__label">Accreditations</span>
+    <div class="mqrow__view"><div class="mqrow__track mqrow__track--r"><div class="mqrow__grp"><span class="mqlogo"><img src="logos/refcom.png" alt="REFCOM Registered" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="images/live/accred-safecontractor.png" alt="SafeContractor Approved" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/which.jpg" alt="Which? Trusted Trader" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/trustmark.svg" alt="TrustMark Approved" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="images/live/accred-recc.png" alt="RECC Member" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="images/live/accred-trustatrader.png" alt="TrustATrader Member" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="images/live/accred-heatgeek.png" alt="Heat Geek Certified" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/refcom.png" alt="REFCOM Registered" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="images/live/accred-safecontractor.png" alt="SafeContractor Approved" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/which.jpg" alt="Which? Trusted Trader" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/trustmark.svg" alt="TrustMark Approved" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="images/live/accred-recc.png" alt="RECC Member" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="images/live/accred-trustatrader.png" alt="TrustATrader Member" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="images/live/accred-heatgeek.png" alt="Heat Geek Certified" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/refcom.png" alt="REFCOM Registered" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="images/live/accred-safecontractor.png" alt="SafeContractor Approved" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/which.jpg" alt="Which? Trusted Trader" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/trustmark.svg" alt="TrustMark Approved" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="images/live/accred-recc.png" alt="RECC Member" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="images/live/accred-trustatrader.png" alt="TrustATrader Member" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="images/live/accred-heatgeek.png" alt="Heat Geek Certified" loading="lazy" decoding="async"></span></div><div class="mqrow__grp" aria-hidden="true"><span class="mqlogo"><img src="logos/refcom.png" alt="REFCOM Registered" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="images/live/accred-safecontractor.png" alt="SafeContractor Approved" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/which.jpg" alt="Which? Trusted Trader" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/trustmark.svg" alt="TrustMark Approved" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="images/live/accred-recc.png" alt="RECC Member" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="images/live/accred-trustatrader.png" alt="TrustATrader Member" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="images/live/accred-heatgeek.png" alt="Heat Geek Certified" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/refcom.png" alt="REFCOM Registered" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="images/live/accred-safecontractor.png" alt="SafeContractor Approved" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/which.jpg" alt="Which? Trusted Trader" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/trustmark.svg" alt="TrustMark Approved" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="images/live/accred-recc.png" alt="RECC Member" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="images/live/accred-trustatrader.png" alt="TrustATrader Member" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="images/live/accred-heatgeek.png" alt="Heat Geek Certified" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/refcom.png" alt="REFCOM Registered" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="images/live/accred-safecontractor.png" alt="SafeContractor Approved" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/which.jpg" alt="Which? Trusted Trader" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="logos/trustmark.svg" alt="TrustMark Approved" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="images/live/accred-recc.png" alt="RECC Member" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="images/live/accred-trustatrader.png" alt="TrustATrader Member" loading="lazy" decoding="async"></span><span class="mqlogo"><img src="images/live/accred-heatgeek.png" alt="Heat Geek Certified" loading="lazy" decoding="async"></span></div></div></div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     4 — PROCESS
+     ========================================================================== -->
+<section class="section" id="process">
+  <div class="shell">
+    <div class="proc">
+      <div class="rv-l">
+        <span class="eyebrow">How it works</span>
+        <h2 class="h2" style="margin-bottom:20px">From survey to switch on in three steps</h2>
+        <p class="lead">
+          A straightforward path to lower bills, handled end to end by our own accredited
+          UK team, from your first call to switch on.
+        </p>
+      </div>
+
+      <div class="proc__steps">
+        <div class="step rv-r">
+          <span class="step__n">01</span>
+          <div>
+            <h3>Free home survey</h3> <p>A local surveyor assesses your rooms, layout and energy use, then talks through your savings, no obligation, no jargon.</p>
+          </div>
+        </div>
+        <div class="step rv-r" style="transition-delay:.09s">
+          <span class="step__n">02</span>
+          <div>
+            <h3>Tailored design &amp; quote</h3> <p>We size the indoor and outdoor units to your rooms, recommend the right range for the space and send one itemised fixed price covering the units, installation and commissioning.</p>
+          </div>
+        </div>
+        <div class="step rv-r" style="transition-delay:.18s">
+          <span class="step__n">03</span>
+          <div>
+            <h3>F Gas certified install</h3> <p>Our accredited engineers fit and commission your system, usually in a day. We register the manufacturer warranty, set up the app and book your first annual service before we leave.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="shell ctapair">
+    <a class="btn btn--amber" href="#quote">Get A Free Quote</a>
+    <a class="btn btn--ghost" href="#quote">Speak To Our Experts</a>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     5 — SYSTEMS + STATS
+     ========================================================================== -->
+<section class="section band rule" id="systems">
+  <div class="shell">
+    <div class="head-c rv">
+      <span class="eyebrow">Our solutions</span>
+      <h2 class="h2" style="margin-bottom:16px">What we install</h2>
+      <p class="lead">A-rated inverter equipment from Daikin, Mitsubishi Electric and Panasonic, sized properly for the room rather than sold off a shelf. Every package includes installation, commissioning and your first annual service.</p>
+    </div>
+
+        <div class="wbt-grid">
+      <div class="wbt-card plan">
+        <img class="wbt-card__img" src="images/live/sol-res.webp" alt="Bedroom with a slim wall mounted indoor unit above the bed" loading="lazy" decoding="async">
+        <div class="wbt-card__b">
+          <h3 class="wbt-card__t">Residential air conditioning</h3>
+          <p class="wbt-card__p">Wall mounted, multi split and concealed ducted systems for homes. Sized room by room from a heat load survey rather than sold off a shelf.</p>
+          <a class="btn btn--wide plan__cta" href="#quote">Learn more</a>
+        </div>
+      </div>
+      <div class="wbt-card plan">
+        <img class="wbt-card__img" src="images/live/sol-com.jpg" alt="Ventilation and air conditioning ductwork across a commercial ceiling" loading="lazy" decoding="async">
+        <div class="wbt-card__b">
+          <h3 class="wbt-card__t">Commercial air conditioning</h3>
+          <p class="wbt-card__p">Offices, shops, restaurants, salons, warehouses and workshops. Ceiling cassettes, floor standing units and VRF for multi zone premises, with priority response on contract.</p>
+          <a class="btn btn--wide plan__cta" href="#quote">Learn more</a>
+        </div>
+      </div>
+      <div class="wbt-card plan">
+        <img class="wbt-card__img" src="images/live/ac-service-1-crop.webp" alt="Engineer servicing an outdoor air conditioning condenser" loading="lazy" decoding="async">
+        <div class="wbt-card__b">
+          <h3 class="wbt-card__t">Servicing, repairs &amp; care plans</h3>
+          <p class="wbt-card__p">Any make, whoever fitted it. Annual servicing that keeps your warranty valid, same day breakdown cover, and a care plan from &pound;9 a month.</p>
+          <a class="btn btn--wide plan__cta" href="#quote">Learn more</a>
+        </div>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat rv"><b data-count="100" data-suffix="K">0</b><span>Indoor units installed and commissioned</span></div>
+      <div class="stat rv" style="transition-delay:.08s"><b data-count="98" data-suffix="%">0</b><span>Customer satisfaction rate</span></div>
+      <div class="stat rv" style="transition-delay:.16s"><b><span class="u">&pound;</span><span data-count="10.5" data-dec="1" data-suffix="M">0</span></b><span>Electricity costs saved</span></div>
+      <div class="stat rv" style="transition-delay:.24s"><b data-count="200" data-suffix="K">0</b><span>Tonnes of carbon footprint reduced</span></div>
+    </div>
+  </div>
+
+  <div class="shell ctapair">
+    <a class="btn btn--amber" href="#quote">Get A Free Quote</a>
+    <a class="btn btn--ghost" href="#quote">Speak To Our Experts</a>
+  </div>
+</section><section class="wbt section" id="wbt-products" aria-labelledby="wbtProdH">
+ <div class="wbt__in">
+  <p class="wbt__eyebrow eyebrow">What we fit</p>
+  <h2 class="wbt__h h2" id="wbtProdH">The units we fit</h2>
+  <p class="wbt__lede">We are approved installers for Daikin and Mitsubishi Electric and accredited by Panasonic. These are the ranges we fit most often. Which one suits you depends on the room, not on what happens to be in the van.</p>
+  <div class="wbt-grid">
+   <div class="wbt-card plan">
+    <img class="wbt-card__img" src="images/live/product-sensira-2.webp" alt="Daikin Sensira wall-mounted indoor unit" loading="lazy" decoding="async">
+    <div class="wbt-card__b">
+     <p class="wbt-card__k">Daikin</p><h3 class="wbt-card__t">Sensira FTXF</h3>
+     <p class="wbt-card__p">The value benchmark, and the unit we fit most in bedrooms and home offices. Quiet, efficient and simple to live with.</p>
+     <ul class="wbt-spec"><li>2.0-5.0kW, A+++ cooling</li><li>19 dB minimum sound level</li><li>Optional Wi-Fi controller</li></ul>
+    </div>
+   </div>
+   <div class="wbt-card plan">
+    <img class="wbt-card__img" src="images/live/product-stylish-1.webp" alt="Daikin Stylish slim-line indoor unit" loading="lazy" decoding="async">
+    <div class="wbt-card__b">
+     <p class="wbt-card__k">Daikin</p><h3 class="wbt-card__t">Stylish FTXA</h3>
+     <p class="wbt-card__p">Flat-fronted and only 189mm deep, for rooms where a standard unit would dominate the wall. Silver, white or matt black.</p>
+     <ul class="wbt-spec"><li>2.0-3.5kW, A+++ both modes</li><li>Built-in Wi-Fi and presence sensor</li><li>Flash Streamer air purification</li></ul>
+    </div>
+   </div>
+   <div class="wbt-card plan">
+    <img class="wbt-card__img" src="images/live/product-premium-2.webp" alt="Mitsubishi Electric outdoor condenser unit" loading="lazy" decoding="async">
+    <div class="wbt-card__b">
+     <p class="wbt-card__k">Mitsubishi Electric</p><h3 class="wbt-card__t">MSZ-AP Series</h3>
+     <p class="wbt-card__p">Where reliability matters most. Dual barrier coating keeps the internals clean, which is what keeps efficiency where it started.</p>
+     <ul class="wbt-spec"><li>2.5-7.1kW single split</li><li>Works down to &minus;15&deg;C in heating</li><li>MELCloud app control</li></ul>
+    </div>
+   </div>
+   <div class="wbt-card plan">
+    <img class="wbt-card__img" src="images/live/product-single-2.webp" alt="Multi-split outdoor condenser serving several indoor units" loading="lazy" decoding="async">
+    <div class="wbt-card__b">
+     <p class="wbt-card__k">Multi-room</p><h3 class="wbt-card__t">Multi-Split &amp; Ducted</h3>
+     <p class="wbt-card__p">One outdoor condenser running up to five indoor units, each room on its own temperature. Where you would rather see nothing at all, we fit concealed ducted or ceiling cassettes.</p>
+     <ul class="wbt-spec"><li>Up to 5 indoor units per condenser</li><li>Wall, floor, cassette or ducted</li><li>Zoned scheduling per room</li></ul>
+    </div>
+   </div>
+  </div>
+ </div>
+
+  <div class="shell ctapair">
+    <a class="btn btn--amber" href="#quote">Get A Free Quote</a>
+    <a class="btn btn--ghost" href="#quote">Speak To Our Experts</a>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     6 — WHY CHOOSE US
+     ========================================================================== -->
+<section class="why" id="why">
+  <div class="why__copy">
+    <span class="eyebrow rv-l">Why us</span>
+    <h2 class="h2 rv-l" style="transition-delay:.06s;margin-bottom:18px">Why British homeowners choose Aircon</h2>
+    <p class="lead rv-l" style="transition-delay:.12s">
+      We take real pride in a tidy, properly commissioned installation. No sales pressure,
+      no vague estimates, just careful work to UK standards.
+    </p>
+    <ul class="why__list"><li class="rv-l" style="transition-delay:0.15s"><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg>Our own engineers, never subcontracted</li><li class="rv-l" style="transition-delay:0.18s"><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg>REFCOM Elite registered, F-Gas certified engineers</li><li class="rv-l" style="transition-delay:0.23s"><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg>Daikin &amp; Mitsubishi Electric approved installer</li><li class="rv-l" style="transition-delay:0.28s"><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg>Fixed written quotes, itemised, no hidden extras</li><li class="rv-l" style="transition-delay:0.33s"><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg>Up to 12-year manufacturer warranty on registration</li><li class="rv-l" style="transition-delay:0.38s"><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg>Same-day repairs and 24/7 emergency cover</li><li class="rv-l" style="transition-delay:0.43s"><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg>Install, service, repair and care plans in-house</li><li class="rv-l" style="transition-delay:0.48s"><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg>4.9/5 from 800+ verified homeowners</li><li class="rv-l" style="transition-delay:0.53s"><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg>Finance from &pound;39/month, 0% available</li></ul>
+  </div>
+
+  <div class="why__media"><img src="images/cw-why.jpg" alt="Engineer commissioning a wall-mounted air conditioning unit" loading="lazy" decoding="async"></div>
+</section>
+
+<!-- ==========================================================================
+     6b — FEATURES: survey & design, then running costs
+     ========================================================================== -->
+<section class="section band rule" id="features">
+  <div class="shell">
+    <div class="feat-row">
+      <div class="feat-copy rv-l">
+        <span class="eyebrow">Survey &amp; design</span>
+        <h2 class="h2" style="margin:14px 0 18px">A system designed around your rooms</h2>
+        <ul class="ftick">
+          <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg>We calculate the cooling load room by room, so units are sized to the space rather than guessed.</li>
+          <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg>Pipe routes and indoor unit positions are agreed with you before any work starts.</li>
+          <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg>Every install is commissioned and F Gas certified, with the paperwork handled for you.</li>
+        </ul>
+      </div>
+      <figure class="feat-fig rv-r" style="margin:0">
+        <img src="images/cw-hero.jpg" alt="A air conditioning energy dashboard on screen showing daily production and home consumption charts" loading="lazy" decoding="async">
+      </figure>
+    </div>
+
+    <div class="feat-row feat-row--rev" style="margin-top:clamp(40px,5vw,80px)">
+      <div class="feat-copy rv-r">
+        <span class="eyebrow">The numbers</span>
+        <h2 class="h2" style="margin:14px 0 18px">Lower running costs, year after year</h2>
+        <ul class="ftick">
+          <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg>Inverter systems draw only the power the room actually needs, cutting monthly running costs.</li>
+          <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg>Zoned controls mean you only cool the rooms in use, rather than the whole house.</li>
+          <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg>Shield yourself from rising energy prices with A+++ rated units and a serviced system.</li>
+        </ul>
+      </div>
+      <div class="barviz rv-l">
+        <div class="bar-row">
+          <div class="bl"><span>After installation</span><span>&pound;520/yr</span></div>
+          <div class="bar after"><span style="width:34%"></span></div>
+        </div>
+        <div class="bar-row">
+          <div class="bl"><span>Before installation</span><span>&pound;1,850/yr</span></div>
+          <div class="bar before"><span style="width:92%"></span></div>
+        </div>
+        <p class="barnote">Typical running cost for cooling and heating a three bedroom home, before and after a properly sized inverter system.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     7 — REVIEWS
+     ========================================================================== -->
+<section class="section" id="reviews">
+  <div class="shell">
+    <div class="head-c rv">
+      <span class="eyebrow">Reviews</span>
+      <h2 class="h2" style="margin-bottom:16px">What our customers say</h2>
+      <p class="lead">Real homeowners across the UK, sleeping cooler in July and warmer in January.</p>
+    </div>
+
+    <div class="revwrap">
+      <button class="revnav" id="revPrev" type="button" aria-label="Previous reviews"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <div class="revview">
+    <div class="reviews" id="revTrack">
+      <article class="review rv">
+        <div class="review__stars" aria-label="5 out of 5">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+        </div>
+        <q>Aircon's maintenance has been prompt and reliable, keeping my system running at its best all year.</q>
+        <div class="review__by"><b>Hannah Mitchell</b><span>Homeowner, Bristol</span></div>
+      </article>
+
+      <article class="review rv" style="transition-delay:.08s">
+        <div class="review__stars" aria-label="5 out of 5">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+        </div>
+        <q>Their units have transformed my home's efficiency and significantly reduced my running costs.</q>
+        <div class="review__by"><b>Jacob Cruz</b><span>Homeowner, Leeds</span></div>
+      </article>
+
+      <article class="review rv" style="transition-delay:.16s">
+        <div class="review__stars" aria-label="5 out of 5">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+        </div>
+        <q>Choosing Aircon was the best decision for our business, their commercial system cut our energy costs.</q>
+        <div class="review__by"><b>Aidan Byrd</b><span>Director, Manchester</span></div>
+      </article>
+
+      <article class="review rv" style="transition-delay:.24s">
+        <div class="review__stars" aria-label="5 out of 5">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+        </div>
+        <q>Our unit packed up in the middle of the heatwave and they had an engineer with us within hours. Fixed on the first visit.</q>
+        <div class="review__by"><b>Marcus Reynolds</b><span>Homeowner, Wolverhampton</span></div>
+      </article>
+
+      <article class="review rv" style="transition-delay:.32s">
+        <div class="review__stars" aria-label="5 out of 5">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+        </div>
+        <q>We had three quotes and theirs was the only one that measured every room instead of guessing. Fitted in a day, spotless finish.</q>
+        <div class="review__by"><b>Priya Shah</b><span>Homeowner, Reading</span></div>
+      </article>
+
+      <article class="review rv" style="transition-delay:.4s">
+        <div class="review__stars" aria-label="5 out of 5">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+        </div>
+        <q>They look after the units in both our shops and the cold room. One contractor for the lot, on a proper maintenance schedule.</q>
+        <div class="review__by"><b>Tom Baird</b><span>Retail Manager, Oxford</span></div>
+      </article>
+
+      <article class="review rv">
+        <div class="review__stars" aria-label="5 out of 5">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+        </div>
+        <q>Two units fitted in a single day and you would never know they had been in the house. The bedroom finally sits at 20&deg;C through a heatwave, and the night mode is genuinely silent.</q>
+        <div class="review__by"><b>Marcus Higgins</b><span>Homeowner, Bristol</span></div>
+      </article>
+
+      <article class="review rv">
+        <div class="review__stars" aria-label="5 out of 5">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+        </div>
+        <q>The multi split runs our lounge and both bedrooms independently, and it has been worth every penny through two summers.</q>
+        <div class="review__by"><b>Helen Davies</b><span>Homeowner, Cardiff</span></div>
+      </article>
+
+      <article class="review rv">
+        <div class="review__stars" aria-label="5 out of 5">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6z"/></svg>
+        </div>
+        <q>Zero sales pitch and completely transparent pricing from the survey onwards. The winter heating has already cut what we were spending on plug in radiators.</q>
+        <div class="review__by"><b>David Smith</b><span>Homeowner, Mansfield</span></div>
+      </article>
+    </div>
+      </div>
+      <button class="revnav" id="revNext" type="button" aria-label="Next reviews"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+
+  <div class="shell ctapair">
+    <a class="btn btn--amber" href="#quote">Get A Free Quote</a>
+    <a class="btn btn--ghost" href="#quote">Speak To Our Experts</a>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     8 — GALLERY
+     ========================================================================== -->
+<section class="section band rule" id="gallery">
+  <div class="shell">
+    <div class="head-c rv">
+      <span class="eyebrow">Our projects</span>
+      <h2 class="h2" style="margin-bottom:16px">Recent installations</h2>
+      <p class="lead">A snapshot of systems fitted across the UK in the last twelve months.</p>
+    </div>
+
+    <div class="gal">
+      <figure class="gtile rv-s" style="margin:0">
+        <img src="images/live/ac-install-1-crop.webp" alt="Outdoor condenser mounted on the brick wall of a Victorian terrace" loading="lazy" decoding="async">
+        <span class="gtile__veil"></span>
+        <figcaption class="gtile__tag"><b>Victorian terrace multi split</b><span>Bristol &middot; 2024</span></figcaption>
+      </figure>
+
+      <figure class="gtile rv-s" style="margin:0;transition-delay:.08s">
+        <img src="images/live/sol-res.webp" alt="Bedroom with a slim wall mounted indoor unit" loading="lazy" decoding="async">
+        <span class="gtile__veil"></span>
+        <figcaption class="gtile__tag"><b>Master bedroom retrofit</b><span>Cheshire &middot; 2024</span></figcaption>
+      </figure>
+
+      <figure class="gtile rv-s" style="margin:0;transition-delay:.16s">
+        <img src="images/live/ac-home-1-crop.webp" alt="Living room served by a wall mounted air conditioning unit" loading="lazy" decoding="async">
+        <span class="gtile__veil"></span>
+        <figcaption class="gtile__tag"><b>Open plan lounge and kitchen</b><span>Norfolk &middot; 2023</span></figcaption>
+      </figure>
+
+      <figure class="gtile rv-s" style="margin:0">
+        <img src="images/live/ventilation-2.jpg" alt="Exposed ventilation ductwork across a commercial ceiling" loading="lazy" decoding="async">
+        <span class="gtile__veil"></span>
+        <figcaption class="gtile__tag"><b>Restaurant kitchen extract</b><span>Oxford &middot; 2024</span></figcaption>
+      </figure>
+
+      <figure class="gtile rv-s" style="margin:0;transition-delay:.08s">
+        <img src="images/live/refrigeration-3.jpg" alt="Refrigerated display cabinets in a convenience store" loading="lazy" decoding="async">
+        <span class="gtile__veil"></span>
+        <figcaption class="gtile__tag"><b>Convenience store cold room</b><span>Kent &middot; 2025</span></figcaption>
+      </figure>
+
+      <figure class="gtile rv-s" style="margin:0;transition-delay:.16s">
+        <img src="images/live/heatpump-2-crop.png" alt="Air source heat pump installed beside a house" loading="lazy" decoding="async">
+        <span class="gtile__veil"></span>
+        <figcaption class="gtile__tag"><b>Air source heat pump swap</b><span>Surrey &middot; 2024</span></figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="shell ctapair">
+    <a class="btn btn--amber" href="#quote">Get A Free Quote</a>
+    <a class="btn btn--ghost" href="#quote">Speak To Our Experts</a>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     9 — GUARANTEE BAND
+     ========================================================================== -->
+<section class="section section--tight promise" id="promise">
+  <div class="shell promise__in">
+    <div class="head-c rv">
+      <span class="eyebrow">Our promise</span>
+      <h2 class="h2" style="margin-bottom:16px">Zero risk. Total peace of mind.</h2>
+      <p class="lead">Every Aircon installation is backed by guarantees that protect your investment for decades.</p>
+    </div>
+
+    <div class="promise__grid" style="margin-top:0">
+      <div class="pcard rv">
+        <span class="pcard__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4.5-2.4 7-6 7-10.5V5.2L12 2 5 5.2v6.3C5 16 7.5 19.6 12 22z"/><path d="m9 11.7 2.2 2.2 4.1-4.1"/></svg></span>
+        <h3>Fixed price guarantee</h3>
+        <p>The quote you're given is the price you pay, no hidden costs, ever.</p>
+      </div>
+      <div class="pcard rv" style="transition-delay:.08s">
+        <span class="pcard__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5.5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+        <h3>7 year parts and labour warranty</h3>
+        <p>Your units are guaranteed to keep performing for a next decade.</p>
+      </div>
+      <div class="pcard rv" style="transition-delay:.16s">
+        <span class="pcard__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M6 20V9l6-5 6 5v11"/><path d="M10 20v-5h4v5"/></svg></span>
+        <h3>Savings promise</h3>
+        <p>If your system underperforms our estimate, we'll put it right at no cost.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     10 — FAQ
+     ========================================================================== -->
+<section class="section" id="faq">
+  <div class="shell">
+    <div class="head-c rv">
+      <span class="eyebrow">Questions</span>
+      <h2 class="h2" style="margin-bottom:16px">Frequently asked questions</h2>
+      <p class="lead">Everything you need to weigh up before booking a survey.</p>
+    </div>
+
+    <div class="faq">
+      <div class="qa is-open rv">
+        <button class="qa__q" aria-expanded="true">
+          <h3>How much does home air conditioning cost to install?</h3>
+          <svg class="qa__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="qa__a"><div><p>A single wall-mounted unit typically lands between £1,895 and £2,400 fully installed. Multi-room systems running two or three indoor units usually sit between £3,000 and £4,500 depending on pipe runs and access.</p></div></div>
+      </div>
+
+      <div class="qa rv">
+        <button class="qa__q" aria-expanded="false">
+          <h3>Can air conditioning actually heat my home in winter?</h3>
+          <svg class="qa__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="qa__a"><div><p>Yes. Every system we fit is a reversible heat pump. In heating mode it delivers roughly three to four units of heat for every unit of electricity, which makes it far cheaper to run than plug-in electric heaters and it works well below freezing.</p></div></div>
+      </div>
+
+      <div class="qa rv">
+        <button class="qa__q" aria-expanded="false">
+          <h3>How noisy is a modern system?</h3>
+          <svg class="qa__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="qa__a"><div><p>Indoor units start at around 19 dB in night mode, quieter than a whisper and well below a fridge. The outdoor unit sits nearer 45 dB, and we position it to keep noise away from bedroom windows and neighbouring boundaries.</p></div></div>
+      </div>
+
+      <div class="qa rv">
+        <button class="qa__q" aria-expanded="false">
+          <h3>Do I need planning permission?</h3>
+          <svg class="qa__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="qa__a"><div><p>For most English homes a single outdoor unit falls under permitted development, provided it meets the size and siting rules. Listed buildings, conservation areas and flats are the usual exceptions, and we check this for you at survey stage.</p></div></div>
+      </div>
+
+      <div class="qa rv">
+        <button class="qa__q" aria-expanded="false">
+          <h3>What does it cost to run?</h3>
+          <svg class="qa__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="qa__a"><div><p>A 2.5kW unit cooling a bedroom draws roughly 0.5kW once it reaches temperature, around 13p an hour at current rates. Inverter compressors throttle back rather than cycling on and off, which is where most of the saving comes from.</p></div></div>
+      </div>
+
+      <div class="qa rv">
+        <button class="qa__q" aria-expanded="false">
+          <h3>How often does it need servicing?</h3>
+          <svg class="qa__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="qa__a"><div><p>Once a year. We clean the filters and coils, check refrigerant pressures and test the condensate drain. An annual service keeps the warranty valid and stops efficiency drifting away over time.</p></div></div>
+      </div>
+    <div class="qa rv"> <button class="qa__q" aria-expanded="false"> <h3>What temperature should I set it to?</h3> <svg class="qa__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg> </button> <div class="qa__a"><div><p>Between 22 and 24&deg;C is the sweet spot, cool enough to feel comfortable without the compressor working flat out. Every degree lower adds roughly 5 to 8% to the running cost, so dropping to 18&deg;C on a hot day costs far more than it gains.</p></div></div> </div> <div class="qa rv"> <button class="qa__q" aria-expanded="false"> <h3>How long will the system last?</h3> <svg class="qa__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg> </button> <div class="qa__a"><div><p>Fifteen to twenty years is typical for a system that was sized correctly and serviced annually. Skipping the service is what shortens it. Clogged filters make the compressor work harder, and the compressor is the expensive part.</p></div></div> </div> <div class="qa rv"> <button class="qa__q" aria-expanded="false"> <h3>Do you repair systems you did not install?</h3> <svg class="qa__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg> </button> <div class="qa__a"><div><p>Yes. We service and repair any make, whoever fitted it. Same-day and next-day appointments are available for breakdowns, and we run a 24/7 out-of-hours line through the summer months.</p></div></div> </div> <div class="qa rv"> <button class="qa__q" aria-expanded="false"> <h3>Do you offer a maintenance plan?</h3> <svg class="qa__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg> </button> <div class="qa__a"><div><p>Our care plan covers the annual service, filter and coil cleaning, refrigerant and pressure checks and priority booking, spread over a manageable monthly payment. It keeps the manufacturer warranty valid and catches small faults before they turn into failures.</p></div></div> </div> <div class="qa rv"> <button class="qa__q" aria-expanded="false"> <h3>Which brands do you install?</h3> <svg class="qa__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg> </button> <div class="qa__a"><div><p>We are approved installers for Daikin and Mitsubishi Electric and accredited by Panasonic. We also fit Fujitsu, Toshiba, LG, Samsung, Mitsubishi Heavy Industries and Midea where they suit the room better.</p></div></div> </div> <div class="qa rv"> <button class="qa__q" aria-expanded="false"> <h3>How long does the installation take?</h3> <svg class="qa__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg> </button> <div class="qa__a"><div><p>A single wall-mounted unit is usually a one-day job. A two or three room multi-split takes two to three days depending on pipe runs and access. We agree the schedule at survey so you know exactly which days we need to be in the house.</p></div></div> </div> </div>
+  </div>
+
+  <div class="shell ctapair">
+    <a class="btn btn--amber" href="#quote">Get A Free Quote</a>
+    <a class="btn btn--ghost" href="#quote">Speak To Our Experts</a>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     11 — CONTACT + FINAL CTA
+     ========================================================================== -->
+<section class="section band rule" id="quote">
+  <div class="shell">
+    <div class="contact">
+      <div>
+        <span class="eyebrow rv-l">Free Consultation</span>
+        <h2 class="h2 rv-l" style="transition-delay:.06s;margin-bottom:18px">Ready for air conditioning?</h2>
+        <p class="lead rv-l" style="transition-delay:.12s">
+          Send us a short message. A local specialist will come back within 24 hours to book
+          your free home survey, with no obligation and no pushy follow-ups.
+        </p>
+
+        <div class="rv-l" style="transition-delay:.18s">
+          <a class="crow" href="tel:01632960300">
+            <span class="crow__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+            <span><small>Phone Support</small><b>01632 960 300</b></span>
+          </a>
+          <a class="crow" href="#wbt-ops">
+            <span class="crow__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+            <span><small>Office</small><b>12 Cooper Row, London EC1A 1BB</b></span>
+          </a>
+          <div class="crow">
+            <span class="crow__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10.5c0 6-8 11.5-8 11.5S4 16.5 4 10.5a8 8 0 1 1 16 0z"/><circle cx="12" cy="10.3" r="2.9"/></svg></span>
+            <span><small>Office HQ</small><b>Aircon House, London, EC1A 1BB</b></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="map rv-r" role="img" aria-label="Map showing Aircon head office in London and surrounding coverage areas">
+        <!-- Fictional street map. Two rotated street grids, a river, parks, a ring
+             road and a motorway — drawn, not tiled, so nothing is licensed. -->
+        <svg class="map__svg" viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs>
+            <clipPath id="mClip"><rect width="600" height="450"/></clipPath>
+            <pattern id="mGridA" width="47" height="39" patternUnits="userSpaceOnUse" patternTransform="rotate(9)">
+              <path d="M0 0H47M0 0V39" fill="none" stroke="#1B2937" stroke-width="1.5"/>
+            </pattern>
+            <pattern id="mGridB" width="56" height="45" patternUnits="userSpaceOnUse" patternTransform="rotate(-14)">
+              <path d="M0 0H56M0 0V45" fill="none" stroke="#1B2937" stroke-width="1.5"/>
+            </pattern>
+            <pattern id="mGridC" width="34" height="30" patternUnits="userSpaceOnUse" patternTransform="rotate(28)">
+              <path d="M0 0H34M0 0V30" fill="none" stroke="#182533" stroke-width="1.2"/>
+            </pattern>
+          </defs>
+
+          <g clip-path="url(#mClip)">
+            <rect width="600" height="450" fill="#0A1119"/>
+
+            <!-- street grids: different quarters, different angles -->
+            <rect x="0" y="0"   width="600" height="238" fill="url(#mGridA)"/>
+            <rect x="0" y="238" width="330" height="212" fill="url(#mGridB)"/>
+            <rect x="330" y="238" width="270" height="212" fill="url(#mGridC)"/>
+
+            <!-- parks -->
+            <path d="M58 40 L166 26 L196 92 L118 130 L50 100 Z" fill="#122318" stroke="#1C3626" stroke-width="1.3"/>
+            <path d="M430 336 L534 320 L558 388 L458 404 Z" fill="#122318" stroke="#1C3626" stroke-width="1.3"/>
+            <circle cx="212" cy="392" r="34" fill="#122318" stroke="#1C3626" stroke-width="1.3"/>
+
+            <!-- river -->
+            <path d="M-20 338 C 108 306 178 368 288 332 S 470 256 620 278"
+                  fill="none" stroke="#0E2938" stroke-width="26" stroke-linecap="round"/>
+            <path d="M-20 338 C 108 306 178 368 288 332 S 470 256 620 278"
+                  fill="none" stroke="#143C52" stroke-width="2" opacity=".8"/>
+
+            <!-- A-roads -->
+            <g fill="none" stroke="#2A3E51" stroke-width="4" stroke-linecap="round">
+              <path d="M-10 168 C 130 150 240 196 360 178 S 540 128 620 146"/>
+              <path d="M214 -10 C 234 118 194 242 238 460"/>
+              <path d="M472 -10 C 452 128 498 250 470 460"/>
+              <path d="M-10 258 H620"/>
+            </g>
+
+            <!-- ring road -->
+            <ellipse cx="300" cy="225" rx="152" ry="119" fill="none" stroke="#334A5F" stroke-width="4.5"/>
+
+            <!-- motorway -->
+            <path d="M-10 58 C 160 96 300 28 620 94" fill="none" stroke="#3C5670" stroke-width="6.5" stroke-linecap="round"/>
+            <path d="M-10 58 C 160 96 300 28 620 94" fill="none" stroke="#51728F" stroke-width="1.5" stroke-dasharray="11 11"/>
+
+            <!-- railway -->
+            <path d="M-10 404 C 150 374 322 426 620 370" fill="none" stroke="#22323F" stroke-width="2.6" stroke-dasharray="9 7"/>
+
+            <!-- street labels -->
+            <g fill="#5A6A7C" font-family="Outfit,sans-serif" font-size="8.5" opacity=".85">
+              <text x="44" y="52" transform="rotate(-7 44 52)">CO&#8203;OPER&#160;ROW</text>
+              <text x="392" y="150" transform="rotate(-6 392 150)">A1042</text>
+              <text x="96" y="252" transform="rotate(-1 96 252)">HOLBORN VIADUCT</text>
+              <text x="470" y="248" transform="rotate(-2 470 248)">EAST&#160;ROW</text>
+              <text x="252" y="86" transform="rotate(6 252 86)">M11</text>
+            </g>
+            <!-- centre glow so the HQ pin reads as the focus -->
+            <circle cx="300" cy="225" r="92" fill="#5BC8E8" fill-opacity=".06"/>
+          </g>
+        </svg>
+
+        <span class="map__tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10.5c0 6-8 11.5-8 11.5S4 16.5 4 10.5a8 8 0 1 1 16 0z"/></svg></span>
+
+        <span class="map__hub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10.5c0 6-8 11.5-8 11.5S4 16.5 4 10.5a8 8 0 1 1 16 0z"/><circle cx="12" cy="10.3" r="2.9"/></svg></span>
+
+        <span class="mpin" style="left:41%;top:28%;--f:7s"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 22s8-5.5 8-11.5a8 8 0 1 0-16 0C4 16.5 12 22 12 22z"/></svg>St Albans</span>
+        <span class="mpin" style="left:70%;top:38%;--f:8s;--d:-1.4s"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 22s8-5.5 8-11.5a8 8 0 1 0-16 0C4 16.5 12 22 12 22z"/></svg>Romford</span>
+        <span class="mpin" style="left:22%;top:56%;--f:7.6s;--d:-2.6s"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 22s8-5.5 8-11.5a8 8 0 1 0-16 0C4 16.5 12 22 12 22z"/></svg>Ealing</span>
+        <span class="mpin" style="left:64%;top:66%;--f:8.4s;--d:-3.8s"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 22s8-5.5 8-11.5a8 8 0 1 0-16 0C4 16.5 12 22 12 22z"/></svg>Bromley</span>
+        <span class="mpin" style="left:58%;top:85%;--f:7.2s;--d:-5s"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 22s8-5.5 8-11.5a8 8 0 1 0-16 0C4 16.5 12 22 12 22z"/></svg>Croydon</span>
+
+        <div class="map__card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10.5c0 6-8 11.5-8 11.5S4 16.5 4 10.5a8 8 0 1 1 16 0z"/><circle cx="12" cy="10.3" r="2.9"/></svg>
+          <span><b>Aircon HQ</b><span>London, EC1A 1BB</span></span>
+        </div>
+        <div class="map__zoom"><button type="button" aria-label="Zoom in">+</button><button type="button" aria-label="Zoom out">−</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta__bg" aria-hidden="true">
+    <img src="images/cw-cta.jpg" alt="" width="1600" height="1068" loading="lazy" decoding="async">
+  </div>
+  <div class="cta__scrim" aria-hidden="true"></div>
+
+  <div class="shell cta__in">
+    <div class="rv-l">
+      <h2>Ready for comfort in <em>every room?</em></h2>
+      <p>Join thousands of UK homeowners staying cool through summer and warm through winter on a single, efficient system.</p>
+    </div>
+    <div class="cta__btns rv-r">
+      <a class="btn btn--amber" href="#quote">Get A Free Quote
+        <svg class="btn__arrow" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="btn btn--ghost" href="tel:01632960300">Speak To Our Experts</a>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       12 — FOOTER
+       ====================================================================== -->
+  <footer class="foot">
+    <div class="shell">
+      <div class="foot__grid">
+        <div class="foot__brand">
+          <a class="brand" href="#top" aria-label="Aircon home">
+            <svg viewBox="0 0 32 32" aria-hidden="true">
+              <circle cx="16" cy="16" r="14.4" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".45"/>
+              <g fill="currentColor">
+                <path d="M16 14.4c-1.2-3.2-.5-5.9 2.1-8 2.9 1.5 3.7 4.2 2.3 7.6-1 .7-2.6 1-4.4.4z"/>
+                <path d="M16 14.4c-1.2-3.2-.5-5.9 2.1-8 2.9 1.5 3.7 4.2 2.3 7.6-1 .7-2.6 1-4.4.4z" transform="rotate(120 16 16)"/>
+                <path d="M16 14.4c-1.2-3.2-.5-5.9 2.1-8 2.9 1.5 3.7 4.2 2.3 7.6-1 .7-2.6 1-4.4.4z" transform="rotate(240 16 16)"/>
+                <circle cx="16" cy="16" r="2.5"/>
+              </g>
+            </svg>
+            <span class="brand__word">Aircon</span>
+          </a>
+          <p>Keeping UK homes and workplaces comfortable all year with efficient, quietly engineered air conditioning.</p>
+          <div class="social">
+            <a href="#" aria-label="Aircon on X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.2 2.3h3.4l-7.4 8.5 8.7 11.5h-6.8l-5.3-7-6.1 7H1.3l7.9-9.1L.9 2.3h7l4.8 6.4 5.5-6.4zm-1.2 17.9h1.9L7.1 4.2H5.1L17 20.2z"/></svg></a>
+            <a href="#" aria-label="Aircon on Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a>
+            <a href="#" aria-label="Aircon on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+            <a href="#" aria-label="Aircon on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9.5 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.3-.02-2.96-1.8-2.96-1.8 0-2.08 1.4-2.08 2.86V21h-4z"/></svg></a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Company</h4>
+          <div class="foot__links">
+            <a href="#why">About Our Team</a>
+            <a href="#">Careers</a>
+            <a href="#gallery">Case Studies</a>
+            <a href="#">Latest News</a>
+            <a href="#promise">Our Guarantees</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Systems</h4>
+          <div class="foot__links">
+            <a href="#systems">Wall-Mounted Splits</a>
+            <a href="#systems">Multi-Room Systems</a>
+            <a href="#systems">Ducted &amp; Cassette</a>
+            <a href="#systems">Commercial Cooling</a>
+            <a href="#faq">Servicing &amp; Repair</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Contact</h4>
+          <div class="foot__c">
+            <div class="fc">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10.5c0 6-8 11.5-8 11.5S4 16.5 4 10.5a8 8 0 1 1 16 0z"/><circle cx="12" cy="10.3" r="2.9"/></svg>
+              <span>Aircon House, 12 Cooper Row<br>London, EC1A 1BB</span>
+            </div>
+            <div class="fc">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+              <a href="tel:01632960300">01632 960 300</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="foot__bar">
+        <span>&copy; 2026 We Build Trades Ltd. Demonstration template, sample content.</span>
+        <nav aria-label="Legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  <div class="wbt-footer" id="wbt-ops">
+ <div class="wbt__in">
+  <h2 class="wbt-footer__h" id="wbtOpsH">Find us, call us, check us</h2>
+  <div class="wbt-ops">
+   <div><h4>Opening hours</h4><p>Monday to Friday &nbsp;08:00-18:00<br>Saturday &nbsp;08:00-13:00<br>Sunday &nbsp;closed<br><strong>24/7 emergency line</strong> for breakdowns</p></div>
+   <div><h4>Office</h4><address>Unit 4, Cooper Works<br>12 Cooper Row<br>London EC1A 1BB</address></div>
+   <div><h4>Contact</h4><p><a href="tel:01632960300">01632 960 300</a></p></div>
+   <div><h4>Accreditations</h4><p><strong>Accredited since 2015.</strong> REFCOM Elite &middot; F Gas &middot; MCS &middot; SafeContractor &middot; CHAS &middot; Daikin &amp; Mitsubishi Electric approved installer.</p></div>
+   <div><h4>Finance</h4><p>Aircon Ltd is an Introducer Appointed Representative of a regulated credit broker. The credit broker is not a lender (FRN 111111). Finance is available subject to status. The rate offered is always provisional and will depend upon your personal circumstances, the loan amount and the term.</p></div></div>
+  <p class="wbt-areas"><strong>Areas we cover.</strong> Croydon, Bromley, Kingston upon Thames, Richmond, Sutton, Epsom, Orpington, Sevenoaks, Dartford, Watford, Enfield and Ilford, plus the rest of Greater London and the Home Counties. Not on the list? Call us; we travel further than it suggests.</p>
+  <p class="wbt-legal">Registered in England &amp; Wales No. 11111111 &middot; VAT No. 111 1111 11 &middot; REFCOM registration F-GAS/1111/1111 &middot; &pound;5m public liability and &pound;10m employer liability cover.</p>
+ </div>
+</div></footer>
+</section>
+
+<script>
+(function(){
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- marquee: duplicate the row so the -50% loop is seamless ---------- */
+  var row = document.getElementById('mqRow');
+  if (row) row.parentNode.appendChild(row.cloneNode(true));
+
+  /* ---- hold the hero video still for reduced-motion users --------------- */
+  if (reduce){
+    var hv = document.querySelector('video.hero__photo');
+    if (hv){ hv.removeAttribute('autoplay'); hv.pause(); }
+  }
+
+  /* ---- page loader: clear on load, with a timeout so a slow font or image
+          can never leave the page hidden ------------------------------------ */
+  var loader = document.getElementById('loader');
+  function hideLoader(){
+    if (!loader || loader.classList.contains('is-done')) return;
+    loader.classList.add('is-done');
+    document.body.classList.remove('is-loading');
+  }
+  window.addEventListener('load', function(){ setTimeout(hideLoader, 260); });
+  setTimeout(hideLoader, 3500);
+
+  /* ---- nav: blur-on-scroll + reading progress + parallax + back-to-top --- */
+  var nav = document.getElementById('nav'), prog = document.getElementById('prog'),
+      totop = document.getElementById('totop'), heroPhoto = document.querySelector('.hero__photo'),
+      ticking = false;
+  function onScroll(){
+    var y = window.scrollY || 0;
+    nav.classList.toggle('is-stuck', y > 12);
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    prog.style.transform = 'scaleX(' + (max > 0 ? Math.min(y / max, 1) : 0) + ')';
+    totop.classList.toggle('is-on', y > 700);
+    if (heroPhoto && !reduce && y < window.innerHeight * 1.3){
+      heroPhoto.style.transform = 'translate3d(0,' + (y * 0.16) + 'px,0) scale(1.08)';
+    }
+    ticking = false;
+  }
+  window.addEventListener('scroll', function(){
+    if (!ticking){ ticking = true; requestAnimationFrame(onScroll); }
+  }, {passive:true});
+  onScroll();
+
+  /* ---- mobile drawer --------------------------------------------------- */
+  var burger = document.getElementById('burger'), drawer = document.getElementById('drawer');
+  function closeDrawer(){
+    drawer.classList.remove('is-open');
+    burger.classList.remove('is-open');
+    burger.setAttribute('aria-expanded','false');
+    burger.setAttribute('aria-label','Open menu');
+  }
+  burger.addEventListener('click', function(){
+    var open = drawer.classList.toggle('is-open');
+    burger.classList.toggle('is-open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  drawer.addEventListener('click', function(e){ if (e.target.tagName === 'A') closeDrawer(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeDrawer(); });
+  window.addEventListener('resize', function(){ if (window.innerWidth > 1080) closeDrawer(); });
+
+  /* ---- pricing: selection moves the amber border, tint and glow --------- */
+  var plans = Array.prototype.slice.call(document.querySelectorAll('.plan'));
+  function selectPlan(card){
+    plans.forEach(function(p){
+      var on = (p === card);
+      p.classList.toggle('is-sel', on);
+      p.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+  }
+  plans.forEach(function(card){
+    card.addEventListener('click', function(){ selectPlan(card); });
+    card.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); selectPlan(card); }
+    });
+  });
+
+  /* ---- FAQ accordion (one open at a time) ------------------------------ */
+  document.querySelectorAll('.qa').forEach(function(qa){
+    var btn = qa.querySelector('.qa__q');
+    btn.addEventListener('click', function(){
+      var open = qa.classList.contains('is-open');
+      document.querySelectorAll('.qa.is-open').forEach(function(o){
+        o.classList.remove('is-open');
+        o.querySelector('.qa__q').setAttribute('aria-expanded','false');
+      });
+      if (!open){ qa.classList.add('is-open'); btn.setAttribute('aria-expanded','true'); }
+    });
+  });
+
+  /* ---- active nav link on scroll --------------------------------------- */
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav__links a'));
+  /* Placeholder nav items carry href="#", and querySelector('#') throws a
+     SyntaxError that would take the rest of this script -- including the
+     scroll reveal below -- down with it. Only resolve real fragment links. */
+  var targets = links.map(function(a){
+    var h = a.getAttribute('href') || '';
+    if (h.length < 2 || h.charAt(0) !== '#') return null;
+    try { return document.querySelector(h); } catch (e) { return null; }
+  });
+  if ('IntersectionObserver' in window){
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (!en.isIntersecting) return;
+        var i = targets.indexOf(en.target);
+        if (i < 0) return;
+        links.forEach(function(a){ a.classList.remove('is-active'); });
+        links[i].classList.add('is-active');
+      });
+    }, {rootMargin:'-45% 0px -50% 0px'});
+    targets.forEach(function(t){ if (t) spy.observe(t); });
+  }
+
+  /* ---- scroll reveal --------------------------------------------------- */
+  var revealables = document.querySelectorAll('.rv,.rv-l,.rv-r,.rv-s');
+  if (reduce || !('IntersectionObserver' in window)){
+    revealables.forEach(function(el){ el.classList.add('is-in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries, obs){
+      entries.forEach(function(en){
+        if (!en.isIntersecting) return;
+        en.target.classList.add('is-in');
+        obs.unobserve(en.target);
+      });
+    }, {threshold:.14, rootMargin:'0px 0px -8% 0px'});
+    revealables.forEach(function(el){ io.observe(el); });
+  }
+
+  /* ---- stat counters --------------------------------------------------- */
+  var stats = document.querySelectorAll('[data-count]');
+  function run(el){
+    var to = parseFloat(el.dataset.count),
+        dec = parseInt(el.dataset.dec || '0', 10),
+        suffix = el.dataset.suffix || '',
+        t0 = null, dur = 1500;
+    function frame(ts){
+      if (t0 === null) t0 = ts;
+      var p = Math.min((ts - t0) / dur, 1),
+          eased = 1 - Math.pow(1 - p, 3),
+          v = to * eased;
+      el.textContent = (dec ? v.toFixed(dec) : Math.round(v).toLocaleString('en-GB')) + suffix;
+      if (p < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+  if (reduce || !('IntersectionObserver' in window)){
+    stats.forEach(function(el){
+      var d = parseInt(el.dataset.dec || '0', 10);
+      el.textContent = (d ? parseFloat(el.dataset.count).toFixed(d)
+                          : parseFloat(el.dataset.count).toLocaleString('en-GB')) + (el.dataset.suffix || '');
+    });
+  } else {
+    var so = new IntersectionObserver(function(entries, obs){
+      entries.forEach(function(en){
+        if (!en.isIntersecting) return;
+        run(en.target); obs.unobserve(en.target);
+      });
+    }, {threshold:.5});
+    stats.forEach(function(el){ so.observe(el); });
+  }
+})();
+</script>
+
+<script>
+/* Reviews carousel: the arrows move the track one card at a time and it wraps
+   at both ends, so it loops rather than dead-ending. Scrolling itself is left
+   to CSS (scroll-behavior), which is what lets the stylesheet honour
+   prefers-reduced-motion instead of animating regardless. */
+(function(){
+  var track = document.getElementById('revTrack');
+  if(!track) return;
+  var prev = document.getElementById('revPrev');
+  var next = document.getElementById('revNext');
+
+  function step(){
+    var card = track.querySelector('.review');
+    if(!card) return track.clientWidth;
+    var cs = getComputedStyle(track);
+    var gap = parseFloat(cs.columnGap || cs.gap) || 0;
+    return card.getBoundingClientRect().width + gap;
+  }
+  function atEnd(){ return track.scrollLeft + track.clientWidth >= track.scrollWidth - 4; }
+  function atStart(){ return track.scrollLeft <= 4; }
+  function go(dir){
+    if(dir > 0 && atEnd())   { track.scrollTo({left:0}); return; }
+    if(dir < 0 && atStart()) { track.scrollTo({left:track.scrollWidth}); return; }
+    track.scrollBy({left: dir * step()});
+  }
+  if(prev) prev.addEventListener('click', function(){ go(-1); hold(); });
+  if(next) next.addEventListener('click', function(){ go(1);  hold(); });
+
+  /* advance on its own, pausing on hover, on focus, and when the tab is hidden */
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var timer = null, paused = false;
+  function start(){ if(!reduce && !timer) timer = setInterval(function(){ if(!paused) go(1); }, 5000); }
+  function stop(){ if(timer){ clearInterval(timer); timer = null; } }
+  function hold(){ stop(); start(); }
+  track.addEventListener('mouseenter', function(){ paused = true; });
+  track.addEventListener('mouseleave', function(){ paused = false; });
+  track.addEventListener('focusin',   function(){ paused = true; });
+  track.addEventListener('focusout',  function(){ paused = false; });
+  document.addEventListener('visibilitychange', function(){ document.hidden ? stop() : start(); });
+  start();
+})();
+</script>
+</body>
+</html>
