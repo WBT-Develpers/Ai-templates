@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roofing: Pitched &amp; Flat Roof Installation, Repairs and Roofline</title>
+<meta name="description" content="NFRC and CoRC accredited roofers. Pitched and flat roof installation, repairs, Velux windows and roofline, with a 15 year workmanship guarantee backed by a 10 year insurance backed guarantee.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  /* One side gutter for the whole page. It was an 80px literal repeated across
+     the section rule, the nav, the hero, the stats pill, the guarantee panel
+     and three footer rows, plus the negative margin that lets .stats-row-warm
+     break full bleed out of its section - that one has to track the gutter
+     exactly or the strip stops reaching the edges. Change this single value to
+     widen or tighten the margins. Below 1100px the mobile block takes over
+     with its own tighter 24px. */
+  :root { --gut: 112px; }
+  /* smooth-scroll is applied per click in JS (see "13. In-page anchor
+     links"), not globally here: a global rule also animates the browser's
+     own scroll-to-hash on page load, so reloading on #reviews visibly
+     scrolled up to the top and slid back down to it. */
+  body { font-family: 'Poppins', sans-serif; background: #faf6f0; color: #0D4453; overflow-x: hidden; }
+
+  /* Grain overlay */
+  body::before { content:''; position:fixed; inset:0; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events:none; z-index:0; }
+
+
+  /* LOGO MARQUEE: real marks, two labelled columns, as in the approved templates */
+  .lsplit { display:grid; grid-template-columns:1fr 1fr; gap:clamp(24px,2.6vw,44px); padding:0 clamp(20px,2.2vw,40px); }
+  /* the track is width:max-content and a 1fr column takes its automatic minimum
+     from min-content, so without this the track blows the column off-screen */
+  .lsplit-col { min-width:0; }
+  .lstrip-label { font-size:14px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase;
+    color:#45413e; text-align:center; margin-bottom:16px; }
+  .lstrip-mask { overflow:hidden; }
+  .lstrip-track { display:flex; width:max-content; animation:lmarq linear infinite; }
+  .lstrip-grp { display:flex; align-items:center; gap:12px; padding-right:12px; }
+  .ltile { width:126px; height:60px; background:#fff; border:1px solid #a09382; border-radius:8px;
+    display:flex; align-items:center; justify-content:center; padding:9px 12px; flex:0 0 auto; }
+  .ltile img { max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; }
+  @keyframes lmarq { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+  @media (prefers-reduced-motion:reduce) { .lstrip-track { animation:none; } }
+  @media (max-width:900px) { .lsplit { grid-template-columns:1fr; gap:28px; } }
+  /* ── NAV ── */
+  nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(250,246,240,0.9); backdrop-filter:blur(16px); border-bottom:1px solid #a09382; display:flex; align-items:center; justify-content:space-between; padding:0 var(--gut); height:93px; transition:background 0.3s, box-shadow 0.3s; }
+  nav.stuck { background:rgba(250,246,240,0.98); box-shadow:0 4px 24px rgba(39,37,34,0.08); }
+  .nav-logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .nav-logo-icon { color:#943209; font-size:22px; }
+  .nav-logo span { font-family:'Poppins',sans-serif; font-weight:400; font-size:22px; color:#0D4453; }
+  .nav-links { display:flex; gap:36px; }
+  .nav-links a { font-size:17px; font-weight:400; color:#332f2d; text-decoration:none; transition:color 0.2s; }
+  .nav-links a.active, .nav-links a:hover { color:#943209; font-weight:600; }
+  .btn-primary { background:#c2410c; color:#fff; font-family:'Poppins',sans-serif; font-weight:700; font-size:16px; border:none; padding:12px 24px; border-radius:6px; cursor:pointer; text-decoration:none; transition:background 0.2s; }
+  .btn-primary:hover { background:#9a3510; }
+  .btn-secondary { background:transparent; color:#0D4453; font-family:'Poppins',sans-serif; font-weight:600; font-size:16px; border:1px solid #d6cdc5; padding:12px 24px; border-radius:8px; cursor:pointer; text-decoration:none; transition:border-color 0.2s; }
+  .btn-secondary:hover { border-color:#943209; color:#943209; }
+
+
+  /* CTA PAIR: closes each content section, as in the approved templates */
+  .ctapair { display:flex; flex-wrap:wrap; gap:14px; margin-top:44px; }
+  .ctapair .btn-primary-lg, .ctapair .btn-secondary-lg { text-decoration:none; }
+  /* ── HERO ── */
+  /* was min-height:100vh, which handed the whole first screen to the hero */
+  #hero { padding-top:93px; display:flex; align-items:stretch;
+    min-height:clamp(540px, 72vh, 740px); }
+  /* the 80px here is an indent INSIDE the hero, on top of the section's gutter,
+     so it stays a literal: scale it with --gut too and the hero copy moves
+     twice as far in as every other section when the gutter is widened. */
+  .hero-left { flex:0 0 50%; min-width:0; max-width:50%; padding:56px 60px 56px 80px; display:flex; flex-direction:column; justify-content:center; gap:22px; }
+  .hero-eyebrow { display:flex; align-items:center; gap:10px; }
+  .hero-eyebrow-line { width:24px; height:2px; background:#c2410c; }
+  .hero-eyebrow span { font-size:15px; font-weight:700; color:#943209; text-transform:uppercase; letter-spacing:0.1em; }
+  .hero-headline { font-family:'Poppins',sans-serif; font-weight:400; font-size:62px; line-height:1.1; color:#0D4453; }
+  .hero-sub { font-size:19px; font-weight:400; line-height:1.6; color:#332f2d; max-width:560px; }
+  .hero-actions { display:flex; gap:16px; align-items:center; }
+  .btn-primary-lg { background:#c2410c; color:#fff; font-family:'Poppins',sans-serif; font-weight:700; font-size:17px; border:none; padding:16px 32px; border-radius:8px; cursor:pointer; text-decoration:none; transition:background 0.2s; }
+  .btn-primary-lg:hover { background:#9a3510; }
+  .btn-secondary-lg { background:transparent; color:#0D4453; font-family:'Poppins',sans-serif; font-weight:600; font-size:17px; border:1px solid #d6cdc5; padding:16px 32px; border-radius:8px; cursor:pointer; text-decoration:none; transition:border-color 0.2s; }
+  /* Trust pills + Google review: canonical hero elements shared across the suite */
+  .hero-trust-pills { display:flex; gap:24px; flex-wrap:wrap; }
+  .trust-pill { display:flex; align-items:center; gap:6px; font-size:15px; color:#332f2d; font-weight:500; }
+  .trust-dot { width:8px; height:8px; background:#c2410c; border-radius:4px; flex-shrink:0; }
+  .hero-grev { display:inline-flex; align-items:center; gap:9px; width:fit-content; max-width:100%; background:#fff; border:1px solid #a09382; border-radius:100px; padding:9px 16px; text-decoration:none; transition:border-color 0.2s, transform 0.2s; }
+  .hero-grev:hover { border-color:#c9bfb3; transform:translateY(-1px); }
+  .grev-g { width:16px; height:16px; flex-shrink:0; }
+  .grev-stars { color:#fbbc05; font-size:15px; letter-spacing:0.5px; flex-shrink:0; }
+  .grev-txt { font-size:15px; color:#332f2d; }
+  .grev-txt b { color:#0D4453; font-weight:700; }
+  .hero-right { flex:0 0 50%; max-width:50%; position:relative; overflow:hidden; }
+  /* The image was IN FLOW with height:100%, which against a parent of no
+     definite height resolves to auto: so a 1024x1024 source drove the hero
+     to be as tall as the image column was wide. That is why the hero grew
+     with the screen: 884px at 1600 but 1204px at 1920. Taking it out of
+     flow lets the text column and min-height decide the height, and the
+     image simply covers whatever that turns out to be. */
+  /* width/height:100% is a percentage of #hero's height, and #hero has no
+     explicit (non-auto) height - only a flex-stretched used height - which
+     some engines fail to resolve percentages against, leaving the image
+     short on the right/bottom. inset:0 with width/height left auto solves
+     top/right/bottom/left directly against the stretched box instead, which
+     always resolves. */
+  .hero-right img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 42%; }
+
+  /* ── STATS PILL ── */
+  #stats-pill { background:#faf6f0; padding:48px var(--gut); display:flex; justify-content:center; }
+  .stats-pill-inner { background:#fff; box-shadow:0 12px 16px rgba(39,37,34,0.03); border-radius:100px; padding:24px 48px; display:flex; align-items:center; gap:0; width:100%; max-width:1280px; justify-content:space-between; }
+  .stat-item { display:flex; align-items:center; gap:16px; }
+  .stat-num { font-family:'Poppins',sans-serif; font-weight:400; font-size:40px; color:#943209; line-height:1; }
+  .stat-label { font-size:16px; font-weight:600; color:#332f2d; max-width:160px; line-height:1.3; }
+
+  /* ── TRUST MARQUEE ── */
+  #trust-marquee { background:#fff5ec; padding:28px 0; border-top:1px solid #a09382; border-bottom:1px solid #a09382; overflow:hidden; }
+  .marquee-label { text-align:center; font-size:13px; font-weight:700; color:#8a7e78; text-transform:uppercase; letter-spacing:0.12em; margin-bottom:18px; }
+  .marquee-track-wrap { overflow:hidden; }
+  .marquee-track { display:flex; gap:48px; animation:marquee-scroll 30s linear infinite; width:max-content; align-items:center; }
+  .marquee-track:hover { animation-play-state:paused; }
+  @keyframes marquee-scroll { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+  .marquee-item { display:flex; align-items:center; gap:10px; flex-shrink:0; white-space:nowrap; }
+  .marquee-badge { background:#fff; border:1px solid #a09382; border-radius:8px; padding:8px 18px; font-size:15px; font-weight:600; color:#332f2d; }
+  .marquee-badge.accent { border-color:#943209; color:#943209; }
+  .marquee-stars { color:#943209; font-size:16px; letter-spacing:2px; }
+  .marquee-rating-text { font-size:15px; font-weight:500; color:#332f2d; }
+  .marquee-sep { width:1px; height:28px; background:#a09382; }
+
+  /* ── SECTION BASE ── */
+  .section-label { font-size:16px; font-weight:700; color:#943209; text-transform:uppercase; letter-spacing:0.1em; }
+  .section-title { font-family:'Poppins',sans-serif; font-weight:400; font-size:48px; line-height:1.1; color:#0D4453; }
+  section { padding:80px var(--gut); position:relative; z-index:1; }
+
+  /* ── PROCESS ── */
+  #process { background:#faf6f0; }
+  .process-header { text-align:center; margin-bottom:64px; display:flex; flex-direction:column; gap:12px; align-items:center; }
+  .process-steps-row { display:flex; flex-direction:column; gap:0; max-width:800px; margin:0 auto; }
+  .process-step { display:flex; gap:32px; align-items:flex-start; padding:28px 0; border-top:1px solid #a09382; }
+  .step-badge { background:#c2410c; color:#fff; font-size:13px; font-weight:700; padding:4px 10px; border-radius:100px; flex-shrink:0; margin-top:4px; }
+  .step-body h3 { font-family:'Poppins',sans-serif; font-weight:400; font-size:22px; color:#0D4453; margin-bottom:6px; }
+  .step-body p { font-size:17px; color:#332f2d; line-height:1.5; }
+
+  /* ── PRODUCT + STATS ── */
+  #product { background:#fff; }
+  .product-header { display:flex; flex-direction:column; gap:12px; margin-bottom:48px; }
+  .product-intro { font-size:17px; color:#332f2d; max-width:540px; line-height:1.5; }
+  .masonry-row { display:flex; gap:32px; margin-bottom:32px; }
+  .svc-card { flex:1; background:#fff; border-radius:12px; overflow:hidden; display:flex; flex-direction:column; }
+  .svc-card img { width:100%; height:260px; object-fit:cover; display:block; }
+  .svc-card.short img { height:220px; }
+  .svc-card-body { padding:24px; }
+  .svc-card-body h3 { font-family:'Poppins',sans-serif; font-weight:400; font-size:22px; color:#0D4453; margin-bottom:8px; }
+  .svc-card-body p { font-size:16px; color:#332f2d; line-height:1.5; }
+  .stats-row-warm { background:#c2410c; padding:48px var(--gut); display:flex; justify-content:space-between; align-items:center; margin:0 calc(var(--gut) * -1); }
+  .stat-warm { text-align:center; }
+  .stat-warm-num { font-family:'Poppins',sans-serif; font-weight:400; font-size:48px; color:#fff; line-height:1; }
+  .stat-warm-label { font-size:16px; font-weight:600; color:rgba(255,255,255,0.7); margin-top:6px; }
+
+  /* ── WHY US ── */
+  #why-us { background:#faf6f0; }
+  .why-layout { display:flex; gap:64px; align-items:center; }
+  .why-photo { width:520px; height:480px; border-radius:12px; object-fit:cover; flex-shrink:0; }
+  .why-content { flex:1; display:flex; flex-direction:column; gap:32px; }
+  .why-header { display:flex; flex-direction:column; gap:12px; }
+  .benefit-list { display:flex; flex-direction:column; gap:24px; }
+  .benefit-row { display:flex; gap:16px; align-items:flex-start; }
+  .benefit-num { background:rgba(194,65,12,0.1); color:#943209; font-size:15px; font-weight:700; width:24px; height:24px; border-radius:100px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .benefit-text h4 { font-family:'Poppins',sans-serif; font-weight:400; font-size:19px; color:#0D4453; margin-bottom:4px; }
+  .benefit-text p { font-size:16px; color:#332f2d; line-height:1.5; }
+
+  /* ── REVIEWS ── */
+  #reviews { background:#fff; }
+  .reviews-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; margin-top:48px; }
+  .review-card { background:#fff; border:1px solid #a09382; border-radius:8px; padding:32px; display:flex; flex-direction:column; gap:16px; }
+  .review-card.featured { background:#c2410c; border-color:#943209; }
+  .review-text { font-family:'Poppins',sans-serif; font-weight:400; font-size:18px; line-height:1.6; color:#0D4453; }
+  .review-card.featured .review-text { color:#fff; }
+  .reviewer-name { font-weight:700; font-size:17px; color:#0D4453; }
+  .review-card.featured .reviewer-name { color:#fff; }
+  .reviewer-loc { font-size:15px; color:#45413e; text-transform:uppercase; letter-spacing:0.1em; margin-top:2px; }
+  .review-card.featured .reviewer-loc { color:rgba(255,255,255,0.7); }
+  .review-extra { display:flex; gap:16px; grid-column:span 2; }
+  .review-extra .review-card { flex:1; }
+
+  /* ── GALLERY ── */
+  #gallery { background:#faf6f0; }
+  .gallery-heading { font-family:'Poppins',sans-serif; font-weight:400; font-size:48px; color:#0D4453; margin-top:10px; margin-bottom:48px; }
+  .gallery-grid { display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:260px 260px; gap:16px; }
+  .gallery-item { border-radius:12px; overflow:hidden; position:relative; }
+  .gallery-item img { width:100%; height:100%; object-fit:cover; transition:transform 0.5s; display:block; }
+  .gallery-item:hover img { transform:scale(1.06); }
+  .gallery-item.tall { grid-row:span 2; }
+  .gallery-overlay { position:absolute; bottom:0; left:0; right:0; padding:20px; background:linear-gradient(to top,rgba(39,37,34,0.8) 0%,transparent 100%); opacity:0; transition:opacity 0.3s; }
+  .gallery-item:hover .gallery-overlay { opacity:1; }
+  .gallery-overlay span { font-size:15px; font-weight:600; color:#fff; }
+
+  /* ── GUARANTEE ── */
+  #guarantee { padding:0; background:#0D4453; }
+  .guarantee-inner { display:flex; min-height:280px; }
+  .guarantee-text { flex:1; padding:72px var(--gut); display:flex; flex-direction:column; justify-content:center; gap:20px; }
+  .guarantee-label-tag { font-size:16px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:#943209; }
+  .guarantee-title { font-family:'Poppins',sans-serif; font-weight:400; font-size:42px; color:#fff; line-height:1.1; }
+  .guarantee-sub { font-size:18px; color:#45413e; line-height:1.6; max-width:540px; }
+  .g-badges { display:flex; gap:12px; flex-wrap:wrap; margin-top:8px; }
+  .g-badge { background:rgba(194,65,12,0.15); border:1px solid rgba(194,65,12,0.4); border-radius:8px; padding:10px 20px; font-size:15px; font-weight:600; color:#943209; }
+  .guarantee-right { flex:0 0 380px; background:#c2410c; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; }
+  .guarantee-num { font-family:'Poppins',sans-serif; font-weight:400; font-size:80px; color:#fff; line-height:1; }
+  .guarantee-num-label { font-size:18px; font-weight:600; color:rgba(255,255,255,0.8); text-align:center; }
+
+  /* ── FAQ ── */
+  #faq { background:#faf6f0; }
+  .faq-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:48px; }
+  .faq-card { background:#fff; border:1px solid #a09382; border-radius:8px; padding:24px; }
+  .faq-card h4 { font-family:'Poppins',sans-serif; font-weight:400; font-size:19px; color:#0D4453; margin-bottom:12px; }
+  .faq-card p { font-size:16px; color:#332f2d; line-height:1.5; }
+
+  /* ── FINAL CTA ── */
+  #final-cta { position:relative; min-height:599px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:28px; text-align:center; overflow:hidden; }
+  #final-cta::before { content:''; position:absolute; inset:0; background:url('images/cs-cta-rooftops.jpg') center/cover; }
+  #final-cta::after { content:''; position:absolute; inset:0; background:rgba(28,20,16,0.65); }
+  .final-cta-inner { position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; gap:24px; }
+  .cta-tag { background:#c2410c; color:#fff; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; padding:6px 16px; border-radius:4px; }
+  .cta-heading { font-family:'Poppins',sans-serif; font-weight:400; font-size:52px; color:#fff; line-height:1.1; max-width:800px; }
+  .cta-sub { font-size:19px; color:#e6dfd5; line-height:1.6; max-width:600px; }
+  .cta-phone { font-family:'Poppins',sans-serif; font-weight:400; font-size:26px; color:#fff; }
+  .cta-actions { display:flex; gap:20px; align-items:center; }
+
+  /* ── FOOTER ── */
+  #footer { background:#fff; border-top:1px solid #a09382; }
+  .footer-cols { display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:48px; padding:64px var(--gut) 40px; }
+  .footer-col-brand { flex:1; display:flex; flex-direction:column; gap:16px; }
+  .footer-brand-name { font-family:'Poppins',sans-serif; font-weight:400; font-size:22px; color:#0D4453; }
+  .footer-brand-desc { font-size:16px; color:#332f2d; line-height:1.6; }
+  .footer-col { flex:1; }
+  .footer-col-title { font-size:16px; font-weight:700; color:#943209; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px; }
+  .footer-col a { display:block; font-size:16px; color:#332f2d; text-decoration:none; margin-bottom:12px; transition:color 0.2s; }
+  /* spans carry the address and opening hours; without display:block they ran
+     together into one paragraph, unlike the <a> items beside them */
+  .footer-col span { display:block; font-size:16px; color:#332f2d; margin-bottom:12px; line-height:1.45; }
+  .footer-col a:hover { color:#943209; }
+  .footer-bottom { border-top:1px solid #a09382; padding:24px var(--gut); display:flex; justify-content:space-between; align-items:center; }
+  .footer-bottom p { font-size:15px; color:#45413e; }
+  .footer-legal { display:flex; gap:20px; }
+  .footer-legal a { font-size:15px; color:#45413e; text-decoration:none; }
+
+  /* ── REVEAL ── */
+  .reveal { opacity:0; transform:translateY(24px); transition:opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity:1; transform:none; }
+  .reveal-delay-1 { transition-delay:0.1s; }
+  .reveal-delay-2 { transition-delay:0.2s; }
+  .reveal-delay-3 { transition-delay:0.3s; }
+
+
+  /* ══ ROOFING2 ANIMATION SYSTEM: INK & HERITAGE ══ */
+
+  /* Page load: warm paper fade-in (no curtain, subtle)
+     Opacity only: do NOT animate filter on <body>. A non-none filter makes an
+     element the containing block for its position:fixed descendants, so
+     #main-nav anchored to the body instead of the viewport and scrolled away
+     with the page. animation-fill-mode:both left the final brightness(1)
+     applied permanently, so the breakage outlived the 0.8s fade. It also
+     mis-sized the fixed body::before noise overlay to the whole document
+     instead of the viewport. Opacity creates a stacking context but not a
+     containing block, so the fade itself is safe. */
+  body { animation: paper-appear 0.8s ease-out both; }
+  @keyframes paper-appear {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  /* Scroll reveal: horizontal alternating slide */
+  .reveal {
+    opacity: 0;
+    transform: translateX(-48px);
+    transition: opacity 0.75s cubic-bezier(0.16,1,0.3,1),
+                transform 0.75s cubic-bezier(0.16,1,0.3,1);
+  }
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(48px);
+    transition: opacity 0.75s cubic-bezier(0.16,1,0.3,1),
+                transform 0.75s cubic-bezier(0.16,1,0.3,1);
+  }
+  .reveal.visible, .reveal-right.visible { opacity: 1; transform: none; }
+  .reveal-delay-1 { transition-delay: 0.12s; }
+  .reveal-delay-2 { transition-delay: 0.24s; }
+  .reveal-delay-3 { transition-delay: 0.36s; }
+
+  /* Ink-draw underline on section headings */
+  .section-title { position: relative; display: inline-block; }
+  .section-title::after {
+    content: '';
+    position: absolute; bottom: -6px; left: 0; right: 100%;
+    height: 3px; background: #c2410c; border-radius: 2px;
+    transition: right 0.9s cubic-bezier(0.16,1,0.3,1);
+  }
+  .section-title.underline-drawn::after { right: 0; }
+
+  /* Hero headline: word-by-word float up */
+  .hero-word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(28px) rotate(2deg);
+    transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22,1,0.36,1);
+  }
+  .hero-word.word-in { opacity: 1; transform: none; }
+
+  /* Hero image: sophisticated clip reveal */
+  /* The clip is added by script, so the image is VISIBLE by default. It used
+     to be clipped to nothing in CSS and rely on JS to open it, which meant a
+     slow or blocked script left the hero blank for good. Duration is down
+     from 1.1s + 0.5s delay to a single 0.55s. */
+  .hero-right img { transition: clip-path 0.55s cubic-bezier(0.16,1,0.3,1); }
+  .hero-right img.pre-clip { clip-path: inset(0 100% 0 0); }
+
+  /* Stats pill: scale bounce */
+  .stats-pill-inner {
+    opacity: 0;
+    transform: scale(0.93);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .stats-pill-inner.stat-in { opacity: 1; transform: none; }
+
+  /* Timeline progress line: scroll-scrubbed draw */
+  .process-steps-row::before {
+    content: '';
+    position: absolute; left: 13px; top: 0; bottom: 0;
+    width: 2px; background: #c2410c;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: transform 1.2s ease;
+  }
+  .process-steps-row { position: relative; }
+  .process-steps-row.line-drawn::before { transform: scaleY(1); }
+
+  /* Process steps: stagger slide in */
+  .process-step {
+    opacity: 0;
+    transform: translateX(32px);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16,1,0.3,1);
+  }
+  .process-step.step-in { opacity: 1; transform: none; }
+
+  /* Service cards: lift with warm shadow */
+  .svc-card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  .svc-card:hover {
+    transform: translateY(-10px) rotate(-0.5deg);
+    box-shadow: 0 24px 48px rgba(194,65,12,0.15), 0 8px 16px rgba(39,37,34,0.08);
+  }
+  .svc-card img { transition: transform 0.6s ease; }
+  .svc-card:hover img { transform: scale(1.07); }
+
+  /* Review cards: shimmer hover */
+  .review-card {
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    position: relative; overflow: hidden;
+  }
+  .review-card::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.18) 50%, transparent 60%);
+    transform: translateX(-100%);
+    transition: transform 0s;
+  }
+  .review-card:hover { transform: translateY(-5px); box-shadow: 0 16px 36px rgba(194,65,12,0.1); }
+  .review-card:hover::after { transform: translateX(200%); transition: transform 0.55s ease; }
+
+  /* Gallery: stagger scale from center */
+  .gallery-item {
+    opacity: 0;
+    transform: scale(0.88);
+    transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.34,1.2,0.64,1);
+  }
+  .gallery-item.gal-in { opacity: 1; transform: none; }
+
+  /* Benefit rows: numbered badge pop */
+  .benefit-num {
+    transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), background 0.3s ease;
+  }
+  .benefit-row:hover .benefit-num {
+    transform: scale(1.25) rotate(-8deg);
+    background: #c2410c;
+    color: #fff;
+  }
+
+  /* Guarantee band: slide in from opposite sides */
+  .guarantee-text {
+    opacity: 0; transform: translateX(-60px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16,1,0.3,1);
+  }
+  .guarantee-right {
+    opacity: 0; transform: translateX(60px);
+    transition: opacity 0.8s ease 0.2s, transform 0.8s cubic-bezier(0.16,1,0.3,1) 0.2s;
+  }
+  .guarantee-text.guar-in, .guarantee-right.guar-in { opacity: 1; transform: none; }
+
+  /* Guarantee number: odometer spin */
+  .guarantee-num {
+    display: inline-block;
+    animation: none;
+  }
+  .guarantee-num.spin { animation: num-spin 0.6s cubic-bezier(0.34,1.56,0.64,1) both; }
+  @keyframes num-spin {
+    from { transform: rotateX(-90deg) scale(0.5); opacity: 0; }
+    to   { transform: none; opacity: 1; }
+  }
+
+  /* Nav refined */
+  .nav-links a { position: relative; }
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: -4px; left: 50%; right: 50%;
+    height: 2px; background: #c2410c; border-radius: 2px;
+    transition: left 0.3s ease, right 0.3s ease;
+  }
+  .nav-links a:hover::after, .nav-links a.active::after { left: 0; right: 0; }
+
+  /* FAQ card: reveal from fold */
+  .faq-card {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .faq-card:hover { box-shadow: 0 8px 24px rgba(194,65,12,0.08); transform: translateY(-2px); }
+
+  /* Floating dust motes in hero */
+  .dust-mote {
+    position: absolute; border-radius: 50%;
+    background: rgba(194,65,12,0.15);
+    pointer-events: none; z-index: 0;
+    animation: mote-float 10s ease-in-out infinite alternate;
+  }
+  @keyframes mote-float {
+    from { transform: translate(0,0); }
+    to   { transform: translate(var(--mx,20px), var(--my,-30px)); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+
+  @media (max-width:1100px) {
+    /* narrow screens take the gutter down with one value, so anything on
+       var(--gut) follows without needing its own override below. */
+    :root { --gut: 24px; }
+    nav { padding:0 24px; height:72px; }
+    .nav-links { display:none; }
+    section { padding:60px 24px; }
+    #hero { flex-direction:column; }
+    .hero-left { flex:none; max-width:none; padding:80px 24px 40px; }
+    .hero-right { flex:none; max-width:none; height:400px; }
+    .hero-headline { font-size:44px; }
+    #stats-pill { padding:24px; }
+    .stats-pill-inner { flex-wrap:wrap; gap:24px; border-radius:20px; }
+    .masonry-row { flex-direction:column; }
+    .why-layout { flex-direction:column; }
+    .why-photo { width:100%; height:280px; }
+    .reviews-grid { grid-template-columns:1fr; }
+    .review-extra { grid-column:span 1; flex-direction:column; }
+    .gallery-grid { grid-template-columns:1fr 1fr; }
+    .gallery-item.tall { grid-row:span 1; }
+    .faq-grid { grid-template-columns:1fr; }
+    .guarantee-inner { flex-direction:column; }
+    .guarantee-right { flex:none; width:100%; padding:48px; }
+    .footer-cols { grid-template-columns:1fr; gap:32px; padding:40px 24px; }
+    .footer-bottom { padding:20px 24px; flex-direction:column; gap:12px; }
+    .stats-row-warm { margin:0 -24px; padding:40px 24px; flex-wrap:wrap; gap:24px; }
+    .cta-heading { font-size:36px; }
+  }
+
+  /* ===== round-2 corrections ===== */
+  /* pair alignment follows the section heading */
+  .ctapair--center { justify-content:center; }
+  /* sits inside the text column so it starts where the copy starts */
+  .ctapair--incol { justify-content:flex-start; margin-top:36px; }
+
+  /* the marquee had no animation-duration, so it never moved. JS sets it per
+     track so both columns run at the same px/sec regardless of tile count. */
+  .lstrip-track { animation-duration:26s; }
+  /* the gutter is built entirely from padding on the two columns, not grid
+     column-gap: a non-zero column-gap pushes the border-left (which sits on
+     the second column's own edge) off the true 50% line by half the gap
+     width. Zero gap + matching padding puts the boundary, and the line
+     drawn on it, at the exact centre. */
+  .lsplit { column-gap:0; }
+  .lsplit-col:first-child { padding-right:clamp(36px,4vw,64px); }
+  .lsplit-col + .lsplit-col { border-left:1px solid #a09382; padding-left:clamp(36px,4vw,64px); }
+  @media (max-width:900px){ .lsplit-col:first-child { padding-right:0; } .lsplit-col + .lsplit-col { border-left:0; padding-left:0; } }
+
+  /* gallery captions were hover-only; they carry the information so they stay on */
+  .gallery-overlay { opacity:1 !important; transform:none !important;
+    background:linear-gradient(to top,rgba(39,37,34,.88),rgba(39,37,34,.45) 55%,transparent); }
+
+  /* guarantee badge mark */
+  .g-mark { width:60px; height:60px; fill:none; stroke:#fff; stroke-width:2.2;
+    stroke-linecap:round; stroke-linejoin:round; opacity:.95; }
+  .guarantee-num { letter-spacing:-0.02em; }
+  .guarantee-num-label { font-size:15px; font-weight:600; letter-spacing:.08em;
+    text-transform:uppercase; line-height:1.5; opacity:.92; }
+
+  /* review cards are selectable, so they need to look it */
+  .review-card { cursor:pointer; transition:background .35s ease, color .35s ease, border-color .35s ease; }
+
+  /* ===== service cards: item 7 =====
+     They were plain white blocks with two different image heights (the .short
+     variant), so rows never lined up and the type had no hierarchy. */
+  .svc-card { border:1px solid #a09382; border-radius:16px;
+    box-shadow:0 1px 2px rgba(39,37,34,.04); }
+  /* one image height for every card so the rows align */
+  .svc-card img, .svc-card.short img { height:240px; }
+  .svc-card-body { padding:28px 28px 30px; display:flex; flex-direction:column; flex:1; }
+  .svc-card-body h3 { font-weight:500; font-size:22px; letter-spacing:-0.01em;
+    margin-bottom:10px; position:relative; padding-bottom:14px; }
+  /* a short rule in the accent ties the card back to the palette */
+  .svc-card-body h3::after { content:""; position:absolute; left:0; bottom:0;
+    width:34px; height:2px; background:#c2410c; transition:width .4s cubic-bezier(0.16,1,0.3,1); }
+  .svc-card:hover .svc-card-body h3::after { width:64px; }
+  .svc-card-body p { font-size:16px; line-height:1.65; margin:0; }
+  .svc-card:hover { border-color:#d8c4b4; box-shadow:0 18px 40px rgba(39,37,34,.10); }
+  @media (max-width:820px){ .masonry-row { flex-direction:column; } }
+
+  /* ── NAV: matched to the approved templates ──
+     Eight links plus the survey number plus the button only fit on one row if
+     the link gap tightens; below that the caption above the number is the
+     first thing to go, then the whole link row at the existing 1100px stop. */
+  .nav-links { gap:20px; }
+  .nav-links a { font-size:15px; white-space:nowrap; }
+  .nav-actions { display:flex; align-items:center; gap:20px; }
+  .nav-phone { display:flex; flex-direction:column; line-height:1.25; text-decoration:none;
+    font-size:14px; color:#332f2d; white-space:nowrap; }
+  .nav-phone strong { color:#943209; font-size:17px; font-weight:600; }
+  .nav-phone:hover strong { color:#9a3510; }
+  @media (max-width:1400px) { nav { padding:0 40px; } }
+  @media (max-width:1260px) { .nav-phone span { display:none; } }
+
+  /* full-width credit disclaimer, matching the accreditation line in the other templates */
+  /* on the gutter like the other footer rows rather than a centred 1240px box:
+     centred, its rule and text sat at their own inset and stopped lining up
+     with the columns above once the gutter moved off 80px. */
+  .footer-finance{padding:18px var(--gut) 34px;
+    font-size:0.875rem;line-height:1.65;color:var(--muted,#45413e);opacity:.92;}
+  .footer-finance b{font-weight:700;}
+</style>
+<style>
+/* --- contrast: muted grey was 3.5:1, and the guarantee band is now teal --- */
+.lstrip-label,.reviewer-loc,#footer p,#footer a{color:#45413e;}
+.guarantee-label-tag{color:#F0A868;}
+.guarantee-sub{color:#D7E3E6;}
+.g-badge{color:#F0A868;}
+</style>
+<style>
+/* --- contrast pass 2 --- */
+.grev__stars,.grev-stars{color:#6b4e03;}
+#reviews .reviewer-loc,.reviews .reviewer-loc{color:#45413e;}
+</style>
+<style>
+/* --- contrast pass 3 --- */
+#hero .grev-stars,.hero .grev-stars{color:#6b4e03;}
+.review-card .reviewer-loc{color:#45413e;}
+.review-card.featured .reviewer-loc{color:#FFFFFF;}
+.review-card.featured .reviewer-name{color:#FFFFFF;}
+</style>
+<style>
+/* --- contrast pass 4 --- */
+#reviews .review-card .reviewer-loc{color:#45413e;}
+#reviews .review-card.featured .reviewer-loc{color:#FFFFFF;}
+#reviews .review-card.featured .reviewer-name{color:#FFFFFF;}
+</style>
+<style>
+/* --- review 2 (18): nav call icon --- */
+.nav-phone{display:grid;grid-template-columns:auto auto;grid-template-rows:auto auto;
+  column-gap:10px;align-items:center;justify-content:end;}
+.nav-phone-ic{grid-column:1;grid-row:1 / span 2;align-self:center;}
+.nav-phone > span{grid-column:2;grid-row:1;}
+.nav-phone > strong{grid-column:2;grid-row:2;}
+.nav-phone-ic{width:22px;height:22px;flex:0 0 auto;color:#943209;}
+</style>
+<style>
+/* --- shade fix: every band was #faf6f0 or #ffffff, a 1.08 step, so the
+   sections ran together. Assigned explicitly here because the original
+   order doubled up (hero+process, gallery+faq) and simply swapping the two
+   colours would have left those pairs blending anyway. --- */
+body{background:#faf6f0;}
+#hero{background:#faf6f0;}
+#process{background:#decbb7;}
+#product{background:#faf6f0;}
+#why-us{background:#decbb7;}
+#reviews{background:#faf6f0;}
+#gallery{background:#d1b08f;}
+#faq{background:#faf6f0;}
+#footer{background:#decbb7;}
+/* the sticky nav matched the old ground and would now float over a
+   different tone than it sits on */
+.stuck{background:#faf6f0F2;}
+/* cards stay light so they lift off the mid bands rather than sinking */
+#stats-pill .stats-pill-inner, .svc-card, .review-card, .faq-card, .marquee-badge, .hero-grev{background:#FBF9F6;}
+.footer-line, #footer .marquee-sep{border-color:#8c7f6e;}
+</style>
+<style>
+/* the gallery band is the one deep enough that the shared orange drops
+   under 4.5:1, so it gets its own rather than everything being darkened */
+#gallery .section-label{color:#792907;}
+</style>
+<style>
+/* --- Roofing nav: same #c2410c orange as the "Get A Free Quote" button,
+   so the bar and the button read as one colour. Because the bar is now
+   that same bright orange, the text can't reuse the brand's orange as an
+   accent (no contrast against itself) - it goes white/near-white instead.
+   Every element is set explicitly, because changing the ground without
+   moving the text rules is how this breaks. --- */
+#main-nav{background:#c2410c;border-bottom:1px solid rgba(0,0,0,.12);}
+/* no space before .stuck: it has to beat the plain .stuck scrolled state */
+#main-nav.stuck{background:#c2410c;box-shadow:0 4px 24px rgba(0,0,0,.28);}
+#main-nav .nav-logo span{color:#fff;}
+#main-nav .nav-logo-icon{color:#fff;}
+#main-nav .nav-links a{color:#fff;}
+
+#main-nav .nav-links a::after{background:#fff;}
+#main-nav .nav-phone-ic{color:#fff;}
+#main-nav .nav-phone strong{color:#fff;}
+#main-nav .nav-phone > span{color:rgba(255,255,255,.75);}
+/* the button is the same fill as the bar now, so it needs its own edge
+   to still read as a button rather than disappearing into the ground */
+#main-nav .btn-primary{border:1.5px solid rgba(255,255,255,.65);}
+</style>
+<style>
+/* --- footer ops row, in Roofing's own naming - title matches
+   .footer-col-title's rust accent so it reads as the same family --- */
+.footer-ops{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;padding:28px var(--gut) 0;border-top:1px solid #a09382;}
+.footer-ops-title{font-size:15px;font-weight:700;color:#943209;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;}
+.footer-ops p,.footer-ops address{margin:0;font-size:16px;line-height:1.75;color:#45413e;font-style:normal;}
+.footer-ops .fo-row{display:flex;justify-content:space-between;gap:16px;max-width:260px;}
+.footer-ops .fo-row span:last-child{color:#45413e;}
+.footer-ops a{color:#332f2d;}
+.footer-ops a:hover{color:#943209;}
+@media(max-width:900px){.footer-ops{grid-template-columns:1fr 1fr;padding-left:24px;padding-right:24px;}}
+@media(max-width:1100px){.footer-cols{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.footer-ops{grid-template-columns:1fr;}}
+</style>
+<style>
+.footer-finance{border-top:1px solid #a09382;margin-top:28px;padding-top:22px;font-size:15px;line-height:1.75;color:#45413e;}
+.footer-finance b{color:#332f2d;}
+</style>
+</head>
+<body>
+
+<!-- ① NAV -->
+<nav id="main-nav">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon">›</div>
+    <span>Roofing</span>
+  </a>
+  <div class="nav-links">
+    <a href="#process">Our Process</a>
+    <a href="#why-us">Why Choose Us?</a>
+    <a href="#product">Services</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#faq">Guides</a>
+    <a href="#footer">Careers</a>
+    <a href="#footer">Area</a>
+    <a href="#final-cta">Contact</a>
+  </div>
+  <div class="nav-actions">
+    <a href="tel:01632960300" class="nav-phone"><svg class="nav-phone-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2z"/></svg><span>Free roof survey</span><strong>01632 960 300</strong></a>
+    <a href="#final-cta" class="btn-primary">Get A Free Quote</a>
+  </div>
+</nav>
+
+<!-- ② HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow reveal">
+      <div class="hero-eyebrow-line"></div>
+      <span>NFRC &amp; CoRC Accredited Roofers</span>
+    </div>
+    <h1 class="hero-headline reveal reveal-delay-1">Your roof, done once and done properly.</h1>
+    <p class="hero-sub reveal reveal-delay-2">Pitched and flat roofs, repairs, Velux windows and roofline, fitted by our own directly employed roofers. Free no obligation survey, a fixed written price, and a 15 year workmanship guarantee backed by a 10 year insurance backed guarantee.</p>
+    <div class="hero-actions reveal reveal-delay-3">
+      <a href="#final-cta" class="btn-primary-lg">Book A Free Roof Survey</a>
+      <a href="#gallery" class="btn-secondary-lg">See Our Work</a>
+    </div>
+    <div class="hero-trust-pills reveal reveal-delay-3">
+      <div class="trust-pill"><div class="trust-dot"></div>15 Year Guarantee</div>
+      <div class="trust-pill"><div class="trust-dot"></div>NFRC Registered</div>
+      <div class="trust-pill"><div class="trust-dot"></div>Free Survey</div>
+    </div>
+    <a class="hero-grev reveal reveal-delay-3" href="#reviews" aria-label="Rated 4.9 out of 5 from over 380 Google reviews">
+      <svg class="grev-g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+      <span class="grev-stars" aria-hidden="true">★★★★★</span>
+      <span class="grev-txt"><b>4.9</b> from <b>380+</b> Google reviews</span>
+    </a>
+  </div>
+  <div class="hero-right">
+    <img src="images/hero-house.webp" fetchpriority="high" loading="eager" decoding="async" alt="A detached British home with a newly finished dark grey tiled roof, hipped gable and matching ridge" width="1536" height="1024">
+  </div>
+</section>
+
+<!-- ③ TRUST MARQUEE -->
+<div id="trust-marquee">
+  <div class="lsplit">
+    <div class="lsplit-col">
+      <div class="lstrip-label">Accredited &amp; registered</div>
+      <div class="lstrip-mask"><div class="lstrip-track"><div class="lstrip-grp"><div class="ltile"><img src="logos/nfrc.webp" alt="NFRC registered" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/trustmark.webp" alt="TrustMark registered" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/approved-code.webp" alt="Trading Standards Approved Code" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/nfrc.webp" alt="NFRC registered" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/trustmark.webp" alt="TrustMark registered" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/approved-code.webp" alt="Trading Standards Approved Code" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/nfrc.webp" alt="NFRC registered" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/trustmark.webp" alt="TrustMark registered" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/approved-code.webp" alt="Trading Standards Approved Code" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/nfrc.webp" alt="NFRC registered" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/trustmark.webp" alt="TrustMark registered" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/approved-code.webp" alt="Trading Standards Approved Code" loading="lazy" decoding="async"></div></div><div class="lstrip-grp"><div class="ltile"><img src="logos/nfrc.webp" alt="NFRC registered" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/trustmark.webp" alt="TrustMark registered" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/approved-code.webp" alt="Trading Standards Approved Code" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/nfrc.webp" alt="NFRC registered" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/trustmark.webp" alt="TrustMark registered" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/approved-code.webp" alt="Trading Standards Approved Code" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/nfrc.webp" alt="NFRC registered" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/trustmark.webp" alt="TrustMark registered" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/approved-code.webp" alt="Trading Standards Approved Code" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/nfrc.webp" alt="NFRC registered" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/trustmark.webp" alt="TrustMark registered" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/approved-code.webp" alt="Trading Standards Approved Code" loading="lazy" decoding="async"></div></div></div></div>
+    </div>
+    <div class="lsplit-col">
+      <div class="lstrip-label">Endorsed &amp; certified</div>
+      <div class="lstrip-mask"><div class="lstrip-track"><div class="lstrip-grp"><div class="ltile"><img src="logos/velux.svg" alt="Velux certified installer" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/which.jpg" alt="Which? Trusted Trader" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/checkatrade-logo.svg" alt="Checkatrade verified" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/velux.svg" alt="Velux certified installer" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/which.jpg" alt="Which? Trusted Trader" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/checkatrade-logo.svg" alt="Checkatrade verified" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/velux.svg" alt="Velux certified installer" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/which.jpg" alt="Which? Trusted Trader" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/checkatrade-logo.svg" alt="Checkatrade verified" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/velux.svg" alt="Velux certified installer" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/which.jpg" alt="Which? Trusted Trader" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/checkatrade-logo.svg" alt="Checkatrade verified" loading="lazy" decoding="async"></div></div><div class="lstrip-grp"><div class="ltile"><img src="logos/velux.svg" alt="Velux certified installer" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/which.jpg" alt="Which? Trusted Trader" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/checkatrade-logo.svg" alt="Checkatrade verified" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/velux.svg" alt="Velux certified installer" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/which.jpg" alt="Which? Trusted Trader" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/checkatrade-logo.svg" alt="Checkatrade verified" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/velux.svg" alt="Velux certified installer" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/which.jpg" alt="Which? Trusted Trader" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/checkatrade-logo.svg" alt="Checkatrade verified" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/velux.svg" alt="Velux certified installer" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/which.jpg" alt="Which? Trusted Trader" loading="lazy" decoding="async"></div><div class="ltile"><img src="logos/checkatrade-logo.svg" alt="Checkatrade verified" loading="lazy" decoding="async"></div></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS PILL -->
+<div id="stats-pill">
+  <div class="stats-pill-inner">
+    <div class="stat-item"><div class="stat-num" data-count="15" data-suffix=" yr">15 yr</div><div class="stat-label">Workmanship guarantee</div></div>
+    <div class="stat-item"><div class="stat-num" data-count="10" data-suffix=" yr">10 yr</div><div class="stat-label">Insurance backed guarantee</div></div>
+    <div class="stat-item"><div class="stat-num" data-count="5" data-suffix="">5</div><div class="stat-label">Accreditations held</div></div>
+    <div class="stat-item"><div class="stat-num" data-suffix="">Free</div><div class="stat-label">No obligation roof survey</div></div>
+  </div>
+</div>
+
+<!-- ④ PROCESS -->
+<section id="process">
+  <div class="process-header reveal">
+    <p class="section-label">How it works</p>
+    <h2 class="section-title">Four steps, and no pressure at any of them</h2>
+  </div>
+  <div class="process-steps-row">
+    <div class="process-step reveal">
+      <div class="step-badge">01</div>
+      <div class="step-body">
+        <h3>Tell us what you need</h3>
+        <p>Use the online form or call us with a brief description of the work. We will arrange a time that suits you rather than a two hour window.</p>
+      </div>
+    </div>
+    <div class="process-step reveal reveal-delay-1">
+      <div class="step-badge">02</div>
+      <div class="step-body">
+        <h3>Free roof survey</h3>
+        <p>We come out, get up on the roof properly and assess it, then give you a transparent written quote with no obligation to proceed.</p>
+      </div>
+    </div>
+    <div class="process-step reveal reveal-delay-2">
+      <div class="step-badge">03</div>
+      <div class="step-body">
+        <h3>The work itself</h3>
+        <p>Our own roofers arrive on the day agreed, complete the job to the standard quoted, and leave the site clean.</p>
+      </div>
+    </div>
+    <div class="process-step reveal reveal-delay-3">
+      <div class="step-badge">04</div>
+      <div class="step-body">
+        <h3>Aftercare</h3>
+        <p>We check you are satisfied, register your guarantees, and stay available. Roof care plans are there if you want ongoing cover.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ctapair ctapair--center reveal">
+    <a href="#final-cta" class="btn-primary-lg">Get A Free Quote &#8594;</a>
+    <a href="tel:01632960300" class="btn-secondary-lg">Speak To Our Experts &#8594;</a>
+  </div>
+</section>
+
+<!-- ⑤ PRODUCT + STATS -->
+<section id="product">
+  <div class="product-header reveal">
+    <p class="section-label">What we do</p>
+    <h2 class="section-title">Roofs, roofline and guttering</h2>
+    <p class="product-intro" style="margin-top:12px;">Directly employed roofers, a fixed written price before we start, and guarantees registered on your behalf when we finish.</p>
+  </div>
+  <div class="masonry-row">
+    <div class="svc-card reveal">
+      <img src="images/cs-pitched.webp" alt="Pitched Roof Installation" loading="lazy" decoding="async">
+      <div class="svc-card-body"><h3>Pitched roofs</h3><p>Full strip and re roof in tile or natural slate, with new battens, membrane and leadwork. We help you pick the material for the property rather than for our margin.</p></div>
+    </div>
+    <div class="svc-card reveal reveal-delay-1">
+      <img src="images/cs-flat.webp" alt="Flat Roof Installation" loading="lazy" decoding="async">
+      <div class="svc-card-body"><h3>Flat roofs</h3><p>EPDM Firestone rubber, Cureit GRP fibreglass or high performance felt, laid to falls so water actually leaves the roof. Watertight finish, guaranteed.</p></div>
+    </div>
+  </div>
+  <div class="masonry-row">
+    <div class="svc-card short reveal">
+      <img src="images/cs-repairs.webp" alt="Roof Repairs" loading="lazy" decoding="async">
+      <div class="svc-card-body"><h3>Roof repairs</h3><p>Leaks, slipped or missing tiles, storm damage, sagging areas and failed flashing. We will tell you honestly when a repair will do and when it will not.</p></div>
+    </div>
+    <div class="svc-card short reveal reveal-delay-1">
+      <img src="images/cs-roofline.webp" alt="Fascias, Soffits and Guttering" loading="lazy" decoding="async">
+      <div class="svc-card-body"><h3>Fascias, soffits and guttering</h3><p>Low maintenance uPVC roofline, fitted properly. A sound roofline is what stops water ingress and rot reaching the timbers behind it.</p></div>
+    </div>
+  </div>
+  <div class="masonry-row">
+    <div class="svc-card short reveal">
+      <img src="images/cs-velux.webp" alt="Velux Windows" loading="lazy" decoding="async">
+      <div class="svc-card-body"><h3>Velux windows</h3><p>Certified Velux installation for lofts, kitchens and extensions, flashed and sealed to a watertight finish that will not leak in the first storm.</p></div>
+    </div>
+    <div class="svc-card short reveal reveal-delay-1">
+      <img src="images/cs-care.webp" alt="Roof Care Plans" loading="lazy" decoding="async">
+      <div class="svc-card-body"><h3>Roof care plans</h3><p>Routine inspections, gutter clearing, moss removal, minor repairs and a written condition report. Built for homeowners and landlords who would rather not wait for a leak.</p></div>
+    </div>
+  </div>
+  <div class="stats-row-warm reveal">
+    <div class="stat-warm"><div class="stat-warm-num">15 yr</div><div class="stat-warm-label">Workmanship guarantee</div></div>
+    <div class="stat-warm"><div class="stat-warm-num">10 yr</div><div class="stat-warm-label">Insurance backed</div></div>
+    <div class="stat-warm"><div class="stat-warm-num">5 yr</div><div class="stat-warm-label">Finance terms available</div></div>
+    <div class="stat-warm"><div class="stat-warm-num">Free</div><div class="stat-warm-label">Roof survey &amp; quote</div></div>
+  </div>
+
+  </section>
+
+<!-- ⑥ WHY CHOOSE US -->
+<section id="why-us">
+  <div class="why-layout">
+    <img src="images/cs-roofer-ridge.jpg" width="1200" height="2134" loading="lazy" decoding="async" alt="Two roofers working along a ridge on a clear day" class="why-photo reveal">
+    <div class="why-content">
+      <div class="why-header reveal">
+        <p class="section-label">Why choose us</p>
+        <h2 class="section-title" style="font-size:40px;">Why our roofing beats the rest</h2>
+      </div>
+      <div class="benefit-list">
+        <div class="benefit-row reveal">
+          <div class="benefit-num">1</div>
+          <div class="benefit-text">
+            <h4>Guarantees that outlast us</h4>
+            <p>A 15 year workmanship guarantee on installations, plus a separate 10 year insurance backed guarantee that still stands if we stopped trading tomorrow.</p>
+          </div>
+        </div>
+        <div class="benefit-row reveal reveal-delay-1">
+          <div class="benefit-num">2</div>
+          <div class="benefit-text">
+            <h4>Accredited, not just insured</h4>
+            <p>NFRC and CoRC registered, TrustMark endorsed, Trading Standards Buy With Confidence approved, and Velux certified for window fitting.</p>
+          </div>
+        </div>
+        <div class="benefit-row reveal reveal-delay-2">
+          <div class="benefit-num">3</div>
+          <div class="benefit-text">
+            <h4>Directly employed roofers</h4>
+            <p>No subcontractors and nobody on commission. The team that surveys your roof is the team that works on it, so nobody has a reason to oversell you.</p>
+          </div>
+        </div>
+        <div class="benefit-row reveal reveal-delay-3">
+          <div class="benefit-num">4</div>
+          <div class="benefit-text">
+            <h4>Free survey, honest answer</h4>
+            <p>We get up on the roof properly before quoting, and if a repair will do we will say so rather than selling you a full re roof.</p>
+          </div>
+        </div>
+        <div class="benefit-row reveal reveal-delay-3">
+          <div class="benefit-num">5</div>
+          <div class="benefit-text">
+            <h4>A fixed written price</h4>
+            <p>You get the figure in writing before anything starts. No surprises once the scaffold is up, which is exactly when surprises tend to appear.</p>
+          </div>
+        </div>
+        <div class="benefit-row reveal reveal-delay-3">
+          <div class="benefit-num">6</div>
+          <div class="benefit-text">
+            <h4>Finance if you want it</h4>
+            <p>Spread the cost over terms up to five years. Subject to status and credit checks; we act as an introducer, not a lender, and give no financial advice.</p>
+          </div>
+        </div>
+      </div>
+      <div class="ctapair ctapair--incol reveal">
+        <a href="#final-cta" class="btn-primary-lg">Get A Free Quote &#8594;</a>
+        <a href="tel:01632960300" class="btn-secondary-lg">Speak To Our Experts &#8594;</a>
+      </div>
+    </div>
+  </div>
+
+  </section>
+
+<!-- ⑦ REVIEWS -->
+<section id="reviews">
+  <div class="reveal"><p class="section-label">What our customers say</p></div>
+  <div class="reviews-grid">
+    <div class="review-card featured reveal">
+      <p class="review-text">Everything was completed quickly and efficiently and nothing was too much trouble. Everyone was very respectful of my home, kept the drive clear and swept up each evening. Very satisfied.</p>
+      <div><div class="reviewer-name">Alexa Bennett</div><div class="reviewer-loc">Full pitched re roof</div></div>
+    </div>
+    <div class="review-card reveal reveal-delay-1">
+      <p class="review-text">Had three quotes and this was the only one that came with a proper written breakdown. The price at the end was the price on the quote, which after our last builder was a relief.</p>
+      <div><div class="reviewer-name" style="color:#0D4453;">Dan Rowntree</div><div class="reviewer-loc">Flat roof, EPDM rubber</div></div>
+    </div>
+    <div class="review-extra">
+      <div class="review-card reveal">
+        <p class="review-text" style="font-size:17px;line-height:1.6;color:#332f2d;">"Came out the morning after the storm, made it safe the same day and did the permanent repair that week. Could not have asked for more."</p>
+        <div><div class="reviewer-name" style="color:#0D4453;">Margaret Holt</div><div class="reviewer-loc" style="color:#45413e;">Storm damage repair</div></div>
+      </div>
+      <div class="review-card reveal reveal-delay-1">
+        <p class="review-text" style="font-size:17px;line-height:1.6;color:#332f2d;">"New fascias, soffits and gutters right round the house in two days. Tidy job, and they took all the old plastic away with them."</p>
+        <div><div class="reviewer-name" style="color:#0D4453;">James Pemberton</div><div class="reviewer-loc" style="color:#45413e;">Roofline replacement</div></div>
+      </div>
+      <div class="review-card reveal reveal-delay-2">
+        <p class="review-text" style="font-size:17px;line-height:1.6;color:#332f2d;">"Velux fitted in the loft conversion and not a drop through it over the winter. They flashed it properly rather than relying on sealant."</p>
+        <div><div class="reviewer-name" style="color:#0D4453;">Priya Nair</div><div class="reviewer-loc" style="color:#45413e;">Velux window installation</div></div>
+      </div>
+      <div class="review-card reveal reveal-delay-3">
+        <p class="review-text" style="font-size:17px;line-height:1.6;color:#332f2d;">"We took the care plan after the re roof. They come twice a year, clear the gutters and send a short report with photos. Worth it for the peace of mind."</p>
+        <div><div class="reviewer-name" style="color:#0D4453;">Colin Baxter</div><div class="reviewer-loc" style="color:#45413e;">Roof care plan</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ctapair reveal">
+    <a href="#final-cta" class="btn-primary-lg">Get A Free Quote &#8594;</a>
+    <a href="tel:01632960300" class="btn-secondary-lg">Speak To Our Experts &#8594;</a>
+  </div>
+</section>
+
+<!-- ⑧ GALLERY -->
+<section id="gallery">
+  <div class="reveal">
+    <p class="section-label">Services</p>
+    <h2 class="gallery-heading">Recent work</h2>
+  </div>
+  <div class="gallery-grid reveal reveal-delay-1">
+    <div class="gallery-item tall">
+      <img src="images/cs-gal-gables.jpg" loading="lazy" decoding="async" alt="A brick house with twin dormer windows against a clear sky">
+      <div class="gallery-overlay"><span>Re roof with new ridge and chimney flashing</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/cs-gal-dormer.jpg" width="1200" height="675" loading="lazy" decoding="async" alt="A brick house with a dormer window and chimney stack">
+      <div class="gallery-overlay"><span>Roofline replacement across an estate</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/cs-gal-ridge.webp" width="1200" height="2133" loading="lazy" decoding="async" alt="A roofer fixing capping along the ridge of a dark tiled roof">
+      <div class="gallery-overlay"><span>Ridge capping and dry fix system</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/cs-gal-chimney.jpg" width="1200" height="2133" loading="lazy" decoding="async" alt="Roofers working at height beside a brick chimney stack">
+      <div class="gallery-overlay"><span>Chimney repointing and lead flashing</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/cs-gal-battens.jpg" width="1200" height="1800" loading="lazy" decoding="async" alt="Roof battens and breathable membrane seen from below">
+      <div class="gallery-overlay"><span>New rafters and structural timbers</span></div>
+    </div>
+  </div>
+
+  <div class="ctapair reveal">
+    <a href="#final-cta" class="btn-primary-lg">Get A Free Quote &#8594;</a>
+    <a href="tel:01632960300" class="btn-secondary-lg">Speak To Our Experts &#8594;</a>
+  </div>
+</section>
+
+<!-- ⑨ GUARANTEE -->
+<div id="guarantee">
+  <div class="guarantee-inner">
+    <div class="guarantee-text reveal">
+      <p class="guarantee-label-tag">Our Promise</p>
+      <h2 class="guarantee-title">Two guarantees, not one</h2>
+      <p class="guarantee-sub">Every installation carries our 15 year workmanship guarantee. On top of that sits a 10 year insurance backed guarantee, held by a third party, which still pays out if this company ceased trading. That second one is the part most roofers do not offer, and the only one worth anything if the worst happens.</p>
+      <div class="g-badges">
+        <div class="g-badge">15 Year Workmanship</div>
+        <div class="g-badge">10 Year Insurance Backed</div>
+        <div class="g-badge">Transferable On Sale</div>
+        <div class="g-badge">NFRC &amp; CoRC Registered</div>
+      </div>
+    </div>
+    <div class="guarantee-right">
+      <svg class="g-mark" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4 6 11v13c0 10.5 7.6 18.4 18 21 10.4-2.6 18-10.5 18-21V11z"/><path d="m16 24 6 6 11-12"/></svg>
+      <div class="guarantee-num">15</div>
+      <div class="guarantee-num-label">Year Workmanship<br>Guarantee</div>
+    </div>
+  </div>
+</div>
+
+<!-- ⑩ FAQ -->
+<section id="faq">
+  <div class="reveal">
+    <p class="section-label">Common Questions</p>
+    <h2 class="section-title" style="margin-top:10px;">Frequently asked questions</h2>
+  </div>
+  <div class="faq-grid">
+    <div class="faq-card reveal"><h4>How much does a new roof cost?</h4><p>It depends on the size and pitch of the roof, the material, the state of the timbers underneath and whether scaffolding is straightforward. That is why we survey before quoting rather than giving a number over the phone that changes later.</p></div>
+    <div class="faq-card reveal reveal-delay-1"><h4>How long does a re roof take?</h4><p>A typical semi detached pitched re roof runs three to five working days once the scaffold is up. Larger or more complex roofs take longer, and we will give you the expected duration in writing before you commit.</p></div>
+    <div class="faq-card reveal"><h4>Will I need scaffolding?</h4><p>For almost any pitched roof work, yes. It is a legal working at height requirement, not an upsell, and it is included in the quoted price rather than added afterwards.</p></div>
+    <div class="faq-card reveal reveal-delay-1"><h4>What is an insurance backed guarantee?</h4><p>Your workmanship guarantee is only as good as the company behind it. An insurance backed guarantee is held by an independent insurer, so if the installer ceases trading the cover continues. Ours runs for 10 years alongside the 15 year workmanship guarantee.</p></div>
+    <div class="faq-card reveal"><h4>Can you repair my roof instead of replacing it?</h4><p>Often, yes, and we will say so. Slipped tiles, failed flashing, a cracked valley or localised storm damage are usually repairs. We only recommend a full re roof when the battens, membrane or timbers have gone.</p></div>
+    <div class="faq-card reveal reveal-delay-1"><h4>What flat roofing materials do you use?</h4><p>EPDM Firestone rubber, Cureit GRP fibreglass and high performance felt. EPDM suits most domestic flat roofs, GRP is better where a very hard wearing surface is needed. Both are laid to falls so water drains rather than pools.</p></div>
+    <div class="faq-card reveal"><h4>Do you handle storm damage and insurance claims?</h4><p>We attend storm damage quickly and make the roof safe first. We will provide the photographs, written report and itemised quote your insurer needs, though the claim itself stays between you and them.</p></div>
+    <div class="faq-card reveal reveal-delay-1"><h4>Do fascias and soffits really need replacing?</h4><p>If they are rotten or the guttering behind them is failing, yes. A failed roofline lets water into the timbers and rafter ends, which turns a few hundred pounds of uPVC into a structural repair.</p></div>
+    <div class="faq-card reveal"><h4>Are you NFRC registered?</h4><p>Yes, along with CoRC. We are also TrustMark registered, approved under Trading Standards Buy With Confidence, and certified by Velux for window installation.</p></div>
+    <div class="faq-card reveal reveal-delay-1"><h4>Do you fit Velux windows?</h4><p>We do, as a certified Velux installer. Loft conversions, kitchens and extensions. The flashing kit and seal are what stop a roof window leaking, so it is worth having it fitted by someone certified for it.</p></div>
+    <div class="faq-card reveal"><h4>What is a roof care plan?</h4><p>A yearly or twice yearly visit covering inspection, gutter clearing, moss removal, minor repairs and a written condition report. Popular with landlords and with anyone who would rather find a problem before the ceiling does.</p></div>
+    <div class="faq-card reveal reveal-delay-1"><h4>Do you offer finance?</h4><p>Yes, with terms up to five years. Finance is subject to status and credit checks. We act as a credit introducer and not a lender, and we do not give financial advice.</p></div>
+  </div>
+</section>
+
+<!-- ⑪ FINAL CTA -->
+<div id="final-cta">
+  <div class="final-cta-inner">
+    <div class="cta-tag reveal">Get Started</div>
+    <h2 class="cta-heading reveal reveal-delay-1">Get a free roof survey, and an honest answer.</h2>
+    <p class="cta-sub reveal reveal-delay-2">We will get up on the roof, tell you what it actually needs, and put a fixed price in writing. No obligation to go ahead.</p>
+    <div class="cta-actions reveal reveal-delay-3">
+      <a href="#" class="btn-primary-lg">Book A Free Roof Survey</a>
+      <div class="cta-phone">01632 960 300</div>
+    </div>
+  </div>
+</div>
+
+<!-- ⑫ FOOTER -->
+<footer id="footer">
+  <div class="footer-cols">
+    <div class="footer-col-brand">
+      <div class="footer-brand-name">Roofing</div>
+      <p class="footer-brand-desc">Pitched and flat roofing, repairs, Velux windows and roofline. NFRC and CoRC registered, with a 15 year workmanship guarantee and a 10 year insurance backed guarantee on every installation.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Services</div>
+      <a href="#product">Pitched roofs</a>
+      <a href="#product">Flat roofs</a>
+      <a href="#product">Fascias, Soffits &amp; Gutters</a>
+      <a href="#product">Roof Repairs &amp; Care Plans</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Accreditations</div>
+      <a href="#">NFRC Registered</a>
+      <a href="#">CoRC Approved Contractor</a>
+      <a href="#">TrustMark Registered</a>
+      <a href="#">Buy With Confidence</a>
+      <a href="#">Velux Certified Installer</a>
+    </div>
+
+    <div class="footer-col">
+      <div class="footer-col-title">Areas We Cover</div>
+      <span>Worthing &middot; Brighton &middot; Chichester</span>
+      <span>Portsmouth &middot; Horsham &middot; Crawley</span>
+      <span>East &amp; West Sussex, Hampshire</span>
+      <span>Outside these? Call and we will tell you honestly.</span>
+    </div>
+  </div>
+  <!-- --- footer ops row: hours / office / contact --- -->
+  <div class="footer-ops">
+    <div>
+      <div class="footer-ops-title">Opening hours</div>
+      <p><span class="fo-row"><span>Mon to Fri</span><span>08:00 to 17:30</span></span>
+      <span class="fo-row"><span>Saturday</span><span>09:00 to 13:00</span></span>
+      <span class="fo-row"><span>Sunday</span><span>Closed</span></span>
+      <span class="fo-row"><span>Storm damage</span><span>Same day</span></span></p>
+    </div>
+    <div>
+      <div class="footer-ops-title">Office</div>
+      <address>Roofing Ltd<br>1 Broadwater Road<br>Worthing BN13 2EX</address>
+    </div>
+    <div>
+      <div class="footer-ops-title">Contact</div>
+      <p><a href="tel:01632960300">01632 960 300</a><br>Survey booked within 5 working days</p>
+    </div>
+  </div>
+  <div class="footer-finance"><b>Finance:</b> Roofing Ltd is an Introducer Appointed Representative of a regulated credit broker. The credit broker is not a lender (FRN 111111). Finance is available subject to status. The rate offered is always provisional and will depend upon your personal circumstances, the loan amount and the term.</div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 We Build Trades Ltd. Demonstration template, sample content.</p>
+    <div class="footer-legal">
+      <a href="#">Privacy policy</a>
+      <a href="#">Terms &amp; Conditions</a>
+      <a href="#">Complaints procedure</a>
+      <a href="#">Conservation Compliance</a>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  /* ── ROOFING2: INK & HERITAGE ANIMATION ENGINE ── */
+
+  // 1. Sticky nav
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('stuck', window.scrollY > 20), { passive: true });
+
+  // 2. Hero word-by-word animation
+  (function() {
+    const headline = document.querySelector('.hero-headline');
+    if (!headline) return;
+    const text = headline.textContent.trim();
+    headline.innerHTML = text.split(' ').map(w =>
+      `<span class="hero-word">${w}</span>`
+    ).join(' ');
+    setTimeout(() => {
+      document.querySelectorAll('.hero-word').forEach((w, i) => {
+        setTimeout(() => w.classList.add('word-in'), i * 90);
+      });
+    }, 400);
+  })();
+
+  // 3. Hero image clip reveal: driven by the image, not a blind timer.
+  (function() {
+    const img = document.querySelector('.hero-right img');
+    if (!img) return;
+    img.classList.add('pre-clip');
+    const show = () => requestAnimationFrame(() => img.classList.remove('pre-clip'));
+    if (img.complete && img.naturalWidth) show();
+    else img.addEventListener('load', show, { once: true });
+    img.addEventListener('error', show, { once: true });
+    setTimeout(show, 800);   // failsafe: never leave the hero blank
+  })();
+
+  // 4. Stats pill bounce
+  const pillObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('stat-in'); pillObs.unobserve(e.target); }
+    });
+  }, { threshold: 0.3 });
+  const pill = document.querySelector('.stats-pill-inner');
+  if (pill) pillObs.observe(pill);
+
+  // 5. Section title ink-underline
+  const titleObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('underline-drawn'); titleObs.unobserve(e.target); }
+    });
+  }, { threshold: 0.6 });
+  document.querySelectorAll('.section-title').forEach(el => titleObs.observe(el));
+
+  // 6. Process line draw
+  const lineObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('line-drawn');
+        // stagger steps
+        e.target.querySelectorAll('.process-step').forEach((s, i) => {
+          setTimeout(() => s.classList.add('step-in'), i * 180);
+        });
+        lineObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  const stepsRow = document.querySelector('.process-steps-row');
+  if (stepsRow) lineObs.observe(stepsRow);
+
+  // 7. Alternating reveal: left for odd, right for even sections
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    if (i % 2 === 1) el.classList.add('reveal-right');
+  });
+  const revObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); revObs.unobserve(e.target); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.reveal, .reveal-right').forEach(el => revObs.observe(el));
+
+  // 8. Gallery stagger
+  const galObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const items = e.target.querySelectorAll('.gallery-item');
+        items.forEach((item, i) => setTimeout(() => item.classList.add('gal-in'), i * 100));
+        galObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  const galGrid = document.querySelector('.gallery-grid');
+  if (galGrid) galObs.observe(galGrid);
+
+  // 9. Guarantee slide reveal
+  const guarObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelector('.guarantee-text')?.classList.add('guar-in');
+        e.target.querySelector('.guarantee-right')?.classList.add('guar-in');
+        setTimeout(() => {
+          document.querySelector('.guarantee-num')?.classList.add('spin');
+        }, 500);
+        guarObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  const guarEl = document.querySelector('#guarantee');
+  if (guarEl) guarObs.observe(guarEl);
+
+  // 10. Floating dust motes in hero
+  (function() {
+    const hero = document.getElementById('hero');
+    if (!hero) return;
+    for (let i = 0; i < 12; i++) {
+      const m = document.createElement('div');
+      m.className = 'dust-mote';
+      const sz = Math.random() * 8 + 4;
+      m.style.cssText = `
+        width:${sz}px; height:${sz}px;
+        left:${Math.random()*100}%; top:${Math.random()*100}%;
+        --mx:${(Math.random()-0.5)*40}px; --my:${(Math.random()-0.5)*50}px;
+        animation-delay:${Math.random()*5}s;
+        animation-duration:${Math.random()*6+8}s;
+      `;
+      hero.appendChild(m);
+    }
+  })();
+
+  // 11. Scroll-based parallax on hero image
+  const heroImg = document.querySelector('.hero-right img');
+  window.addEventListener('scroll', () => {
+    if (!heroImg) return;
+    // the old ternary tested a .revealed class that no longer exists and only
+    // ever appended a no-op translateX(0)
+    heroImg.style.transform = `translateY(${window.scrollY * 0.08}px)`;
+  }, { passive: true });
+
+  // 12. FAQ toggle (already in HTML but ensure it works)
+  function toggleFaq(btn) {
+    const card = btn.closest('.faq-card');
+    const isOpen = card.classList.contains('open');
+    document.querySelectorAll('.faq-card.open').forEach(c => c.classList.remove('open'));
+    if (!isOpen) card.classList.add('open');
+  }
+
+/* Both marquee columns at one px/sec: the groups differ in width, so a shared
+   duration would visibly desync them. */
+(function(){
+  var PX_PER_SEC = 40;
+  function sync(){
+    document.querySelectorAll('.lstrip-track').forEach(function(track){
+      var grp = track.querySelector('.lstrip-grp');
+      if(!grp) return;
+      var w = grp.getBoundingClientRect().width;
+      if(!w) return;
+      track.style.animationDuration = (w / PX_PER_SEC).toFixed(2) + 's';
+    });
+  }
+  sync();
+  window.addEventListener('load', sync);
+  window.addEventListener('resize', sync);
+})();
+
+/* Clicking a review promotes it: the highlight followed nothing before. */
+(function(){
+  var cards = [].slice.call(document.querySelectorAll('.review-card'));
+  if(!cards.length) return;
+  cards.forEach(function(card){
+    card.setAttribute('tabindex','0');
+    function pick(){
+      cards.forEach(function(c){ c.classList.remove('featured'); });
+      card.classList.add('featured');
+    }
+    card.addEventListener('click', pick);
+    card.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); pick(); }
+    });
+  });
+})();
+
+// 13. In-page anchor links scroll smoothly on click. This used to be a
+// global `scroll-behavior:smooth`, but that also animates the browser's
+// own scroll-to-hash on page load - so reloading (or opening a link)
+// while on a section like #reviews visibly jumped to the top first and
+// slid back down. Scrolling only from a click leaves page load instant.
+(function(){
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    var id = a.getAttribute('href');
+    if (!id || id.length < 2) return;
+    a.addEventListener('click', function(e){
+      var target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior:'smooth', block:'start' });
+      if (history.pushState) history.pushState(null, '', id);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roofing: NFRC Accredited Roofers, Sussex &amp; Hampshire</title>
+<meta name="description" content="Pitched and flat roofs, repairs, Velux windows and roofline. Free survey, fixed written price, 15 year workmanship guarantee and a 10 year insurance backed guarantee.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --grn:#14361F;--grn2:#1B4527;--grn3:#0D2415;
+  --ln:rgba(240,235,224,.16);--ln2:rgba(240,235,224,.09);
+  --fg:#F0EBE0;--mut:rgba(240,235,224,.78);--dim:rgba(240,235,224,.62);
+  --lime:#A9C46C;--chalk:#E8DFC8;
+  --dsp:"Gloock",Georgia,serif;--bdy:"Schibsted Grotesk",Arial,sans-serif;
+  --rail:230px;--ea:cubic-bezier(.16,1,.3,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+body{font-family:var(--bdy);background:var(--grn);color:var(--fg);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{font:inherit}
+:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
+h1,h2,h3{font-family:var(--dsp);font-weight:400;line-height:1.08;letter-spacing:-.01em}
+p{color:var(--mut)}
+
+/* ── FIXED LEFT RAIL ── */
+.rail{position:fixed;left:0;top:0;bottom:0;width:var(--rail);border-right:1px solid var(--ln);padding:32px 26px;display:flex;flex-direction:column;z-index:60;background:var(--grn)}
+.rlogo{font-family:var(--dsp);font-size:27px;line-height:1;margin-bottom:6px}
+.rlogo span{color:var(--lime)}
+.rtag{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);line-height:1.6}
+.rnav{margin-top:44px;display:flex;flex-direction:column;gap:1px;flex:1}
+.rnav a{font-size:16px;color:var(--mut);padding:7px 0 7px 20px;position:relative;transition:.25s}
+.rnav a::before{content:"";position:absolute;left:0;top:50%;width:8px;height:1px;background:var(--ln);transform:translateY(-50%);transition:.3s}
+.rnav a:hover{color:var(--fg)}
+.rnav a.on{color:var(--lime)}
+.rnav a.on::before{background:var(--lime);width:13px}
+.racc{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);line-height:2;border-top:1px solid var(--ln);padding-top:18px;margin-bottom:20px}
+.rcta{display:block;text-align:center;background:var(--lime);color:var(--grn3);font-weight:700;font-size:16px;padding:13px;border-radius:2px;transition:.25s}
+.rcta:hover{background:var(--chalk)}
+.rtel{display:block;font-family:var(--dsp);font-size:20px;margin-top:14px;text-align:center}
+
+/* mobile bar */
+.mbar{display:none;position:sticky;top:0;z-index:70;background:var(--grn);border-bottom:1px solid var(--ln);padding:13px 22px;align-items:center;justify-content:space-between;gap:14px}
+.mtg{width:38px;height:38px;border:1px solid var(--ln);background:none;position:relative;cursor:pointer;border-radius:2px}
+.mtg s,.mtg::before,.mtg::after{content:"";position:absolute;left:10px;right:10px;height:1.5px;background:var(--fg)}
+.mtg::before{top:14px}.mtg s{top:18px}.mtg::after{top:22px}
+.mdrw{display:none}
+@media(max-width:1000px){
+ .rail{display:none}.mbar{display:flex}
+ .mdrw{display:block;max-height:0;overflow:hidden;background:var(--grn2);transition:max-height .4s var(--ea)}
+ .mdrw.op{max-height:520px}
+ .mdrw a{display:block;padding:12px 22px;font-size:17px;border-bottom:1px solid var(--ln2)}
+ :root{--rail:0px}
+}
+
+.shell{margin-left:var(--rail)}
+.pad{padding:0 clamp(24px,5vw,72px)}
+.blk{padding:96px 0;border-bottom:1px solid var(--ln2)}
+.num{display:flex;align-items:baseline;gap:14px;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--lime);margin-bottom:22px}
+.num b{font-weight:600}
+.num i{flex:1;height:1px;background:var(--ln);font-style:normal;max-width:90px}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ea),transform .8s var(--ea)}
+.rv.in{opacity:1;transform:none}
+.sg .it{opacity:0;transform:translateY(15px);transition:opacity .7s var(--ea),transform .7s var(--ea)}
+.sg.in .it{opacity:1;transform:none}
+.sg.in .it:nth-child(1){transition-delay:.04s}.sg.in .it:nth-child(2){transition-delay:.09s}.sg.in .it:nth-child(3){transition-delay:.14s}.sg.in .it:nth-child(4){transition-delay:.19s}.sg.in .it:nth-child(5){transition-delay:.24s}.sg.in .it:nth-child(6){transition-delay:.29s}
+
+.btn{display:inline-flex;align-items:center;gap:9px;padding:14px 26px;font-size:16px;font-weight:600;border-radius:2px;border:1px solid transparent;cursor:pointer;transition:.28s var(--ea)}
+.bl{background:var(--lime);color:var(--grn3)}.bl:hover{background:var(--chalk)}
+.bg2{border-color:var(--ln);color:var(--fg)}.bg2:hover{border-color:var(--lime);color:var(--lime)}
+.pr{display:flex;gap:12px;flex-wrap:wrap}
+
+/* HERO */
+.hero{padding:clamp(60px,9vw,120px) 0 84px;border-bottom:1px solid var(--ln2)}
+.hero h1{font-size:clamp(40px,6.6vw,92px);max-width:15ch}
+.hero h1 em{font-style:italic;color:var(--lime)}
+.hsub{margin:26px 0 34px;max-width:56ch;font-size:18px;line-height:1.82}
+.hmeta{display:flex;flex-wrap:wrap;gap:34px;margin-top:44px;padding-top:26px;border-top:1px solid var(--ln)}
+.hmeta div{min-width:130px}
+.hmeta b{display:block;font-family:var(--dsp);font-size:30px;color:var(--chalk);line-height:1}
+.hmeta span{font-size:14px;letter-spacing:.11em;text-transform:uppercase;color:var(--dim);margin-top:7px;display:block}
+.hban{margin-top:56px;border-radius:3px;overflow:hidden;aspect-ratio:21/8}
+.hban img,.hban video{width:100%;height:100%;object-fit:cover;display:block}
+/* Video Project 10 is pillarboxed inside the file: a 1920x1080 frame carrying
+   1648x1080 of picture with a 136px black bar each side. The band is wider
+   than 16:9, so cover shows the full width and the bars with it; 1920/1648 =
+   1.165 scales them out and .hban's overflow:hidden clips the overspill. */
+.hban video.pbx{transform:scale(1.165)}
+.grev{display:inline-flex;align-items:center;gap:9px;font-size:16px;color:var(--mut);margin-top:24px}
+.grev svg{width:18px;height:18px}.grev .st{color:var(--lime);letter-spacing:1px}
+
+/* SERVICES index list */
+.idx{border-top:1px solid var(--ln)}
+.idr{display:grid;grid-template-columns:52px 1fr auto;gap:26px;align-items:center;padding:26px 0;border-bottom:1px solid var(--ln);position:relative;cursor:default;transition:padding .35s var(--ea)}
+.idr:hover{padding-left:14px}
+.idn{font-size:14px;color:var(--lime);letter-spacing:.14em}
+.idr h3{font-size:clamp(23px,3.2vw,36px);transition:color .3s}
+.idr:hover h3{color:var(--lime)}
+.idd{font-size:17px;color:var(--mut);max-width:52ch;margin-top:7px;line-height:1.72}
+.idth{width:120px;height:78px;border-radius:2px;overflow:hidden;opacity:.32;filter:grayscale(1);transition:.45s var(--ea)}
+.idr:hover .idth{opacity:1;filter:none;transform:scale(1.04)}
+.idth img{width:100%;height:100%;object-fit:cover}
+@media(max-width:800px){.idr{grid-template-columns:44px 1fr;gap:16px}.idth{display:none}}
+
+/* PROCESS ledger rows */
+.led{border-top:1px solid var(--ln)}
+.ledr{display:grid;grid-template-columns:120px 1fr;gap:34px;padding:30px 0;border-bottom:1px solid var(--ln)}
+.ledr .st2{font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--lime);padding-top:5px}
+.ledr h3{font-size:23px;margin-bottom:9px}
+.ledr p{font-size:17px;line-height:1.78;max-width:62ch}
+@media(max-width:700px){.ledr{grid-template-columns:1fr;gap:10px}}
+
+/* NUMBERS */
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--ln2);border:1px solid var(--ln2)}
+.nums div{background:var(--grn);padding:38px 26px}
+.nums b{display:block;font-family:var(--dsp);font-size:clamp(38px,5vw,60px);color:var(--lime);line-height:1}
+.nums span{font-size:15px;color:var(--dim);margin-top:10px;display:block;line-height:1.6}
+@media(max-width:820px){.nums{grid-template-columns:1fr 1fr}}
+
+/* WHY two col text */
+.why{columns:2 340px;column-gap:56px}
+.wit{break-inside:avoid;padding-bottom:28px;margin-bottom:28px;border-bottom:1px solid var(--ln2)}
+.wit b{font-family:var(--dsp);font-size:22px;color:var(--chalk);display:block;margin-bottom:8px}
+.wit b s{color:var(--lime);text-decoration:none;font-size:16px;margin-right:9px;font-family:var(--bdy);letter-spacing:.1em}
+.wit p{font-size:17px;line-height:1.76}
+
+/* WORK */
+.wk{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.wki{position:relative;overflow:hidden;border-radius:3px;aspect-ratio:4/3}
+.wki.big{grid-column:span 2;aspect-ratio:8/3}
+.wki img{width:100%;height:100%;object-fit:cover;transition:.65s var(--ea);filter:saturate(.75)}
+.wki:hover img{transform:scale(1.06);filter:none}
+.wki::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(13,36,21,.88),transparent 56%)}
+.wki span{position:absolute;left:16px;right:16px;bottom:14px;z-index:2;font-size:15px;line-height:1.45}
+@media(max-width:820px){.wk{grid-template-columns:1fr 1fr}.wki.big{grid-column:span 2}}
+
+/* REVIEWS */
+.rvs{columns:2 330px;column-gap:44px}
+.rvc{break-inside:avoid;margin-bottom:34px;padding-bottom:28px;border-bottom:1px solid var(--ln2)}
+.rvc .st{color:var(--lime);letter-spacing:2px;font-size:15px;margin-bottom:14px}
+.rvc p{font-family:var(--dsp);font-size:20px;line-height:1.52;color:var(--fg);margin-bottom:16px}
+.rvc b{font-size:16px;display:block}
+.rvc span{font-size:15px;color:var(--dim)}
+
+/* GUARANTEE */
+.gu{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
+.gbg{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
+.gbg span{font-size:15px;border:1px solid var(--lime);color:var(--lime);padding:8px 15px;border-radius:2px}
+.gnum{text-align:center;border:1px solid var(--ln);padding:48px 26px;border-radius:3px}
+.gnum .n{font-family:var(--dsp);font-size:clamp(70px,9vw,112px);color:var(--lime);line-height:.9}
+.gnum .l{font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-top:14px}
+@media(max-width:860px){.gu{grid-template-columns:1fr;gap:32px}}
+
+/* FAQ */
+.fq{border-top:1px solid var(--ln)}
+.fa{border-bottom:1px solid var(--ln)}
+.faq{width:100%;display:flex;align-items:center;gap:22px;background:none;border:none;text-align:left;padding:20px 2px;cursor:pointer;color:var(--fg)}
+.faq .qn{font-size:14px;color:var(--lime);width:26px;flex:0 0 auto;letter-spacing:.1em}
+.faq .qt{flex:1;font-family:var(--dsp);font-size:20px}
+.faq i{flex:0 0 auto;width:20px;height:20px;position:relative;font-style:normal}
+.faq i::before,.faq i::after{content:"";position:absolute;background:var(--mut);transition:.3s}
+.faq i::before{left:0;right:0;top:9.5px;height:1px}
+.faq i::after{top:0;bottom:0;left:9.5px;width:1px}
+.fa.op .faq i::after{transform:scaleY(0)}
+.fa.op .faq i::before{background:var(--lime)}
+.fan{max-height:0;overflow:hidden;transition:max-height .42s var(--ea)}
+.fan p{font-size:17px;line-height:1.8;padding:0 2px 22px 48px;max-width:74ch}
+@media(max-width:620px){.fan p{padding-left:2px}}
+
+/* CONTACT */
+.ct h2{font-size:clamp(32px,5.4vw,66px);max-width:16ch}
+.ct h2 em{font-style:italic;color:var(--lime)}
+.ctg{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:52px;padding-top:34px;border-top:1px solid var(--ln)}
+.ctg h4{font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--lime);margin-bottom:12px}
+.ctg p,.ctg address{font-size:16px;color:var(--mut);font-style:normal;line-height:1.9}
+.oh{display:flex;justify-content:space-between;max-width:240px;gap:14px}
+@media(max-width:760px){.ctg{grid-template-columns:1fr}}
+
+.ft{padding:40px 0 34px;font-size:15px;color:var(--dim)}
+.ftl{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px;padding-bottom:30px;border-bottom:1px solid var(--ln2);margin-bottom:24px}
+.ftl h4{font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--lime);margin-bottom:11px}
+.ftl a,.ftl span{display:block;color:var(--mut);font-size:16px;padding:4px 0}
+.ftl a:hover{color:var(--fg)}
+.fin{line-height:1.8;max-width:900px;margin-bottom:22px}
+.fbt{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(max-width:760px){.ftl{grid-template-columns:1fr}}
+
+  /* -- ACCREDITATION LOGOS --
+     Replaces the text marks. Tiles carry a white ground of their own so the
+     dark logos stay legible on a dark section. The two-selector form beats
+     the sheet's own .mg span / .tkg span rules, which are (0,1,1) and
+     would otherwise win over a bare .lgt at (0,1,0).
+     max-height is a LENGTH: a percentage against an auto row is a cyclic
+     dependency, browsers drop it, and tall marks then burst the tile. */
+  .lgrow { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; align-items:center; }
+  .lgt, .mg .lgt, .tkg .lgt, .lgrow .lgt {
+    display:inline-flex; align-items:center; justify-content:center; flex:0 0 auto;
+    width:126px; height:60px; padding:9px 12px; background:#fff;
+    border:1px solid var(--ln); border-radius:8px; box-sizing:border-box;
+    margin:0; font-size:0; letter-spacing:normal; text-transform:none; white-space:normal; }
+  .lgt img, .mg .lgt img, .tkg .lgt img, .lgrow .lgt img {
+    max-width:100%; max-height:36px; width:auto; height:auto; object-fit:contain; display:block; }
+  .lglab { display:block; text-align:center; font-size:15px; font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; color:var(--lime); margin-bottom:16px; }
+  @media (max-width:560px) {
+    .lgt, .mg .lgt, .tkg .lgt, .lgrow .lgt { width:108px; height:52px; padding:7px 10px; }
+    .lgt img, .mg .lgt img, .tkg .lgt img, .lgrow .lgt img { max-height:30px; }
+  }
+
+  /* -- TRUST STRIP: two labelled columns, as the base template does --
+     min-width:0 is load bearing: a marquee track is width:max-content and a
+     1fr grid column takes its automatic minimum from min-content, so without
+     it the track pushes the column off-screen instead of being clipped. */
+  .lgsplit { display:grid; grid-template-columns:1fr 1fr; gap:clamp(22px,3vw,48px); align-items:start; }
+  .lgsplit-col { min-width:0; }
+  .lgsplit-col + .lgsplit-col { border-left:1px solid var(--ln); padding-left:clamp(18px,2.4vw,40px); }
+  @media (max-width:820px) {
+    .lgsplit { grid-template-columns:1fr; gap:24px; }
+    .lgsplit-col + .lgsplit-col { border-left:0; padding-left:0; border-top:1px solid var(--ln); padding-top:22px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="rail">
+  <a href="#top" class="rlogo">Roofing<span>.</span></a>
+  <p class="rtag">NFRC &amp; CoRC<br>Accredited Roofers</p>
+  <div class="rnav" id="rnav">
+    <a href="#process">Our Process</a><a href="#why">Why Choose Us?</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#faq">Guides</a><a href="#">Careers</a><a href="#">Area</a><a href="#contact">Contact</a></div>
+  <p class="racc">NFRC · CoRC<br>TrustMark<br>Buy With Confidence<br>Velux Certified</p>
+  <a href="#contact" class="rcta">Book A Free Survey</a>
+  <a href="tel:01632960300" class="rtel">01632 960 300</a>
+</nav>
+
+<div class="mbar">
+  <a href="#top" class="rlogo" style="font-size:22px">Roofing<span>.</span></a>
+  <div style="display:flex;align-items:center;gap:12px">
+    <a href="#contact" class="btn bl" style="padding:10px 16px;font-size:15px">Free Quote</a>
+    <button class="mtg" id="mtg" type="button" aria-label="Menu" aria-expanded="false"><s></s></button>
+  </div>
+</div>
+<div class="mdrw" id="mdrw">
+  <a href="#process">Our Process</a><a href="#why">Why Choose Us?</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#faq">Guides</a><a href="#">Careers</a><a href="#">Area</a><a href="#contact">Contact</a><a href="tel:01632960300">01632 960 300</a>
+</div>
+
+<div class="shell" id="top">
+<div class="pad">
+
+<section class="hero rv">
+  <h1>Your roof, done once and <em>done properly.</em></h1>
+  <p class="hsub">Pitched and flat roofs, repairs, Velux windows and roofline, fitted by our own directly employed roofers. Free no obligation survey, a fixed written price, and a 15 year workmanship guarantee backed by a 10 year insurance backed guarantee.</p>
+  <div class="pr"><a href="#contact" class="btn bl">Book A Free Roof Survey</a><a href="#work" class="btn bg2">See Our Work</a></div>
+  <a href="#reviews" class="grev"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg><span class="st">★★★★★</span> <b style="color:var(--fg)">4.9</b> from <b style="color:var(--fg)">380+</b> Google reviews</a>
+  <div class="hmeta">
+    <div><b>15 yr</b><span>Workmanship guarantee</span></div>
+    <div><b>10 yr</b><span>Insurance backed</span></div>
+    <div><b>5</b><span>Accreditations held</span></div>
+    <div><b>Free</b><span>No obligation survey</span></div>
+  </div>
+  <div class="hban"><video class="pbx" autoplay muted loop playsinline preload="auto" aria-label="A roofer laying interlocking tiles on new battens"><source src="Compressed%20Video/Video%20Project%2010%20(1).mp4" type="video/mp4"></video></div>
+</section>
+
+<section class="blk"><div class="lgsplit"><div class="lgsplit-col"><span class="lglab">Accredited &amp; registered</span><div class="lgrow rv"><span class="lgt"><img src="logos/nfrc.webp" alt="NFRC registered" loading="lazy" decoding="async"></span><span class="lgt"><img src="logos/trustmark.webp" alt="TrustMark registered" loading="lazy" decoding="async"></span><span class="lgt"><img src="logos/approved-code.webp" alt="Trading Standards Approved Code" loading="lazy" decoding="async"></span></div></div><div class="lgsplit-col"><span class="lglab">Endorsed &amp; certified</span><div class="lgrow rv"><span class="lgt"><img src="logos/velux.svg" alt="Velux certified installer" loading="lazy" decoding="async"></span><span class="lgt"><img src="logos/which.jpg" alt="Which? Trusted Trader" loading="lazy" decoding="async"></span><span class="lgt"><img src="logos/checkatrade-logo.svg" alt="Checkatrade verified" loading="lazy" decoding="async"></span></div></div></div></section><section class="blk" id="services">
+  <div class="num rv"><b>01</b><i></i><span>What we do</span></div>
+  <h2 class="rv" style="font-size:clamp(28px,4.2vw,50px);max-width:18ch;margin-bottom:12px">Roofs, roofline and guttering</h2>
+  <p class="rv" style="max-width:60ch;margin-bottom:44px">Directly employed roofers, a fixed written price before we start, and guarantees registered on your behalf when we finish.</p>
+  <div class="idx sg rv">
+    <div class="idr it"><span class="idn">01</span><div><h3>Pitched roofs</h3><p class="idd">Full strip and re roof in tile or natural slate, with new battens, membrane and leadwork. We help you pick the material for the property rather than for our margin.</p></div><div class="idth"><img src="images/cs-pitched.webp" alt="A pitched roof finished in dark interlocking tile" loading="lazy"></div></div>
+    <div class="idr it"><span class="idn">02</span><div><h3>Flat roofs</h3><p class="idd">EPDM Firestone rubber, Cureit GRP fibreglass or high performance felt, laid to falls so water actually leaves the roof. Watertight finish, guaranteed.</p></div><div class="idth"><img src="images/cs-flat.webp" alt="Flat roof installation" loading="lazy"></div></div>
+    <div class="idr it"><span class="idn">03</span><div><h3>Roof repairs</h3><p class="idd">Leaks, slipped or missing tiles, storm damage, sagging areas and failed flashing. We will tell you honestly when a repair will do and when it will not.</p></div><div class="idth"><img src="images/cs-repairs.webp" alt="Roof repairs" loading="lazy"></div></div>
+    <div class="idr it"><span class="idn">04</span><div><h3>Fascias, soffits and guttering</h3><p class="idd">Low maintenance uPVC roofline, fitted properly. A sound roofline is what stops water ingress and rot reaching the timbers behind it.</p></div><div class="idth"><img src="images/cs-roofline.webp" alt="Roofline and guttering" loading="lazy"></div></div>
+    <div class="idr it"><span class="idn">05</span><div><h3>Velux windows</h3><p class="idd">Certified Velux installation for lofts, kitchens and extensions, flashed and sealed to a watertight finish that will not leak in the first storm.</p></div><div class="idth"><img src="images/cs-velux.webp" alt="Velux window installation" loading="lazy"></div></div>
+    <div class="idr it"><span class="idn">06</span><div><h3>Roof care plans</h3><p class="idd">Routine inspections, gutter clearing, moss removal, minor repairs and a written condition report. Built for homeowners and landlords who would rather not wait for a leak.</p></div><div class="idth"><img src="images/cs-care.webp" alt="Roof care and maintenance" loading="lazy"></div></div>
+  </div>
+</section>
+
+<section class="blk" id="process">
+  <div class="num rv"><b>02</b><i></i><span>How it works</span></div>
+  <h2 class="rv" style="font-size:clamp(28px,4.2vw,50px);max-width:20ch;margin-bottom:44px">Four steps, and no pressure at any of them</h2>
+  <div class="led sg rv">
+    <div class="ledr it"><span class="st2">Step 01</span><div><h3>Tell us what you need</h3><p>Use the online form or call us with a brief description of the work. We will arrange a time that suits you rather than a two hour window.</p></div></div>
+    <div class="ledr it"><span class="st2">Step 02</span><div><h3>Free roof survey</h3><p>We come out, get up on the roof properly and assess it, then give you a transparent written quote with no obligation to proceed.</p></div></div>
+    <div class="ledr it"><span class="st2">Step 03</span><div><h3>The work itself</h3><p>Our own roofers arrive on the day agreed, complete the job to the standard quoted, and leave the site clean.</p></div></div>
+    <div class="ledr it"><span class="st2">Step 04</span><div><h3>Aftercare</h3><p>We check you are satisfied, register your guarantees, and stay available. Roof care plans are there if you want ongoing cover.</p></div></div>
+  </div>
+  <div class="pr rv" style="margin-top:40px"><a href="#contact" class="btn bl">Get A Free Quote →</a><a href="tel:01632960300" class="btn bg2">Speak To Our Experts →</a></div>
+</section>
+
+<section class="blk">
+  <div class="nums sg rv cnt">
+    <div class="it"><b class="cn" data-to="15" data-sf=" yr">0</b><span>Workmanship guarantee</span></div>
+    <div class="it"><b class="cn" data-to="10" data-sf=" yr">0</b><span>Insurance backed guarantee</span></div>
+    <div class="it"><b class="cn" data-to="5" data-sf=" yr">0</b><span>Finance terms available</span></div>
+    <div class="it"><b>Free</b><span>Roof survey &amp; quote</span></div>
+  </div>
+</section>
+
+<section class="blk" id="why">
+  <div class="num rv"><b>03</b><i></i><span>Why choose us</span></div>
+  <h2 class="rv" style="font-size:clamp(28px,4.2vw,50px);max-width:18ch;margin-bottom:44px">Why our roofing beats the rest</h2>
+  <div class="why rv">
+    <div class="wit"><b><s>01</s>Guarantees that outlast us</b><p>A 15 year workmanship guarantee on installations, plus a separate 10 year insurance backed guarantee that still stands if we stopped trading tomorrow.</p></div>
+    <div class="wit"><b><s>02</s>Accredited, not just insured</b><p>NFRC and CoRC registered, TrustMark endorsed, Trading Standards Buy With Confidence approved, and Velux certified for window fitting.</p></div>
+    <div class="wit"><b><s>03</s>Directly employed roofers</b><p>No subcontractors and nobody on commission. The team that surveys your roof is the team that works on it, so nobody has a reason to oversell you.</p></div>
+    <div class="wit"><b><s>04</s>Free survey, honest answer</b><p>We get up on the roof properly before quoting, and if a repair will do we will say so rather than selling you a full re roof.</p></div>
+    <div class="wit"><b><s>05</s>A fixed written price</b><p>You get the figure in writing before anything starts. No surprises once the scaffold is up, which is exactly when surprises tend to appear.</p></div>
+    <div class="wit"><b><s>06</s>Finance if you want it</b><p>Spread the cost over terms up to five years. Subject to status and credit checks; we act as an introducer, not a lender, and give no financial advice.</p></div>
+  </div>
+</section>
+
+<section class="blk" id="work">
+  <div class="num rv"><b>04</b><i></i><span>Recent work</span></div>
+  <h2 class="rv" style="font-size:clamp(28px,4.2vw,50px);margin-bottom:40px">Roofs we have finished</h2>
+  <div class="wk rv">
+    <div class="wki big"><img src="images/cs-gal-gables.jpg" alt="A brick house with twin dormer windows" loading="lazy"><span>Re roof with new ridge and chimney flashing</span></div>
+    <div class="wki"><img src="images/cs-tiles-closeup.webp" alt="A close view of a dark tiled roof and ridge" loading="lazy"><span>Roofline replacement across an estate</span></div>
+    <div class="wki"><img src="images/cs-gal-ridge.webp" alt="Ridge capping on a dark tiled roof" loading="lazy"><span>Ridge capping and dry fix system</span></div>
+    <div class="wki"><img src="images/cs-gal-chimney.jpg" alt="Roofers beside a chimney stack" loading="lazy"><span>Chimney repointing and lead flashing</span></div>
+    <div class="wki"><img src="images/cs-gal-battens.jpg" alt="Roof battens and breathable membrane from below" loading="lazy"><span>New rafters and structural timbers</span></div>
+    <div class="wki big"><img src="images/cs-gal-scaffold.webp" alt="Property under scaffolding" loading="lazy"><span>Scaffold up, full strip and re roof</span></div>
+    <div class="wki"><img src="images/cs-gal-tiling.jpg" alt="Roof tiles being laid in courses" loading="lazy"><span>Strip out and dispose of old covering</span></div>
+    <div class="wki"><img src="images/cs-roofers-work.webp" alt="Roofers working at height" loading="lazy"><span>Working at height, fully scaffolded</span></div>
+  </div>
+</section>
+
+<section class="blk" id="reviews">
+  <div class="num rv"><b>05</b><i></i><span>What our customers say</span></div>
+  <h2 class="rv" style="font-size:clamp(28px,4.2vw,50px);margin-bottom:44px">Rated 4.9 from 380+ reviews</h2>
+  <div class="rvs rv">
+    <div class="rvc"><div class="st">★★★★★</div><p>"Everything was completed quickly and efficiently and nothing was too much trouble. Everyone was very respectful of my home, kept the drive clear and swept up each evening. Very satisfied."</p><b>Alexa Bennett</b><span>Full pitched re roof</span></div>
+    <div class="rvc"><div class="st">★★★★★</div><p>"Had three quotes and this was the only one that came with a proper written breakdown. The price at the end was the price on the quote, which after our last builder was a relief."</p><b>Dan Rowntree</b><span>Flat roof, EPDM rubber</span></div>
+    <div class="rvc"><div class="st">★★★★★</div><p>"Came out the morning after the storm, made it safe the same day and did the permanent repair that week. Could not have asked for more."</p><b>Margaret Holt</b><span>Storm damage repair</span></div>
+    <div class="rvc"><div class="st">★★★★★</div><p>"New fascias, soffits and gutters right round the house in two days. Tidy job, and they took all the old plastic away with them."</p><b>James Pemberton</b><span>Roofline replacement</span></div>
+    <div class="rvc"><div class="st">★★★★★</div><p>"Velux fitted in the loft conversion and not a drop through it over the winter. They flashed it properly rather than relying on sealant."</p><b>Priya Nair</b><span>Velux window installation</span></div>
+    <div class="rvc"><div class="st">★★★★★</div><p>"We took the care plan after the re roof. They come twice a year, clear the gutters and send a short report with photos. Worth it for the peace of mind."</p><b>Colin Baxter</b><span>Roof care plan</span></div>
+  </div>
+</section>
+
+<section class="blk" id="guarantee">
+  <div class="num rv"><b>06</b><i></i><span>Our promise</span></div>
+  <div class="gu">
+    <div class="rv">
+      <h2 style="font-size:clamp(28px,4.2vw,50px);margin-bottom:18px">Two guarantees, not one</h2>
+      <p style="font-size:18px;line-height:1.85;max-width:60ch">Every installation carries our 15 year workmanship guarantee. On top of that sits a 10 year insurance backed guarantee, held by a third party, which still pays out if this company ceased trading. That second one is the part most roofers do not offer, and the only one worth anything if the worst happens.</p>
+      <div class="gbg"><span>15 Year Workmanship</span><span>10 Year Insurance Backed</span><span>Transferable On Sale</span><span>NFRC &amp; CoRC Registered</span></div>
+    </div>
+    <div class="gnum rv"><div class="n">15</div><div class="l">Year Workmanship<br>Guarantee</div></div>
+  </div>
+</section>
+
+<section class="blk" id="faq">
+  <div class="num rv"><b>07</b><i></i><span>Common questions</span></div>
+  <h2 class="rv" style="font-size:clamp(28px,4.2vw,50px);margin-bottom:40px">Frequently asked questions</h2>
+  <div class="fq rv">
+    <div class="fa op"><button class="faq" type="button"><span class="qn">01</span><span class="qt">How much does a new roof cost?</span><i></i></button><div class="fan"><p>It depends on the size and pitch of the roof, the material, the state of the timbers underneath and whether scaffolding is straightforward. That is why we survey before quoting rather than giving a number over the phone that changes later.</p></div></div>
+    <div class="fa"><button class="faq" type="button"><span class="qn">02</span><span class="qt">How long does a re roof take?</span><i></i></button><div class="fan"><p>A typical semi detached pitched re roof runs three to five working days once the scaffold is up. Larger or more complex roofs take longer, and we will give you the expected duration in writing before you commit.</p></div></div>
+    <div class="fa"><button class="faq" type="button"><span class="qn">03</span><span class="qt">Will I need scaffolding?</span><i></i></button><div class="fan"><p>For almost any pitched roof work, yes. It is a legal working at height requirement, not an upsell, and it is included in the quoted price rather than added afterwards.</p></div></div>
+    <div class="fa"><button class="faq" type="button"><span class="qn">04</span><span class="qt">What is an insurance backed guarantee?</span><i></i></button><div class="fan"><p>Your workmanship guarantee is only as good as the company behind it. An insurance backed guarantee is held by an independent insurer, so if the installer ceases trading the cover continues. Ours runs for 10 years alongside the 15 year workmanship guarantee.</p></div></div>
+    <div class="fa"><button class="faq" type="button"><span class="qn">05</span><span class="qt">Can you repair my roof instead of replacing it?</span><i></i></button><div class="fan"><p>Often, yes, and we will say so. Slipped tiles, failed flashing, a cracked valley or localised storm damage are usually repairs. We only recommend a full re roof when the battens, membrane or timbers have gone.</p></div></div>
+    <div class="fa"><button class="faq" type="button"><span class="qn">06</span><span class="qt">What flat roofing materials do you use?</span><i></i></button><div class="fan"><p>EPDM Firestone rubber, Cureit GRP fibreglass and high performance felt. EPDM suits most domestic flat roofs, GRP is better where a very hard wearing surface is needed. Both are laid to falls so water drains rather than pools.</p></div></div>
+    <div class="fa"><button class="faq" type="button"><span class="qn">07</span><span class="qt">Do you handle storm damage and insurance claims?</span><i></i></button><div class="fan"><p>We attend storm damage quickly and make the roof safe first. We will provide the photographs, written report and itemised quote your insurer needs, though the claim itself stays between you and them.</p></div></div>
+    <div class="fa"><button class="faq" type="button"><span class="qn">08</span><span class="qt">Do fascias and soffits really need replacing?</span><i></i></button><div class="fan"><p>If they are rotten or the guttering behind them is failing, yes. A failed roofline lets water into the timbers and rafter ends, which turns a few hundred pounds of uPVC into a structural repair.</p></div></div>
+    <div class="fa"><button class="faq" type="button"><span class="qn">09</span><span class="qt">Are you NFRC registered?</span><i></i></button><div class="fan"><p>Yes, along with CoRC. We are also TrustMark registered, approved under Trading Standards Buy With Confidence, and certified by Velux for window installation.</p></div></div>
+    <div class="fa"><button class="faq" type="button"><span class="qn">10</span><span class="qt">Do you fit Velux windows?</span><i></i></button><div class="fan"><p>We do, as a certified Velux installer. Loft conversions, kitchens and extensions. The flashing kit and seal are what stop a roof window leaking, so it is worth having it fitted by someone certified for it.</p></div></div>
+    <div class="fa"><button class="faq" type="button"><span class="qn">11</span><span class="qt">What is a roof care plan?</span><i></i></button><div class="fan"><p>A yearly or twice yearly visit covering inspection, gutter clearing, moss removal, minor repairs and a written condition report. Popular with landlords and with anyone who would rather find a problem before the ceiling does.</p></div></div>
+    <div class="fa"><button class="faq" type="button"><span class="qn">12</span><span class="qt">Do you offer finance?</span><i></i></button><div class="fan"><p>Yes, with terms up to five years. Finance is subject to status and credit checks. We act as a credit introducer and not a lender, and we do not give financial advice.</p></div></div>
+  </div>
+</section>
+
+<section class="blk ct" id="contact">
+  <div class="num rv"><b>08</b><i></i><span>Get started</span></div>
+  <div class="rv">
+    <h2>Get a free roof survey, and <em>an honest answer.</em></h2>
+    <p style="margin:20px 0 30px;max-width:54ch;font-size:18px">We will get up on the roof, tell you what it actually needs, and put a fixed price in writing. No obligation to go ahead.</p>
+    <div class="pr"><a href="#contact" class="btn bl">Book A Free Roof Survey</a><a href="tel:01632960300" class="btn bg2">01632 960 300</a></div>
+  </div>
+  <div class="ctg rv">
+    <div><h4>Opening hours</h4><p><span class="oh"><span>Mon to Fri</span><span>08:00 to 17:30</span></span><span class="oh"><span>Saturday</span><span>09:00 to 13:00</span></span><span class="oh"><span>Sunday</span><span>Closed</span></span><span class="oh"><span>Storm damage</span><span>Same day</span></span></p></div>
+    <div><h4>Office</h4><address>Roofing Ltd<br>1 Broadwater Road<br>Worthing BN13 2EX</address></div>
+    <div><h4>Areas we cover</h4><p>Worthing · Brighton · Chichester<br>Portsmouth · Horsham · Crawley<br>East &amp; West Sussex, Hampshire<br>Outside these? Call and we will tell you honestly.</p></div>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="ftl">
+    <div><a href="#top" class="rlogo" style="font-size:23px">Roofing<span>.</span></a><p style="margin-top:12px;font-size:16px;color:var(--mut);max-width:40ch;line-height:1.8">Pitched and flat roofing, repairs, Velux windows and roofline. NFRC and CoRC registered, with a 15 year workmanship guarantee and a 10 year insurance backed guarantee on every installation.</p></div>
+    <div><h4>Services</h4><a href="#services">Pitched roofs</a><a href="#services">Flat roofs</a><a href="#services">Fascias, Soffits &amp; Gutters</a><a href="#services">Roof Repairs &amp; Care Plans</a></div>
+    <div><h4>Accreditations</h4><a href="#">NFRC Registered</a><a href="#">CoRC Approved Contractor</a><a href="#">TrustMark Registered</a><a href="#">Buy With Confidence</a><a href="#">Velux Certified Installer</a></div>
+  </div>
+  <p class="fin"><b style="color:var(--mut)">Finance:</b> Roofing Ltd is an Introducer Appointed Representative of a regulated credit broker. The credit broker is not a lender (FRN 111111). Finance is available subject to status. The rate offered is always provisional and will depend upon your personal circumstances, the loan amount and the term.</p>
+  <div class="fbt"><span>© 2026 We Build Trades Ltd. Demonstration template.</span><span><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Complaints</a> · <a href="#">Conservation Compliance</a></span></div>
+</footer>
+
+</div>
+</div>
+
+<script>
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');if(x.target.classList.contains('cnt'))cu(x.target);io.unobserve(x.target)}})},{threshold:.08,rootMargin:"0px 0px -6% 0px"});
+document.querySelectorAll('.rv,.sg').forEach(e=>io.observe(e));
+function cu(s){s.querySelectorAll('.cn').forEach((el,i)=>{const to=+el.dataset.to,sf=el.dataset.sf||'',d=1200,st=performance.now()+i*90;
+function t(n){if(n<st){requestAnimationFrame(t);return}const p=Math.min(1,(n-st)/d),e=1-Math.pow(1-p,3);el.textContent=Math.floor(to*e)+sf;if(p<1)requestAnimationFrame(t);else el.textContent=to+sf}requestAnimationFrame(t)})}
+/* scrollspy for the rail */
+(()=>{const links=[...document.querySelectorAll('#rnav a')];
+const map=links.map(a=>({a,el:document.querySelector(a.getAttribute('href'))})).filter(x=>x.el);
+const spy=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('on'));
+const m=map.find(x=>x.el===e.target);if(m)m.a.classList.add('on')}})},{rootMargin:"-45% 0px -50% 0px"});
+map.forEach(x=>spy.observe(x.el))})();
+(()=>{const t=document.getElementById('mtg'),d=document.getElementById('mdrw');
+t.addEventListener('click',()=>{const o=d.classList.toggle('op');t.setAttribute('aria-expanded',o)});
+d.addEventListener('click',e=>{if(e.target.closest('a'))d.classList.remove('op')});
+addEventListener('keydown',e=>{if(e.key==='Escape')d.classList.remove('op')})})();
+(()=>{const it=[...document.querySelectorAll('.fa')];
+function set(x,o){const a=x.querySelector('.fan');if(o){x.classList.add('op');a.style.maxHeight=a.scrollHeight+'px'}else{x.classList.remove('op');a.style.maxHeight='0px'}}
+it.forEach(x=>{if(x.classList.contains('op'))set(x,true);x.querySelector('.faq').addEventListener('click',()=>{const o=x.classList.contains('op');it.forEach(y=>set(y,false));set(x,!o)})});
+addEventListener('resize',()=>{const o=document.querySelector('.fa.op');if(o){const a=o.querySelector('.fan');a.style.maxHeight=a.scrollHeight+'px'}})})();
+(()=>{const F='data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><rect width="800" height="600" fill="%231B4527"/></svg>');
+document.querySelectorAll('img').forEach(i=>i.addEventListener('error',function(){this.onerror=null;this.src=F},{once:true}))})();
+</script>
+<script>
+/* Hero clip: honour reduced motion. The still it replaced never moved, and CSS
+   cannot stop video playback, so it is paused and a frame stands in. */
+(function(){if(!matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+ document.querySelectorAll(".hban video").forEach(function(v){v.removeAttribute("autoplay");v.pause();});})();
+</script>
+</body>
+</html>
