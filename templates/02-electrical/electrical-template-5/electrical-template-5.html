@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Electrical: NICEIC Registered Electricians in North London</title>
+<meta name="description" content="NICEIC registered electricians covering North London since 2016. Free quotations, fully guaranteed work, and no job too large or small.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --plum:#2E1B33;--plum-d:#1E1023;--plum-l:#F4EFF3;--plum-l2:#E9E0EA;
+  --ink:#241429;--mut:#5B4B60;--onmut:rgba(244,239,243,.72);
+  --line:#D9CBDC;--nline:rgba(255,255,255,.15);
+  --gold:#D9A741;--gold-d:#7A5606;
+  --ser:"Playfair Display",Georgia,serif;--sans:"Jost",Arial,sans-serif;
+  --max:1250px;--ease:cubic-bezier(.16,1,.3,1);--r:4px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+body{font-family:var(--sans);background:var(--plum-l);color:var(--ink);line-height:1.7;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{font:inherit}
+:focus-visible{outline:2px solid var(--gold-d);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+h1,h2,h3{font-family:var(--ser);font-weight:600;letter-spacing:-.01em;line-height:1.15}
+h1 em,h2 em,h3 em{font-style:italic;color:var(--gold-d)}
+.dark h1 em,.dark h2 em,.dark h3 em{color:var(--gold)}
+p{color:var(--mut);font-weight:300}
+.kk{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:500;text-transform:uppercase;letter-spacing:.22em;color:var(--gold-d)}
+.dark .kk,.hero .kk{color:var(--gold)}
+.hero__dk .kk{color:var(--gold-d)}
+section{padding:100px 0;position:relative}
+.tight{padding:54px 0}
+.dark{background:var(--plum);color:var(--plum-l)}
+.dark h1,.dark h2,.dark h3{color:var(--plum-l)}
+.dark p{color:var(--onmut)}
+.soft{background:var(--plum-l2)}
+
+.btn{display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:var(--r);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.14em;cursor:pointer;border:1px solid transparent;transition:.35s var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.b-p{background:var(--plum);color:var(--plum-l)}.b-p:hover{background:var(--plum-d)}
+.b-g{background:var(--gold);color:var(--plum-d)}.b-g:hover{background:#E8BC5F}
+.b-o{border-color:var(--line);color:var(--ink)}.b-o:hover{border-color:var(--plum);background:rgba(46,27,51,.05)}
+.b-ol{border-color:var(--nline);color:var(--plum-l)}.b-ol:hover{background:rgba(255,255,255,.09)}
+.pair{display:flex;gap:12px;flex-wrap:wrap}.mid{display:flex;justify-content:center}
+
+header{position:sticky;top:0;z-index:100;background:rgba(244,239,243,.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{max-width:var(--max);margin:0 auto;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-family:var(--ser);font-size:23px;font-weight:600;letter-spacing:.02em}
+.nl{display:flex;gap:2px;margin:0 auto}
+.nl a{font-size:14px;font-weight:400;text-transform:uppercase;letter-spacing:.14em;color:var(--mut);padding:9px 13px;transition:.25s}
+.nl a:hover{color:var(--gold-d)}
+.nr{display:flex;align-items:center;gap:16px}
+.ntel{font-size:15px;letter-spacing:.06em;font-weight:500}
+.tg{display:none;width:38px;height:38px;border:1px solid var(--line);background:none;position:relative;cursor:pointer;border-radius:var(--r)}
+.tg span,.tg::before,.tg::after{content:"";position:absolute;left:10px;right:10px;height:1px;background:var(--ink)}
+.tg::before{top:14px}.tg span{top:18px}.tg::after{top:22px}
+.dw{display:none}
+@media(max-width:1080px){.nl,.ntel{display:none}.tg{display:block}
+.dw{display:block;max-height:0;overflow:hidden;background:#fff;border-bottom:1px solid var(--line);transition:max-height .4s var(--ease)}
+header.open .dw{max-height:520px}
+.dw a{display:block;padding:13px 28px;font-size:15px;text-transform:uppercase;letter-spacing:.12em;border-bottom:1px solid var(--line)}}
+
+.rev{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rev.in{opacity:1;transform:none}
+.stg .it{opacity:0;transform:translateY(18px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.stg.in .it{opacity:1;transform:none}
+.stg.in .it:nth-child(1){transition-delay:.04s}.stg.in .it:nth-child(2){transition-delay:.1s}.stg.in .it:nth-child(3){transition-delay:.16s}.stg.in .it:nth-child(4){transition-delay:.22s}.stg.in .it:nth-child(5){transition-delay:.28s}.stg.in .it:nth-child(6){transition-delay:.34s}
+
+/* HERO — full-bleed photo, centred serif, overlapping dock */
+.hero{padding:0;background:var(--plum)}
+.hero__st{position:relative;height:74vh;min-height:520px;overflow:hidden}
+.hero__st img,.hero__st video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+/* the clip sits behind the headline, so it is pushed back out of focus. A
+   blurred box samples past its own edges, which would leave a pale rim down all
+   four sides, so it is scaled up and .hero__st's overflow:hidden clips the
+   overspill. */
+.hero__st video{filter:blur(7px);transform:scale(1.12)}
+/* the scrim doubles as the glass: backdrop-filter frosts the clip behind it and
+   the white sheen over the existing plum gradient gives it the pane. */
+.hero__st::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(30,16,35,.72),rgba(30,16,35,.5) 40%,rgba(30,16,35,.9)),
+             linear-gradient(160deg,rgba(255,255,255,.10),rgba(255,255,255,0) 46%);
+  backdrop-filter:blur(3px) saturate(115%);-webkit-backdrop-filter:blur(3px) saturate(115%)}
+.hero__c{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 28px}
+.hero h1{font-size:clamp(38px,6.2vw,80px);color:var(--plum-l);max-width:15ch}
+.hero__l{margin:22px auto 30px;max-width:46ch;font-size:18px;color:var(--onmut)}
+.grev{display:inline-flex;align-items:center;gap:9px;font-size:15px;color:var(--onmut);margin-top:26px}
+.grev svg{width:19px;height:19px}.grev .st{color:var(--gold);letter-spacing:1px}
+.hero__dk{position:relative;z-index:3;margin:-60px auto 0;max-width:1000px;background:var(--plum-l);border:1px solid var(--line);display:flex;flex-wrap:wrap;box-shadow:0 30px 60px -30px rgba(30,16,35,.5)}
+.hero__dk div{flex:1 1 200px;padding:26px 24px;text-align:center;border-left:1px solid var(--line)}
+.hero__dk div:first-child{border-left:none}
+.hero__dk b{display:block;font-family:var(--ser);font-size:26px;color:var(--ink)}
+.hero__dk span{font-size:13px;text-transform:uppercase;letter-spacing:.14em;color:var(--mut)}
+@media(max-width:760px){.hero__st{height:66vh}.hero__dk{margin-inline:20px;width:auto}.hero__dk div{flex:1 1 50%;border-left:none;border-top:1px solid var(--line)}.hero__dk div:nth-child(-n+2){border-top:none}}
+
+/* wordmark strip */
+.wm{display:flex;flex-wrap:wrap;justify-content:center;gap:0}
+.wm span{font-family:var(--ser);font-size:20px;padding:8px 22px;border-right:1px solid var(--line);color:var(--ink)}
+.wm span:last-child{border-right:none}
+.dark .wm span{color:var(--plum-l);border-right-color:var(--nline)}
+
+/* PROCESS — accordion steps */
+.pa{max-width:880px;margin:0 auto}
+.pa__i{border-top:1px solid var(--nline)}
+.pa__i:last-child{border-bottom:1px solid var(--nline)}
+.pa__q{width:100%;display:flex;align-items:center;gap:24px;background:none;border:none;text-align:left;padding:26px 4px;cursor:pointer;color:var(--plum-l)}
+.pa__n{font-family:var(--ser);font-size:24px;color:var(--gold);flex:0 0 auto;width:52px}
+.pa__t{flex:1;font-family:var(--ser);font-size:clamp(20px,2.4vw,26px);font-weight:500}
+.pa__q i{flex:0 0 auto;width:26px;height:26px;border:1px solid var(--nline);border-radius:50%;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:16px;color:var(--onmut);transition:.3s}
+.pa__i.open .pa__q i{background:var(--gold);color:var(--plum-d);border-color:var(--gold);transform:rotate(45deg)}
+.pa__a{max-height:0;overflow:hidden;transition:max-height .45s var(--ease)}
+.pa__a p{font-size:17px;line-height:1.85;padding:0 4px 28px 76px;max-width:62ch}
+@media(max-width:600px){.pa__a p{padding-left:4px}}
+
+/* SERVICES — 3x2 elegant cards */
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.sc{background:var(--plum-l);padding:0;transition:background .35s}
+.sc:hover{background:#fff}
+.sc__im{aspect-ratio:16/10;overflow:hidden}
+.sc__im img{width:100%;height:100%;object-fit:cover;transition:.7s var(--ease)}
+.sc:hover .sc__im img{transform:scale(1.05)}
+.sc__b{padding:26px 24px 30px}
+.sc__n{font-size:13px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold-d);display:block;margin-bottom:10px}
+.sc h3{font-size:20px;margin-bottom:10px}
+.sc p{font-size:16px;line-height:1.72}
+@media(max-width:900px){.sg{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.sg{grid-template-columns:1fr}}
+
+/* STATS */
+.stt{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--nline);border-bottom:1px solid var(--nline)}
+.stt div{padding:44px 22px;text-align:center;border-left:1px solid var(--nline)}
+.stt div:first-child{border-left:none}
+.stt b{display:block;font-family:var(--ser);font-size:clamp(36px,5vw,58px);color:var(--gold)}
+.stt span{font-size:13px;text-transform:uppercase;letter-spacing:.15em;color:var(--onmut);display:block;margin-top:10px;line-height:1.7}
+@media(max-width:760px){.stt{grid-template-columns:1fr 1fr}.stt div:nth-child(3){border-left:none}.stt div:nth-child(n+3){border-top:1px solid var(--nline)}}
+
+/* WHY — 2col elegant list */
+.wg{display:grid;grid-template-columns:1fr 1fr;gap:0 60px}
+.wr{padding:30px 0;border-bottom:1px solid var(--line)}
+.wr h3{font-size:20px;margin-bottom:14px;color:var(--gold-d)}
+.wr ul{list-style:none}
+.wr li{font-size:17px;color:var(--mut);padding:6px 0 6px 22px;position:relative}
+.wr li::before{content:"◆";position:absolute;left:0;color:var(--gold-d);font-size:13px;top:12px}
+@media(max-width:760px){.wg{grid-template-columns:1fr}}
+
+/* GALLERY — 3col masonry */
+.gm{columns:3 240px;column-gap:16px}
+.gm div{break-inside:avoid;margin-bottom:16px;overflow:hidden}
+.gm img{width:100%;display:block;transition:.6s var(--ease)}
+.gm div:hover img{transform:scale(1.05)}
+
+/* REVIEWS — rotator */
+.rot{max-width:800px;margin:0 auto;text-align:center}
+.rs{display:none}.rs.on{display:block;animation:fu .55s var(--ease)}
+@keyframes fu{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.rs .st{color:var(--gold-d);letter-spacing:3px;font-size:16px;margin-bottom:24px}
+.rs p{font-family:var(--ser);font-size:clamp(20px,2.8vw,30px);font-style:italic;line-height:1.5;color:var(--ink);margin-bottom:28px}
+.rs b{font-size:16px;font-weight:500;letter-spacing:.06em;display:block}
+.rs span{font-size:14px;text-transform:uppercase;letter-spacing:.16em;color:var(--mut);display:block;margin-top:4px}
+.rd{display:flex;justify-content:center;gap:9px;margin-top:38px}
+.rd button{width:9px;height:9px;border-radius:50%;border:1px solid var(--line);background:none;cursor:pointer;padding:0;transition:.3s}
+.rd button.on{background:var(--gold-d);border-color:var(--gold-d);width:26px;border-radius:99px}
+
+/* GUARANTEE */
+.gz{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:46px;border-top:1px solid var(--nline)}
+.gz div{padding:34px 26px;border-left:1px solid var(--nline)}
+.gz div:first-child{border-left:none}
+.gz .n{font-family:var(--ser);font-size:22px;color:var(--gold);display:block;margin-bottom:14px}
+.gz h3{font-size:20px;margin-bottom:10px}
+.gz p{font-size:16px;line-height:1.72}
+@media(max-width:800px){.gz{grid-template-columns:1fr}.gz div{border-left:none;border-top:1px solid var(--nline)}.gz div:first-child{border-top:none}}
+
+/* FAQ */
+.fq{max-width:860px;margin:0 auto}
+.fa{border-bottom:1px solid var(--line)}
+.fa__q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:18px;background:none;border:none;text-align:left;padding:22px 4px;cursor:pointer;color:var(--ink);font-family:var(--ser);font-size:20px;font-weight:500}
+.fa__q i{flex:0 0 auto;width:24px;height:24px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:16px;color:var(--mut);transition:.3s}
+.fa.open .fa__q i{background:var(--plum);color:var(--gold);border-color:var(--plum);transform:rotate(45deg)}
+.fa__a{max-height:0;overflow:hidden;transition:max-height .4s var(--ease)}
+.fa__a p{font-size:17px;line-height:1.85;padding:0 4px 24px;max-width:70ch}
+
+/* CTA */
+.fz{text-align:center}
+.fz h2{font-size:clamp(32px,5vw,62px)}
+.fz p{margin:20px auto 0;max-width:48ch;font-size:18px}
+
+/* FOOTER */
+footer{background:var(--plum-d);color:var(--plum-l);padding:76px 0 28px}
+.ft1{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;padding-bottom:40px;border-bottom:1px solid var(--nline)}
+.ft1 p{font-size:16px;line-height:1.85;max-width:34ch;color:var(--onmut)}
+.fcol h4{font-size:13px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold);margin-bottom:16px;font-weight:500}
+.fcol a{display:block;font-size:16px;color:var(--onmut);padding:5px 0}
+.fcol a:hover{color:var(--plum-l)}
+.ft2{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;padding:36px 0;border-bottom:1px solid var(--nline)}
+.ft2 h4{font-size:13px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold);margin-bottom:14px;font-weight:500}
+.ft2 p,.ft2 address{font-size:15px;color:var(--onmut);font-style:normal;line-height:1.95}
+.oh{display:flex;justify-content:space-between;max-width:230px;gap:12px}
+.ffin{font-size:14px;color:rgba(244,239,243,.46);line-height:1.85;padding:26px 0;max-width:920px}
+.fbot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:22px;border-top:1px solid var(--nline);font-size:14px;text-transform:uppercase;letter-spacing:.1em;color:var(--onmut)}
+@media(max-width:900px){.ft1,.ft2{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.ft1,.ft2{grid-template-columns:1fr}}
+.prog{position:fixed;top:0;left:0;height:2px;background:var(--gold);z-index:200;width:0}
+
+/* â”€â”€ brand & accreditation marks â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   Ported from electrical1.html. Each mark sits on its own white tile because
+   the artwork is full-colour and these strips appear on dark grounds in some
+   of these templates; which.jpg also carries a baked-in white background.
+   The container class is part of the selector so this beats the existing
+   chip rule (.mqg span etc.) on specificity: (0,2,0) over (0,1,1). */
+.mqg .ltile,.tl .ltile,.tkg .ltile,.lr .ltile,.wm .ltile{
+  display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;
+  height:52px;min-width:104px;padding:9px 16px;background:#fff;
+  border:1px solid rgba(0,0,0,.10);border-radius:6px;box-sizing:border-box;
+  opacity:1;color:#1B1F25}
+.mqg .ltile img,.tl .ltile img,.tkg .ltile img,.lr .ltile img,.wm .ltile img{
+  height:26px;width:auto;max-width:104px;object-fit:contain;display:block;margin:auto}
+/* Part P has no logo in the folder; it keeps the tile so the row stays even */
+/* Doubled class (.ltile.ltile--text) for specificity (0,3,0): t3 has
+   ".dark .tkg span{color:var(--cream)}" at (0,2,1), which beat the single-class
+   version and painted this tile's label cream on its own white tile - measured
+   1.08:1, invisible. The colour is restated here for the same reason. */
+.mqg .ltile.ltile--text,.tl .ltile.ltile--text,.tkg .ltile.ltile--text,.lr .ltile.ltile--text,.wm .ltile.ltile--text{
+  color:#1B1F25;opacity:1;
+  font-size:14px;font-weight:700;letter-spacing:.04em;text-transform:none;white-space:nowrap}
+@media(max-width:780px){
+  .mqg .ltile,.tl .ltile,.tkg .ltile,.lr .ltile,.wm .ltile{height:46px;min-width:92px;padding:8px 13px}
+  .mqg .ltile img,.tl .ltile img,.tkg .ltile img,.lr .ltile img,.wm .ltile img{height:22px;max-width:88px}
+}
+
+/* nav standardised to 8 items - keep each label on one line */
+@media(min-width:1000px){div.nl>a{white-space:nowrap}div.nl{flex-shrink:0}}
+
+/* nav bar: full width so the phone and CTA fit on one line without cramping */
+@media(min-width:1081px){header .nav{max-width:none}header .nav a,header .nav button,header .nav span,header .nav b{white-space:nowrap}header .nav > *{flex-shrink:0}}
+</style>
+</head>
+<body>
+<div class="prog" id="prog"></div>
+
+<header id="hdr">
+  <div class="nav">
+    <a href="#top" class="logo">Electrical</a>
+    <div class="nl"><a href="#process">Our Process</a><a href="#why">Why Choose Us?</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#faq">Guides</a><a href="#">Careers</a><a href="#">Area</a><a href="#contact">Contact</a></div>
+    <div class="nr">
+      <a class="ntel" href="tel:01632960300">01632 960 300</a>
+      <a href="#contact" class="btn b-p" style="padding:11px 20px;font-size:14px">Get a quote</a>
+      <button class="tg" id="tog" type="button" aria-label="Menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+  <div class="dw" id="draw"><a href="#process">Our Process</a><a href="#why">Why Choose Us?</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#faq">Guides</a><a href="#">Careers</a><a href="#">Area</a><a href="#contact">Contact</a><a href="tel:01632960300">01632 960 300</a></div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="hero__st">
+    <video autoplay muted loop playsinline preload="auto" aria-label="An electrician terminating wiring at a socket outlet"><source src="Compressed%20Videos/output%20(16)%20(1).mp4" type="video/mp4"></video>
+    <div class="hero__c">
+      <p class="kk rev">Welcome to Electrical, North London</p>
+      <h1 class="rev" style="margin-top:22px">Electricians who <em>turn up on time.</em></h1>
+      <p class="hero__l rev">NICEIC registered electricians covering North London since 2016. Free quotations, fully guaranteed work, and no job too large or small.</p>
+      <div class="pair rev" style="justify-content:center"><a href="#contact" class="btn b-g">Get a quote</a><a href="#process" class="btn b-ol">How it works</a></div>
+      <a href="#reviews" class="grev rev"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg><span class="st">★★★★★</span> <b style="color:var(--plum-l)">5.0</b> rated on <b style="color:var(--plum-l)">Google</b></a>
+    </div>
+  </div>
+  <div class="wrap"><div class="hero__dk stg rev">
+    <div class="it"><b>NICEIC</b><span>Registered</span></div>
+    <div class="it"><b>Since '16</b><span>North London</span></div>
+    <div class="it"><b>5 teams</b><span>Directly employed</span></div>
+    <div class="it"><b>24/7</b><span>Emergency</span></div>
+  </div></div>
+</section>
+
+<section class="tight">
+  <div class="wrap rev">
+    <p class="kk" style="justify-content:center;width:100%;margin-bottom:20px;display:flex">Brands we install</p>
+    <div class="wm"><span class="ltile"><img src="logos/tesla.webp" alt="Tesla" loading="lazy" decoding="async"></span><span class="ltile"><img src="logos/ohme.webp" alt="Ohme" loading="lazy" decoding="async"></span><span class="ltile"><img src="logos/zappi.png" alt="Zappi" loading="lazy" decoding="async"></span><span class="ltile"><img src="logos/sunsynk.webp" alt="Sunsynk" loading="lazy" decoding="async"></span><span class="ltile"><img src="logos/fogstar.webp" alt="Fogstar" loading="lazy" decoding="async"></span><span class="ltile"><img src="logos/givenergy.webp" alt="GivEnergy" loading="lazy" decoding="async"></span><span class="ltile"><img src="logos/solax.webp" alt="SolaX" loading="lazy" decoding="async"></span><span class="ltile"><img src="logos/foxess.webp" alt="Fox ESS" loading="lazy" decoding="async"></span><span class="ltile"><img src="logos/enphase.webp" alt="Enphase" loading="lazy" decoding="async"></span></div>
+    <p class="kk" style="justify-content:center;width:100%;margin:32px 0 20px;display:flex">Accreditations</p>
+    <div class="wm"><span class="ltile"><img src="logos/napit.webp" alt="NAPIT" loading="lazy" decoding="async"></span><span class="ltile"><img src="logos/mcs.webp" alt="MCS" loading="lazy" decoding="async"></span><span class="ltile"><img src="logos/trustmark.webp" alt="TrustMark" loading="lazy" decoding="async"></span><span class="ltile"><img src="logos/recc.webp" alt="RECC" loading="lazy" decoding="async"></span><span class="ltile"><img src="logos/approved-code.webp" alt="Approved Code" loading="lazy" decoding="async"></span><span class="ltile"><img src="logos/checkatrade-logo.svg" alt="Checkatrade" loading="lazy" decoding="async"></span><span class="ltile"><img src="logos/which.jpg" alt="Which?" loading="lazy" decoding="async"></span><span class="ltile ltile--text">Part P</span></div>
+  </div>
+</section>
+
+<section id="process" class="dark">
+  <div class="wrap">
+    <div style="text-align:center;max-width:620px;margin:0 auto 48px">
+      <p class="kk rev">How it works</p>
+      <h2 class="rev" style="font-size:clamp(30px,4.2vw,50px);margin-top:16px">Getting an electrician <em>shouldn't be complicated.</em></h2>
+    </div>
+    <div class="pa rev">
+      <div class="pa__i open"><button class="pa__q" type="button"><span class="pa__n">01</span><span class="pa__t">Call or request a quote</span><i>+</i></button><div class="pa__a"><p>Tell us what you need, from a single socket to a full rewire, and we'll give you a free, competitive quote. No obligation and no pressure. If the job isn't right for us we'll say so honestly.</p></div></div>
+      <div class="pa__i"><button class="pa__q" type="button"><span class="pa__n">02</span><span class="pa__t">We arrange a visit</span><i>+</i></button><div class="pa__a"><p>One of our five NICEIC registered teams arrives at a time that suits you, equipped and ready to work. Every engineer is directly employed by us, never subcontracted.</p></div></div>
+      <div class="pa__i"><button class="pa__q" type="button"><span class="pa__n">03</span><span class="pa__t">Job done, guaranteed</span><i>+</i></button><div class="pa__a"><p>All work is neat, compliant and fully guaranteed, with free extras on selected services. Certificates are issued and emailed the same day rather than posted weeks later.</p></div></div>
+    </div>
+    <div class="mid rev" style="margin-top:44px"><div class="pair"><a href="#contact" class="btn b-g">Get a free quote</a><a href="tel:01632960300" class="btn b-ol">Speak to our experts</a></div></div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div style="text-align:center;max-width:620px;margin:0 auto 48px">
+      <p class="kk rev">What we do</p>
+      <h2 class="rev" style="font-size:clamp(30px,4.2vw,50px);margin-top:16px">Every service <em>covered.</em></h2>
+    </div>
+    <div class="sg stg rev">
+      <div class="sc it"><div class="sc__im"><img decoding="async" src="images/svc-fuseboard.jpg" alt="Consumer unit replacement" loading="lazy"></div><div class="sc__b"><span class="sc__n">01</span><h3>Fuse board &amp; consumer unit</h3><p>Upgraded to current 18th edition regs with RCBO protection, and a free smoke detector fitted as standard.</p></div></div>
+      <div class="sc it"><div class="sc__im"><img decoding="async" src="images/cabling-loft.jpg" alt="House rewiring" loading="lazy"></div><div class="sc__b"><span class="sc__n">02</span><h3>House rewiring</h3><p>Full and partial rewires with a free Nest thermostat, certified and signed off before we leave site.</p></div></div>
+      <div class="sc it"><div class="sc__im"><img decoding="async" src="images/svc-eicr.jpg" alt="EICR inspection" loading="lazy"></div><div class="sc__b"><span class="sc__n">03</span><h3>EICR safety inspections</h3><p>Landlord and homeowner condition reports, issued and emailed the same day rather than posted.</p></div></div>
+      <div class="sc it"><div class="sc__im"><img decoding="async" src="images/wiring-consumer-unit.jpg" alt="Lights and sockets" loading="lazy"></div><div class="sc__b"><span class="sc__n">04</span><h3>Lights, sockets &amp; adapters</h3><p>Additional sockets, light fittings, dimmers and smart switches, from a single point to a whole floor.</p></div></div>
+      <div class="sc it"><div class="sc__im"><img decoding="async" src="images/svc-security-light.jpg" alt="Garden power and security lighting" loading="lazy"></div><div class="sc__b"><span class="sc__n">05</span><h3>Garden power &amp; security</h3><p>Outdoor sockets, garden lighting, PIR floodlights and CCTV, all weather rated and properly earthed.</p></div></div>
+      <div class="sc it"><div class="sc__im"><img decoding="async" src="images/commercial-lighting.jpg" alt="Commercial power" loading="lazy"></div><div class="sc__b"><span class="sc__n">06</span><h3>Fire alarms &amp; commercial</h3><p>Three phase work, emergency lighting, fire alarm systems and periodic testing across portfolios.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark tight">
+  <div class="wrap">
+    <div class="stt stg rev cnt">
+      <div class="it"><b class="num" data-to="10" data-suf="+">0</b><span>Years serving North London</span></div>
+      <div class="it"><b class="num" data-to="5" data-suf="">0</b><span>Electrician teams</span></div>
+      <div class="it"><b class="num" data-to="5" data-suf="">0</b><span>Areas covered</span></div>
+      <div class="it"><b class="num" data-to="50" data-suf=" mi">0</b><span>Radius from Muswell Hill</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="soft">
+  <div class="wrap">
+    <div style="text-align:center;max-width:620px;margin:0 auto 40px">
+      <p class="kk rev">Why us</p>
+      <h2 class="rev" style="font-size:clamp(30px,4.2vw,50px);margin-top:16px">Not just another <em>electrician.</em></h2>
+    </div>
+    <div class="wg stg rev">
+      <div class="wr it"><h3>Electricians</h3><ul><li>NICEIC registered, fully qualified</li><li>Five dedicated teams, each with an area of expertise</li><li>Domestic and commercial experience</li><li>Neat, tidy work that meets British standards</li></ul></div>
+      <div class="wr it"><h3>Pricing</h3><ul><li>Free, competitive quotations</li><li>Fully guaranteed work on every job</li><li>No job too large or small</li><li>Clear pricing before work begins</li></ul></div>
+      <div class="wr it"><h3>Support</h3><ul><li>Emergency callout when things go wrong</li><li>Advice and guidance if you're not sure what you need</li><li>Available Monday to Friday, 24 hours</li><li>One team you can call again next time</li></ul></div>
+      <div class="wr it"><h3>Free Extras</h3><ul><li>Free smoke detector with every fuse board fitted</li><li>Free Nest thermostat with a full rewire</li><li>Money back guarantee</li><li>Lifetime workmanship warranty</li></ul></div>
+    </div>
+    <div class="mid rev" style="margin-top:40px"><div class="pair"><a href="#contact" class="btn b-p">Get a free quote</a><a href="tel:01632960300" class="btn b-o">Speak to our experts</a></div></div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div style="text-align:center;max-width:620px;margin:0 auto 44px">
+      <p class="kk rev">Gallery</p>
+      <h2 class="rev" style="font-size:clamp(30px,4.2vw,50px);margin-top:16px">See our recent <em>work.</em></h2>
+    </div>
+    <div class="gm rev">
+      <div><img decoding="async" src="images/svc-security-light.jpg" alt="An LED floodlight, PIR sensor and camera mounted on a house wall" loading="lazy"></div>
+      <div><img decoding="async" src="images/svc-firealarm.jpg" alt="A break glass call point and fire alarm sign on a commercial wall" loading="lazy"></div>
+      <div><img decoding="async" src="images/socket-test.jpg" alt="Testing a socket with a multimeter during an inspection" loading="lazy"></div>
+      <div><img decoding="async" src="images/gal-light-fitting.jpg" alt="A newly fitted flush ceiling light" loading="lazy"></div>
+      <div><img decoding="async" src="images/consumer-unit-labels.jpg" alt="A newly fitted consumer unit with labelled circuit breakers" loading="lazy"></div>
+      <div><img decoding="async" src="images/kitchen-sockets.jpg" alt="Sockets and under cabinet lighting in a renovated kitchen" loading="lazy"></div>
+      <div><img decoding="async" src="images/cabling-loft.jpg" alt="New cabling run through a loft during a full rewire" loading="lazy"></div>
+      <div><img decoding="async" src="images/ev-charger.jpg" alt="A home EV charger fitted to an exterior wall" loading="lazy"></div>
+      <div><img decoding="async" src="images/svc-eicr.jpg" alt="A distribution board inspected by torchlight during an EICR" loading="lazy"></div>
+      <div><img decoding="async" src="images/gal-junction-box.jpg" alt="A junction box opened up, showing the terminated cores" loading="lazy"></div>
+      <div><img decoding="async" src="images/garden-lighting.jpg" alt="Warm garden lighting installed along a rear patio" loading="lazy"></div>
+      <div><img decoding="async" src="images/commercial-lighting.jpg" alt="LED lighting fitted across a commercial ceiling" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="soft">
+  <div class="wrap">
+    <div style="text-align:center;max-width:620px;margin:0 auto 44px">
+      <p class="kk rev">Reviews</p>
+      <h2 class="rev" style="font-size:clamp(30px,4.2vw,50px);margin-top:16px">What our customers <em>are saying.</em></h2>
+    </div>
+    <div class="rot rev" id="rot">
+      <div class="rs on"><div class="st">★★★★★</div><p>"Arrived exactly when they said and left the place spotless after a full rewire. Certificate emailed the same afternoon."</p><b>Lorraine Stewart</b><span>Muswell Hill · Full rewire</span></div>
+      <div class="rs"><div class="st">★★★★★</div><p>"Booked the consumer unit upgrade online, fixed price, no surprises on the day. The engineer talked me through every change."</p><b>Ian MacKenzie</b><span>Barnet · Consumer unit</span></div>
+      <div class="rs"><div class="st">★★★★★</div><p>"We had cameras and an alarm fitted across the whole house. Being able to check the live feed from my phone is brilliant."</p><b>Sandra Ferguson</b><span>Enfield · CCTV &amp; alarm</span></div>
+      <div class="rs"><div class="st">★★★★★</div><p>"EV charger installed within the week and they sorted the paperwork with the network operator for me. Faultless."</p><b>Jackie Marlow</b><span>Finchley · EV charger</span></div>
+      <div class="rs"><div class="st">★★★★★</div><p>"Really tidy work on the solar and battery. They came back after a month to check it was performing as promised."</p><b>Helen Claire Ventisei</b><span>Southgate · Solar &amp; battery</span></div>
+      <div class="rs"><div class="st">★★★★★</div><p>"Called about a tripping circuit and had someone out the same day. Found the fault in twenty minutes and fixed it properly."</p><b>Marcus Bell</b><span>Wood Green · Fault finding</span></div>
+      <div class="rd" id="rdots"></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap" style="text-align:center;max-width:780px">
+    <p class="kk rev">Our Guarantee</p>
+    <h2 class="rev" style="font-size:clamp(30px,4.2vw,48px);margin:16px 0 16px">Quality work. <em>No surprises.</em></h2>
+    <p class="rev" style="font-size:18px;line-height:1.85">Electrical work is a safety decision, not just a convenience one, so we'd rather do it properly the first time. Nothing here is conditional on signing anything you haven't seen.</p>
+    <div class="gz stg rev" style="text-align:left">
+      <div class="it"><span class="n">01</span><h3>Free, no obligation quote</h3><p>A real price before anyone books anything. If a job isn't right for us, we'll say so honestly.</p></div>
+      <div class="it"><span class="n">02</span><h3>Fully guaranteed work</h3><p>Every job comes with a lifetime workmanship warranty and a money back guarantee.</p></div>
+      <div class="it"><span class="n">03</span><h3>NICEIC registered</h3><p>All work is tested, certified and complies with current British standards.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div style="text-align:center;max-width:620px;margin:0 auto 44px">
+      <p class="kk rev">FAQ</p>
+      <h2 class="rev" style="font-size:clamp(30px,4.2vw,50px);margin-top:16px">Frequently asked <em>questions.</em></h2>
+    </div>
+    <div class="fq rev">
+      <div class="fa open"><button class="fa__q" type="button">Are your electricians registered?<i>+</i></button><div class="fa__a"><p>Every engineer is directly employed and NAPIT approved, working to BS 7671 wiring regulations. We are also MCS certified for solar and battery, TrustMark registered and RECC members. We will show you the card on the doorstep without being asked.</p></div></div>
+      <div class="fa"><button class="fa__q" type="button">What certificates do I get?<i>+</i></button><div class="fa__a"><p>An Electrical Installation Certificate for new work, a Minor Works Certificate for smaller jobs, or an EICR if we are inspecting an existing installation. Certificates are issued and emailed the same day, not posted weeks later.</p></div></div>
+      <div class="fa"><button class="fa__q" type="button">What is an EICR and do I need one?<i>+</i></button><div class="fa__a"><p>An Electrical Installation Condition Report is a formal safety inspection of your fixed wiring. Landlords must hold a valid one every five years by law, and it is strongly recommended for homeowners every ten years, or before you buy a property.</p></div></div>
+      <div class="fa"><button class="fa__q" type="button">How much does a full rewire cost?<i>+</i></button><div class="fa__a"><p>It depends on the size of the property and how much of the existing wiring can stay. We survey first and give you a fixed itemised price with no hidden costs, so the figure you accept is the figure you pay.</p></div></div>
+      <div class="fa"><button class="fa__q" type="button">Do you install EV chargers?<i>+</i></button><div class="fa__a"><p>Yes. We fit Ohme, myenergi Zappi and Hypervolt units, and we handle the DNO notification with your network operator for you. Chargers can be wired to work alongside solar so the car charges on surplus generation.</p></div></div>
+      <div class="fa"><button class="fa__q" type="button">Do you fit solar and battery storage too?<i>+</i></button><div class="fa__a"><p>We do. We are MCS certified, which is what makes your export tariff and any grant funding possible, and we install Tesla, GivEnergy, Sunsynk, Fogstar and Fox ESS battery systems.</p></div></div>
+      <div class="fa"><button class="fa__q" type="button">Can you install CCTV and alarms?<i>+</i></button><div class="fa__a"><p>Yes. Intruder alarms, CCTV, video door entry, smart doorbells, access control and security lighting. Systems stream live to your phone, and there are no monthly contracts on anything we install.</p></div></div>
+      <div class="fa"><button class="fa__q" type="button">How quickly can you get someone out?<i>+</i></button><div class="fa__a"><p>For a fault or a loss of power we aim to be with you the same day. Planned work such as a consumer unit upgrade or a rewire is usually booked within the week, on a date that suits you.</p></div></div>
+      <div class="fa"><button class="fa__q" type="button">What does the guarantee cover?<i>+</i></button><div class="fa__a"><p>A five year workmanship guarantee provided by our own directly employed engineers, on top of the manufacturer warranty on any parts supplied. We do not subcontract, so there is never any argument about who is responsible.</p></div></div>
+      <div class="fa"><button class="fa__q" type="button">Do you offer finance?<i>+</i></button><div class="fa__a"><p>Yes. Finance is available, you can buy online, or you can pay a 25% deposit and settle the balance on completion. Finance is subject to status and credit checks; we act as an introducer and do not give financial advice.</p></div></div>
+      <div class="fa"><button class="fa__q" type="button">Do you work with commercial customers?<i>+</i></button><div class="fa__a"><p>We do. Office and retail fit outs, landlord compliance across a portfolio, three phase work, emergency lighting and periodic testing. Ask about portfolio pricing if you manage several properties.</p></div></div>
+      <div class="fa"><button class="fa__q" type="button">What areas do you cover?<i>+</i></button><div class="fa__a"><p>North London and the surrounding boroughs, including Muswell Hill, Barnet, Enfield, Finchley, Southgate and Wood Green. If you are just outside, call us anyway and we will tell you honestly whether we can help.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="fz soft" id="contact">
+  <div class="wrap rev">
+    <p class="kk">Get Started</p>
+    <h2 style="margin-top:16px">Whatever the problem, <em>we can help.</em></h2>
+    <p>Request a free quote today and speak to a team that's been trusted across North London since 2016.</p>
+    <div class="pair" style="justify-content:center;margin-top:32px"><a href="tel:01632960300" class="btn b-p">Get your free quote</a><a href="#services" class="btn b-o">View our services</a></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="ft1">
+      <div><a href="#top" class="logo" style="color:var(--plum-l)">Electrical</a><p style="margin-top:14px">NICEIC registered electricians covering North London since 2016. Free quotations and fully guaranteed work.</p></div>
+      <div class="fcol"><h4>Sitemap</h4><a href="#process">Process</a><a href="#services">Services</a><a href="#why">Why Us</a><a href="#gallery">Gallery</a></div>
+      <div class="fcol"><h4>Company</h4><a href="#reviews">Reviews</a><a href="#faq">FAQs</a><a href="#contact">Get a quote</a></div>
+      <div class="fcol"><h4>Areas</h4><a href="#">Muswell Hill</a><a href="#">Highgate</a><a href="#">Crouch End</a></div>
+    </div>
+    <div class="ft2">
+      <div><h4>Opening hours</h4><p><span class="oh"><span>Mon to Fri</span><span>07:00-19:00</span></span><span class="oh"><span>Saturday</span><span>07:00-14:00</span></span><span class="oh"><span>Sunday</span><span>Closed</span></span><span class="oh"><span>Emergency</span><span>24/7</span></span></p></div>
+      <div><h4>Office</h4><address>Electrical Ltd<br>Portland House, 51 Colney Hatch Lane<br>Muswell Hill, London N10 1LJ<br>NAPIT reg. 11111</address></div>
+      <div><h4>Contact</h4><p><a href="tel:01632960300" style="color:var(--gold)">01632 960 300</a><br>Same day attendance on faults</p></div>
+      <div><h4>Accreditations</h4><p>NAPIT Approved Contractor · MCS Certified · TrustMark Registered · RECC Member · Approved Code · Checkatrade Verified · Which? Trusted Trader · Part P Compliant · 5 Year Workmanship Guarantee</p></div>
+    </div>
+    <div class="ffin"><b style="color:var(--onmut)">Finance:</b> Electrical Ltd is an Introducer Appointed Representative of a regulated credit broker. The credit broker is not a lender (FRN 111111). Finance is available subject to status. The rate offered is always provisional and will depend upon your personal circumstances, the loan amount and the term.</div>
+    <div class="fbot"><span>© 2026 We Build Trades Ltd. Demonstration template.</span><span><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Complaints</a></span></div>
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');if(x.target.classList.contains('cnt'))run(x.target);io.unobserve(x.target)}})},{threshold:.08,rootMargin:"0px 0px -6% 0px"});
+document.querySelectorAll('.rev,.stg').forEach(el=>io.observe(el));
+function run(s){s.querySelectorAll('.num').forEach((el,i)=>{const to=+el.dataset.to,suf=el.dataset.suf||'',d=1200,st=performance.now()+i*90;
+function t(n){if(n<st){requestAnimationFrame(t);return}const p=Math.min(1,(n-st)/d),e=1-Math.pow(1-p,3);el.textContent=Math.floor(to*e)+suf;if(p<1)requestAnimationFrame(t);else el.textContent=to+suf}requestAnimationFrame(t)})}
+const pg=document.getElementById('prog');
+addEventListener('scroll',()=>{const s=document.documentElement.scrollTop,h=document.documentElement.scrollHeight-innerHeight;pg.style.width=(h>0?s/h*100:0)+'%'},{passive:true});
+(()=>{const h=document.getElementById('hdr'),t=document.getElementById('tog'),d=document.getElementById('draw');
+t.addEventListener('click',()=>{const o=h.classList.toggle('open');t.setAttribute('aria-expanded',o)});
+d.addEventListener('click',e=>{if(e.target.closest('a'))h.classList.remove('open')});
+addEventListener('keydown',e=>{if(e.key==='Escape')h.classList.remove('open')})})();
+function acc(sel,q,a){const it=[...document.querySelectorAll(sel)];
+function set(x,o){const el=x.querySelector(a);if(o){x.classList.add('open');el.style.maxHeight=el.scrollHeight+'px'}else{x.classList.remove('open');el.style.maxHeight='0px'}}
+it.forEach(x=>{if(x.classList.contains('open'))set(x,true);x.querySelector(q).addEventListener('click',()=>{const o=x.classList.contains('open');it.forEach(y=>set(y,false));set(x,!o)})});
+addEventListener('resize',()=>{const o=document.querySelector(sel+'.open');if(o){const el=o.querySelector(a);el.style.maxHeight=el.scrollHeight+'px'}})}
+acc('.fa','.fa__q','.fa__a');acc('.pa__i','.pa__q','.pa__a');
+(()=>{const r=document.getElementById('rot');if(!r)return;
+const sl=[...r.querySelectorAll('.rs')],dw=document.getElementById('rdots');let i=0,tm=null;
+sl.forEach((_,x)=>{const b=document.createElement('button');if(!x)b.classList.add('on');b.setAttribute('aria-label','Review '+(x+1));
+b.addEventListener('click',()=>{show(x);re()});dw.appendChild(b)});
+const dt=[...dw.children];
+function show(x){sl[i].classList.remove('on');dt[i].classList.remove('on');i=x;sl[i].classList.add('on');dt[i].classList.add('on')}
+function nx(){show((i+1)%sl.length)}function re(){clearInterval(tm);tm=setInterval(nx,5600)}re();
+r.addEventListener('mouseenter',()=>clearInterval(tm));r.addEventListener('mouseleave',re)})();
+(()=>{const F='data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2E1B33"/><stop offset="1" stop-color="#D9A741"/></linearGradient></defs><rect width="800" height="600" fill="url(%23g)"/></svg>');
+document.querySelectorAll('img').forEach(i=>i.addEventListener('error',function(){this.onerror=null;this.src=F},{once:true}))})();
+</script>
+<script>
+/* Hero clip: honour reduced motion. The still it replaced never moved, and CSS
+   cannot stop video playback, so it is paused and a frame stands in. */
+(function(){if(!matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+ document.querySelectorAll(".hero__st video").forEach(function(v){v.removeAttribute("autoplay");v.pause();});})();
+</script>
+</body>
+</html>
