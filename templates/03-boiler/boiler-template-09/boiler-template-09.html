@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heating: Boiler &amp; Heating Specialists In Surrey</title>
+<meta name="description" content="Gas Safe registered boiler installation, servicing and repair across Surrey. Engineer to your door in 12 to 24 hours.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --gr:#EFDEDA;--gr2:#E3C9C3;--pap:#FBF4F2;
+ --br:#9B2A20;--dp:#671710;--dp2:#440D08;
+ --ink:#2A1512;--mut:#5A4340;--acc:#6FC0CE;--ln:#D3B2AB;
+ --gut:clamp(24px,10vw,168px);
+ --f:"Archivo",Arial,sans-serif;--mono:"Space Mono",monospace;--ea:cubic-bezier(.22,1,.28,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--f);background:var(--gr);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{font:inherit}
+:focus-visible{outline:2px solid var(--br);outline-offset:3px}
+h1,h2,h3{font-weight:700;letter-spacing:-.045em;line-height:.98}
+p{color:var(--mut)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-duration:.01ms!important;animation:none!important}
+.tile{transform:none!important}}
+
+/* ── THIN TOP BAR (44px, always) ── */
+.bar{position:fixed;top:0;left:0;right:0;height:46px;z-index:80;display:grid;
+ grid-template-columns:auto 1fr auto;align-items:center;gap:18px;padding:0 18px;
+ background:var(--ink);color:var(--pap)}
+.bar .bl{display:flex;align-items:center;gap:9px;font-size:17px;font-weight:700;letter-spacing:-.02em}
+.bar .bl i{width:9px;height:20px;background:var(--br);display:block}
+.bar .bl em{font-style:normal;color:var(--br)}
+.bnav{display:flex;gap:2px;justify-content:center}
+.bnav a{font-family:var(--mono);font-size:13px;letter-spacing:.09em;text-transform:uppercase;
+ color:rgba(251,244,242,.66);padding:6px 10px;transition:.22s}
+.bnav a:hover{color:var(--pap)}
+.bar .br2{display:flex;align-items:center;gap:12px}
+.bar .tel{font-size:16px;font-weight:700}
+.bar .cta{background:var(--br);color:#fff;font-size:14px;font-weight:700;padding:8px 15px;letter-spacing:.02em}
+.btg{display:none;width:32px;height:32px;border:1px solid rgba(251,244,242,.4);background:none;position:relative;cursor:pointer}
+.btg s,.btg::before,.btg::after{content:"";position:absolute;left:8px;right:8px;height:1.5px;background:var(--pap)}
+.btg::before{top:10px}.btg s{top:15px}.btg::after{top:20px}
+.bdraw{display:none}
+@media(max-width:1080px){.bnav,.bar .tel{display:none}.btg{display:block}
+ .bdraw{display:block;position:fixed;top:46px;left:0;right:0;z-index:79;background:var(--ink);max-height:0;overflow:hidden;transition:max-height .4s var(--ea)}
+ .bdraw.op{max-height:520px}
+ .bdraw a{display:block;padding:12px 18px;font-size:17px;color:var(--pap);border-bottom:1px solid rgba(251,244,242,.12)}}
+body{padding-top:46px}
+
+/* ── COLLAGE HERO ── */
+.hero{position:relative;padding:0 0 clamp(30px,5vw,64px)}
+.coll{position:relative;height:clamp(320px,42vw,520px);overflow:hidden;background:var(--gr2)}
+.tile{position:absolute;overflow:hidden;box-shadow:0 18px 40px -26px rgba(42,21,18,.55)}
+.tile img{width:100%;height:100%;object-fit:cover}
+.t1{left:2%;top:6%;width:23%;height:64%;transform:rotate(-4deg)}
+.t2{left:26%;top:-4%;width:26%;height:72%;transform:rotate(2.5deg)}
+.t3{left:53%;top:8%;width:20%;height:58%;transform:rotate(-2deg)}
+.t4{left:73%;top:-2%;width:25%;height:66%;transform:rotate(3.5deg)}
+.t5{left:14%;top:52%;width:22%;height:52%;transform:rotate(3deg)}
+.t6{left:60%;top:56%;width:24%;height:50%;transform:rotate(-3deg)}
+.coll::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,var(--gr) 96%)}
+.htype{position:relative;z-index:3;margin-top:clamp(-90px,-9vw,-56px);padding:0 clamp(18px,4vw,56px)}
+.htype h1{font-size:clamp(42px,9vw,132px);letter-spacing:-.06em;line-height:.9;max-width:16ch}
+.htype h1 em{font-style:normal;color:var(--br)}
+.hmeta{display:grid;grid-template-columns:1fr auto;gap:26px;align-items:end;margin-top:clamp(20px,3vw,34px);
+ padding-top:20px;border-top:2px solid var(--ink)}
+.hmeta p{font-size:18px;line-height:1.7;max-width:52ch}
+.hbtn{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 26px;
+ font-size:16px;font-weight:700;border:2px solid transparent;cursor:pointer;transition:.3s var(--ea)}
+.btn:hover{transform:translateY(-2px)}
+.bp{background:var(--br);color:#fff;border-color:var(--br)}.bp:hover{background:var(--dp)}
+.bk{background:var(--ink);color:var(--pap);border-color:var(--ink)}
+.bo{border-color:var(--ink);color:var(--ink)}.bo:hover{background:var(--pap)}
+.bol{border-color:rgba(255,255,255,.5);color:#fff}.bol:hover{background:rgba(255,255,255,.12)}
+.hstrip{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ln);margin-top:26px}
+.hstrip div{padding:16px 20px 0;border-right:1px solid var(--ln)}
+.hstrip div:first-child{padding-left:0}.hstrip div:last-child{border-right:none}
+.hstrip b{display:block;font-size:19px;font-weight:700;letter-spacing:-.03em}
+.hstrip span{font-size:15px;color:var(--mut);margin-top:3px;display:block}
+@media(max-width:820px){.hmeta{grid-template-columns:1fr}.hstrip{grid-template-columns:1fr}
+ .hstrip div{border-right:none;border-bottom:1px solid var(--ln);padding:12px 0}}
+
+/* ── SECTION RULES ── */
+.wrap{padding:0 var(--gut)}
+.sec{padding:clamp(48px,6vw,86px) 0;border-top:2px solid var(--ink)}
+/* ── ACCREDITATION BAND ──
+   Sits in the page flow as a normal .sec, so it keeps the 2px ink rule that
+   divides every section here, and uses the .mark / .no numbered head. Tiles
+   are square-cornered like the rest of this template and take the teal accent
+   on the hairline. The marks are a mixed set - transparent PNGs, an opaque
+   Which? JPEG and two SVGs - so each needs its own light tile to read. */
+.tmk__row{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px}
+.tmk__row li{display:flex;align-items:center;justify-content:center;height:94px;padding:13px;background:#fff;border:1px solid var(--ln)}
+/* explicit height, never max-height alone: the two SVGs carry a viewBox with
+   no intrinsic size and resolve to 0x0 otherwise. Gas Safe is a stacked badge
+   rather than a wordmark, so it needs roughly double the height to resolve. */
+.tmk__row img{height:34px;width:auto;max-width:100%;object-fit:contain;display:block}
+.tmk__row img.is-tall{height:62px}
+@media(max-width:1040px){.tmk__row{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:620px){.tmk__row{grid-template-columns:repeat(2,minmax(0,1fr))}.tmk__row li{height:82px}.tmk__row img{height:29px}.tmk__row img.is-tall{height:54px}}
+.mark{display:grid;grid-template-columns:120px 1fr;gap:26px;margin-bottom:34px;align-items:start}
+.mark .no{font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--br);padding-top:8px}
+.mark h2{font-size:clamp(28px,4.6vw,60px);letter-spacing:-.05em;max-width:18ch}
+.mark p{font-size:18px;line-height:1.72;max-width:60ch;margin-top:14px}
+@media(max-width:760px){.mark{grid-template-columns:1fr;gap:10px}}
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .8s var(--ea),transform .8s var(--ea)}
+.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none}}
+
+/* TRIAGE */
+.tri{display:grid;grid-template-columns:1.1fr .9fr;border:2px solid var(--ink);background:var(--pap)}
+.triL{padding:clamp(24px,3vw,38px);border-right:2px solid var(--ink)}
+.triL>span{font-family:var(--mono);font-size:13px;letter-spacing:.13em;text-transform:uppercase;color:var(--mut);display:block;margin-bottom:12px}
+.sym{display:grid;gap:7px}
+.sym button{border:2px solid var(--ln);background:#fff;padding:14px 16px;text-align:left;
+ font-size:17px;font-weight:600;color:var(--ink);cursor:pointer;transition:.26s var(--ea)}
+.sym button:hover{border-color:var(--br)}
+.sym button.on{background:var(--br);border-color:var(--br);color:#fff}
+.triR{padding:clamp(24px,3vw,38px);background:var(--ink);color:var(--pap);display:flex;flex-direction:column;justify-content:center}
+.triR .lb2{font-family:var(--mono);font-size:13px;letter-spacing:.13em;text-transform:uppercase;color:rgba(251,244,242,.56);display:block;margin-bottom:10px}
+.triR h3{font-size:22px;color:var(--pap);margin-bottom:10px;letter-spacing:-.03em}
+.triR p{font-size:17px;line-height:1.68;color:rgba(251,244,242,.84)}
+.eta{display:flex;align-items:baseline;gap:10px;margin:20px 0 4px}
+.eta b{font-size:29px;font-weight:700;color:var(--acc);letter-spacing:-.04em}
+.eta span{font-size:16px;color:rgba(251,244,242,.72)}
+.triR .btn{margin-top:16px;width:100%}
+.tnote{font-size:14px;color:rgba(251,244,242,.56);line-height:1.6;margin-top:14px}
+.gasbar{border:2px solid var(--ink);border-top:none;background:var(--br);color:#fff;padding:13px 20px;
+ font-size:16px;display:flex;gap:12px;align-items:flex-start}
+.gasbar b{white-space:nowrap}
+@media(max-width:860px){.tri{grid-template-columns:1fr}.triL{border-right:none;border-bottom:2px solid var(--ink)}}
+
+/* PROCESS — 4 across, oversized numerals */
+.p4{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.pc{padding:0 22px 0 0;border-right:1px solid var(--ln)}
+.pc:last-child{border-right:none}
+.pc .n{display:block;font-size:clamp(44px,5.6vw,78px);font-weight:700;letter-spacing:-.06em;color:var(--gr2);line-height:.9;margin-bottom:16px}
+.pc h3{font-size:20px;margin-bottom:8px}
+.pc p{font-size:16px;line-height:1.66}
+@media(max-width:900px){.p4{grid-template-columns:1fr 1fr;gap:26px 0}}
+@media(max-width:540px){.p4{grid-template-columns:1fr}.pc{border-right:none;padding-right:0}}
+
+/* SERVICES — stacked hairline blocks, price left */
+.sv{border-top:1px solid var(--ln)}
+/* an image column between the price and the detail. Square corners and the
+   2px ink edge the rest of this template uses, rather than a soft card. */
+.svr{display:grid;grid-template-columns:170px 200px minmax(0,1fr) minmax(0,1fr);gap:26px;padding:26px 0;border-bottom:1px solid var(--ln);align-items:start}
+.svi{aspect-ratio:4/3;overflow:hidden;border:2px solid var(--ink);background:var(--pap)}
+.svi img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--ea)}
+.svr:hover .svi img{transform:scale(1.05)}
+.svr .pz b{display:block;font-size:26px;font-weight:700;color:var(--br);letter-spacing:-.045em}
+.svr .pz s{display:block;text-decoration:none;font-size:14px;color:var(--mut);margin-top:2px}
+.svr .tag{font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);display:block;margin-bottom:5px}
+.svr h3{font-size:23px;letter-spacing:-.035em}
+.svr .bg{display:inline-block;font-size:13px;font-weight:700;background:var(--ink);color:var(--pap);padding:3px 10px;margin-top:8px}
+.svr ul{list-style:none;display:grid;gap:7px}
+.svr li{display:flex;gap:9px;font-size:16px;color:var(--mut)}
+.svr li::before{content:"→";color:var(--br)}
+@media(max-width:900px){.svr{grid-template-columns:1fr;gap:12px}
+  .svi{max-width:320px}}
+
+/* COUNTERS — full bleed band */
+.band{background:var(--ink);color:var(--pap);padding:clamp(36px,4.4vw,60px) var(--gut)}
+.cts{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.cts>div>b{display:block;font-size:clamp(34px,5vw,62px);font-weight:700;letter-spacing:-.055em;color:var(--acc);line-height:1;font-variant-numeric:tabular-nums}
+.cts>div>span{font-size:16px;color:rgba(251,244,242,.78);margin-top:9px;display:block;line-height:1.5}
+@media(max-width:820px){.cts{grid-template-columns:1fr 1fr}}
+
+/* BOILERS — offset cards */
+.bgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.bcard{background:var(--pap);border:2px solid var(--ink);padding:24px 20px;display:flex;flex-direction:column;overflow:hidden}
+/* negative margins reach the inside of the 2px ink border without disturbing
+   the card padding. Contained on white, not cropped: three of these are
+   transparent cutouts and the Baxi trio is an opaque JPEG on white, so a
+   tinted ground would show as a block behind that one card. */
+.bimg2{margin:-24px -20px 18px;aspect-ratio:4/3;background:#fff;padding:14px;overflow:hidden;border-bottom:2px solid var(--ink)}
+.bimg2 img{width:100%;height:100%;object-fit:contain;display:block}
+.bgrid .bcard:nth-child(even){margin-top:26px}
+.bcard .ty{font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--br);display:block;margin-bottom:10px}
+.bcard h3{font-size:20px;margin-bottom:9px;letter-spacing:-.03em}
+.bcard p{font-size:16px;line-height:1.64;flex:1}
+.bsp{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px;padding-top:13px;border-top:2px solid var(--ink)}
+.bsp b{display:block;font-size:18px;font-weight:700;letter-spacing:-.03em}
+.bsp span{font-size:13px;color:var(--mut)}
+@media(max-width:1000px){.bgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.bgrid{grid-template-columns:1fr}.bgrid .bcard:nth-child(even){margin-top:0}}
+
+/* WHY — two column hairline */
+.wg{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+.wi{padding:20px 0;border-bottom:1px solid var(--ln)}
+.wi:nth-child(-n+2){border-top:1px solid var(--ln)}
+.wi h4{font-size:19px;font-weight:700;letter-spacing:-.03em;margin-bottom:7px}
+.wi p{font-size:16px;line-height:1.68}
+.road{display:flex;gap:14px;align-items:baseline;border:2px solid var(--ink);padding:18px 22px;margin-bottom:26px;background:var(--pap)}
+.road b{font-size:19px;font-weight:700;color:var(--br);white-space:nowrap}
+.road span{font-size:16px;color:var(--mut)}
+@media(max-width:820px){.wg{grid-template-columns:1fr}.wi:nth-child(2){border-top:none}.road{flex-direction:column;gap:6px}}
+
+/* REVIEWS — rotated notes */
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.rn{background:var(--pap);border:2px solid var(--ink);padding:24px 22px;transition:.4s var(--ea)}
+.rgrid .rn:nth-child(3n+1){transform:rotate(-.7deg)}
+.rgrid .rn:nth-child(3n+2){transform:rotate(.5deg)}
+.rgrid .rn:nth-child(3n){transform:rotate(-.3deg)}
+.rn:hover{transform:rotate(0) translateY(-4px)}
+.rn .st{color:var(--br);letter-spacing:2px;font-size:15px;display:block;margin-bottom:12px}
+.rn p{font-size:17px;line-height:1.68;color:var(--ink)}
+.rn .who{display:flex;align-items:center;gap:11px;margin-top:16px;padding-top:13px;border-top:1px solid var(--ln)}
+.rn .av{width:34px;height:34px;background:var(--ink);color:var(--pap);display:grid;place-items:center;font-size:14px;font-weight:700;flex:0 0 auto}
+.rn .who b{display:block;font-size:16px;font-weight:700}
+.rn .who s{display:block;text-decoration:none;font-size:14px;color:var(--mut)}
+@media(max-width:900px){.rgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.rgrid{grid-template-columns:1fr}}
+.rstrip{margin-top:24px;font-size:16px;color:var(--mut);text-align:center}
+
+/* WORK — collage again, scattered */
+.wkm{display:grid;grid-template-columns:1fr 1fr;border:2px solid var(--ink);background:var(--pap)}
+.wkm .im{position:relative;min-height:290px;background:var(--gr2)}
+.wkm .im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.wkm .tx{padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;justify-content:center}
+.ba2{display:flex;gap:7px;margin-bottom:13px}
+.ba2 span{font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--ln);padding:5px 11px;color:var(--mut)}
+.wkm h3{font-size:clamp(20px,2.4vw,28px);margin-bottom:10px;letter-spacing:-.035em}
+.wkm p{font-size:17px;line-height:1.7}
+.wk3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.wkc{position:relative;aspect-ratio:4/3;overflow:hidden;border:2px solid var(--ink)}
+.wkc img{width:100%;height:100%;object-fit:cover;transition:transform .85s var(--ea)}
+.wkc:hover img{transform:scale(1.05)}
+.wkc::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(42,21,18,.92),transparent 55%)}
+.wkc .cp{position:absolute;left:16px;right:16px;bottom:13px;z-index:2;color:#fff}
+.wkc .cp b{display:block;font-size:17px;font-weight:700}
+.wkc .cp span{font-size:14px;color:rgba(255,255,255,.84)}
+@media(max-width:820px){.wkm{grid-template-columns:1fr}.wkm .im{min-height:220px}.wk3{grid-template-columns:1fr}}
+
+/* FAQ — two column */
+.fq{columns:2 400px;column-gap:44px}
+.fi{break-inside:avoid;padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid var(--ln)}
+.fi h4{font-size:19px;font-weight:700;letter-spacing:-.03em;margin-bottom:8px;display:flex;gap:11px}
+.fi h4 s{text-decoration:none;font-family:var(--mono);font-size:13px;color:var(--br);padding-top:3px;flex:0 0 auto}
+.fi p{font-size:16px;line-height:1.76;padding-left:30px}
+@media(max-width:520px){.fi p{padding-left:0}}
+.faqf{margin-top:22px;font-size:17px;color:var(--mut)}
+.faqf a{color:var(--br);font-weight:700}
+
+/* CTA */
+.cta{background:var(--br);color:#fff;padding:clamp(44px,5.4vw,84px) var(--gut)}
+.cta .in{display:grid;grid-template-columns:1.15fr .85fr;gap:38px;align-items:center}
+.cta .no{font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.8);display:block;margin-bottom:14px}
+.cta h2{color:#fff;font-size:clamp(30px,5.2vw,68px);letter-spacing:-.055em}
+.cta p{color:rgba(255,255,255,.94);font-size:18px;line-height:1.72;margin-top:14px;max-width:46ch}
+.ticks{display:grid;gap:9px}
+.ticks span{display:flex;gap:9px;font-size:17px;color:#fff}
+.ticks span::before{content:"✓";color:#fff;font-weight:700}
+.ctel{display:block;font-size:clamp(24px,3vw,38px);font-weight:700;letter-spacing:-.04em;color:#fff;margin-top:16px}
+@media(max-width:820px){.cta .in{grid-template-columns:1fr;gap:24px}}
+
+/* FOOTER */
+footer{background:var(--ink);color:var(--pap);padding:clamp(40px,5vw,70px) var(--gut) 22px}
+.fcols{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.1fr;gap:28px;padding-bottom:24px;border-bottom:1px solid rgba(251,244,242,.18)}
+footer h4{font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--br);margin-bottom:12px;font-weight:400}
+footer a{display:block;font-size:16px;color:rgba(251,244,242,.8);padding:4px 0}
+footer a:hover{color:var(--pap)}
+footer p{font-size:16px;color:rgba(251,244,242,.8);line-height:1.8}
+.flg{display:flex;align-items:center;gap:9px;font-size:20px;font-weight:700;letter-spacing:-.03em;color:var(--pap)}
+.flg i{width:10px;height:24px;background:var(--br);display:block}
+.flg em{font-style:normal;color:var(--br)}
+.blurb{max-width:36ch;margin-top:12px;font-size:16px}
+.f2{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;padding:22px 0;border-bottom:1px solid rgba(251,244,242,.18)}
+.oh{display:flex;justify-content:space-between;max-width:260px;gap:12px}
+.fin{font-size:14px;color:rgba(251,244,242,.56);line-height:1.8;padding:18px 0}
+.fbt{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding-top:14px;border-top:1px solid rgba(251,244,242,.18);font-size:15px;color:rgba(251,244,242,.72)}
+.fbt a{display:inline}
+@media(max-width:900px){.fcols,.f2{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.fcols,.f2{grid-template-columns:1fr}}
+b > .cn, b .cn{font:inherit!important;letter-spacing:inherit!important;color:inherit!important;display:inline!important;margin:0!important}
+</style>
+</head>
+<body>
+<script>document.documentElement.className+=' js';</script>
+
+<div class="bar">
+  <a href="#top" class="bl"><i></i>Heat<em>ing</em></a>
+  <nav class="bnav"><a href="#process">Our Process</a><a href="#why">Why Choose Us?</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#faq">Guides</a><a href="#">Careers</a><a href="#">Area</a><a href="#contact">Contact</a></nav>
+  <div class="br2">
+    <a href="tel:01632960300" class="tel">01632 960 300</a>
+    <a href="#triage" class="cta">Get a Free Quote</a>
+    <button class="btg" id="btg" type="button" aria-label="Menu" aria-expanded="false"><s></s></button>
+  </div>
+</div>
+<div class="bdraw" id="bdraw"><a href="#process">Our Process</a><a href="#why">Why Choose Us?</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#faq">Guides</a><a href="#">Careers</a><a href="#">Area</a><a href="#contact">Contact</a><a href="tel:01632960300">01632 960 300</a></div>
+
+<main id="top">
+
+<section class="hero">
+  <div class="coll"><div class="tile t1"><img src="images/bl-01.jpg" alt="A heating engineer showing a homeowner her new boiler" loading="eager"></div><div class="tile t2"><img src="images/bl-12.jpg" alt="A heating engineer working on copper pipework beneath a boiler" loading="eager"></div><div class="tile t3"><img src="images/bl-25.jpg" alt="A homeowner adjusting her heating from a phone app beside the boiler" loading="eager"></div><div class="tile t4"><img src="images/bl-09.jpg" alt="A heating engineer setting the controls on a wall mounted boiler" loading="eager"></div><div class="tile t5"><img src="images/bl-22.jpg" alt="A heating engineer talking a couple through their new boiler" loading="eager"></div><div class="tile t6"><img src="images/bl-27.jpg" alt="A homeowner in a warm kitchen with a wall mounted boiler" loading="eager"></div></div>
+  <div class="htype">
+    <h1>Boiler &amp; heating <em>specialists</em> in Surrey.</h1>
+    <div class="hmeta">
+      <p>Trusted local heating engineers covering Epsom, Ashtead, Guildford, Horley and Kingston Upon Thames. Fast response. Expert workmanship. No hidden costs.</p>
+      <div class="hbtn"><a href="#triage" class="btn bp">My boiler has a fault</a><a href="tel:01632960300" class="btn bo">Call 01632 960 300</a></div>
+    </div>
+    <div class="hstrip"><div><b>12 to 24 hrs</b><span>Typical engineer response</span></div><div><b>Same day</b><span>Call outs where possible</span></div><div><b>5 areas</b><span>Covered across Surrey</span></div></div>
+  </div>
+</section>
+
+<div class="wrap">
+
+<section class="sec tmk" id="accred" aria-label="Accreditations and registrations">
+  <div class="mark rv"><span class="no">02 / Accredited</span>
+    <div><h2>Registered, assessed and accredited.</h2>
+      <p>Every engineer is Gas Safe registered and we are accredited installers for the brands we fit, which is what lets us register the longest manufacturer warranties.</p></div></div>
+  <ul class="tmk__row rv">
+      <li><img class="is-tall" src="blueflame/gas-safe-logo-1.webp" alt="Gas Safe Registered" loading="lazy" decoding="async"></li>
+      <li><img src="blueflame/which-logo.jpg" alt="Which? Trusted Trader" loading="lazy" decoding="async"></li>
+      <li><img src="blueflame/checkatrade-logo.svg" alt="Checkatrade Verified" loading="lazy" decoding="async"></li>
+      <li><img src="blueflame/ciphe-logo.svg" alt="CIPHE Member" loading="lazy" decoding="async"></li>
+      <li><img src="blueflame/worchester-logo-cl.png" alt="Worcester Bosch Accredited Installer" loading="lazy" decoding="async"></li>
+      <li><img src="blueflame/vaillant-logo-cl.png" alt="Vaillant Advance Installer" loading="lazy" decoding="async"></li>
+      <li><img src="blueflame/ideal-logo-cl.png" alt="Ideal Max Accredited" loading="lazy" decoding="async"></li>
+  </ul>
+</section>
+
+<section class="sec" id="triage">
+  <div class="mark rv"><span class="no">01 / Fault finder</span>
+    <div><h2>What is your boiler doing?</h2>
+      <p>Pick the closest symptom. We will tell you the usual cause and how fast we can reach you. No call out fee, and a fixed price before we start.</p></div></div>
+  <div class="rv">
+    <div class="tri">
+      <div class="triL"><span>Choose a symptom</span><div class="sym" id="sym"><button type="button" data-i="0" class="on">No heating or hot water</button><button type="button" data-i="1">Losing pressure</button><button type="button" data-i="2">Radiators cold at the bottom</button><button type="button" data-i="3">Locked out on a fault code</button><button type="button" data-i="4">Noisy pipework or kettling</button><button type="button" data-i="5">Just old and unreliable</button></div></div>
+      <div class="triR">
+        <span class="lb2">Most likely cause</span>
+        <h3 id="tT">No heating or hot water</h3>
+        <p id="tD">Most often a failed diverter valve, pump or PCB. We carry the common parts on the van.</p>
+        <div class="eta"><b id="tE">12 to 24 hrs</b><span>typical response</span></div>
+        <a href="tel:01632960300" class="btn bp">Call 01632 960 300</a>
+        <p class="tnote">A guide, not a diagnosis. Our engineers carry common parts and fix most faults on the first visit.</p>
+      </div>
+    </div>
+    <div class="gasbar"><b>If you smell gas</b><span>Leave the property and ring the National Gas Emergency line on 0800 111 999 before you call us.</span></div>
+  </div>
+</section>
+
+<section class="sec" id="process">
+  <div class="mark rv"><span class="no">02 / Our process</span>
+    <div><h2>Our simple four step process.</h2><p>Spread the cost with our flexible finance options. 0% and low rate plans are available. Get approved in minutes.</p></div></div>
+  <div class="p4 rv"><div class="pc"><span class="n">01</span><h3>Online quote</h3><p>Get an instant, no obligation quote online in minutes. Transparent pricing, no hidden fees.</p></div><div class="pc"><span class="n">02</span><h3>Home survey</h3><p>Our engineer visits to assess your home and confirm the best solution for your needs.</p></div><div class="pc"><span class="n">03</span><h3>We install</h3><p>Professional installation by Gas Safe registered engineers. Fully insured and certified.</p></div><div class="pc"><span class="n">04</span><h3>Aftercare</h3><p>We are here after the job is done. Heating Cover keeps you protected year round.</p></div></div>
+</section>
+
+<section class="sec" id="services">
+  <div class="mark rv"><span class="no">03 / Our services</span>
+    <div><h2>Everything your home heating needs.</h2><p>Specialists in Ideal, Glow worm, Worcester Bosch and Vaillant boilers, with every quotation itemised in full so there are no hidden costs or surprises.</p></div></div>
+  <div class="sv rv"><div class="svr"><div class="pz"><b>Free quote</b><s>finance available</s></div><div class="svi"><img src="blueflame/new-boilers-image-1-blueflames-boiler.webp" alt="A newly installed combi boiler" loading="lazy" decoding="async"></div><div><span class="tag">Installation</span><h3>New boilers</h3></div><ul><li>Worcester Bosch, Vaillant, Ideal, Baxi &amp; more</li><li>Warranties up to 12 years</li><li>Fitted in as little as 24 hours</li><li>Free smart thermostat with combi installs</li></ul></div><div class="svr"><div class="pz"><b>From &pound;99</b><s>+ VAT plus parts</s></div><div class="svi"><img src="blueflame/inside-boiler-image.webp" alt="An engineer servicing the inside of a boiler" loading="lazy" decoding="async"></div><div><span class="tag">Annual service</span><h3>Boiler servicing</h3><span class="bg">Most booked</span></div><ul><li>Full clean, test and safety check</li><li>Keeps your manufacturer warranty valid</li><li>Gas Safety certificate issued</li><li>Reminder sent before it falls due</li></ul></div><div class="svr"><div class="pz"><b>No call out fee</b><s>fixed price before we start</s></div><div class="svi"><img src="blueflame/blueflame-van-image2.webp" alt="A fully stocked engineer van" loading="lazy" decoding="async"></div><div><span class="tag">Fault finding</span><h3>Boiler repairs</h3></div><ul><li>Engineer to your door in 12 to 24 hours</li><li>Most faults fixed on the first visit</li><li>Fully stocked vans, common parts carried</li><li>Emergency call outs seven days a week</li></ul></div><div class="svr"><div class="pz"><b>&pound;100</b><s>per radiator</s></div><div class="svi"><img src="blueflame/powerflushing-Kamco-Image.webp" alt="Kamco powerflushing equipment" loading="lazy" decoding="async"></div><div><span class="tag">System clean</span><h3>Powerflushing</h3></div><ul><li>Valve changes included as standard</li><li>Fixes cold spots and noisy pipework</li><li>Restores efficiency across the system</li><li>Often required to validate a new boiler</li></ul></div><div class="svr"><div class="pz"><b>Free survey</b><s>itemised quotation</s></div><div class="svi"><img src="blueflame/Unvented-and-vented-Cylinders-blueflames-boiler-image-3.webp" alt="Unvented and vented hot water cylinders" loading="lazy" decoding="async"></div><div><span class="tag">Central heating</span><h3>Cylinders &amp; heating</h3></div><ul><li>Unvented and vented hot water cylinders</li><li>Full central heating installs and upgrades</li><li>Radiator replacement and balancing</li><li>G3 qualified engineers</li></ul></div><div class="svr"><div class="pz"><b>From &pound;89</b><s>gas safety certificate</s></div><div class="svi"><img src="blueflame/Ideal-halo-WiFi-thermostate.webp" alt="An Ideal Halo WiFi smart thermostat" loading="lazy" decoding="async"></div><div><span class="tag">Smart &amp; compliance</span><h3>Controls &amp; landlord</h3></div><ul><li>Smart thermostats: Hive, Nest, Ideal Halo</li><li>Landlord gas safety certificates (CP12)</li><li>Thermostat and control upgrades</li><li>Portfolio pricing for letting agents</li></ul></div></div>
+  <p class="rv" style="font-size:17px;margin-top:20px;max-width:70ch;color:var(--mut)">We also fit and maintain full central heating systems, and offer general plumbing for homeowners across Surrey, from tap changes to burst pipes and leaks.</p>
+</section>
+
+</div>
+
+<div class="band rv"><div class="cts"><div><b><span class="cn" data-to="30" data-sf="+ yrs">0</span></b><span>Combined experience on the tools</span></div><div><b><span class="cn" data-to="12" data-sf=" yr">0</span></b><span>Maximum manufacturer warranty</span></div><div><b><span class="cn" data-to="24" data-sf=" hr">0</span></b><span>New boiler fitted in as little as</span></div><div><b><span class="cn" data-to="270" data-sf="+">0</span></b><span>Genuine five star customer reviews</span></div></div></div>
+
+<div class="wrap">
+
+<section class="sec" id="boilers">
+  <div class="mark rv"><span class="no">04 / Boilers we fit</span>
+    <div><h2>We name the exact boiler on your quote.</h2><p>We are accredited installers for Worcester Bosch, Vaillant and Ideal, which is what unlocks the longest manufacturer warranties. Every quotation names the exact model and the cover attached to it.</p></div></div>
+  <div class="bgrid rv"><div class="bcard"><div class="bimg2"><img src="blueflame/worchester-boiler-why-us.webp" alt="Worcester Bosch Greenstar 4000" loading="lazy" decoding="async"></div><span class="ty">Combi</span><h3>Worcester Bosch Greenstar 4000</h3><p>Our most fitted combi. Quiet, compact and backed by the longest warranty on the market when installed by an accredited fitter.</p><div class="bsp"><div><b>12 yr</b><span>warranty</span></div><div><b>25 to 30kW</b><span>output</span></div></div></div><div class="bcard"><div class="bimg2"><img src="blueflame/vaillant-boiler-hp.webp" alt="Vaillant ecoTEC plus" loading="lazy" decoding="async"></div><span class="ty">Combi</span><h3>Vaillant ecoTEC plus</h3><p>A premium German built unit with excellent modulation, ideal for larger homes with two bathrooms and higher hot water demand.</p><div class="bsp"><div><b>10 yr</b><span>warranty</span></div><div><b>32 to 38kW</b><span>output</span></div></div></div><div class="bcard"><div class="bimg2"><img src="blueflame/ideal-boiler-why-us.webp" alt="Ideal Logic Max" loading="lazy" decoding="async"></div><span class="ty">Combi</span><h3>Ideal Logic Max</h3><p>Outstanding value with a genuinely long warranty. The unit we most often recommend where budget is the deciding factor.</p><div class="bsp"><div><b>10 yr</b><span>warranty</span></div><div><b>24 to 35kW</b><span>output</span></div></div></div><div class="bcard"><div class="bimg2"><img src="blueflame/baxi-viessmann-glowworm-boilers.jpg" alt="Baxi 800, Viessmann Vitodens and Glow worm boilers" loading="lazy" decoding="async"></div><span class="ty">System &amp; regular</span><h3>Baxi, Viessmann &amp; Glow worm</h3><p>Where a cylinder is staying, a system or regular boiler is usually the right answer. We fit Baxi 800, Viessmann Vitodens and Glow worm Energy.</p><div class="bsp"><div><b>Up to 10 yr</b><span>warranty</span></div><div><b>System</b><span>&amp; regular</span></div></div></div></div>
+</section>
+
+<section class="sec" id="why">
+  <div class="mark rv"><span class="no">05 / Why Heating</span>
+    <div><h2>Why homeowners across Surrey choose us.</h2><p>When your boiler breaks down, or your heating system needs attention, you want someone you can rely on, honest and reliable. We are a Surrey based heating and plumbing company serving homeowners across Epsom and around Surrey.</p></div></div>
+  <div class="road rv"><b>M25 / A3 / A217</b><span>directly on the network for a fast response across Surrey</span></div>
+  <div class="wg rv"><div class="wi"><h4>Gas Safe registered</h4><p>Every engineer on our team is Gas Safe registered and works to current regulations. Your certificate is issued on the day, not posted weeks later.</p></div><div class="wi"><h4>Fixed price, no hidden charges</h4><p>No salespeople and no commission. You get a written, itemised quotation before anything starts, and that is the figure you pay.</p></div><div class="wi"><h4>Which? Trusted Trader</h4><p>Independently assessed and rated Excellent across more than 270 genuine customer reviews.</p></div><div class="wi"><h4>Warranties up to 12 years</h4><p>We are accredited installers for Worcester Bosch, Vaillant and Ideal, which unlocks the longest manufacturer warranties available.</p></div><div class="wi"><h4>Same day and emergency cover</h4><p>An engineer at your door within 12 to 24 hours, and same day call outs whenever we can reach you.</p></div><div class="wi"><h4>Finance options available</h4><p>Spread the cost with 0% and low rate plans, approved in minutes. Subject to status and credit checks.</p></div></div>
+</section>
+
+<section class="sec" id="reviews">
+  <div class="mark rv"><span class="no">06 / Testimonials</span>
+    <div><h2>What our customers say about us</h2></div></div>
+  <div class="rgrid rv"><div class="rn"><span class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</span><p>Excellent service. I booked a boiler service at short notice as mine had unexpectedly stopped working, and they fitted me in the same week.</p><div class="who"><span class="av">RS</span><span><b>Richard South</b><s>Tonbridge &middot; Boiler service</s></span></div></div><div class="rn"><span class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</span><p>Gareth fitted our boiler and gave great advice on what to fit, which in the long run will be a lot more economical for us.</p><div class="who"><span class="av">VT</span><span><b>Victoria Titley</b><s>Shrewsbury &middot; New boiler</s></span></div></div><div class="rn"><span class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</span><p>I would give 10 stars if it were available. It was a difficult job and they stayed until it was done properly.</p><div class="who"><span class="av">CB</span><span><b>Carol Bailey</b><s>Tonbridge &middot; Heating repair</s></span></div></div><div class="rn"><span class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</span><p>Great customer service and good quality work carried out. Would definitely recommend to friends and family.</p><div class="who"><span class="av">EM</span><span><b>Emma Mayers</b><s>Shrewsbury &middot; Boiler service</s></span></div></div><div class="rn"><span class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</span><p>I can highly recommend them. They excelled in all aspects, from the quotation right through to clearing up afterwards.</p><div class="who"><span class="av">GB</span><span><b>Graham B.</b><s>Sevenoaks &middot; New boiler</s></span></div></div><div class="rn"><span class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</span><p>Fitted a new Hive thermostat and serviced my boiler. I sent a message and he had me booked in and the job completed straight away.</p><div class="who"><span class="av">KR</span><span><b>Keeley Rogers</b><s>Telford &middot; Smart controls</s></span></div></div></div>
+  <p class="rstrip rv">Gas Safe registered &middot; fully insured and certified &middot; specialists in Ideal, Glow worm, Worcester Bosch and Vaillant</p>
+</section>
+
+<section class="sec" id="work">
+  <div class="mark rv"><span class="no">07 / Our work</span>
+    <div><h2>Our recent work</h2><p>A selection of recent installs, upgrades and repairs completed across Surrey.</p></div></div>
+  <div class="rv">
+    <div class="wkm">
+      <div class="im"><img src="images/bl-20.jpg" alt="A heating engineer fitting copper pipework for a new combi boiler" loading="lazy"></div>
+      <div class="tx"><div class="ba2"><span>Before</span><span>After</span></div>
+        <h3>Combi replacement, Epsom</h3><p>Old back boiler stripped out, a new Worcester Bosch Greenstar hung in the kitchen with fresh copper pipework, a magnetic filter and a full powerflush. Completed in a day.</p></div>
+    </div>
+    <div class="wk3"><div class="wkc"><img src="images/bl-17.jpg" alt="A Gas Safe engineer working on a boiler above a utility room worktop" loading="lazy"><div class="cp"><b>Same day callout</b><span>Fully stocked van, Gas Safe registered</span></div></div><div class="wkc"><img src="images/bl-21.jpg" alt="A newly fitted wall mounted combi boiler in a kitchen" loading="lazy"><div class="cp"><b>Worcester Bosch install</b><span>Greenstar 4000, 10 year warranty</span></div></div><div class="wkc"><img src="blueflame/Unvented-and-vented-Cylinders-blueflames-boiler-image-3.webp" alt="An unvented hot water cylinder and expansion vessel installed in a loft" loading="lazy"><div class="cp"><b>Unvented cylinder upgrade</b><span>System boiler and 210L cylinder</span></div></div></div>
+  </div>
+</section>
+
+<section class="sec" id="faq">
+  <div class="mark rv"><span class="no">08 / Questions</span>
+    <div><h2>Frequently asked questions</h2></div></div>
+  <div class="fq rv"><div class="fi"><h4><s>01</s>How much will it cost to replace my boiler?</h4><p>A straight swap on a like for like combi typically lands between &pound;1,500 and &pound;3,500 fitted, depending on the model, the warranty you want and whether pipework or the flue needs moving. You get a fixed, itemised quotation before anything starts, that figure is what you pay.</p></div><div class="fi"><h4><s>02</s>How quickly can my boiler be replaced?</h4><p>In many cases within 24 hours of accepting the quote, and almost always within a few days. If you are without heating or hot water we will prioritise you and aim to get an engineer out within 12 to 24 hours.</p></div><div class="fi"><h4><s>03</s>How much does a boiler service cost?</h4><p>From &pound;99 + VAT plus parts. Our engineers check, clean and test the boiler and your heating controls, then flag anything that could become a problem. An annual service is the single most effective way to avoid an unexpected breakdown.</p></div><div class="fi"><h4><s>04</s>What warranties do you offer?</h4><p>Up to 12 years on Worcester Bosch, and up to 10 years on Vaillant and Ideal. We are accredited installers for all three, which is what unlocks the longer cover, an unaccredited fitter cannot register those warranties.</p></div><div class="fi"><h4><s>05</s>Which boiler brands do you install?</h4><p>Worcester Bosch, Vaillant, Ideal, Baxi, Viessmann, Glow worm, Alpha and Navien. We recommend based on your property, your hot water demand and your budget, not on what we happen to have in the van.</p></div><div class="fi"><h4><s>06</s>Do I need a combi, system or regular boiler?</h4><p>If you have one bathroom and no cylinder, a combi is usually right. Two or more bathrooms, or a household that runs hot taps at the same time, often does better on a system boiler with a cylinder. We confirm it at survey rather than guessing from the old unit.</p></div><div class="fi"><h4><s>07</s>How much is a powerflush and do I need one?</h4><p>&pound;100 per radiator, including valve changes as standard rather than a basic flush. If your radiators are cold at the bottom, your pipework is noisy, or your system is full of sludge, a powerflush is often required before a new boiler warranty is valid.</p></div><div class="fi"><h4><s>08</s>Why is my boiler losing pressure?</h4><p>Usually a leak somewhere on the system, a failed expansion vessel, or a passing pressure relief valve. If you are topping up more than once a month it needs looking at, repressurising repeatedly hides the underlying fault and accelerates corrosion.</p></div><div class="fi"><h4><s>09</s>What should I do if my boiler stops working?</h4><p>Check the pressure gauge, your thermostat and whether other gas appliances still work. If you smell gas, leave the property and ring the National Gas Emergency line on 0800 111 999. Otherwise call us, we carry common parts and fix most faults on the first visit.</p></div><div class="fi"><h4><s>10</s>How often should I service my boiler?</h4><p>Once a year, without exception. It is a condition of virtually every manufacturer warranty, it is a legal requirement for landlords, and it is what keeps the boiler running at the efficiency you paid for.</p></div><div class="fi"><h4><s>11</s>Can I pay for a new boiler in instalments?</h4><p>Yes. Finance is available through an FCA authorised credit broker, with 0% and low rate plans and approval usually in minutes. Finance is subject to status and credit checks; we act as an introducer and do not give financial advice.</p></div><div class="fi"><h4><s>12</s>Are your engineers Gas Safe registered?</h4><p>Every one of them, and we will show you the card without being asked. We are also Which? Trusted Trader assessed and CIPHE members, and your Gas Safety certificate is issued on the day rather than posted weeks later.</p></div></div>
+  <p class="faqf rv">Something we have not covered? <a href="tel:01632960300">Call 01632 960 300</a>, a real engineer answers.</p>
+</section>
+
+</div>
+
+<section class="cta" id="contact">
+  <div class="in">
+    <div class="rv"><span class="no">09 / Get in touch today!</span>
+      <h2>Let's keep your home warm.</h2><p>Whether you need a new boiler fitted, a fast repair, an annual service or help with your heating, we are ready to help. Contact us today for a tailored quotation.</p>
+      <div class="hbtn" style="margin-top:22px"><a href="#triage" class="btn bk">Get a Free Quote</a><a href="tel:01632960300" class="btn bol">Speak To Our Experts</a></div></div>
+    <div class="rv"><div class="ticks"><span>No obligation</span><span>No hidden costs</span><span>Same day call outs where possible</span></div>
+      <a href="tel:01632960300" class="ctel">01632 960 300</a></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="fcols">
+    <div><div class="flg"><i></i>Heat<em>ing</em></div><p class="blurb">Boiler and heating specialists in Surrey. Gas Safe registered installation, servicing, repair and plumbing across Epsom, Ashtead, Guildford, Horley and Kingston Upon Thames.</p></div>
+    <div><h4>Services</h4><a href="#services">New Boilers</a><a href="#services">Boiler Servicing</a><a href="#services">Boiler Repair</a><a href="#services">Powerflushing</a><a href="#services">Central Heating &amp; Plumbing</a></div>
+    <div><h4>Company</h4><a href="#">Why Heating</a><a href="#">Our work</a><a href="#">Reviews</a><a href="#">FAQs</a></div>
+    <div><h4>Talk to us</h4><p><a href="tel:01632960300" style="display:inline;color:var(--br);font-weight:700">01632 960 300</a><br>Mon to Sat, 7am to 8pm<br>Headley, Surrey<br>KT18 6EH</p></div>
+  </div>
+  <div class="f2">
+    <div><h4>Opening hours</h4><p><span class="oh"><span>Mon to Fri</span><span>07:30 to 17:30</span></span><span class="oh"><span>Saturday</span><span>08:00 to 12:00</span></span><span class="oh"><span>Sunday</span><span>Closed</span></span><span class="oh"><span>Emergency call out</span><span>7 days</span></span></p></div>
+    <div><h4>Office</h4><p>Heating Ltd<br>2 The Cottage, Shenley Lane<br>Surrey KT22 7LX<br>Gas Safe reg. 111111</p></div>
+    <div><h4>Contact</h4><p><a href="tel:01632960300" style="display:inline;color:var(--br);font-weight:700">01632 960 300</a><br>Engineer to your door in 12 to 24 hours</p></div>
+    <div><h4>Accreditations</h4><p>Gas Safe Registered &middot; Which? Trusted Trader &middot; CIPHE Member &middot; Checkatrade Verified &middot; Worcester Bosch Accredited Installer &middot; Vaillant Advance Installer &middot; Ideal Max Accredited &middot; City &amp; Guilds Qualified</p></div>
+  </div>
+  <p class="fin"><b style="color:rgba(251,244,242,.82)">Finance:</b> Heating Ltd is an Introducer Appointed Representative of a regulated credit broker. The credit broker is not a lender (FRN 111111). Finance is available subject to status. The rate offered is always provisional and will depend upon your personal circumstances, the loan amount and the term.</p>
+  <div class="fbt"><span>&copy; 2026 We Build Trades Ltd. Demonstration template, sample content.</span><span><a href="#">Privacy</a>&nbsp;&middot;&nbsp;<a href="#">Terms</a>&nbsp;&middot;&nbsp;<a href="#">Complaints</a>&nbsp;&middot;&nbsp;<a href="#">Finance (FCA 111111)</a></span></div>
+</footer>
+
+<script>
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');
+ if(x.target.querySelector('.cn'))cu(x.target);io.unobserve(x.target)}})},{threshold:.06});
+document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+function cu(s){s.querySelectorAll('.cn').forEach((el,i)=>{
+ const to=parseFloat(el.dataset.to),sf=el.dataset.sf||'',st=performance.now()+i*90;
+ function t(n){if(n<st){requestAnimationFrame(t);return}
+  const p=Math.min(1,(n-st)/1300),e=1-Math.pow(1-p,3);
+  el.textContent=Math.floor(to*e).toLocaleString('en-GB')+sf;
+  if(p<1)requestAnimationFrame(t);else el.textContent=to.toLocaleString('en-GB')+sf}
+ requestAnimationFrame(t)})}
+(()=>{setTimeout(()=>{const r=document.querySelectorAll('.rv');
+ if(r.length&&[...r].every(e=>!e.classList.contains('in')))r.forEach(e=>e.classList.add('in'))},2500);
+ addEventListener('error',()=>document.querySelectorAll('.rv').forEach(e=>e.classList.add('in')))})();
+
+/* collage drift */
+(()=>{const tiles=[...document.querySelectorAll('.tile')];
+if(!tiles.length||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+const base=tiles.map(t=>getComputedStyle(t).transform);
+let tick=false;
+function f(){const y=scrollY;
+ tiles.forEach((t,i)=>{const d=(i%3-1)*0.06;
+  t.style.transform=base[i]+' translateY('+(y*d)+'px)'});tick=false}
+addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(f)}},{passive:true})})();
+
+/* drawer */
+(()=>{const t=document.getElementById('btg'),d=document.getElementById('bdraw');
+if(!t)return;
+t.addEventListener('click',()=>{const o=d.classList.toggle('op');t.setAttribute('aria-expanded',o)});
+d.addEventListener('click',e=>{if(e.target.closest('a'))d.classList.remove('op')});
+addEventListener('keydown',e=>{if(e.key==='Escape')d.classList.remove('op')})})();
+
+/* triage */
+(()=>{const S=[{t:"No heating or hot water",d:"Most often a failed diverter valve, pump or PCB. We carry the common parts on the van.",e:"12 to 24 hrs"},
+ {t:"Losing pressure",d:"Usually a leak, a failed expansion vessel or a passing pressure relief valve. Topping up monthly hides the fault.",e:"12 to 24 hrs"},
+ {t:"Radiators cold at the bottom",d:"Sludge in the system. A powerflush at &pound;100 per radiator clears it and restores efficiency.",e:"Within a few days"},
+ {t:"Locked out on a fault code",d:"The code tells us the part before we arrive, so we usually fix it on the first visit.",e:"12 to 24 hrs"},
+ {t:"Noisy pipework or kettling",d:"Scale or debris on the heat exchanger. Often a flush, sometimes a part.",e:"Within a few days"},
+ {t:"Just old and unreliable",d:"Worth pricing a replacement against another repair bill. A fixed quote costs you nothing.",e:"Survey within days"}];
+const w=document.getElementById('sym');if(!w)return;
+const T=document.getElementById('tT'),D=document.getElementById('tD'),E=document.getElementById('tE');
+w.addEventListener('click',ev=>{const b=ev.target.closest('button');if(!b)return;
+ [...w.querySelectorAll('button')].forEach(x=>x.classList.toggle('on',x===b));
+ const s=S[+b.dataset.i];T.textContent=s.t;D.innerHTML=s.d;E.textContent=s.e})})();
+
+/* image fallback */
+(()=>{const F='data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="%232A1512"/><stop offset="1" stop-color="%239B2A20"/></linearGradient></defs><rect width="800" height="600" fill="url(%23g)"/></svg>');
+function fix(i){if(i.dataset.fb)return;i.dataset.fb=1;i.src=F}
+document.querySelectorAll('img').forEach(i=>{i.addEventListener('error',function(){fix(this)});if(i.complete&&i.naturalWidth===0)fix(i)});
+addEventListener('load',()=>document.querySelectorAll('img').forEach(i=>{if(i.complete&&i.naturalWidth===0)fix(i)}))})();
+</script>
+</body>
+</html>

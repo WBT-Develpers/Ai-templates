@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heating: Boiler &amp; Heating Specialists In Surrey</title>
+<meta name="description" content="Gas Safe registered boiler installation across the UK. Boiler and heating specialists in Surrey. Gas Safe registered installation, servicing, repair, powerflushing and plumbing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* obsidian + copper */
+  --bg:#0A0B0D; --bg-2:#101215; --bg-3:#15181C; --bg-4:#1B1F24;
+  --line:rgba(255,255,255,.09); --line-2:rgba(255,255,255,.16);
+  --txt:#F4F1EC; --muted:#A2A8B2; --muted-2:#787e89;
+  --cu:#D08A4F; --cu-lite:#E9B478; --cu-deep:#B4682F; --cu-glow:rgba(208,138,79,.28);
+  --amber:#E8B65C;
+  --shell:1240px; --pad-x:64px; --nav-h:76px;
+  --r:18px; --r-lg:26px;
+  --ease:cubic-bezier(.16,1,.3,1); --ease-soft:cubic-bezier(.4,0,.2,1);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 24px);}
+body{margin:0;background:var(--bg);color:var(--txt);font-family:'Manrope',sans-serif;font-size:18px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+h1,h2,h3,h4{margin:0;font-family:'Fraunces',Georgia,serif;font-weight:600;letter-spacing:-.02em;line-height:1.1;color:var(--txt);}
+p{margin:0;}
+:focus-visible{outline:2px solid var(--cu);outline-offset:3px;border-radius:6px;}
+.skip{position:absolute;left:-9999px;top:8px;z-index:300;background:var(--cu);color:#12100E;padding:10px 18px;border-radius:8px;font-weight:700;}
+.skip:focus{left:16px;}
+
+.shell{max-width:var(--shell);margin:0 auto;padding:0 var(--pad-x);}
+.section{padding:120px var(--pad-x);position:relative;}
+main > section + section,.footer{border-top:1px solid var(--line);}
+.panel{background:var(--bg-2);}
+
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:'Manrope',sans-serif;font-weight:700;font-size:0.875rem;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--cu);}
+.eyebrow::before{content:"";width:22px;height:1px;background:linear-gradient(90deg,transparent,var(--cu));}
+.center .eyebrow::after{content:"";width:22px;height:1px;background:linear-gradient(270deg,transparent,var(--cu));}
+.h2{font-size:clamp(2rem,3.6vw,3rem);}
+.gold{background:linear-gradient(100deg,var(--cu-lite),var(--cu-deep));-webkit-background-clip:text;background-clip:text;color:transparent;font-style:italic;font-weight:500;}
+.lede{color:var(--muted);font-size:1.1875rem;}
+.center{text-align:center;}
+.sec-head{max-width:660px;margin:0 auto 64px;}
+.sec-head .h2{margin-top:18px;}
+.sec-head .lede{margin-top:16px;}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 30px;border-radius:999px;
+  font-family:'Manrope',sans-serif;font-weight:700;font-size:1.0625rem;letter-spacing:.01em;border:1px solid transparent;cursor:pointer;
+  transition:transform .4s var(--ease),box-shadow .4s var(--ease),background .35s var(--ease-soft),color .35s var(--ease-soft),border-color .35s var(--ease-soft);}
+.btn svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .4s var(--ease);}
+.btn:hover svg{transform:translateX(4px);}
+.btn-cu{background:linear-gradient(100deg,var(--cu-lite),var(--cu-deep));color:#17110B;box-shadow:0 10px 30px -12px var(--cu-glow);}
+.btn-cu:hover{transform:translateY(-2px);box-shadow:0 18px 40px -12px rgba(208,138,79,.5);}
+.btn-line{background:transparent;color:var(--txt);border-color:var(--line-2);}
+.btn-line:hover{transform:translateY(-2px);border-color:var(--cu);color:var(--cu-lite);}
+.btn-dark{background:#14100C;color:var(--cu-lite);border-color:rgba(208,138,79,.35);}
+.btn-dark:hover{transform:translateY(-2px);background:#1B1610;}
+.btn-sm{padding:11px 22px;font-size:0.9375rem;}
+
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease);}
+.reveal.in{opacity:1;transform:none;}
+.reveal-s{opacity:0;transform:scale(.96);transition:opacity .9s var(--ease),transform .9s var(--ease);}
+.reveal-s.in{opacity:1;transform:none;}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  .reveal,.reveal-s{transition:none;opacity:1;transform:none;}
+  .btn:hover,.pcard:hover,.gtile:hover img,.wcard:hover,.rcard:hover{transform:none;}
+  .mq__track{animation:none;}
+  .chip{animation:none;}
+  .glow{display:none;}
+}
+
+/* ambient copper glows */
+.glow{position:absolute;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0;}
+.glow--hero{width:640px;height:640px;background:rgba(208,138,79,.16);top:-180px;right:-160px;}
+.glow--soft{width:520px;height:520px;background:rgba(208,138,79,.07);}
+
+/* ---------- 1. NAV ---------- */
+.topbar{background:#08090B;border-bottom:1px solid var(--line);font-size:0.875rem;color:var(--muted-2);}
+.topbar__in{max-width:var(--shell);margin:0 auto;padding:9px 0;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.topbar b{color:var(--muted);font-weight:600;}
+.topbar span{display:inline-flex;align-items:center;gap:8px;}
+.topbar svg{width:13px;height:13px;fill:none;stroke:var(--cu);stroke-width:1.8;}
+/* .section insets twice (own padding + .shell padding). The bar only inset once,
+   so once the viewport is narrower than --shell the two diverge. Giving .nav the
+   outer inset makes it track the sections at every width. */
+.nav{padding:0 var(--pad-x);}
+.topbar{padding:0 var(--pad-x);}
+.nav{position:sticky;top:0;z-index:100;background:rgba(10,11,13,.72);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
+  border-bottom:1px solid transparent;transition:background .4s var(--ease-soft),border-color .4s var(--ease-soft),box-shadow .4s var(--ease-soft);}
+.nav.stuck{background:rgba(10,11,13,.94);border-bottom-color:var(--line);box-shadow:0 18px 40px -30px #000;}
+.nav__in{max-width:var(--shell);margin:0 auto;padding:0;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:28px;}
+.brand{display:flex;align-items:center;gap:11px;}
+.brand__mark{width:34px;height:34px;border-radius:10px;background:linear-gradient(140deg,var(--cu-lite),var(--cu-deep));
+  display:flex;align-items:center;justify-content:center;flex:0 0 auto;box-shadow:0 6px 18px -8px var(--cu-glow);}
+.brand__mark svg{width:17px;height:17px;fill:none;stroke:#14100B;stroke-width:2;stroke-linejoin:round;}
+.brand__name{font-family:'Fraunces',serif;font-weight:700;font-size:1.375rem;letter-spacing:-.01em;}
+.brand__name em{font-style:normal;color:var(--cu);}
+.brand__sub{display:block;font-family:'Manrope',sans-serif;font-size:0.8125rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted-2);margin-top:-4px;}
+.nav__links{display:flex;gap:34px;}
+.nav__links a{font-size:1rem;font-weight:600;color:var(--muted);transition:color .3s var(--ease-soft);position:relative;}
+.nav__links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--cu);transition:width .4s var(--ease);}
+.nav__links a:hover{color:var(--txt);}
+.nav__links a:hover::after{width:100%;}
+.nav__right{display:flex;align-items:center;gap:20px;}
+.nav-tel{display:flex;align-items:center;gap:9px;font-weight:700;font-size:1rem;}
+.nav-tel svg{width:15px;height:15px;fill:none;stroke:var(--cu);stroke-width:2;flex:0 0 auto;}
+.burger{display:none;width:42px;height:42px;border:1px solid var(--line-2);border-radius:12px;background:transparent;cursor:pointer;
+  flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:0;}
+.burger span{display:block;width:16px;height:1.5px;background:var(--txt);border-radius:2px;transition:transform .35s var(--ease-soft),opacity .2s;}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(5.5px) rotate(45deg);}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0;}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg);}
+.nav__mobile{display:none;max-height:0;overflow:hidden;transition:max-height .45s var(--ease-soft);background:#0C0E11;border-top:1px solid var(--line);}
+.nav__mobile a{display:block;padding:15px var(--pad-x);font-weight:600;font-size:1.0625rem;border-bottom:1px solid var(--line);}
+@media(max-width:1080px){.nav__links{display:none;}.nav-tel span{display:none;}.burger{display:flex;}.nav__mobile{display:block;}}
+@media(max-width:600px){.nav__cta{display:none;}.topbar__in{justify-content:center;}}
+
+/* ---------- 2. HERO ---------- */
+.hero{position:relative;overflow:hidden;padding:104px var(--pad-x) 112px;}
+.hero__in{max-width:var(--shell);margin:0 auto;display:grid;grid-template-columns:1.06fr .94fr;gap:64px;align-items:center;position:relative;z-index:1;}
+.pill{display:inline-flex;align-items:center;gap:12px;padding:8px 18px 8px 10px;border-radius:999px;background:rgba(255,255,255,.04);
+  border:1px solid var(--line-2);font-size:0.9375rem;color:var(--muted);font-weight:500;}
+.pill__stars{color:var(--amber);letter-spacing:1.5px;font-size:0.9375rem;}
+.pill b{color:var(--txt);font-weight:700;}
+.hero h1{font-size:clamp(2.6rem,5.2vw,4.25rem);line-height:1.04;margin:28px 0 0;}
+.hero__sub{margin-top:24px;font-size:1.1875rem;color:var(--muted);max-width:48ch;}
+.hero__cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px;}
+.hero__meta{display:flex;flex-wrap:wrap;gap:28px;margin-top:44px;padding-top:28px;border-top:1px solid var(--line);}
+.hmeta b{display:block;font-family:'Fraunces',serif;font-size:1.5rem;font-weight:600;color:var(--cu-lite);}
+.hmeta span{font-size:0.9375rem;color:var(--muted-2);}
+.hero__visual{position:relative;}
+.hero__frame{position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:5/6;
+  border:1px solid var(--line-2);box-shadow:0 50px 90px -50px #000;}
+.hero__frame img,.hero__frame video{width:100%;height:100%;object-fit:cover;display:block;}
+.hero__frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,11,13,0) 45%,rgba(10,11,13,.78) 100%);}
+.chip{position:absolute;z-index:2;background:rgba(12,14,17,.82);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  border:1px solid var(--line-2);border-radius:16px;padding:16px 20px;box-shadow:0 24px 50px -28px #000;}
+/* Both chips sit on the same baseline so they read as a pair, one overhanging
+   each edge of the frame. Each floats on its own timing: matched durations
+   would make them bob in lockstep and look mechanical. */
+.chip--price{left:-34px;bottom:56px;animation:chipFloat 6.4s ease-in-out infinite;}
+.chip--eff{right:-26px;bottom:56px;display:flex;align-items:center;gap:12px;
+  animation:chipFloat 7.6s ease-in-out .9s infinite;}
+@keyframes chipFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.chip label{display:block;font-size:0.8125rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2);font-weight:700;}
+.chip b{font-family:'Fraunces',serif;font-size:1.375rem;font-weight:600;}
+.chip small{color:var(--muted);font-size:0.875rem;}
+.chip__ring{width:42px;height:42px;border-radius:50%;flex:0 0 auto;display:flex;align-items:center;justify-content:center;
+  font-family:'Fraunces',serif;font-size:1.0625rem;color:#17110B;background:linear-gradient(140deg,var(--cu-lite),var(--cu-deep));}
+@media(max-width:1024px){
+  .hero__in{grid-template-columns:1fr;gap:48px;}
+  .hero__frame{aspect-ratio:4/3;}
+  /* on a 4:3 frame there is no room for two chips on one line, so stack them */
+  .chip--price{left:16px;bottom:16px;}
+  .chip--eff{right:16px;bottom:auto;top:16px;}
+}
+
+/* ---------- 3. TRUST MARQUEE ---------- */
+.mq-sec{padding:26px 0;background:#08090B;overflow:hidden;}
+.mq{display:flex;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);}
+.mq__track{display:flex;width:max-content;animation:mq 38s linear infinite;}
+.mq:hover .mq__track{animation-play-state:paused;}
+.mq__grp{display:flex;align-items:center;gap:54px;padding-right:54px;flex:0 0 auto;}
+.mq__logo{font-family:'Fraunces',serif;font-size:1.1875rem;font-weight:600;letter-spacing:.02em;color:#8B919B;white-space:nowrap;
+  transition:color .3s var(--ease-soft);}
+.mq__logo:hover{color:var(--txt);}
+.mq__badge{display:inline-flex;align-items:center;gap:9px;font-size:0.9375rem;font-weight:700;color:var(--muted);white-space:nowrap;}
+.mq__badge svg{width:16px;height:16px;fill:none;stroke:var(--cu);stroke-width:1.8;}
+.mq__badge b{color:var(--cu-lite);}
+/* Manufacturer and accreditation marks. The strip is near-black, and these are
+   full-colour logos, so each sits on its own white tile to stay legible. */
+.mq__logoimg{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;
+  background:#fff;border-radius:10px;padding:11px 18px;height:60px;min-width:124px;
+  opacity:.93;transition:opacity .25s ease,transform .25s ease;}
+.mq__logoimg:hover{opacity:1;transform:translateY(-2px);}
+.mq__logoimg img{height:34px;width:auto;max-width:136px;object-fit:contain;display:block;}
+@media(max-width:700px){.mq__logoimg{height:50px;padding:9px 14px;min-width:100px;}
+  .mq__logoimg img{height:28px;max-width:108px;}}
+.mq__dot{width:4px;height:4px;border-radius:50%;background:var(--line-2);flex:0 0 auto;}
+@keyframes mq{to{transform:translateX(-50%);}}
+
+/* ---------- 4. PROCESS ---------- */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;position:relative;}
+.steps::before{content:"";position:absolute;top:26px;left:8%;right:8%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--line-2),var(--line-2),transparent);}
+.step{position:relative;}
+.step__n{width:52px;height:52px;border-radius:50%;background:var(--bg-2);border:1px solid var(--line-2);
+  display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:1.125rem;color:var(--cu-lite);
+  position:relative;z-index:1;transition:border-color .4s var(--ease),box-shadow .4s var(--ease),color .4s var(--ease);}
+.step:hover .step__n{border-color:var(--cu);box-shadow:0 0 0 6px rgba(208,138,79,.08);}
+.step h3{font-size:1.25rem;margin:26px 0 10px;}
+.step p{color:var(--muted);font-size:1.0625rem;}
+.step__ic{width:22px;height:22px;fill:none;stroke:var(--cu);stroke-width:1.6;margin-top:20px;opacity:.75;}
+@media(max-width:900px){.steps{grid-template-columns:1fr 1fr;gap:40px;}.steps::before{display:none;}}
+@media(max-width:560px){.steps{grid-template-columns:1fr;}}
+
+/* ---------- 5. PACKAGES + STATS ---------- */
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;align-items:stretch;}
+.pcard{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;position:relative;
+  display:flex;flex-direction:column;
+  transition:transform .5s var(--ease),border-color .4s var(--ease-soft),box-shadow .5s var(--ease);}
+.pcard:hover{transform:translateY(-8px);border-color:var(--line-2);box-shadow:0 40px 70px -45px #000;}
+/* Selection, not decoration: the copper border, glow and filled CTA follow
+   whichever card is clicked instead of being welded to the middle one. */
+.pcard{cursor:pointer;}
+.pcard.is-sel{border-color:rgba(208,138,79,.42);
+  box-shadow:0 0 0 1px rgba(208,138,79,.12),0 40px 80px -50px var(--cu-glow);}
+.pcard.is-sel:hover{border-color:rgba(208,138,79,.62);
+  box-shadow:0 0 0 1px rgba(208,138,79,.2),0 46px 90px -50px rgba(208,138,79,.45);}
+.pcard:focus-visible{outline:2px solid var(--cu);outline-offset:4px;}
+/* the CTA restyles with the card, so only one filled copper button is shown */
+.pcard.is-sel .pcard__cta{background:linear-gradient(100deg,var(--cu-lite),var(--cu-deep));
+  color:#17110B;border-color:transparent;box-shadow:0 10px 30px -12px var(--cu-glow);}
+.pcard.is-sel .pcard__cta:hover{box-shadow:0 18px 40px -12px rgba(208,138,79,.5);color:#17110B;}
+/* arrow only on the selected card */
+.pcard__cta{margin-top:auto;}
+.pcard__cta svg{width:0;opacity:0;transition:width .35s var(--ease),opacity .3s var(--ease);}
+.pcard.is-sel .pcard__cta svg{width:15px;opacity:1;}
+.pcard__tag{position:absolute;top:18px;right:18px;z-index:2;background:linear-gradient(100deg,var(--cu-lite),var(--cu-deep));color:#17110B;
+  font-size:0.8125rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:6px 13px;border-radius:999px;}
+.pcard__img{position:relative;aspect-ratio:16/11;overflow:hidden;background:var(--bg-3);
+  /* promote to its own layer and clip on whole pixels, otherwise the scaling
+     image leaves a 1px seam of card background along the bottom edge on hover */
+  transform:translateZ(0);-webkit-mask-image:-webkit-radial-gradient(#fff,#000);}
+/* The image is deliberately larger than its box (106% with a -3% margin), so
+   its edges sit well outside the clip at rest AND while animating. Scaling an
+   image that exactly fills the box leaves its edge on the clip boundary, and
+   mid-transition that edge lands on a fractional device pixel -- which is what
+   painted the hairline under the photo on hover. Overshooting means the clip
+   always cuts through the middle of the bitmap, never near an edge. */
+.pcard__img img{width:106%;height:106%;margin:-3%;object-fit:cover;opacity:.86;
+  backface-visibility:hidden;-webkit-backface-visibility:hidden;will-change:transform;
+  transition:transform .8s var(--ease),opacity .5s var(--ease-soft);
+  will-change:transform;backface-visibility:hidden;}
+.pcard:hover .pcard__img img{transform:scale(1.07);opacity:1;}
+/* The overlay must land on the card's own background at full opacity. Ending
+   at .95 left 5% of the photo showing through, so the image bottom sat ~6 RGB
+   levels lighter than the body and read as a seam: most visible on hover,
+   when the photo brightens from .86 to 1. */
+.pcard__img::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(10,11,13,.1) 0%,rgba(16,18,21,.86) 70%,var(--bg-2) 100%);}
+/* keep the scaled photo from bleeding past the clip on a composited layer */
+.pcard__img{isolation:isolate;}
+.pcard__body{padding:28px 30px 32px;flex:1;display:flex;flex-direction:column;}
+.pcard h3{font-size:1.5rem;}
+.pcard__kw{font-size:0.9375rem;color:var(--cu);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-top:6px;}
+.pcard__price{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin:20px 0 22px;padding-bottom:22px;border-bottom:1px solid var(--line);min-height:104px;}
+.pcard__price b{font-family:'Fraunces',serif;font-size:2.125rem;font-weight:600;}
+.pcard__price span{font-size:0.9375rem;color:var(--muted-2);}
+.plist{display:flex;flex-direction:column;gap:12px;margin-bottom:28px;flex:1;}
+.plist span{display:flex;align-items:flex-start;gap:11px;font-size:1rem;color:var(--muted);}
+.plist svg{width:15px;height:15px;flex:0 0 auto;margin-top:5px;fill:none;stroke:var(--cu);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;}
+.pcard .btn{width:100%;}
+.pnote{margin-top:34px;text-align:center;font-size:0.9375rem;color:var(--muted-2);}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:88px;padding-top:52px;border-top:1px solid var(--line);}
+.stat b{display:block;font-family:'Fraunces',serif;font-size:clamp(2.25rem,4vw,3.25rem);font-weight:600;
+  background:linear-gradient(100deg,var(--cu-lite),var(--cu-deep));-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1;}
+.stat span{display:block;color:var(--muted);font-size:1rem;margin-top:12px;max-width:24ch;}
+@media(max-width:980px){.pgrid{grid-template-columns:1fr;max-width:460px;margin:0 auto;}.stats{grid-template-columns:1fr 1fr;gap:36px;}}
+@media(max-width:560px){.stats{grid-template-columns:1fr;}}
+
+/* ---------- 6. WHY US ---------- */
+.why{display:grid;grid-template-columns:1fr 1.06fr;gap:72px;align-items:center;}
+.why__media{position:relative;}
+.why__img{border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/5;border:1px solid var(--line-2);box-shadow:0 46px 80px -50px #000;}
+.why__img img{width:100%;height:100%;object-fit:cover;}
+.wstat{position:absolute;right:-30px;bottom:44px;background:rgba(12,14,17,.88);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  border:1px solid var(--line-2);border-radius:18px;padding:22px 26px;width:216px;box-shadow:0 30px 60px -34px #000;}
+.wstat b{font-family:'Fraunces',serif;font-size:2rem;font-weight:600;color:var(--cu-lite);display:block;line-height:1;}
+.wstat span{font-size:0.9375rem;color:var(--muted);display:block;margin-top:8px;}
+.wgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:36px 0 40px;}
+.wcard{background:var(--bg-2);border:1px solid var(--line);border-radius:16px;padding:22px;
+  transition:transform .45s var(--ease),border-color .4s var(--ease-soft);}
+.wcard:hover{transform:translateY(-4px);border-color:rgba(208,138,79,.34);}
+.wcard__ic{width:38px;height:38px;border-radius:11px;background:rgba(208,138,79,.11);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+.wcard__ic svg{width:18px;height:18px;fill:none;stroke:var(--cu);stroke-width:1.7;}
+.wcard h3{font-family:'Manrope',sans-serif;font-size:1.0625rem;font-weight:700;letter-spacing:0;margin-bottom:6px;}
+.wcard p{font-size:0.9375rem;color:var(--muted-2);line-height:1.55;}
+@media(max-width:1024px){.why{grid-template-columns:1fr;gap:56px;}.why__img{aspect-ratio:4/3;}.wstat{right:16px;bottom:16px;}}
+@media(max-width:560px){.wgrid{grid-template-columns:1fr;}.wstat{position:static;width:auto;margin-top:16px;}}
+
+/* ---------- 7. REVIEWS ---------- */
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.rcard{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r);padding:34px 32px;display:flex;flex-direction:column;position:relative;
+  transition:transform .45s var(--ease),border-color .4s var(--ease-soft);}
+.rcard:hover{transform:translateY(-6px);border-color:var(--line-2);}
+.rcard__quote{font-family:'Fraunces',serif;font-size:3.5rem;line-height:.6;color:rgba(208,138,79,.24);margin-bottom:18px;}
+.rcard__stars{color:var(--amber);letter-spacing:3px;font-size:1rem;margin-bottom:16px;}
+.rcard p{font-size:1.0625rem;color:var(--muted);flex:1;}
+.rcard__who{display:flex;align-items:center;gap:13px;margin-top:26px;padding-top:22px;border-top:1px solid var(--line);}
+.rcard__av{width:42px;height:42px;border-radius:50%;flex:0 0 auto;display:flex;align-items:center;justify-content:center;
+  font-family:'Fraunces',serif;font-size:1rem;color:var(--cu-lite);background:rgba(208,138,79,.12);border:1px solid rgba(208,138,79,.28);}
+.rcard__who b{display:block;font-size:1.0625rem;}
+.rcard__who span{font-size:0.875rem;color:var(--muted-2);}
+.tp{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px;margin-top:44px;font-size:1rem;color:var(--muted);}
+.tp b{color:var(--txt);}
+.tp .st{color:var(--amber);letter-spacing:2px;}
+@media(max-width:900px){.rgrid{grid-template-columns:1fr;}}
+
+/* ---------- 8. GALLERY ---------- */
+.gfeat{position:relative;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line-2);aspect-ratio:2/1;}
+.gfeat img{width:100%;height:100%;object-fit:cover;}
+.gfeat::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,11,13,.86) 0%,rgba(10,11,13,.1) 55%);}
+.gfeat__cap{position:absolute;z-index:2;left:44px;bottom:44px;max-width:340px;}
+.gfeat__cap b{display:block;font-family:'Fraunces',serif;font-size:1.5rem;font-weight:600;}
+.gfeat__cap p{font-size:1rem;color:var(--muted);margin-top:8px;}
+.gfeat__ba{position:absolute;z-index:2;top:24px;left:24px;display:flex;gap:8px;}
+.ba-tag{background:rgba(12,14,17,.8);border:1px solid var(--line-2);border-radius:999px;padding:6px 14px;font-size:0.8125rem;
+  font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+.ba-tag--after{color:var(--cu-lite);border-color:rgba(208,138,79,.4);}
+.ggrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:24px;}
+.gtile{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/3;border:1px solid var(--line);}
+.gtile img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease);}
+.gtile:hover img{transform:scale(1.06);}
+.gtile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(10,11,13,.88));}
+.gtile__tag{position:absolute;z-index:2;left:20px;bottom:18px;font-size:0.9375rem;font-weight:700;}
+.gtile__tag span{display:block;font-size:0.8125rem;color:var(--cu);letter-spacing:.12em;text-transform:uppercase;font-weight:800;margin-bottom:3px;}
+@media(max-width:900px){.ggrid{grid-template-columns:1fr;}.gfeat{aspect-ratio:4/3;}.gfeat__cap{left:24px;bottom:24px;}}
+
+/* ---------- 9. GUARANTEE ---------- */
+.guar{position:relative;overflow:hidden;background:
+  radial-gradient(900px 320px at 50% 0%,rgba(208,138,79,.13),transparent 70%),var(--bg-2);}
+.guar__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;}
+.guar-item{background:rgba(255,255,255,.02);border:1px solid var(--line);border-radius:var(--r);padding:34px 30px;text-align:left;}
+.guar-item__ic{width:52px;height:52px;border-radius:14px;border:1px solid rgba(208,138,79,.32);background:rgba(208,138,79,.08);
+  display:flex;align-items:center;justify-content:center;margin-bottom:22px;}
+.guar-item__ic svg{width:22px;height:22px;fill:none;stroke:var(--cu);stroke-width:1.6;}
+.guar-item h3{font-size:1.25rem;margin-bottom:10px;}
+.guar-item p{font-size:1rem;color:var(--muted);}
+.guar__seal{display:inline-flex;align-items:center;gap:14px;margin-top:48px;padding:14px 26px;border-radius:999px;
+  border:1px solid rgba(208,138,79,.34);background:rgba(208,138,79,.06);font-size:1rem;color:var(--muted);}
+.guar__seal b{color:var(--cu-lite);font-weight:700;}
+@media(max-width:900px){.guar__grid{grid-template-columns:1fr;}}
+
+/* ---------- 10. FAQ ---------- */
+.faq{max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:14px;}
+.facc{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
+  transition:border-color .4s var(--ease-soft),background .4s var(--ease-soft);}
+.facc.open{border-color:rgba(208,138,79,.36);background:var(--bg-3);}
+.facc__q{width:100%;background:none;border:0;cursor:pointer;text-align:left;display:flex;align-items:center;justify-content:space-between;gap:22px;
+  padding:24px 28px;font-family:'Manrope',sans-serif;font-weight:700;font-size:1.125rem;color:var(--txt);}
+.facc__ic{width:30px;height:30px;border-radius:50%;border:1px solid var(--line-2);flex:0 0 auto;display:flex;align-items:center;justify-content:center;
+  transition:transform .4s var(--ease),border-color .3s,background .3s;}
+.facc__ic svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;}
+.facc.open .facc__ic{transform:rotate(45deg);border-color:var(--cu);background:rgba(208,138,79,.12);color:var(--cu-lite);}
+.facc__a{max-height:0;overflow:hidden;transition:max-height .45s var(--ease-soft);}
+.facc__a p{padding:0 28px 26px;color:var(--muted);font-size:1.0625rem;max-width:70ch;}
+.faq__foot{text-align:center;margin-top:44px;font-size:1.0625rem;color:var(--muted);}
+.faq__foot a{color:var(--cu-lite);font-weight:700;}
+
+/* ---------- 11. FINAL CTA ---------- */
+.fcta{position:relative;overflow:hidden;padding:0;border-top:1px solid var(--line);}
+.fcta__bg{position:absolute;inset:0;}
+.fcta__bg img{width:100%;height:100%;object-fit:cover;}
+.fcta__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,9,11,.96) 12%,rgba(8,9,11,.72) 52%,rgba(8,9,11,.45) 100%);}
+.fcta__in{position:relative;z-index:2;max-width:var(--shell);margin:0 auto;padding:132px var(--pad-x);}
+.fcta__box{max-width:600px;}
+.fcta h2{font-size:clamp(2.125rem,4.2vw,3.25rem);margin-top:20px;}
+.fcta p{color:var(--muted);margin-top:20px;font-size:1.1875rem;}
+.fcta__cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px;}
+.fcta__assure{display:flex;flex-wrap:wrap;gap:22px;margin-top:34px;font-size:0.9375rem;color:var(--muted);font-weight:600;}
+.fcta__assure span{display:inline-flex;align-items:center;gap:8px;}
+.fcta__assure svg{width:14px;height:14px;fill:none;stroke:var(--cu);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;}
+@media(max-width:900px){.fcta__in{padding:96px var(--pad-x);}.fcta__bg::after{background:linear-gradient(180deg,rgba(8,9,11,.9),rgba(8,9,11,.75));}}
+
+/* ---------- 12. FOOTER ---------- */
+.footer{background:#08090B;padding:88px var(--pad-x) 36px;}
+.footer__top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.4fr;gap:56px;}
+.footer__brand p{color:var(--muted-2);font-size:1rem;margin:22px 0;max-width:34ch;}
+.fsoc{display:flex;gap:10px;}
+.fsoc a{width:38px;height:38px;border-radius:12px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;
+  transition:border-color .3s var(--ease-soft),background .3s var(--ease-soft);}
+.fsoc a:hover{border-color:var(--cu);background:rgba(208,138,79,.08);}
+.fsoc svg{width:16px;height:16px;fill:none;stroke:var(--muted);stroke-width:1.7;}
+.fcol h4{font-family:'Manrope',sans-serif;font-size:0.875rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-2);font-weight:800;margin-bottom:20px;}
+.fcol a{display:block;font-size:1rem;color:var(--muted);padding:7px 0;transition:color .3s var(--ease-soft);}
+.fcol a:hover{color:var(--cu-lite);}
+.fcol p{font-size:1rem;color:var(--muted);margin-bottom:14px;}
+.nform{display:flex;gap:10px;margin-top:16px;}
+.nform input{flex:1;min-width:0;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:999px;padding:13px 20px;
+  color:var(--txt);font-family:'Manrope',sans-serif;font-size:1rem;transition:border-color .3s var(--ease-soft);}
+.nform input::placeholder{color:var(--muted-2);}
+.nform input:focus{outline:none;border-color:var(--cu);}
+.footer__bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:72px;padding-top:28px;border-top:1px solid var(--line);
+  font-size:0.875rem;color:var(--muted-2);}
+.footer__bottom a{color:var(--muted-2);}
+.footer__bottom a:hover{color:var(--cu-lite);}
+@media(max-width:1024px){.footer__top{grid-template-columns:1fr 1fr;gap:44px;}}
+@media(max-width:600px){.footer__top{grid-template-columns:1fr;}}
+
+@media(max-width:768px){
+  :root{--pad-x:22px;}
+  .section{padding:80px var(--pad-x);}
+  .hero{padding:72px var(--pad-x) 84px;}
+  .sec-head{margin-bottom:44px;}
+  .footer{padding:64px var(--pad-x) 28px;}
+}
+
+/* ---- Google review badge (hero) ---- */
+.hero .grev{display:inline-flex;width:fit-content;max-width:100%;align-items:center;gap:9px;flex:0 0 auto;
+  margin-top:20px;padding:8px 15px;border-radius:999px;text-decoration:none;
+  background:var(--bg-3);border:1px solid var(--line);color:var(--muted);
+  font-size:0.9375rem;line-height:1.2;white-space:nowrap;
+  transition:border-color .3s ease,transform .3s ease,background .3s ease;}
+.hero .grev:hover{border-color:var(--cu);transform:translateY(-1px);}
+.hero .grev__g{width:16px;height:16px;flex:0 0 auto;}
+.hero .grev__stars{color:#FBBC05;letter-spacing:.5px;font-size:0.9375rem;}
+.hero .grev__txt b{font-weight:700;color:var(--txt);}
+@media(max-width:560px){ .hero .grev{white-space:normal;font-size:0.875rem;} }
+/* step photography: a 16:10 plate under each step */
+.step__img{margin-top:18px;border-radius:12px;overflow:hidden;aspect-ratio:16/10;background:var(--bg-2);border:1px solid var(--line-2);}
+.step__img img{width:106%;height:106%;margin:-3%;object-fit:cover;display:block;transition:transform .5s ease;will-change:transform;backface-visibility:hidden;}
+.step:hover .step__img img{transform:scale(1.07);}
+@media(max-width:900px){.step__img{aspect-ratio:16/9;}}
+/* hero video letterbox: the source file is 1440x1080 with ~61px of black baked
+   in top and bottom (its real content is ~3:2). object-fit:cover fills the frame
+   correctly, so those bands are pixels, not layout. Scaling past the computed
+   threshold pushes them outside the clip: band inner edge = 329 - 292s <= 0,
+   so s >= 1.127; 1.16 leaves margin. */
+.hero__frame video{transform:scale(1.16);transform-origin:center;}
+/* nav-fullwidth */
+.nav__in{max-width:none;width:100%;padding-left:clamp(20px,4vw,72px);padding-right:clamp(20px,4vw,72px);}
+.nav__links{margin-inline:auto;gap:clamp(15px,1.85vw,34px);flex-wrap:nowrap;}
+.nav__links a{white-space:nowrap;}
+.nav{padding-left:0;padding-right:0;}
+.topbar{padding-left:0;padding-right:0;}
+.topbar__in{max-width:none;width:100%;padding-left:clamp(20px,4vw,72px);padding-right:clamp(20px,4vw,72px);}
+/* nav-band */
+@media (max-width:1320px){
+  .nav__in{padding-left:clamp(16px,2.2vw,30px);padding-right:clamp(16px,2.2vw,30px);}
+  .nav__links{gap:clamp(10px,1.15vw,17px);}
+  .nav__links a{font-size:1rem;}
+  .nav__tel,.nav-tel,.nav-phone{display:none;}
+}
+/* ============================================================
+   Logo strip: two labelled marquee columns. Reuses .mq__logoimg
+   so the full-colour brand marks keep their white tiles.
+   ============================================================ */
+.lstrip-sec{padding:44px 0;background:#08090B;overflow:hidden;border-bottom:1px solid var(--line);}
+.lsplit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,30px);padding:0 clamp(14px,1.8vw,28px);}
+/* the track is width:max-content; a 1fr column takes its automatic minimum from
+   min-content, so without min-width:0 it blows the column past the viewport */
+.lsplit__col{min-width:0;}
+.lsplit__col+.lsplit__col{border-left:1px solid var(--line);padding-left:clamp(18px,3vw,44px);}
+.lsplit__label{font-family:'Manrope',sans-serif;font-size:0.8125rem;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--muted-2);margin:0 0 20px;text-align:center;}
+/* Static strip: five fixed logos per column, centred in their own half. No
+   scrolling belt, so the track is a plain centred row that wraps if it must. */
+.lsplit__view{overflow:hidden;}
+.lstrip__track{display:flex;width:auto;justify-content:center;}
+.lstrip__grp{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;
+  gap:clamp(12px,1.4vw,22px);flex:1 1 auto;min-width:0;}
+@media(max-width:780px){
+  .lsplit{grid-template-columns:1fr;gap:30px;}
+  .lsplit__col+.lsplit__col{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:26px;}
+}
+
+/* ============================================================
+   Boilers we fit - named models with their warranty
+   ============================================================ */
+.bgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:stretch;}
+.bcard{background:var(--bg-3);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .45s var(--ease),border-color .3s,box-shadow .45s var(--ease);}
+.bcard:hover{transform:translateY(-5px);border-color:var(--cu);box-shadow:0 26px 50px -20px rgba(0,0,0,.7);}
+/* boiler product shots are cut out on white, so the image panel stays light */
+.bcard__img{aspect-ratio:4/3;background:#F4F1EC;padding:18px;overflow:hidden;}
+.bcard__img img{width:100%;height:100%;object-fit:contain;}
+.bcard__body{padding:22px 20px 24px;flex:1;display:flex;flex-direction:column;}
+.bcard__k{font-family:'Manrope',sans-serif;font-size:0.8125rem;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--cu);margin-bottom:9px;}
+.bcard h3{font-size:1.1875rem;margin-bottom:7px;min-height:2.5em;}
+.bcard p{color:var(--muted);font-size:1rem;line-height:1.6;margin-bottom:14px;flex:1;}
+.bcard__spec{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);display:flex;gap:16px;flex-wrap:wrap;}
+.bcard__spec span{font-size:0.875rem;color:var(--muted-2);}
+.bcard__spec b{color:var(--txt);font-weight:700;}
+@media(max-width:1080px){.bgrid{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.bgrid{grid-template-columns:1fr;}}
+
+/* ============================================================
+   Care plans - monthly cover
+   ============================================================ */
+.cgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:stretch;}
+.cplan{background:var(--bg-3);border:1px solid var(--line);border-radius:var(--r);padding:30px 26px;
+  display:flex;flex-direction:column;transition:transform .4s var(--ease),border-color .3s,box-shadow .4s var(--ease);}
+.cplan:hover{transform:translateY(-4px);border-color:var(--cu);box-shadow:0 24px 46px -20px rgba(0,0,0,.65);}
+.cplan--feat{background:linear-gradient(160deg,rgba(208,138,79,.16),rgba(208,138,79,.03));border-color:var(--cu);}
+.cplan__tag{display:inline-block;align-self:flex-start;background:linear-gradient(100deg,var(--cu-lite),var(--cu-deep));
+  color:#17110B;font-size:0.8125rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  padding:4px 10px;border-radius:999px;margin-bottom:12px;}
+.cplan h3{font-size:1.25rem;margin-bottom:6px;}
+/* the featured plan carries an extra tag, so reserve the row on every card
+   to keep the four price figures on one line */
+.cplan__tag{visibility:hidden;}
+.cplan--feat .cplan__tag{visibility:visible;}
+.cplan__price{display:flex;align-items:baseline;gap:5px;margin:12px 0 4px;}
+.cplan__price b{font-family:'Fraunces',serif;font-size:2.25rem;font-weight:600;letter-spacing:-.02em;}
+.cplan__price span{color:var(--muted-2);font-size:0.9375rem;}
+.cplan__cash{color:var(--cu-lite);font-size:0.9375rem;font-weight:700;margin-bottom:16px;}
+.cplan ul{list-style:none;margin:0 0 22px;padding:16px 0 0;border-top:1px solid var(--line);flex:1;}
+.cplan li{position:relative;padding:6px 0 6px 20px;font-size:1rem;color:var(--muted);}
+.cplan li::before{content:"";position:absolute;left:0;top:14px;width:6px;height:6px;border-radius:50%;background:var(--cu);}
+.cplan .btn{margin-top:auto;width:100%;white-space:nowrap;}
+.cnote{text-align:center;color:var(--muted-2);font-size:0.9375rem;line-height:1.7;margin-top:26px;max-width:720px;margin-left:auto;margin-right:auto;}
+@media(max-width:1080px){.cgrid{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.cgrid{grid-template-columns:1fr;}}
+
+/* CTA pair closes every content section; alignment follows the heading */
+.ctapair{display:flex;flex-wrap:wrap;gap:14px;margin-top:52px;}
+.center .ctapair,.sec-head.center ~ .ctapair{justify-content:center;}
+#packages .ctapair,#boilers .ctapair,#careplans .ctapair,#faq .ctapair,#reviews .ctapair{justify-content:center;}
+@media(max-width:560px){.ctapair .btn{flex:1 1 100%;}}
+
+/* Footer operational block */
+.foot-ops{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;
+  border-top:1px solid var(--line);padding:40px 0 6px;margin-top:34px;}
+.foot-ops h4{font-family:'Manrope',sans-serif;font-size:0.8125rem;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--muted-2);margin:0 0 14px;}
+.foot-ops p,.foot-ops address{margin:0;font-size:1rem;line-height:1.85;color:var(--muted);font-style:normal;}
+.foot-ops .oh{display:flex;justify-content:space-between;gap:16px;max-width:320px;}
+.foot-ops .oh span:last-child{color:var(--muted-2);}
+.foot-ops a:hover{color:var(--cu-lite);}
+.foot-accredline{border-top:1px solid var(--line);margin-top:30px;padding-top:22px;
+  font-size:0.9375rem;line-height:1.85;color:var(--muted-2);}
+.foot-accredline b{color:var(--muted);}
+@media(max-width:900px){.foot-ops{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.foot-ops{grid-template-columns:1fr;}}
+
+/* the cut-out product shots want contain; a real photograph wants cover so it
+   fills the panel instead of sitting small in the middle of it */
+.bcard__img--photo{padding:0;}
+.bcard__img--photo img{object-fit:cover;object-position:center 42%;transform:scale(1.35);}
+
+/* centre every logo inside its tile, whatever the mark's aspect ratio */
+.mq__logoimg img{margin:auto;}
+
+/* care plans are selectable - the copper treatment follows the chosen plan */
+.cplan{cursor:pointer;outline:none;}
+.cplan:focus-visible{box-shadow:0 0 0 3px rgba(208,138,79,.45);}
+</style>
+<style>
+/* --- owner review 2: Boiler --- */
+/* 19. nav links were mid-grey; brighter, white on hover, white underline */
+.nav__links a{color:rgba(244,241,236,.88);}
+.nav__links a:hover{color:#FFFFFF;}
+.nav__links a::after{background:#FFFFFF;height:2px;bottom:-6px;}
+
+/* 13,14. one- and two-line figures pushed every label to a different height */
+.stats{align-items:start;}
+.stat b{min-height:1.15em;display:flex;align-items:flex-end;}
+.stat span{min-height:3.2em;}
+
+/* 15. the brands caption sat at mid-grey on near-black */
+.mq-sec p,.mq__note,.lstrip-note,.mq-sec .cap{color:rgba(244,241,236,.82);}
+.mq__logo{color:#B9C0CA;}
+
+/* (17: retargeted to .lsplit, see below) */
+</style>
+<style>
+/* --- review 2 (img 12): reviews as one sliding row --- */
+.rv-wrap{position:relative;display:flex;align-items:center;gap:14px;margin-top:8px;}
+.rv-view{overflow:hidden;flex:1 1 auto;padding:6px 2px;}
+.rv-track{display:flex;gap:24px;will-change:transform;
+  transition:transform .55s cubic-bezier(.16,1,.3,1);}
+.rv-track > .rcard{flex:0 0 calc((100% - 48px)/3);}
+.rv-btn{flex:0 0 auto;width:46px;height:46px;border-radius:50%;
+  display:grid;place-items:center;cursor:pointer;
+  background:var(--bg-2);border:1px solid var(--line-2);color:var(--txt);
+  transition:background .3s,border-color .3s,color .3s,opacity .3s;}
+.rv-btn svg{width:20px;height:20px;}
+.rv-btn:hover:not(:disabled){background:var(--cu);border-color:var(--cu);color:#17110B;}
+.rv-btn:disabled{opacity:.32;cursor:default;}
+@media(max-width:900px){ .rv-track > .rcard{flex:0 0 calc((100% - 24px)/2);} }
+@media(max-width:620px){ .rv-track > .rcard{flex:0 0 100%;} .rv-btn{width:40px;height:40px;} }
+</style>
+<style>
+/* --- review 2 (18): nav call icon size --- */
+/* the call icon is an svg here, so font-size cannot reach it */
+.nav-tel svg,.nav__tel svg{width:22px;height:22px;flex:0 0 auto;}
+.nav-tel,.nav__tel{gap:9px;align-items:center;}
+</style>
+<style>
+/* --- image 17: logo strip --- */
+.lsplit__view{position:relative;}
+/* The end and centre fades are gone: the belt no longer scrolls, so there is
+   nothing entering or leaving the frame for a soft edge to explain. */
+</style>
+<style>
+/* --- image 17 follow-up: neutral centre divider --- */
+.lsplit__col+.lsplit__col{border-left:1px solid rgba(255,255,255,.14);}
+@media(max-width:900px){ .lsplit__col+.lsplit__col{border-left:0;} }
+</style>
+<style>
+/* --- images 13/14: card figure and suffix on the same rule --- */
+/* stack the figure and its suffix on every card, so a long figure cannot
+   push its suffix onto a second line while a short one keeps it inline */
+.pcard__price{flex-direction:column;align-items:flex-start;gap:4px;flex-wrap:nowrap;}
+.pcard__price b{line-height:1.1;}
+.pcard__price span{line-height:1.35;}
+/* the suffix is one line on every card, so the lists below start level */
+.pcard__price span{min-height:1.35em;}
+</style>
+<style>
+/* --- marker 3: Why Heating - centred heading and CTA, columns of equal height --- */
+/* the eyebrow, heading, lede and closing button pair now sit in the middle of
+   the section like every other .sec-head, leaving the image and the six cards
+   as the only two columns */
+#why .sec-head{max-width:760px;}
+/* was align-items:center, which let the shorter column float; stretch makes the
+   photo and the card block finish level with each other */
+.why{align-items:stretch;}
+.why__media{display:flex;flex-direction:column;}
+/* drop the fixed 4/5 ratio - the photo takes its height from the cards beside it */
+.why__img{aspect-ratio:auto;flex:1 1 auto;min-height:460px;}
+.wgrid{margin:0;height:100%;grid-auto-rows:1fr;}
+@media(max-width:1024px){
+  .why__img{aspect-ratio:4/3;flex:0 0 auto;min-height:0;}
+  .wgrid{height:auto;grid-auto-rows:auto;}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#top">Skip to content</a>
+
+<!-- ============ 1. STICKY NAV ============ -->
+<div class="topbar">
+  <div class="topbar__in">
+    <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 7.9-8 9-4.8-1.1-8-4.5-8-9V6l8-3z"/></svg>Gas Safe Registered</span>
+    <span><b>Mon to Sat 7am to 8pm</b> · Next day installation available</span>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="nav__in">
+    <a class="brand" href="#top">
+      <span class="brand__mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c3 3.6 5 6.9 5 9.8A5 5 0 0 1 7 12.8C7 9.9 9 6.6 12 3z"/><path d="M12 12.5c1 1.3 1.6 2.3 1.6 3.2a1.6 1.6 0 0 1-3.2 0c0-.9.6-1.9 1.6-3.2z"/></svg></span>
+      <span><span class="brand__name">Heat<em>ing</em></span></span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#process">Our Process</a>
+      <a href="#why">Why Choose Us?</a>
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#">Guides</a>
+      <a href="#">Careers</a>
+      <a href="#">Area</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav__right">
+      <a class="nav-tel" href="tel:01632960300">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 20.5a13.5 13.5 0 0 1-12-12 2 2 0 0 1 2-2.2h2.3a1.4 1.4 0 0 1 1.4 1.2c.1.9.35 1.75.7 2.55a1.4 1.4 0 0 1-.35 1.55l-1 1a11 11 0 0 0 4.4 4.4l1-1a1.4 1.4 0 0 1 1.55-.35c.8.35 1.65.6 2.55.7a1.4 1.4 0 0 1 1.2 1.45v2.25a2 2 0 0 1-2.2 2Z"/></svg>
+        <span>01632 960 300</span>
+      </a>
+      <a class="btn btn-cu btn-sm nav__cta" href="#contact">Get a Free Quote</a>
+      <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMobile"></button>
+    </div>
+  </div>
+  <div class="nav__mobile" id="navMobile">
+    <a href="#process">Our Process</a>
+    <a href="#why">Why Choose Us?</a>
+    <a href="#services">Services</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#">Guides</a>
+    <a href="#">Careers</a>
+    <a href="#">Area</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" style="color:var(--cu-lite);">Get a Fixed Quote →</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ 2. HERO ============ -->
+<section class="hero" aria-labelledby="heroH1">
+  <span class="glow glow--hero" aria-hidden="true"></span>
+  <div class="hero__in">
+    <div>
+      <span class="pill reveal"><span class="pill__stars" aria-hidden="true">&#10003;</span> <b>Gas Safe Registered</b> &middot; Surrey's #1 Heating Specialists</span>
+      <h1 id="heroH1" class="reveal" style="transition-delay:.05s">Boiler &amp; heating <span class="gold">specialists</span> in Surrey.</h1>
+      <p class="hero__sub reveal" style="transition-delay:.1s">Trusted local heating engineers covering Epsom, Ashtead, Guildford, Horley and Kingston Upon Thames. Fast response. Expert workmanship. No hidden costs.</p>
+      <div class="hero__cta reveal" style="transition-delay:.16s">
+        <a class="btn btn-cu" href="#contact">Get a Free Quote <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-line" href="#services">View Our Services</a>
+      </div>
+        <a class="grev reveal" style="transition-delay:.19s" href="#reviews" aria-label="Read our Google reviews"><svg class="grev__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg><span class="grev__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="grev__txt">Read our <b>Google reviews</b></span></a>
+      <div class="hero__meta reveal" style="transition-delay:.22s">
+        <div class="hmeta"><b>12 to 24 hrs</b><span>Typical engineer response</span></div>
+        <div class="hmeta"><b>Same day</b><span>Call outs where possible</span></div>
+        <div class="hmeta"><b>5 areas</b><span>Covered across Surrey</span></div>
+      </div>
+    </div>
+    <div class="hero__visual reveal-s" style="transition-delay:.12s">
+      <div class="hero__frame">
+        <video autoplay muted loop playsinline preload="auto" aria-hidden="true" width="1440" height="1080">
+          <source src="video/hero-aurent.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="chip chip--eff">
+        <span class="chip__ring">A</span>
+        <div><label>Powerflush</label><b>£100</b> <small>per radiator</small></div>
+      </div>
+      <div class="chip chip--price">
+        <label>Boiler service from</label>
+        <b>£99</b> <small>+ VAT plus parts</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. TRUST MARQUEE ============ -->
+<section class="lstrip-sec" aria-label="Brands we install and our accreditations">
+  <div class="lsplit">
+    <div class="lsplit__col">
+      <p class="lsplit__label">Brands we install</p>
+      <div class="lsplit__view">
+        <div class="lstrip__track">
+          <div class="lstrip__grp"><span class="mq__logoimg"><img src="blueflame/worchester-logo-cl.png" alt="Worcester Bosch" loading="lazy" decoding="async"></span><span class="mq__logoimg"><img src="blueflame/vaillant-logo-cl.png" alt="Vaillant" loading="lazy" decoding="async"></span><span class="mq__logoimg"><img src="blueflame/ideal-logo-cl.png" alt="Ideal Heating" loading="lazy" decoding="async"></span><span class="mq__logoimg"><img src="blueflame/viessmann-logo.svg" alt="Viessmann" loading="lazy" decoding="async"></span><span class="mq__logoimg"><img src="blueflame/baxi-logo.svg" alt="Baxi" loading="lazy" decoding="async"></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="lsplit__col">
+      <p class="lsplit__label">Accreditations</p>
+      <div class="lsplit__view">
+        <div class="lstrip__track">
+          <div class="lstrip__grp"><span class="mq__logoimg"><img src="blueflame/gas-safe-logo-1.webp" alt="Gas Safe Register" loading="lazy" decoding="async"></span><span class="mq__logoimg"><img src="blueflame/which-logo.jpg" alt="Which? Trusted Trader" loading="lazy" decoding="async"></span><span class="mq__logoimg"><img src="blueflame/checkatrade-logo.svg" alt="Checkatrade" loading="lazy" decoding="async"></span><span class="mq__logoimg"><img src="blueflame/ciphe-logo.svg" alt="CIPHE" loading="lazy" decoding="async"></span><span class="mq__logoimg"><img src="blueflame/trustpilot-logo.svg" alt="Trustpilot" loading="lazy" decoding="async"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. PROCESS ============ -->
+<section class="section" id="process" aria-labelledby="processH2">
+  <div class="shell">
+    <div class="sec-head center">
+      <p class="eyebrow reveal">Our process</p>
+      <h2 class="h2 reveal" id="processH2" style="transition-delay:.06s">Our simple <span class="gold">four step process.</span></h2>
+      <p class="lede reveal" style="transition-delay:.1s">Spread the cost with our flexible finance options. 0% and low rate plans are available. Get approved in minutes.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <span class="step__n">01</span>
+        <h3>Online quote</h3>
+        <p>Get an instant, no obligation quote online in minutes. Transparent pricing, no hidden fees.</p>
+        <svg class="step__ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11h6M9 15h4"/><rect x="4" y="3" width="16" height="18" rx="2"/></svg>
+      </div>
+      <div class="step reveal" style="transition-delay:.08s">
+        <span class="step__n">02</span>
+        <h3>Home survey</h3>
+        <p>Our engineer visits to assess your home and confirm the best solution for your needs.</p>
+        <svg class="step__ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.2 7.4a3.6 3.6 0 0 0-6.9 1.5v4.4c0 1.9-1 3.3-2.3 4.1h11.6M7.8 12.4h6.2"/></svg>
+      </div>
+      <div class="step reveal" style="transition-delay:.16s">
+        <span class="step__n">03</span>
+        <h3>We install</h3>
+        <p>Professional installation by Gas Safe registered engineers. Fully insured and certified.</p>
+        <svg class="step__ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+      </div>
+      <div class="step reveal" style="transition-delay:.24s">
+        <span class="step__n">04</span>
+        <h3>Aftercare</h3>
+        <p>We are here after the job is done. Heating Cover keeps you protected year round.</p>
+        <svg class="step__ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. PACKAGES + STATS ============ -->
+
+
+<!-- ============ 6. WHY US ============ -->
+
+<section class="section panel" id="services" aria-labelledby="packagesH2">
+  <div class="shell">
+    <div class="sec-head center">
+      <p class="eyebrow reveal">Our services</p>
+      <h2 class="h2 reveal" id="packagesH2" style="transition-delay:.06s">Everything your <span class="gold">home heating needs.</span></h2>
+      <p class="lede reveal" style="transition-delay:.1s">Specialists in Ideal, Glow worm, Worcester Bosch and Vaillant boilers, with every quotation itemised in full so there are no hidden costs or surprises.</p>
+    </div>
+    <div class="pgrid">
+      <div class="pcard reveal" tabindex="0" role="button" aria-pressed="false" aria-label="New boilers">
+        <div class="pcard__img"><img src="blueflame/new-boilers-image-1-blueflames-boiler.webp" alt="New boilers" loading="lazy" decoding="async"></div>
+        <div class="pcard__body">
+          <h3>New boilers</h3>
+          <p class="pcard__kw">Installation</p>
+          <p class="pcard__price"><b>Free quote</b><span>finance available</span></p>
+          <div class="plist">
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Worcester Bosch, Vaillant, Ideal, Baxi &amp; more</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Warranties up to 12 years</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Fitted in as little as 24 hours</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Free smart thermostat with combi installs</span>
+          </div>
+          <a class="btn btn-line pcard__cta" href="#contact">Check My Price <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+      <div class="pcard is-sel reveal" style="transition-delay:.04s" tabindex="0" role="button" aria-pressed="true" aria-label="Boiler servicing">
+        <span class="pcard__tag">Most booked</span>
+        <div class="pcard__img"><img src="blueflame/inside-boiler-image.webp" alt="Boiler servicing" loading="lazy" decoding="async"></div>
+        <div class="pcard__body">
+          <h3>Boiler servicing</h3>
+          <p class="pcard__kw">Annual service</p>
+          <p class="pcard__price"><b>From &pound;99</b><span>+ VAT plus parts</span></p>
+          <div class="plist">
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Full clean, test and safety check</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Keeps your manufacturer warranty valid</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Gas Safety certificate issued</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Reminder sent before it falls due</span>
+          </div>
+          <a class="btn btn-line pcard__cta" href="#contact">Check My Price <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+      <div class="pcard reveal" style="transition-delay:.08s" tabindex="0" role="button" aria-pressed="false" aria-label="Boiler repairs">
+        <div class="pcard__img"><img src="blueflame/plumbing-tool-box.webp" alt="Boiler repairs" loading="lazy" decoding="async"></div>
+        <div class="pcard__body">
+          <h3>Boiler repairs</h3>
+          <p class="pcard__kw">Fault finding</p>
+          <p class="pcard__price"><b>No call out fee</b><span>fixed price before we start</span></p>
+          <div class="plist">
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Engineer to your door in 12 to 24 hours</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Most faults fixed on the first visit</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Fully stocked vans, common parts carried</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Emergency call outs seven days a week</span>
+          </div>
+          <a class="btn btn-line pcard__cta" href="#contact">Check My Price <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+      <div class="pcard reveal" style="transition-delay:.012s" tabindex="0" role="button" aria-pressed="false" aria-label="Powerflushing">
+        <div class="pcard__img"><img src="blueflame/powerflushing-Kamco-Image.webp" alt="Powerflushing" loading="lazy" decoding="async"></div>
+        <div class="pcard__body">
+          <h3>Powerflushing</h3>
+          <p class="pcard__kw">System clean</p>
+          <p class="pcard__price"><b>&pound;100</b><span>per radiator</span></p>
+          <div class="plist">
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Valve changes included as standard</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Fixes cold spots and noisy pipework</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Restores efficiency across the system</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Often required to validate a new boiler</span>
+          </div>
+          <a class="btn btn-line pcard__cta" href="#contact">Check My Price <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+      <div class="pcard reveal" style="transition-delay:.016s" tabindex="0" role="button" aria-pressed="false" aria-label="Cylinders and heating">
+        <div class="pcard__img"><img src="blueflame/Unvented-and-vented-Cylinders-blueflames-boiler-image-3.webp" alt="Cylinders and heating" loading="lazy" decoding="async"></div>
+        <div class="pcard__body">
+          <h3>Cylinders &amp; heating</h3>
+          <p class="pcard__kw">Central heating</p>
+          <p class="pcard__price"><b>Free survey</b><span>itemised quotation</span></p>
+          <div class="plist">
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Unvented and vented hot water cylinders</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Full central heating installs and upgrades</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Radiator replacement and balancing</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>G3 qualified engineers</span>
+          </div>
+          <a class="btn btn-line pcard__cta" href="#contact">Check My Price <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+      <div class="pcard reveal" style="transition-delay:.020s" tabindex="0" role="button" aria-pressed="false" aria-label="Controls and landlord">
+        <div class="pcard__img"><img src="blueflame/Ideal-halo-WiFi-thermostate.webp" alt="Controls and landlord" loading="lazy" decoding="async"></div>
+        <div class="pcard__body">
+          <h3>Controls &amp; landlord</h3>
+          <p class="pcard__kw">Smart &amp; compliance</p>
+          <p class="pcard__price"><b>From &pound;89</b><span>gas safety certificate</span></p>
+          <div class="plist">
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Smart thermostats: Hive, Nest, Ideal Halo</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Landlord gas safety certificates (CP12)</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Thermostat and control upgrades</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Portfolio pricing for letting agents</span>
+          </div>
+          <a class="btn btn-line pcard__cta" href="#contact">Check My Price <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <p class="pnote">We also fit and maintain full central heating systems, and offer general plumbing for homeowners across Surrey, from tap changes to burst pipes and leaks.</p>
+    <div class="stats">
+      <div class="stat reveal"><b class="counter" data-count="30" data-suffix="+ yrs">0</b><span>Combined experience on the tools</span></div>
+      <div class="stat reveal" style="transition-delay:.06s"><b class="counter" data-count="12" data-suffix=" yr">0</b><span>Maximum manufacturer warranty</span></div>
+      <div class="stat reveal" style="transition-delay:.12s"><b class="counter" data-count="24" data-suffix=" hr">0</b><span>New boiler fitted in as little as</span></div>
+      <div class="stat reveal" style="transition-delay:.18s"><b class="counter" data-count="270" data-suffix="+">0</b><span>Genuine five star customer reviews</span></div>
+    </div>
+      <div class="ctapair reveal">
+      <a class="btn btn-cu" href="#contact">Get A Free Quote <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-line" href="tel:01632960300">Speak To Our Experts <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+</div>
+</section>
+
+  <section class="section" id="boilers" aria-labelledby="boilersH2">
+  <div class="shell">
+    <div class="sec-head center">
+      <p class="eyebrow reveal">Boilers we fit</p>
+      <h2 class="h2 reveal" id="boilersH2" style="transition-delay:.06s">We name the exact boiler <span class="gold">on your quote.</span></h2>
+      <p class="lede reveal" style="transition-delay:.1s">We are accredited installers for Worcester Bosch, Vaillant and Ideal, which is what unlocks the longest manufacturer warranties. Every quotation names the exact model and the cover attached to it.</p>
+    </div>
+    <div class="bgrid">
+      <div class="bcard reveal">
+        <div class="bcard__img"><img src="blueflame/worchester-boiler-why-us.webp" alt="Worcester Bosch Greenstar 4000" loading="lazy" decoding="async"></div>
+        <div class="bcard__body">
+          <div class="bcard__k">Combi</div>
+          <h3>Worcester Bosch Greenstar 4000</h3>
+          <p>Our most fitted combi. Quiet, compact and backed by the longest warranty on the market when installed by an accredited fitter.</p>
+          <div class="bcard__spec"><span><b>12 yr</b> warranty</span><span><b>25 to 30kW</b></span></div>
+        </div>
+      </div>
+      <div class="bcard reveal" style="transition-delay:.06s">
+        <div class="bcard__img"><img src="blueflame/vaillant-boiler-hp.webp" alt="Vaillant ecoTEC plus" loading="lazy" decoding="async"></div>
+        <div class="bcard__body">
+          <div class="bcard__k">Combi</div>
+          <h3>Vaillant ecoTEC plus</h3>
+          <p>A premium German built unit with excellent modulation, ideal for larger homes with two bathrooms and higher hot water demand.</p>
+          <div class="bcard__spec"><span><b>10 yr</b> warranty</span><span><b>32 to 38kW</b></span></div>
+        </div>
+      </div>
+      <div class="bcard reveal" style="transition-delay:.012s">
+        <div class="bcard__img"><img src="blueflame/ideal-boiler-why-us.webp" alt="Ideal Logic Max" loading="lazy" decoding="async"></div>
+        <div class="bcard__body">
+          <div class="bcard__k">Combi</div>
+          <h3>Ideal Logic Max</h3>
+          <p>Outstanding value with a genuinely long warranty. The unit we most often recommend where budget is the deciding factor.</p>
+          <div class="bcard__spec"><span><b>10 yr</b> warranty</span><span><b>24 to 35kW</b></span></div>
+        </div>
+      </div>
+      <div class="bcard reveal" style="transition-delay:.018s">
+        <div class="bcard__img"><img src="blueflame/baxi-viessmann-glowworm-boilers.jpg" alt="Baxi 800, Viessmann Vitodens and Glow worm boilers" loading="lazy" decoding="async"></div>
+        <div class="bcard__body">
+          <div class="bcard__k">System &amp; regular</div>
+          <h3>Baxi, Viessmann &amp; Glow worm</h3>
+          <p>Where a cylinder is staying, a system or regular boiler is usually the right answer. We fit Baxi 800, Viessmann Vitodens and Glow worm Energy.</p>
+          <div class="bcard__spec"><span><b>Up to 10 yr</b></span><span><b>System</b> &amp; regular</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="ctapair reveal">
+      <a class="btn btn-cu" href="#contact">Get A Free Quote <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-line" href="tel:01632960300">Speak To Our Experts <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section" id="why" aria-labelledby="whyH2">
+  <div class="shell">
+    <div class="sec-head center">
+      <p class="eyebrow reveal">Why Heating</p>
+      <h2 class="h2 reveal" id="whyH2" style="transition-delay:.06s">Why homeowners across<br><span class="gold">Surrey choose us.</span></h2>
+      <p class="lede reveal" style="transition-delay:.1s">When your boiler breaks down, or your heating system needs attention, you want someone you can rely on, honest and reliable. We are a Surrey based heating and plumbing company serving homeowners across Epsom and around Surrey.</p>
+    </div>
+    <div class="why">
+      <div class="why__media reveal-s">
+        <div class="why__img"><img src="images/bl-01.jpg" alt="Our engineer with a homeowner in Surrey" loading="lazy" decoding="async"></div>
+        <div class="wstat"><b>M25 / A3 / A217</b><span>directly on the network for a fast response across Surrey</span></div>
+      </div>
+      <div class="wgrid">
+        <div class="wcard reveal"><span class="wcard__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 7.9-8 9-4.8-1.1-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></span><h3>Gas Safe registered</h3><p>Every engineer on our team is Gas Safe registered and works to current regulations. Your certificate is issued on the day, not posted weeks later.</p></div>
+        <div class="wcard reveal" style="transition-delay:.06s"><span class="wcard__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/></svg></span><h3>Fixed price, no hidden charges</h3><p>No salespeople and no commission. You get a written, itemised quotation before anything starts, and that is the figure you pay.</p></div>
+        <div class="wcard reveal" style="transition-delay:.012s"><span class="wcard__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.9L22 9.3l-5.5 4.8L18 21l-6-4-6 4 1.5-6.9L2 9.3l7.1-1.4z"/></svg></span><h3>Which? Trusted Trader</h3><p>Independently assessed and rated Excellent across more than 270 genuine customer reviews.</p></div>
+        <div class="wcard reveal" style="transition-delay:.018s"><span class="wcard__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span><h3>Warranties up to 12 years</h3><p>We are accredited installers for Worcester Bosch, Vaillant and Ideal, which unlocks the longest manufacturer warranties available.</p></div>
+        <div class="wcard reveal" style="transition-delay:.024s"><span class="wcard__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><h3>Same day and emergency cover</h3><p>An engineer at your door within 12 to 24 hours, and same day call outs whenever we can reach you.</p></div>
+        <div class="wcard reveal" style="transition-delay:.030s"><span class="wcard__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 1 1-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 1 1 5.4-5.4z"/></svg></span><h3>Finance options available</h3><p>Spread the cost with 0% and low rate plans, approved in minutes. Subject to status and credit checks.</p></div>
+      </div>
+    </div>
+    <div class="ctapair reveal" style="transition-delay:.24s">
+      <a class="btn btn-cu" href="#contact">Book a Free Survey <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-line" href="tel:01632960300">Speak To Our Experts <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. REVIEWS ============ -->
+<section class="section panel" id="reviews" aria-labelledby="reviewsH2">
+  <div class="shell">
+    <div class="sec-head center">
+      <p class="eyebrow reveal">Testimonials</p>
+      <h2 class="h2 reveal" id="reviewsH2" style="transition-delay:.06s">What our customers <span class="gold">say about us</span></h2>
+    </div>
+    <div class="rv-wrap">
+      <button class="rv-btn rv-prev" id="revPrev" type="button" aria-label="Previous reviews"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="rv-view"><div class="rv-track" id="revTrack">
+      <div class="rcard reveal">
+        <div class="rcard__quote" aria-hidden="true">&ldquo;</div>
+        <div class="rcard__stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>Excellent service. I booked a boiler service at short notice as mine had unexpectedly stopped working, and they fitted me in the same week.</p>
+        <div class="rcard__who"><span class="rcard__av" aria-hidden="true">RS</span><div><b>Richard South</b><span>Tonbridge &middot; Boiler service</span></div></div>
+      </div>
+      <div class="rcard reveal" style="transition-delay:.04s">
+        <div class="rcard__quote" aria-hidden="true">&ldquo;</div>
+        <div class="rcard__stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>Gareth fitted our boiler and gave great advice on what to fit, which in the long run will be a lot more economical for us.</p>
+        <div class="rcard__who"><span class="rcard__av" aria-hidden="true">VT</span><div><b>Victoria Titley</b><span>Shrewsbury &middot; New boiler</span></div></div>
+      </div>
+      <div class="rcard reveal" style="transition-delay:.08s">
+        <div class="rcard__quote" aria-hidden="true">&ldquo;</div>
+        <div class="rcard__stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>I would give 10 stars if it were available. It was a difficult job and they stayed until it was done properly.</p>
+        <div class="rcard__who"><span class="rcard__av" aria-hidden="true">CB</span><div><b>Carol Bailey</b><span>Tonbridge &middot; Heating repair</span></div></div>
+      </div>
+      <div class="rcard reveal" style="transition-delay:.012s">
+        <div class="rcard__quote" aria-hidden="true">&ldquo;</div>
+        <div class="rcard__stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>Great customer service and good quality work carried out. Would definitely recommend to friends and family.</p>
+        <div class="rcard__who"><span class="rcard__av" aria-hidden="true">EM</span><div><b>Emma Mayers</b><span>Shrewsbury &middot; Boiler service</span></div></div>
+      </div>
+      <div class="rcard reveal" style="transition-delay:.016s">
+        <div class="rcard__quote" aria-hidden="true">&ldquo;</div>
+        <div class="rcard__stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>I can highly recommend them. They excelled in all aspects, from the quotation right through to clearing up afterwards.</p>
+        <div class="rcard__who"><span class="rcard__av" aria-hidden="true">GB</span><div><b>Graham B.</b><span>Sevenoaks &middot; New boiler</span></div></div>
+      </div>
+      <div class="rcard reveal" style="transition-delay:.020s">
+        <div class="rcard__quote" aria-hidden="true">&ldquo;</div>
+        <div class="rcard__stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>Fitted a new Hive thermostat and serviced my boiler. I sent a message and he had me booked in and the job completed straight away.</p>
+        <div class="rcard__who"><span class="rcard__av" aria-hidden="true">KR</span><div><b>Keeley Rogers</b><span>Telford &middot; Smart controls</span></div></div>
+      </div>
+    </div></div>
+      <button class="rv-btn rv-next" id="revNext" type="button" aria-label="Next reviews"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+    </div>
+    <p class="tp reveal" style="transition-delay:.22s"><span class="st" aria-hidden="true">★★★★★</span> Gas Safe registered · fully insured and certified · specialists in Ideal, Glow worm, Worcester Bosch and Vaillant</p>
+      <div class="ctapair reveal">
+      <a class="btn btn-cu" href="#contact">Get A Free Quote <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-line" href="tel:01632960300">Speak To Our Experts <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+</div>
+</section>
+
+<!-- ============ 8. GALLERY ============ -->
+<section class="section" id="gallery" aria-labelledby="galleryH2">
+  <div class="shell">
+    <div class="sec-head center">
+      <p class="eyebrow reveal">Our work</p>
+      <h2 class="h2 reveal" id="galleryH2" style="transition-delay:.06s">Our recent work</h2>
+      <p class="lede reveal" style="transition-delay:.1s">A selection of recent installs, upgrades and repairs completed across Surrey.</p>
+    </div>
+    <div class="gfeat reveal-s">
+      <img src="images/bl-19.jpg" alt="Engineer commissioning a new combi boiler, shown before and after" loading="lazy" decoding="async">
+      <div class="gfeat__ba"><span class="ba-tag">Before</span><span class="ba-tag ba-tag--after">After</span></div>
+      <div class="gfeat__cap">
+        <b>Combi replacement, Epsom</b>
+        <p>Old back boiler stripped out, a new Worcester Bosch Greenstar hung in the kitchen with fresh copper pipework, a magnetic filter and a full powerflush. Completed in a day.</p>
+      </div>
+    </div>
+    <div class="ggrid">
+      <div class="gtile reveal"><img src="images/bl-04.jpg" alt="Our van on a Surrey street" loading="lazy" decoding="async"><span class="gtile__tag"><span>Same day callout</span>Fully stocked van, Gas Safe registered</span></div>
+      <div class="gtile reveal" style="transition-delay:.08s"><img src="images/bl-22.jpg" alt="A heating engineer showing a homeowner the controls on a newly fitted boiler" loading="lazy" decoding="async"><span class="gtile__tag"><span>Worcester Bosch install</span>Greenstar 4000, 10 year warranty</span></div>
+      <div class="gtile reveal" style="transition-delay:.16s"><img src="images/bl-11.jpg" alt="Unvented cylinder installation" loading="lazy" decoding="async"><span class="gtile__tag"><span>Unvented cylinder upgrade</span>System boiler and 210L cylinder</span></div>
+    </div>
+      <div class="ctapair reveal">
+      <a class="btn btn-cu" href="#contact">Get A Free Quote <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-line" href="tel:01632960300">Speak To Our Experts <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+</div>
+</section>
+
+<!-- ============ 9. GUARANTEE ============ -->
+
+<!-- ============ 10. FAQ ============ -->
+<section class="section panel" id="faq" aria-labelledby="faqH2">
+  <div class="shell">
+    <div class="sec-head center">
+      <p class="eyebrow reveal">Questions</p>
+      <h2 class="h2 reveal" id="faqH2" style="transition-delay:.06s">Frequently asked questions</h2>
+    </div>
+    <div class="faq reveal" style="transition-delay:.1s">
+      <div class="facc open"><button class="facc__q" aria-expanded="true">How much will it cost to replace my boiler?<span class="facc__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="facc__a" style="max-height:220px;"><p>A straight swap on a like for like combi typically lands between &pound;1,500 and &pound;3,500 fitted, depending on the model, the warranty you want and whether pipework or the flue needs moving. You get a fixed, itemised quotation before anything starts, that figure is what you pay.</p></div></div>
+      <div class="facc"><button class="facc__q" aria-expanded="false">How quickly can my boiler be replaced?<span class="facc__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="facc__a"><p>In many cases within 24 hours of accepting the quote, and almost always within a few days. If you are without heating or hot water we will prioritise you and aim to get an engineer out within 12 to 24 hours.</p></div></div>
+      <div class="facc"><button class="facc__q" aria-expanded="false">How much does a boiler service cost?<span class="facc__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="facc__a"><p>From &pound;99 + VAT plus parts. Our engineers check, clean and test the boiler and your heating controls, then flag anything that could become a problem. An annual service is the single most effective way to avoid an unexpected breakdown.</p></div></div>
+      <div class="facc"><button class="facc__q" aria-expanded="false">What warranties do you offer?<span class="facc__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="facc__a"><p>Up to 12 years on Worcester Bosch, and up to 10 years on Vaillant and Ideal. We are accredited installers for all three, which is what unlocks the longer cover, an unaccredited fitter cannot register those warranties.</p></div></div>
+      <div class="facc"><button class="facc__q" aria-expanded="false">Which boiler brands do you install?<span class="facc__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="facc__a"><p>Worcester Bosch, Vaillant, Ideal, Baxi, Viessmann, Glow worm, Alpha and Navien. We recommend based on your property, your hot water demand and your budget, not on what we happen to have in the van.</p></div></div>
+      <div class="facc"><button class="facc__q" aria-expanded="false">Do I need a combi, system or regular boiler?<span class="facc__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="facc__a"><p>If you have one bathroom and no cylinder, a combi is usually right. Two or more bathrooms, or a household that runs hot taps at the same time, often does better on a system boiler with a cylinder. We confirm it at survey rather than guessing from the old unit.</p></div></div>
+      <div class="facc"><button class="facc__q" aria-expanded="false">How much is a powerflush and do I need one?<span class="facc__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="facc__a"><p>&pound;100 per radiator, including valve changes as standard rather than a basic flush. If your radiators are cold at the bottom, your pipework is noisy, or your system is full of sludge, a powerflush is often required before a new boiler warranty is valid.</p></div></div>
+      <div class="facc"><button class="facc__q" aria-expanded="false">Why is my boiler losing pressure?<span class="facc__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="facc__a"><p>Usually a leak somewhere on the system, a failed expansion vessel, or a passing pressure relief valve. If you are topping up more than once a month it needs looking at, repressurising repeatedly hides the underlying fault and accelerates corrosion.</p></div></div>
+      <div class="facc"><button class="facc__q" aria-expanded="false">What should I do if my boiler stops working?<span class="facc__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="facc__a"><p>Check the pressure gauge, your thermostat and whether other gas appliances still work. If you smell gas, leave the property and ring the National Gas Emergency line on 0800 111 999. Otherwise call us, we carry common parts and fix most faults on the first visit.</p></div></div>
+      <div class="facc"><button class="facc__q" aria-expanded="false">How often should I service my boiler?<span class="facc__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="facc__a"><p>Once a year, without exception. It is a condition of virtually every manufacturer warranty, it is a legal requirement for landlords, and it is what keeps the boiler running at the efficiency you paid for.</p></div></div>
+      <div class="facc"><button class="facc__q" aria-expanded="false">Can I pay for a new boiler in instalments?<span class="facc__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="facc__a"><p>Yes. Finance is available through an FCA authorised credit broker, with 0% and low rate plans and approval usually in minutes. Finance is subject to status and credit checks; we act as an introducer and do not give financial advice.</p></div></div>
+      <div class="facc"><button class="facc__q" aria-expanded="false">Are your engineers Gas Safe registered?<span class="facc__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="facc__a"><p>Every one of them, and we will show you the card without being asked. We are also Which? Trusted Trader assessed and CIPHE members, and your Gas Safety certificate is issued on the day rather than posted weeks later.</p></div></div>
+    </div>
+    <p class="faq__foot">Something we have not covered? <a href="tel:01632960300">Call 01632 960 300</a>, a real engineer answers.</p>
+      <div class="ctapair reveal">
+      <a class="btn btn-cu" href="#contact">Get A Free Quote <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-line" href="tel:01632960300">Speak To Our Experts <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+</div>
+</section>
+
+<!-- ============ 11. FINAL CTA ============ -->
+<section class="fcta" id="contact" aria-labelledby="ctaH2">
+  <div class="fcta__bg"><img src="images/bl-14.jpg" alt="A warm home kept comfortable year round" loading="lazy" decoding="async"></div>
+  <div class="fcta__in">
+    <div class="fcta__box">
+      <p class="eyebrow reveal">Get in touch today!</p>
+      <h2 class="reveal" id="ctaH2" style="transition-delay:.06s">Let's keep your <span class="gold">home warm.</span></h2>
+      <p class="reveal" style="transition-delay:.1s">Whether you need a new boiler fitted, a fast repair, an annual service or help with your heating, we are ready to help. Contact us today for a tailored quotation.</p>
+      <div class="fcta__cta reveal" style="transition-delay:.16s">
+        <a class="btn btn-cu" href="#contact">Get a Free Quote <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-line" href="tel:01632960300">01632 960 300</a>
+      </div>
+      <div class="fcta__assure reveal" style="transition-delay:.22s">
+        <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>No obligation</span>
+        <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>No hidden costs</span>
+        <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Same day call outs where possible</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ 12. FOOTER ============ -->
+<footer class="footer">
+  <div class="shell">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="brand" href="#top">
+          <span class="brand__mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c3 3.6 5 6.9 5 9.8A5 5 0 0 1 7 12.8C7 9.9 9 6.6 12 3z"/><path d="M12 12.5c1 1.3 1.6 2.3 1.6 3.2a1.6 1.6 0 0 1-3.2 0c0-.9.6-1.9 1.6-3.2z"/></svg></span>
+          <span><span class="brand__name">Heat<em>ing</em></span></span>
+        </a>
+        <p>Boiler and heating specialists in Surrey. Gas Safe registered installation, servicing, repair and plumbing across Epsom, Ashtead, Guildford, Horley and Kingston Upon Thames.</p>
+        <div class="fsoc">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9h4v12h-4zM10 13a4 4 0 0 1 8 0v8h-4v-7a1 1 0 0 0-2 0v7h-4"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></svg></a>
+        </div>
+      </div>
+      <div class="fcol">
+        <h4>Services</h4>
+        <a href="#services">New Boilers</a>
+        <a href="#services">Boiler Servicing</a>
+        <a href="#services">Boiler Repair</a>
+        <a href="#services">Powerflushing</a>
+        <a href="#services">Central Heating &amp; Plumbing</a>
+      </div>
+      <div class="fcol">
+        <h4>Company</h4>
+        <a href="#why">Why Heating</a>
+        <a href="#gallery">Our work</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQs</a>
+      </div>
+      <div class="fcol">
+        <h4>Talk to us</h4>
+        <p><a href="tel:01632960300" style="padding:0;color:var(--txt);font-weight:700;">01632 960 300</a><br>Mon to Sat, 7am to 8pm</p>
+        <p style="color:var(--muted-2);font-size:0.9375rem;">Headley, Surrey<br>KT18 6EH</p>
+        
+      </div>
+    </div>
+    <div class="foot-ops">
+      <div>
+        <h4>Opening hours</h4>
+        <p>
+          <span class="oh"><span>Mon to Fri</span><span>07:30 to 17:30</span></span>
+          <span class="oh"><span>Saturday</span><span>08:00 to 12:00</span></span>
+          <span class="oh"><span>Sunday</span><span>Closed</span></span>
+          <span class="oh"><span>Emergency call out</span><span>7 days</span></span>
+        </p>
+      </div>
+      <div>
+        <h4>Office</h4>
+        <address>
+          Heating Ltd<br>
+          2 The Cottage, Shenley Lane<br>
+          Surrey KT22 7LX<br>
+          Gas Safe reg. 111111
+        </address>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>
+          <a href="tel:01632960300">01632 960 300</a><br>
+          Engineer to your door in 12 to 24 hours
+        </p>
+      </div>
+      <div>
+        <h4>Accreditations</h4>
+        <p>
+          Gas Safe Registered &middot; Which? Trusted Trader &middot; CIPHE Member &middot; Checkatrade Verified &middot; Worcester Bosch Accredited Installer &middot; Vaillant Advance Installer &middot; Ideal Max Accredited &middot; City &amp; Guilds Qualified
+        </p>
+      </div>
+    </div>
+
+    <div class="foot-accredline">
+      <b>Finance:</b> Heating Ltd is an Introducer Appointed Representative of a regulated credit broker. The credit broker is not a lender (FRN 111111). Finance is available subject to status. The rate offered is always provisional and will depend upon your personal circumstances, the loan amount and the term.
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 We Build Trades Ltd. Demonstration template, sample content.</span>
+      <span><a href="#">Privacy</a> &nbsp;·&nbsp; <a href="#">Terms</a> &nbsp;·&nbsp; <a href="#">Complaints</a> &nbsp;·&nbsp; <a href="#">Finance (FCA 111111)</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* reveal on scroll */
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+  });
+}, {threshold:.12, rootMargin:'0px 0px -70px 0px'});
+document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(el); });
+
+/* sticky nav */
+var nav = document.getElementById('nav');
+function onScroll(){ nav.classList.toggle('stuck', window.scrollY > 10); }
+onScroll();
+window.addEventListener('scroll', onScroll, {passive:true});
+
+/* mobile menu */
+var burger = document.getElementById('burger'), mobile = document.getElementById('navMobile');
+function closeMenu(){ burger.setAttribute('aria-expanded','false'); mobile.style.maxHeight = null; }
+burger.addEventListener('click', function(){
+  if(burger.getAttribute('aria-expanded') === 'true'){ closeMenu(); }
+  else{ burger.setAttribute('aria-expanded','true'); mobile.style.maxHeight = mobile.scrollHeight + 'px'; }
+});
+mobile.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+
+/* package selection: the copper border, glow and filled CTA follow the click */
+var pcards = Array.prototype.slice.call(document.querySelectorAll('.pcard'));
+function selectPackage(card){
+  pcards.forEach(function(p){
+    var on = (p === card);
+    p.classList.toggle('is-sel', on);
+    p.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+}
+pcards.forEach(function(card){
+  card.addEventListener('click', function(){ selectPackage(card); });
+  card.addEventListener('keydown', function(e){
+    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); selectPackage(card); }
+  });
+});
+
+/* FAQ accordion */
+document.querySelectorAll('.facc__q').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var item = btn.closest('.facc'), answer = item.querySelector('.facc__a'), isOpen = item.classList.contains('open');
+    document.querySelectorAll('.facc.open').forEach(function(o){
+      if(o !== item){ o.classList.remove('open'); o.querySelector('.facc__a').style.maxHeight = null; o.querySelector('.facc__q').setAttribute('aria-expanded','false'); }
+    });
+    if(isOpen){ item.classList.remove('open'); answer.style.maxHeight = null; btn.setAttribute('aria-expanded','false'); }
+    else{ item.classList.add('open'); answer.style.maxHeight = answer.scrollHeight + 'px'; btn.setAttribute('aria-expanded','true'); }
+  });
+});
+
+/* stat counters */
+function fmt(v, dec){ return v.toFixed(dec).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+function runCounter(el){
+  var raw = el.getAttribute('data-count'), target = parseFloat(raw);
+  var dec = (raw.split('.')[1] || '').length;
+  var pre = el.getAttribute('data-prefix') || '', suf = el.getAttribute('data-suffix') || '';
+  if(reduceMotion){ el.textContent = pre + fmt(target, dec) + suf; return; }
+  var start = null, dur = 1600;
+  function tick(ts){
+    if(start === null){ start = ts; }
+    var p = Math.min((ts - start) / dur, 1), eased = 1 - Math.pow(1 - p, 3);
+    el.textContent = pre + fmt(target * eased, dec) + suf;
+    if(p < 1){ requestAnimationFrame(tick); }
+  }
+  requestAnimationFrame(tick);
+}
+var cio = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting){ runCounter(e.target); cio.unobserve(e.target); } });
+}, {threshold:.5});
+document.querySelectorAll('.counter').forEach(function(el){ cio.observe(el); });
+
+/* keep open panels sized after resize */
+var rt;
+window.addEventListener('resize', function(){
+  clearTimeout(rt);
+  rt = setTimeout(function(){
+    document.querySelectorAll('.facc.open .facc__a').forEach(function(a){ a.style.maxHeight = a.scrollHeight + 'px'; });
+    if(burger.getAttribute('aria-expanded') === 'true'){ mobile.style.maxHeight = mobile.scrollHeight + 'px'; }
+  }, 150);
+});
+
+/* Care plans: move the featured treatment to whichever plan is chosen, and swap
+   the filled button across with it so only one copper CTA is ever shown. */
+(function(){
+  var plans=[].slice.call(document.querySelectorAll('.cplan'));
+  if(!plans.length) return;
+  function select(card){
+    plans.forEach(function(p){
+      var on = p===card;
+      p.classList.toggle('cplan--feat', on);
+      p.setAttribute('aria-pressed', on ? 'true' : 'false');
+      var b=p.querySelector('.btn');
+      if(b){ b.classList.toggle('btn-cu', on); b.classList.toggle('btn-line', !on); }
+      var tag=p.querySelector('.cplan__tag');
+      if(tag) tag.innerHTML = on ? 'Most popular' : '&nbsp;';
+    });
+  }
+  plans.forEach(function(p){
+    p.addEventListener('click',function(e){ if(!e.target.closest('a')) select(p); });
+    p.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); select(p); } });
+  });
+})();
+
+/* The logo strip is static now - five fixed marks per column - so there is no
+   belt duration left to synchronise. */
+</script>
+
+<script>
+/* Reviews slider, endless in both directions. A second copy of the six cards is
+   appended, so the belt can run past the last real card into the clones and then
+   be snapped back to the top with the transition switched off - the arrows never
+   reach an end and never disable.
+   offsetWidth, not getBoundingClientRect - the cards carry .reveal and are
+   scaled until revealed, and a mid-transform measurement would drift. */
+(function(){
+  var track = document.getElementById('revTrack');
+  var prev  = document.getElementById('revPrev');
+  var next  = document.getElementById('revNext');
+  if(!track || !prev || !next) return;
+
+  var originals = Array.prototype.slice.call(track.children);
+  var n = originals.length;
+  if(!n) return;
+
+  /* the clones are appended after the reveal observer has already collected its
+     targets, so they would sit at opacity:0 forever - mark them revealed */
+  originals.forEach(function(card){
+    var c = card.cloneNode(true);
+    c.setAttribute('aria-hidden','true');
+    c.removeAttribute('id');
+    c.classList.add('in');
+    c.style.transitionDelay = '0s';
+    track.appendChild(c);
+  });
+
+  var i = 0, busy = false;
+
+  function stride(){
+    var first = track.children[0];
+    if(!first) return 0;
+    var gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 0;
+    return first.offsetWidth + gap;
+  }
+  function put(idx, animate){
+    if(animate){
+      track.style.transition = '';
+    } else {
+      track.style.transition = 'none';
+    }
+    track.style.transform = 'translateX(' + (-idx * stride()) + 'px)';
+    if(!animate){
+      void track.offsetWidth;      /* flush the jump before the transition returns */
+      track.style.transition = '';
+    }
+  }
+  function step(dir){
+    if(busy) return;
+    /* stepping back from the first card: land on its clone first, so the
+       animated move still travels in the direction the arrow points */
+    if(dir < 0 && i === 0){ i = n; put(i, false); }
+    i += dir;
+    busy = true;
+    put(i, true);
+    setTimeout(function(){
+      if(i >= n){ i -= n; put(i, false); }   /* wrap back onto the real cards */
+      busy = false;
+    }, 600);                                  /* .rv-track transition is .55s */
+  }
+
+  prev.addEventListener('click', function(){ step(-1); });
+  next.addEventListener('click', function(){ step(1); });
+  addEventListener('resize', function(){ put(i, false); }, {passive:true});
+  put(i, false);
+})();
+</script>
+</body>
+</html>
